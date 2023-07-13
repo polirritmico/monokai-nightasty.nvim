@@ -1,9 +1,8 @@
 monokai-tasty.nvim
 ==================
 
-A Lua implementation of the very tasty vim-monokay-tasty.
-
-_Now 86% tastier than competitors_
+A Lua implementation of the very tasty vim-monokay-tasty with my personal
+stylish touch.
 
 
 ![Showcase](./docs/monokai.png)
@@ -14,9 +13,8 @@ Just add the repo to your packer manager:
 
 ```lua
 local plugins = {
-    -- ...
-    "polirritmico/monokai-tasty.nvim",
-    -- ...
+    "polirritmico/monokai.nvim",
+    ...
 }
 
 ```
@@ -26,7 +24,7 @@ local plugins = {
 Default config:
 
 ```lua
-require("monokai-tasty.nvim").setup({})
+require("monokai").setup({})
 ```
 
 ### Customization:
