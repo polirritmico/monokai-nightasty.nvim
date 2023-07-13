@@ -1,10 +1,6 @@
 monokai-tasty.nvim
 ==================
 
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-blueviolet.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
-![Last commit](https://img.shields.io/github/last-commit/patstockwell/vim-monokai-tasty?color=blue)
-
 A Lua implementation of the very tasty vim-monokay-tasty.
 
 _Now 86% tastier than competitors_
