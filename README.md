@@ -6,7 +6,7 @@ A Lua implementation of the very tasty vim-monokay-tasty.
 _Now 86% tastier than competitors_
 
 
-![Screenshot](./images/example_main.png)
+![Showcase](./docs/monokai.png)
 
 ## 🔌 Installation
 
@@ -32,8 +32,13 @@ require("monokai-tasty.nvim").setup({})
 ### Customization:
 
 ```lua
-require("monokai-tasty.nvim").setup({})
+require("monokai").setup({
+    disable_italics = true,
+    transparent_background = false,
+    -- theme = custom_theme,
+})
 ```
+### Extras:
 
 To use the [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) theme:
 ```lua
@@ -48,27 +53,10 @@ require("lualine").setup({
 
 ## 📺 Screenshots
 
-![screenshot](./images/python.png)
-![screenshot](./images/cpp)
-![screenshot](./images/lua)
+![screenshot](./docs/python.png)
+![screenshot](./docs/cpp)
+![screenshot](./docs/lua)
 
-## 🌟 Setup
-
-Default setup:
-
-```lua
-require("monokai").setup()
-```
-
-Options:
-
-```lua
-require("monokai").setup({
-    disable_italics = true,
-    transparent_background = false,
-    -- theme = custom_theme,
-})
-```
 
 ## 🎨 Colour palette
 
