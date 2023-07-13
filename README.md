@@ -35,37 +35,39 @@ require("monokai-tasty.nvim").setup({})
 require("monokai-tasty.nvim").setup({})
 ```
 
-To use the included [vim-airline](https://github.com/vim-airline/vim-airline) theme:
+To use the [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) theme:
 ```lua
-vim.g.airline_theme="monokai_tasty""
+-- Lualine setup
+monokai = require("monokai.extras").lualine
+require("lualine").setup({
+    options = {
+        theme = monokai,
+    }
+})
 ```
 
-## 📺 Screen shots
+## 📺 Screenshots
 
-![screenshot1](./images/example_javascript.png)
-![screenshot2](./images/example_vim_and_markdown.png)
-![screenshot3](./images/example_ruby.png)
+![screenshot](./images/python.png)
+![screenshot](./images/cpp)
+![screenshot](./images/lua)
 
-## 🌟 Example `.vimrc`
+## 🌟 Setup
 
-```vim
-let g:vim_monokai_tasty_italic = 1                    " allow italics, set this before the colorscheme
-let g:vim_monokai_tasty_machine_tint = 1              " use `mahcine` colour variant
-let g:vim_monokai_tasty_highlight_active_window = 1   " make the active window stand out
-colorscheme vim-monokai-tasty                         " set the colorscheme
+Default setup:
 
-" Optional themes for airline/lightline
-let g:airline_theme='monokai_tasty'                   " airline theme
-let g:lightline = { 'colorscheme': 'monokai_tasty' }  " lightline theme
+```lua
+require("monokai").setup()
+```
 
-" If you don't like a particular colour choice from `vim-monokai-tasty`, you can
-" override it here. For example, to change the colour of the search hightlight:
-hi Search guifg=#bada55 guibg=#000000 gui=bold ctermfg=green ctermbg=black cterm=bold
+Options:
 
-" If you want to know what the name of a particular hightlight is, you can use
-" `:What`. It prints out the syntax group that the cursor is currently above.
-" https://www.reddit.com/r/vim/comments/6z4aau/how_to_stop_vim_from_autohighlighting_italics_in/
-command! What echomsg synIDattr(synID(line('.'), col('.'), 1), 'name')
+```lua
+require("monokai").setup({
+    disable_italics = true,
+    transparent_background = false,
+    -- theme = custom_theme,
+})
 ```
 
 ## 🎨 Colour palette
