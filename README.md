@@ -1,5 +1,5 @@
-monokai-tasty.nvim
-==================
+monokai.nvim
+============
 
 A Lua implementation of the very tasty vim-monokay-tasty with my personal
 stylish touch.
