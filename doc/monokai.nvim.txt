@@ -1,0 +1,116 @@
+*monokai.nvim.txt*      For Neovim >= 0.8.0     Last change: 2023 July 13
+
+==============================================================================
+Table of Contents                             *monokai.nvim-table-of-contents*
+
+1. Monokai Theme                                  |monokai.nvim-monokai-theme|
+  - Colors                                       |monokai.nvim-monokai-colors|
+  - Features                                   |monokai.nvim-monokai-features|
+  - Requirements                           |monokai.nvim-monokai-requirements|
+  - Installation                           |monokai.nvim-monokai-installation|
+  - Usage                                         |monokai.nvim-monokai-usage|
+  - Configuration                         |monokai.nvim-monokai-configuration|
+  - Extras                                       |monokai.nvim-monokai-extras|
+    - Lualine                            |monokai.nvim-monokai-extras-lualine|
+  - Contributing                            |monokai.nvim-monokaicontributing|
+2. Links                                             |monokai.nvim-references|
+
+==============================================================================
+1. Monokai Theme                                  *monokai.nvim-monokai-theme*
+
+A dark Neovim <https://github.com/neovim/neovim> theme based on the Monokai
+color palette writen in Lua <https://www.lua.org> ported from the very tasty
+vim-monokai-tasty <https://github.com/patstockwell/vim-monokai-tasty> theme.
+Includes a Lualine <https://github.com/nvim-lualine/lualine.nvim> status bar
+theme.
+
+
+COLORS                                           *monokai.nvim-monokai-colors*
+
+These is the default color palette of the theme:
+
+    |--------------------|--------------|
+    | Color              | Code         |
+    |--------------------|--------------|
+    | Yellow             | #ffff87      |
+    | Purple             | #af87ff      |
+    | Light Green        | #A4E400      |
+    | Light Blue         | #62D8F1      |
+    | Magenta            | #FC1A70      |
+    | Orange             | #FF9700      |
+    |--------------------|--------------|
+
+FEATURES                                       *monokai.nvim-monokai-features*
+
+
+REQUIREMENTS                               *monokai.nvim-monokai-requirements*
+
+- Neovim <https://github.com/neovim/neovim> >=
+    0.7.2 <https://github.com/neovim/neovim/releases/tag/v0.7.2>
+
+INSTALLATION                               *monokai.nvim-monokai-installation*
+
+Install Monokai.nvim with your preferred package manager.
+
+With Lazy <https://github.com/folke/lazy.nvim>:
+
+>lua
+    { "polirritmico/monokai.nvim", lazy = false, priority = 1000 },
+<
+
+USAGE                                             *monokai.nvim-monokai-usage*
+
+Just run the setup function of the plugin somewhere in your config:
+
+>lua
+    require("monokai").setup({})
+<
+
+CONFIGURATION                             *monokai.nvim-monokai-configuration*
+
+>lua
+    -- Lua
+    monokai = require("monokai.extras").lualine
+    require("lualine").setup({
+        options = {
+            --... your config
+            theme = monokai
+            --... your config
+        }
+    })
+    require("monokai").setup(config)
+<
+
+EXTRAS                                           *monokai.nvim-monokai-extras*
+
+- Lualine                                        *monokai.nvim-extras-lualine*
+
+In your Lualine config file:
+
+>lua
+    -- Lua
+    monokai = require("monokai.extras").lualine
+    require("lualine").setup({
+        options = {
+            --... your config
+            theme = monokai
+            --... your config
+        }
+    })
+    require("monokai").setup(config)
+<
+
+CONTRIBUTING                               *monokai.nvim-monokai-contributing*
+
+The main goal of this theme is to my personal use. So I don't 
+
+
+==============================================================================
+2. Links
+
+- *image*: https://user-images.githubusercontent.com/
+- *image*: https://user-images.githubusercontent.com/
+- *image*: https://user-images.githubusercontent.com/
+- *image*: https://user-images.githubusercontent.com/
+
+Genere
