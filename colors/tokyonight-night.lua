@@ -1,1 +1,1 @@
-require("tokyonight")._load("night")
+require("monokai")._load("night")
