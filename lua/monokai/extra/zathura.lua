@@ -1,4 +1,4 @@
-local util = require("tokyonight.util")
+local util = require("monokai.util")
 
 local M = {}
 
@@ -6,10 +6,10 @@ local M = {}
 function M.generate(colors)
   local zathura = util.template(
     [[
-# Tokyonight color theme for Zathura
+# Monokai color theme for Zathura
 # Swaps Foreground for Background to get a light version if the user prefers
 #
-# Tokyonight color theme
+# Monokai color theme
 #
 set notification-error-bg "${red}"
 set notification-error-fg "${fg}"

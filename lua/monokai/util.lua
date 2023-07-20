@@ -37,7 +37,7 @@ function M.lighten(hex, amount, fg)
 end
 
 function M.invert_color(color)
-  local hsluv = require("tokyonight.hsluv")
+  local hsluv = require("monokai.hsluv")
   if color ~= "NONE" then
     local hsl = hsluv.hex_to_hsluv(color)
     hsl[3] = 100 - hsl[3]
@@ -71,7 +71,7 @@ end
 
 ---@param config Config
 function M.autocmds(config)
-  local group = vim.api.nvim_create_augroup("tokyonight", { clear = true })
+  local group = vim.api.nvim_create_augroup("monokai", { clear = true })
 
   vim.api.nvim_create_autocmd("ColorSchemePre", {
     group = group,
@@ -124,32 +124,32 @@ end
 
 ---@param colors ColorScheme
 function M.terminal(colors)
-  -- dark
-  vim.g.terminal_color_0 = colors.black
-  vim.g.terminal_color_8 = colors.terminal_black
-
-  -- light
-  vim.g.terminal_color_7 = colors.fg_dark
-  vim.g.terminal_color_15 = colors.fg
-
-  -- colors
-  vim.g.terminal_color_1 = colors.red
-  vim.g.terminal_color_9 = colors.red
-
-  vim.g.terminal_color_2 = colors.green
-  vim.g.terminal_color_10 = colors.green
-
-  vim.g.terminal_color_3 = colors.yellow
-  vim.g.terminal_color_11 = colors.yellow
-
-  vim.g.terminal_color_4 = colors.blue
-  vim.g.terminal_color_12 = colors.blue
-
-  vim.g.terminal_color_5 = colors.magenta
-  vim.g.terminal_color_13 = colors.magenta
-
-  vim.g.terminal_color_6 = colors.cyan
-  vim.g.terminal_color_14 = colors.cyan
+  -- -- dark
+  -- vim.g.terminal_color_0 = colors.black
+  -- vim.g.terminal_color_8 = colors.terminal_black
+  --
+  -- -- light
+  -- vim.g.terminal_color_7 = colors.fg_dark
+  -- vim.g.terminal_color_15 = colors.fg
+  --
+  -- -- colors
+  -- vim.g.terminal_color_1 = colors.red
+  -- vim.g.terminal_color_9 = colors.red
+  --
+  -- vim.g.terminal_color_2 = colors.green
+  -- vim.g.terminal_color_10 = colors.green
+  --
+  -- vim.g.terminal_color_3 = colors.yellow
+  -- vim.g.terminal_color_11 = colors.yellow
+  --
+  -- vim.g.terminal_color_4 = colors.blue
+  -- vim.g.terminal_color_12 = colors.blue
+  --
+  -- vim.g.terminal_color_5 = colors.magenta
+  -- vim.g.terminal_color_13 = colors.magenta
+  --
+  -- vim.g.terminal_color_6 = colors.cyan
+  -- vim.g.terminal_color_14 = colors.cyan
 end
 
 ---@param colors ColorScheme
@@ -187,7 +187,7 @@ function M.load(theme)
   end
 
   vim.o.termguicolors = true
-  vim.g.colors_name = "tokyonight"
+  vim.g.colors_name = "monokai"
 
   if ts.new_style() then
     for group, colors in pairs(ts.defaults) do
