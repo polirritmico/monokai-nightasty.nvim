@@ -139,23 +139,22 @@ function M.setup()
         NormalFloat = { fg = c.fg_float, bg = c.bg_float }, -- Normal text in floating windows.
         FloatBorder = { fg = c.border_highlight, bg = c.bg_float },
 
+        IndentBlanklineChar = { fg = c.fg_gutter, nocombine = true },
+        IndentBlanklineSpaceChar = { fg = c.fg_dark, nocombine = true },
+        IndentBlanklineContextChar = { fg = c.purple, nocombine = true },
+
         -- FloatTitle = { fg = c.border_highlight, bg = c.bg_float },
         -- QuickFixLine = { bg = c.bg_visual, bold = true }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
         -- VisualNOS = { bg = c.bg_visual }, -- Visual mode selection when vim is "Not Owning the Selection".
         -- WildMenu = { bg = c.bg_visual }, -- current match in 'wildmenu' completion
-        --
-        -- -- These groups are not listed as default vim groups,
-        -- -- but they are defacto standard group names for syntax highlighting.
-        -- -- commented out groups should chain up to their "preferred" group by
-        -- -- default,
-        -- -- Uncomment and edit if you want more specific syntax highlighting.
+
+        -- These groups are not listed as default vim groups,
+        -- but they are defacto standard group names for syntax highlighting.
+        -- commented out groups should chain up to their "preferred" group by
+        -- default,
+        -- Uncomment and edit if you want more specific syntax highlighting.
         --
         -- -- Number        = { }, --   a number constant: 234, 0xff
-        --
-        --
-        --
-        --
-        --
         -- -- SpecialChar   = { }, --  special character in a constant
         -- -- SpecialComment= { }, -- special things inside a comment
         --
@@ -168,24 +167,34 @@ function M.setup()
         --
         -- qfLineNr = { fg = c.dark5 },
         -- qfFileName = { fg = c.blue },
-        --
-        -- htmlH1 = { fg = c.magenta, bold = true },
-        -- htmlH2 = { fg = c.blue, bold = true },
-        --
-        -- -- mkdHeading = { fg = c.orange, bold = true },
-        -- -- mkdCode = { bg = c.terminal_black, fg = c.fg },
-        -- mkdCodeDelimiter = { bg = c.terminal_black, fg = c.fg },
-        -- mkdCodeStart = { fg = c.teal, bold = true },
-        -- mkdCodeEnd = { fg = c.teal, bold = true },
-        -- -- mkdLink = { fg = c.blue, underline = true },
-        --
-        -- markdownHeadingDelimiter = { fg = c.orange, bold = true },
-        -- markdownCode = { fg = c.teal },
-        -- markdownCodeBlock = { fg = c.teal },
+
+        htmlH1 = { fg = c.magenta, bold = true },
+        htmlH2 = { fg = c.fg, bold = true },
+
+        -- Markdown
+        markdownCode = { fg = c.purple, bold = true },
+        markdownCodeDelimiter = { fg = c.green_light },
+        markdownLinkTextDelimiter = { fg = c.blue_light },
+        markdownLinkDelimiter = { fg = c.blue_light },
+        markdownUrl = { fg = c.orange },
+        markdownListMarker = { fg = c.blue_light },
+        -- markdownCodeBlock = { fg = c.purple },
         -- markdownH1 = { fg = c.magenta, bold = true },
         -- markdownH2 = { fg = c.blue, bold = true },
         -- markdownLinkText = { fg = c.blue, underline = true },
-        --
+        -- markdownHeadingDelimiter = { fg = c.orange, bold = true },
+
+        -- vim-markdown
+        mkdHeading = { fg = c.magenta },
+        mkdURL = { fg = c.orange },
+        mkdCode = { fg = c.purple },
+        mkdCodeStart = { fg = c.green_light },
+        mkdCodeEnd = { fg = c.green_light },
+        mkdDelimiter = { fg = c.blue_light },
+        mkdListItemCheckbox = { fg = c.blue_light },
+        mkdCodeDelimiter = { fg = c.purple },
+        -- mkdLink = { fg = c.blue_light, underline = true },
+
         -- ["helpCommand"] = { bg = c.terminal_black, fg = c.blue },
         --
         -- debugPC = { bg = c.bg_sidebar }, -- used for highlighting the current line in terminal-debug
@@ -402,11 +411,11 @@ function M.setup()
         -- GitSignsAdd = { fg = c.gitSigns.add }, -- diff mode: Added line |diff.txt|
         -- GitSignsChange = { fg = c.gitSigns.change }, -- diff mode: Changed line |diff.txt|
         -- GitSignsDelete = { fg = c.gitSigns.delete }, -- diff mode: Deleted line |diff.txt|
-        --
-        -- -- Telescope
-        -- TelescopeBorder = { fg = c.border_highlight, bg = c.bg_float },
-        -- TelescopeNormal = { fg = c.fg, bg = c.bg_float },
-        --
+
+        -- Telescope
+        TelescopeBorder = { fg = c.border_highlight, bg = options.transparent and c.none or c.bg_float },
+        TelescopeNormal = { fg = c.fg, bg = options.transparent and c.none or c.bg_float },
+
         -- -- NvimTree
         -- NvimTreeNormal = { fg = c.fg_sidebar, bg = c.bg_sidebar },
         -- NvimTreeWinSeparator = {
@@ -425,7 +434,6 @@ function M.setup()
         -- NvimTreeSymlink = { fg = c.blue },
         -- NvimTreeFolderIcon = { bg = c.none, fg = c.blue },
         -- -- NvimTreeFolderName= { fg = c.fg_float },
-        --
         -- NeoTreeNormal = { fg = c.fg_sidebar, bg = c.bg_sidebar },
         -- NeoTreeNormalNC = { fg = c.fg_sidebar, bg = c.bg_sidebar },
         -- NeoTreeDimText = { fg = c.fg_gutter },
@@ -447,14 +455,14 @@ function M.setup()
         -- DashboardHeader = { fg = c.blue },
         -- DashboardCenter = { fg = c.magenta },
         -- DashboardFooter = { fg = c.yellow, italic = true },
-        --
-        -- -- Alpha
+
+        -- Alpha
         -- AlphaShortcut = { fg = c.orange },
-        -- AlphaHeader = { fg = c.blue },
+        AlphaHeader = { fg = c.orange },
         -- AlphaHeaderLabel = { fg = c.orange },
-        -- AlphaFooter = { fg = c.blue1 },
-        -- AlphaButtons = { fg = c.cyan },
-        --
+        -- AlphaFooter = { fg = c.grey_medium },
+        -- AlphaButtons = { fg = c.blue_light },
+
         -- -- WhichKey
         -- WhichKey = { fg = c.cyan },
         -- WhichKeyGroup = { fg = c.blue },
@@ -646,10 +654,6 @@ function M.setup()
         -- NavicText = { fg = c.fg, bg = c.none },
         -- NavicSeparator = { fg = c.fg, bg = c.none },
 
-        IndentBlanklineChar = { fg = c.fg_gutter, nocombine = true },
-        IndentBlanklineSpaceChar = { fg = c.fg_dark, nocombine = true },
-        IndentBlanklineContextChar = { fg = c.purple, nocombine = true },
-
         -- -- Scrollbar
         -- ScrollbarHandle = { fg = c.none, bg = c.bg_highlight },
         --
@@ -674,11 +678,11 @@ function M.setup()
         -- -- Yanky
         -- YankyPut = { link = "IncSearch" },
         -- YankyYanked = { link = "IncSearch" },
-        --
-        -- -- Lazy
-        -- LazyProgressDone = { bold = true, fg = c.magenta2 },
-        -- LazyProgressTodo = { bold = true, fg = c.fg_gutter },
-        --
+
+        -- Lazy
+        LazyProgressDone = { fg = c.magenta, bold = true },
+        LazyProgressTodo = { fg = c.fg_gutter, bold = true },
+
         -- -- Notify
         -- NotifyBackground = { fg = c.fg, bg = c.bg },
         -- --- Border
