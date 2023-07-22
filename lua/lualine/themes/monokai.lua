@@ -35,9 +35,9 @@ monokai.terminal = {
 }
 
 monokai.inactive = {
-  a = { bg = colors.bg_statusline, fg = colors.blue_light },
-  b = { bg = colors.bg_statusline, fg = colors.fg_gutter, gui = "bold" },
-  c = { bg = colors.bg_statusline, fg = colors.fg_gutter },
+  a = { bg = colors.bg_dark, fg = colors.blue_light },
+  b = { bg = colors.bg_dark, fg = colors.fg_gutter, gui = "bold" },
+  c = { bg = colors.bg_dark, fg = colors.fg_gutter },
 }
 
 if config.lualine_bold then
