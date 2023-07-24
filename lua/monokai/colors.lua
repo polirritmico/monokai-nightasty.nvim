@@ -38,7 +38,6 @@ M.default = {
     magenta = "#fc1a70",
     orange = "#ff9700",
     yellow = "#ffff87",
-    yellow_light = "#f6f557",
 
     -- more colors
     blue_bright = "#0087ff",
@@ -47,6 +46,7 @@ M.default = {
     -- green_medium = "#58b500",
     green_alt = "#83dc78",
     red = "#ff005f",
+    yellow_light = "#f6f557",
     -- red_dark = "#ff1e00",
     -------------------------------
 

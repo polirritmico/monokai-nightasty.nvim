@@ -92,6 +92,7 @@ function M.setup()
         diffLine = { fg = c.purple },
         diffIndexLine = { fg = c.purple },
         diffSubname = { fg = c.yellow },
+
         -- git?
         gitcommitHeader = { fg = c.blue_light },
         gitcommitSelectedFile = { fg = c.yellow },
@@ -148,30 +149,31 @@ function M.setup()
         -- VisualNOS = { bg = c.bg_visual }, -- Visual mode selection when vim is "Not Owning the Selection".
         -- WildMenu = { bg = c.bg_visual }, -- current match in 'wildmenu' completion
 
+        ---
+
         -- These groups are not listed as default vim groups,
         -- but they are defacto standard group names for syntax highlighting.
         -- commented out groups should chain up to their "preferred" group by
         -- default,
         -- Uncomment and edit if you want more specific syntax highlighting.
-        --
-        -- -- Number        = { }, --   a number constant: 234, 0xff
-        -- -- SpecialChar   = { }, --  special character in a constant
-        -- -- SpecialComment= { }, -- special things inside a comment
-        --
-        -- Bold = { bold = true },
-        -- Italic = { italic = true },
-        --
+        -- Number        = { }, --   a number constant: 234, 0xff
+        -- SpecialChar   = { }, --  special character in a constant
+        -- SpecialComment= { }, -- special things inside a comment
+
+        Bold = { bold = true },
+        Italic = { italic = true },
+
         -- -- ("Ignore", below, may be invisible...)
         -- -- Ignore = { }, -- (preferred) left blank, hidden  |hl-Ignore|
-        --
-        --
+
         -- qfLineNr = { fg = c.dark5 },
         -- qfFileName = { fg = c.blue },
 
-        htmlH1 = { fg = c.magenta, bold = true },
+        htmlH1 = { fg = c.fg, bold = true },
         htmlH2 = { fg = c.fg, bold = true },
+        -- htmlH3 = { fg = c.fg },
 
-        -- Markdown
+        --- Markdown
         markdownCode = { fg = c.purple, bold = true },
         markdownCodeDelimiter = { fg = c.green_light },
         markdownLinkTextDelimiter = { fg = c.blue_light },
@@ -330,48 +332,29 @@ function M.setup()
         -- ["@lsp.typemod.variable.injected"] = { link = "@variable" },
         -- -- NOTE: maybe add these with distinct highlights?
         -- -- ["@lsp.typemod.variable.globalScope"] (global variables)
-        --
-        -- -- ts-rainbow
-        -- rainbowcol1 = { fg = c.red },
-        -- rainbowcol2 = { fg = c.yellow },
-        -- rainbowcol3 = { fg = c.green },
-        -- rainbowcol4 = { fg = c.teal },
-        -- rainbowcol5 = { fg = c.blue },
-        -- rainbowcol6 = { fg = c.magenta },
-        -- rainbowcol7 = { fg = c.purple },
-        --
-        -- -- ts-rainbow2 (maintained fork)
-        -- TSRainbowRed = { fg = c.red },
-        -- TSRainbowOrange = { fg = c.orange },
-        -- TSRainbowYellow = { fg = c.yellow },
-        -- TSRainbowGreen = { fg = c.green },
-        -- TSRainbowBlue = { fg = c.blue },
-        -- TSRainbowViolet = { fg = c.purple },
-        -- TSRainbowCyan = { fg = c.cyan },
-        --
-        -- -- rainbow-delimiters
-        -- RainbowDelimiterRed = { fg = c.red },
+
+        -- Rainbow Delimiters
+        -- RainbowDelimiterRed = { fg = c.magenta },
         -- RainbowDelimiterOrange = { fg = c.orange },
         -- RainbowDelimiterYellow = { fg = c.yellow },
-        -- RainbowDelimiterGreen = { fg = c.green },
-        -- RainbowDelimiterBlue = { fg = c.blue },
+        -- RainbowDelimiterGreen = { fg = c.green_light },
+        -- RainbowDelimiterBlue = { fg = c.blue_light },
         -- RainbowDelimiterViolet = { fg = c.purple },
-        -- RainbowDelimiterCyan = { fg = c.cyan },
-        --
+        -- RainbowDelimiterCyan = { fg = c.blue_bright },
+
         -- -- LspTrouble
         -- TroubleText = { fg = c.fg_dark },
         -- TroubleCount = { fg = c.magenta, bg = c.fg_gutter },
         -- TroubleNormal = { fg = c.fg_sidebar, bg = c.bg_sidebar },
-        --
+
         -- -- Illuminate
         -- illuminatedWord = { bg = c.fg_gutter },
         -- illuminatedCurWord = { bg = c.fg_gutter },
         -- IlluminatedWordText = { bg = c.fg_gutter },
         -- IlluminatedWordRead = { bg = c.fg_gutter },
         -- IlluminatedWordWrite = { bg = c.fg_gutter },
-        --
-        --
-        -- -- Neogit
+
+        -- Neogit
         -- NeogitBranch = { fg = c.magenta },
         -- NeogitRemote = { fg = c.purple },
         -- NeogitHunkHeader = { bg = c.bg_highlight, fg = c.fg },
@@ -379,8 +362,8 @@ function M.setup()
         -- NeogitDiffContextHighlight = { bg = util.darken(c.fg_gutter, 0.5), fg = c.fg_dark },
         -- NeogitDiffDeleteHighlight = { fg = c.git.delete, bg = c.diff.delete },
         -- NeogitDiffAddHighlight = { fg = c.git.add, bg = c.diff.add },
-        --
-        -- -- Neotest
+
+        -- Neotest
         -- NeotestPassed = { fg = c.green },
         -- NeotestRunning = { fg = c.yellow },
         -- NeotestFailed = { fg = c.red },
@@ -398,16 +381,16 @@ function M.setup()
         -- NeotestMarked = { fg = c.blue },
         -- NeotestTarget = { fg = c.blue },
         -- --[[ NeotestUnknown = {}, ]]
-        --
-        -- -- GitGutter
+
+        -- GitGutter
         -- GitGutterAdd = { fg = c.gitSigns.add }, -- diff mode: Added line |diff.txt|
         -- GitGutterChange = { fg = c.gitSigns.change }, -- diff mode: Changed line |diff.txt|
         -- GitGutterDelete = { fg = c.gitSigns.delete }, -- diff mode: Deleted line |diff.txt|
         -- GitGutterAddLineNr = { fg = c.gitSigns.add },
         -- GitGutterChangeLineNr = { fg = c.gitSigns.change },
         -- GitGutterDeleteLineNr = { fg = c.gitSigns.delete },
-        --
-        -- -- GitSigns
+
+        -- GitSigns
         -- GitSignsAdd = { fg = c.gitSigns.add }, -- diff mode: Added line |diff.txt|
         -- GitSignsChange = { fg = c.gitSigns.change }, -- diff mode: Changed line |diff.txt|
         -- GitSignsDelete = { fg = c.gitSigns.delete }, -- diff mode: Deleted line |diff.txt|
@@ -416,7 +399,7 @@ function M.setup()
         TelescopeBorder = { fg = c.border_highlight, bg = options.transparent and c.none or c.bg_float },
         TelescopeNormal = { fg = c.fg, bg = options.transparent and c.none or c.bg_float },
 
-        -- -- NvimTree
+        -- NvimTree
         -- NvimTreeNormal = { fg = c.fg_sidebar, bg = c.bg_sidebar },
         -- NvimTreeWinSeparator = {
         --   fg = options.styles.sidebars == "transparent" and c.border or c.bg_sidebar,
@@ -437,11 +420,11 @@ function M.setup()
         -- NeoTreeNormal = { fg = c.fg_sidebar, bg = c.bg_sidebar },
         -- NeoTreeNormalNC = { fg = c.fg_sidebar, bg = c.bg_sidebar },
         -- NeoTreeDimText = { fg = c.fg_gutter },
-        --
+
         -- -- Fern
         -- FernBranchText = { fg = c.blue },
-        --
-        -- -- glyph palette
+
+        -- glyph palette
         -- GlyphPalette1 = { fg = c.red1 },
         -- GlyphPalette2 = { fg = c.green },
         -- GlyphPalette3 = { fg = c.yellow },
@@ -449,8 +432,8 @@ function M.setup()
         -- GlyphPalette6 = { fg = c.green1 },
         -- GlyphPalette7 = { fg = c.fg },
         -- GlyphPalette9 = { fg = c.red },
-        --
-        -- -- Dashboard
+
+        -- Dashboard
         -- DashboardShortCut = { fg = c.cyan },
         -- DashboardHeader = { fg = c.blue },
         -- DashboardCenter = { fg = c.magenta },
@@ -463,7 +446,7 @@ function M.setup()
         -- AlphaFooter = { fg = c.grey_medium },
         -- AlphaButtons = { fg = c.blue_light },
 
-        -- -- WhichKey
+        -- WhichKey
         -- WhichKey = { fg = c.cyan },
         -- WhichKeyGroup = { fg = c.blue },
         -- WhichKeyDesc = { fg = c.magenta },
@@ -471,8 +454,8 @@ function M.setup()
         -- WhichKeySeparator = { fg = c.comment },
         -- WhichKeyFloat = { bg = c.bg_sidebar },
         -- WhichKeyValue = { fg = c.dark5 },
-        --
-        -- -- LspSaga
+
+        -- LspSaga
         -- DiagnosticWarning = { link = "DiagnosticWarn" },
         -- DiagnosticInformation = { link = "DiagnosticInfo" },
         --
@@ -492,16 +475,16 @@ function M.setup()
         -- DefinitionIcon = { fg = c.blue },
         -- ReferencesIcon = { fg = c.blue },
         -- TargetWord = { fg = c.cyan },
-        --
-        -- -- NeoVim
-        -- healthError = { fg = c.error },
-        -- healthSuccess = { fg = c.green1 },
-        -- healthWarning = { fg = c.warning },
-        --
-        -- -- BufferLine
+
+        -- NeoVim
+        healthError = { fg = c.error },
+        healthSuccess = { fg = c.green_alt }, -- TODO: check color
+        healthWarning = { fg = c.warning },
+
+        -- BufferLine
         -- BufferLineIndicatorSelected = { fg = c.git.change },
-        --
-        -- -- Barbar
+
+        -- Barbar
         -- BufferCurrent = { bg = c.bg, fg = c.fg },
         -- BufferCurrentERROR = { bg = c.bg, fg = c.error },
         -- BufferCurrentHINT = { bg = c.bg, fg = c.hint },
@@ -545,12 +528,12 @@ function M.setup()
         -- BufferOffset = { bg = c.bg_statusline, fg = c.dark5 },
         -- BufferTabpageFill = { bg = util.darken(c.bg_highlight, 0.8), fg = c.dark5 },
         -- BufferTabpages = { bg = c.bg_statusline, fg = c.none },
-        --
-        -- -- Sneak
+
+        -- Sneak
         -- Sneak = { fg = c.bg_highlight, bg = c.magenta },
         -- SneakScope = { bg = c.bg_visual },
-        --
-        -- -- Hop
+
+        -- Hop
         -- HopNextKey = { fg = c.magenta2, bold = true },
         -- HopNextKey1 = { fg = c.blue2, bold = true },
         -- HopNextKey2 = { fg = util.darken(c.blue2, 0.6) },
@@ -580,8 +563,8 @@ function M.setup()
         -- -- LightspeedShortcutOverlapped = { link = "LightspeedShortcut" },
         -- -- LightspeedUniqueChar = { link = "LightspeedUnlabeledMatch" },
         -- LightspeedUnlabeledMatch = { fg = c.blue2, bold = true },
-        --
-        -- -- Cmp
+
+        -- Cmp
         -- CmpDocumentation = { fg = c.fg, bg = c.bg_float },
         -- CmpDocumentationBorder = { fg = c.border_highlight, bg = c.bg_float },
         -- CmpGhostText = { fg = c.terminal_black },
@@ -622,8 +605,8 @@ function M.setup()
         -- CmpItemKindEnumMember = { fg = c.green1, bg = c.none },
         -- CmpItemKindOperator = { fg = c.green1, bg = c.none },
         -- CmpItemKindSnippet = { fg = c.dark5, bg = c.none },
-        --
-        -- -- navic
+
+        -- navic
         -- NavicIconsFile = { fg = c.fg, bg = c.none },
         -- NavicIconsModule = { fg = c.yellow, bg = c.none },
         -- NavicIconsNamespace = { fg = c.fg, bg = c.none },
@@ -654,7 +637,7 @@ function M.setup()
         -- NavicText = { fg = c.fg, bg = c.none },
         -- NavicSeparator = { fg = c.fg, bg = c.none },
 
-        -- -- Scrollbar
+        -- Scrollbar
         -- ScrollbarHandle = { fg = c.none, bg = c.bg_highlight },
         --
         -- ScrollbarSearchHandle = { fg = c.orange, bg = c.bg_highlight },
@@ -674,8 +657,8 @@ function M.setup()
         --
         -- ScrollbarMiscHandle = { fg = c.purple, bg = c.bg_highlight },
         -- ScrollbarMisc = { fg = c.purple, bg = c.none },
-        --
-        -- -- Yanky
+
+        -- Yanky
         -- YankyPut = { link = "IncSearch" },
         -- YankyYanked = { link = "IncSearch" },
 
@@ -683,7 +666,7 @@ function M.setup()
         LazyProgressDone = { fg = c.magenta, bold = true },
         LazyProgressTodo = { fg = c.fg_gutter, bold = true },
 
-        -- -- Notify
+        -- Notify
         -- NotifyBackground = { fg = c.fg, bg = c.bg },
         -- --- Border
         -- NotifyERRORBorder = { fg = util.darken(c.error, 0.3), bg = options.transparent and c.none or c.bg },
@@ -709,8 +692,8 @@ function M.setup()
         -- NotifyINFOBody = { fg = c.fg, bg = options.transparent and c.none or c.bg },
         -- NotifyDEBUGBody = { fg = c.fg, bg = options.transparent and c.none or c.bg },
         -- NotifyTRACEBody = { fg = c.fg, bg = options.transparent and c.none or c.bg },
-        --
-        -- -- Mini
+
+        -- Mini
         -- MiniCompletionActiveParameter = { underline = true },
         --
         -- MiniCursorword = { bg = c.fg_gutter },
@@ -760,9 +743,8 @@ function M.setup()
         -- MiniTestPass = { fg = c.green, bold = true },
         --
         -- MiniTrailspace = { bg = c.red },
-        --
-        -- -- Noice
-        --
+
+        -- Noice
         -- NoiceCompletionItemKindDefault = { fg = c.fg_dark, bg = c.none },
         --
         -- NoiceCompletionItemKindKeyword = { fg = c.cyan, bg = c.none },
@@ -791,10 +773,10 @@ function M.setup()
         -- NoiceCompletionItemKindEnumMember = { fg = c.green1, bg = c.none },
         -- NoiceCompletionItemKindOperator = { fg = c.green1, bg = c.none },
         -- NoiceCompletionItemKindSnippet = { fg = c.dark5, bg = c.none },
-        --
-        -- TreesitterContext = { bg = util.darken(c.fg_gutter, 0.8) },
-        -- Hlargs = { fg = c.yellow },
-        -- -- TreesitterContext = { bg = util.darken(c.bg_visual, 0.4) },
+
+        TreesitterContext = { bg = util.darken(c.fg_gutter, 0.8) },
+        Hlargs = { fg = c.yellow },
+        -- TreesitterContext = { bg = util.darken(c.bg_visual, 0.4) },
     }
 
     if not vim.diagnostic then
