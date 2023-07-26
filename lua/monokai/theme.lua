@@ -333,6 +333,19 @@ function M.setup()
         -- -- NOTE: maybe add these with distinct highlights?
         -- -- ["@lsp.typemod.variable.globalScope"] (global variables)
 
+        ["@constructor"] = { fg = c.blue_light, italic = true },
+        ["@field"] = { fg = c.fg },
+        ["@function.builtin"] = { fg = c.green_light },
+        ["@keyword.function"] = { fg = c.blue_light, italic = true },
+        ["@parameter"] = { fg = c.orange, italic = true },
+        ["@preproc"] = { fg = c.grey, italic = true},
+        ["@punctuation.delimiter"] = { fg = c.grey_light},
+        ["@string.documentation"] = { fg = c.grey, italic = true},
+        ["@type"] = { fg = c.blue_light },
+        ["@type.builtin"] = { fg = c.blue_light, italic = true},
+        ["@variable.builtin"] = { fg = c.grey_light, italic = true},
+        ["@variable"] = { fg = c.white },
+
         -- Rainbow Delimiters
         -- RainbowDelimiterRed = { fg = c.magenta },
         -- RainbowDelimiterOrange = { fg = c.orange },
