@@ -339,12 +339,14 @@ function M.setup()
         ["@keyword.function"] = { fg = c.blue_light, italic = true },
         ["@parameter"] = { fg = c.orange, italic = true },
         ["@preproc"] = { fg = c.grey, italic = true},
-        ["@punctuation.delimiter"] = { fg = c.grey_light},
+        ["@punctuation.delimiter"] = { fg = c.grey},
         ["@string.documentation"] = { fg = c.grey, italic = true},
         ["@type"] = { fg = c.blue_light },
         ["@type.builtin"] = { fg = c.blue_light, italic = true},
         ["@variable.builtin"] = { fg = c.grey_light, italic = true},
         ["@variable"] = { fg = c.white },
+
+        ["@function.builtin.bash"] = { fg = c.blue_light },
 
         -- Rainbow Delimiters
         -- RainbowDelimiterRed = { fg = c.magenta },
