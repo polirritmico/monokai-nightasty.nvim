@@ -150,7 +150,6 @@ function M.setup()
         -- WildMenu = { bg = c.bg_visual }, -- current match in 'wildmenu' completion
 
         ---
-
         -- These groups are not listed as default vim groups,
         -- but they are defacto standard group names for syntax highlighting.
         -- commented out groups should chain up to their "preferred" group by
@@ -197,24 +196,25 @@ function M.setup()
         mkdCodeDelimiter = { fg = c.purple },
         -- mkdLink = { fg = c.blue_light, underline = true },
 
-        -- ["helpCommand"] = { bg = c.terminal_black, fg = c.blue },
-        --
-        -- debugPC = { bg = c.bg_sidebar }, -- used for highlighting the current line in terminal-debug
-        -- debugBreakpoint = { bg = util.darken(c.info, 0.1), fg = c.info }, -- used for breakpoint colors in terminal-debug
-        --
-        -- -- These groups are for the native LSP client. Some other LSP clients may
-        -- -- use these groups, or use their own. Consult your LSP client's
-        -- -- documentation.
+        -- TODO: ??
+        ["helpCommand"] = { fg = c.blue_light, bg = c.terminal_black },
+
+        debugPC = { bg = c.bg_sidebar }, -- used for highlighting the current line in terminal-debug
+        debugBreakpoint = { bg = util.darken(c.info, 0.1), fg = c.info }, -- used for breakpoint colors in terminal-debug
+
+        -- These groups are for the native LSP client. Some other LSP clients may
+        -- use these groups, or use their own. Consult your LSP client's
+        -- documentation.
         LspReferenceText = { bg = c.fg_gutter }, -- used for highlighting "text" references
         LspReferenceRead = { bg = c.fg_gutter }, -- used for highlighting "read" references
         LspReferenceWrite = { bg = c.fg_gutter }, -- used for highlighting "write" references
 
-        -- DiagnosticError = { fg = c.error }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-        -- DiagnosticWarn = { fg = c.warning }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-        -- DiagnosticInfo = { fg = c.info }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-        -- DiagnosticHint = { fg = c.hint }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-        -- DiagnosticUnnecessary = { fg = c.terminal_black }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-        --
+        DiagnosticError = { fg = c.error }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+        DiagnosticWarn = { fg = c.warning }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+        DiagnosticInfo = { fg = c.info }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+        DiagnosticHint = { fg = c.hint }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+        DiagnosticUnnecessary = { fg = c.terminal_black }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+
         -- DiagnosticVirtualTextError = { bg = util.darken(c.error, 0.1), fg = c.error }, -- Used for "Error" diagnostic virtual text
         -- DiagnosticVirtualTextWarn = { bg = util.darken(c.warning, 0.1), fg = c.warning }, -- Used for "Warning" diagnostic virtual text
         -- DiagnosticVirtualTextInfo = { bg = util.darken(c.info, 0.1), fg = c.info }, -- Used for "Information" diagnostic virtual text
@@ -239,113 +239,98 @@ function M.setup()
         -- -- These groups are for the Neovim tree-sitter highlights.
         -- -- As of writing, tree-sitter support is a WIP, group names may change.
         --
-        -- --- Misc
-        -- -- TODO:
+        --- Misc
+        -- TODO:
         -- -- ["@comment.documentation"] = { },
         -- ["@operator"] = { fg = c.blue5 }, -- For any operator: `+`, but also `->` and `*` in C.
-        --
-        -- --- Punctuation
-        -- ["@punctuation.delimiter"] = { fg = c.blue5 }, -- For delimiters ie: `.`
-        -- ["@punctuation.bracket"] = { fg = c.fg_dark }, -- For brackets and parens.
+        ["@preproc"] = { fg = c.grey, italic = true},
+
+        --- Punctuation
+        ["@punctuation.delimiter"] = { fg = c.grey}, -- For delimiters ie: `.`
+        ["@punctuation.bracket"] = { fg = c.magenta }, -- For brackets and parens.
         -- ["@punctuation.special"] = { fg = c.blue5 }, -- For special punctutation that does not fall in the catagories before.
         -- ["@punctuation.special.markdown"] = { fg = c.orange, bold = true },
-        --
-        -- --- Literals
-        -- ["@string.documentation"] = { fg = c.yellow },
+
+        --- Literals
+        ["@string.documentation"] = { fg = c.grey, italic = true},
+        -- TODO: Check with reference:
         -- ["@string.regex"] = { fg = c.blue6 }, -- For regexes.
-        -- ["@string.escape"] = { fg = c.magenta }, -- For escape characters within a string.
-        --
-        -- --- Functions
-        -- ["@constructor"] = { fg = c.magenta }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
-        -- ["@parameter"] = { fg = c.yellow }, -- For parameters of a function.
-        -- -- TODO:
-        -- -- ["@parameter.builtin"] = {}, -- For builtin parameters of a function, e.g. "..." or Smali's p[1-99]
-        --
-        -- --- Keywords
-        -- ["@keyword"] = { fg = c.purple, style = options.styles.keywords }, -- For keywords that don't fall in previous categories.
-        -- -- TODO:
-        -- -- ["@keyword.coroutine"] = { }, -- For keywords related to coroutines.
-        -- ["@keyword.function"] = { fg = c.magenta, style = options.styles.functions }, -- For keywords used to define a fuction.
-        --
+        --["@string.escape"] = { fg = c.purple }, -- For escape characters within a string.
+
+        --- Functions
+        ["@constructor"] = { fg = c.blue_light, italic = true },
+        ["@parameter"] = { fg = c.orange, italic = true }, -- parameters of a function
+        ["@function.builtin"] = { fg = c.green_light },
+
+        --- Keywords
+        ["@keyword"] = { fg = c.magenta, style = options.styles.keywords }, -- For keywords that don't fall in previous categories.
+        ["@keyword.function"] = { fg = c.blue_light, italic = true },
         -- ["@label"] = { fg = c.blue }, -- For labels: `label:` in C and `:label:` in Lua.
-        --
-        -- --- Types
-        -- ["@type.builtin"] = { fg = util.darken(c.blue1, 0.8) },
-        -- ["@field"] = { fg = c.green1 }, -- For fields.
+
+        --- Types
+        ["@type"] = { fg = c.blue_light },
+        ["@field"] = { fg = c.fg },
+        ["@type.builtin"] = { fg = c.blue_light, italic = true},
         -- ["@property"] = { fg = c.green1 },
-        --
-        -- --- Identifiers
-        -- ["@variable"] = { fg = c.fg, style = options.styles.variables }, -- Any variable name that does not have another highlight.
-        -- ["@variable.builtin"] = { fg = c.red }, -- Variable names that are defined by the languages, like `this` or `self`.
-        --
-        -- --- Text
-        -- -- ["@text.literal.markdown"] = { fg = c.blue },
+
+        --- Identifiers
+        ["@variable"] = { fg = c.white, style = options.styles.variables }, -- Any variable name that does not have another highlight.
+        ["@variable.builtin"] = { fg = c.grey_light, italic = true}, -- Variable names that are defined by the languages, like `this` or `self`.
+
+        --- Text
+        -- ["@text.literal.markdown"] = { fg = c.blue },
         -- ["@text.literal.markdown_inline"] = { bg = c.terminal_black, fg = c.blue },
         -- ["@text.reference"] = { fg = c.teal },
         --
         -- ["@text.todo.unchecked"] = { fg = c.blue }, -- For brackets and parens.
         -- ["@text.todo.checked"] = { fg = c.green1 }, -- For brackets and parens.
-        -- ["@text.warning"] = { fg = c.bg, bg = c.warning },
-        -- ["@text.danger"] = { fg = c.bg, bg = c.error },
-        --
-        -- ["@text.diff.add"] = { link = "DiffAdd" },
-        -- ["@text.diff.delete"] = { link = "DiffDelete" },
-        --
+        ["@text.warning"] = { fg = c.bg, bg = c.warning },
+        ["@text.danger"] = { fg = c.bg, bg = c.error },
+
+        ["@text.diff.add"] = { link = "DiffAdd" },
+        ["@text.diff.delete"] = { link = "DiffDelete" },
+
         -- ["@namespace"] = { link = "Include" },
-        --
-        -- -- tsx
+
+        -- tsx
         -- ["@tag.tsx"] = { fg = c.red },
         -- ["@constructor.tsx"] = { fg = c.blue1 },
         -- ["@tag.delimiter.tsx"] = { fg = util.darken(c.blue, 0.7) },
-        --
-        -- -- LSP Semantic Token Groups
-        -- ["@lsp.type.boolean"] = { link = "@boolean" },
-        -- ["@lsp.type.builtinType"] = { link = "@type.builtin" },
-        -- ["@lsp.type.comment"] = { link = "@comment" },
-        -- ["@lsp.type.enum"] = { link = "@type" },
-        -- ["@lsp.type.enumMember"] = { link = "@constant" },
-        -- ["@lsp.type.escapeSequence"] = { link = "@string.escape" },
-        -- ["@lsp.type.formatSpecifier"] = { link = "@punctuation.special" },
+
+        -- LSP Semantic Token Groups
+        ["@lsp.type.boolean"] = { link = "@boolean" },
+        ["@lsp.type.builtinType"] = { link = "@type.builtin" },
+        ["@lsp.type.comment"] = { link = "@comment" },
+        ["@lsp.type.enum"] = { link = "@type" },
+        ["@lsp.type.enumMember"] = { link = "@constant" },
+        ["@lsp.type.escapeSequence"] = { link = "@string.escape" },
+        ["@lsp.type.formatSpecifier"] = { link = "@punctuation.special" },
         -- ["@lsp.type.interface"] = { fg = util.lighten(c.blue1, 0.7) },
-        -- ["@lsp.type.keyword"] = { link = "@keyword" },
-        -- ["@lsp.type.namespace"] = { link = "@namespace" },
-        -- ["@lsp.type.number"] = { link = "@number" },
-        -- ["@lsp.type.operator"] = { link = "@operator" },
-        -- ["@lsp.type.parameter"] = { link = "@parameter" },
-        -- ["@lsp.type.property"] = { link = "@property" },
-        -- ["@lsp.type.selfKeyword"] = { link = "@variable.builtin" },
-        -- ["@lsp.type.string.rust"] = { link = "@string" },
-        -- ["@lsp.type.typeAlias"] = { link = "@type.definition" },
-        -- ["@lsp.type.unresolvedReference"] = { undercurl = true, sp = c.error },
-        -- ["@lsp.type.variable"] = {}, -- use treesitter styles for regular variables
-        -- ["@lsp.typemod.class.defaultLibrary"] = { link = "@type.builtin" },
-        -- ["@lsp.typemod.enum.defaultLibrary"] = { link = "@type.builtin" },
-        -- ["@lsp.typemod.enumMember.defaultLibrary"] = { link = "@constant.builtin" },
-        -- ["@lsp.typemod.function.defaultLibrary"] = { link = "@function.builtin" },
-        -- ["@lsp.typemod.keyword.async"] = { link = "@keyword.coroutine" },
-        -- ["@lsp.typemod.macro.defaultLibrary"] = { link = "@function.builtin" },
-        -- ["@lsp.typemod.method.defaultLibrary"] = { link = "@function.builtin" },
-        -- ["@lsp.typemod.operator.injected"] = { link = "@operator" },
-        -- ["@lsp.typemod.string.injected"] = { link = "@string" },
+        ["@lsp.type.keyword"] = { link = "@keyword" },
+        ["@lsp.type.namespace"] = { link = "@namespace" },
+        ["@lsp.type.number"] = { link = "@number" },
+        ["@lsp.type.operator"] = { link = "@operator" },
+        ["@lsp.type.parameter"] = { link = "@parameter" },
+        ["@lsp.type.property"] = { link = "@property" },
+        ["@lsp.type.selfKeyword"] = { link = "@variable.builtin" },
+        ["@lsp.type.string.rust"] = { link = "@string" },
+        ["@lsp.type.typeAlias"] = { link = "@type.definition" },
+        ["@lsp.type.unresolvedReference"] = { undercurl = true, sp = c.error },
+        ["@lsp.type.variable"] = {}, -- use treesitter styles for regular variables
+        ["@lsp.typemod.class.defaultLibrary"] = { link = "@type.builtin" },
+        ["@lsp.typemod.enum.defaultLibrary"] = { link = "@type.builtin" },
+        ["@lsp.typemod.enumMember.defaultLibrary"] = { link = "@constant.builtin" },
+        ["@lsp.typemod.function.defaultLibrary"] = { link = "@function.builtin" },
+        ["@lsp.typemod.keyword.async"] = { link = "@keyword.coroutine" },
+        ["@lsp.typemod.macro.defaultLibrary"] = { link = "@function.builtin" },
+        ["@lsp.typemod.method.defaultLibrary"] = { link = "@function.builtin" },
+        ["@lsp.typemod.operator.injected"] = { link = "@operator" },
+        ["@lsp.typemod.string.injected"] = { link = "@string" },
         -- ["@lsp.typemod.type.defaultLibrary"] = { fg = util.darken(c.blue1, 0.8) },
-        -- ["@lsp.typemod.variable.defaultLibrary"] = { link = "@variable.builtin" },
-        -- ["@lsp.typemod.variable.injected"] = { link = "@variable" },
-        -- -- NOTE: maybe add these with distinct highlights?
-        -- -- ["@lsp.typemod.variable.globalScope"] (global variables)
+        ["@lsp.typemod.variable.defaultLibrary"] = { link = "@variable.builtin" },
+        ["@lsp.typemod.variable.injected"] = { link = "@variable" },
 
-        ["@constructor"] = { fg = c.blue_light, italic = true },
-        ["@field"] = { fg = c.fg },
-        ["@function.builtin"] = { fg = c.green_light },
-        ["@keyword.function"] = { fg = c.blue_light, italic = true },
-        ["@parameter"] = { fg = c.orange, italic = true },
-        ["@preproc"] = { fg = c.grey, italic = true},
-        ["@punctuation.delimiter"] = { fg = c.grey},
-        ["@string.documentation"] = { fg = c.grey, italic = true},
-        ["@type"] = { fg = c.blue_light },
-        ["@type.builtin"] = { fg = c.blue_light, italic = true},
-        ["@variable.builtin"] = { fg = c.grey_light, italic = true},
-        ["@variable"] = { fg = c.white },
-
+        -- Languages specifics
         ["@function.builtin.bash"] = { fg = c.blue_light },
 
         -- Rainbow Delimiters
