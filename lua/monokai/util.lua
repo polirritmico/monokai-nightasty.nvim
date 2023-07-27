@@ -148,8 +148,8 @@ function M.terminal(colors)
   vim.g.terminal_color_5 = colors.magenta
   vim.g.terminal_color_13 = colors.magenta
 
-  vim.g.terminal_color_6 = colors.blue_bright
-  vim.g.terminal_color_14 = colors.blue_bright
+  vim.g.terminal_color_6 = colors.blue_medium
+  vim.g.terminal_color_14 = colors.blue_medium
 end
 
 ---@param colors ColorScheme

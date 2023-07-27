@@ -270,12 +270,13 @@ function M.setup()
         --- Types
         ["@type"] = { fg = c.blue_light },
         ["@field"] = { fg = c.fg },
-        ["@type.builtin"] = { fg = c.blue_light, italic = true},
+        ["@type.builtin"] = { fg = c.blue_light, italic = true },
         -- ["@property"] = { fg = c.green1 },
 
         --- Identifiers
+        ["@attribute.builtin"] = { fg = c.magenta, italic = true }, -- Variable names that are defined by the languages, like `this` or `self`.
         ["@variable"] = { fg = c.white, style = options.styles.variables }, -- Any variable name that does not have another highlight.
-        ["@variable.builtin"] = { fg = c.grey_light, italic = true}, -- Variable names that are defined by the languages, like `this` or `self`.
+        ["@variable.builtin"] = { fg = c.grey_light, italic = true }, -- Variable names that are defined by the languages, like `this` or `self`.
 
         --- Text
         -- ["@text.literal.markdown"] = { fg = c.blue },
@@ -340,7 +341,7 @@ function M.setup()
         -- RainbowDelimiterGreen = { fg = c.green_light },
         -- RainbowDelimiterBlue = { fg = c.blue_light },
         -- RainbowDelimiterViolet = { fg = c.purple },
-        -- RainbowDelimiterCyan = { fg = c.blue_bright },
+        -- RainbowDelimiterCyan = { fg = c.blue_medium },
 
         -- -- LspTrouble
         -- TroubleText = { fg = c.fg_dark },

@@ -40,7 +40,7 @@ M.default = {
     yellow = "#ffff87",
 
     -- more colors
-    blue_bright = "#0087ff",
+    blue_medium = "#0087ff",
     -- magenta_dark = "#942eb5",
     -- green = "#79d81b",
     -- green_medium = "#58b500",
@@ -106,8 +106,8 @@ function M.setup(opts)
     colors.diff = {
         add = util.darken(colors.green_light, 0.15), -- green_medium
         delete = util.darken(colors.magenta, 0.15), -- red / red_dark
-        change = util.darken(colors.blue_bright, 0.15),
-        text = colors.blue_bright,
+        change = util.darken(colors.blue_medium, 0.15),
+        text = colors.blue_medium,
     }
 
     -- colors.git.ignore = colors.grey_dark
@@ -140,7 +140,7 @@ function M.setup(opts)
 
     colors.error = colors.red
     colors.warning = colors.orange
-    colors.info = colors.blue_bright
+    colors.info = colors.blue_medium
     colors.hint = colors.green_alt
 
     -- colors.delta = {
