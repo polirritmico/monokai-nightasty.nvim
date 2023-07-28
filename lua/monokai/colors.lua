@@ -6,6 +6,15 @@ local M = {}
 M.default = {
     none = "NONE",
 
+    -- original palette
+    purple = "#af87ff",
+    green_light = "#a4e400",
+    blue_light = "#62d8f1",
+    magenta = "#fc1a70",
+    orange = "#ff9700",
+    yellow = "#ffff87",
+
+    -- Neutrals
     black = "#000000",
     charcoal = "#262626",
     bg_dark = "#262626",
@@ -15,8 +24,6 @@ M.default = {
     bg_highlight = "#313131",
     grey_darker = "#444444",
     terminal_black = "#444444",
-    white = "#ffffff",
-    fg = "#ffffff",
     grey_lighter = "#e8e8e8",
     fg_dark = "#e8e8e8",
     grey_darker_alt = "#3e3e3e",
@@ -26,27 +33,17 @@ M.default = {
     grey = "#8a8a8a",
     comment = "#8a8a8a",
     grey_light = "#bcbcbc",
+    white = "#ffffff",
+    fg = "#ffffff",
 
-
-    -- monokai colors
-    -- black = "#000000",
-
-    -- original palette
-    purple = "#af87ff",
-    green_light = "#a4e400",
-    blue_light = "#62d8f1",
-    magenta = "#fc1a70",
-    orange = "#ff9700",
-    yellow = "#ffff87",
-
-    -- more colors
+    -- Extra colors
     blue_medium = "#0087ff",
-    -- magenta_dark = "#942eb5",
-    -- green = "#79d81b",
-    -- green_medium = "#58b500",
     green_alt = "#83dc78",
     red = "#ff005f",
     yellow_light = "#f6f557",
+    -- magenta_dark = "#942eb5",
+    -- green = "#79d81b",
+    -- green_medium = "#58b500",
     -- red_dark = "#ff1e00",
     -------------------------------
 
@@ -135,6 +132,7 @@ function M.setup(opts)
     colors.bg_search = colors.yellow
     colors.fg_search = colors.black
     colors.fg_sidebar = colors.fg_dark
+    -- TODO: Fix this to get lsp messages with background
     -- colors.fg_float = config.options.styles.floats == "dark" and colors.fg_dark or colors.fg
     colors.fg_float = colors.fg
 

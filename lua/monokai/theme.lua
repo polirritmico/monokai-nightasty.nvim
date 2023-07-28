@@ -171,6 +171,9 @@ function M.setup()
         htmlH1 = { fg = c.fg, bold = true },
         htmlH2 = { fg = c.fg, bold = true },
         -- htmlH3 = { fg = c.fg },
+        ["@tag"] = { fg = c.magenta },
+        ["@tag.attribute"] = { fg = c.blue_light, italic = true },
+        ["@tag.delimiter"] = { fg = c.grey_light },
 
         --- Markdown
         markdownCode = { fg = c.purple, bold = true },
