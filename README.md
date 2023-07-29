@@ -1,20 +1,20 @@
-#  MonoNight Tasty
+# 🫖 MonoNight Tasty 🍶
 
-***🚧 WIP 🚧***
+***🏗️ WIP 🚧***
 
 A theme for Neovim written in Lua, based on the projects tokyonight.nvim and
 vim-monokai-tasty with numerous custom adjustments. It includes additional
 configurations for tmux, lualine, zathura and others.
 
-> **Disclaimer**
-> 
+## ***⚠️ Disclaimer***
+ 
 > This project is mainly for personal use.
 
-##  Default
+## 🌙 Default
 
 ![image](https://user-images.githubusercontent.com/292349/190951628-10ba28a1-57ff-4479-8eab-47400a402242.png)
 
-##  Light
+## ☀️ Light
 
 ![image](https://user-images.githubusercontent.com/292349/115996270-78c6c480-a593-11eb-8ed0-7d1400b058f5.png)
 
@@ -28,7 +28,7 @@ configurations for tmux, lualine, zathura and others.
 - Provides [mononight-tasty](https://github.com/folke/tokyonight.nvim)
   [extras](#-extras) for numerous other applications.
 
-### 🍭 Extras
+### 🐧 Extras
 
 <!-- extras:start -->
 - [GitUI](https://github.com/extrawurst/gitui) ([gitui](extras/gitui))
@@ -56,7 +56,7 @@ Install with your package manager:
 }
 ```
 
-##  Usage
+## 🕹️ Usage
 
 ### [Lua](https://www.lua.org)
 
@@ -126,7 +126,7 @@ require("mononight-tasty").setup({
 })
 ```
 
-## 🪓 Overriding Colors & Highlight Groups
+## 🍜 Overriding Colors & Highlight Groups
 
 How the highlight groups are calculated:
 
@@ -230,23 +230,3 @@ aplugin.background = colors.bg_dark
 aplugin.my_error = util.lighten(colors.red1, 0.3) -- number between 0 and 1. 0 results in white, 1 results in red1
 ```
 
-## 🔥 Contributing
-
-Pull requests are welcome.
-
-For the [extras](#-extras), we use a simple template system that can be used to
-generate themes for the different styles.
-
-How to add a new extra template:
-
-1. Create a file like `lua/mononight-tasty/extra/cool-app.lua`.
-2. Add the name and output file extension to the `extras` table in
-   `lua/mononight-tasty/extra/init.lua`.
-3. Run the following command to generate new [extra](#-extras) themes:
-
-   ```sh
-   nvim --headless "+lua require('mononight-tasty.extra').setup()" +qa
-   ```
-
-4. Check the newly created themes in the `extra/` directory. Please **DO NOT**
-   commit them, as they are already automatically built by the CI.
