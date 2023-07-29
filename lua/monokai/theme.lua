@@ -218,16 +218,16 @@ function M.setup()
         DiagnosticHint = { fg = c.hint }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
         DiagnosticUnnecessary = { fg = c.terminal_black }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
 
-        -- DiagnosticVirtualTextError = { bg = util.darken(c.error, 0.1), fg = c.error }, -- Used for "Error" diagnostic virtual text
-        -- DiagnosticVirtualTextWarn = { bg = util.darken(c.warning, 0.1), fg = c.warning }, -- Used for "Warning" diagnostic virtual text
-        -- DiagnosticVirtualTextInfo = { bg = util.darken(c.info, 0.1), fg = c.info }, -- Used for "Information" diagnostic virtual text
-        -- DiagnosticVirtualTextHint = { bg = util.darken(c.hint, 0.1), fg = c.hint }, -- Used for "Hint" diagnostic virtual text
-        --
-        -- DiagnosticUnderlineError = { undercurl = true, sp = c.error }, -- Used to underline "Error" diagnostics
-        -- DiagnosticUnderlineWarn = { undercurl = true, sp = c.warning }, -- Used to underline "Warning" diagnostics
-        -- DiagnosticUnderlineInfo = { undercurl = true, sp = c.info }, -- Used to underline "Information" diagnostics
-        -- DiagnosticUnderlineHint = { undercurl = true, sp = c.hint }, -- Used to underline "Hint" diagnostics
-        --
+        DiagnosticVirtualTextError = { fg = c.error, bg = util.darken(c.error, 0.06) }, -- Used for "Error" diagnostic virtual text
+        DiagnosticVirtualTextWarn = { fg = c.warning, bg = util.darken(c.warning, 0.06) }, -- Used for "Warning" diagnostic virtual text
+        DiagnosticVirtualTextInfo = { fg = c.info, bg = util.darken(c.info, 0.06) }, -- Used for "Information" diagnostic virtual text
+        DiagnosticVirtualTextHint = { fg = c.hint, bg = util.darken(c.hint, 0.06) }, -- Used for "Hint" diagnostic virtual text
+
+        DiagnosticUnderlineError = { undercurl = true, sp = c.error }, -- Used to underline "Error" diagnostics
+        DiagnosticUnderlineWarn = { undercurl = true, sp = c.warning }, -- Used to underline "Warning" diagnostics
+        DiagnosticUnderlineInfo = { undercurl = true, sp = c.info }, -- Used to underline "Information" diagnostics
+        DiagnosticUnderlineHint = { undercurl = true, sp = c.hint }, -- Used to underline "Hint" diagnostics
+
         -- LspSignatureActiveParameter = { bg = util.darken(c.bg_visual, 0.4), bold = true },
         -- LspCodeLens = { fg = c.comment },
         -- LspInlayHint = { bg = util.darken(c.blue7, 0.1), fg = c.grey_dark },
@@ -336,6 +336,7 @@ function M.setup()
 
         -- Languages specifics
         ["@function.builtin.bash"] = { fg = c.blue_light },
+        ["@constructor.lua"] = { fg = c.magenta },
 
         -- Rainbow Delimiters
         -- RainbowDelimiterRed = { fg = c.magenta },

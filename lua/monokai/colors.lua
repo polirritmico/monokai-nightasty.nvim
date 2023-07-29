@@ -132,7 +132,6 @@ function M.setup(opts)
     colors.bg_search = colors.yellow
     colors.fg_search = colors.black
     colors.fg_sidebar = colors.fg_dark
-    -- TODO: Fix this to get lsp messages with background
     -- colors.fg_float = config.options.styles.floats == "dark" and colors.fg_dark or colors.fg
     colors.fg_float = colors.fg
 
