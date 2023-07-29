@@ -1,4 +1,4 @@
-# ☕ MonoNight Tasty
+#  MonoNight Tasty
 
 ***🚧 WIP 🚧***
 
@@ -10,11 +10,11 @@ configurations for tmux, lualine, zathura and others.
 > 
 > This project is mainly for personal use.
 
-## Default
+##  Default
 
 ![image](https://user-images.githubusercontent.com/292349/190951628-10ba28a1-57ff-4479-8eab-47400a402242.png)
 
-## Light
+##  Light
 
 ![image](https://user-images.githubusercontent.com/292349/115996270-78c6c480-a593-11eb-8ed0-7d1400b058f5.png)
 
@@ -56,7 +56,7 @@ Install with your package manager:
 }
 ```
 
-## 🚀 Usage
+##  Usage
 
 ### [Lua](https://www.lua.org)
 
@@ -64,9 +64,9 @@ Install with your package manager:
 vim.cmd[[colorscheme mononight-tasty]]
 ```
 
-#### External Plugins
+### External Plugins
 
-##### [Lualine](https://github.com/nvim-lualine/lualine.nvim)
+#### [Lualine](https://github.com/nvim-lualine/lualine.nvim)
 
 ```lua
 require('lualine').setup {
@@ -137,17 +137,15 @@ How the highlight groups are calculated:
    groups.
 
 For default values of `colors` and `highlights`, please consult the
-[storm](extras/lua/mononight-tasty_storm.lua),
-[moon](extras/lua/mononight-tasty_moon.lua),
-[night](extras/lua/mononight-tasty_night.lua), and
-[day](extras/lua/mononight-tasty_day.lua) themes.
+[default](extras/lua/mononight_tasty.lua), and
+[day](extras/lua/mononight_tasty_day.lua) themes.
 
 ### Settings and color alteration demonstration
 
 ```lua
 require("mononight-tasty").setup({
-  -- use the night style
-  style = "night",
+  -- use the day style
+  style = "day",
   -- disable italic for functions
   styles = {
     functions = {}
