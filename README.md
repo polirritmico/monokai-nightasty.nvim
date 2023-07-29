@@ -1,26 +1,20 @@
-# 🏙 Tokyo Night
+# ☕ MonoNight Tasty
 
-A dark and light [Neovim](https://github.com/neovim/neovim) theme written in
-[Lua](https://www.lua.org) ported from the [Visual Studio Code
-TokyoNight](https://github.com/enkia/tokyo-night-vscode-theme) theme. Includes
-[extra](#-extras) themes for [Kitty](https://sw.kovidgoyal.net/kitty/conf.html),
-[Alacritty](https://github.com/alacritty/alacritty),
-[iTerm](https://iterm2.com/) and
-[Fish](https://fishshell.com/docs/current/index.html).
+***🚧 WIP 🚧***
 
-## Storm
+A theme for Neovim written in Lua, based on the projects tokyonight.nvim and
+vim-monokai-tasty with numerous custom adjustments. It includes additional
+configurations for tmux, lualine, zathura and others.
 
-![image](https://user-images.githubusercontent.com/292349/115295095-3a9e5080-a10e-11eb-9aed-6054488c46ce.png)
+> **Disclaimer**
+> 
+> This project is mainly for personal use.
 
-## Night
-
-![image](https://user-images.githubusercontent.com/292349/115295327-7afdce80-a10e-11eb-89b3-2591262bf95a.png)
-
-## Moon
+## Default
 
 ![image](https://user-images.githubusercontent.com/292349/190951628-10ba28a1-57ff-4479-8eab-47400a402242.png)
 
-## Day
+## Light
 
 ![image](https://user-images.githubusercontent.com/292349/115996270-78c6c480-a593-11eb-8ed0-7d1400b058f5.png)
 
@@ -31,30 +25,14 @@ TokyoNight](https://github.com/enkia/tokyo-night-vscode-theme) theme. Includes
 - Enhances terminal colors.
 - Introduces a darker background option for sidebar-like windows.
 - Supports all major plugins.
-- Provides [TokyoNight](https://github.com/folke/tokyonight.nvim)
+- Provides [mononight-tasty](https://github.com/folke/tokyonight.nvim)
   [extras](#-extras) for numerous other applications.
 
 ### 🍭 Extras
 
 <!-- extras:start -->
-- [Alacritty](https://github.com/alacritty/alacritty) ([alacritty](extras/alacritty))
-- [Delta](https://github.com/dandavison/delta) ([delta](extras/delta))
-- [Dunst](https://dunst-project.org/) ([dunst](extras/dunst))
-- [Fish](https://fishshell.com/docs/current/index.html) ([fish](extras/fish))
-- [Fish Themes](https://fishshell.com/docs/current/interactive.html#syntax-highlighting) ([fish_themes](extras/fish_themes))
-- [Foot](https://codeberg.org/dnkl/foot) ([foot](extras/foot))
 - [GitUI](https://github.com/extrawurst/gitui) ([gitui](extras/gitui))
-- [iTerm](https://iterm2.com/) ([iterm](extras/iterm))
-- [Kitty](https://sw.kovidgoyal.net/kitty/conf.html) ([kitty](extras/kitty))
-- [Lua Table for testing](https://www.lua.org) ([lua](extras/lua))
-- [Prism](https://prismjs.com) ([prism](extras/prism))
-- [Sublime Text](https://www.sublimetext.com/docs/themes) ([sublime](extras/sublime))
-- [Terminator](https://gnome-terminator.readthedocs.io/en/latest/config.html) ([terminator](extras/terminator))
-- [Tilix](https://github.com/gnunn1/tilix) ([tilix](extras/tilix))
 - [Tmux](https://github.com/tmux/tmux/wiki) ([tmux](extras/tmux))
-- [WezTerm](https://wezfurlong.org/wezterm/config/) ([wezterm](extras/wezterm))
-- [Windows Terminal](https://aka.ms/terminal-documentation) ([windows_terminal](extras/windows_terminal))
-- [Xfce Terminal](https://docs.xfce.org/apps/terminal/advanced) ([xfceterm](extras/xfceterm))
 - [Xresources](https://wiki.archlinux.org/title/X_resources) ([xresources](extras/xresources))
 - [Zathura](https://pwmt.org/projects/zathura/) ([zathura](extras/zathura))
 <!-- extras:end -->
@@ -62,16 +40,16 @@ TokyoNight](https://github.com/enkia/tokyo-night-vscode-theme) theme. Includes
 ## ⚡️ Requirements
 
 - [Neovim](https://github.com/neovim/neovim) >=
-  [0.7.2](https://github.com/neovim/neovim/releases/tag/v0.7.2)
+  [0.9.0](https://github.com/neovim/neovim/releases/tag/v0.9.0)
 
 ## 📦 Installation
 
-Install the theme with your preferred package manager, such as
-[folke/lazy.nvim](https://github.com/folke/lazy.nvim):
+Install with your package manager:
 
 ```lua
+-- Lazy
 {
-  "folke/tokyonight.nvim",
+  "polirritmico/mononight-tasty.nvim",
   lazy = false,
   priority = 1000,
   opts = {},
@@ -80,72 +58,38 @@ Install the theme with your preferred package manager, such as
 
 ## 🚀 Usage
 
-### Vim Script
-
-```vim
-colorscheme tokyonight
-
-" There are also colorschemes for the different styles.
-colorscheme tokyonight-night
-colorscheme tokyonight-storm
-colorscheme tokyonight-day
-colorscheme tokyonight-moon
-```
-
 ### [Lua](https://www.lua.org)
 
 ```lua
-vim.cmd[[colorscheme tokyonight]]
+vim.cmd[[colorscheme mononight-tasty]]
 ```
 
 #### External Plugins
 
-##### [Barbecue](https://github.com/utilyre/barbecue.nvim)
-
-```lua
--- Lua
-require('barbecue').setup {
-  -- ... your barbecue config
-  theme = 'tokyonight',
-  -- ... your barbecue config
-}
-```
-
 ##### [Lualine](https://github.com/nvim-lualine/lualine.nvim)
 
 ```lua
--- Lua
 require('lualine').setup {
   options = {
-    -- ... your lualine config
-    theme = 'tokyonight'
-    -- ... your lualine config
+    -- ...
+    theme = 'mononight-tasty'
+    -- ...
   }
 }
 ```
 
-##### [Lightline](https://github.com/itchyny/lightline.vim)
-
-```vim
-" Vim Script
-let g:lightline = {'colorscheme': 'tokyonight'}
-```
-
 ## ⚙️ Configuration
 
-> ❗️ Set the configuration **BEFORE** loading the color scheme with `colorscheme tokyonight`.
-
-The theme offers four styles: [storm](#storm), [moon](#moon), [night](#night),
-and [day](#day).
+> ❗️ Set the configuration **BEFORE** loading the color scheme with `colorscheme mononight-tasty`.
 
 The [day](#day) style is used when `{ style = "day" }` is passed to
-`setup(options)` or when `vim.o.background = "light"`.
+`setup(options)` or when `vim.o.background = "light"` is setted.
 
-[TokyoNight](https://github.com/folke/tokyonight.nvim) uses the default options,
-unless `setup` is explicitly called.
+[Mononight](https://github.com/polirritmico/mononight-tasty.nvim) uses the
+default options, unless `setup` is explicitly called.
 
 ```lua
-require("tokyonight").setup({
+require("mononight-tasty").setup({
   -- your configuration comes here
   -- or leave it empty to use the default settings
   style = "storm", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
@@ -193,15 +137,15 @@ How the highlight groups are calculated:
    groups.
 
 For default values of `colors` and `highlights`, please consult the
-[storm](extras/lua/tokyonight_storm.lua),
-[moon](extras/lua/tokyonight_moon.lua),
-[night](extras/lua/tokyonight_night.lua), and
-[day](extras/lua/tokyonight_day.lua) themes.
+[storm](extras/lua/mononight-tasty_storm.lua),
+[moon](extras/lua/mononight-tasty_moon.lua),
+[night](extras/lua/mononight-tasty_night.lua), and
+[day](extras/lua/mononight-tasty_day.lua) themes.
 
 ### Settings and color alteration demonstration
 
 ```lua
-require("tokyonight").setup({
+require("mononight-tasty").setup({
   -- use the night style
   style = "night",
   -- disable italic for functions
@@ -220,7 +164,7 @@ require("tokyonight").setup({
 ### [Borderless Telescope](https://github.com/nvim-telescope/telescope.nvim/wiki/Gallery#borderless) example
 
 ```lua
-require("tokyonight").setup({
+require("mononight-tasty").setup({
   on_highlights = function(hl, c)
     local prompt = "#2d3149"
     hl.TelescopeNormal = {
@@ -281,8 +225,8 @@ You can easily use the color palette for other plugins inside your
 [Neovim](https://github.com/neovim/neovim) configuration:
 
 ```lua
-local colors = require("tokyonight.colors").setup() -- pass in any of the config options as explained above
-local util = require("tokyonight.util")
+local colors = require("mononight-tasty.colors").setup() -- pass in any of the config options as explained above
+local util = require("mononight-tasty.util")
 
 aplugin.background = colors.bg_dark
 aplugin.my_error = util.lighten(colors.red1, 0.3) -- number between 0 and 1. 0 results in white, 1 results in red1
@@ -297,13 +241,13 @@ generate themes for the different styles.
 
 How to add a new extra template:
 
-1. Create a file like `lua/tokyonight/extra/cool-app.lua`.
+1. Create a file like `lua/mononight-tasty/extra/cool-app.lua`.
 2. Add the name and output file extension to the `extras` table in
-   `lua/tokyonight/extra/init.lua`.
+   `lua/mononight-tasty/extra/init.lua`.
 3. Run the following command to generate new [extra](#-extras) themes:
 
    ```sh
-   nvim --headless "+lua require('tokyonight.extra').setup()" +qa
+   nvim --headless "+lua require('mononight-tasty.extra').setup()" +qa
    ```
 
 4. Check the newly created themes in the `extra/` directory. Please **DO NOT**
