@@ -218,10 +218,10 @@ function M.setup()
         DiagnosticHint = { fg = c.hint }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
         DiagnosticUnnecessary = { fg = c.terminal_black }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
 
-        DiagnosticVirtualTextError = { fg = c.error, bg = util.darken(c.error, 0.06) }, -- Used for "Error" diagnostic virtual text
-        DiagnosticVirtualTextWarn = { fg = c.warning, bg = util.darken(c.warning, 0.06) }, -- Used for "Warning" diagnostic virtual text
-        DiagnosticVirtualTextInfo = { fg = c.info, bg = util.darken(c.info, 0.06) }, -- Used for "Information" diagnostic virtual text
-        DiagnosticVirtualTextHint = { fg = c.hint, bg = util.darken(c.hint, 0.06) }, -- Used for "Hint" diagnostic virtual text
+        DiagnosticVirtualTextError = { fg = c.error, bg = util.darken(c.error, 0.08) }, -- Used for "Error" diagnostic virtual text
+        DiagnosticVirtualTextWarn = { fg = c.warning, bg = util.darken(c.warning, 0.08) }, -- Used for "Warning" diagnostic virtual text
+        DiagnosticVirtualTextInfo = { fg = c.info, bg = util.darken(c.info, 0.08) }, -- Used for "Information" diagnostic virtual text
+        DiagnosticVirtualTextHint = { fg = c.hint, bg = util.darken(c.hint, 0.08) }, -- Used for "Hint" diagnostic virtual text
 
         DiagnosticUnderlineError = { undercurl = true, sp = c.error }, -- Used to underline "Error" diagnostics
         DiagnosticUnderlineWarn = { undercurl = true, sp = c.warning }, -- Used to underline "Warning" diagnostics
