@@ -4,7 +4,7 @@
 
 set -g mode-style "fg=#a4e400,bg=#313131"
 
-set -g message-style "fg=#a4e400,bg=#313131"
+set -g message-style "fg=#ff9700,bg=#444444"
 set -g message-command-style "fg=#a4e400,bg=#313131"
 
 set -g pane-border-style "fg=#313131"
