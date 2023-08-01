@@ -31,8 +31,8 @@ function M.setup()
         Cursor = { fg = c.bg, bg = c.blue_light }, -- character under the cursor
         lCursor = { fg = c.bg, bg = c.blue_light }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
         CursorIM = { fg = c.bg, bg = c.blue_light }, -- like Cursor, but used when in IME mode |CursorIM|
-        TermCursor  = { fg = c.bg, bg = c.blue_light }, -- cursor in a focused terminal
-        TermCursorNC= { fg = c.bg, bg = c.blue_light }, -- cursor in an unfocused terminal
+        TermCursor  = { fg = c.bg, bg = c.fg }, -- cursor in a focused terminal
+        TermCursorNC= { fg = c.bg, bg = c.fg_dark }, -- cursor in an unfocused terminal
         Special = { fg = c.purple }, -- (preferred) any special symbol
         Title = { fg = c.fg, bold = true }, -- titles for output from ":set all", ":autocmd" etc.
         EndOfBuffer = { fg = c.grey_darker }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
