@@ -51,10 +51,8 @@ function M.setup()
         Conceal = {},
         CursorLine = { bg = c.bg }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
         LineNrBe = { fg = c.green_light },
-        -- Type = { fg = c.blue_light }, -- (preferred) int, long, char, etc.
         Type = {}, -- (preferred) int, long, char, etc.
         Visual = { bg = c.bg_visual }, -- Visual mode selection
-        -- TabLine = { bg = c.bg_statusline, fg = c.fg_gutter }, -- tab pages line, not active tab page label
         TabLine = { fg = c.fg_statusline, bg = c.bg_statusline, underline = true }, -- tab pages line, not active tab page label
         Whitespace = { fg = c.grey_darker }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
         TabLineSel = { bg = c.bg }, -- tab pages line, active tab page label
@@ -103,7 +101,6 @@ function M.setup()
         IncSearch = { fg = c.black, bg = c.purple }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
         Search = { fg = c.fg_search, bg = c.bg_search, bold = true }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
         CurSearch = { link = "IncSearch" },
-        -- Identifier = { fg = c.blue_light, style = options.styles.variables }, -- (preferred) any variable name
         Identifier = { fg = c.fg, style = options.styles.variables }, -- (preferred) any variable name
         Question = { fg = c.blue_light }, -- |hit-enter| prompt and yes/no questions
         StorageClass = { fg = c.blue_light, italic = true }, -- static, register, volatile, etc.
@@ -165,28 +162,31 @@ function M.setup()
         -- -- ("Ignore", below, may be invisible...)
         -- -- Ignore = { }, -- (preferred) left blank, hidden  |hl-Ignore|
 
-        -- qfLineNr = { fg = c.dark5 },
-        -- qfFileName = { fg = c.blue },
+        qfLineNr = { fg = c.grey },
+        qfFileName = { fg = c.purple },
 
-        htmlH1 = { fg = c.fg, bold = true },
-        htmlH2 = { fg = c.fg, bold = true },
+        -- htmlH1 = { fg = c.fg, bold = true },
+        -- htmlH1 = {fg = c.fg},
+        -- htmlH2 = { fg = c.fg, bold = true },
         -- htmlH3 = { fg = c.fg },
         ["@tag"] = { fg = c.magenta },
         ["@tag.attribute"] = { fg = c.blue_light, italic = true },
         ["@tag.delimiter"] = { fg = c.grey_light },
 
         --- Markdown
-        markdownCode = { fg = c.purple, bold = true },
+        markdownCode = { fg = c.purple },
+        markdownCodeBlock = { fg = c.yellow },
         markdownCodeDelimiter = { fg = c.green_light },
-        markdownLinkTextDelimiter = { fg = c.blue_light },
+        markdownH1 = { fg = c.fg, bold = true },
+        markdownHeadingDelimiter = { fg = c.magenta },
+        markdownHeadingRule = { fg = c.magenta, bold = true },
         markdownLinkDelimiter = { fg = c.blue_light },
+        markdownLinkText = { fg = c.blue_light, underline = true },
+        markdownLinkTextDelimiter = { fg = c.blue_light },
+        markdownListMarker = { fg = c.magenta },
+        markdownRule = { fg = c.blue_light },
         markdownUrl = { fg = c.orange },
-        markdownListMarker = { fg = c.blue_light },
-        -- markdownCodeBlock = { fg = c.purple },
-        -- markdownH1 = { fg = c.magenta, bold = true },
-        -- markdownH2 = { fg = c.blue, bold = true },
-        -- markdownLinkText = { fg = c.blue, underline = true },
-        -- markdownHeadingDelimiter = { fg = c.orange, bold = true },
+        ["@lsp.type.class.markdown"] = { fg = c.yellow },
 
         -- vim-markdown
         mkdHeading = { fg = c.magenta },
@@ -195,12 +195,13 @@ function M.setup()
         mkdCodeStart = { fg = c.green_light },
         mkdCodeEnd = { fg = c.green_light },
         mkdDelimiter = { fg = c.blue_light },
-        mkdListItemCheckbox = { fg = c.blue_light },
+        mkdListItem = { fg = c.magenta },
+        mkdListItemCheckbox = { fg = c.magenta },
         mkdCodeDelimiter = { fg = c.purple },
-        -- mkdLink = { fg = c.blue_light, underline = true },
+        mkdLink = { fg = c.blue_light, underline = true },
 
         -- TODO: ??
-        ["helpCommand"] = { fg = c.blue_light, bg = c.terminal_black },
+        ["helpCommand"] = { fg = c.blue_light, bg = c.bg_float },
 
         debugPC = { bg = c.bg_sidebar }, -- used for highlighting the current line in terminal-debug
         debugBreakpoint = { bg = util.darken(c.info, 0.1), fg = c.info }, -- used for breakpoint colors in terminal-debug
@@ -216,7 +217,7 @@ function M.setup()
         DiagnosticWarn = { fg = c.warning }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
         DiagnosticInfo = { fg = c.info }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
         DiagnosticHint = { fg = c.hint }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-        DiagnosticUnnecessary = { fg = c.terminal_black }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+        DiagnosticUnnecessary = { fg = c.grey_light, italic = true, undercurl = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
 
         DiagnosticVirtualTextError = { fg = c.error, bg = util.darken(c.error, 0.08) }, -- Used for "Error" diagnostic virtual text
         DiagnosticVirtualTextWarn = { fg = c.warning, bg = util.darken(c.warning, 0.08) }, -- Used for "Warning" diagnostic virtual text
