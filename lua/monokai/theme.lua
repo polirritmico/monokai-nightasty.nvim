@@ -63,7 +63,7 @@ function M.setup()
         VertSplit = { fg = c.border }, -- the column separating vertically split windows
         StatusLine = { fg = c.fg_sidebar, bg = c.bg_statusline }, -- status line of current window
         StatusLineNC = { fg = c.fg_gutter, bg = c.bg_statusline }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-        Exception = { fg = c.magenta, bold = true }, --  try, catch, throw
+        Exception = { fg = c.magenta }, --  try, catch, throw
         MatchParen = { fg = c.magenta, bold = true, underline = true }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
         Include = { fg = c.magenta }, -- preprocessor #include
         Conditional = { fg = c.magenta }, -- if, then, else, endif, switch, etc.
@@ -76,6 +76,7 @@ function M.setup()
         PreProc = { fg = c.magenta }, -- (preferred) generic Preprocessor
         Statement = { fg = c.magenta }, -- (preferred) any statement
         Repeat = { fg = c.magenta }, -- for, do, while, etc.
+
         DiffChange = { bg = c.diff.change }, -- diff mode: Changed line |diff.txt|
         DiffText = { bg = c.diff.text }, -- diff mode: Changed text within a changed line |diff.txt|
         DiffDelete = { bg = c.diff.delete }, -- diff mode: Deleted line |diff.txt|
@@ -403,7 +404,11 @@ function M.setup()
 
         -- Telescope
         TelescopeBorder = { fg = c.border_highlight, bg = options.transparent and c.none or c.bg_float },
-        TelescopeNormal = { fg = c.fg, bg = options.transparent and c.none or c.bg_float },
+        TelescopeNormal = { fg = c.grey_light, bg = options.transparent and c.none or c.bg_float },
+        -- TelescopePromptNormal = {},
+        TelescopePromptPrefix = { fg = c.blue_medium },
+        TelescopeSelection = { fg = c.fg, bg = c.bg_statusline },
+        TelescopeSelectionCaret = { fg = c.magenta, bg = c.bg_statusline },
 
         -- NvimTree
         -- NvimTreeNormal = { fg = c.fg_sidebar, bg = c.bg_sidebar },
@@ -453,13 +458,13 @@ function M.setup()
         -- AlphaButtons = { fg = c.blue_light },
 
         -- WhichKey
-        -- WhichKey = { fg = c.cyan },
-        -- WhichKeyGroup = { fg = c.blue },
-        -- WhichKeyDesc = { fg = c.magenta },
-        -- WhichKeySeperator = { fg = c.comment },
-        -- WhichKeySeparator = { fg = c.comment },
-        -- WhichKeyFloat = { bg = c.bg_sidebar },
-        -- WhichKeyValue = { fg = c.dark5 },
+        WhichKey = { fg = c.yellow },
+        WhichKeyGroup = { fg = c.magenta },
+        WhichKeySeparator = { fg = c.grey_light, italic = false },
+        WhichKeyDesc = { fg = c.fg },
+        WhichKeyFloat = { bg = c.bg_sidebar },
+        WhichKeyBorder = { bg = c.bg_sidebar },
+        WhichKeyValue = { fg = c.grey_light },
 
         -- LspSaga
         -- DiagnosticWarning = { link = "DiagnosticWarn" },
@@ -823,6 +828,7 @@ function M.setup()
     options.on_highlights(theme.highlights, theme.colors)
 
     if config.is_day() then
+        -- FIXME: The day theme need a lot of work. Maybe only invert neutrals.
         util.invert_colors(theme.colors)
         util.invert_highlights(theme.highlights)
     end
