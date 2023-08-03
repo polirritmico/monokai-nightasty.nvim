@@ -24,8 +24,6 @@ M.default = {
     bg_highlight = "#313131",
     grey_darker = "#444444",
     terminal_black = "#444444",
-    grey_lighter = "#e8e8e8",
-    fg_dark = "#e8e8e8",
     grey_darker_alt = "#3e3e3e",
     fg_gutter = "#3e3e3e",
     grey_dark = "#4b4b4b",
@@ -33,8 +31,10 @@ M.default = {
     grey = "#8a8a8a",
     comment = "#8a8a8a",
     grey_light = "#bcbcbc",
-    white = "#ffffff",
+    grey_lighter = "#e8e8e8",
+    fg_dark = "#e8e8e8",
     fg = "#ffffff",
+    white = "#ffffff",
 
     -- Extra colors
     blue_medium = "#0087ff",
