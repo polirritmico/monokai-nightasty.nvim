@@ -133,6 +133,7 @@ function M.setup()
         SignColumnSB = { bg = c.bg_sidebar, fg = c.fg_gutter }, -- column where |signs| are displayed
         MsgArea = { fg = c.fg_dark }, -- Area for messages and cmdline
         -- MsgSeparator= { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
+        -- TODO: Fix this to get a nice and distinct set of colors for the non-current windows
         NormalNC = { fg = c.fg, bg = options.transparent and c.none or options.dim_inactive and c.bg_dark or c.bg }, -- normal text in non-current windows
         NormalSB = { fg = c.fg_sidebar, bg = c.bg_sidebar }, -- normal text in sidebar
         NormalFloat = { fg = c.fg_float, bg = c.bg_float }, -- Normal text in floating windows.
