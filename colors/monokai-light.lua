@@ -1,1 +1,1 @@
-require("monokai")._load("day")
+require("monokai")._load("light")
