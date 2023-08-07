@@ -6,12 +6,10 @@ local M = {}
 function M.generate(colors)
   local tmux = util.template(
     [[
-#!/usr/bin/env bash
-
 # Monokai colors for Tmux
 
 tm_bg="${grey_darker}"
-tm_fg="${grey}"
+tm_fg="${grey_lighter}"
 tm_bg_highlight="${bg_highlight}"
 tm_green="${green_light}"
 tm_orange="${orange}"
