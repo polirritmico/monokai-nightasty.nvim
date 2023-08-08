@@ -786,9 +786,9 @@ function M.setup()
         -- NoiceCompletionItemKindOperator = { fg = c.green1, bg = c.none },
         -- NoiceCompletionItemKindSnippet = { fg = c.dark5, bg = c.none },
 
-        TreesitterContext = { bg = util.darken(c.fg_gutter, 0.8) },
+        TreesitterContext = { bg = options.transparent and c.none or util.darken(c.fg_gutter, 0.8) },
+        TreesitterContextBottom = { sp = c.blue_light, underline = true },
         Hlargs = { fg = c.yellow },
-        -- TreesitterContext = { bg = util.darken(c.bg_visual, 0.4) },
     }
 
     if not vim.diagnostic then
