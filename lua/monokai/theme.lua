@@ -493,6 +493,11 @@ function M.setup()
         healthSuccess = { fg = c.green_alt }, -- TODO: check color
         healthWarning = { fg = c.warning },
 
+        -- TreeSitter
+        TreesitterContext = { bg = options.transparent and c.none or util.darken(c.fg_gutter, 0.8) },
+        TreesitterContextBottom = { sp = c.blue_light, underline = true },
+        Hlargs = { fg = c.yellow },
+
         -- BufferLine
         -- BufferLineIndicatorSelected = { fg = c.git.change },
 
@@ -550,18 +555,18 @@ function M.setup()
         -- HopNextKey1 = { fg = c.blue2, bold = true },
         -- HopNextKey2 = { fg = util.darken(c.blue2, 0.6) },
         -- HopUnmatched = { fg = c.grey_dark },
-        --
+
         -- TSNodeKey = { fg = c.magenta2, bold = true },
         -- TSNodeUnmatched = { fg = c.grey_dark },
-        --
+
         -- LeapMatch = { bg = c.magenta2, fg = c.fg, bold = true },
         -- LeapLabelPrimary = { fg = c.magenta2, bold = true },
         -- LeapLabelSecondary = { fg = c.green1, bold = true },
         -- LeapBackdrop = { fg = c.grey_dark },
-        --
+
         -- FlashBackdrop = { fg = c.grey_dark },
         -- FlashLabel = { bg = c.magenta2, bold = true, fg = c.fg },
-        --
+
         -- LightspeedGreyWash = { fg = c.grey_dark },
         -- -- LightspeedCursor = { link = "Cursor" },
         -- LightspeedLabel = { fg = c.magenta2, bold = true, underline = true },
@@ -785,10 +790,6 @@ function M.setup()
         -- NoiceCompletionItemKindEnumMember = { fg = c.green1, bg = c.none },
         -- NoiceCompletionItemKindOperator = { fg = c.green1, bg = c.none },
         -- NoiceCompletionItemKindSnippet = { fg = c.dark5, bg = c.none },
-
-        TreesitterContext = { bg = options.transparent and c.none or util.darken(c.fg_gutter, 0.8) },
-        TreesitterContextBottom = { sp = c.blue_light, underline = true },
-        Hlargs = { fg = c.yellow },
     }
 
     if not vim.diagnostic then
