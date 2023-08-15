@@ -58,7 +58,10 @@ M.night = {
     bg = "#1a1b26",
     bg_dark = "#16161e",
 }
-M.day = M.night
+M.day = {
+    bg = "#050505",
+    bg_dark = "#262626",
+}
 
 ---@return ColorScheme
 function M.setup(opts)
