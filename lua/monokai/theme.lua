@@ -43,8 +43,8 @@ function M.setup()
         ErrorMsg = { fg = c.white, bg = c.red }, -- error messages on the command line
         FloatBorder = { fg = c.border_highlight, bg = c.bg_float },
         -- FloatTitle = { fg = c.border_highlight, bg = c.bg_float },
-        FoldColumn = { fg = c.comment, bg = options.transparent and c.none or c.bg }, -- 'foldcolumn'
-        Folded = { fg = c.comment, bg = c.fg_gutter }, -- line used for closed folds
+        Folded = { fg = c.blue_light, italic = true }, -- line used for closed folds
+        FoldColumn = { fg = c.orange, bg = options.transparent and c.none or c.bg_float }, -- used when foldcolumn ~= 0
         IncSearch = { fg = c.black, bg = c.purple }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
         LineNr = { fg = c.fg_gutter }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
         LineNrBe = { fg = c.green_light },
@@ -87,7 +87,7 @@ function M.setup()
         WarningMsg = { fg = c.white, bg = c.red }, -- warning messages
         Whitespace = { fg = c.grey_darker }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
         -- WildMenu = { bg = c.bg_visual }, -- current match in 'wildmenu' completion
-        WinSeparator = { fg = c.border }, --, bold = true }, -- the column separating vertically split windows
+        WinSeparator = { fg = c.border }, -- the column separating vertically split windows
         lCursor = { fg = c.bg, bg = c.blue_light }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
 
         -- These groups are not listed as default vim groups, but they are
@@ -103,7 +103,7 @@ function M.setup()
         Character = { fg = c.purple }, --  a character constant: 'c', '\n'
         Conditional = { fg = c.magenta }, -- if, then, else, endif, switch, etc.
         Constant = { fg = c.purple }, -- (preferred) any constant
-        Debug = { fg = c.orange }, -- c.magenta }, -- debugging statements
+        Debug = { fg = c.orange }, -- debugging statements
         Define = { fg = c.magenta }, -- preprocessor #define
         Delimiter = { fg = c.magenta }, -- character that needs attention
         Error = { fg = c.white, bg = c.red }, -- (preferred) any erroneous construct
