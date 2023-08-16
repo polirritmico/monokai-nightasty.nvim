@@ -54,21 +54,30 @@ M.default = {
     -- },
 }
 
-M.night = {
+-- TODO: NOT IMPLEMENTED
+M.darker_palette = {
     bg = "#1a1b26",
     bg_dark = "#16161e",
 }
-M.day = {
-    bg = "#050505",
-    bg_dark = "#262626",
+M.light_palette = {
+    bg = "#fdf9f3",
+    fg = "#2c292d",
+    comment = "#8a8a8a",
+    -- yellow = "#ff9700", -- orange
+    -- yellow = "#ffd866",
+    -- yellow = "#ffce3a",
+    -- yellow = "#e1c327",
+    yellow = "#dbb24a",
+    -- yellow = "#f5bd00",
 }
 
 ---@return ColorScheme
 function M.setup(opts)
+    print("FROM: colors.lua -> setup")
     opts = opts or {}
     local config = require("monokai.config")
-
     local style = config.is_day() and config.options.light_style or config.options.style
+    print("style: "..style)
     local palette = M[style] or {}
     if type(palette) == "function" then
         palette = palette()
@@ -121,16 +130,27 @@ function M.setup(opts)
     colors.info = colors.blue_medium
     colors.hint = colors.green_alt
 
+    -- Add light colors for invert functions
+    -- FIXME: This is a bad approach. Should set the whole palette instead of
+    -- one per one
+    colors.light_fg = M.light_palette.fg
+    colors.light_bg = M.light_palette.bg
+    colors.light_yellow = M.light_palette.yellow
+    colors.light_comment = M.light_palette.comment
+
     -- colors.delta = {
     --     add = util.darken(colors.green2, 0.45),
     --     delete = util.darken(colors.red1, 0.45),
     -- }
 
-    config.options.on_colors(colors)
-    if opts.transform and config.is_day() then
-        util.invert_colors(colors)
-    end
+    -- print(string.format("opts.transform: %s", opts.transform))
+    -- if opts.transform and config.is_day() then
+    --     -- TODO: This seems to inverts colors for lualine
+    --     -- util.invert_colors(colors)
+    --     util.invert_neutral_colors_ext(colors)
+    -- end
 
+    print("END: colors.lua -> setup")
     return colors
 end
 

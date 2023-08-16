@@ -2,7 +2,6 @@ local ts = require("monokai.treesitter")
 
 local M = {}
 
--- M.bg = "#000000"
 M.bg = "#2b2b2b"
 M.fg = "#ffffff"
 M.day_brightness = 0.3
@@ -155,6 +154,7 @@ end
 
 ---@param colors ColorScheme
 function M.invert_colors(colors)
+    print("FROM: util.lua -> invert_colors")
     if type(colors) == "string" then
         ---@diagnostic disable-next-line: return-type-mismatch
         return M.invert_color(colors)
@@ -168,6 +168,7 @@ end
 
 ---@param hls Highlights
 function M.invert_highlights(hls)
+    print("FROM util.lua -> invert_highlights. Inverting highlights!")
     for _, hl in pairs(hls) do
         if hl.fg then
             hl.fg = M.invert_color(hl.fg)
@@ -179,6 +180,34 @@ function M.invert_highlights(hls)
             hl.sp = M.invert_color(hl.sp)
         end
     end
+end
+
+function M.set_light_colors(colors)
+    print("!FROM: util.lua -> set_light_colors")
+    if colors.fg then
+        colors.fg = colors.light_fg
+    end
+    if colors.bg then
+        colors.bg = colors.light_bg
+    end
+    if colors.yellow then
+        colors.yellow = colors.light_yellow
+    end
+    if colors.comment then
+        colors.comment = colors.light_comment
+    end
+    return colors
+end
+
+function M.invert_neutral_colors_ext(colors)
+    print("FROM: util.lua -> invert_neutral_colors_ext")
+    if colors.fg then
+        colors.fg = colors.light_fg
+    end
+    if colors.bg then
+        colors.bg = colors.light_bg
+    end
+    return colors
 end
 
 ---@param theme Theme

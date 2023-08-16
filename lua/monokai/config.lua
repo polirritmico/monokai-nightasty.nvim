@@ -4,8 +4,8 @@ local M = {}
 ---@field on_colors fun(colors: ColorScheme)
 ---@field on_highlights fun(highlights: Highlights, colors: ColorScheme)
 local defaults = {
-  style = "storm", -- The theme comes in three styles, `storm`, a darker variant `night` and `day`
-  light_style = "day", -- The theme is used when the background is set to light
+  style = "dark", -- The theme comes in two styles: `dark` and `light`
+  light_style = "light", -- The theme is used when the background is set to light
   transparent = false, -- Enable this to disable setting the background color
   terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
   styles = {
@@ -52,7 +52,8 @@ function M.extend(options)
 end
 
 function M.is_day()
-  return M.options.style == "day" or M.options.use_background and vim.o.background == "light"
+  print("FROM: config.lua -> is_day")
+  return M.options.style == "light" or M.options.use_background and vim.o.background == "light"
 end
 
 M.setup()

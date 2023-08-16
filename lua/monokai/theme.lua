@@ -22,7 +22,7 @@ function M.setup()
         colors = colors.setup(),
     }
 
-    local c = theme.colors
+    local c = config.is_day() and util.set_light_colors(theme.colors) or theme.colors
 
     theme.highlights = {
         ColorColumn = { bg = c.bg }, -- used for the columns set with 'colorcolumn'
@@ -150,7 +150,7 @@ function M.setup()
         diffChanged = { fg = c.git.change },
         diffOldFile = { fg = c.yellow },
         diffNewFile = { fg = c.orange },
-        diffFile = { fg = c.white },
+        diffFile = { fg = c.fg },
         diffLine = { fg = c.purple },
         diffIndexLine = { fg = c.purple },
         diffSubname = { fg = c.yellow },
@@ -245,7 +245,7 @@ function M.setup()
 
         --- Identifiers
         ["@attribute.builtin"] = { fg = c.magenta, italic = true }, -- Variable names that are defined by the languages, like `this` or `self`.
-        ["@variable"] = { fg = c.white, style = options.styles.variables }, -- Any variable name that does not have another highlight.
+        ["@variable"] = { fg = c.fg, style = options.styles.variables }, -- Any variable name that does not have another highlight.
         ["@variable.builtin"] = { fg = c.grey_light, italic = true }, -- Variable names that are defined by the languages, like `this` or `self`.
 
         --- Text
@@ -822,11 +822,13 @@ function M.setup()
 
     options.on_highlights(theme.highlights, theme.colors)
 
-    if config.is_day() then
-        -- FIXME: The day theme need a lot of work. Maybe only invert neutrals.
-        util.invert_colors(theme.colors)
-        util.invert_highlights(theme.highlights)
-    end
+    -- if config.is_day() then
+    --     -- FIXME: The day theme need a lot of work. Maybe only invert neutrals.
+    --     -- util.invert_colors(theme.colors)
+    --     -- TODO: Why not define the colors at the top??? 
+    --     print("FROM: theme.lua -> config.isday()")
+    --     util.invert_highlights(theme.highlights)
+    -- end
 
     return theme
 end
