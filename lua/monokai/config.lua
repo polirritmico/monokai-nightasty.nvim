@@ -52,7 +52,6 @@ function M.extend(options)
 end
 
 function M.is_day()
-    print("FROM: config.lua -> is_day")
     return M.options.style == "light" or M.options.use_background and vim.o.background == "light"
 end
 

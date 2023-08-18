@@ -29,10 +29,12 @@ function M.blend(foreground, background, alpha)
 end
 
 function M.darken(hex, amount, bg)
+    -- TODO: Check the effect of M.bg on light theme
     return M.blend(hex, bg or M.bg, amount)
 end
 
 function M.lighten(hex, amount, fg)
+    -- TODO: Check the effect of M.fg on light theme
     return M.blend(hex, fg or M.fg, amount)
 end
 
@@ -154,7 +156,7 @@ end
 
 ---@param colors ColorScheme
 function M.invert_colors(colors)
-    print("FROM: util.lua -> invert_colors")
+    -- print("FROM: util.lua -> invert_colors")
     if type(colors) == "string" then
         ---@diagnostic disable-next-line: return-type-mismatch
         return M.invert_color(colors)
@@ -166,46 +168,12 @@ function M.invert_colors(colors)
     return colors
 end
 
----@param hls Highlights
-function M.invert_highlights(hls)
-    print("FROM util.lua -> invert_highlights. Inverting highlights!")
-    for _, hl in pairs(hls) do
-        if hl.fg then
-            hl.fg = M.invert_color(hl.fg)
-        end
-        if hl.bg then
-            hl.bg = M.invert_color(hl.bg)
-        end
-        if hl.sp then
-            hl.sp = M.invert_color(hl.sp)
-        end
-    end
-end
-
 function M.set_light_colors(colors)
-    print("!FROM: util.lua -> set_light_colors")
-    if colors.fg then
-        colors.fg = colors.light_fg
+    if not colors.light_theme then
+        return colors
     end
-    if colors.bg then
-        colors.bg = colors.light_bg
-    end
-    if colors.yellow then
-        colors.yellow = colors.light_yellow
-    end
-    if colors.comment then
-        colors.comment = colors.light_comment
-    end
-    return colors
-end
-
-function M.invert_neutral_colors_ext(colors)
-    print("FROM: util.lua -> invert_neutral_colors_ext")
-    if colors.fg then
-        colors.fg = colors.light_fg
-    end
-    if colors.bg then
-        colors.bg = colors.light_bg
+    for key, value in pairs(colors.light_theme) do
+        colors[key] = value
     end
     return colors
 end

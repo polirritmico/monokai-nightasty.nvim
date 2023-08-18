@@ -7,11 +7,11 @@ M.default = {
     none = "NONE",
 
     -- original palette
-    purple = "#af87ff",
-    green_light = "#a4e400",
     blue_light = "#62d8f1",
+    green_light = "#a4e400",
     magenta = "#fc1a70",
     orange = "#ff9700",
+    purple = "#af87ff",
     yellow = "#ffff87",
 
     -- Neutrals
@@ -54,30 +54,42 @@ M.default = {
     -- },
 }
 
--- TODO: NOT IMPLEMENTED
-M.darker_palette = {
-    bg = "#1a1b26",
-    bg_dark = "#16161e",
-}
 M.light_palette = {
-    bg = "#fdf9f3",
-    fg = "#2c292d",
-    comment = "#8a8a8a",
-    -- yellow = "#ff9700", -- orange
-    -- yellow = "#ffd866",
-    -- yellow = "#ffce3a",
-    -- yellow = "#e1c327",
-    yellow = "#dbb24a",
-    -- yellow = "#f5bd00",
+    -- original palette
+    blue_light = "#00b3e3",
+    green_light = "#00b400",
+    magenta = "#ff004b",
+    orange = "#ff4d00",
+    purple = "#6054d0",
+    yellow = "#ff8f00",
+
+    -- Neutrals
+    charcoal = "#e3e3e3",        -- #262626
+    bg = "#ffffff",             -- #2b2b2b, #1a1b26
+    bg_dark = "#e3e3e3",        -- #262626
+    charcoal_medium = "#dedede",-- #2b2b2b
+    charcoal_light = "#d8d8d8", -- #313131
+    bg_highlight = "#d8d8d8",   -- #313131
+    grey_darker = "#bfbfbf",    -- #444444
+    terminal_black = "#bfbfbf", -- #444444
+    grey_darker_alt = "#c9c9c9",-- #3e3e3e
+    fg_gutter = "#c9c9c9",      -- #3e3e3e
+    grey_dark = "#b2b2b2",      -- #4b4b4b
+    grey_medium = "#a5a5a5",    -- #585858
+    grey = "#7f7f7f",           -- #8a8a8a
+    comment = "#7f7f7f",        -- #8a8a8a
+    grey_light = "#4c4c4c",     -- #bcbcbc
+    grey_lighter = "#171717",   -- #e8e8e8
+    fg_dark = "#171717",        -- #e8e8e8
+    fg = "#333333",             -- #ffffff
 }
 
 ---@return ColorScheme
 function M.setup(opts)
-    print("FROM: colors.lua -> setup")
     opts = opts or {}
     local config = require("monokai.config")
+
     local style = config.is_day() and config.options.light_style or config.options.style
-    print("style: "..style)
     local palette = M[style] or {}
     if type(palette) == "function" then
         palette = palette()
@@ -90,17 +102,17 @@ function M.setup(opts)
     util.bg = colors.bg
     util.day_brightness = config.options.day_brightness
 
+    -- FIXME: This need a better selection or color is fine but the theme need work
     colors.diff = {
-        add = util.darken(colors.green_light, 0.15), -- green_medium
-        delete = util.darken(colors.magenta, 0.15), -- red / red_dark
+        add = util.darken(colors.green_light, 0.15),
+        delete = util.darken(colors.magenta, 0.15),
         change = util.darken(colors.blue_medium, 0.15),
         text = colors.blue_medium,
     }
 
     -- colors.git.ignore = colors.grey_dark
     colors.black = util.darken(colors.bg, 0.8, "#000000") -- Generate black color from bg
-    -- colors.border_highlight = util.darken(colors.blue1, 0.8)
-    colors.border_highlight = colors.fg --util.darken(colors.fg, 0.8)
+    colors.border_highlight = colors.fg
     colors.border = colors.black
 
     -- Popups and statusline always get a dark background
@@ -131,26 +143,26 @@ function M.setup(opts)
     colors.hint = colors.green_alt
 
     -- Add light colors for invert functions
-    -- FIXME: This is a bad approach. Should set the whole palette instead of
-    -- one per one
-    colors.light_fg = M.light_palette.fg
-    colors.light_bg = M.light_palette.bg
-    colors.light_yellow = M.light_palette.yellow
-    colors.light_comment = M.light_palette.comment
+    colors.light_theme = M.light_palette
 
     -- colors.delta = {
     --     add = util.darken(colors.green2, 0.45),
     --     delete = util.darken(colors.red1, 0.45),
     -- }
 
-    -- print(string.format("opts.transform: %s", opts.transform))
-    -- if opts.transform and config.is_day() then
-    --     -- TODO: This seems to inverts colors for lualine
-    --     -- util.invert_colors(colors)
-    --     util.invert_neutral_colors_ext(colors)
-    -- end
+    if opts.transform and config.is_day() then
+        -- TODO: This seems to inverts colors for lualine.
+        -- Also needs to update all plugins using
+        -- require("monokai.colors").setup()?
+        -- NOTE: Test note. Should be readable on light theme
+        -- So need a way to update the colors loaded from plugins
 
-    print("END: colors.lua -> setup")
+        -- util.invert_colors(colors)
+        -- util.invert_color_palette(colors, style)
+        -- util.set_light_colors(colors)
+        -- util.invert_neutral_colors_ext(colors)
+    end
+
     return colors
 end
 

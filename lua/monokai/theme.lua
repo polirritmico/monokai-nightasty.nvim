@@ -822,14 +822,6 @@ function M.setup()
 
     options.on_highlights(theme.highlights, theme.colors)
 
-    -- if config.is_day() then
-    --     -- FIXME: The day theme need a lot of work. Maybe only invert neutrals.
-    --     -- util.invert_colors(theme.colors)
-    --     -- TODO: Why not define the colors at the top??? 
-    --     print("FROM: theme.lua -> config.isday()")
-    --     util.invert_highlights(theme.highlights)
-    -- end
-
     return theme
 end
 
