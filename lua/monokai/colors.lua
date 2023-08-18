@@ -55,9 +55,10 @@ M.default = {
 }
 
 M.light_palette = {
-    -- original palette
+    -- Base colors
     blue_light = "#00b3e3",
-    green_light = "#00b400",
+    -- green_light = "#00b400",
+    green_light = "#a4e400",
     magenta = "#ff004b",
     orange = "#ff4d00",
     purple = "#6054d0",
@@ -98,6 +99,17 @@ function M.setup(opts)
     -- Color Palette
     ---@class ColorScheme: Palette
     local colors = vim.tbl_deep_extend("force", vim.deepcopy(M.default), palette)
+    colors.light_theme = M.light_palette -- Add light colors
+
+    if opts.transform and config.is_day() then
+        -- TODO: This seems to inverts colors for lualine.
+        -- Also needs to update all plugins using
+        -- require("monokai.colors").setup()?
+        -- NOTE: Test note. Should be readable on light theme
+        -- So need a way to update the colors loaded from plugins
+        print("TRANSFORM TRUE!")
+        util.set_light_colors(colors)
+    end
 
     util.bg = colors.bg
     util.day_brightness = config.options.day_brightness
@@ -116,7 +128,8 @@ function M.setup(opts)
     colors.border = colors.black
 
     -- Popups and statusline always get a dark background
-    colors.bg_popup = colors.grey_darker -- bg_dark
+    -- TODO: set neutrals used by lualine here to set the light theme
+    colors.bg_popup = colors.grey_darker
     colors.bg_statusline = colors.grey_darker
     colors.fg_statusline = colors.grey_light
 
@@ -125,6 +138,7 @@ function M.setup(opts)
         or config.options.styles.sidebars == "dark" and colors.bg_dark
         or colors.bg
 
+    -- FIXME: Not working for light theme. Too dark
     colors.bg_float = config.options.styles.floats == "transparent" and colors.none
         or config.options.styles.floats == "dark" and colors.bg_dark
         or colors.bg
@@ -142,26 +156,10 @@ function M.setup(opts)
     colors.info = colors.blue_medium
     colors.hint = colors.green_alt
 
-    -- Add light colors for invert functions
-    colors.light_theme = M.light_palette
-
     -- colors.delta = {
     --     add = util.darken(colors.green2, 0.45),
     --     delete = util.darken(colors.red1, 0.45),
     -- }
-
-    if opts.transform and config.is_day() then
-        -- TODO: This seems to inverts colors for lualine.
-        -- Also needs to update all plugins using
-        -- require("monokai.colors").setup()?
-        -- NOTE: Test note. Should be readable on light theme
-        -- So need a way to update the colors loaded from plugins
-
-        -- util.invert_colors(colors)
-        -- util.invert_color_palette(colors, style)
-        -- util.set_light_colors(colors)
-        -- util.invert_neutral_colors_ext(colors)
-    end
 
     return colors
 end
