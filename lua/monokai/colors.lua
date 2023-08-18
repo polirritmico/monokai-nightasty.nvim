@@ -65,7 +65,7 @@ M.light_palette = {
     yellow = "#ff8f00",
 
     -- Neutrals
-    charcoal = "#e3e3e3",        -- #262626
+    charcoal = "#e3e3e3",       -- #262626
     bg = "#ffffff",             -- #2b2b2b, #1a1b26
     bg_dark = "#e3e3e3",        -- #262626
     charcoal_medium = "#dedede",-- #2b2b2b
@@ -101,13 +101,13 @@ function M.setup(opts)
     local colors = vim.tbl_deep_extend("force", vim.deepcopy(M.default), palette)
     colors.light_theme = M.light_palette -- Add light colors
 
-    if opts.transform and config.is_day() then
+    -- if opts.transform and config.is_day() then
+    if config.is_day() then
         -- TODO: This seems to inverts colors for lualine.
         -- Also needs to update all plugins using
         -- require("monokai.colors").setup()?
         -- NOTE: Test note. Should be readable on light theme
         -- So need a way to update the colors loaded from plugins
-        print("TRANSFORM TRUE!")
         util.set_light_colors(colors)
     end
 
@@ -123,7 +123,7 @@ function M.setup(opts)
     }
 
     -- colors.git.ignore = colors.grey_dark
-    colors.black = util.darken(colors.bg, 0.8, "#000000") -- Generate black color from bg
+    -- colors.black = util.darken(colors.bg, 0.8, "#000000") -- Generate black color from bg
     colors.border_highlight = colors.fg
     colors.border = colors.black
 
@@ -138,7 +138,7 @@ function M.setup(opts)
         or config.options.styles.sidebars == "dark" and colors.bg_dark
         or colors.bg
 
-    -- FIXME: Not working for light theme. Too dark
+    -- FIXME: Not working for light theme. Too dark... does not affect telescope?
     colors.bg_float = config.options.styles.floats == "transparent" and colors.none
         or config.options.styles.floats == "dark" and colors.bg_dark
         or colors.bg
