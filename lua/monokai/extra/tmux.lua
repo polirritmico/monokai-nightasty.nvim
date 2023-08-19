@@ -9,7 +9,7 @@ function M.generate(colors)
 # Monokai colors for Tmux
 
 tm_bg="${grey_darker}"
-tm_fg="${grey_lighter}"
+tm_fg="${grey_light}"
 tm_bg_highlight="${bg_highlight}"
 tm_green="${green_light}"
 tm_orange="${orange}"
