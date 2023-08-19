@@ -787,20 +787,26 @@ function M.setup()
         -- NoiceCompletionItemKindSnippet = { fg = c.dark5, bg = c.none },
 
         -- todo-comments
-        TodoFgFIX = { fg = c.magenta },
         TodoBgFIX = { fg = c.white, bg = c.magenta, bold = true },
-        TodoFgHACK = { fg = c.orange },
         TodoBgHACK = { fg = c.black, bg = c.orange, bold = true },
-        TodoFgNOTE = { fg = c.yellow },
         TodoBgNOTE = { fg = c.black, bg = c.yellow, bold = true },
-        TodoFgPERF = { fg = c.blue_light },
         TodoBgPERF = { fg = c.black, bg = c.blue_light, bold = true },
-        TodoFgTEST = { fg = c.green_light },
         TodoBgTEST = { fg = c.black, bg = c.green_light, bold = true },
-        TodoFgTODO = { fg = c.purple },
         TodoBgTODO = { fg = c.bg_dark, bg = c.purple, bold = true },
-        TodoFgWARN = { fg = c.orange },
         TodoBgWARN = { fg = c.black, bg = c.orange, bold = true },
+        TodoFgFIX = { fg = c.magenta },
+        TodoFgHACK = { fg = c.orange },
+        TodoFgNOTE = { fg = c.yellow },
+        TodoFgPERF = { fg = c.blue_light },
+        TodoFgTEST = { fg = c.green_light },
+        TodoFgTODO = { fg = c.purple },
+        TodoFgWARN = { fg = c.orange },
+        TodoSignHACK = { link = "TodoFgHACK" },
+        TodoSignNOTE = { link = "TodoFgNOTE" },
+        TodoSignPERF = { link = "TodoFgPERF" },
+        TodoSignTEST = { link = "TodoFgTEST" },
+        TodoSignTODO = { link = "TodoFgTODO" },
+        TodoSignWARN = { link = "TodoFgWARN" },
     }
 
     if not vim.diagnostic then
