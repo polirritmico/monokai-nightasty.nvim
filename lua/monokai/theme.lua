@@ -32,7 +32,7 @@ function M.setup()
         Cursor = { fg = c.bg, bg = c.blue_light }, -- character under the cursor
         CursorColumn = { bg = c.bg_highlight }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
         CursorIM = { fg = c.bg, bg = c.blue_light }, -- like Cursor, but used when in IME mode |CursorIM|
-        CursorLine = { bg = c.charcoal_medium }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
+        CursorLine = { bg = c.bg_highlight }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
         CursorLineNR = { fg = c.yellow }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
         DiffAdd = { bg = c.diff.add }, -- diff mode: Added line |diff.txt|
         DiffChange = { bg = c.diff.change }, -- diff mode: Changed line |diff.txt|
@@ -57,6 +57,7 @@ function M.setup()
         NonText = { fg = c.grey_darker }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
         Normal = { fg = c.fg, bg = options.transparent and c.none or c.bg }, -- normal text
         NormalFloat = { fg = c.fg_float, bg = c.bg_float }, -- Normal text in floating windows.
+        -- TODO: options.dim_inactive?
         NormalNC = { fg = c.fg, bg = options.transparent and c.none or options.dim_inactive and c.bg_dark or c.bg }, -- normal text in non-current windows
         NormalSB = { fg = c.fg_sidebar, bg = c.bg_sidebar }, -- normal text in sidebar
         Pmenu = { fg = c.blue_light, bg = c.bg_popup }, -- Popup menu: normal item.
@@ -84,11 +85,10 @@ function M.setup()
         Title = { fg = c.fg, bold = true }, -- titles for output from ":set all", ":autocmd" etc.
         VertSplit = { fg = c.border }, -- the column separating vertically split windows
         Visual = { bg = c.bg_visual }, -- Visual mode selection
-        -- VisualNOS = { bg = c.bg_visual }, -- Visual mode selection when vim is "Not Owning the Selection".
+        -- VisualNOS = { bg = c.bg_visual }, -- Semi-deprecated
         WarningMsg = { fg = c.white, bg = c.red }, -- warning messages
         Whitespace = { fg = c.grey_darker }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
         -- WildMenu = { bg = c.bg_visual }, -- current match in 'wildmenu' completion
-        -- WinSeparator = { fg = c.fg }, -- the column separating vertically split windows
         WinSeparator = { fg = c.border }, -- the column separating vertically split windows
         lCursor = { fg = c.bg, bg = c.blue_light }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
 
@@ -313,6 +313,7 @@ function M.setup()
         healthWarning = { fg = c.warning },
 
         -- TreeSitter
+        -- TODO: Check options.transparent or options.styles.floats
         TreesitterContext = { bg = options.transparent and c.none or util.darken(c.fg_gutter, 0.8) },
         TreesitterContextBottom = { sp = c.blue_light, underline = true },
         Hlargs = { fg = c.yellow },
@@ -409,9 +410,8 @@ function M.setup()
         -- GitSignsDelete = { fg = c.gitSigns.delete }, -- diff mode: Deleted line |diff.txt|
 
         -- Telescope
-        TelescopeBorder = { fg = c.border_highlight, bg = options.transparent and c.none or c.bg_float },
-        TelescopeNormal = { fg = c.grey_light, bg = options.transparent and c.none or c.bg_float },
-        -- TelescopePromptNormal = {},
+        TelescopeBorder = { fg = c.border_highlight, bg = c.bg_float },
+        TelescopeNormal = { fg = c.grey_light, bg = c.bg_float },
         TelescopePromptPrefix = { fg = c.blue_medium },
         TelescopeSelection = { fg = c.fg, bg = c.bg_statusline },
         TelescopeSelectionCaret = { fg = c.magenta, bg = c.bg_statusline },

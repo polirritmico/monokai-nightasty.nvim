@@ -16,12 +16,12 @@ M.default = {
 
     -- Neutrals
     black = "#000000",
+    -- bg_dark = "#262626",
+    bg_dark = "#121212",
     charcoal = "#262626",
-    bg_dark = "#262626",
     charcoal_medium = "#2b2b2b",
     bg = "#2b2b2b",
     charcoal_light = "#313131",
-    bg_highlight = "#313131",
     grey_darker = "#444444",
     terminal_black = "#444444",
     grey_darker_alt = "#3e3e3e",
@@ -56,11 +56,8 @@ M.light_palette = {
 
     -- Neutrals
     charcoal = "#e3e3e3",        -- #262626
-    bg = "#ffffff",              -- #2b2b2b, #1a1b26
-    bg_dark = "#e3e3e3",         -- #262626
     charcoal_medium = "#dedede", -- #2b2b2b
     charcoal_light = "#d8d8d8",  -- #313131
-    bg_highlight = "#d8d8d8",    -- #313131
     grey_darker = "#bfbfbf",     -- #444444
     terminal_black = "#bfbfbf",  -- #444444
     grey_darker_alt = "#c9c9c9", -- #3e3e3e
@@ -71,6 +68,8 @@ M.light_palette = {
     comment = "#7f7f7f",         -- #8a8a8a
     grey_light = "#4c4c4c",      -- #bcbcbc
     grey_lighter = "#171717",    -- #e8e8e8
+    bg_dark = "#e3e3e3",         -- #262626, #e8e8e8
+    bg = "#ffffff",              -- #2b2b2b, #1a1b26
     fg_dark = "#171717",         -- #e8e8e8
     fg = "#333333",              -- #ffffff
 }
@@ -96,15 +95,8 @@ function M.setup(opts)
     end
 
     util.bg = colors.bg
+    -- TODO: Remove brightnes?
     util.day_brightness = config.options.day_brightness
-
-    -- FIXME: This need a better selection or color is fine but the theme need work
-    colors.diff = {
-        add = util.darken(colors.green_light, 0.15),
-        delete = util.darken(colors.magenta, 0.15),
-        change = util.darken(colors.blue_medium, 0.15),
-        text = colors.blue_medium,
-    }
 
     -- colors.git.ignore = colors.grey_dark
     colors.border = util.darken(colors.bg, 0.8, "#000000")
@@ -123,6 +115,12 @@ function M.setup(opts)
     colors.bg_float = config.options.styles.floats == "transparent" and colors.none
         or config.options.styles.floats == "dark" and colors.bg_dark
         or colors.bg
+
+    -- Set the cursor-line highlight
+    colors.bg_highlight = config.options.transparent and colors.charcoal_medium
+        or style == config.options.light_style and colors.charcoal_medium
+        or colors.grey_darker
+
     -- colors.fg_float = config.options.styles.floats == "dark" and colors.fg_dark or colors.fg
     colors.fg_float = colors.fg
 
@@ -131,11 +129,18 @@ function M.setup(opts)
     colors.fg_search = colors.black
     colors.fg_sidebar = colors.fg_dark
 
-
     colors.error = colors.red
     colors.warning = colors.orange
     colors.info = colors.blue_medium
     colors.hint = colors.green_alt
+
+    -- FIXME: This need a better selection or color is fine but the theme need work
+    colors.diff = {
+        add = util.darken(colors.green_light, 0.15),
+        delete = util.darken(colors.magenta, 0.15),
+        change = util.darken(colors.blue_medium, 0.15),
+        text = colors.blue_medium,
+    }
 
     -- colors.delta = {
     --     add = util.darken(colors.green2, 0.45),
