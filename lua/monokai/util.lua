@@ -2,7 +2,9 @@ local ts = require("monokai.treesitter")
 
 local M = {}
 
-M.bg = "#2b2b2b"
+-- TODO: Need the variant values? Circular dependency?
+-- FIXME: Convert to arguments
+M.bg = "#2b2b2b"  -- default palette charcoal_medium
 M.fg = "#ffffff"
 M.day_brightness = 0.3
 
@@ -154,13 +156,11 @@ end
 
 ---@param colors ColorScheme
 function M.invert_colors(colors)
-    -- print("FROM: util.lua -> invert_colors")
     if type(colors) == "string" then
         ---@diagnostic disable-next-line: return-type-mismatch
         return M.invert_color(colors)
     end
     for key, value in pairs(colors) do
-
         colors[key] = M.invert_colors(value)
     end
     return colors
