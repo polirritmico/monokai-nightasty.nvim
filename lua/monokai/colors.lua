@@ -41,47 +41,38 @@ M.default = {
     green_alt = "#83dc78",
     red = "#ff005f",
     yellow_light = "#f6f557",
-    -- magenta_dark = "#942eb5",
-    -- green = "#79d81b",
-    -- green_medium = "#58b500",
-    -- red_dark = "#ff1e00",
 
     git = { change = "#ff9700", add = "#a4e400", delete = "#fc1a70" },
-    -- gitSigns = {
-    --     add = "#266d6a",
-    --     change = "#536c9e",
-    --     delete = "#b2555b",
-    -- },
 }
 
 M.light_palette = {
     -- Base colors
     blue_light = "#00b3e3",
-    green_light = "#4fb000",    -- #a4e400
+    green_light = "#4fb000",     -- #a4e400
     magenta = "#ff004b",
     orange = "#ff4d00",
     purple = "#6054d0",
     yellow = "#ff8f00",
 
     -- Neutrals
-    charcoal = "#e3e3e3",       -- #262626
-    bg = "#ffffff",             -- #2b2b2b, #1a1b26
-    bg_dark = "#e3e3e3",        -- #262626
-    charcoal_medium = "#dedede",-- #2b2b2b
-    charcoal_light = "#d8d8d8", -- #313131
-    bg_highlight = "#d8d8d8",   -- #313131
-    grey_darker = "#bfbfbf",    -- #444444
-    terminal_black = "#bfbfbf", -- #444444
-    grey_darker_alt = "#c9c9c9",-- #3e3e3e
-    fg_gutter = "#c9c9c9",      -- #3e3e3e
-    grey_dark = "#b2b2b2",      -- #4b4b4b
-    grey_medium = "#a5a5a5",    -- #585858
-    grey = "#7f7f7f",           -- #8a8a8a
-    comment = "#7f7f7f",        -- #8a8a8a
-    grey_light = "#4c4c4c",     -- #bcbcbc
-    grey_lighter = "#171717",   -- #e8e8e8
-    fg_dark = "#171717",        -- #e8e8e8
-    fg = "#333333",             -- #ffffff
+    charcoal = "#e3e3e3",        -- #262626
+    bg = "#ffffff",              -- #2b2b2b, #1a1b26
+    bg_dark = "#e3e3e3",         -- #262626
+    charcoal_medium = "#dedede", -- #2b2b2b
+    charcoal_light = "#d8d8d8",  -- #313131
+    bg_highlight = "#d8d8d8",    -- #313131
+    grey_darker = "#bfbfbf",     -- #444444
+    terminal_black = "#bfbfbf",  -- #444444
+    grey_darker_alt = "#c9c9c9", -- #3e3e3e
+    fg_gutter = "#c9c9c9",       -- #3e3e3e
+    grey_dark = "#b2b2b2",       -- #4b4b4b
+    grey_medium = "#a5a5a5",     -- #585858
+    grey = "#7f7f7f",            -- #8a8a8a
+    comment = "#7f7f7f",         -- #8a8a8a
+    grey_light = "#4c4c4c",      -- #bcbcbc
+    grey_lighter = "#171717",    -- #e8e8e8
+    fg_dark = "#171717",         -- #e8e8e8
+    fg = "#333333",              -- #ffffff
 }
 
 ---@return ColorScheme
@@ -124,22 +115,22 @@ function M.setup(opts)
     colors.bg_statusline = colors.grey_darker
     colors.fg_statusline = colors.grey_light
 
+    -- TODO: Check all the posible values
     -- Sidebar and Floats are configurable
     colors.bg_sidebar = config.options.styles.sidebars == "transparent" and colors.none
         or config.options.styles.sidebars == "dark" and colors.bg_dark
         or colors.bg
-
-    -- TODO: Check all the posible values
     colors.bg_float = config.options.styles.floats == "transparent" and colors.none
         or config.options.styles.floats == "dark" and colors.bg_dark
         or colors.bg
+    -- colors.fg_float = config.options.styles.floats == "dark" and colors.fg_dark or colors.fg
+    colors.fg_float = colors.fg
 
     colors.bg_visual = colors.grey_darker
     colors.bg_search = colors.yellow
     colors.fg_search = colors.black
     colors.fg_sidebar = colors.fg_dark
-    -- colors.fg_float = config.options.styles.floats == "dark" and colors.fg_dark or colors.fg
-    colors.fg_float = colors.fg
+
 
     colors.error = colors.red
     colors.warning = colors.orange
