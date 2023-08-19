@@ -6,7 +6,7 @@ local M = {}
 M.default = {
     none = "NONE",
 
-    -- original palette
+    -- Base colors
     blue_light = "#62d8f1",
     green_light = "#a4e400",
     magenta = "#fc1a70",
@@ -57,8 +57,7 @@ M.default = {
 M.light_palette = {
     -- Base colors
     blue_light = "#00b3e3",
-    -- green_light = "#00b400",
-    green_light = "#a4e400",
+    green_light = "#4fb000",    -- #a4e400
     magenta = "#ff004b",
     orange = "#ff4d00",
     purple = "#6054d0",
@@ -101,13 +100,7 @@ function M.setup(opts)
     local colors = vim.tbl_deep_extend("force", vim.deepcopy(M.default), palette)
     colors.light_theme = M.light_palette -- Add light colors
 
-    -- if opts.transform and config.is_day() then
-    if config.is_day() then
-        -- TODO: This seems to inverts colors for lualine.
-        -- Also needs to update all plugins using
-        -- require("monokai.colors").setup()?
-        -- NOTE: Test note. Should be readable on light theme
-        -- So need a way to update the colors loaded from plugins
+    if not opts.transform and config.is_day() then
         util.set_light_colors(colors)
     end
 
@@ -123,12 +116,10 @@ function M.setup(opts)
     }
 
     -- colors.git.ignore = colors.grey_dark
-    -- colors.black = util.darken(colors.bg, 0.8, "#000000") -- Generate black color from bg
+    colors.border = util.darken(colors.bg, 0.8, "#000000")
     colors.border_highlight = colors.fg
-    colors.border = colors.black
 
     -- Popups and statusline always get a dark background
-    -- TODO: set neutrals used by lualine here to set the light theme
     colors.bg_popup = colors.grey_darker
     colors.bg_statusline = colors.grey_darker
     colors.fg_statusline = colors.grey_light
@@ -138,12 +129,11 @@ function M.setup(opts)
         or config.options.styles.sidebars == "dark" and colors.bg_dark
         or colors.bg
 
-    -- FIXME: Not working for light theme. Too dark... does not affect telescope?
+    -- TODO: Check all the posible values
     colors.bg_float = config.options.styles.floats == "transparent" and colors.none
         or config.options.styles.floats == "dark" and colors.bg_dark
         or colors.bg
 
-    -- colors.bg_visual = util.darken(colors.blue0, 0.4)
     colors.bg_visual = colors.grey_darker
     colors.bg_search = colors.yellow
     colors.fg_search = colors.black

@@ -13,7 +13,7 @@ tm_fg="${grey_lighter}"
 tm_bg_highlight="${bg_highlight}"
 tm_green="${green_light}"
 tm_orange="${orange}"
-
+tm_black="${black}"
 
 set -g mode-style "fg=$tm_green,bg=$tm_bg"
 
@@ -34,11 +34,11 @@ set -g status-right-length "100"
 set -g status-left-style NONE
 set -g status-right-style NONE
 
-tm_session="#[fg=$tm_bg,bg=$tm_green,bold] #S"
+tm_session="#[fg=$tm_black,bg=$tm_green,bold] #S"
 tm_left_arrow="#[fg=$tm_green,bg=$tm_bg_highlight]"
 tm_clock_24="#[fg=$tm_bg,bg=$tm_bg_highlight]#[fg=$tm_green,bg=$tm_bg]  %H:%M"
 tm_clock_12="#[fg=$tm_bg,bg=$tm_bg_highlight]#[fg=$tm_green,bg=$tm_bg]  %I:%M %p"
-tm_host="#[fg=$tm_bg,bg=$tm_green,bold] #h "
+tm_host="#[fg=$tm_black,bg=$tm_green,bold] #h "
 tm_right_green_to_grey_sep="#[fg=$tm_bg_highlight,bg=$tm_bg]#[fg=$tm_green,bg=$tm_bg_highlight]"
 
 set -g status-left "$tm_session $tm_left_arrow"
@@ -52,9 +52,9 @@ setw -g window-status-separator ""
 setw -g window-status-style "NONE,fg=$tm_fg,bg=$tm_bg_highlight"
 
 tm_win_inact_sep="#[fg=$tm_bg_highlight,bg=$tm_bg_highlight]"
-tm_win_inactive="#[default]#I  #W"
+tm_win_inactive="#[default]#I#W"
 
-tm_win_active="#[fg=$tm_green,bg=$tm_bg,bold] #I  #W "
+tm_win_active="#[fg=$tm_green,bg=$tm_bg,bold] #I#W "
 tm_win_act_sep="#[fg=$tm_bg_highlight,bg=$tm_bg]"
 tm_win_act_sep_end="#[fg=$tm_bg,bg=$tm_bg_highlight,nobold]"
 

@@ -29,12 +29,10 @@ function M.blend(foreground, background, alpha)
 end
 
 function M.darken(hex, amount, bg)
-    -- TODO: Check the effect of M.bg on light theme
     return M.blend(hex, bg or M.bg, amount)
 end
 
 function M.lighten(hex, amount, fg)
-    -- TODO: Check the effect of M.fg on light theme
     return M.blend(hex, fg or M.fg, amount)
 end
 
