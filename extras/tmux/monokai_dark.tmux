@@ -5,7 +5,7 @@ tm_fg="#e8e8e8"
 tm_bg_highlight="#313131"
 tm_green="#a4e400"
 tm_orange="#ff9700"
-
+tm_black="#000000"
 
 set -g mode-style "fg=$tm_green,bg=$tm_bg"
 
@@ -44,9 +44,9 @@ setw -g window-status-separator ""
 setw -g window-status-style "NONE,fg=$tm_fg,bg=$tm_bg_highlight"
 
 tm_win_inact_sep="#[fg=$tm_bg_highlight,bg=$tm_bg_highlight]"
-tm_win_inactive="#[default]#I  #W"
+tm_win_inactive="#[default]#I#W"
 
-tm_win_active="#[fg=$tm_green,bg=$tm_bg,bold] #I  #W "
+tm_win_active="#[fg=$tm_green,bg=$tm_bg,bold] #I#W "
 tm_win_act_sep="#[fg=$tm_bg_highlight,bg=$tm_bg]"
 tm_win_act_sep_end="#[fg=$tm_bg,bg=$tm_bg_highlight,nobold]"
 
