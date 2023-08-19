@@ -783,6 +783,31 @@ function M.setup()
         -- NoiceCompletionItemKindEnumMember = { fg = c.green1, bg = c.none },
         -- NoiceCompletionItemKindOperator = { fg = c.green1, bg = c.none },
         -- NoiceCompletionItemKindSnippet = { fg = c.dark5, bg = c.none },
+
+        -- todo-comments
+        -- Style test:
+        -- FIX: Some text
+        -- HACK: Some text
+        -- NOTE: Some text
+        -- PERF: Some text
+        -- TEST: Some text
+        -- TODO: Some text
+        -- WARNING: Some text
+
+        TodoFgFIX = { fg = c.magenta },
+        TodoBgFIX = { fg = c.white, bg = c.magenta, bold = true },
+        TodoFgHACK = { fg = c.orange },
+        TodoBgHACK = { fg = c.black, bg = c.orange, bold = true },
+        TodoFgNOTE = { fg = c.yellow },
+        TodoBgNOTE = { fg = c.black, bg = c.yellow, bold = true },
+        TodoFgPERF = { fg = c.blue_light },
+        TodoBgPERF = { fg = c.black, bg = c.blue_light, bold = true },
+        TodoFgTEST = { fg = c.green_light },
+        TodoBgTEST = { fg = c.black, bg = c.green_light, bold = true },
+        TodoFgTODO = { fg = c.purple },
+        TodoBgTODO = { fg = c.white, bg = c.purple, bold = true },
+        TodoFgWARN = { fg = c.orange },
+        TodoBgWARN = { fg = c.black, bg = c.orange, bold = true },
     }
 
     if not vim.diagnostic then
