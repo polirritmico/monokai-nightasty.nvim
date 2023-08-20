@@ -63,6 +63,7 @@ function M.setup()
         local plugin = require("monokai.extra." .. extra)
         for style, style_name in pairs(styles) do
             config.setup({ style = style })
+            -- TODO: Check tansform = true... maybe is not longer needed
             local colors = require("monokai.colors").setup({ transform = true })
             local fname = "extras/" .. extra .. "/monokai_" .. style .. "." .. info.ext
             colors["_upstream_url"] = "https://github.com/polirritmico/monokai.nvim/raw/main/extras/" .. fname

@@ -22,17 +22,17 @@ function M.setup()
         colors = colors.setup(),
     }
 
-    local c = theme.colors
+    local c = config.is_day() and util.set_light_colors(theme.colors) or theme.colors
 
     theme.highlights = {
         ColorColumn = { bg = c.bg }, -- used for the columns set with 'colorcolumn'
         Comment = { fg = c.comment, style = options.styles.comments }, -- any comment
-        Conceal = {}, -- {fg = c.dark5}. Placeholder characters substituted for concealed text (see 'conceallevel')
+        Conceal = {}, -- Placeholder characters substituted for concealed text (see 'conceallevel')
         CurSearch = { link = "IncSearch" },
         Cursor = { fg = c.bg, bg = c.blue_light }, -- character under the cursor
         CursorColumn = { bg = c.bg_highlight }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
         CursorIM = { fg = c.bg, bg = c.blue_light }, -- like Cursor, but used when in IME mode |CursorIM|
-        CursorLine = { bg = c.bg }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
+        CursorLine = { bg = c.bg_highlight }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
         CursorLineNR = { fg = c.yellow }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
         DiffAdd = { bg = c.diff.add }, -- diff mode: Added line |diff.txt|
         DiffChange = { bg = c.diff.change }, -- diff mode: Changed line |diff.txt|
@@ -52,10 +52,12 @@ function M.setup()
         ModeMsg = { fg = c.fg_dark, bold = true }, -- 'showmode' message (e.g., "-- INSERT -- ")
         MoreMsg = { fg = c.green_light }, -- |more-prompt|
         MsgArea = { fg = c.fg_dark }, -- Area for messages and cmdline
-        -- MsgSeparator= { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
+        -- MsgSeparator= { sp = c.blue_light, underline = true }, -- Separator for scrolled messages, `msgsep` flag of 'display'
+        MsgSeparator= { sp = c.border, underline = true }, -- Separator for scrolled messages, `msgsep` flag of 'display'
         NonText = { fg = c.grey_darker }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
         Normal = { fg = c.fg, bg = options.transparent and c.none or c.bg }, -- normal text
         NormalFloat = { fg = c.fg_float, bg = c.bg_float }, -- Normal text in floating windows.
+        -- TODO: options.dim_inactive?
         NormalNC = { fg = c.fg, bg = options.transparent and c.none or options.dim_inactive and c.bg_dark or c.bg }, -- normal text in non-current windows
         NormalSB = { fg = c.fg_sidebar, bg = c.bg_sidebar }, -- normal text in sidebar
         Pmenu = { fg = c.blue_light, bg = c.bg_popup }, -- Popup menu: normal item.
@@ -83,7 +85,7 @@ function M.setup()
         Title = { fg = c.fg, bold = true }, -- titles for output from ":set all", ":autocmd" etc.
         VertSplit = { fg = c.border }, -- the column separating vertically split windows
         Visual = { bg = c.bg_visual }, -- Visual mode selection
-        -- VisualNOS = { bg = c.bg_visual }, -- Visual mode selection when vim is "Not Owning the Selection".
+        -- VisualNOS = { bg = c.bg_visual }, -- Semi-deprecated
         WarningMsg = { fg = c.white, bg = c.red }, -- warning messages
         Whitespace = { fg = c.grey_darker }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
         -- WildMenu = { bg = c.bg_visual }, -- current match in 'wildmenu' completion
@@ -150,7 +152,7 @@ function M.setup()
         diffChanged = { fg = c.git.change },
         diffOldFile = { fg = c.yellow },
         diffNewFile = { fg = c.orange },
-        diffFile = { fg = c.white },
+        diffFile = { fg = c.fg },
         diffLine = { fg = c.purple },
         diffIndexLine = { fg = c.purple },
         diffSubname = { fg = c.yellow },
@@ -245,7 +247,7 @@ function M.setup()
 
         --- Identifiers
         ["@attribute.builtin"] = { fg = c.magenta, italic = true }, -- Variable names that are defined by the languages, like `this` or `self`.
-        ["@variable"] = { fg = c.white, style = options.styles.variables }, -- Any variable name that does not have another highlight.
+        ["@variable"] = { fg = c.fg, style = options.styles.variables }, -- Any variable name that does not have another highlight.
         ["@variable.builtin"] = { fg = c.grey_light, italic = true }, -- Variable names that are defined by the languages, like `this` or `self`.
 
         --- Text
@@ -304,6 +306,17 @@ function M.setup()
         -- Languages specifics
         ["@function.builtin.bash"] = { fg = c.blue_light },
         ["@constructor.lua"] = { fg = c.magenta },
+
+        -- NeoVim
+        healthError = { fg = c.error },
+        healthSuccess = { fg = c.green_alt }, -- TODO: check color
+        healthWarning = { fg = c.warning },
+
+        -- TreeSitter
+        -- TODO: Check options.transparent or options.styles.floats
+        TreesitterContext = { bg = options.transparent and c.none or util.darken(c.fg_gutter, 0.8) },
+        TreesitterContextBottom = { sp = c.blue_light, underline = true },
+        Hlargs = { fg = c.yellow },
 
         --- Plugins -----------------------------------------------------------
 
@@ -397,9 +410,8 @@ function M.setup()
         -- GitSignsDelete = { fg = c.gitSigns.delete }, -- diff mode: Deleted line |diff.txt|
 
         -- Telescope
-        TelescopeBorder = { fg = c.border_highlight, bg = options.transparent and c.none or c.bg_float },
-        TelescopeNormal = { fg = c.grey_light, bg = options.transparent and c.none or c.bg_float },
-        -- TelescopePromptNormal = {},
+        TelescopeBorder = { fg = c.border_highlight, bg = c.bg_float },
+        TelescopeNormal = { fg = c.grey_light, bg = c.bg_float },
         TelescopePromptPrefix = { fg = c.blue_medium },
         TelescopeSelection = { fg = c.fg, bg = c.bg_statusline },
         TelescopeSelectionCaret = { fg = c.magenta, bg = c.bg_statusline },
@@ -480,16 +492,6 @@ function M.setup()
         -- DefinitionIcon = { fg = c.blue },
         -- ReferencesIcon = { fg = c.blue },
         -- TargetWord = { fg = c.cyan },
-
-        -- NeoVim
-        healthError = { fg = c.error },
-        healthSuccess = { fg = c.green_alt }, -- TODO: check color
-        healthWarning = { fg = c.warning },
-
-        -- TreeSitter
-        TreesitterContext = { bg = options.transparent and c.none or util.darken(c.fg_gutter, 0.8) },
-        TreesitterContextBottom = { sp = c.blue_light, underline = true },
-        Hlargs = { fg = c.yellow },
 
         -- BufferLine
         -- BufferLineIndicatorSelected = { fg = c.git.change },
@@ -783,6 +785,28 @@ function M.setup()
         -- NoiceCompletionItemKindEnumMember = { fg = c.green1, bg = c.none },
         -- NoiceCompletionItemKindOperator = { fg = c.green1, bg = c.none },
         -- NoiceCompletionItemKindSnippet = { fg = c.dark5, bg = c.none },
+
+        -- todo-comments
+        TodoBgFIX = { fg = c.white, bg = c.magenta, bold = true },
+        TodoBgHACK = { fg = c.black, bg = c.orange, bold = true },
+        TodoBgNOTE = { fg = c.black, bg = c.yellow, bold = true },
+        TodoBgPERF = { fg = c.black, bg = c.blue_light, bold = true },
+        TodoBgTEST = { fg = c.black, bg = c.green_light, bold = true },
+        TodoBgTODO = { fg = c.bg_dark, bg = c.purple, bold = true },
+        TodoBgWARN = { fg = c.black, bg = c.orange, bold = true },
+        TodoFgFIX = { fg = c.magenta },
+        TodoFgHACK = { fg = c.orange },
+        TodoFgNOTE = { fg = c.yellow },
+        TodoFgPERF = { fg = c.blue_light },
+        TodoFgTEST = { fg = c.green_light },
+        TodoFgTODO = { fg = c.purple },
+        TodoFgWARN = { fg = c.orange },
+        TodoSignHACK = { link = "TodoFgHACK" },
+        TodoSignNOTE = { link = "TodoFgNOTE" },
+        TodoSignPERF = { link = "TodoFgPERF" },
+        TodoSignTEST = { link = "TodoFgTEST" },
+        TodoSignTODO = { link = "TodoFgTODO" },
+        TodoSignWARN = { link = "TodoFgWARN" },
     }
 
     if not vim.diagnostic then
@@ -821,12 +845,6 @@ function M.setup()
     end
 
     options.on_highlights(theme.highlights, theme.colors)
-
-    if config.is_day() then
-        -- FIXME: The day theme need a lot of work. Maybe only invert neutrals.
-        util.invert_colors(theme.colors)
-        util.invert_highlights(theme.highlights)
-    end
 
     return theme
 end
