@@ -98,6 +98,7 @@ function M.setup(opts)
 
     colors.light_theme = M.light_palette
     if not opts.transform and config.is_day() then
+        config.options.transparent = config.options.transparent_light
         util.set_light_colors(colors)
     end
 
@@ -109,7 +110,7 @@ function M.setup(opts)
 
     -- TODO: git ignore?
     -- colors.git.ignore = colors.grey_dark
-    colors.border = util.darken(colors.bg, 0.8, "#000000")
+    colors.border = util.darken(colors.bg, 0.8, colors.black)
     colors.border_highlight = colors.fg
 
     -- Popups and statusline always get a dark background
