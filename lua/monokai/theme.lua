@@ -22,7 +22,7 @@ function M.setup()
         colors = colors.setup(),
     }
 
-    local c = config.is_light() and util.set_light_colors(theme.colors) or theme.colors
+    local c = theme.colors
 
     theme.highlights = {
         ColorColumn = { bg = c.bg }, -- used for the columns set with 'colorcolumn'
@@ -52,7 +52,6 @@ function M.setup()
         ModeMsg = { fg = c.fg_dark, bold = true }, -- 'showmode' message (e.g., "-- INSERT -- ")
         MoreMsg = { fg = c.green_light }, -- |more-prompt|
         MsgArea = { fg = c.fg_dark }, -- Area for messages and cmdline
-        -- MsgSeparator= { sp = c.blue_light, underline = true }, -- Separator for scrolled messages, `msgsep` flag of 'display'
         MsgSeparator= { sp = c.border, underline = true }, -- Separator for scrolled messages, `msgsep` flag of 'display'
         NonText = { fg = c.grey_darker }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
         Normal = { fg = c.fg, bg = options.transparent and c.none or c.bg }, -- normal text

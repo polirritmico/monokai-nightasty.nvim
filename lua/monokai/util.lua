@@ -165,13 +165,6 @@ function M.invert_colors(colors)
     return colors
 end
 
-function M.set_light_colors(colors)
-    for key, value in pairs(colors.light_theme) do
-        colors[key] = value
-    end
-    return colors
-end
-
 ---@param theme Theme
 function M.load(theme)
     -- only needed to clear when not the default colorscheme

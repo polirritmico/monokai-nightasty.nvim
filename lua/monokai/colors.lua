@@ -85,27 +85,22 @@ function M.setup(opts)
 
     local style_cfg = config.is_light() and config.options.light_style
         or config.options.dark_style
-    local palette = config.is_light() and not opts.transform and M.light_palette or {}
+    local palette = (config.is_light() and not opts.transform) and M.light_palette or {}
 
     -- Color Palette
     ---@class ColorScheme: Palette
     local colors = vim.tbl_deep_extend("force", vim.deepcopy(M.default), palette)
-    colors.light_theme = M.light_palette
 
-    -- FIXME: Remove brightness. keep documentation and functions
-    util.day_brightness = config.options.day_brightness
+    -- util.day_brightness = config.options.day_brightness
     config.options.transparent = style_cfg.transparent
-
-    if not opts.transform and config.is_light() then
-        util.set_light_colors(colors)
-    end
 
     colors.bg = style_cfg.darker_background and colors.bg_dark or colors.bg
     util.bg = colors.bg -- util darken and lighter functions fall back values
     util.fg = colors.fg
 
     -- TODO: Check effect on light and dark
-    colors.border = util.darken(colors.bg, 0.8, colors.black)
+    -- colors.border = util.darken(colors.bg, 0.8, colors.black)
+    colors.border = colors.blue_light
     colors.border_highlight = colors.fg
 
     -- Popups and statusline always get a dark background
@@ -121,11 +116,9 @@ function M.setup(opts)
     colors.bg_float = config.options.styles.floats == "transparent" and colors.none
         or config.options.styles.floats == "dark" and colors.bg_dark
         or colors.bg
-    -- colors.fg_float = config.options.styles.floats == "dark" and colors.fg_dark or colors.fg
     colors.fg_float = colors.fg
 
     -- Set the cursor-line highlight
-    -- TODO: palette dark/light; variant normal/dark
     colors.bg_highlight = config.options.transparent and colors.charcoal_medium
         or style_cfg.darker_background and colors.charcoal_medium
         or colors.grey_darker
@@ -140,7 +133,7 @@ function M.setup(opts)
     colors.info = colors.blue_medium
     colors.hint = colors.green_alt
 
-    -- FIXME: This need a better selection or color is fine but the theme need work
+    -- FIXME: Improve this colors
     colors.diff = {
         add = util.darken(colors.green_light, 0.15),
         delete = util.darken(colors.magenta, 0.15),

@@ -61,7 +61,6 @@ function M.extend(options)
 end
 
 function M.is_light()
-    -- return M.options.style == "light" or vim.o.background == "light"
     return vim.o.background == "light"
 end
 
