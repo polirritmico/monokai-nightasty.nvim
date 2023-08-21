@@ -18,10 +18,10 @@ end
 
 ---@param opts Config|nil
 function M.load(opts)
-  if opts then
-    require("monokai.config").extend(opts)
-  end
-  util.load(theme.setup())
+    if opts then
+        require("monokai.config").extend(opts)
+    end
+    util.load(theme.setup())
 end
 
 M.setup = config.setup

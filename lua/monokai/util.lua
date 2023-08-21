@@ -2,9 +2,8 @@ local ts = require("monokai.treesitter")
 
 local M = {}
 
--- TODO: Need the variant values? Circular dependency?
--- FIXME: Convert to arguments
-M.bg = "#2b2b2b"  -- default palette charcoal_medium
+-- Default values
+M.bg = "#2b2b2b"  -- (charcoal_medium)
 M.fg = "#ffffff"
 M.day_brightness = 0.3
 
@@ -167,9 +166,6 @@ function M.invert_colors(colors)
 end
 
 function M.set_light_colors(colors)
-    if not colors.light_theme then
-        return colors
-    end
     for key, value in pairs(colors.light_theme) do
         colors[key] = value
     end
