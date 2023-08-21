@@ -15,7 +15,9 @@ local M = {}
 function M.setup()
     local config = require("monokai.config")
     local options = config.options
-    options.transparent = options.transparent ~= nil and options.transparent or false
+    if options.transparent == nil then
+        options.transparent = false
+    end
 
     ---@class Theme
     ---@field highlights Highlights
@@ -28,7 +30,7 @@ function M.setup()
 
     theme.highlights = {
         ColorColumn = { bg = c.bg }, -- used for the columns set with 'colorcolumn'
-        Comment = { fg = c.comment, style = options.styles.comments }, -- any comment
+        Comment = { fg = c.comment, style = options.hl_styles.comments }, -- any comment
         Conceal = {}, -- Placeholder characters substituted for concealed text (see 'conceallevel')
         CurSearch = { link = "IncSearch" },
         Cursor = { fg = c.bg, bg = c.blue_light }, -- character under the cursor
@@ -112,12 +114,12 @@ function M.setup()
         Error = { fg = c.white, bg = c.red }, -- (preferred) any erroneous construct
         Exception = { fg = c.magenta }, --  try, catch, throw
         Float = { fg = c.purple }, -- a floating point constant: 2.3e10
-        Function = { fg = c.green_light, style = options.styles.functions }, -- function name (also: methods for classes)
-        Identifier = { fg = c.fg, style = options.styles.variables }, -- (preferred) any variable name
+        Function = { fg = c.green_light, style = options.hl_styles.functions }, -- function name (also: methods for classes)
+        Identifier = { fg = c.fg, style = options.hl_styles.variables }, -- (preferred) any variable name
         -- ("Ignore", below, may be invisible...)
         -- Ignore = { }, -- (preferred) left blank, hidden  |hl-Ignore|
         Include = { fg = c.magenta }, -- preprocessor #include
-        Keyword = { fg = c.magenta, style = options.styles.keywords }, -- any other keyword
+        Keyword = { fg = c.magenta, style = options.hl_styles.keywords }, -- any other keyword
         Label = { fg = c.yellow }, -- case, default, etc.
         Macro = { fg = c.magenta }, -- same as Define
         -- Number = { }, --   a number constant: 234, 0xff
@@ -236,7 +238,7 @@ function M.setup()
         ["@function.builtin"] = { fg = c.green_light },
 
         --- Keywords
-        ["@keyword"] = { fg = c.magenta, style = options.styles.keywords }, -- For keywords that don't fall in previous categories.
+        ["@keyword"] = { fg = c.magenta, style = options.hl_styles.keywords }, -- For keywords that don't fall in previous categories.
         ["@keyword.function"] = { fg = c.blue_light, italic = true },
         -- ["@label"] = { fg = c.blue }, -- For labels: `label:` in C and `:label:` in Lua.
 
@@ -248,7 +250,7 @@ function M.setup()
 
         --- Identifiers
         ["@attribute.builtin"] = { fg = c.magenta, italic = true }, -- Variable names that are defined by the languages, like `this` or `self`.
-        ["@variable"] = { fg = c.fg, style = options.styles.variables }, -- Any variable name that does not have another highlight.
+        ["@variable"] = { fg = c.fg, style = options.hl_styles.variables }, -- Any variable name that does not have another highlight.
         ["@variable.builtin"] = { fg = c.grey_light, italic = true }, -- Variable names that are defined by the languages, like `this` or `self`.
 
         --- Text
@@ -316,7 +318,7 @@ function M.setup()
         -- TreeSitter
         -- TODO: Check options.transparent or options.styles.floats
         TreesitterContext = { bg = options.transparent and c.none or util.darken(c.fg_gutter, 0.8) },
-        TreesitterContextBottom = { sp = c.blue_light, underline = true },
+        TreesitterContextBottom = { sp = c.border, underline = true },
         Hlargs = { fg = c.yellow },
 
         --- Plugins -----------------------------------------------------------

@@ -91,10 +91,10 @@ function M.setup(opts)
     ---@class ColorScheme: Palette
     local colors = vim.tbl_deep_extend("force", vim.deepcopy(M.default), palette)
 
-    -- util.day_brightness = config.options.day_brightness
+    -- util.brightness = config.options.brightness
     config.options.transparent = bg_cfg == "transparent" and true or false
 
-    colors.bg = bg_cfg == "darker" and colors.bg_dark
+    colors.bg = (bg_cfg == "darker" or bg_cfg == "transparent") and colors.bg_dark
         or string.sub(bg_cfg, 1, 1) == "#" and bg_cfg
         or colors.bg
     -- Default values for util functions darken() and lighter()
@@ -102,7 +102,7 @@ function M.setup(opts)
     util.fg = colors.fg
 
     -- TODO: Check effect on light and dark
-    colors.border = colors.blue_light -- util.darken(colors.bg, 0.8, colors.black)
+    colors.border = colors.blue_light
     colors.border_highlight = colors.fg
 
     -- Popups and statusline always get a dark background
@@ -112,18 +112,20 @@ function M.setup(opts)
 
     -- TODO: Check all the posible values
     -- Sidebar and Floats are configurable
-    colors.bg_sidebar = config.options.styles.sidebars == "transparent" and colors.none
-        or config.options.styles.sidebars == "dark" and colors.bg_dark
+    colors.bg_sidebar = config.options.hl_styles.sidebars == "transparent" and colors.none
+        or config.options.hl_styles.sidebars == "dark" and colors.bg_dark
         or colors.bg
-    colors.bg_float = config.options.styles.floats == "transparent" and colors.none
-        or config.options.styles.floats == "dark" and colors.bg_dark
+    colors.bg_float = config.options.hl_styles.floats == "transparent" and colors.none
+        or config.options.hl_styles.floats == "dark" and colors.bg_dark
         or colors.bg
     colors.fg_float = colors.fg
 
     -- Set the cursor-line highlight
-    colors.bg_highlight = config.options.transparent and colors.charcoal_medium
-        or bg_cfg == "darker" and colors.charcoal_medium
-        or colors.grey_darker
+    -- TODO: Get values for output colors from the palette: charcoal_medium
+    colors.bg_highlight = config.is_light() and util.lighten(colors.bg, 0.9, colors.fg)
+        or util.darken(colors.bg, 0.9, colors.fg)
+    -- colors.bg_highlight = colors.bg == colors.charcoal_medium and colors.grey_darker
+        -- or colors.charcoal_medium
 
     colors.bg_visual = colors.grey_darker
     colors.bg_search = colors.yellow

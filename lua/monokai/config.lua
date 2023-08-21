@@ -6,10 +6,8 @@ local M = {}
 local defaults = {
     dark_style_background = "default", -- default, transparent, default, #color
     light_style_background = "default", -- default, transparent, default, #color
-
     terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
-    -- TODO: change to hl_styles or highlight_styles
-    styles = {
+    hl_styles = {
         -- Style to be applied to different syntax groups
         -- Value is any valid attr-list value for `:help nvim_set_hl`
         comments = { italic = true },

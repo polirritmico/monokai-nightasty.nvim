@@ -3,9 +3,9 @@ local ts = require("monokai.treesitter")
 local M = {}
 
 -- Default values
-M.bg = "#2b2b2b"  -- (charcoal_medium)
+M.bg = "#2b2b2b"  -- charcoal_medium
 M.fg = "#ffffff"
-M.day_brightness = 0.3
+M.brightness = 0.3
 
 ---@param c  string
 local function hexToRgb(c)
@@ -43,7 +43,7 @@ function M.invert_color(color)
         local hsl = hsluv.hex_to_hsluv(color)
         hsl[3] = 100 - hsl[3]
         if hsl[3] < 40 then
-            hsl[3] = hsl[3] + (100 - hsl[3]) * M.day_brightness
+            hsl[3] = hsl[3] + (100 - hsl[3]) * M.brightness
         end
         return hsluv.hsluv_to_hex(hsl)
     end
