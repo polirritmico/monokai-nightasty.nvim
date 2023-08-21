@@ -4,24 +4,24 @@ local config = require("monokai.config")
 
 local M = {}
 
-function M._load(style)
-    -- if style and not M._style then
-    --     M._style = require("monokai.config").options.style
-    -- end
-    -- if not style and M._style then
-    --     require("monokai.config").options.style = M._style
-    --     M._style = nil
-    -- end
-    -- M.load({ style = style, use_background = style == nil })
-    M.load({ style = style })
-end
+M.loaded = false
 
 ---@param opts Config|nil
 function M.load(opts)
+    -- Set MonokaiToggleLight
+    if not M.loaded then
+        vim.cmd("command! MonokaiToggleLight lua MonokaiToggleLight()")
+        M.loaded = true
+    end
+
     if opts then
         require("monokai.config").extend(opts)
     end
     util.load(theme.setup())
+end
+
+function MonokaiToggleLight()
+    vim.o.background = (vim.o.background == "dark") and "light" or "dark"
 end
 
 M.setup = config.setup

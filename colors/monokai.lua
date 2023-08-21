@@ -1,1 +1,1 @@
-require("monokai")._load()
+require("monokai").load()

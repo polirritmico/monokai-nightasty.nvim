@@ -91,10 +91,9 @@ function M.setup(opts)
     ---@class ColorScheme: Palette
     local colors = vim.tbl_deep_extend("force", vim.deepcopy(M.default), palette)
 
-    -- util.brightness = config.options.brightness
     config.options.transparent = bg_cfg == "transparent" and true or false
 
-    colors.bg = (bg_cfg == "darker" or bg_cfg == "transparent") and colors.bg_dark
+    colors.bg = (bg_cfg == "dark" or bg_cfg == "transparent") and colors.bg_dark
         or string.sub(bg_cfg, 1, 1) == "#" and bg_cfg
         or colors.bg
     -- Default values for util functions darken() and lighter()
@@ -124,8 +123,6 @@ function M.setup(opts)
     -- TODO: Get values for output colors from the palette: charcoal_medium
     colors.bg_highlight = config.is_light() and util.lighten(colors.bg, 0.9, colors.fg)
         or util.darken(colors.bg, 0.9, colors.fg)
-    -- colors.bg_highlight = colors.bg == colors.charcoal_medium and colors.grey_darker
-        -- or colors.charcoal_medium
 
     colors.bg_visual = colors.grey_darker
     colors.bg_search = colors.yellow
