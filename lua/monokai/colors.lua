@@ -83,8 +83,8 @@ function M.setup(opts)
     opts = opts or {}
     local config = require("monokai.config")
 
-    local style_cfg = config.is_light() and config.options.light_style
-        or config.options.dark_style
+    local bg_cfg = config.is_light() and config.options.light_style_background
+        or config.options.dark_style_background
     local palette = (config.is_light() and not opts.transform) and M.light_palette or {}
 
     -- Color Palette
@@ -92,15 +92,17 @@ function M.setup(opts)
     local colors = vim.tbl_deep_extend("force", vim.deepcopy(M.default), palette)
 
     -- util.day_brightness = config.options.day_brightness
-    config.options.transparent = style_cfg.transparent
+    config.options.transparent = bg_cfg == "transparent" and true or false
 
-    colors.bg = style_cfg.darker_background and colors.bg_dark or colors.bg
-    util.bg = colors.bg -- util darken and lighter functions fall back values
+    colors.bg = bg_cfg == "darker" and colors.bg_dark
+        or string.sub(bg_cfg, 1, 1) == "#" and bg_cfg
+        or colors.bg
+    -- Default values for util functions darken() and lighter()
+    util.bg = colors.bg
     util.fg = colors.fg
 
     -- TODO: Check effect on light and dark
-    -- colors.border = util.darken(colors.bg, 0.8, colors.black)
-    colors.border = colors.blue_light
+    colors.border = colors.blue_light -- util.darken(colors.bg, 0.8, colors.black)
     colors.border_highlight = colors.fg
 
     -- Popups and statusline always get a dark background
@@ -120,7 +122,7 @@ function M.setup(opts)
 
     -- Set the cursor-line highlight
     colors.bg_highlight = config.options.transparent and colors.charcoal_medium
-        or style_cfg.darker_background and colors.charcoal_medium
+        or bg_cfg == "darker" and colors.charcoal_medium
         or colors.grey_darker
 
     colors.bg_visual = colors.grey_darker

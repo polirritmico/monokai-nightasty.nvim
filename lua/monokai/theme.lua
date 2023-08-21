@@ -15,6 +15,8 @@ local M = {}
 function M.setup()
     local config = require("monokai.config")
     local options = config.options
+    options.transparent = options.transparent ~= nil and options.transparent or false
+
     ---@class Theme
     ---@field highlights Highlights
     local theme = {
