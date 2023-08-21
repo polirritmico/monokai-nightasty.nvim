@@ -22,7 +22,7 @@ function M.setup()
         colors = colors.setup(),
     }
 
-    local c = config.is_day() and util.set_light_colors(theme.colors) or theme.colors
+    local c = config.is_light() and util.set_light_colors(theme.colors) or theme.colors
 
     theme.highlights = {
         ColorColumn = { bg = c.bg }, -- used for the columns set with 'colorcolumn'

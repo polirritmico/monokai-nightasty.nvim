@@ -12,7 +12,8 @@ function M._load(style)
         require("monokai.config").options.style = M._style
         M._style = nil
     end
-    M.load({ style = style, use_background = style == nil })
+    -- M.load({ style = style, use_background = style == nil })
+    M.load({ style = style })
 end
 
 ---@param opts Config|nil

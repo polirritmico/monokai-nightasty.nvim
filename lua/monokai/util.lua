@@ -38,20 +38,18 @@ function M.lighten(hex, amount, fg)
     return M.blend(hex, fg or M.fg, amount)
 end
 
--- TODO: Check reppercutions of this function. If none, remove it and the config
--- setting. In the last case, also remove it from the documentation
--- function M.invert_color(color)
---     local hsluv = require("monokai.hsluv")
---     if color ~= "NONE" then
---         local hsl = hsluv.hex_to_hsluv(color)
---         hsl[3] = 100 - hsl[3]
---         if hsl[3] < 40 then
---             hsl[3] = hsl[3] + (100 - hsl[3]) * M.day_brightness
---         end
---         return hsluv.hsluv_to_hex(hsl)
---     end
---     return color
--- end
+function M.invert_color(color)
+    local hsluv = require("monokai.hsluv")
+    if color ~= "NONE" then
+        local hsl = hsluv.hex_to_hsluv(color)
+        hsl[3] = 100 - hsl[3]
+        if hsl[3] < 40 then
+            hsl[3] = hsl[3] + (100 - hsl[3]) * M.day_brightness
+        end
+        return hsluv.hsluv_to_hex(hsl)
+    end
+    return color
+end
 
 ---@param group string
 function M.highlight(group, hl)

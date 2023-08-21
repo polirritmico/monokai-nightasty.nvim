@@ -4,24 +4,33 @@ local M = {}
 ---@field on_colors fun(colors: ColorScheme)
 ---@field on_highlights fun(highlights: Highlights, colors: ColorScheme)
 local defaults = {
-    style = "dark", -- The theme comes in two styles: `dark` and `light`
-    light_style = "light", -- The theme is used when the background is set to light
-    transparent = false, -- Enable this to disable setting the background color
-    transparent_light = false, -- Enable this to disable setting the background color
+    dark_style = {
+        transparent = true,
+        darker_background = false,
+    },
+    light_style = {
+        transparent = false,
+        darker_background = false,
+    },
     terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
     styles = {
         -- Style to be applied to different syntax groups
         -- Value is any valid attr-list value for `:help nvim_set_hl`
+        -- TODO: Add an example
         comments = { italic = true },
         keywords = { italic = true },
         functions = {},
         variables = {},
-        -- Background styles. Can be "dark", "transparent" or "normal"
+        -- Background styles. Can be "dark", "transparent" or "default"
+        -- TODO: Move this to dark_style, light_style tables?
         sidebars = "dark", -- style for sidebars, see below
         floats = "dark", -- style for floating windows
     },
     sidebars = { "qf", "help" }, -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`
+
+    -- FIXME: Remove this
     day_brightness = 0.3, -- Adjusts the brightness of the colors of the **Day** style. Number between 0 and 1, from dull to vibrant colors
+
     hide_inactive_statusline = false, -- Enabling this option, will hide inactive statuslines and replace them with a thin border instead. Should work with the standard **StatusLine** and **LuaLine**.
     dim_inactive = false, -- dims inactive windows
     lualine_bold = false, -- When `true`, section headers in the lualine theme will be bold
@@ -36,7 +45,6 @@ local defaults = {
     ---@param highlights Highlights
     ---@param colors ColorScheme
     on_highlights = function(highlights, colors) end,
-    use_background = true, -- can be light/dark/auto. When auto, background will be set to vim.o.background
 }
 
 ---@type Config
@@ -52,8 +60,9 @@ function M.extend(options)
     M.options = vim.tbl_deep_extend("force", {}, M.options or defaults, options or {})
 end
 
-function M.is_day()
-    return M.options.style == "light" or M.options.use_background and vim.o.background == "light"
+function M.is_light()
+    -- return M.options.style == "light" or vim.o.background == "light"
+    return vim.o.background == "light"
 end
 
 M.setup()

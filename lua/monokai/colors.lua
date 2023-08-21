@@ -48,7 +48,7 @@ M.default = {
 
 M.light_palette = {
     -- Base colors
-    blue_light = "#00b3e3",
+    blue_light = "#00b3e3",      -- #62d8f1
     green_light = "#4fb000",     -- #a4e400
     magenta = "#ff004b",
     orange = "#ff4d00",
@@ -83,33 +83,28 @@ function M.setup(opts)
     opts = opts or {}
     local config = require("monokai.config")
 
-    -- NOTE: This theme has two palettes, each one with the normal or dark
-    -- variants. The light palette setting is "light_style". "style" for dark
-    -- TODO: Add this info to the documentation and default config file
-    local variant = config.is_day() and config.options.light_style or config.options.style
-    local palette = M[variant] or {}
-    if type(palette) == "function" then
-        palette = palette()
-    end
+    local style_cfg = config.is_light() and config.options.light_style
+        or config.options.dark_style
+    local palette = config.is_light() and not opts.transform and M.light_palette or {}
 
     -- Color Palette
     ---@class ColorScheme: Palette
     local colors = vim.tbl_deep_extend("force", vim.deepcopy(M.default), palette)
-
     colors.light_theme = M.light_palette
-    if not opts.transform and config.is_day() then
-        config.options.transparent = config.options.transparent_light
+
+    -- FIXME: Remove brightness. keep documentation and functions
+    util.day_brightness = config.options.day_brightness
+    config.options.transparent = style_cfg.transparent
+
+    if not opts.transform and config.is_light() then
         util.set_light_colors(colors)
     end
 
-    colors.bg = variant == "dark" and colors.bg_dark or colors.bg
+    colors.bg = style_cfg.darker_background and colors.bg_dark or colors.bg
     util.bg = colors.bg -- util darken and lighter functions fall back values
-    -- util.fg = colors.fg
-    -- FIXME: Remove brightness. keep documentation and functions
-    util.day_brightness = config.options.day_brightness
+    util.fg = colors.fg
 
-    -- TODO: git ignore?
-    -- colors.git.ignore = colors.grey_dark
+    -- TODO: Check effect on light and dark
     colors.border = util.darken(colors.bg, 0.8, colors.black)
     colors.border_highlight = colors.fg
 
@@ -132,7 +127,7 @@ function M.setup(opts)
     -- Set the cursor-line highlight
     -- TODO: palette dark/light; variant normal/dark
     colors.bg_highlight = config.options.transparent and colors.charcoal_medium
-        or variant == config.options.light_style and colors.charcoal_medium
+        or style_cfg.darker_background and colors.charcoal_medium
         or colors.grey_darker
 
     colors.bg_visual = colors.grey_darker
