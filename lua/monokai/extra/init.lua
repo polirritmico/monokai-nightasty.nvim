@@ -55,12 +55,13 @@ function M.setup()
     -- map of style to style name
     local styles = {
         dark = "",
-        light = " Light",
+        -- light = " Light",
     }
 
     for extra, info in pairs(M.extras) do
         package.loaded["monokai.extra." .. extra] = nil
         local plugin = require("monokai.extra." .. extra)
+        -- TODO: Check this code
         for style, style_name in pairs(styles) do
             config.setup({ style = style })
             -- TODO: Check tansform = true... maybe is not longer needed

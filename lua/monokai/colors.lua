@@ -96,11 +96,11 @@ function M.setup(opts)
     colors.bg = (bg_cfg == "dark" or bg_cfg == "transparent") and colors.bg_dark
         or string.sub(bg_cfg, 1, 1) == "#" and bg_cfg
         or colors.bg
+
     -- Default values for util functions darken() and lighter()
     util.bg = colors.bg
     util.fg = colors.fg
 
-    -- TODO: Check effect on light and dark
     colors.border = colors.blue_light
     colors.border_highlight = colors.fg
 
@@ -120,9 +120,8 @@ function M.setup(opts)
     colors.fg_float = colors.fg
 
     -- Set the cursor-line highlight
-    -- TODO: Get values for output colors from the palette: charcoal_medium
     colors.bg_highlight = config.is_light() and util.lighten(colors.bg, 0.9, colors.fg)
-        or util.darken(colors.bg, 0.9, colors.fg)
+        or util.darken(colors.bg, 0.9, colors.fg) -- (0.97 for #313131)
 
     colors.bg_visual = colors.grey_darker
     colors.bg_search = colors.yellow
