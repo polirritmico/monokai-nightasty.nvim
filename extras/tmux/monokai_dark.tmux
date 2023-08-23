@@ -6,6 +6,7 @@ tm_bg_highlight="#313131"
 tm_green="#a4e400"
 tm_orange="#ff9700"
 tm_black="#000000"
+tm_border="#62d8f1"
 
 set -g mode-style "fg=$tm_green,bg=$tm_bg"
 
@@ -13,7 +14,7 @@ set -g message-style "fg=$tm_orange,bg=$tm_bg_highlight"
 set -g message-command-style "fg=$tm_green,bg=$tm_bg"
 
 set -g pane-border-style "fg=$tm_bg"
-set -g pane-active-border-style "fg=$tm_fg"
+set -g pane-active-border-style "fg=$tm_border"
 
 set -g status "on"
 set -g status-justify "left"
