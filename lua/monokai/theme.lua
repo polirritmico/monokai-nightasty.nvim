@@ -145,6 +145,7 @@ function M.setup()
         -- htmlH2 = { fg = c.fg, bold = true },
         -- htmlH3 = { fg = c.fg },
 
+        -- indent-blankline
         IndentBlanklineChar = { fg = c.fg_gutter, nocombine = true },
         IndentBlanklineSpaceChar = { fg = c.fg_dark, nocombine = true },
         IndentBlanklineContextChar = { fg = c.purple, nocombine = true },
