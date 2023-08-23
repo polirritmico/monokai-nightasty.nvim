@@ -203,17 +203,16 @@ function M.setup()
         -- LspSignatureActiveParameter = { bg = util.darken(c.bg_visual, 0.4), bold = true },
         -- LspCodeLens = { fg = c.comment },
         -- LspInlayHint = { bg = util.darken(c.blue7, 0.1), fg = c.grey_dark },
-        --
         -- LspInfoBorder = { fg = c.border_highlight, bg = c.bg_float },
-        --
+
         -- ALEErrorSign = { fg = c.error },
         -- ALEWarningSign = { fg = c.warning },
-        --
+
         -- DapStoppedLine = { bg = util.darken(c.warning, 0.1) }, -- Used for "Warning" diagnostic virtual text
-        --
-        -- -- These groups are for the Neovim tree-sitter highlights.
-        -- -- As of writing, tree-sitter support is a WIP, group names may change.
-        --
+
+        -- These groups are for the Neovim tree-sitter highlights.
+        -- As of writing, tree-sitter support is a WIP, group names may change.
+
         --- Misc
         -- TODO:
         -- -- ["@comment.documentation"] = { },
