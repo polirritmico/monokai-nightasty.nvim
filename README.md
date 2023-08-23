@@ -1,202 +1,181 @@
-# 🫖 MonoNight Tasty 🍶
+# Monokai NighTasty 🫖
 
-***🏗️ WIP 🚧***
+A dark theme with a light variant for Neovim based on the Monokai color
+palette. The code is based on the tokyonight.nvim plugin and vim-monokai-tasty
+for the palette. It includes additional configs for tmux, lualine, zathura and
+others.
 
-A theme for Neovim written in Lua, based on the projects tokyonight.nvim and
-vim-monokai-tasty with numerous custom adjustments. It includes additional
-configurations for tmux, lualine, zathura and others.
 
-## ***⚠️ Disclaimer***
- 
-> This project is mainly for personal use.
+## Features
 
-## 🌙 Default
+- Avoid eye strain by seamlessly toggling between clear and dark styles at
+  your fingertips, whether you're at your station or out in the wild.
+- Highly customizable for your coding needs.
+- Infused with the Monokai palette for a vibrant, distraction-free coding
+  experience.
 
-![image](https://user-images.githubusercontent.com/292349/190951628-10ba28a1-57ff-4479-8eab-47400a402242.png)
+![Showcase screenshot](doc/image.jpg "Showcase screenshot") 
 
-## ☀️ Light
+The Dark/light styles could be toggled by calling the provided function:
 
-![image](https://user-images.githubusercontent.com/292349/115996270-78c6c480-a593-11eb-8ed0-7d1400b058f5.png)
+```vim
+:MonokaiToggleLight
+```
 
-## ✨ Features
 
-- Supports the latest [Neovim](https://github.com/neovim/neovim)
-  [0.9.0](https://github.com/neovim/neovim/releases/tag/v0.9.0) features.
-- Enhances terminal colors.
-- Introduces a darker background option for sidebar-like windows.
-- Supports all major plugins.
-- Provides [mononight-tasty](https://github.com/folke/tokyonight.nvim)
-  [extras](#-extras) for numerous other applications.
+## Color Palettes
 
-### 🐧 Extras
+## 🌙 Dark Theme
 
-<!-- extras:start -->
-- [GitUI](https://github.com/extrawurst/gitui) ([gitui](extras/gitui))
-- [Tmux](https://github.com/tmux/tmux/wiki) ([tmux](extras/tmux))
-- [Xresources](https://wiki.archlinux.org/title/X_resources) ([xresources](extras/xresources))
-- [Zathura](https://pwmt.org/projects/zathura/) ([zathura](extras/zathura))
-<!-- extras:end -->
+| **Color**   | **Code** |
+|-------------|----------|
+| Yellow      | #ffff87  |
+| Purple      | #af87ff  |
+| Green Light | #a4e400  |
+| Blue Light  | #62d8f1  |
+| Magenta     | #fc1a70  |
+| Orange      | #ff9700  |
 
-## ⚡️ Requirements
+## ☀️ Light Theme
 
-- [Neovim](https://github.com/neovim/neovim) >=
-  [0.9.0](https://github.com/neovim/neovim/releases/tag/v0.9.0)
+| **Color**   | **Code** |
+|-------------|----------|
+| Yellow      | #ff8f00  |
+| Purple      | #6054d0  |
+| Green Light | #4fb000  |
+| Blue Light  | #00b3e3  |
+| Magenta     | #ff004b  |
+| Orange      | #ff4d00  |
 
-## 📦 Installation
 
-Install with your package manager:
+## Requirements
+
+- Neovim >= [0.9.0](https://github.com/neovim/neovim/releases/tag/v0.9.0)
+
+## Installation
+
+Install with your package manager.
+
+- folke/lazy.nvim:
 
 ```lua
--- Lazy
 {
-  "polirritmico/mononight-tasty.nvim",
-  lazy = false,
-  priority = 1000,
-  opts = {},
+    "polirritmico/monokai-nightasty.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
 }
 ```
 
-## 🕹️ Usage
+## Configuration
 
-### [Lua](https://www.lua.org)
+### Base configuration
 
 ```lua
-vim.cmd[[colorscheme mononight-tasty]]
+vim.opt.background = "dark" -- dark or light
+vim.cmd([[colorscheme monokai]])
 ```
 
 ### External Plugins
 
-#### [Lualine](https://github.com/nvim-lualine/lualine.nvim)
+#### Lualine
 
 ```lua
-require('lualine').setup {
-  options = {
-    -- ...
-    theme = 'mononight-tasty'
-    -- ...
-  }
-}
-```
-
-## ⚙️ Configuration
-
-> ❗️ Set the configuration **BEFORE** loading the color scheme with `colorscheme mononight-tasty`.
-
-The [day](#day) style is used when `{ style = "day" }` is passed to
-`setup(options)` or when `vim.o.background = "light"` is setted.
-
-[Mononight](https://github.com/polirritmico/mononight-tasty.nvim) uses the
-default options, unless `setup` is explicitly called.
-
-```lua
-require("mononight-tasty").setup({
-  -- your configuration comes here
-  -- or leave it empty to use the default settings
-  style = "storm", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
-  light_style = "day", -- The theme is used when the background is set to light
-  transparent = false, -- Enable this to disable setting the background color
-  terminal_colors = true, -- Configure the colors used when opening a `:terminal` in [Neovim](https://github.com/neovim/neovim)
-  styles = {
-    -- Style to be applied to different syntax groups
-    -- Value is any valid attr-list value for `:help nvim_set_hl`
-    comments = { italic = true },
-    keywords = { italic = true },
-    functions = {},
-    variables = {},
-    -- Background styles. Can be "dark", "transparent" or "normal"
-    sidebars = "dark", -- style for sidebars, see below
-    floats = "dark", -- style for floating windows
-  },
-  sidebars = { "qf", "help" }, -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`
-  day_brightness = 0.3, -- Adjusts the brightness of the colors of the **Day** style. Number between 0 and 1, from dull to vibrant colors
-  hide_inactive_statusline = false, -- Enabling this option, will hide inactive statuslines and replace them with a thin border instead. Should work with the standard **StatusLine** and **LuaLine**.
-  dim_inactive = false, -- dims inactive windows
-  lualine_bold = false, -- When `true`, section headers in the lualine theme will be bold
-
-  --- You can override specific color groups to use other groups or a hex color
-  --- function will be called with a ColorScheme table
-  ---@param colors ColorScheme
-  on_colors = function(colors) end,
-
-  --- You can override specific highlights to use other groups or a hex color
-  --- function will be called with a Highlights and ColorScheme table
-  ---@param highlights Highlights
-  ---@param colors ColorScheme
-  on_highlights = function(highlights, colors) end,
+require("lualine").setup({
+    options = { theme = "monokai" },
 })
 ```
 
-## 🍜 Overriding Colors & Highlight Groups
+### Advanced configuration
 
-How the highlight groups are calculated:
+> ⚠️ Set the configuration **BEFORE** calling `colorscheme monokai`.
 
-1. `colors` are determined based on your configuration, with the ability to
-   override them using `config.on_colors(colors)`.
+#### Full config example:
+
+```lua
+vim.opt.background = "dark" -- The theme has `dark` and `light` styles
+
+require("monokai-nightasty").setup({
+    dark_style_background = "transparent", -- Can be `default`, `transparent`, `dark` or `#color` (e.g. #2b2b2b)
+    light_style_background = "default", -- Can be `default`, `transparent`, `dark` or `#color` (e.g. #ffffff)
+    dim_inactive = false, -- dims inactive windows
+    hide_inactive_statusline = false, -- Hide inactive statuslines and replace them with a thin border instead. Should work with the standard **StatusLine** and **LuaLine**.
+    lualine_bold = true, -- Lualine headers will be bold.
+    sidebars = { "qf", "help" }, -- Set a darker background on sidebars-like windows.
+    terminal_colors = true, -- Set the colors used when opening a `:terminal`
+    hl_styles = {
+        -- Style to be applied to different syntax groups. See `:help nvim_set_hl`
+        comments = { italic = true },
+        keywords = { italic = true },
+        functions = {},
+        variables = {},
+        -- Background styles for sidebars (panels) and floating windows:
+        -- TODO: check this
+        floats = "dark", -- Can be `default`, `dark` or `transparent`
+        sidebars = "dark", -- Can be `default`, `dark` or `transparent`
+    }
+
+    --- You can override specific color groups to use other groups or a hex color
+    --- function will be called with a ColorScheme table.
+    --- TODO: Full list of colors: 
+    ---@param colors ColorScheme
+    on_colors = function(colors)
+        colors.border = "#888888"
+        colors.comment = "#ff0000"
+    end,
+
+    --- You can override specific highlights to use other groups or a hex color
+    --- function will be called with a Highlights and ColorScheme table.
+    --- TODO: Full list of highlights: 
+    ---@param highlights Highlights
+    ---@param colors ColorScheme
+    on_highlights = function(hl, colors)
+        hl.TelescopeNormal = { fg = colors.magenta, bg = colors.charcoal }
+        hl.TelescopeBorder = { link = "MsgSeparator" }
+    end,
+})
+
+-- Toggle Dark/Light styles
+vim.keymap.set({"n"}, "<leader>tl", "<CMD>MonokaiToggleLight<CR>", {silent = true, desc = "Monokai: Toggle light/dark theme"})
+
+```
+---
+
+## Colors & Highlight Groups under the hood
+
+How the plugin setup the highlights and colors:
+
+1. `colors` are loaded from the base palette and adjusted based on your
+   configuration settings. For example, in the dark style the `bg` color is set
+   to "#2b2b2b" if `dark_style_background` is set to `default`. If
+   `dark_style_background` is set to `transparent`, then the `bg` value will be
+   changed to from the default `#2b2b2b` to `none`.
+   Any color value could be overriden by using `config.on_colors(colors)`.
+1. The colors of the **light style** are set in `colors.light_palette`. If
+   `vim.o.background == "light"` is detected, then the `default` palette is
+   overriden with the light palette values.
 1. These `colors` are utilized to generate the highlight groups.
+1. Currently, any change with `config.on_colors(colors)` affects both light and
+   dark styles. I plan to correct this behaviour in future versions, but be
+   warned that this will most likely introduce some breaking changes.
 1. `config.on_highlights(highlights, colors)` can be used to override highlight
    groups.
 
 For default values of `colors` and `highlights`, please consult the
-[default](extras/lua/mononight_tasty.lua), and
-[day](extras/lua/mononight_tasty_day.lua) themes.
+[dark](extras/lua/monokai-nightasty-dark.lua), and
+[light](extras/lua/monokai-nightasty-light.lua) themes.
 
-### Settings and color alteration demonstration
+---
 
-```lua
-require("mononight-tasty").setup({
-  -- use the day style
-  style = "day",
-  -- disable italic for functions
-  styles = {
-    functions = {}
-  },
-  sidebars = { "qf", "vista_kind", "terminal", "packer" },
-  -- Change the "hint" color to the "orange" color, and make the "error" color bright red
-  on_colors = function(colors)
-    colors.hint = colors.orange
-    colors.error = "#ff0000"
-  end
-})
-```
+## Extras
 
-### [Borderless Telescope](https://github.com/nvim-telescope/telescope.nvim/wiki/Gallery#borderless) example
+Check the `extras` folder (`~/.local/share/nvim/lazy/monokai-nightasty/extras`
+for Lazy packager). Copy, link or reference the file in each setting. Refer to
+their respective documentation.
 
-```lua
-require("mononight-tasty").setup({
-  on_highlights = function(hl, c)
-    local prompt = "#2d3149"
-    hl.TelescopeNormal = {
-      bg = c.bg_dark,
-      fg = c.fg_dark,
-    }
-    hl.TelescopeBorder = {
-      bg = c.bg_dark,
-      fg = c.bg_dark,
-    }
-    hl.TelescopePromptNormal = {
-      bg = prompt,
-    }
-    hl.TelescopePromptBorder = {
-      bg = prompt,
-      fg = prompt,
-    }
-    hl.TelescopePromptTitle = {
-      bg = prompt,
-      fg = prompt,
-    }
-    hl.TelescopePreviewTitle = {
-      bg = c.bg_dark,
-      fg = c.bg_dark,
-    }
-    hl.TelescopeResultsTitle = {
-      bg = c.bg_dark,
-      fg = c.bg_dark,
-    }
-  end,
-})
-```
+### Tmux
 
-### Fix `undercurls` in [Tmux](https://github.com/tmux/tmux)
+#### Fix `undercurls` in [Tmux](https://github.com/tmux/tmux)
 
 To have undercurls show up and in color, add the following to your
 [Tmux](https://github.com/tmux/tmux) configuration file:
@@ -208,25 +187,33 @@ set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm'  # undercurl support
 set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m'  # underscore colours - needs tmux-3.0
 ```
 
-## 🍭 Extras
 
-Extra color configs for [Kitty](https://sw.kovidgoyal.net/kitty/conf.html),
-[Alacritty](https://github.com/alacritty/alacritty),
-[Fish](https://www.lua.org/), [WezTerm](https://wezfurlong.org/wezterm/config/),
-[iTerm](https://iterm2.com/) and [foot](https://codeberg.org/dnkl/foot) can be
-found in [extras](extras/). To use them, refer to their respective
-documentation.
+### Import color palette and utils
 
-![image](https://user-images.githubusercontent.com/292349/115395546-d8d6f880-a198-11eb-98fb-a1194787701d.png)
-
-You can easily use the color palette for other plugins inside your
-[Neovim](https://github.com/neovim/neovim) configuration:
+You could import the color palette to use with other plugins:
 
 ```lua
-local colors = require("mononight-tasty.colors").setup() -- pass in any of the config options as explained above
-local util = require("mononight-tasty.util")
+local colors = require("monokai-nightasty.colors").setup()
 
-aplugin.background = colors.bg_dark
-aplugin.my_error = util.lighten(colors.red1, 0.3) -- number between 0 and 1. 0 results in white, 1 results in red1
+some_plugin_config.background = colors.bg_dark
+some_plugin_config.default_color = colors.fg
+some_plugin_config.title = colors.blue_light
 ```
 
+Some color utilily functions are avaliable for your use:
+
+```lua
+local colors = require("monokai-nightasty.colors").setup()
+local util = require("monokai-nightasty.util")
+
+some_plugin_config.highlight_match = util.lighten(colors.bg, 0.5)
+some_plugin_config.unfocus_bg = util.darken(colors.bg, 0.3)
+```
+
+
+## Contributions
+
+This plugin is made mainly for my personal use, but suggestions, issues, or pull
+requests are very welcome.
+
+Enjoy

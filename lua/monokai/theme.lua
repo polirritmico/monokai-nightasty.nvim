@@ -847,6 +847,7 @@ function M.setup()
         theme.highlights.MiniStatuslineInactive = inactive
     end
 
+    -- Apply user configs
     options.on_highlights(theme.highlights, theme.colors)
 
     return theme

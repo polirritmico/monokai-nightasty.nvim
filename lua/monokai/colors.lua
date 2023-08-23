@@ -146,6 +146,9 @@ function M.setup(opts)
     --     delete = util.darken(colors.red1, 0.45),
     -- }
 
+    -- Apply user configs
+    config.options.on_colors(colors)
+
     return colors
 end
 
