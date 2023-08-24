@@ -1,0 +1,274 @@
+*monokai-nightasty.nvim.txt*  For Neovim >= 0.9.0  Last change: 2023 August 24
+
+==============================================================================
+Table of Contents                   *monokai-nightasty.nvim-table-of-contents*
+
+1. Description                            |monokai-nightasty.nvim-description|
+2. Features                                  |monokai-nightasty.nvim-features|
+3. Requirements                          |monokai-nightasty.nvim-requirements|
+4. Installation                          |monokai-nightasty.nvim-installation|
+5. Configuration                        |monokai-nightasty.nvim-configuration|
+  - External Plugins   |monokai-nightasty.nvim-configuration-external-plugins|
+  - Advanced configuration|monokai-nightasty.nvim-configuration-advanced-configuration|
+6. Colors & Highlight Groups under the hood|monokai-nightasty.nvim-colors-&-highlight-groups-under-the-hood|
+7. Extras                                      |monokai-nightasty.nvim-extras|
+  - Tmux                                  |monokai-nightasty.nvim-extras-tmux|
+  - Using the colors and utils with other plugins|monokai-nightasty.nvim-extras-using-the-colors-and-utils-with-other-plugins|
+8. Color Palettes                      |monokai-nightasty.nvim-color-palettes|
+  - Dark Theme              |monokai-nightasty.nvim-color-palettes-dark-theme|
+  - Light Theme            |monokai-nightasty.nvim-color-palettes-light-theme|
+9. Contributions                        |monokai-nightasty.nvim-contributions|
+
+==============================================================================
+1. Description                            *monokai-nightasty.nvim-description*
+
+A dark/light theme for Neovim based on the Monokai color palette. The code is
+based on the excelent tokyonight.nvim
+<https://github.com/folke/tokyonight.nvim> plugin and the palette is adapted
+from the flavorful vim-monokai-tasty
+<https://github.com/patstockwell/vim-monokai-tasty> plugin. Written in Lua, it
+includes support for lsp, treesitter, a lot of plugins and additional config
+files for tmux, zathura and others.
+
+
+==============================================================================
+2. Features                                  *monokai-nightasty.nvim-features*
+
+- Avoid eye strain by seamlessly toggling between clear and dark styles at
+    your fingertips, whether you’re at your station or out in the wild.
+- Highly customizable for your coding needs.
+- Infused with the Monokai palette for a vibrant, distraction-free coding
+    experience.
+
+
+==============================================================================
+3. Requirements                          *monokai-nightasty.nvim-requirements*
+
+- Neovim <https://neovim.io/> >= 0.9.0 <https://github.com/neovim/neovim/releases/tag/v0.9.0>
+
+
+==============================================================================
+4. Installation                          *monokai-nightasty.nvim-installation*
+
+Install with your package manager.
+
+- folke/lazy.nvim:
+
+>lua
+    {
+        "polirritmico/monokai-nightasty.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {},
+    }
+<
+
+
+==============================================================================
+5. Configuration                        *monokai-nightasty.nvim-configuration*
+
+**Base configuration**
+
+>lua
+    vim.opt.background = "dark" -- dark or light
+    vim.cmd([[colorscheme monokai]])
+<
+
+**Toggle function**
+
+The Dark/light styles could be toggled by calling the provided function:
+
+>vim
+    :MonokaiToggleLight
+<
+
+
+EXTERNAL PLUGINS       *monokai-nightasty.nvim-configuration-external-plugins*
+
+
+LUALINE ~
+
+>lua
+    require("lualine").setup({
+        options = { theme = "monokai" },
+    })
+<
+
+
+ADVANCED CONFIGURATION*monokai-nightasty.nvim-configuration-advanced-configuration*
+
+
+  Set the configuration **BEFORE** calling `colorscheme monokai`.
+
+FULL CONFIG EXAMPLE: ~
+
+>lua
+    vim.opt.background = "dark" -- The theme has `dark` and `light` styles
+    
+    require("monokai-nightasty").setup({
+        dark_style_background = "transparent", -- Can be `default`, `transparent`, `dark` or `color` (e.g. 2b2b2b)
+        light_style_background = "default", -- Can be `default`, `transparent`, `dark` or `color` (e.g. ffffff)
+        dim_inactive = false, -- dims inactive windows
+        hide_inactive_statusline = false, -- Hide inactive statuslines and replace them with a thin border instead. Should work with the standard StatusLine and LuaLine.
+        lualine_bold = true, -- Lualine headers will be bold.
+        sidebars = { "qf", "help" }, -- Set a darker background on sidebars-like windows.
+        terminal_colors = true, -- Set the colors used when opening a `:terminal`
+        hl_styles = {
+            -- Style to be applied to different syntax groups. See `:help nvim_set_hl`
+            comments = { italic = true },
+            keywords = { italic = true },
+            functions = {},
+            variables = {},
+            -- Background styles for sidebars (panels) and floating windows:
+            -- TODO: check this
+            floats = "dark", -- Can be `default`, `dark` or `transparent`
+            sidebars = "dark", -- Can be `default`, `dark` or `transparent`
+        }
+    
+        --- You can override specific color groups to use other groups or a hex color
+        --- function will be called with a ColorScheme table.
+        --- TODO: Full list of colors: 
+        ---@param colors ColorScheme
+        on_colors = function(colors)
+            colors.border = "888888"
+            colors.comment = "ff0000"
+        end,
+    
+        --- You can override specific highlights to use other groups or a hex color
+        --- function will be called with a Highlights and ColorScheme table.
+        --- TODO: Full list of highlights: 
+        ---@param highlights Highlights
+        ---@param colors ColorScheme
+        on_highlights = function(hl, colors)
+            hl.TelescopeNormal = { fg = colors.magenta, bg = colors.charcoal }
+            hl.TelescopeBorder = { link = "MsgSeparator" }
+        end,
+    })
+    
+    -- Toggle Dark/Light styles
+    vim.keymap.set({"n"}, "<leader>tl", "<CMD>MonokaiToggleLight<CR>", {silent = true, desc = "Monokai: Toggle light/dark theme"})
+<
+
+------------------------------------------------------------------------------
+
+==============================================================================
+6. Colors & Highlight Groups under the hood*monokai-nightasty.nvim-colors-&-highlight-groups-under-the-hood*
+
+How the plugin setup the highlights and colors:
+
+1. `colors` are loaded from the base palette and adjusted based on your
+configuration settings. For example, in the dark style the `bg` color is set to
+`2b2b2b` if `dark_style_background` is set to `default`. If
+`dark_style_background` is set to `transparent`, then the `bg` value will be
+changed from the default value `2b2b2b` to `none`.
+
+
+2. The colors of the **light style** are set in `colors.light_palette`. If
+`vim.o.background == "light"` is detected, then the `default` palette is
+overriden with the light palette values.
+
+
+3. Finally, `config.on_colors(colors)` is called, overriden any matching color.
+Currently, any change with `config.on_colors(colors)` affects both light and
+dark styles. I plan to correct this behaviour in future versions, but be warned
+that this will most likely introduce some breaking changes on your config.
+
+
+4. These `colors` are utilized to generate the highlight groups.
+
+
+5. `config.on_highlights(highlights, colors)` can be used to override highlight
+groups.
+
+
+
+For default values of `colors` and `highlights`, please consult the dark
+<extras/lua/monokai-nightasty-dark.lua>, and light
+<extras/lua/monokai-nightasty-light.lua> themes.
+
+------------------------------------------------------------------------------
+
+==============================================================================
+7. Extras                                      *monokai-nightasty.nvim-extras*
+
+Check the `extras` folder (`~/.local/share/nvim/lazy/monokai-nightasty/extras`
+for Lazy packager). Copy, link or reference the file in each setting. Refer to
+their respective documentation.
+
+
+TMUX                                      *monokai-nightasty.nvim-extras-tmux*
+
+
+FIX UNDERCURLS IN TMUX ~
+
+If the undercurls or colors are not being properly displayed within Tmux
+<https://github.com/tmux/tmux>, add the following to your config file:
+
+>sh
+     Undercurl
+    set -as terminal-features ",xterm-256color:RGB"  or: set -g default-terminal "${TERM}"
+    set -as terminal-overrides ',:Smulx=\E[4::%p1%dm'   undercurl support
+    set -as terminal-overrides ',:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m'   underscore colours - needs tmux-3.0
+<
+
+
+USING THE COLORS AND UTILS WITH OTHER PLUGINS*monokai-nightasty.nvim-extras-using-the-colors-and-utils-with-other-plugins*
+
+You could import the color palette to use with other plugins:
+
+>lua
+    local colors = require("monokai-nightasty.colors").setup()
+    
+    some_plugin_config.background = colors.bg_dark
+    some_plugin_config.default_color = colors.fg
+    some_plugin_config.title = colors.blue_light
+<
+
+Some color utilily functions are avaliable for your use:
+
+>lua
+    local colors = require("monokai-nightasty.colors").setup()
+    local util = require("monokai-nightasty.util")
+    
+    some_plugin_config.highlight_match = util.lighten(colors.bg, 0.5)
+    some_plugin_config.unfocus_bg = util.darken(colors.bg, 0.3)
+<
+
+
+==============================================================================
+8. Color Palettes                      *monokai-nightasty.nvim-color-palettes*
+
+
+DARK THEME                  *monokai-nightasty.nvim-color-palettes-dark-theme*
+
+  Color name    Hex code
+  ------------- ----------
+  Yellow        ffff87
+  Purple        af87ff
+  Green Light   a4e400
+  Blue Light    62d8f1
+  Magenta       fc1a70
+  Orange        ff9700
+
+LIGHT THEME                *monokai-nightasty.nvim-color-palettes-light-theme*
+
+  Color name    Hex code
+  ------------- ----------
+  Yellow        ff8f00
+  Purple        6054d0
+  Green Light   4fb000
+  Blue Light    00b3e3
+  Magenta       ff004b
+  Orange        ff4d00
+
+==============================================================================
+9. Contributions                        *monokai-nightasty.nvim-contributions*
+
+This plugin is made mainly for my personal use, but suggestions, issues, or
+pull requests are very welcome.
+
+Enjoy
+
+Generated by panvimdoc <https://github.com/kdheepak/panvimdoc>
+
+vim:tw=78:ts=8:noet:ft=help:norl:

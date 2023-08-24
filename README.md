@@ -1,4 +1,6 @@
-# Monokai NighTasty 🫖
+# 🫖 Monokai NighTasty
+
+<!-- panvimdoc-ignore-start -->
 
 ![Pull Requests](https://img.shields.io/badge/Pull_Requests-Welcome-a4e400?style=flat-square)
 ![GitHub last commit](https://img.shields.io/badge/last_commit-today-62d8f1?style=flat-square)
@@ -6,6 +8,9 @@
 <!-- ![GitHub last commit](https://img.shields.io/github/last-commit/polirritmico/monokai-nightasty.nvim/main?style=flat-square&color=62d8f1) -->
 <!-- ![GitHub issues](https://img.shields.io/github/issues/polirritmico/monokai-nightasty.nvim?style=flat-square&color=fc1a70) -->
 
+<!-- panvimdoc-ignore-end -->
+
+## 🐧 Description
 
 A dark/light theme for Neovim based on the Monokai color palette. The code is
 based on the excelent
@@ -15,7 +20,11 @@ palette is adapted from the flavorful
 Written in Lua, it includes support for lsp, treesitter, a lot of plugins and
 additional config files for tmux, zathura and others.
 
+<!-- panvimdoc-ignore-start -->
+
 ![Monokai-NighTasty](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/1eabe0aa-609e-4076-89f9-b99683b55442)
+
+<!-- panvimdoc-ignore-end -->
 
 ## 🌆 Features
 
@@ -24,6 +33,8 @@ additional config files for tmux, zathura and others.
 - Highly customizable for your coding needs.
 - Infused with the Monokai palette for a vibrant, distraction-free coding
   experience.
+
+<!-- panvimdoc-ignore-start -->
 
 ## 📷 Screenshots
 
@@ -39,6 +50,7 @@ additional config files for tmux, zathura and others.
 
 ![Light Theme](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/d4065aed-7eaa-42b2-9b89-d4a748e7cbf9)
 
+<!-- panvimdoc-ignore-end -->
 
 ## 📋 Requirements
 
@@ -181,10 +193,10 @@ their respective documentation.
 
 ### Tmux
 
-#### Fix `undercurls` in [Tmux](https://github.com/tmux/tmux):
+#### Fix `undercurls` in [Tmux](https://github.com/tmux/tmux)
 
-To have undercurls show up and in color, add the following to your
-[Tmux](https://github.com/tmux/tmux) configuration file:
+If the undercurls or colors are not being properly displayed within
+[Tmux](https://github.com/tmux/tmux), add the following to your config file:
 
 ```sh
 # Undercurl
