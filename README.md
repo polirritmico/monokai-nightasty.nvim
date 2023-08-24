@@ -16,12 +16,6 @@ others.
 
 ![Showcase screenshot](doc/image.jpg "Showcase screenshot") 
 
-The Dark/light styles could be toggled by calling the provided function:
-
-```vim
-:MonokaiToggleLight
-```
-
 
 ## 🎨 Color Palettes
 
@@ -74,6 +68,14 @@ Install with your package manager.
 ```lua
 vim.opt.background = "dark" -- dark or light
 vim.cmd([[colorscheme monokai]])
+```
+
+### Toggle function
+
+The Dark/light styles could be toggled by calling the provided function:
+
+```vim
+:MonokaiToggleLight
 ```
 
 ### External Plugins
@@ -147,18 +149,23 @@ How the plugin setup the highlights and colors:
 
 1. `colors` are loaded from the base palette and adjusted based on your
    configuration settings. For example, in the dark style the `bg` color is set
-   to "#2b2b2b" if `dark_style_background` is set to `default`. If
+   to `#2b2b2b` if `dark_style_background` is set to `default`. If
    `dark_style_background` is set to `transparent`, then the `bg` value will be
-   changed to from the default `#2b2b2b` to `none`.
-   Any color value could be overriden by using `config.on_colors(colors)`.
-1. The colors of the **light style** are set in `colors.light_palette`. If
+   changed from the default value `#2b2b2b` to `none`.
+
+2. The colors of the **light style** are set in `colors.light_palette`. If
    `vim.o.background == "light"` is detected, then the `default` palette is
    overriden with the light palette values.
-1. These `colors` are utilized to generate the highlight groups.
-1. Currently, any change with `config.on_colors(colors)` affects both light and
+
+3. Finally, `config.on_colors(colors)` is called, overriden any matching color.
+   Currently, any change with `config.on_colors(colors)` affects both light and
    dark styles. I plan to correct this behaviour in future versions, but be
-   warned that this will most likely introduce some breaking changes.
-1. `config.on_highlights(highlights, colors)` can be used to override highlight
+   warned that this will most likely introduce some breaking changes on your
+   config.
+
+4. These `colors` are utilized to generate the highlight groups.
+
+5. `config.on_highlights(highlights, colors)` can be used to override highlight
    groups.
 
 For default values of `colors` and `highlights`, please consult the
@@ -175,14 +182,14 @@ their respective documentation.
 
 ### Tmux
 
-#### Fix `undercurls` in [Tmux](https://github.com/tmux/tmux)
+#### Fix `undercurls` in [Tmux](https://github.com/tmux/tmux):
 
 To have undercurls show up and in color, add the following to your
 [Tmux](https://github.com/tmux/tmux) configuration file:
 
 ```sh
 # Undercurl
-set -g default-terminal "${TERM}"
+set -as terminal-features ",xterm-256color:RGB" # or: set -g default-terminal "${TERM}"
 set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm'  # undercurl support
 set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m'  # underscore colours - needs tmux-3.0
 ```
