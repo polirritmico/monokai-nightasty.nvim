@@ -1,1 +1,2 @@
 test/* linguist-vendored
+test/filetypes/*/* linguist-vendored
