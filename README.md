@@ -63,14 +63,14 @@ Install with your package manager.
 
 ## 🛠️ Configuration
 
-### 🚀 Usage / Base configuration
+**Base configuration**
 
 ```lua
 vim.opt.background = "dark" -- dark or light
 vim.cmd([[colorscheme monokai]])
 ```
 
-### 💡 Toggle function
+**💡 Toggle function**
 
 The Dark/light styles could be toggled by calling the provided function:
 
@@ -88,11 +88,11 @@ require("lualine").setup({
 })
 ```
 
-### 📊 Advanced configuration
+### ⚙️ Advanced configuration
 
 > ⚠️ Set the configuration **BEFORE** calling `colorscheme monokai`.
 
-#### 📖 Full config example:
+#### Full config example:
 
 ```lua
 vim.opt.background = "dark" -- The theme has `dark` and `light` styles
@@ -174,13 +174,13 @@ For default values of `colors` and `highlights`, please consult the
 
 ---
 
-## 🍱 Extras
+## 🔮 Extras
 
 Check the `extras` folder (`~/.local/share/nvim/lazy/monokai-nightasty/extras`
 for Lazy packager). Copy, link or reference the file in each setting. Refer to
 their respective documentation.
 
-### 📟 Tmux
+### Tmux
 
 #### Fix `undercurls` in [Tmux](https://github.com/tmux/tmux):
 
@@ -195,7 +195,7 @@ set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{25
 ```
 
 
-### 🧰 Import color palette and utils
+### 🚀 Using the colors and utils with other plugins
 
 You could import the color palette to use with other plugins:
 
