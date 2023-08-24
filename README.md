@@ -28,11 +28,15 @@ additional config files for tmux, zathura and others.
 
 ## Screenshots
 
+### Dark Theme:
+
 ![Dark Theme](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/3b0bf4b6-027f-438c-9794-0042f070765e)
 
-![Transparent Dark Theme](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/f0b3bc37-ac3b-46e9-ab8e-7604184db4dc)
-
+### Light Theme
 ![Light Theme](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/d4065aed-7eaa-42b2-9b89-d4a748e7cbf9)
+
+### Dark Theme with transparent background:
+![Transparent Dark Theme](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/f0b3bc37-ac3b-46e9-ab8e-7604184db4dc)
 
 
 ## 🎨 Color Palettes
