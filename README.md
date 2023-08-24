@@ -1,15 +1,12 @@
 # Monokai NighTasty 🫖
 
-![Pull Requests](https://img.shields.io/badge/Pull_Requests-Welcome-black?style=flat-square-black&labelColor=fc1a70&color=ff9700)
+![Pull Requests](https://img.shields.io/badge/Pull_Requests-Welcome-_?style=flat-square&labelColor=fc1a70&color=ff9700)
 ![GitHub last commit](https://img.shields.io/github/last-commit/polirritmico/monokai-nightasty.nvim/main?style=flat-square&labelColor=ffff87&color=a4e400)
 ![GitHub issues](https://img.shields.io/github/issues/polirritmico/monokai-nightasty.nvim?style=flat-square&labelColor=62d8f1&color=af87ff)
 
-
-![Pull Requests](https://img.shields.io/badge/PR-Welcome-brighgreen)
-![GitHub last commit](https://img.shields.io/github/last-commit/polirritmico/monokai-nightasty.nvim/main)
-![GitHub issues](https://img.shields.io/github/issues/polirritmico/monokai-nightasty.nvim)
-
-
+<!-- ![Pull Requests](https://img.shields.io/badge/PR-Welcome-brighgreen) -->
+<!-- ![GitHub last commit](https://img.shields.io/github/last-commit/polirritmico/monokai-nightasty.nvim/main) -->
+<!-- ![GitHub issues](https://img.shields.io/github/issues/polirritmico/monokai-nightasty.nvim) -->
 
 A dark/light theme for Neovim based on the Monokai color palette. The code is
 based on the excelent
