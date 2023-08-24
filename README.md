@@ -1,9 +1,12 @@
 # Monokai NighTasty 🫖
 
-A dark theme with a light variant for Neovim based on the Monokai color
-palette. The code is based on the tokyonight.nvim plugin and vim-monokai-tasty
-for the palette. It includes additional configs for tmux, lualine, zathura and
-others.
+A dark/light theme for Neovim based on the Monokai color palette. The code is
+based on the excelent
+[tokyonight.nvim](https://github.com/folke/tokyonight.nvim) plugin and the
+palette is adapted from the flavorful
+[vim-monokai-tasty](https://github.com/patstockwell/vim-monokai-tasty) plugin.
+Written in Lua, it includes support for lsp, treesitter, a lot of plugins and
+additional config files for tmux, zathura and others.
 
 
 ## Features
@@ -44,7 +47,8 @@ others.
 
 ## Requirements
 
-- Neovim >= [0.9.0](https://github.com/neovim/neovim/releases/tag/v0.9.0)
+- [Neovim](https://neovim.io/) >= [0.9.0](https://github.com/neovim/neovim/releases/tag/v0.9.0)
+
 
 ## Installation
 
