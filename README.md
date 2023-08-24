@@ -18,7 +18,7 @@ additional config files for tmux, zathura and others.
 
 ![Monokai-NighTasty](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/1eabe0aa-609e-4076-89f9-b99683b55442)
 
-## Features
+## 🌆 Features
 
 - Avoid eye strain by seamlessly toggling between clear and dark styles at
   your fingertips, whether you're at your station or out in the wild.
@@ -26,7 +26,7 @@ additional config files for tmux, zathura and others.
 - Infused with the Monokai palette for a vibrant, distraction-free coding
   experience.
 
-## Screenshots
+## 📷 Screenshots
 
 ### 🌙 Dark Theme
 
@@ -41,12 +41,12 @@ additional config files for tmux, zathura and others.
 ![Light Theme](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/d4065aed-7eaa-42b2-9b89-d4a748e7cbf9)
 
 
-## Requirements
+## 📋 Requirements
 
 - [Neovim](https://neovim.io/) >= [0.9.0](https://github.com/neovim/neovim/releases/tag/v0.9.0)
 
 
-## Installation
+## 📦 Installation
 
 Install with your package manager.
 
@@ -61,16 +61,16 @@ Install with your package manager.
 }
 ```
 
-## Configuration
+## 🛠️ Configuration
 
-### Base configuration
+### 🚀 Usage / Base configuration
 
 ```lua
 vim.opt.background = "dark" -- dark or light
 vim.cmd([[colorscheme monokai]])
 ```
 
-### Toggle function
+### 💡 Toggle function
 
 The Dark/light styles could be toggled by calling the provided function:
 
@@ -78,7 +78,7 @@ The Dark/light styles could be toggled by calling the provided function:
 :MonokaiToggleLight
 ```
 
-### External Plugins
+### 🧩 External Plugins
 
 #### Lualine
 
@@ -88,11 +88,11 @@ require("lualine").setup({
 })
 ```
 
-### Advanced configuration
+### 📊 Advanced configuration
 
 > ⚠️ Set the configuration **BEFORE** calling `colorscheme monokai`.
 
-#### Full config example:
+#### 📖 Full config example:
 
 ```lua
 vim.opt.background = "dark" -- The theme has `dark` and `light` styles
@@ -143,7 +143,7 @@ vim.keymap.set({"n"}, "<leader>tl", "<CMD>MonokaiToggleLight<CR>", {silent = tru
 ```
 ---
 
-## Colors & Highlight Groups under the hood
+## 🔍 Colors & Highlight Groups under the hood
 
 How the plugin setup the highlights and colors:
 
@@ -174,13 +174,13 @@ For default values of `colors` and `highlights`, please consult the
 
 ---
 
-## Extras
+## 🍱 Extras
 
 Check the `extras` folder (`~/.local/share/nvim/lazy/monokai-nightasty/extras`
 for Lazy packager). Copy, link or reference the file in each setting. Refer to
 their respective documentation.
 
-### Tmux
+### 📟 Tmux
 
 #### Fix `undercurls` in [Tmux](https://github.com/tmux/tmux):
 
@@ -195,7 +195,7 @@ set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{25
 ```
 
 
-### Import color palette and utils
+### 🧰 Import color palette and utils
 
 You could import the color palette to use with other plugins:
 
@@ -243,7 +243,7 @@ some_plugin_config.unfocus_bg = util.darken(colors.bg, 0.3)
 | Orange      | `#ff4d00` | ![#ff4d00](https://place-hold.it/100x40/ff4d00/000000?text=+) |
 
 
-## Contributions
+## 🌱 Contributions
 
 This plugin is made mainly for my personal use, but suggestions, issues, or pull
 requests are very welcome.
