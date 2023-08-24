@@ -28,40 +28,17 @@ additional config files for tmux, zathura and others.
 
 ## Screenshots
 
-### Dark Theme:
+### 🌙 Dark Theme
 
 ![Dark Theme](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/3b0bf4b6-027f-438c-9794-0042f070765e)
 
-### Light Theme
-![Light Theme](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/d4065aed-7eaa-42b2-9b89-d4a748e7cbf9)
+### 💨 Dark Theme with transparent background:
 
-### Dark Theme with transparent background:
 ![Transparent Dark Theme](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/f0b3bc37-ac3b-46e9-ab8e-7604184db4dc)
-
-
-## 🎨 Color Palettes
-
-### 🌙 Dark Theme
-
-| Color name  | Code      | Color                                                         |
-|-------------|-----------|---------------------------------------------------------------|
-| Yellow      | `#ffff87` | ![#ffff87](https://place-hold.it/100x40/ffff87/111111?text=+) |
-| Purple      | `#af87ff` | ![#af87ff](https://place-hold.it/100x40/af87ff/000000?text=+) |
-| Green Light | `#a4e400` | ![#a4e400](https://place-hold.it/100x40/a4e400/000000?text=+) |
-| Blue Light  | `#62d8f1` | ![#62d8f1](https://place-hold.it/100x40/62d8f1/000000?text=+) |
-| Magenta     | `#fc1a70` | ![#fc1a70](https://place-hold.it/100x40/fc1a70/000000?text=+) |
-| Orange      | `#ff9700` | ![#ff9700](https://place-hold.it/100x40/ff9700/000000?text=+) |
 
 ### ☀️ Light Theme
 
-| Color name  | Code      | Color                                                         |
-|-------------|-----------|---------------------------------------------------------------|
-| Yellow      | `#ff8f00` | ![#ff8f00](https://place-hold.it/100x40/ff8f00/000000?text=+) |
-| Purple      | `#6054d0` | ![#6054d0](https://place-hold.it/100x40/6054d0/000000?text=+) |
-| Green Light | `#4fb000` | ![#4fb000](https://place-hold.it/100x40/4fb000/000000?text=+) |
-| Blue Light  | `#00b3e3` | ![#00b3e3](https://place-hold.it/100x40/00b3e3/000000?text=+) |
-| Magenta     | `#ff004b` | ![#ff004b](https://place-hold.it/100x40/ff004b/000000?text=+) |
-| Orange      | `#ff4d00` | ![#ff4d00](https://place-hold.it/100x40/ff4d00/000000?text=+) |
+![Light Theme](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/d4065aed-7eaa-42b2-9b89-d4a748e7cbf9)
 
 
 ## Requirements
@@ -239,6 +216,31 @@ local util = require("monokai-nightasty.util")
 some_plugin_config.highlight_match = util.lighten(colors.bg, 0.5)
 some_plugin_config.unfocus_bg = util.darken(colors.bg, 0.3)
 ```
+
+
+## 🎨 Color Palettes
+
+### 🌙 Dark Theme
+
+| Color name  | Code      | Color                                                         |
+|-------------|-----------|---------------------------------------------------------------|
+| Yellow      | `#ffff87` | ![#ffff87](https://place-hold.it/100x40/ffff87/111111?text=+) |
+| Purple      | `#af87ff` | ![#af87ff](https://place-hold.it/100x40/af87ff/000000?text=+) |
+| Green Light | `#a4e400` | ![#a4e400](https://place-hold.it/100x40/a4e400/000000?text=+) |
+| Blue Light  | `#62d8f1` | ![#62d8f1](https://place-hold.it/100x40/62d8f1/000000?text=+) |
+| Magenta     | `#fc1a70` | ![#fc1a70](https://place-hold.it/100x40/fc1a70/000000?text=+) |
+| Orange      | `#ff9700` | ![#ff9700](https://place-hold.it/100x40/ff9700/000000?text=+) |
+
+### ☀️ Light Theme
+
+| Color name  | Code      | Color                                                         |
+|-------------|-----------|---------------------------------------------------------------|
+| Yellow      | `#ff8f00` | ![#ff8f00](https://place-hold.it/100x40/ff8f00/000000?text=+) |
+| Purple      | `#6054d0` | ![#6054d0](https://place-hold.it/100x40/6054d0/000000?text=+) |
+| Green Light | `#4fb000` | ![#4fb000](https://place-hold.it/100x40/4fb000/000000?text=+) |
+| Blue Light  | `#00b3e3` | ![#00b3e3](https://place-hold.it/100x40/00b3e3/000000?text=+) |
+| Magenta     | `#ff004b` | ![#ff004b](https://place-hold.it/100x40/ff004b/000000?text=+) |
+| Orange      | `#ff4d00` | ![#ff4d00](https://place-hold.it/100x40/ff4d00/000000?text=+) |
 
 
 ## Contributions
