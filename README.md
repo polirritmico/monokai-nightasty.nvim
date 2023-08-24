@@ -220,7 +220,7 @@ some_plugin_config.unfocus_bg = util.darken(colors.bg, 0.3)
 
 ## 🎨 Color Palettes
 
-### 🌙 Dark Theme
+### 🌃 Dark Theme
 
 | Color name  | Code      | Color                                                         |
 |-------------|-----------|---------------------------------------------------------------|
@@ -231,7 +231,7 @@ some_plugin_config.unfocus_bg = util.darken(colors.bg, 0.3)
 | Magenta     | `#fc1a70` | ![#fc1a70](https://place-hold.it/100x40/fc1a70/000000?text=+) |
 | Orange      | `#ff9700` | ![#ff9700](https://place-hold.it/100x40/ff9700/000000?text=+) |
 
-### ☀️ Light Theme
+### 🏙️ Light Theme
 
 | Color name  | Code      | Color                                                         |
 |-------------|-----------|---------------------------------------------------------------|
