@@ -2,8 +2,8 @@
 
 ![Pull Requests](https://img.shields.io/badge/Pull_Requests-Welcome-a4e400?style=flat-square)
 ![GitHub last commit](https://img.shields.io/badge/last_commit-today-62d8f1?style=flat-square)
-<!-- ![GitHub last commit](https://img.shields.io/github/last-commit/polirritmico/monokai-nightasty.nvim/main?style=flat-square&color=62d8f1) -->
 ![GitHub issues](https://img.shields.io/badge/issues-0-fc1a79?style=flat-square)
+<!-- ![GitHub last commit](https://img.shields.io/github/last-commit/polirritmico/monokai-nightasty.nvim/main?style=flat-square&color=62d8f1) -->
 <!-- ![GitHub issues](https://img.shields.io/github/issues/polirritmico/monokai-nightasty.nvim?style=flat-square&color=fc1a70) -->
 
 
