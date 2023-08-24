@@ -221,7 +221,9 @@ some_plugin_config.unfocus_bg = util.darken(colors.bg, 0.3)
 
 ### 🌃 Dark Theme
 
-| Color name  | Code      | Color                                                         |
+<!-- panvimdoc-ignore-start -->
+
+| Color name  | Hex code  | Render                                                        |
 |-------------|-----------|---------------------------------------------------------------|
 | Yellow      | `#ffff87` | ![#ffff87](https://place-hold.it/100x40/ffff87/111111?text=+) |
 | Purple      | `#af87ff` | ![#af87ff](https://place-hold.it/100x40/af87ff/000000?text=+) |
@@ -230,9 +232,26 @@ some_plugin_config.unfocus_bg = util.darken(colors.bg, 0.3)
 | Magenta     | `#fc1a70` | ![#fc1a70](https://place-hold.it/100x40/fc1a70/000000?text=+) |
 | Orange      | `#ff9700` | ![#ff9700](https://place-hold.it/100x40/ff9700/000000?text=+) |
 
+<!-- panvimdoc-ignore-end -->
+
+<!-- panvimdoc-include-comment
+
+| Color name  | Hex code  |
+|-------------|-----------|
+| Yellow      | `#ffff87` |
+| Purple      | `#af87ff` |
+| Green Light | `#a4e400` |
+| Blue Light  | `#62d8f1` |
+| Magenta     | `#fc1a70` |
+| Orange      | `#ff9700` |
+
+-->
+
 ### 🏙️ Light Theme
 
-| Color name  | Code      | Color                                                         |
+<!-- panvimdoc-ignore-start -->
+
+| Color name  | Hex code  | Render                                                        |
 |-------------|-----------|---------------------------------------------------------------|
 | Yellow      | `#ff8f00` | ![#ff8f00](https://place-hold.it/100x40/ff8f00/000000?text=+) |
 | Purple      | `#6054d0` | ![#6054d0](https://place-hold.it/100x40/6054d0/000000?text=+) |
@@ -241,6 +260,20 @@ some_plugin_config.unfocus_bg = util.darken(colors.bg, 0.3)
 | Magenta     | `#ff004b` | ![#ff004b](https://place-hold.it/100x40/ff004b/000000?text=+) |
 | Orange      | `#ff4d00` | ![#ff4d00](https://place-hold.it/100x40/ff4d00/000000?text=+) |
 
+<!-- panvimdoc-ignore-end -->
+
+<!-- panvimdoc-include-comment
+
+| Color name  | Hex code  |
+|-------------|-----------|
+| Yellow      | `#ff8f00` |
+| Purple      | `#6054d0` |
+| Green Light | `#4fb000` |
+| Blue Light  | `#00b3e3` |
+| Magenta     | `#ff004b` |
+| Orange      | `#ff4d00` |
+
+-->
 
 ## 🌱 Contributions
 
