@@ -1,4 +1,4 @@
-local util = require("monokai.util")
+local util = require("monokai-nightasty.util")
 
 local M = {}
 
@@ -81,7 +81,7 @@ M.light_palette = {
 ---@return ColorScheme
 function M.setup(opts)
     opts = opts or {}
-    local config = require("monokai.config")
+    local config = require("monokai-nightasty.config")
 
     local bg_cfg = config.is_light() and config.options.light_style_background
         or config.options.dark_style_background

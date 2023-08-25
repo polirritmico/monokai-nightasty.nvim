@@ -1,6 +1,6 @@
-local util = require("monokai.util")
-local theme = require("monokai.theme")
-local config = require("monokai.config")
+local util = require("monokai-nightasty.util")
+local theme = require("monokai-nightasty.theme")
+local config = require("monokai-nightasty.config")
 
 local M = {}
 
@@ -15,7 +15,7 @@ function M.load(opts)
     end
 
     if opts then
-        require("monokai.config").extend(opts)
+        require("monokai-nightasty.config").extend(opts)
     end
     util.load(theme.setup())
 end

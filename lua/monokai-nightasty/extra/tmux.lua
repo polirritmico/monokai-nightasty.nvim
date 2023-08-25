@@ -1,4 +1,4 @@
-local util = require("monokai.util")
+local util = require("monokai-nightasty.util")
 
 local M = {}
 
@@ -6,7 +6,7 @@ local M = {}
 function M.generate(colors)
   local tmux = util.template(
     [[
-# Monokai colors for Tmux
+# Monokai NighTasty colors for Tmux
 
 tm_bg="${grey_darker}"
 tm_fg="${grey_light}"

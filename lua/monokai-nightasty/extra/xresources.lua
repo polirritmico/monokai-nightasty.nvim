@@ -1,4 +1,4 @@
-local util = require("monokai.util")
+local util = require("monokai-nightasty.util")
 
 local M = {}
 
@@ -6,7 +6,7 @@ local M = {}
 function M.generate(colors)
   local xr = util.template(
     [[
-! Monokai colors for Xresources
+! Monokai NighTasty colors for Xresources
 
 *background: ${bg}
 *foreground: ${fg}

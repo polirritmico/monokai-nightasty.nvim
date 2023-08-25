@@ -50,7 +50,7 @@ end
 
 function M.setup()
     M.docs()
-    local config = require("monokai.config")
+    local config = require("monokai-nightasty.config")
     vim.o.background = "dark"
 
     -- map of style to style name
@@ -60,16 +60,16 @@ function M.setup()
     }
 
     for extra, info in pairs(M.extras) do
-        package.loaded["monokai.extra." .. extra] = nil
-        local plugin = require("monokai.extra." .. extra)
+        package.loaded["monokai-nightasty.extra." .. extra] = nil
+        local plugin = require("monokai-nightasty.extra." .. extra)
         -- TODO: Check this code
         for style, style_name in pairs(styles) do
             config.setup({ style = style })
             -- TODO: Check tansform = true... maybe is not longer needed
-            local colors = require("monokai.colors").setup({ transform = true })
-            local fname = "extras/" .. extra .. "/monokai_" .. style .. "." .. info.ext
-            colors["_upstream_url"] = "https://github.com/polirritmico/monokai.nvim/raw/main/extras/" .. fname
-            colors["_style_name"] = "Monokai" .. style_name
+            local colors = require("monokai-nightasty.colors").setup({ transform = true })
+            local fname = "extras/" .. extra .. "/monokai-nightasty_" .. style .. "." .. info.ext
+            colors["_upstream_url"] = "https://github.com/polirritmico/monokai-nightasty.nvim/raw/main/extras/" .. fname
+            colors["_style_name"] = "Monokai_NighTasty" .. style_name
             write(plugin.generate(colors), fname)
         end
     end

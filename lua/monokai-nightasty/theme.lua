@@ -1,5 +1,5 @@
-local util = require("monokai.util")
-local colors = require("monokai.colors")
+local util = require("monokai-nightasty.util")
+local colors = require("monokai-nightasty.colors")
 
 local M = {}
 --
@@ -13,7 +13,7 @@ local M = {}
 
 ---@return Theme
 function M.setup()
-    local config = require("monokai.config")
+    local config = require("monokai-nightasty.config")
     local options = config.options
     if options.transparent == nil then
         options.transparent = false
