@@ -7,7 +7,7 @@ M.extras = {tmux = {ext = "tmux", url = "https://github.com/tmux/tmux/wiki", lab
     -- xresources = {ext = "Xresources", url = "https://wiki.archlinux.org/title/X_resources", label = "Xresources"},
     -- lua = {ext = "lua", url = "https://www.lua.org", label = "Lua Table for testing"},
     -- zathura = {ext = "zathurarc", url = "https://pwmt.org/projects/zathura/", label = "Zathura"},
-    palettes = {ext = "Palettes", url = "https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/extras/palettes"},
+    palettes = {ext = "lua", url = "https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/extras/palettes"},
 }
 
 local function write(str, fileName)
