@@ -71,7 +71,7 @@ Install with your package manager.
 
 >lua
     vim.opt.background = "dark" -- dark or light
-    vim.cmd([[colorscheme monokai]])
+    vim.cmd([[colorscheme monokai-nightasty]])
 <
 
 **Toggle function**
@@ -90,7 +90,7 @@ LUALINE ~
 
 >lua
     require("lualine").setup({
-        options = { theme = "monokai" },
+        options = { theme = "monokai-nightasty" },
     })
 <
 
@@ -130,7 +130,7 @@ FULL CONFIG EXAMPLE: ~
         --- TODO: Full list of colors: 
         ---@param colors ColorScheme
         on_colors = function(colors)
-            colors.border = "888888"
+            colors.border = colors.grey
             colors.comment = "ff0000"
         end,
     
@@ -146,7 +146,7 @@ FULL CONFIG EXAMPLE: ~
     })
     
     -- Toggle Dark/Light styles
-    vim.keymap.set({"n"}, "<leader>tl", "<CMD>MonokaiToggleLight<CR>", {silent = true, desc = "Monokai: Toggle light/dark theme"})
+    vim.keymap.set({"n"}, "<leader>tl", "<CMD>MonokaiToggleLight<CR>", {silent = true, desc = "Monokai-NighTasty: Toggle light/dark theme"})
 <
 
 ------------------------------------------------------------------------------
