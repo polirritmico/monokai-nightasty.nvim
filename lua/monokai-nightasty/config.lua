@@ -25,7 +25,7 @@ local defaults = {
     dim_inactive = false, -- dims inactive windows
     lualine_bold = false, -- When `true`, section headers in the lualine theme will be bold
     -- TODO: Document this
-    lualine_style = "dark", -- "light", "dark" or "default"
+    lualine_style = "default", -- "light", "dark" or "default"
 
     --- You can override specific color groups to use other groups or a hex color
     --- function will be called with a ColorScheme table

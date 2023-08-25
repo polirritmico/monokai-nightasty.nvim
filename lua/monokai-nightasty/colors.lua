@@ -83,12 +83,9 @@ M.light_palette = {
 function M.setup(opts)
     local config = require("monokai-nightasty.config")
 
-    local is_light
-    if opts and opts.force_style then
-        is_light = opts.force_style == "light" and function() return true end or function() return false end
-    else
-        is_light = config.is_light
-    end
+    local is_light = (opts and opts.force_style == "light") and function() return true end
+        or (opts and opts.force_style == "dark") and function() return false end
+        or config.is_light
 
     local bg_cfg = is_light() and config.options.light_style_background
         or config.options.dark_style_background

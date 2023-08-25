@@ -1,9 +1,5 @@
+local colors = require("monokai-nightasty.colors").setup({ transform = true })
 local config = require("monokai-nightasty.config").options
-local colors = require("monokai-nightasty.colors").setup(
-    config.lualine_style == "dark" and { force_style = "dark" }
-        or config.lualine_style == "light" and { force_style = "light" }
-        or {}
-)
 
 local monokai_nightasty = {}
 
