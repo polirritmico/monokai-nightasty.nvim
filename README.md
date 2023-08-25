@@ -54,7 +54,7 @@ additional config files for tmux, zathura and others.
 
 ## 📋 Requirements
 
-- [Neovim](https://neovim.io/) >= [0.9.0](https://github.com/neovim/neovim/releases/tag/v0.9.0)
+- [Neovim](https://neovim.io/) >= 0.9.0
 
 
 ## 📦 Installation
@@ -76,6 +76,8 @@ Install with your package manager.
 
 **Base configuration**
 
+No need to use `setup()` function:
+
 ```lua
 vim.opt.background = "dark" -- dark or light
 vim.cmd([[colorscheme monokai-nightasty]])
@@ -89,7 +91,7 @@ The Dark/light styles could be toggled by calling the provided function:
 :MonokaiToggleLight
 ```
 
-### 🧩 External Plugins
+###  External Plugins
 
 #### Lualine
 
@@ -149,14 +151,17 @@ require("monokai-nightasty").setup({
 })
 
 -- Toggle Dark/Light styles
-vim.keymap.set({"n"}, "<leader>tl", "<CMD>MonokaiToggleLight<CR>", {silent = true, desc = "Monokai-NighTasty: Toggle light/dark theme"})
+vim.keymap.set(
+    {"n", "v"}, "<leader>tl", "<CMD>MonokaiToggleLight<CR>",
+    {silent = true, desc = "Monokai-NighTasty: Toggle light/dark theme"}
+)
 
 ```
 ---
 
-## 🔍 Colors & Highlight Groups under the hood
+## 🔍 Colors and Highlights
 
-How the plugin setup the highlights and colors:
+How the plugin setup the highlights and colors under the hood:
 
 1. `colors` are loaded from the base palette and adjusted based on your
    configuration settings. For example, in the dark style the `bg` color is set
@@ -206,7 +211,7 @@ set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{25
 ```
 
 
-### 🚀 Using the colors and utils with other plugins
+### 🚀 Using with other plugins
 
 You could import the color palette to use with other plugins:
 
