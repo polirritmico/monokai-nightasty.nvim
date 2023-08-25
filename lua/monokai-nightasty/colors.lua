@@ -16,6 +16,7 @@ M.default = {
 
     -- Neutrals
     black = "#000000",
+    bg_darker = "#262626",
     charcoal = "#262626",
     charcoal_medium = "#2b2b2b",
     charcoal_light = "#313131",
@@ -80,12 +81,18 @@ M.light_palette = {
 
 ---@return ColorScheme
 function M.setup(opts)
-    opts = opts or {}
     local config = require("monokai-nightasty.config")
 
-    local bg_cfg = config.is_light() and config.options.light_style_background
+    local is_light
+    if opts and opts.force_style then
+        is_light = opts.force_style == "light" and function() return true end or function() return false end
+    else
+        is_light = config.is_light
+    end
+
+    local bg_cfg = is_light() and config.options.light_style_background
         or config.options.dark_style_background
-    local palette = (config.is_light() and not opts.transform) and M.light_palette or {}
+    local palette = is_light() and M.light_palette or {}
 
     -- Color Palette
     ---@class ColorScheme: Palette
@@ -120,7 +127,7 @@ function M.setup(opts)
     colors.fg_float = colors.fg
 
     -- Set the cursor-line highlight
-    colors.bg_highlight = config.is_light() and util.lighten(colors.bg, 0.9, colors.fg)
+    colors.bg_highlight = is_light() and util.lighten(colors.bg, 0.9, colors.fg)
         or util.darken(colors.bg, 0.9, colors.fg) -- (0.97 for #313131)
 
     colors.bg_visual = colors.grey_darker

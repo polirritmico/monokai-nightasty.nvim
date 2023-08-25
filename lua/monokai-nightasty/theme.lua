@@ -11,8 +11,9 @@ local M = {}
 
 ---@alias Highlights table<string,Highlight>
 
+---@param palette ColorScheme|nil
 ---@return Theme
-function M.setup()
+function M.setup(palette)
     local config = require("monokai-nightasty.config")
     local options = config.options
     if options.transparent == nil then
@@ -23,7 +24,7 @@ function M.setup()
     ---@field highlights Highlights
     local theme = {
         config = options,
-        colors = colors.setup(),
+        colors = palette and palette or colors.setup(),
     }
 
     local c = theme.colors

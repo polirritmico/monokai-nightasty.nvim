@@ -4,8 +4,8 @@ local M = {}
 ---@field on_colors fun(colors: ColorScheme)
 ---@field on_highlights fun(highlights: Highlights, colors: ColorScheme)
 local defaults = {
-    dark_style_background = "default", -- default, transparent, default, #color
-    light_style_background = "default", -- default, transparent, default, #color
+    dark_style_background = "default", -- default, dark, transparent, #color
+    light_style_background = "default", -- default, dark, transparent, #color
     terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
     hl_styles = {
         -- Style to be applied to different syntax groups
@@ -24,6 +24,8 @@ local defaults = {
     hide_inactive_statusline = false, -- Enabling this option, will hide inactive statuslines and replace them with a thin border instead. Should work with the standard **StatusLine** and **LuaLine**.
     dim_inactive = false, -- dims inactive windows
     lualine_bold = false, -- When `true`, section headers in the lualine theme will be bold
+    -- TODO: Document this
+    lualine_style = "dark", -- "light", "dark" or "default"
 
     --- You can override specific color groups to use other groups or a hex color
     --- function will be called with a ColorScheme table
