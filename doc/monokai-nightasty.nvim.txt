@@ -69,8 +69,10 @@ Install with your package manager.
 
 **Base configuration**
 
+No need to use the `setup()` function:
+
 >lua
-    vim.opt.background = "dark" -- dark or light
+    vim.opt.background = "dark" -- default to dark or light
     vim.cmd([[colorscheme monokai-nightasty]])
 <
 

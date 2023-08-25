@@ -76,10 +76,10 @@ Install with your package manager.
 
 **Base configuration**
 
-No need to use `setup()` function:
+No need to use the `setup()` function:
 
 ```lua
-vim.opt.background = "dark" -- dark or light
+vim.opt.background = "dark" -- default to dark or light
 vim.cmd([[colorscheme monokai-nightasty]])
 ```
 
@@ -91,7 +91,7 @@ The Dark/light styles could be toggled by calling the provided function:
 :MonokaiToggleLight
 ```
 
-###  External Plugins
+### 🧩 External Plugins
 
 #### Lualine
 
