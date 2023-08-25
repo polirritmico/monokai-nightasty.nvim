@@ -1,4 +1,4 @@
-# Monokai colors for Tmux
+# Monokai NighTasty colors for Tmux
 
 tm_bg="#444444"
 tm_fg="#bcbcbc"
@@ -6,7 +6,7 @@ tm_bg_highlight="#313131"
 tm_green="#a4e400"
 tm_orange="#ff9700"
 tm_black="#000000"
-tm_border="#62d8f1"
+tm_border="#8a8a8a"
 
 set -g mode-style "fg=$tm_green,bg=$tm_bg"
 
