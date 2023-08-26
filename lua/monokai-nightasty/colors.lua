@@ -41,10 +41,10 @@ M.default = {
     -- Extra colors
     blue_medium = "#0087ff",
     green_alt = "#83dc78",
+    green_unchanged = "#a4e400",
     red = "#ff005f",
     yellow_light = "#f6f557",
-
-    git = { change = "#ff9700", add = "#a4e400", delete = "#fc1a70" },
+    git = { add = "#a4e400", change = "#ff9700", delete = "#fc1a70" },
 }
 
 M.light_palette = {
@@ -77,6 +77,11 @@ M.light_palette = {
     -- Variant colors
     bg_dark = "#d9d9d9",         -- #262626, #e8e8e8
     bg = "#ffffff",              -- #2b2b2b, #1a1b26
+
+    -- Extra colors
+    green_unchanged = "#a4e400",
+    -- yellow_light = "#ff8f00",
+    git = { add = "#4fb000", change = "#ff4d00", delete = "#ff004b" },
 }
 
 ---@return ColorScheme
@@ -101,20 +106,21 @@ function M.setup(opts)
         or string.sub(bg_cfg, 1, 1) == "#" and bg_cfg
         or colors.bg
 
-    -- Default values for util functions darken() and lighter()
+    -- Default values for functions util.darken() and util.lighter()
     util.bg = colors.bg
     util.fg = colors.fg
 
     colors.border = colors.blue_light
     colors.border_highlight = colors.fg
 
-    -- Popups and statusline always get a dark background
+    -- Popups and statusline
     colors.bg_popup = colors.grey_darker
-    colors.bg_statusline = colors.grey_darker
+    colors.bg_statusline = is_light() and util.darken(colors.bg, 0.95, colors.fg)
+        or colors.grey_darker
+    colors.bg_status_alt = is_light() and colors.charcoal or colors.charcoal_light
     colors.fg_statusline = colors.grey_light
 
-    -- TODO: Check all the posible values
-    -- Sidebar and Floats are configurable
+    -- Sidebar and Floats
     colors.bg_sidebar = config.options.hl_styles.sidebars == "transparent" and colors.none
         or config.options.hl_styles.sidebars == "dark" and colors.bg_dark
         or colors.bg
@@ -123,7 +129,7 @@ function M.setup(opts)
         or colors.bg
     colors.fg_float = colors.fg
 
-    -- Set the cursor-line highlight
+    -- Set the background for the current line (current cursor position)
     colors.bg_highlight = is_light() and util.lighten(colors.bg, 0.9, colors.fg)
         or util.darken(colors.bg, 0.9, colors.fg) -- (0.97 for #313131)
 

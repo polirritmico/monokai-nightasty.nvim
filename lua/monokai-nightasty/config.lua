@@ -14,18 +14,16 @@ local defaults = {
         keywords = { italic = true },
         functions = {},
         variables = {},
-        -- Background styles. Can be "dark", "transparent" or "default"
-        -- TODO: Move this to each style?
-        sidebars = "dark", -- style for sidebars, see below
-        floats = "dark", -- style for floating windows
+        -- Backgrounds styles
+        sidebars = "default", -- Sidebars/panels. "dark", "transparent" or "default"
+        floats = "default", -- Floating windows. "dark", "transparent" or "default"
     },
     sidebars = { "qf", "help" }, -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`
 
     hide_inactive_statusline = false, -- Enabling this option, will hide inactive statuslines and replace them with a thin border instead. Should work with the standard **StatusLine** and **LuaLine**.
     dim_inactive = false, -- dims inactive windows
     lualine_bold = false, -- When `true`, section headers in the lualine theme will be bold
-    -- TODO: Document this
-    lualine_style = "default", -- "light", "dark" or "default"
+    lualine_style = "toggle", -- "dark", "light" or "toggle" (Change on toggle style)
 
     --- You can override specific color groups to use other groups or a hex color
     --- function will be called with a ColorScheme table
