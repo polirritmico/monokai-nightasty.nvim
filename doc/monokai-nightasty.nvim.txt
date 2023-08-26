@@ -1,4 +1,4 @@
-*monokai-nightasty.nvim.txt*  For Neovim >= 0.9.0  Last change: 2023 August 25
+*monokai-nightasty.nvim.txt*  For Neovim >= 0.9.0  Last change: 2023 August 26
 
 ==============================================================================
 Table of Contents                   *monokai-nightasty.nvim-table-of-contents*
@@ -34,11 +34,11 @@ files for tmux, zathura and others.
 ==============================================================================
 2. Features                                  *monokai-nightasty.nvim-features*
 
+- Infused with the Monokai palette for a vibrant, distraction-free coding
+    experience.
 - Avoid eye strain by seamlessly toggling between clear and dark styles at
     your fingertips, whether you’re at your station or out in the wild.
 - Highly customizable for your coding needs.
-- Infused with the Monokai palette for a vibrant, distraction-free coding
-    experience.
 
 
 ==============================================================================
@@ -113,6 +113,7 @@ FULL CONFIG EXAMPLE: ~
         dim_inactive = false, -- dims inactive windows
         hide_inactive_statusline = false, -- Hide inactive statuslines and replace them with a thin border instead. Should work with the standard StatusLine and LuaLine.
         lualine_bold = true, -- Lualine headers will be bold.
+        lualine_style = "toggle" -- "dark", "light", "toggle" (Follows current style).
         sidebars = { "qf", "help" }, -- Set a darker background on sidebars-like windows.
         terminal_colors = true, -- Set the colors used when opening a `:terminal`
         hl_styles = {
