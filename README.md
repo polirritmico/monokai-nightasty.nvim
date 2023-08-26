@@ -28,11 +28,11 @@ additional config files for tmux, zathura and others.
 
 ## 🌆 Features
 
+- Infused with the Monokai palette for a vibrant, distraction-free coding
+  experience.
 - Avoid eye strain by seamlessly toggling between clear and dark styles at
   your fingertips, whether you're at your station or out in the wild.
 - Highly customizable for your coding needs.
-- Infused with the Monokai palette for a vibrant, distraction-free coding
-  experience.
 
 <!-- panvimdoc-ignore-start -->
 
