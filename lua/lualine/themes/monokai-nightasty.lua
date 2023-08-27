@@ -1,6 +1,6 @@
 local config = require("monokai-nightasty.config")
 local dark_style = config.options.lualine_style == "dark"
-    or config.options.lualine_style == "toggle" and not config.is_light()
+    or config.options.lualine_style ~= "light" and not config.is_light() or false
 
 local monokai_nightasty = {}
 
@@ -10,7 +10,8 @@ if dark_style then
     monokai_nightasty.normal = {
         a = { fg = c.black, bg = c.green_light },
         b = { fg = c.green_light, bg = c.bg_status_alt },
-        c = { fg = c.fg_sidebar, bg = c.bg_statusline },
+        -- c = { fg = c.fg_sidebar, bg = c.bg_statusline },
+        c = { fg = c.fg_statusline, bg = c.bg_statusline },
     }
 
     monokai_nightasty.insert = {
@@ -47,9 +48,10 @@ else
     local c = require("monokai-nightasty.colors").setup({force_style = "light"})
 
     monokai_nightasty.normal = {
-        a = { fg = c.white, bg = c.blue_light },
+        a = { fg = c.black, bg = c.green_unchanged },
+        -- a = { fg = c.white, bg = c.blue_light },
         b = { fg = c.fg_sidebar, bg = c.bg_status_alt },
-        c = { fg = c.fg_sidebar, bg = c.bg_statusline },
+        c = { fg = c.fg_statusline, bg = c.bg_statusline },
     }
 
     monokai_nightasty.insert = {

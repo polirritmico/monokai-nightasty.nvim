@@ -80,7 +80,6 @@ M.light_palette = {
 
     -- Extra colors
     green_unchanged = "#a4e400",
-    -- yellow_light = "#ff8f00",
     git = { add = "#4fb000", change = "#ff4d00", delete = "#ff004b" },
 }
 
@@ -115,10 +114,10 @@ function M.setup(opts)
 
     -- Popups and statusline
     colors.bg_popup = colors.grey_darker
-    colors.bg_statusline = is_light() and util.darken(colors.bg, 0.95, colors.fg)
+    colors.bg_statusline = is_light() and util.darken(colors.bg, 0.93, colors.fg)
         or colors.grey_darker
-    colors.bg_status_alt = is_light() and colors.charcoal or colors.charcoal_light
-    colors.fg_statusline = colors.grey_light
+    colors.bg_status_alt = is_light() and colors.charcoal_light or colors.charcoal_light
+    colors.fg_statusline = colors.fg_dark
 
     -- Sidebar and Floats
     colors.bg_sidebar = config.options.hl_styles.sidebars == "transparent" and colors.none
