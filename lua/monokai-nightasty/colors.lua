@@ -16,35 +16,37 @@ M.default = {
 
     -- Neutrals
     black = "#000000",
-    bg_darker = "#262626",
     charcoal = "#262626",
     charcoal_medium = "#2b2b2b",
     charcoal_light = "#313131",
     grey_darker = "#444444",
-    terminal_black = "#444444",
     grey_darker_alt = "#3e3e3e",
-    fg_gutter = "#3e3e3e",
     grey_dark = "#4b4b4b",
     grey_medium = "#585858",
     grey = "#8a8a8a",
-    comment = "#8a8a8a",
     grey_light = "#bcbcbc",
     grey_lighter = "#e8e8e8",
-    fg_dark = "#e8e8e8",
     white = "#ffffff",
+
+    -- Functionals
+    bg_dark = "#121212",
+    bg_darker = "#262626",
+    bg = "#2b2b2b",
+    fg_gutter = "#3e3e3e",
+    terminal_black = "#444444",
+    comment = "#8a8a8a",
+    fg_dark = "#e8e8e8",
     fg = "#ffffff",
 
-    -- Variant colors
-    bg_dark = "#121212",
-    bg = "#2b2b2b",
-
     -- Extra colors
-    blue_medium = "#0087ff",
+    blue_alt = "#0087ff",
     green_alt = "#83dc78",
     green_unchanged = "#a4e400",
     red = "#ff005f",
-    yellow_light = "#f6f557",
-    git = { add = "#a4e400", change = "#ff9700", delete = "#fc1a70" },
+    yellow_alt = "#f6f557",
+    git = {
+        add = "#a4e400", change = "#ff9700", delete = "#fc1a70",
+    },
 }
 
 M.light_palette = {
@@ -56,31 +58,33 @@ M.light_palette = {
     purple = "#6054d0",
     yellow = "#ff8f00",
 
-    -- Neutrals
-    charcoal = "#e3e3e3",        -- #262626
+    -- Neutrals (inverted)
+    grey_lighter = "#171717",    -- #e8e8e8
+    grey_light = "#4c4c4c",      -- #bcbcbc
+    grey = "#7f7f7f",            -- #8a8a8a
+    grey_medium = "#a5a5a5",     -- #585858
+    grey_dark = "#b2b2b2",       -- #4b4b4b
+    grey_darker = "#bfbfbf",     -- #444444
+    grey_darker_alt = "#c9c9c9", -- #3e3e3e
     charcoal_medium = "#dedede", -- #2b2b2b
     charcoal_light = "#d8d8d8",  -- #313131
-    grey_darker = "#bfbfbf",     -- #444444
-    terminal_black = "#bfbfbf",  -- #444444
-    grey_darker_alt = "#c9c9c9", -- #3e3e3e
-    fg_gutter = "#c9c9c9",       -- #3e3e3e
-    grey_dark = "#b2b2b2",       -- #4b4b4b
-    grey_medium = "#a5a5a5",     -- #585858
-    grey = "#7f7f7f",            -- #8a8a8a
-    comment = "#7f7f7f",         -- #8a8a8a
-    grey_light = "#4c4c4c",      -- #bcbcbc
-    grey_lighter = "#171717",    -- #e8e8e8
-    bg_darker = "#d3d3d3",       -- #262626, #e3e3e3
+    charcoal = "#e3e3e3",        -- #262626
+
+    -- Functionals
     fg_dark = "#171717",         -- #e8e8e8
     fg = "#333333",              -- #ffffff
-
-    -- Variant colors
-    bg_dark = "#d9d9d9",         -- #262626, #e8e8e8
-    bg = "#ffffff",              -- #2b2b2b, #1a1b26
+    comment = "#7f7f7f",         -- #8a8a8a
+    terminal_black = "#bfbfbf",  -- #444444
+    fg_gutter = "#c9c9c9",       -- #3e3e3e
+    bg_darker = "#d3d3d3",       -- #262626
+    bg_dark = "#d9d9d9",         -- #121212
+    bg = "#ffffff",              -- #2b2b2b
 
     -- Extra colors
     green_unchanged = "#a4e400",
-    git = { add = "#4fb000", change = "#ff4d00", delete = "#ff004b" },
+    git = {
+        add = "#4fb000", change = "#ff4d00", delete = "#ff004b",
+    },
 }
 
 ---@return ColorScheme
@@ -136,15 +140,15 @@ function M.setup(opts)
 
     colors.error = colors.red
     colors.warning = colors.orange
-    colors.info = colors.blue_medium
+    colors.info = colors.blue_alt
     colors.hint = colors.green_alt
 
     -- FIXME: Improve this colors
     colors.diff = {
         add = util.darken(colors.green, 0.15),
         delete = util.darken(colors.magenta, 0.15),
-        change = util.darken(colors.blue_medium, 0.15),
-        text = colors.blue_medium,
+        change = util.darken(colors.blue_alt, 0.15),
+        text = colors.blue_alt,
     }
 
     -- colors.delta = {

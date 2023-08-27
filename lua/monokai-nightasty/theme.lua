@@ -416,7 +416,7 @@ function M.setup(palette)
         -- Telescope
         TelescopeBorder = { fg = c.border_highlight, bg = c.bg_float },
         TelescopeNormal = { fg = c.grey_light, bg = c.bg_float },
-        TelescopePromptPrefix = { fg = c.blue_medium },
+        TelescopePromptPrefix = { fg = c.blue_alt },
         TelescopeSelection = { fg = c.fg, bg = c.bg_statusline },
         TelescopeSelectionCaret = { fg = c.magenta, bg = c.bg_statusline },
 

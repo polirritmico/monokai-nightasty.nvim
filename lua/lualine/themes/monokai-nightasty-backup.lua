@@ -10,8 +10,8 @@ monokai_nightasty.normal = {
 }
 
 monokai_nightasty.insert = {
-    a = { fg = colors.black, bg = colors.yellow_light },
-    b = { fg = colors.yellow_light, bg = colors.charcoal_light },
+    a = { fg = colors.black, bg = colors.yellow_alt },
+    b = { fg = colors.yellow_alt, bg = colors.charcoal_light },
 }
 
 monokai_nightasty.command = {

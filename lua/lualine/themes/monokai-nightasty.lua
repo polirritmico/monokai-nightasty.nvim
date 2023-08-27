@@ -14,8 +14,8 @@ if dark_style then
     }
 
     monokai_nightasty.insert = {
-        a = { fg = c.black, bg = c.yellow_light },
-        b = { fg = c.yellow_light, bg = c.bg_status_alt },
+        a = { fg = c.black, bg = c.yellow_alt },
+        b = { fg = c.yellow_alt, bg = c.bg_status_alt },
     }
 
     monokai_nightasty.command = {
@@ -53,7 +53,7 @@ else
     }
 
     monokai_nightasty.insert = {
-        a = { fg = c.black, bg = c.yellow_light },
+        a = { fg = c.black, bg = c.yellow_alt },
         b = { fg = c.fg_sidebar, bg = c.bg_status_alt },
     }
 
