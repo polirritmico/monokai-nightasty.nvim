@@ -93,6 +93,14 @@ The Dark/light styles could be toggled by calling the provided function:
 
 ### 🧩 External Plugins
 
+Currently Monokai NighTasty supports this plugins:
+
+<!-- extras:start -->
+- [Palettes](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/extras/palettes) ([palettes](extras/palettes))
+- [Tmux](https://github.com/tmux/tmux/wiki) ([tmux](extras/tmux))
+- [Zathura](https://pwmt.org/projects/zathura/) ([zathura](extras/zathura))
+<!-- extras:end -->
+
 #### Lualine
 
 ```lua

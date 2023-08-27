@@ -34,26 +34,25 @@ function M.write_file(file, contents)
     fd:close()
 end
 
--- function M.docs()
---     local file = vim.fn.fnamemodify(debug.getinfo(1, "S").source:sub(2), ":p:h:h:h:h") .. "/README.md"
---     local tag = "extras"
---     local pattern = "(<%!%-%- " .. tag .. ":start %-%->).*(<%!%-%- " .. tag .. ":end %-%->)"
---     local readme = M.read_file(file)
---     local lines = {}
---     local names = vim.tbl_keys(M.extras)
---     table.sort(names)
---     for _, name in ipairs(names) do
---         local info = M.extras[name]
---         table.insert(lines, "- [" .. info.label .. "](" .. info.url .. ") ([" .. name .. "](extras/" .. name .. "))")
---     end
---     readme = readme:gsub(pattern, "%1\n" .. table.concat(lines, "\n") .. "\n%2")
---     M.write_file(file, readme)
--- end
+function M.docs()
+    local file = vim.fn.fnamemodify(debug.getinfo(1, "S").source:sub(2), ":p:h:h:h:h") .. "/README.md"
+    local tag = "extras"
+    local pattern = "(<%!%-%- " .. tag .. ":start %-%->).*(<%!%-%- " .. tag .. ":end %-%->)"
+    local readme = M.read_file(file)
+    local lines = {}
+    local names = vim.tbl_keys(M.extras)
+    table.sort(names)
+    for _, name in ipairs(names) do
+        local info = M.extras[name]
+        table.insert(lines, "- [" .. info.label .. "](" .. info.url .. ") ([" .. name .. "](extras/" .. name .. "))")
+    end
+    readme = readme:gsub(pattern, "%1\n" .. table.concat(lines, "\n") .. "\n%2")
+    M.write_file(file, readme)
+end
 
 function M.setup()
-    -- M.docs()
+    M.docs()
     -- local config = require("monokai-nightasty.config")
-    -- vim.o.background = "dark"
 
     for extra, info in pairs(M.extras) do
         package.loaded["monokai-nightasty.extras." .. extra] = nil
