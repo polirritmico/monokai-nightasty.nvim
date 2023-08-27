@@ -86,14 +86,11 @@ M.light_palette = {
 ---@return ColorScheme
 function M.setup(opts)
     local config = require("monokai-nightasty.config")
+    local is_light = not opts and config.is_light() or opts and opts.force_style == "light"
 
-    local is_light = (opts and opts.force_style == "light") and function() return true end
-        or (opts and opts.force_style == "dark") and function() return false end
-        or config.is_light
-
-    local bg_cfg = is_light() and config.options.light_style_background
+    local bg_cfg = is_light and config.options.light_style_background
         or config.options.dark_style_background
-    local palette = is_light() and M.light_palette or {}
+    local palette = is_light and M.light_palette or {}
 
     -- Color Palette
     ---@class ColorScheme: Palette
@@ -114,9 +111,9 @@ function M.setup(opts)
 
     -- Popups and statusline
     colors.bg_popup = colors.grey_darker
-    colors.bg_statusline = is_light() and util.darken(colors.bg, 0.93, colors.fg)
+    colors.bg_statusline = is_light and util.darken(colors.bg, 0.93, colors.fg)
         or colors.grey_darker
-    colors.bg_status_alt = is_light() and colors.charcoal_light or colors.charcoal_light
+    colors.bg_status_alt = is_light and colors.charcoal_light or colors.charcoal_light
     colors.fg_statusline = colors.fg_dark
 
     -- Sidebar and Floats
@@ -129,7 +126,7 @@ function M.setup(opts)
     colors.fg_float = colors.fg
 
     -- Set the background for the current line (current cursor position)
-    colors.bg_highlight = is_light() and util.lighten(colors.bg, 0.9, colors.fg)
+    colors.bg_highlight = is_light and util.lighten(colors.bg, 0.9, colors.fg)
         or util.darken(colors.bg, 0.9, colors.fg) -- (0.97 for #313131)
 
     colors.bg_visual = colors.grey_darker
