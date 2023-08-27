@@ -33,6 +33,7 @@ function M.write_file(file, contents)
 end
 
 function M.fill_extras_in_readme()
+    print("[write] README.md")
     local file = vim.fn.fnamemodify(debug.getinfo(1, "S").source:sub(2), ":p:h:h:h:h") .. "/README.md"
     local pattern = "(<%!%-%- extras:start %-%->).*(<%!%-%- extras:end %-%->)"
     local readme = M.read_file(file)
