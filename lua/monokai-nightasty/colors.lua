@@ -51,8 +51,8 @@ M.default = {
 
 M.light_palette = {
     -- Base colors
-    blue_light = "#00b3e3",      -- #62d8f1
-    green_light = "#4fb000",     -- #a4e400
+    blue = "#00b3e3",            -- #62d8f1
+    green = "#4fb000",           -- #a4e400
     magenta = "#ff004b",
     orange = "#ff4d00",
     purple = "#6054d0",
