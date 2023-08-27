@@ -1,0 +1,36 @@
+# Monokai NighTasty color theme for Zathura
+# Swaps Foreground for Background to get a light version if the user prefers
+#
+set notification-error-bg "#ff005f"
+set notification-error-fg "#ffffff"
+set notification-warning-bg "#ffff87"
+set notification-warning-fg "#444444"
+set notification-bg "#121212"
+set notification-fg "#ffffff"
+set completion-bg "#121212"
+set completion-fg "#e8e8e8"
+set completion-group-bg "#121212"
+set completion-group-fg "#e8e8e8"
+set completion-highlight-bg "#444444"
+set completion-highlight-fg "#ffffff"
+set index-bg "#121212"
+set index-fg "#ffffff"
+set index-active-bg "#444444"
+set index-active-fg "#ffffff"
+set inputbar-bg "#121212"
+set inputbar-fg "#ffffff"
+set statusbar-bg "#121212"
+set statusbar-fg "#ffffff"
+set highlight-color "#ffff87"
+set highlight-active-color "#a4e400"
+set default-bg "#121212"
+set default-fg "#ffffff"
+set render-loading true
+set render-loading-fg "#121212"
+set render-loading-bg "#ffffff"
+#
+# Recolor mode settings
+# <C-r> to switch modes
+#
+set recolor-lightcolor "#121212"
+set recolor-darkcolor "#ffffff"

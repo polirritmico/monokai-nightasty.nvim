@@ -8,7 +8,7 @@ M.extras = {
     palettes = {ext = "lua", label = "Palettes", both_styles = true, url = "https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/extras/palettes"},
     -- xresources = {ext = "Xresources", url = "https://wiki.archlinux.org/title/X_resources", label = "Xresources"},
     -- lua = {ext = "lua", url = "https://www.lua.org", label = "Lua Table for testing"},
-    -- zathura = {ext = "zathurarc", url = "https://pwmt.org/projects/zathura/", label = "Zathura"},
+    zathura = {ext = "zathurarc", label = "Zathura", both_styles = false, url = "https://pwmt.org/projects/zathura/"},
 }
 
 local function write(str, fileName)

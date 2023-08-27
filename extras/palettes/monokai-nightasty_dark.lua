@@ -7,12 +7,13 @@ local colors = {
   bg_popup = "#444444",
   bg_search = "#ffff87",
   bg_sidebar = "#121212",
+  bg_status_alt = "#313131",
   bg_statusline = "#444444",
   bg_visual = "#444444",
   black = "#000000",
-  blue_light = "#62d8f1",
-  blue_medium = "#0087ff",
-  border = "#8a8a8a",
+  blue = "#62d8f1",
+  blue_alt = "#0087ff",
+  border = "#62d8f1",
   border_highlight = "#ffffff",
   charcoal = "#262626",
   charcoal_light = "#313131",
@@ -31,14 +32,15 @@ local colors = {
   fg_gutter = "#3e3e3e",
   fg_search = "#000000",
   fg_sidebar = "#e8e8e8",
-  fg_statusline = "#bcbcbc",
+  fg_statusline = "#e8e8e8",
   git = {
     add = "#a4e400",
     change = "#ff9700",
     delete = "#fc1a70"
   },
+  green = "#a4e400",
   green_alt = "#83dc78",
-  green_light = "#a4e400",
+  green_unchanged = "#a4e400",
   grey = "#8a8a8a",
   grey_dark = "#4b4b4b",
   grey_darker = "#444444",
@@ -57,7 +59,7 @@ local colors = {
   warning = "#ff9700",
   white = "#ffffff",
   yellow = "#ffff87",
-  yellow_light = "#f6f557"
+  yellow_alt = "#f6f557"
 }
 
 local highlights = {
@@ -84,7 +86,7 @@ local highlights = {
   ["@keyword"] = {
     fg = "#fc1a70",
     style = {
-      italic = false
+      italic = true
     }
   },
   ["@keyword.function"] = {
@@ -423,7 +425,7 @@ local highlights = {
   Keyword = {
     fg = "#fc1a70",
     style = {
-      italic = false
+      italic = true
     }
   },
   Label = {
@@ -471,7 +473,7 @@ local highlights = {
     fg = "#e8e8e8"
   },
   MsgSeparator = {
-    sp = "#8a8a8a",
+    sp = "#62d8f1",
     underline = true
   },
   NonText = {
@@ -584,7 +586,7 @@ local highlights = {
   },
   TabLine = {
     bg = "#444444",
-    fg = "#bcbcbc",
+    fg = "#e8e8e8",
     underline = true
   },
   TabLineFill = {
@@ -709,7 +711,7 @@ local highlights = {
     bg = "NONE"
   },
   TreesitterContextBottom = {
-    sp = "#8a8a8a",
+    sp = "#62d8f1",
     underline = true
   },
   Type = {},
@@ -720,7 +722,7 @@ local highlights = {
     underline = true
   },
   VertSplit = {
-    fg = "#8a8a8a"
+    fg = "#62d8f1"
   },
   Visual = {
     bg = "#444444"
@@ -755,7 +757,7 @@ local highlights = {
     fg = "#444444"
   },
   WinSeparator = {
-    fg = "#8a8a8a"
+    fg = "#62d8f1"
   },
   debugBreakpoint = {
     bg = "#101e2a",

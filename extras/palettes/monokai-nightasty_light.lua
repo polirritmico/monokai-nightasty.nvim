@@ -6,13 +6,14 @@ local colors = {
   bg_highlight = "#ebebeb",
   bg_popup = "#bfbfbf",
   bg_search = "#ff8f00",
-  bg_sidebar = "#d9d9d9",
-  bg_statusline = "#bfbfbf",
+  bg_sidebar = "#ffffff",
+  bg_status_alt = "#d8d8d8",
+  bg_statusline = "#f1f1f1",
   bg_visual = "#bfbfbf",
   black = "#000000",
-  blue_light = "#00b3e3",
-  blue_medium = "#0087ff",
-  border = "#7f7f7f",
+  blue = "#00b3e3",
+  blue_alt = "#0087ff",
+  border = "#00b3e3",
   border_highlight = "#333333",
   charcoal = "#e3e3e3",
   charcoal_light = "#d8d8d8",
@@ -31,14 +32,15 @@ local colors = {
   fg_gutter = "#c9c9c9",
   fg_search = "#000000",
   fg_sidebar = "#171717",
-  fg_statusline = "#4c4c4c",
+  fg_statusline = "#171717",
   git = {
-    add = "#a4e400",
-    change = "#ff9700",
-    delete = "#fc1a70"
+    add = "#4fb000",
+    change = "#ff4d00",
+    delete = "#ff004b"
   },
+  green = "#4fb000",
   green_alt = "#83dc78",
-  green_light = "#4fb000",
+  green_unchanged = "#a4e400",
   grey = "#7f7f7f",
   grey_dark = "#b2b2b2",
   grey_darker = "#bfbfbf",
@@ -57,7 +59,7 @@ local colors = {
   warning = "#ff4d00",
   white = "#ffffff",
   yellow = "#ff8f00",
-  yellow_light = "#f6f557"
+  yellow_alt = "#f6f557"
 }
 
 local highlights = {
@@ -84,7 +86,7 @@ local highlights = {
   ["@keyword"] = {
     fg = "#ff004b",
     style = {
-      italic = false
+      italic = true
     }
   },
   ["@keyword.function"] = {
@@ -423,7 +425,7 @@ local highlights = {
   Keyword = {
     fg = "#ff004b",
     style = {
-      italic = false
+      italic = true
     }
   },
   Label = {
@@ -471,7 +473,7 @@ local highlights = {
     fg = "#171717"
   },
   MsgSeparator = {
-    sp = "#7f7f7f",
+    sp = "#00b3e3",
     underline = true
   },
   NonText = {
@@ -490,7 +492,7 @@ local highlights = {
     fg = "#333333"
   },
   NormalSB = {
-    bg = "#d9d9d9",
+    bg = "#ffffff",
     fg = "#171717"
   },
   Operator = {
@@ -532,7 +534,7 @@ local highlights = {
     fg = "#c9c9c9"
   },
   SignColumnSB = {
-    bg = "#d9d9d9",
+    bg = "#ffffff",
     fg = "#c9c9c9"
   },
   Special = {
@@ -561,11 +563,11 @@ local highlights = {
     fg = "#ff004b"
   },
   StatusLine = {
-    bg = "#bfbfbf",
+    bg = "#f1f1f1",
     fg = "#171717"
   },
   StatusLineNC = {
-    bg = "#bfbfbf",
+    bg = "#f1f1f1",
     fg = "#c9c9c9"
   },
   StorageClass = {
@@ -583,8 +585,8 @@ local highlights = {
     fg = "#000000"
   },
   TabLine = {
-    bg = "#bfbfbf",
-    fg = "#4c4c4c",
+    bg = "#f1f1f1",
+    fg = "#171717",
     underline = true
   },
   TabLineFill = {
@@ -608,11 +610,11 @@ local highlights = {
     fg = "#0087ff"
   },
   TelescopeSelection = {
-    bg = "#bfbfbf",
+    bg = "#f1f1f1",
     fg = "#333333"
   },
   TelescopeSelectionCaret = {
-    bg = "#bfbfbf",
+    bg = "#f1f1f1",
     fg = "#ff004b"
   },
   TermCursor = {
@@ -709,7 +711,7 @@ local highlights = {
     bg = "#d4d4d4"
   },
   TreesitterContextBottom = {
-    sp = "#7f7f7f",
+    sp = "#00b3e3",
     underline = true
   },
   Type = {},
@@ -720,7 +722,7 @@ local highlights = {
     underline = true
   },
   VertSplit = {
-    fg = "#7f7f7f"
+    fg = "#00b3e3"
   },
   Visual = {
     bg = "#bfbfbf"
@@ -733,13 +735,13 @@ local highlights = {
     fg = "#ff8f00"
   },
   WhichKeyBorder = {
-    bg = "#d9d9d9"
+    bg = "#ffffff"
   },
   WhichKeyDesc = {
     fg = "#333333"
   },
   WhichKeyFloat = {
-    bg = "#d9d9d9"
+    bg = "#ffffff"
   },
   WhichKeyGroup = {
     fg = "#ff004b"
@@ -755,20 +757,20 @@ local highlights = {
     fg = "#bfbfbf"
   },
   WinSeparator = {
-    fg = "#7f7f7f"
+    fg = "#00b3e3"
   },
   debugBreakpoint = {
     bg = "#e6f3ff",
     fg = "#0087ff"
   },
   debugPC = {
-    bg = "#d9d9d9"
+    bg = "#ffffff"
   },
   diffAdded = {
-    fg = "#a4e400"
+    fg = "#4fb000"
   },
   diffChanged = {
-    fg = "#ff9700"
+    fg = "#ff4d00"
   },
   diffFile = {
     fg = "#333333"
@@ -786,7 +788,7 @@ local highlights = {
     fg = "#ff8f00"
   },
   diffRemoved = {
-    fg = "#fc1a70"
+    fg = "#ff004b"
   },
   diffSubname = {
     fg = "#ff8f00"
