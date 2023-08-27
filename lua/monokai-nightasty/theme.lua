@@ -34,9 +34,9 @@ function M.setup(palette)
         Comment = { fg = c.comment, style = options.hl_styles.comments }, -- any comment
         Conceal = {}, -- Placeholder characters substituted for concealed text (see 'conceallevel')
         CurSearch = { link = "IncSearch" },
-        Cursor = { fg = c.bg, bg = c.blue_light }, -- character under the cursor
+        Cursor = { fg = c.bg, bg = c.blue }, -- character under the cursor
         CursorColumn = { bg = c.bg_highlight }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
-        CursorIM = { fg = c.bg, bg = c.blue_light }, -- like Cursor, but used when in IME mode |CursorIM|
+        CursorIM = { fg = c.bg, bg = c.blue }, -- like Cursor, but used when in IME mode |CursorIM|
         CursorLine = { bg = c.bg_highlight }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
         CursorLineNR = { fg = c.yellow }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
         DiffAdd = { bg = c.diff.add }, -- diff mode: Added line |diff.txt|
@@ -48,14 +48,14 @@ function M.setup(palette)
         ErrorMsg = { fg = c.white, bg = c.red }, -- error messages on the command line
         FloatBorder = { fg = c.border_highlight, bg = c.bg_float },
         -- FloatTitle = { fg = c.border_highlight, bg = c.bg_float },
-        Folded = { fg = c.blue_light, italic = true }, -- line used for closed folds
+        Folded = { fg = c.blue, italic = true }, -- line used for closed folds
         FoldColumn = { fg = c.orange, bg = options.transparent and c.none or c.bg_float }, -- used when foldcolumn ~= 0
         IncSearch = { fg = c.black, bg = c.purple }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
         LineNr = { fg = c.fg_gutter }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-        LineNrBe = { fg = c.green_light },
+        LineNrBe = { fg = c.green },
         MatchParen = { fg = c.magenta, bold = true, underline = true }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
         ModeMsg = { fg = c.fg_dark, bold = true }, -- 'showmode' message (e.g., "-- INSERT -- ")
-        MoreMsg = { fg = c.green_light }, -- |more-prompt|
+        MoreMsg = { fg = c.green }, -- |more-prompt|
         MsgArea = { fg = c.fg_dark }, -- Area for messages and cmdline
         MsgSeparator= { sp = c.border, underline = true }, -- Separator for scrolled messages, `msgsep` flag of 'display'
         NonText = { fg = c.grey_darker }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
@@ -64,11 +64,11 @@ function M.setup(palette)
         -- TODO: options.dim_inactive?
         NormalNC = { fg = c.fg, bg = options.transparent and c.none or options.dim_inactive and c.bg_dark or c.bg }, -- normal text in non-current windows
         NormalSB = { fg = c.fg_sidebar, bg = c.bg_sidebar }, -- normal text in sidebar
-        Pmenu = { fg = c.blue_light, bg = c.bg_popup }, -- Popup menu: normal item.
+        Pmenu = { fg = c.blue, bg = c.bg_popup }, -- Popup menu: normal item.
         PmenuSbar = { bg = util.lighten(c.bg_popup, 0.95) }, -- bg = c.grey -- Popup menu: scrollbar.
         PmenuSel = { fg = c.yellow, bg = util.darken(c.fg_gutter, 0.8) }, -- Popup menu: selected item.
         PmenuThumb = { bg = c.fg_gutter }, -- Popup menu: Thumb of the scrollbar.
-        Question = { fg = c.blue_light }, -- |hit-enter| prompt and yes/no questions
+        Question = { fg = c.blue }, -- |hit-enter| prompt and yes/no questions
         -- QuickFixLine = { bg = c.bg_visual, bold = true }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
         Search = { fg = c.fg_search, bg = c.bg_search, bold = true }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
         SignColumn = { bg = options.transparent and c.none or c.bg, fg = c.fg_gutter }, -- column where |signs| are displayed
@@ -80,7 +80,7 @@ function M.setup(palette)
         SpellRare = { sp = c.hint, undercurl = true }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
         StatusLine = { fg = c.fg_sidebar, bg = c.bg_statusline }, -- status line of current window
         StatusLineNC = { fg = c.fg_gutter, bg = c.bg_statusline }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-        Substitute = { fg = c.black, bg = c.green_light }, -- |:substitute| replacement text highlighting
+        Substitute = { fg = c.black, bg = c.green }, -- |:substitute| replacement text highlighting
         TabLine = { fg = c.fg_statusline, bg = c.bg_statusline, underline = true }, -- tab pages line, not active tab page label
         TabLineFill = { bg = c.grey_darker }, -- tab pages line, where there are no labels
         TabLineSel = { bg = c.bg }, -- tab pages line, active tab page label
@@ -94,7 +94,7 @@ function M.setup(palette)
         Whitespace = { fg = c.grey_darker }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
         -- WildMenu = { bg = c.bg_visual }, -- current match in 'wildmenu' completion
         WinSeparator = { fg = c.border }, -- the column separating vertically split windows
-        lCursor = { fg = c.bg, bg = c.blue_light }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
+        lCursor = { fg = c.bg, bg = c.blue }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
 
         -- These groups are not listed as default vim groups, but they are
         -- defacto standard group names for syntax highlighting. commented out
@@ -115,7 +115,7 @@ function M.setup(palette)
         Error = { fg = c.white, bg = c.red }, -- (preferred) any erroneous construct
         Exception = { fg = c.magenta }, --  try, catch, throw
         Float = { fg = c.purple }, -- a floating point constant: 2.3e10
-        Function = { fg = c.green_light, style = options.hl_styles.functions }, -- function name (also: methods for classes)
+        Function = { fg = c.green, style = options.hl_styles.functions }, -- function name (also: methods for classes)
         Identifier = { fg = c.fg, style = options.hl_styles.variables }, -- (preferred) any variable name
         -- ("Ignore", below, may be invisible...)
         -- Ignore = { }, -- (preferred) left blank, hidden  |hl-Ignore|
@@ -132,13 +132,13 @@ function M.setup(palette)
         -- SpecialChar = { }, --  special character in a constant
         -- SpecialComment = { }, -- special things inside a comment
         Statement = { fg = c.magenta }, -- (preferred) any statement
-        StorageClass = { fg = c.blue_light, italic = true }, -- static, register, volatile, etc.
+        StorageClass = { fg = c.blue, italic = true }, -- static, register, volatile, etc.
         String = { fg = c.yellow }, --   a string constant: "this is a string"
-        Structure = { fg = c.blue_light }, -- struct, union, enum, etc.
+        Structure = { fg = c.blue }, -- struct, union, enum, etc.
         Tag = { fg = c.purple }, -- you can use CTRL-] on this
         Todo = { fg = c.yellow, bg = c.grey_medium }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
         Type = {}, -- (preferred) int, long, char, etc.
-        Typedef = { fg = c.blue_light }, -- A typedef
+        Typedef = { fg = c.blue }, -- A typedef
         qfFileName = { fg = c.purple },
         qfLineNr = { fg = c.grey },
 
@@ -163,18 +163,18 @@ function M.setup(palette)
         diffSubname = { fg = c.yellow },
 
         -- git?
-        gitcommitHeader = { fg = c.blue_light },
+        gitcommitHeader = { fg = c.blue },
         gitcommitSelectedFile = { fg = c.yellow },
         gitcommitSummary = { fg = c.fg },
         gitcommitOverflow = { fg = c.magenta },
 
         ["@tag"] = { fg = c.magenta },
-        ["@tag.attribute"] = { fg = c.blue_light, italic = true },
+        ["@tag.attribute"] = { fg = c.blue, italic = true },
         ["@tag.delimiter"] = { fg = c.grey_light },
 
 
         -- TODO: ??
-        ["helpCommand"] = { fg = c.blue_light, bg = c.bg_float },
+        ["helpCommand"] = { fg = c.blue, bg = c.bg_float },
 
         debugPC = { bg = c.bg_sidebar }, -- used for highlighting the current line in terminal-debug
         debugBreakpoint = { bg = util.darken(c.info, 0.1), fg = c.info }, -- used for breakpoint colors in terminal-debug
@@ -234,19 +234,19 @@ function M.setup(palette)
         --["@string.escape"] = { fg = c.purple }, -- For escape characters within a string.
 
         --- Functions
-        ["@constructor"] = { fg = c.blue_light, italic = true },
+        ["@constructor"] = { fg = c.blue, italic = true },
         ["@parameter"] = { fg = c.orange, italic = true }, -- parameters of a function
-        ["@function.builtin"] = { fg = c.green_light },
+        ["@function.builtin"] = { fg = c.green },
 
         --- Keywords
         ["@keyword"] = { fg = c.magenta, style = options.hl_styles.keywords }, -- For keywords that don't fall in previous categories.
-        ["@keyword.function"] = { fg = c.blue_light, italic = true },
+        ["@keyword.function"] = { fg = c.blue, italic = true },
         -- ["@label"] = { fg = c.blue }, -- For labels: `label:` in C and `:label:` in Lua.
 
         --- Types
-        ["@type"] = { fg = c.blue_light },
+        ["@type"] = { fg = c.blue },
         ["@field"] = { fg = c.fg },
-        ["@type.builtin"] = { fg = c.blue_light, italic = true },
+        ["@type.builtin"] = { fg = c.blue, italic = true },
         -- ["@property"] = { fg = c.green1 },
 
         --- Identifiers
@@ -308,7 +308,7 @@ function M.setup(palette)
         ["@lsp.typemod.variable.injected"] = { link = "@variable" },
 
         -- Languages specifics
-        ["@function.builtin.bash"] = { fg = c.blue_light },
+        ["@function.builtin.bash"] = { fg = c.blue },
         ["@constructor.lua"] = { fg = c.magenta },
 
         -- NeoVim
@@ -327,15 +327,15 @@ function M.setup(palette)
         --- Markdown
         markdownCode = { fg = c.purple },
         markdownCodeBlock = { fg = c.yellow },
-        markdownCodeDelimiter = { fg = c.green_light },
+        markdownCodeDelimiter = { fg = c.green },
         markdownH1 = { fg = c.fg, bold = true },
         markdownHeadingDelimiter = { fg = c.magenta },
         markdownHeadingRule = { fg = c.magenta, bold = true },
-        markdownLinkDelimiter = { fg = c.blue_light },
-        markdownLinkText = { fg = c.blue_light, underline = true },
-        markdownLinkTextDelimiter = { fg = c.blue_light },
+        markdownLinkDelimiter = { fg = c.blue },
+        markdownLinkText = { fg = c.blue, underline = true },
+        markdownLinkTextDelimiter = { fg = c.blue },
         markdownListMarker = { fg = c.magenta },
-        markdownRule = { fg = c.blue_light },
+        markdownRule = { fg = c.blue },
         markdownUrl = { fg = c.orange },
         ["@lsp.type.class.markdown"] = { fg = c.yellow },
 
@@ -343,13 +343,13 @@ function M.setup(palette)
         mkdHeading = { fg = c.magenta },
         mkdURL = { fg = c.orange },
         mkdCode = { fg = c.purple },
-        mkdCodeStart = { fg = c.green_light },
-        mkdCodeEnd = { fg = c.green_light },
-        mkdDelimiter = { fg = c.blue_light },
+        mkdCodeStart = { fg = c.green },
+        mkdCodeEnd = { fg = c.green },
+        mkdDelimiter = { fg = c.blue },
         mkdListItem = { fg = c.magenta },
         mkdListItemCheckbox = { fg = c.magenta },
         mkdCodeDelimiter = { fg = c.purple },
-        mkdLink = { fg = c.blue_light, underline = true },
+        mkdLink = { fg = c.blue, underline = true },
 
         -- Rainbow Delimiters
         -- RainbowDelimiterRed = { fg = c.magenta },
@@ -794,15 +794,15 @@ function M.setup(palette)
         TodoBgFIX = { fg = c.white, bg = c.magenta, bold = true },
         TodoBgHACK = { fg = c.black, bg = c.orange, bold = true },
         TodoBgNOTE = { fg = c.black, bg = c.yellow, bold = true },
-        TodoBgPERF = { fg = c.black, bg = c.blue_light, bold = true },
-        TodoBgTEST = { fg = c.black, bg = c.green_light, bold = true },
+        TodoBgPERF = { fg = c.black, bg = c.blue, bold = true },
+        TodoBgTEST = { fg = c.black, bg = c.green, bold = true },
         TodoBgTODO = { fg = c.bg_dark, bg = c.purple, bold = true },
         TodoBgWARN = { fg = c.black, bg = c.orange, bold = true },
         TodoFgFIX = { fg = c.magenta },
         TodoFgHACK = { fg = c.orange },
         TodoFgNOTE = { fg = c.yellow },
-        TodoFgPERF = { fg = c.blue_light },
-        TodoFgTEST = { fg = c.green_light },
+        TodoFgPERF = { fg = c.blue },
+        TodoFgTEST = { fg = c.green },
         TodoFgTODO = { fg = c.purple },
         TodoFgWARN = { fg = c.orange },
         TodoSignHACK = { link = "TodoFgHACK" },

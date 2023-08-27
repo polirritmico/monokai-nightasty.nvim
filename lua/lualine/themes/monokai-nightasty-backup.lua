@@ -4,8 +4,8 @@ local config = require("monokai-nightasty.config").options
 local monokai_nightasty = {}
 
 monokai_nightasty.normal = {
-    a = { fg = colors.black, bg = colors.green_light },
-    b = { fg = colors.green_light, bg = colors.charcoal_light },
+    a = { fg = colors.black, bg = colors.green },
+    b = { fg = colors.green, bg = colors.charcoal_light },
     c = { fg = colors.fg_sidebar, bg = colors.bg_statusline },
 }
 
@@ -15,8 +15,8 @@ monokai_nightasty.insert = {
 }
 
 monokai_nightasty.command = {
-    a = { fg = colors.green_light, bg = colors.black },
-    b = { fg = colors.green_light, bg = colors.charcoal_light },
+    a = { fg = colors.green, bg = colors.black },
+    b = { fg = colors.green, bg = colors.charcoal_light },
 }
 
 monokai_nightasty.visual = {
@@ -30,12 +30,12 @@ monokai_nightasty.replace = {
 }
 
 monokai_nightasty.terminal = {
-    a = { fg = colors.green_light, bg = colors.black },
-    b = { fg = colors.green_light, bg = colors.charcoal_light },
+    a = { fg = colors.green, bg = colors.black },
+    b = { fg = colors.green, bg = colors.charcoal_light },
 }
 
 monokai_nightasty.inactive = {
-    a = { fg = colors.blue_light, bg = colors.bg_dark },
+    a = { fg = colors.blue, bg = colors.bg_dark },
     b = { fg = colors.fg_gutter, bg = colors.bg_dark, gui = "bold" },
     c = { fg = colors.grey, bg = colors.bg_dark },
 }

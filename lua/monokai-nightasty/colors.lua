@@ -7,8 +7,8 @@ M.default = {
     none = "NONE",
 
     -- Base colors
-    blue_light = "#62d8f1",
-    green_light = "#a4e400",
+    blue = "#62d8f1",
+    green = "#a4e400",
     magenta = "#fc1a70",
     orange = "#ff9700",
     purple = "#af87ff",
@@ -106,7 +106,7 @@ function M.setup(opts)
     util.bg = colors.bg
     util.fg = colors.fg
 
-    colors.border = colors.blue_light
+    colors.border = colors.blue
     colors.border_highlight = colors.fg
 
     -- Popups and statusline
@@ -141,7 +141,7 @@ function M.setup(opts)
 
     -- FIXME: Improve this colors
     colors.diff = {
-        add = util.darken(colors.green_light, 0.15),
+        add = util.darken(colors.green, 0.15),
         delete = util.darken(colors.magenta, 0.15),
         change = util.darken(colors.blue_medium, 0.15),
         text = colors.blue_medium,

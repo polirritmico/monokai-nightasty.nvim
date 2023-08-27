@@ -8,9 +8,8 @@ if dark_style then
     local c = require("monokai-nightasty.colors").setup({force_style = "dark"})
 
     monokai_nightasty.normal = {
-        a = { fg = c.black, bg = c.green_light },
-        b = { fg = c.green_light, bg = c.bg_status_alt },
-        -- c = { fg = c.fg_sidebar, bg = c.bg_statusline },
+        a = { fg = c.black, bg = c.green },
+        b = { fg = c.green, bg = c.bg_status_alt },
         c = { fg = c.fg_statusline, bg = c.bg_statusline },
     }
 
@@ -20,8 +19,8 @@ if dark_style then
     }
 
     monokai_nightasty.command = {
-        a = { fg = c.green_light, bg = c.black },
-        b = { fg = c.green_light, bg = c.bg_status_alt },
+        a = { fg = c.green, bg = c.black },
+        b = { fg = c.green, bg = c.bg_status_alt },
     }
 
     monokai_nightasty.visual = {
@@ -35,12 +34,12 @@ if dark_style then
     }
 
     monokai_nightasty.terminal = {
-        a = { fg = c.green_light, bg = c.black },
-        b = { fg = c.green_light, bg = c.bg_status_alt },
+        a = { fg = c.green, bg = c.black },
+        b = { fg = c.green, bg = c.bg_status_alt },
     }
 
     monokai_nightasty.inactive = {
-        a = { fg = c.blue_light, bg = c.bg_dark },
+        a = { fg = c.blue, bg = c.bg_dark },
         b = { fg = c.fg_gutter, bg = c.bg_dark, gui = "bold" },
         c = { fg = c.grey, bg = c.bg_dark },
     }
@@ -49,7 +48,6 @@ else
 
     monokai_nightasty.normal = {
         a = { fg = c.black, bg = c.green_unchanged },
-        -- a = { fg = c.white, bg = c.blue_light },
         b = { fg = c.fg_sidebar, bg = c.bg_status_alt },
         c = { fg = c.fg_statusline, bg = c.bg_statusline },
     }
@@ -80,7 +78,7 @@ else
     }
 
     monokai_nightasty.inactive = {
-        a = { fg = c.blue_light, bg = c.bg_status_alt },
+        a = { fg = c.blue, bg = c.bg_status_alt },
         b = { fg = c.fg_gutter, bg = c.bg_status_alt, gui = "bold" },
         c = { fg = c.grey, bg = c.bg_status_alt },
     }
