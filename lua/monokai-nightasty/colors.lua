@@ -90,17 +90,18 @@ M.light_palette = {
 ---@return ColorScheme
 function M.setup(opts)
     local config = require("monokai-nightasty.config")
-    local is_light = not opts and config.is_light() or opts and opts.force_style == "light"
+    local is_light = (not opts or not opts.force_style) and config.is_light()
+        or opts and opts.force_style == "light"
 
     local bg_cfg = is_light and config.options.light_style_background
         or config.options.dark_style_background
+    config.options.transparent = bg_cfg == "transparent"
+
     local palette = is_light and M.light_palette or {}
 
     -- Color Palette
     ---@class ColorScheme: Palette
     local colors = vim.tbl_deep_extend("force", vim.deepcopy(M.default), palette)
-
-    config.options.transparent = bg_cfg == "transparent" and true or false
 
     colors.bg = (bg_cfg == "dark" or bg_cfg == "transparent") and colors.bg_dark
         or string.sub(bg_cfg, 1, 1) == "#" and bg_cfg
@@ -150,11 +151,6 @@ function M.setup(opts)
         change = util.darken(colors.blue_alt, 0.15),
         text = colors.blue_alt,
     }
-
-    -- colors.delta = {
-    --     add = util.darken(colors.green2, 0.45),
-    --     delete = util.darken(colors.red1, 0.45),
-    -- }
 
     -- Apply user configs
     config.options.on_colors(colors)
