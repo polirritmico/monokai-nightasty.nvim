@@ -152,7 +152,7 @@ function M.setup(opts)
         text = colors.blue_alt,
     }
 
-    -- Apply user configs
+    -- Apply user config overrides
     config.options.on_colors(colors)
 
     return colors
