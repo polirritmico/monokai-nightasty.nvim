@@ -29,8 +29,8 @@ M.default = {
     white = "#ffffff",
 
     -- Functionals
-    bg_dark = "#121212",
-    bg_darker = "#262626",
+    bg_darker = "#121212",
+    bg_dark = "#1e1e1e",
     bg = "#2b2b2b",
     fg_gutter = "#3e3e3e",
     terminal_black = "#444444",
@@ -76,8 +76,8 @@ M.light_palette = {
     comment = "#7f7f7f",         -- #8a8a8a
     terminal_black = "#bfbfbf",  -- #444444
     fg_gutter = "#c9c9c9",       -- #3e3e3e
-    bg_darker = "#d3d3d3",       -- #262626
-    bg_dark = "#d9d9d9",         -- #121212
+    bg_darker = "#d0d0d0",       -- #262626
+    bg_dark = "#e1e1e1",         -- #121212
     bg = "#ffffff",              -- #2b2b2b
 
     -- Extra colors
@@ -107,6 +107,7 @@ function M.setup(opts)
     colors.bg = (bg_cfg == "dark" or bg_cfg == "transparent") and colors.bg_dark
         or string.sub(bg_cfg, 1, 1) == "#" and bg_cfg
         or colors.bg
+    colors.bg_dark = colors.bg == colors.bg_dark and colors.bg_darker or colors.bg_dark
 
     -- Default values for functions util.darken() and util.lighter()
     util.bg = colors.bg
