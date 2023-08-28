@@ -61,7 +61,6 @@ function M.setup(palette)
         NonText = { fg = c.grey_darker }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
         Normal = { fg = c.fg, bg = options.transparent and c.none or c.bg }, -- normal text
         NormalFloat = { fg = c.fg_float, bg = c.bg_float }, -- Normal text in floating windows.
-        -- TODO: options.dim_inactive?
         NormalNC = { fg = c.fg, bg = options.transparent and c.none or options.dim_inactive and c.bg_dark or c.bg }, -- normal text in non-current windows
         NormalSB = { fg = c.fg_sidebar, bg = c.bg_sidebar }, -- normal text in sidebar
         Pmenu = { fg = c.blue, bg = c.bg_popup }, -- Popup menu: normal item.
@@ -173,9 +172,6 @@ function M.setup(palette)
         ["@tag.delimiter"] = { fg = c.grey_light },
 
 
-        -- TODO: ??
-        ["helpCommand"] = { fg = c.blue, bg = c.bg_float },
-
         debugPC = { bg = c.bg_sidebar }, -- used for highlighting the current line in terminal-debug
         debugBreakpoint = { bg = util.darken(c.info, 0.1), fg = c.info }, -- used for breakpoint colors in terminal-debug
 
@@ -216,22 +212,19 @@ function M.setup(palette)
         -- As of writing, tree-sitter support is a WIP, group names may change.
 
         --- Misc
-        -- TODO:
-        -- -- ["@comment.documentation"] = { },
-        -- ["@operator"] = { fg = c.blue5 }, -- For any operator: `+`, but also `->` and `*` in C.
-        ["@preproc"] = { fg = c.grey, italic = true},
+        -- ["@comment.documentation"] = { link = "Comment" },
+        ["@preproc"] = { fg = c.grey, italic = true },
 
         --- Punctuation
-        ["@punctuation.delimiter"] = { fg = c.grey}, -- For delimiters ie: `.`
+        ["@punctuation.delimiter"] = { fg = c.grey }, -- For delimiters ie: `.`
         ["@punctuation.bracket"] = { fg = c.magenta }, -- For brackets and parens.
-        -- ["@punctuation.special"] = { fg = c.blue5 }, -- For special punctutation that does not fall in the catagories before.
+        -- ["@punctuation.special"] = { fg = c.blue }, -- For special punctutation that does not fall in the catagories before.
         -- ["@punctuation.special.markdown"] = { fg = c.orange, bold = true },
 
         --- Literals
-        ["@string.documentation"] = { fg = c.grey, italic = true},
-        -- TODO: Check with reference:
-        -- ["@string.regex"] = { fg = c.blue6 }, -- For regexes.
-        --["@string.escape"] = { fg = c.purple }, -- For escape characters within a string.
+        ["@string.documentation"] = { link = "Comment" },
+        ["@string.regex"] = { fg = c.orange }, -- For regexes. Perl/test.pl
+        ["@string.escape"] = { fg = c.purple }, -- For escape characters within a string.
 
         --- Functions
         ["@constructor"] = { fg = c.blue, italic = true },
@@ -303,24 +296,25 @@ function M.setup(palette)
         ["@lsp.typemod.method.defaultLibrary"] = { link = "@function.builtin" },
         ["@lsp.typemod.operator.injected"] = { link = "@operator" },
         ["@lsp.typemod.string.injected"] = { link = "@string" },
-        -- ["@lsp.typemod.type.defaultLibrary"] = { fg = util.darken(c.blue1, 0.8) },
         ["@lsp.typemod.variable.defaultLibrary"] = { link = "@variable.builtin" },
         ["@lsp.typemod.variable.injected"] = { link = "@variable" },
+
+        -- checkhealt
+        helpCommand = { fg = c.blue, bg = c.bg_float }, -- command name/description
+        healthError = { fg = c.error },
+        healthSuccess = { fg = c.green_alt },
+        healthWarning = { fg = c.warning },
+
+        -- TreeSitter
+        TreesitterContext = { bg = options.transparent and c.none or util.darken(c.fg_gutter, 0.8) },
+        TreesitterContextBottom = { sp = c.border, underline = true },
+        Hlargs = { fg = c.yellow },
 
         -- Languages specifics
         ["@function.builtin.bash"] = { fg = c.blue },
         ["@constructor.lua"] = { fg = c.magenta },
-
-        -- NeoVim
-        healthError = { fg = c.error },
-        healthSuccess = { fg = c.green_alt }, -- TODO: check color
-        healthWarning = { fg = c.warning },
-
-        -- TreeSitter
-        -- TODO: Check options.transparent or options.styles.floats
-        TreesitterContext = { bg = options.transparent and c.none or util.darken(c.fg_gutter, 0.8) },
-        TreesitterContextBottom = { sp = c.border, underline = true },
-        Hlargs = { fg = c.yellow },
+        ["@type.qualifier.c_sharp"] = { fg = c.orange, italic = true },
+        dosbatchError = { fg = c.red },
 
         --- Plugins -----------------------------------------------------------
 
