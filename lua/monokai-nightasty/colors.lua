@@ -82,6 +82,7 @@ M.light_palette = {
 
     -- Extra colors
     green_unchanged = "#a4e400",
+    green_alt = "#4fb000",       -- #83dc78
     git = {
         add = "#4fb000", change = "#ff4d00", delete = "#ff004b",
     },
@@ -139,15 +140,15 @@ function M.setup(opts)
     colors.fg_search = colors.black
     colors.fg_sidebar = colors.fg_dark
 
+    -- FIXME: Improve this colors
     colors.error = colors.red
     colors.warning = colors.orange
     colors.info = colors.blue_alt
     colors.hint = colors.green_alt
 
-    -- FIXME: Improve this colors
     colors.diff = {
         add = util.darken(colors.green, 0.15),
-        delete = util.darken(colors.magenta, 0.15),
+        delete = util.darken(colors.red, 0.15),
         change = util.darken(colors.blue_alt, 0.15),
         text = colors.blue_alt,
     }
