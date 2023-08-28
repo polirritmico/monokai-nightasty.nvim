@@ -2,11 +2,11 @@ local colors = {
   bg = "#ffffff",
   bg_dark = "#d9d9d9",
   bg_darker = "#d3d3d3",
-  bg_float = "#ffffff",
+  bg_float = "#dedede",
   bg_highlight = "#ebebeb",
   bg_popup = "#bfbfbf",
   bg_search = "#ff8f00",
-  bg_sidebar = "#d9d9d9",
+  bg_sidebar = "#dedede",
   bg_status_alt = "#d8d8d8",
   bg_statusline = "#f1f1f1",
   bg_visual = "#bfbfbf",
@@ -22,7 +22,7 @@ local colors = {
   diff = {
     add = "#e5f3d9",
     change = "#d9edff",
-    delete = "#ffd9e4",
+    delete = "#ffd9e7",
     text = "#0087ff"
   },
   error = "#ff005f",
@@ -39,7 +39,7 @@ local colors = {
     delete = "#ff004b"
   },
   green = "#4fb000",
-  green_alt = "#83dc78",
+  green_alt = "#4fb000",
   green_unchanged = "#a4e400",
   grey = "#7f7f7f",
   grey_dark = "#b2b2b2",
@@ -48,7 +48,7 @@ local colors = {
   grey_light = "#4c4c4c",
   grey_lighter = "#171717",
   grey_medium = "#a5a5a5",
-  hint = "#83dc78",
+  hint = "#4fb000",
   info = "#0087ff",
   magenta = "#ff004b",
   none = "NONE",
@@ -300,7 +300,7 @@ local highlights = {
     fg = "#ff005f"
   },
   DiagnosticHint = {
-    fg = "#83dc78"
+    fg = "#4fb000"
   },
   DiagnosticInfo = {
     fg = "#0087ff"
@@ -310,7 +310,7 @@ local highlights = {
     undercurl = true
   },
   DiagnosticUnderlineHint = {
-    sp = "#83dc78",
+    sp = "#4fb000",
     undercurl = true
   },
   DiagnosticUnderlineInfo = {
@@ -331,8 +331,8 @@ local highlights = {
     fg = "#ff005f"
   },
   DiagnosticVirtualTextHint = {
-    bg = "#f5fcf4",
-    fg = "#83dc78"
+    bg = "#f1f9eb",
+    fg = "#4fb000"
   },
   DiagnosticVirtualTextInfo = {
     bg = "#ebf5ff",
@@ -352,7 +352,7 @@ local highlights = {
     bg = "#d9edff"
   },
   DiffDelete = {
-    bg = "#ffd9e4"
+    bg = "#ffd9e7"
   },
   DiffText = {
     bg = "#0087ff"
@@ -378,11 +378,11 @@ local highlights = {
     fg = "#6054d0"
   },
   FloatBorder = {
-    bg = "#ffffff",
+    bg = "#dedede",
     fg = "#333333"
   },
   FoldColumn = {
-    bg = "#ffffff",
+    bg = "#dedede",
     fg = "#ff4d00"
   },
   Folded = {
@@ -476,6 +476,17 @@ local highlights = {
     sp = "#00b3e3",
     underline = true
   },
+  NeoTreeDimText = {
+    fg = "#c9c9c9"
+  },
+  NeoTreeNormal = {
+    bg = "#dedede",
+    fg = "#171717"
+  },
+  NeoTreeNormalNC = {
+    bg = "#dedede",
+    fg = "#171717"
+  },
   NonText = {
     fg = "#bfbfbf"
   },
@@ -484,7 +495,7 @@ local highlights = {
     fg = "#333333"
   },
   NormalFloat = {
-    bg = "#ffffff",
+    bg = "#dedede",
     fg = "#333333"
   },
   NormalNC = {
@@ -492,8 +503,60 @@ local highlights = {
     fg = "#333333"
   },
   NormalSB = {
-    bg = "#d9d9d9",
+    bg = "#dedede",
     fg = "#171717"
+  },
+  NvimTreeFolderIcon = {
+    bg = "NONE",
+    fg = "#00b3e3"
+  },
+  NvimTreeFolderName = {
+    fg = "#333333"
+  },
+  NvimTreeGitDeleted = {
+    fg = "#ff004b"
+  },
+  NvimTreeGitDirty = {
+    fg = "#ff4d00"
+  },
+  NvimTreeGitNew = {
+    fg = "#4fb000"
+  },
+  NvimTreeImageFile = {
+    fg = "#171717"
+  },
+  NvimTreeIndentMarker = {
+    fg = "#c9c9c9"
+  },
+  NvimTreeNormal = {
+    bg = "#dedede",
+    fg = "#171717"
+  },
+  NvimTreeNormalNC = {
+    bg = "#dedede",
+    fg = "#171717"
+  },
+  NvimTreeOpenedFile = {
+    bg = "#ebebeb"
+  },
+  NvimTreeOpenedFolderName = {
+    bold = true,
+    fg = "#333333"
+  },
+  NvimTreeRootFolder = {
+    fg = "#ff004b",
+    italic = true
+  },
+  NvimTreeSpecialFile = {
+    fg = "#4fb000",
+    underline = true
+  },
+  NvimTreeSymlink = {
+    fg = "#00b3e3"
+  },
+  NvimTreeWinSeparator = {
+    bg = "#dedede",
+    fg = "#dedede"
   },
   Operator = {
     fg = "#ff004b"
@@ -534,7 +597,7 @@ local highlights = {
     fg = "#c9c9c9"
   },
   SignColumnSB = {
-    bg = "#d9d9d9",
+    bg = "#dedede",
     fg = "#c9c9c9"
   },
   Special = {
@@ -556,7 +619,7 @@ local highlights = {
     undercurl = true
   },
   SpellRare = {
-    sp = "#83dc78",
+    sp = "#4fb000",
     undercurl = true
   },
   Statement = {
@@ -599,11 +662,11 @@ local highlights = {
     fg = "#6054d0"
   },
   TelescopeBorder = {
-    bg = "#ffffff",
+    bg = "#dedede",
     fg = "#333333"
   },
   TelescopeNormal = {
-    bg = "#ffffff",
+    bg = "#dedede",
     fg = "#4c4c4c"
   },
   TelescopePromptPrefix = {
@@ -735,13 +798,13 @@ local highlights = {
     fg = "#ff8f00"
   },
   WhichKeyBorder = {
-    bg = "#d9d9d9"
+    bg = "#dedede"
   },
   WhichKeyDesc = {
     fg = "#333333"
   },
   WhichKeyFloat = {
-    bg = "#d9d9d9"
+    bg = "#dedede"
   },
   WhichKeyGroup = {
     fg = "#ff004b"
@@ -764,7 +827,7 @@ local highlights = {
     fg = "#0087ff"
   },
   debugPC = {
-    bg = "#d9d9d9"
+    bg = "#dedede"
   },
   diffAdded = {
     fg = "#4fb000"
@@ -809,13 +872,13 @@ local highlights = {
     fg = "#ff005f"
   },
   healthSuccess = {
-    fg = "#83dc78"
+    fg = "#4fb000"
   },
   healthWarning = {
     fg = "#ff4d00"
   },
   helpCommand = {
-    bg = "#ffffff",
+    bg = "#dedede",
     fg = "#00b3e3"
   },
   lCursor = {

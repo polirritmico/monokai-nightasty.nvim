@@ -11,7 +11,7 @@ function M.generate(colors)
 tm_bg="${grey_darker}"
 tm_fg="${grey_light}"
 tm_bg_highlight="${charcoal_light}"
-tm_green="${green_light}"
+tm_green="${green}"
 tm_orange="${orange}"
 tm_black="${black}"
 tm_border="${border}"

@@ -3,7 +3,7 @@
 tm_bg="#444444"
 tm_fg="#bcbcbc"
 tm_bg_highlight="#313131"
-tm_green="${green_light}"
+tm_green="#a4e400"
 tm_orange="#ff9700"
 tm_black="#000000"
 tm_border="#62d8f1"

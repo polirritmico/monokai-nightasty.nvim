@@ -2,11 +2,11 @@ local colors = {
   bg = "#121212",
   bg_dark = "#121212",
   bg_darker = "#262626",
-  bg_float = "#121212",
+  bg_float = "#2b2b2b",
   bg_highlight = "#2a2a2a",
   bg_popup = "#444444",
   bg_search = "#ffff87",
-  bg_sidebar = "#121212",
+  bg_sidebar = "#2b2b2b",
   bg_status_alt = "#313131",
   bg_statusline = "#444444",
   bg_visual = "#444444",
@@ -22,7 +22,7 @@ local colors = {
   diff = {
     add = "#28310f",
     change = "#0f2436",
-    delete = "#351320",
+    delete = "#360f1e",
     text = "#0087ff"
   },
   error = "#ff005f",
@@ -352,7 +352,7 @@ local highlights = {
     bg = "#0f2436"
   },
   DiffDelete = {
-    bg = "#351320"
+    bg = "#360f1e"
   },
   DiffText = {
     bg = "#0087ff"
@@ -378,7 +378,7 @@ local highlights = {
     fg = "#af87ff"
   },
   FloatBorder = {
-    bg = "#121212",
+    bg = "#2b2b2b",
     fg = "#ffffff"
   },
   FoldColumn = {
@@ -476,6 +476,17 @@ local highlights = {
     sp = "#62d8f1",
     underline = true
   },
+  NeoTreeDimText = {
+    fg = "#3e3e3e"
+  },
+  NeoTreeNormal = {
+    bg = "#2b2b2b",
+    fg = "#e8e8e8"
+  },
+  NeoTreeNormalNC = {
+    bg = "#2b2b2b",
+    fg = "#e8e8e8"
+  },
   NonText = {
     fg = "#444444"
   },
@@ -484,7 +495,7 @@ local highlights = {
     fg = "#ffffff"
   },
   NormalFloat = {
-    bg = "#121212",
+    bg = "#2b2b2b",
     fg = "#ffffff"
   },
   NormalNC = {
@@ -492,8 +503,60 @@ local highlights = {
     fg = "#ffffff"
   },
   NormalSB = {
-    bg = "#121212",
+    bg = "#2b2b2b",
     fg = "#e8e8e8"
+  },
+  NvimTreeFolderIcon = {
+    bg = "NONE",
+    fg = "#62d8f1"
+  },
+  NvimTreeFolderName = {
+    fg = "#ffffff"
+  },
+  NvimTreeGitDeleted = {
+    fg = "#fc1a70"
+  },
+  NvimTreeGitDirty = {
+    fg = "#ff9700"
+  },
+  NvimTreeGitNew = {
+    fg = "#a4e400"
+  },
+  NvimTreeImageFile = {
+    fg = "#e8e8e8"
+  },
+  NvimTreeIndentMarker = {
+    fg = "#3e3e3e"
+  },
+  NvimTreeNormal = {
+    bg = "#2b2b2b",
+    fg = "#e8e8e8"
+  },
+  NvimTreeNormalNC = {
+    bg = "#2b2b2b",
+    fg = "#e8e8e8"
+  },
+  NvimTreeOpenedFile = {
+    bg = "#2a2a2a"
+  },
+  NvimTreeOpenedFolderName = {
+    bold = true,
+    fg = "#ffffff"
+  },
+  NvimTreeRootFolder = {
+    fg = "#fc1a70",
+    italic = true
+  },
+  NvimTreeSpecialFile = {
+    fg = "#a4e400",
+    underline = true
+  },
+  NvimTreeSymlink = {
+    fg = "#62d8f1"
+  },
+  NvimTreeWinSeparator = {
+    bg = "#2b2b2b",
+    fg = "#2b2b2b"
   },
   Operator = {
     fg = "#fc1a70"
@@ -534,7 +597,7 @@ local highlights = {
     fg = "#3e3e3e"
   },
   SignColumnSB = {
-    bg = "#121212",
+    bg = "#2b2b2b",
     fg = "#3e3e3e"
   },
   Special = {
@@ -599,11 +662,11 @@ local highlights = {
     fg = "#af87ff"
   },
   TelescopeBorder = {
-    bg = "#121212",
+    bg = "#2b2b2b",
     fg = "#ffffff"
   },
   TelescopeNormal = {
-    bg = "#121212",
+    bg = "#2b2b2b",
     fg = "#bcbcbc"
   },
   TelescopePromptPrefix = {
@@ -735,13 +798,13 @@ local highlights = {
     fg = "#ffff87"
   },
   WhichKeyBorder = {
-    bg = "#121212"
+    bg = "#2b2b2b"
   },
   WhichKeyDesc = {
     fg = "#ffffff"
   },
   WhichKeyFloat = {
-    bg = "#121212"
+    bg = "#2b2b2b"
   },
   WhichKeyGroup = {
     fg = "#fc1a70"
@@ -764,7 +827,7 @@ local highlights = {
     fg = "#0087ff"
   },
   debugPC = {
-    bg = "#121212"
+    bg = "#2b2b2b"
   },
   diffAdded = {
     fg = "#a4e400"
@@ -815,7 +878,7 @@ local highlights = {
     fg = "#ff9700"
   },
   helpCommand = {
-    bg = "#121212",
+    bg = "#2b2b2b",
     fg = "#62d8f1"
   },
   lCursor = {
