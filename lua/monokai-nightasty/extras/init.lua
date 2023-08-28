@@ -51,6 +51,8 @@ function M.fill_extras_in_readme()
     M.write_file(file, readme)
 end
 
+--- Run this function through require("monokai-nightasty.extras").setup() to
+--- generate the files into 'extras/...' (at pwd)
 function M.setup()
     M.fill_extras_in_readme()
     -- local config = require("monokai-nightasty.config")

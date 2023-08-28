@@ -12,13 +12,11 @@
 
 ## 🐧 Description
 
-A dark/light theme for Neovim based on the Monokai color palette. The code is
-based on the excelent
-[tokyonight.nvim](https://github.com/folke/tokyonight.nvim) plugin and the
-palette is adapted from the flavorful
-[vim-monokai-tasty](https://github.com/patstockwell/vim-monokai-tasty) plugin.
-Written in Lua, it includes support for lsp, treesitter, a lot of plugins and
-additional config files for tmux, zathura and others.
+A dark/light theme for Neovim based on the Monokai color palette. This theme is
+born from a mix between the code of the great
+[tokyonight.nvim](https://github.com/folke/tokyonight.nvim) and the palette of
+the flavorful
+[vim-monokai-tasty](https://github.com/patstockwell/vim-monokai-tasty).
 
 <!-- panvimdoc-ignore-start -->
 
