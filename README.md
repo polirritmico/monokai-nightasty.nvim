@@ -18,7 +18,7 @@ the flavorful
 
 <!-- panvimdoc-ignore-start -->
 
-![Monokai-NighTasty](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/1eabe0aa-609e-4076-89f9-b99683b55442)
+![Monokai-NighTasty](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/be1b74e6-8614-482d-8591-ac8a59793620)
 
 <!-- panvimdoc-ignore-end -->
 
@@ -36,15 +36,15 @@ the flavorful
 
 ### 🌙 Dark Theme
 
-![Dark Theme](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/3b0bf4b6-027f-438c-9794-0042f070765e)
+![Dark Theme](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/763caac7-f18a-428c-b8e7-14eeceed9108)
 
 ### 💨 Dark Theme with transparent background:
 
-![Transparent Dark Theme](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/f0b3bc37-ac3b-46e9-ab8e-7604184db4dc)
+![Transparent Dark Theme](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/94703fdc-fc82-48a0-9241-c58fca3f0f62)
 
 ### ☀️ Light Theme
 
-![Light Theme](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/4ee50f6d-fe41-4797-9f56-c1301b022fe6)
+![Light Theme](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/c57934ed-a7da-4a43-af2d-a5929ec6cb5a)
 
 <!-- panvimdoc-ignore-end -->
 
@@ -87,9 +87,9 @@ The Dark/light styles could be toggled by calling the provided function:
 :MonokaiToggleLight
 ```
 
-### 🧩 External Plugins
+### 🧩 Extra Themes
 
-Currently Monokai NighTasty supports this plugins:
+Currently the theme supports this extras:
 
 <!-- extras:start -->
 - [Monokai Nightasty Palettes](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/extras/palettes) ([palettes](extras/palettes))
@@ -193,9 +193,8 @@ For default values of `colors` and `highlights`, please consult the
 
 ## 🔮 Extras
 
-Check the `extras` folder (`~/.local/share/nvim/lazy/monokai-nightasty/extras`
-for Lazy packager). Copy, link or reference the file in each setting. Refer to
-their respective documentation.
+Check the `extras` folder . Copy, link or reference the file in each setting.
+Refer to their respective documentation.
 
 ### Tmux
 
