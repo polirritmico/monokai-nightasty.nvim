@@ -15,7 +15,7 @@ local defaults = {
         variables = {},
         -- Background styles for sidebars (panels) and floating windows:
         floats = "default", -- default, dark, transparent
-        sidebars = "dark", -- default, dark, transparent
+        sidebars = "default", -- default, dark, transparent
     },
     sidebars = { "qf", "help" }, -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`
 

@@ -125,10 +125,10 @@ function M.setup(opts)
     -- Sidebar and Floats
     colors.bg_sidebar = config.options.hl_styles.sidebars == "transparent" and colors.none
         or config.options.hl_styles.sidebars == "dark" and colors.bg_dark
-        or colors.bg
+        or colors.charcoal_medium
     colors.bg_float = config.options.hl_styles.floats == "transparent" and colors.none
         or config.options.hl_styles.floats == "dark" and colors.bg_dark
-        or colors.bg
+        or colors.charcoal_medium
     colors.fg_float = colors.fg
 
     -- Set the background for the current line (current cursor position)
