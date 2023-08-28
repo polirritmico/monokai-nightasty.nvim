@@ -1,4 +1,4 @@
-*monokai-nightasty.nvim.txt*  For Neovim >= 0.9.0  Last change: 2023 August 26
+*monokai-nightasty.nvim.txt*  For Neovim >= 0.9.0  Last change: 2023 August 27
 
 ==============================================================================
 Table of Contents                   *monokai-nightasty.nvim-table-of-contents*
@@ -87,6 +87,12 @@ The Dark/light styles could be toggled by calling the provided function:
 
 EXTERNAL PLUGINS                     *monokai-nightasty.nvim-external-plugins*
 
+Currently Monokai NighTasty supports this plugins:
+
+- Monokai Nightasty Palettes <https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/extras/palettes> (palettes <extras/palettes>)
+- Tmux <https://github.com/tmux/tmux/wiki> (tmux <extras/tmux>)
+- Zathura <https://pwmt.org/projects/zathura/> (zathura <extras/zathura>)
+
 
 LUALINE ~
 
@@ -108,13 +114,8 @@ FULL CONFIG EXAMPLE: ~
     vim.opt.background = "dark" -- The theme has `dark` and `light` styles
     
     require("monokai-nightasty").setup({
-        dark_style_background = "transparent", -- Can be `default`, `transparent`, `dark` or `color` (e.g. 2b2b2b)
-        light_style_background = "default", -- Can be `default`, `transparent`, `dark` or `color` (e.g. ffffff)
-        dim_inactive = false, -- dims inactive windows
-        hide_inactive_statusline = false, -- Hide inactive statuslines and replace them with a thin border instead. Should work with the standard StatusLine and LuaLine.
-        lualine_bold = true, -- Lualine headers will be bold.
-        lualine_style = "toggle" -- "dark", "light", "toggle" (Follows current style).
-        sidebars = { "qf", "help" }, -- Set a darker background on sidebars-like windows.
+        dark_style_background = "transparent", -- default, dark, transparent, color
+        light_style_background = "default", -- default, dark, transparent, color
         terminal_colors = true, -- Set the colors used when opening a `:terminal`
         hl_styles = {
             -- Style to be applied to different syntax groups. See `:help nvim_set_hl`
@@ -123,28 +124,29 @@ FULL CONFIG EXAMPLE: ~
             functions = {},
             variables = {},
             -- Background styles for sidebars (panels) and floating windows:
-            -- TODO: check this
-            floats = "dark", -- Can be `default`, `dark` or `transparent`
+            floats = "default", -- Can be `default`, `dark` or `transparent`
             sidebars = "dark", -- Can be `default`, `dark` or `transparent`
         }
+        sidebars = { "qf", "help" }, -- Set a darker background on sidebars-like windows.
     
-        --- You can override specific color groups to use other groups or a hex color
-        --- function will be called with a ColorScheme table.
-        --- TODO: Full list of colors: 
+        hide_inactive_statusline = false, -- Hide inactive statuslines and replace them with a thin border instead. Should work with the standard StatusLine and LuaLine.
+        dim_inactive = false, -- dims inactive windows
+        lualine_bold = true, -- Lualine headers will be bold or regular.
+        lualine_style = "default" -- "dark", "light", "default" (Follows current style).
+    
+        --- You can override specific color/highlights. Current values in `extras/palettes`
+    
         ---@param colors ColorScheme
         on_colors = function(colors)
             colors.border = colors.grey
-            colors.comment = "ff0000"
+            colors.comment = "00b3e3"
         end,
     
-        --- You can override specific highlights to use other groups or a hex color
-        --- function will be called with a Highlights and ColorScheme table.
-        --- TODO: Full list of highlights: 
         ---@param highlights Highlights
         ---@param colors ColorScheme
-        on_highlights = function(hl, colors)
-            hl.TelescopeNormal = { fg = colors.magenta, bg = colors.charcoal }
-            hl.TelescopeBorder = { link = "MsgSeparator" }
+        on_highlights = function(highlights, colors)
+            highlights.TelescopeNormal = { fg = colors.magenta, bg = colors.charcoal }
+            highlights.TelescopeBorder = { link = "MsgSeparator" }
         end,
     })
     

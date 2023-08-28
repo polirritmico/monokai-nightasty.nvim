@@ -6,7 +6,7 @@ local colors = {
   bg_highlight = "#ebebeb",
   bg_popup = "#bfbfbf",
   bg_search = "#ff8f00",
-  bg_sidebar = "#ffffff",
+  bg_sidebar = "#d9d9d9",
   bg_status_alt = "#d8d8d8",
   bg_statusline = "#f1f1f1",
   bg_visual = "#bfbfbf",
@@ -492,7 +492,7 @@ local highlights = {
     fg = "#333333"
   },
   NormalSB = {
-    bg = "#ffffff",
+    bg = "#d9d9d9",
     fg = "#171717"
   },
   Operator = {
@@ -534,7 +534,7 @@ local highlights = {
     fg = "#c9c9c9"
   },
   SignColumnSB = {
-    bg = "#ffffff",
+    bg = "#d9d9d9",
     fg = "#c9c9c9"
   },
   Special = {
@@ -735,13 +735,13 @@ local highlights = {
     fg = "#ff8f00"
   },
   WhichKeyBorder = {
-    bg = "#ffffff"
+    bg = "#d9d9d9"
   },
   WhichKeyDesc = {
     fg = "#333333"
   },
   WhichKeyFloat = {
-    bg = "#ffffff"
+    bg = "#d9d9d9"
   },
   WhichKeyGroup = {
     fg = "#ff004b"
@@ -764,7 +764,7 @@ local highlights = {
     fg = "#0087ff"
   },
   debugPC = {
-    bg = "#ffffff"
+    bg = "#d9d9d9"
   },
   diffAdded = {
     fg = "#4fb000"
