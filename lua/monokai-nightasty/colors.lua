@@ -116,8 +116,7 @@ function M.setup(opts)
     colors.border = colors.blue
     colors.border_highlight = colors.fg
 
-    -- Popups and statusline
-    colors.bg_popup = colors.grey_darker
+    -- Statusline
     colors.bg_statusline = is_light and util.darken(colors.bg, 0.93, colors.fg)
         or colors.grey_darker
     colors.bg_status_alt = is_light and colors.charcoal_light or colors.charcoal_light
@@ -140,6 +139,12 @@ function M.setup(opts)
     colors.bg_search = colors.yellow
     colors.fg_search = colors.black
     colors.fg_sidebar = colors.fg_dark
+
+    -- Popups
+    colors.bg_popup = is_light and colors.charcoal_medium or colors.grey_darker
+    colors.bg_menuselbar = util.lighten(colors.bg_popup, 0.95)
+    colors.bg_menusel = is_light and util.lighten(colors.fg_gutter, 0.8)
+        or util.darken(colors.fg_gutter, 0.8)
 
     -- FIXME: Improve this colors
     colors.error = colors.red

@@ -63,13 +63,10 @@ function M.setup(palette)
         NormalFloat = { fg = c.fg_float, bg = c.bg_float }, -- Normal text in floating windows.
         NormalNC = { fg = c.fg, bg = options.transparent and c.none or options.dim_inactive and c.bg_dark or c.bg }, -- normal text in non-current windows
         NormalSB = { fg = c.fg_sidebar, bg = c.bg_sidebar }, -- normal text in sidebar
-
-        Pmenu = { fg = c.blue, bg = c.bg_popup }, -- Popup/wildMenu: normal item.
-        PmenuSbar = { bg = util.lighten(c.bg_popup, 0.95) }, -- bg = c.grey -- Popup/WildMenu: scrollbar.
-        PmenuSel = { fg = c.yellow, bg = util.darken(c.fg_gutter, 0.8) }, -- Popup/WildMenu: selected item.
-        PmenuThumb = { bg = c.fg_gutter }, -- Popup/WildMenu: Thumb of the scrollbar.
-        WildMenu = { bg = c.bg_visual }, -- current match in 'wildmenu' completion
-
+        Pmenu = { fg = c.fg, bg = c.bg_popup }, -- Popup/wildMenu: normal item.
+        PmenuSbar = { bg = c.bg_menuselbar }, -- bg = c.grey -- Popup/WildMenu: scrollbar.
+        PmenuSel = { fg = c.magenta, bg = c.bg_menusel }, -- Popup/WildMenu: selected item.
+        PmenuThumb = { fg = c.grey_dark, bg = c.grey }, -- Popup/WildMenu: Thumb of the scrollbar.
         Question = { fg = c.blue }, -- |hit-enter| prompt and yes/no questions
         -- QuickFixLine = { bg = c.bg_visual, bold = true }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
         Search = { fg = c.fg_search, bg = c.bg_search, bold = true }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
@@ -94,7 +91,7 @@ function M.setup(palette)
         -- VisualNOS = { bg = c.bg_visual }, -- Semi-deprecated
         WarningMsg = { fg = c.white, bg = c.red }, -- warning messages
         Whitespace = { fg = c.grey_darker }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
-        -- WildMenu = { bg = c.bg_visual }, -- current match in 'wildmenu' completion
+        -- WildMenu = { bg = c.bg_visual }, -- current match in 'wildmenu' completion?????
         WinSeparator = { fg = c.border }, -- the column separating vertically split windows
         lCursor = { fg = c.bg, bg = c.blue }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
 
