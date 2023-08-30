@@ -3,6 +3,7 @@ local M = {}
 ---@class Config
 ---@field on_colors fun(colors: ColorScheme)
 ---@field on_highlights fun(highlights: Highlights, colors: ColorScheme)
+---@field transparent boolean|nil
 local defaults = {
     dark_style_background = "default", -- default, dark, transparent, #color
     light_style_background = "default", -- default, dark, transparent, #color

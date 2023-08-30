@@ -16,9 +16,7 @@ local M = {}
 function M.setup(palette)
     local config = require("monokai-nightasty.config")
     local options = config.options
-    if options.transparent == nil then
-        options.transparent = false
-    end
+    options.transparent = options.transparent or false
 
     ---@class Theme
     ---@field highlights Highlights
@@ -368,6 +366,11 @@ function M.setup(palette)
         markdownCodeDelimiter = { fg = c.green },
         markdownH1 = { fg = c.fg, bold = true },
         markdownHeadingDelimiter = { fg = c.magenta },
+        -- markdownH2 = { fg = c.orange, bold = true },
+        -- markdownH3 = { fg = c.green, bold = true },
+        -- markdownH4 = { fg = c.grey, bold = true },
+        -- markdownH5 = { bold = false },
+
         markdownHeadingRule = { fg = c.magenta, bold = true },
         markdownLinkDelimiter = { fg = c.blue },
         markdownLinkText = { fg = c.blue, underline = true },
@@ -393,10 +396,10 @@ function M.setup(palette)
         -- RainbowDelimiterRed = { fg = c.magenta },
         -- RainbowDelimiterOrange = { fg = c.orange },
         -- RainbowDelimiterYellow = { fg = c.yellow },
-        -- RainbowDelimiterGreen = { fg = c.green_light },
-        -- RainbowDelimiterBlue = { fg = c.blue_light },
+        -- RainbowDelimiterGreen = { fg = c.green },
+        -- RainbowDelimiterBlue = { fg = c.blue_alt },
         -- RainbowDelimiterViolet = { fg = c.purple },
-        -- RainbowDelimiterCyan = { fg = c.blue_medium },
+        -- RainbowDelimiterCyan = { fg = c.blue },
 
         --- LspTrouble
         -- TroubleText = { fg = c.fg_dark },
