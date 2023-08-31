@@ -272,7 +272,7 @@ function M.setup(palette)
         ["@text.title.4.marker"] = { link = "@tag" },
         ["@text.title.5.marker"] = { link = "@tag" },
         ["@text.title.6.marker"] = { link = "@tag" },
-        ["@text.quote"] = { fg = c.fg, italic = true },
+        ["@text.quote"] = { fg = c.orange, bg = c.fg_gutter, italic = true },
         ["@text.reference"] = { fg = c.blue, underline = true }, -- links text -> ![text](url)
         ["@text.todo.checked"] = { fg = c.magenta }, -- For brackets and parens. [x]
         ["@text.todo.unchecked"] = { fg = c.magenta }, -- For brackets and parens. [ ]
