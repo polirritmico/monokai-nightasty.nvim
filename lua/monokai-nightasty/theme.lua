@@ -113,6 +113,12 @@ function M.setup(palette)
         Exception = { fg = c.magenta }, --  try, catch, throw
         Float = { fg = c.purple }, -- a floating point constant: 2.3e10
         Function = { fg = c.green, style = options.hl_styles.functions }, -- function name (also: methods for classes)
+        htmlH1 = options.header_colors and { fg = c.fg , bold = true } or { link = "Title" },
+        htmlH2 = options.header_colors and { fg = c.yellow, bold = true } or { link = "Title" },
+        htmlH3 = options.header_colors and { fg = c.orange, bold = true } or { link = "Title" },
+        htmlH4 = options.header_colors and { fg = c.red, bold = true } or { link = "Title" },
+        htmlH5 = options.header_colors and { fg = c.purple, bold = false } or { link = "Title" },
+        htmlH6 = options.header_colors and { fg = c.blue, bold = false } or { link = "Title" },
         Identifier = { fg = c.fg, style = options.hl_styles.variables }, -- (preferred) any variable name
         -- ("Ignore", below, may be invisible...)
         -- Ignore = { }, -- (preferred) left blank, hidden  |hl-Ignore|
@@ -138,10 +144,6 @@ function M.setup(palette)
         Typedef = { fg = c.blue }, -- A typedef
         qfFileName = { fg = c.purple },
         qfLineNr = { fg = c.grey },
-
-        -- htmlH1 = { fg = c.fg, bold = true },
-        -- htmlH2 = { fg = c.fg, bold = true },
-        -- htmlH3 = { fg = c.fg },
 
         -- indent-blankline
         IndentBlanklineChar = { fg = c.fg_gutter, nocombine = true },
@@ -251,20 +253,35 @@ function M.setup(palette)
         -- ["@text.literal.markdown_inline"] = { fg = c.blue, bg = c.terminal_black },
         -- ["@text.reference"] = { fg = c.teal },
 
-        -- ["@text.todo.unchecked"] = { fg = c.blue }, -- For brackets and parens.
-        -- ["@text.todo.checked"] = { fg = c.green1 }, -- For brackets and parens.
+        --- Text
+        -- TODO: Add documentation
+        ["@text.title.1"] = options.header_colors and { fg = c.fg , bold = true } or { link = "Title" },
+        ["@text.title.2"] = options.header_colors and { fg = c.yellow, bold = true } or { link = "Title" },
+        ["@text.title.3"] = options.header_colors and { fg = c.orange, bold = true } or { link = "Title" },
+        ["@text.title.4"] = options.header_colors and { fg = c.red, bold = true } or { link = "Title" },
+        ["@text.title.5"] = options.header_colors and { fg = c.purple, bold = false } or { link = "Title" },
+        ["@text.title.6"] = options.header_colors and { fg = c.blue, bold = false } or { link = "Title" },
+        ["@text.title.1.marker"] = { link = "@tag" }, -- #, <h1>, <h2>, etc.
+        ["@text.title.2.marker"] = { link = "@tag" },
+        ["@text.title.3.marker"] = { link = "@tag" },
+        ["@text.title.4.marker"] = { link = "@tag" },
+        ["@text.title.5.marker"] = { link = "@tag" },
+        ["@text.title.6.marker"] = { link = "@tag" },
+        ["@text.quote"] = { fg = c.fg, italic = true },
+        ["@text.reference"] = { fg = c.blue, underline = true }, -- links text -> ![text](url)
+        ["@text.todo.checked"] = { fg = c.magenta }, -- For brackets and parens.
+        ["@text.todo.unchecked"] = { fg = c.magenta }, -- For brackets and parens.
+        ["@text.uri"] = { fg = c.orange }, -- links url -> ![text](url)
         ["@text.warning"] = { fg = c.bg, bg = c.warning },
         ["@text.danger"] = { fg = c.bg, bg = c.error },
 
         ["@text.diff.add"] = { link = "DiffAdd" },
         ["@text.diff.delete"] = { link = "DiffDelete" },
 
-        -- ["@namespace"] = { link = "Include" },
-
-        -- tsx
-        -- ["@tag.tsx"] = { fg = c.red },
-        -- ["@constructor.tsx"] = { fg = c.blue1 },
-        -- ["@tag.delimiter.tsx"] = { fg = util.darken(c.blue, 0.7) },
+        --- Markdown
+        ["@text.literal.markdown_inline"] = { fg = c.purple },
+        ["@lsp.type.class.markdown"] = { fg = c.yellow },
+        ["@punctuation.bracket.markdown_inline"] = { fg = c.blue },
 
         -- LSP Semantic Token Groups
         ["@lsp.type.boolean"] = { link = "@boolean" },

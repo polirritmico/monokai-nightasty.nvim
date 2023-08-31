@@ -8,6 +8,7 @@ local defaults = {
     dark_style_background = "default", -- default, dark, transparent, #color
     light_style_background = "default", -- default, dark, transparent, #color
     terminal_colors = true, -- Set the colors used when opening a `:terminal`
+    header_colors = false, -- Enable header colors (h1, h2, h3, etc.)
     hl_styles = {
         -- Style to be applied to different syntax groups. See `:help nvim_set_hl`
         comments = { italic = true },
