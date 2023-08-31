@@ -12,7 +12,7 @@ local defaults = {
     hl_styles = {
         -- Style to be applied to different syntax groups. See `:help nvim_set_hl`
         comments = { italic = true },
-        keywords = { italic = false },
+        keywords = { italic = true },
         functions = {},
         variables = {},
         -- Background styles for sidebars (panels) and floating windows:
@@ -24,7 +24,7 @@ local defaults = {
     hide_inactive_statusline = false, -- Hide inactive statuslines and replace them with a thin border instead. Should work with the standard **StatusLine** and **LuaLine**.
     dim_inactive = false, -- dims inactive windows
     lualine_bold = true, -- Lualine headers will be bold or regular.
-    lualine_style = "default", -- "dark", "light" or "default" (changes following current style)
+    lualine_style = "default", -- "dark", "light" or "default" (Follows dark/light style)
 
     --- You can override specific color groups to use other groups or a hex color
     --- function will be called with a ColorScheme table

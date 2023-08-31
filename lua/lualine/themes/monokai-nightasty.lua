@@ -47,7 +47,7 @@ else
     local c = require("monokai-nightasty.colors").setup({force_style = "light"})
 
     monokai_nightasty.normal = {
-        a = { fg = c.black, bg = c.green_unchanged },
+        a = { fg = c.white, bg = c.green },
         b = { fg = c.fg_sidebar, bg = c.bg_status_alt },
         c = { fg = c.fg_statusline, bg = c.bg_statusline },
     }

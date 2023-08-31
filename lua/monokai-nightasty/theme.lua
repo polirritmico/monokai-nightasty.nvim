@@ -89,7 +89,7 @@ function M.setup(palette)
         -- VisualNOS = { bg = c.bg_visual }, -- Semi-deprecated
         WarningMsg = { fg = c.white, bg = c.red }, -- warning messages
         Whitespace = { fg = c.grey_darker }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
-        -- WildMenu = { bg = c.bg_visual }, -- current match in 'wildmenu' completion?????
+        -- WildMenu = { bg = c.bg_visual }, -- current match in 'wildmenu' completion?? not working. Check PmenuSel.
         WinSeparator = { fg = c.border }, -- the column separating vertically split windows
         lCursor = { fg = c.bg, bg = c.blue }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
 
@@ -272,7 +272,7 @@ function M.setup(palette)
         ["@text.title.4.marker"] = { link = "@tag" },
         ["@text.title.5.marker"] = { link = "@tag" },
         ["@text.title.6.marker"] = { link = "@tag" },
-        ["@text.quote"] = { fg = c.orange, bg = c.fg_gutter, italic = true },
+        ["@text.quote"] = { fg = c.fg, bg = c.fg_gutter, italic = true },
         ["@text.reference"] = { fg = c.blue, underline = true }, -- links text -> ![text](url)
         ["@text.todo.checked"] = { fg = c.magenta }, -- For brackets and parens. [x]
         ["@text.todo.unchecked"] = { fg = c.magenta }, -- For brackets and parens. [ ]
