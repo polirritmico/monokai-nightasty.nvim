@@ -274,8 +274,8 @@ function M.setup(palette)
         ["@text.title.6.marker"] = { link = "@tag" },
         ["@text.quote"] = { fg = c.fg, italic = true },
         ["@text.reference"] = { fg = c.blue, underline = true }, -- links text -> ![text](url)
-        ["@text.todo.checked"] = { fg = c.magenta }, -- For brackets and parens.
-        ["@text.todo.unchecked"] = { fg = c.magenta }, -- For brackets and parens.
+        ["@text.todo.checked"] = { fg = c.magenta }, -- For brackets and parens. [x]
+        ["@text.todo.unchecked"] = { fg = c.magenta }, -- For brackets and parens. [ ]
         ["@text.uri"] = { fg = c.orange }, -- links url -> ![text](url)
         ["@text.warning"] = { fg = c.bg, bg = c.warning },
         ["@text.danger"] = { fg = c.bg, bg = c.error },
@@ -368,24 +368,24 @@ function M.setup(palette)
         LazyProgressTodo = { fg = c.fg_gutter, bold = true },
 
         --- NvimTree
+        NvimTreeFolderIcon = { fg = c.blue, bg = c.none },
+        NvimTreeFolderName = { fg = c.fg },
+        NvimTreeGitDeleted = { fg = c.git.delete },
+        NvimTreeGitDirty = { fg = c.git.change },
+        NvimTreeGitNew = { fg = c.git.add },
+        NvimTreeImageFile = { fg = c.fg_sidebar },
+        NvimTreeIndentMarker = { fg = c.fg_gutter },
         NvimTreeNormal = { fg = c.fg_sidebar, bg = c.bg_sidebar },
+        NvimTreeNormalNC = { fg = c.fg_sidebar, bg = c.bg_sidebar },
+        NvimTreeOpenedFile = { bg = c.bg_highlight },
+        NvimTreeOpenedFolderName = { fg = c.fg, bold = true },
+        NvimTreeRootFolder = { fg = c.magenta, italic = true },
+        NvimTreeSpecialFile = { fg = c.green, underline = true },
+        NvimTreeSymlink = { fg = c.blue },
         NvimTreeWinSeparator = {
             fg = options.hl_styles.sidebars == "transparent" and c.border or c.bg_sidebar,
             bg = c.bg_sidebar,
         },
-        NvimTreeNormalNC = { fg = c.fg_sidebar, bg = c.bg_sidebar },
-        NvimTreeRootFolder = { fg = c.magenta, italic = true },
-        NvimTreeGitDirty = { fg = c.git.change },
-        NvimTreeGitNew = { fg = c.git.add },
-        NvimTreeGitDeleted = { fg = c.git.delete },
-        NvimTreeOpenedFile = { bg = c.bg_highlight },
-        NvimTreeSpecialFile = { fg = c.green, underline = true },
-        NvimTreeIndentMarker = { fg = c.fg_gutter },
-        NvimTreeImageFile = { fg = c.fg_sidebar },
-        NvimTreeSymlink = { fg = c.blue },
-        NvimTreeFolderIcon = { fg = c.blue, bg = c.none },
-        NvimTreeFolderName = { fg = c.fg },
-        NvimTreeOpenedFolderName = { fg = c.fg, bold = true },
         NeoTreeNormal = { fg = c.fg_sidebar, bg = c.bg_sidebar },
         NeoTreeNormalNC = { fg = c.fg_sidebar, bg = c.bg_sidebar },
         NeoTreeDimText = { fg = c.fg_gutter },
@@ -492,6 +492,8 @@ function M.setup(palette)
         -- FernBranchText = { fg = c.blue },
 
         -- FlashBackdrop = { fg = c.grey_dark },
+        -- -- FlashCurrent = { fg = c. },
+        -- -- FlashMatch = { fg = c. },
         -- FlashLabel = { bg = c.magenta2, bold = true, fg = c.fg },
 
         --- GitGutter
@@ -510,11 +512,11 @@ function M.setup(palette)
         -- BufferLineIndicatorSelected = { fg = c.git.change },
 
         --- Glyph palette
-        -- GlyphPalette1 = { fg = c.red1 },
+        -- GlyphPalette1 = { fg = c.magenta },
         -- GlyphPalette2 = { fg = c.green },
         -- GlyphPalette3 = { fg = c.yellow },
         -- GlyphPalette4 = { fg = c.blue },
-        -- GlyphPalette6 = { fg = c.green1 },
+        -- GlyphPalette6 = { fg = c.green_alt },
         -- GlyphPalette7 = { fg = c.fg },
         -- GlyphPalette9 = { fg = c.red },
 
