@@ -113,12 +113,12 @@ function M.setup(palette)
         Exception = { fg = c.magenta }, --  try, catch, throw
         Float = { fg = c.purple }, -- a floating point constant: 2.3e10
         Function = { fg = c.green, style = options.hl_styles.functions }, -- function name (also: methods for classes)
-        htmlH1 = options.header_colors and { fg = c.fg , bold = true } or { link = "Title" },
-        htmlH2 = options.header_colors and { fg = c.yellow, bold = true } or { link = "Title" },
-        htmlH3 = options.header_colors and { fg = c.orange, bold = true } or { link = "Title" },
-        htmlH4 = options.header_colors and { fg = c.red, bold = true } or { link = "Title" },
-        htmlH5 = options.header_colors and { fg = c.purple, bold = false } or { link = "Title" },
-        htmlH6 = options.header_colors and { fg = c.blue, bold = false } or { link = "Title" },
+        htmlH1 = options.color_headers and { fg = c.fg , bold = true } or { link = "Title" },
+        htmlH2 = options.color_headers and { fg = c.yellow, bold = true } or { link = "Title" },
+        htmlH3 = options.color_headers and { fg = c.orange, bold = true } or { link = "Title" },
+        htmlH4 = options.color_headers and { fg = c.red, bold = true } or { link = "Title" },
+        htmlH5 = options.color_headers and { fg = c.purple, bold = false } or { link = "Title" },
+        htmlH6 = options.color_headers and { fg = c.blue, bold = false } or { link = "Title" },
         Identifier = { fg = c.fg, style = options.hl_styles.variables }, -- (preferred) any variable name
         -- ("Ignore", below, may be invisible...)
         -- Ignore = { }, -- (preferred) left blank, hidden  |hl-Ignore|
@@ -260,12 +260,12 @@ function M.setup(palette)
 
         --- Text
         -- TODO: Add documentation
-        ["@text.title.1"] = options.header_colors and { fg = c.fg , bold = true } or { link = "Title" },
-        ["@text.title.2"] = options.header_colors and { fg = c.yellow, bold = true } or { link = "Title" },
-        ["@text.title.3"] = options.header_colors and { fg = c.orange, bold = true } or { link = "Title" },
-        ["@text.title.4"] = options.header_colors and { fg = c.red, bold = true } or { link = "Title" },
-        ["@text.title.5"] = options.header_colors and { fg = c.purple, bold = false } or { link = "Title" },
-        ["@text.title.6"] = options.header_colors and { fg = c.blue, bold = false } or { link = "Title" },
+        ["@text.title.1"] = options.color_headers and { fg = c.fg , bold = true } or { link = "Title" },
+        ["@text.title.2"] = options.color_headers and { fg = c.yellow, bold = true } or { link = "Title" },
+        ["@text.title.3"] = options.color_headers and { fg = c.orange, bold = true } or { link = "Title" },
+        ["@text.title.4"] = options.color_headers and { fg = c.red, bold = true } or { link = "Title" },
+        ["@text.title.5"] = options.color_headers and { fg = c.purple, bold = false } or { link = "Title" },
+        ["@text.title.6"] = options.color_headers and { fg = c.blue, bold = false } or { link = "Title" },
         ["@text.title.1.marker"] = { link = "@tag" }, -- #, <h1>, <h2>, etc.
         ["@text.title.2.marker"] = { link = "@tag" },
         ["@text.title.3.marker"] = { link = "@tag" },
