@@ -390,6 +390,15 @@ function M.setup(palette)
         NeoTreeNormalNC = { fg = c.fg_sidebar, bg = c.bg_sidebar },
         NeoTreeDimText = { fg = c.fg_gutter },
 
+        --- Rainbow Delimiters
+        RainbowDelimiterRed = { fg = c.magenta },
+        RainbowDelimiterOrange = { fg = c.orange },
+        RainbowDelimiterYellow = { fg = c.yellow },
+        RainbowDelimiterGreen = { fg = c.green },
+        RainbowDelimiterBlue = { fg = c.blue_alt },
+        RainbowDelimiterViolet = { fg = c.purple },
+        RainbowDelimiterCyan = { fg = c.blue },
+
         --- Telescope
         TelescopeBorder = { fg = c.border_highlight, bg = c.bg_float },
         TelescopeNormal = { fg = c.grey_light, bg = c.bg_float },
@@ -727,15 +736,6 @@ function M.setup(palette)
         -- NotifyINFOBody = { fg = c.fg, bg = options.transparent and c.none or c.bg },
         -- NotifyDEBUGBody = { fg = c.fg, bg = options.transparent and c.none or c.bg },
         -- NotifyTRACEBody = { fg = c.fg, bg = options.transparent and c.none or c.bg },
-
-        --- Rainbow Delimiters
-        -- RainbowDelimiterRed = { fg = c.magenta },
-        -- RainbowDelimiterOrange = { fg = c.orange },
-        -- RainbowDelimiterYellow = { fg = c.yellow },
-        -- RainbowDelimiterGreen = { fg = c.green },
-        -- RainbowDelimiterBlue = { fg = c.blue_alt },
-        -- RainbowDelimiterViolet = { fg = c.purple },
-        -- RainbowDelimiterCyan = { fg = c.blue },
 
         --- Scrollbar
         -- ScrollbarHandle = { fg = c.none, bg = c.bg_highlight },
