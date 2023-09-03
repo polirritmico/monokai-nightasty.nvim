@@ -44,7 +44,7 @@ the flavorful
 
 ### ☀️ Light Theme
 
-![Light Theme](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/c57934ed-a7da-4a43-af2d-a5929ec6cb5a)
+![Light Theme](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/f2b3f522-6f27-410a-92d7-f0adf2a65788)
 
 <!-- panvimdoc-ignore-end -->
 
