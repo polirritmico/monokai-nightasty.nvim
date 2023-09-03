@@ -244,7 +244,7 @@ some_plugin_config.unfocus_bg = util.darken(colors.bg, 0.3)
 
 ## 🎨 Color Palettes
 
-### 🌃 Dark Theme
+### 🌃 Dark Style
 
 <!-- panvimdoc-ignore-start -->
 
@@ -272,7 +272,7 @@ some_plugin_config.unfocus_bg = util.darken(colors.bg, 0.3)
 
 -->
 
-### 🏙️ Light Theme
+### 🏙️ Light Style
 
 <!-- panvimdoc-ignore-start -->
 
