@@ -259,7 +259,6 @@ function M.setup(palette)
         ["@namespace"] = { link = "Include" },
 
         --- Text
-        -- TODO: Add documentation
         ["@text.title.1"] = options.color_headers and { fg = c.fg , bold = true } or { link = "Title" },
         ["@text.title.2"] = options.color_headers and { fg = c.yellow, bold = true } or { link = "Title" },
         ["@text.title.3"] = options.color_headers and { fg = c.orange, bold = true } or { link = "Title" },

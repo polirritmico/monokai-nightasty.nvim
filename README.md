@@ -89,7 +89,7 @@ The Dark/light styles could be toggled by calling the provided function:
 
 ### 🧩 Extra Themes
 
-Currently the theme supports this extras:
+Currently the theme generate this extras:
 
 <!-- extras:start -->
 - [Monokai Nightasty Palettes](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/extras/palettes) ([palettes](extras/palettes))
@@ -118,7 +118,7 @@ require("monokai-nightasty").setup({
     dark_style_background = "transparent", -- default, dark, transparent, #color
     light_style_background = "default", -- default, dark, transparent, #color
     terminal_colors = true, -- Set the colors used when opening a `:terminal`
-    header_colors = true, -- Enable header colors (h1, h2, h3, etc.)
+    color_headers = true, -- Enable header colors for each header level (h1, h2, etc.)
     hl_styles = {
         -- Style to be applied to different syntax groups. See `:help nvim_set_hl`
         comments = { italic = true },
@@ -186,9 +186,16 @@ How the plugin setup the highlights and colors under the hood:
 5. `config.on_highlights(highlights, colors)` can be used to override highlight
    groups.
 
-For default values of `colors` and `highlights`, please consult the
-[dark](extras/lua/monokai-nightasty-dark.lua), and
-[light](extras/lua/monokai-nightasty-light.lua) themes.
+If you want to get the name or the colors of a highlight group here are some
+alternatives:
+
+1. Use `:Inspect` to get info of the highlight group at the current position.
+2. Use `:TSHighlightCapturesUnderCursor` from the
+   [playground]("https://github.com/nvim-treesitter/playground") plugin.
+3. Check the generated palettes in the [extras](###🧩-Extra-Themes).
+4. For the theme with the color names instead of the colors code, you could
+   check directly the `theme.lua` or `colors.lua` files inside the
+   `lua/monokai-nightasty/` directory.
 
 ---
 
