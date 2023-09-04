@@ -226,9 +226,11 @@ You could import the color palette to use with other plugins:
 ```lua
 local colors = require("monokai-nightasty.colors").setup()
 
-some_plugin_config.background = colors.bg_dark
-some_plugin_config.default_color = colors.fg
 some_plugin_config.title = colors.blue_light
+example_plugin_config = {
+    foo = colors.bg_dark,
+    bar = colors.blue_light,
+}
 ```
 
 Some color utilily functions are avaliable for your use:
@@ -237,8 +239,8 @@ Some color utilily functions are avaliable for your use:
 local colors = require("monokai-nightasty.colors").setup()
 local util = require("monokai-nightasty.util")
 
-some_plugin_config.highlight_match = util.lighten(colors.bg, 0.5)
-some_plugin_config.unfocus_bg = util.darken(colors.bg, 0.3)
+some_plugin_config.example = util.lighten(colors.bg, 0.5)
+some_plugin_config.another = util.darken(colors.bg, 0.3)
 ```
 
 
