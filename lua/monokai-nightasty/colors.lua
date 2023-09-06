@@ -15,7 +15,7 @@ M.default = {
     yellow = "#ffff87",
 
     -- Neutrals
-    black = "#000000",
+    black = "#000001",
     charcoal = "#262626",
     charcoal_medium = "#2b2b2b",
     charcoal_light = "#313131",
