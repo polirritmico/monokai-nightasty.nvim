@@ -57,25 +57,23 @@ the flavorful
 
 Install with your package manager.
 
-- folke/lazy.nvim:
-
 ```lua
+-- Lazy
 {
     "polirritmico/monokai-nightasty.nvim",
     lazy = false,
     priority = 1000,
-    opts = {},
 }
 ```
 
-## 🛠️ Configuration
+## 🛠️ Usage/Configuration
 
-**Base configuration**
+**Basic usage**
 
-No need to use the `setup()` function:
+No need to use the `setup()` function, just set the `colorscheme`:
 
 ```lua
-vim.opt.background = "dark" -- default to dark or light
+vim.opt.background = "dark" -- default to dark or light style
 vim.cmd([[colorscheme monokai-nightasty]])
 ```
 
@@ -87,17 +85,7 @@ The Dark/light styles could be toggled by calling the provided function:
 :MonokaiToggleLight
 ```
 
-### 🧩 Extra Themes
-
-Currently the theme generate this extras:
-
-<!-- extras:start -->
-- [Monokai Nightasty Palettes](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/extras/palettes) ([palettes](extras/palettes))
-- [Tmux](https://github.com/tmux/tmux/wiki) ([tmux](extras/tmux))
-- [Zathura](https://pwmt.org/projects/zathura/) ([zathura](extras/zathura))
-<!-- extras:end -->
-
-#### Lualine
+### Lualine
 
 ```lua
 require("lualine").setup({
@@ -109,7 +97,7 @@ require("lualine").setup({
 
 > ⚠️ Set the configuration **BEFORE** calling `colorscheme monokai`.
 
-#### Full config example:
+#### Full configuration example:
 
 ```lua
 vim.opt.background = "dark" -- The theme has `dark` and `light` styles
@@ -165,28 +153,23 @@ vim.keymap.set(
 
 How the plugin setup the highlights and colors under the hood:
 
-1. `colors` are loaded from the base palette and adjusted based on your
-   configuration settings. For example, in the dark style the `bg` color is set
-   to `#2b2b2b` if `dark_style_background` is set to `default`. If
-   `dark_style_background` is set to `transparent`, then the `bg` value will be
-   changed from the default value `#2b2b2b` to `none`.
+1. `colors` are loaded from the base palette. The colors of the **light style**
+   are set in `colors.light_palette`. If `vim.o.background == "light"` is
+   detected, then the `default` palette is overridden with the light palette
+   values.
 
-2. The colors of the **light style** are set in `colors.light_palette`. If
-   `vim.o.background == "light"` is detected, then the `default` palette is
-   overriden with the light palette values.
+2. Then, `colors` is extended and adjusted following the configuration settings.
 
-3. Finally, `config.on_colors(colors)` is called, overriden any matching color.
-   Currently, any change with `config.on_colors(colors)` affects both light and
-   dark styles. I plan to correct this behaviour in future versions, but be
-   warned that this will most likely introduce some breaking changes on your
-   config.
+3. After that, `config.on_colors(colors)` is called, overriding any matching
+   color. Currently, any change with `config.on_colors(colors)` affects both
+   light and dark styles.
 
-4. These `colors` are utilized to generate the highlight groups.
+4. The highlight groups are set using the generated `colors`.
 
-5. `config.on_highlights(highlights, colors)` can be used to override highlight
+5. Finally, `config.on_highlights(highlights, colors)` can be used to override highlight
    groups.
 
-If you want to get the name or the colors of a highlight group here are some
+To get the name of a highlight group or to check the used color here are some
 alternatives:
 
 1. Use `:Inspect` to get info of the highlight group at the current position.
@@ -199,12 +182,29 @@ alternatives:
 
 ---
 
-## 🔮 Extras
+## 🧩 Extras
 
-Check the `extras` folder . Copy, link or reference the file in each setting.
-Refer to their respective documentation.
+Currently this extra files are generated:
+
+<!-- extras:start -->
+- [Monokai Nightasty Palettes](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/extras/palettes) ([palettes](extras/palettes))
+- [Tmux](https://github.com/tmux/tmux/wiki) ([tmux](extras/tmux))
+- [Zathura](https://pwmt.org/projects/zathura/) ([zathura](extras/zathura))
+<!-- extras:end -->
+
+The Monokai Nightasty Palette is a file with the `colors` and `highlights` used.
+
+To use the generated config files with the corresponding external tool, check
+the `extras` folder, copy, link or reference the file in each setting. Refer to
+the respective program documentation.
 
 ### Tmux
+
+Just source the theme file:
+
+```bash
+source-file 'path/to/monokai-nightasty_dark.tmux'
+```
 
 #### Fix `undercurls` in [Tmux](https://github.com/tmux/tmux)
 
@@ -217,7 +217,6 @@ set -as terminal-features ",xterm-256color:RGB" # or: set -g default-terminal "$
 set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm'  # undercurl support
 set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m'  # underscore colours - needs tmux-3.0
 ```
-
 
 ### 🚀 Using with other plugins
 
@@ -233,7 +232,7 @@ example_plugin_config = {
 }
 ```
 
-Some color utilily functions are avaliable for your use:
+Some color utility functions are available for your use:
 
 ```lua
 local colors = require("monokai-nightasty.colors").setup()
