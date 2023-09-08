@@ -15,7 +15,7 @@ M.default = {
     yellow = "#ffff87",
 
     -- Neutrals
-    black = "#000001",
+    black = "#000001", -- #000000 could change to transparent
     charcoal = "#262626",
     charcoal_medium = "#2b2b2b",
     charcoal_light = "#313131",
@@ -45,12 +45,14 @@ M.default = {
     red = "#ff005f",
     yellow_alt = "#f6f557",
     git = {
-        add = "#a4e400", change = "#ff9700", delete = "#fc1a70",
+        add = "#a4e400",
+        change = "#ff9700",
+        delete = "#fc1a70",
     },
 }
 
 M.light_palette = {
-    -- Base colors
+    -- Base colors               -- Dark color
     blue = "#00b3e3",            -- #62d8f1
     green = "#4fb000",           -- #a4e400
     magenta = "#ff004b",
@@ -84,7 +86,9 @@ M.light_palette = {
     green_unchanged = "#a4e400",
     green_alt = "#4fb000",       -- #83dc78
     git = {
-        add = "#4fb000", change = "#ff4d00", delete = "#ff004b",
+        add = "#4fb000",
+        change = "#ff4d00",
+        delete = "#ff004b",
     },
 }
 
@@ -146,12 +150,11 @@ function M.setup(opts)
     colors.bg_menusel = is_light and util.lighten(colors.fg_gutter, 0.8)
         or util.darken(colors.fg_gutter, 0.8)
 
-    -- FIXME: Improve this colors
+    -- For lsp floats messages, git, diffs, etc.
     colors.error = colors.red
     colors.warning = colors.orange
     colors.info = colors.blue_alt
     colors.hint = colors.green_alt
-
     colors.diff = {
         add = util.darken(colors.green, 0.15),
         delete = util.darken(colors.red, 0.15),

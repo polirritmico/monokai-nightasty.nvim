@@ -134,7 +134,7 @@ require("monokai-nightasty").setup({
     hide_inactive_statusline = false, -- Hide inactive statuslines and replace them with a thin border instead. Should work with the standard **StatusLine** and **LuaLine**.
     dim_inactive = false, -- dims inactive windows
     lualine_bold = true, -- Lualine headers will be bold or regular.
-    lualine_style = "default", -- "dark", "light" or "default" (Follows dark/light style)
+    lualine_style = "dark", -- "dark", "light" or "default" (Follows dark/light style)
 
     --- You can override specific color/highlights. Current values in `extras/palettes`
 
