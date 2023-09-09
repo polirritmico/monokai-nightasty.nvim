@@ -192,7 +192,7 @@ Currently this extra files are generated:
 - [Zathura](https://pwmt.org/projects/zathura/) ([zathura](extras/zathura))
 <!-- extras:end -->
 
-The Monokai Nightasty Palette is a file with the `colors` and `highlights` used.
+The Monokai Nightasty Palette is a file with the used `colors` and `highlights`.
 
 To use the generated config files with the corresponding external tool, check
 the `extras` folder, copy, link or reference the file in each setting. Refer to
