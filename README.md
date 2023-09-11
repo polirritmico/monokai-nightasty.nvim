@@ -46,6 +46,10 @@ the flavorful
 
 ![Light Theme](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/f2b3f522-6f27-410a-92d7-f0adf2a65788)
 
+## 📽 Settings in action
+
+https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/51fb86fe-8ff8-4f90-b7fe-fbe69184a637
+
 <!-- panvimdoc-ignore-end -->
 
 ## 📋 Requirements
