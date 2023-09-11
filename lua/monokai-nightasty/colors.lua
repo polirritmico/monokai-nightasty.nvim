@@ -159,7 +159,7 @@ function M.setup(opts)
         add = util.darken(colors.green, 0.15),
         delete = util.darken(colors.red, 0.15),
         change = util.darken(colors.blue_alt, 0.15),
-        text = colors.blue_alt,
+        text = util.darken(colors.blue_alt, 0.5),
     }
 
     -- Apply user config overrides
