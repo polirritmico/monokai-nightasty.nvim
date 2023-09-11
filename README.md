@@ -68,7 +68,7 @@ Install with your package manager.
 
 ## 🛠️ Usage/Configuration
 
-**Basic usage**
+#### Basic usage
 
 No need to use the `setup()` function, just set the `colorscheme`:
 
@@ -77,7 +77,7 @@ vim.opt.background = "dark" -- default to dark or light style
 vim.cmd([[colorscheme monokai-nightasty]])
 ```
 
-**💡 Toggle function**
+#### 💡 Toggle function
 
 The Dark/light styles could be toggled by calling the provided function:
 
@@ -174,7 +174,7 @@ alternatives:
 
 1. Use `:Inspect` to get info of the highlight group at the current position.
 2. Use `:TSHighlightCapturesUnderCursor` from the
-   [playground]("https://github.com/nvim-treesitter/playground") plugin.
+   [playground](https://github.com/nvim-treesitter/playground) plugin.
 3. Check the generated palettes in the [extras](###🧩-Extra-Themes).
 4. For the theme with the color names instead of the colors code, you could
    check directly the `theme.lua` or `colors.lua` files inside the

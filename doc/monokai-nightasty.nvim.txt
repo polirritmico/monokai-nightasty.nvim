@@ -1,4 +1,4 @@
-*monokai-nightasty.nvim.txt* For Neovim >= 0.9.0Last change: 2023 September 10
+*monokai-nightasty.nvim.txt* For Neovim >= 0.9.0Last change: 2023 September 11
 
 ==============================================================================
 Table of Contents                   *monokai-nightasty.nvim-table-of-contents*
@@ -62,7 +62,8 @@ Install with your package manager.
 ==============================================================================
 5. Usage/Configuration            *monokai-nightasty.nvim-usage/configuration*
 
-**Basic usage**
+
+BASIC USAGE ~
 
 No need to use the `setup()` function, just set the `colorscheme`
 
@@ -71,7 +72,8 @@ No need to use the `setup()` function, just set the `colorscheme`
     vim.cmd([[colorscheme monokai-nightasty]])
 <
 
-**Toggle function**
+
+TOGGLE FUNCTION ~
 
 The Dark/light styles could be toggled by calling the provided function:
 
@@ -178,7 +180,7 @@ alternatives:
 
 1. Use `:Inspect` to get info of the highlight group at the current position.
 2. Use `:TSHighlightCapturesUnderCursor` from the
-playground <%22https://github.com/nvim-treesitter/playground%22> plugin.
+playground <https://github.com/nvim-treesitter/playground> plugin.
 3. Check the generated palettes in the |monokai-nightasty.nvim-extras|.
 4. For the theme with the color names instead of the colors code, you could
 check directly the `theme.lua` or `colors.lua` files inside the
