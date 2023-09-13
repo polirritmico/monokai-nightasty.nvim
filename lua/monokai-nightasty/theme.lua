@@ -710,31 +710,31 @@ function M.setup(palette)
         -- NoiceCompletionItemKindSnippet = { fg = c.dark5, bg = c.none },
 
         --- Notify
-        -- NotifyBackground = { fg = c.fg, bg = c.bg },
-        -- -- Border
-        -- NotifyERRORBorder = { fg = util.darken(c.error, 0.3), bg = options.transparent and c.none or c.bg },
-        -- NotifyWARNBorder = { fg = util.darken(c.warning, 0.3), bg = options.transparent and c.none or c.bg },
-        -- NotifyINFOBorder = { fg = util.darken(c.info, 0.3), bg = options.transparent and c.none or c.bg },
-        -- NotifyDEBUGBorder = { fg = util.darken(c.comment, 0.3), bg = options.transparent and c.none or c.bg },
-        -- NotifyTRACEBorder = { fg = util.darken(c.purple, 0.3), bg = options.transparent and c.none or c.bg },
-        -- -- Icons
-        -- NotifyERRORIcon = { fg = c.error },
-        -- NotifyWARNIcon = { fg = c.warning },
-        -- NotifyINFOIcon = { fg = c.info },
-        -- NotifyDEBUGIcon = { fg = c.comment },
-        -- NotifyTRACEIcon = { fg = c.purple },
-        -- -- Title
-        -- NotifyERRORTitle = { fg = c.error },
-        -- NotifyWARNTitle = { fg = c.warning },
-        -- NotifyINFOTitle = { fg = c.info },
-        -- NotifyDEBUGTitle = { fg = c.comment },
-        -- NotifyTRACETitle = { fg = c.purple },
-        -- -- Body
-        -- NotifyERRORBody = { fg = c.fg, bg = options.transparent and c.none or c.bg },
-        -- NotifyWARNBody = { fg = c.fg, bg = options.transparent and c.none or c.bg },
-        -- NotifyINFOBody = { fg = c.fg, bg = options.transparent and c.none or c.bg },
-        -- NotifyDEBUGBody = { fg = c.fg, bg = options.transparent and c.none or c.bg },
-        -- NotifyTRACEBody = { fg = c.fg, bg = options.transparent and c.none or c.bg },
+        NotifyBackground = { fg = c.fg, bg = c.bg },
+        -- Border
+        NotifyERRORBorder = { fg = util.darken(c.error, 0.3), bg = options.transparent and c.none or c.bg },
+        NotifyWARNBorder = { fg = util.darken(c.warning, 0.3), bg = options.transparent and c.none or c.bg },
+        NotifyINFOBorder = { fg = util.darken(c.info, 0.3), bg = options.transparent and c.none or c.bg },
+        NotifyDEBUGBorder = { fg = util.darken(c.comment, 0.3), bg = options.transparent and c.none or c.bg },
+        NotifyTRACEBorder = { fg = util.darken(c.purple, 0.3), bg = options.transparent and c.none or c.bg },
+        -- Icons
+        NotifyERRORIcon = { fg = c.error },
+        NotifyWARNIcon = { fg = c.warning },
+        NotifyINFOIcon = { fg = c.info },
+        NotifyDEBUGIcon = { fg = c.comment },
+        NotifyTRACEIcon = { fg = c.purple },
+        -- Title
+        NotifyERRORTitle = { fg = c.error },
+        NotifyWARNTitle = { fg = c.warning },
+        NotifyINFOTitle = { fg = c.info },
+        NotifyDEBUGTitle = { fg = c.comment },
+        NotifyTRACETitle = { fg = c.purple },
+        -- Body
+        NotifyERRORBody = { link = "Normal" },
+        NotifyWARNBody = { link = "Normal" },
+        NotifyINFOBody = { link = "Normal" },
+        NotifyDEBUGBody = { link = "Normal" },
+        NotifyTRACEBody = { link = "Normal" },
 
         --- Scrollbar
         -- ScrollbarHandle = { fg = c.none, bg = c.bg_highlight },
