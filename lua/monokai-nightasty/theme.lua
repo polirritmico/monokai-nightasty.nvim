@@ -196,7 +196,6 @@ function M.setup(palette)
         -- LspSignatureActiveParameter = { bg = util.darken(c.bg_visual, 0.4), bold = true },
         -- LspCodeLens = { fg = c.comment },
         -- LspInlayHint = { bg = util.darken(c.blue7, 0.1), fg = c.grey_dark },
-        -- LspInfoBorder = { fg = c.border_highlight, bg = c.bg_float },
         LspInfoBorder = { fg = c.border_highlight, bg = c.bg_float },
 
         -- ALEErrorSign = { fg = c.error },
@@ -365,6 +364,33 @@ function M.setup(palette)
         --- Lazy
         LazyProgressDone = { fg = c.magenta, bold = true },
         LazyProgressTodo = { fg = c.fg_gutter, bold = true },
+
+        --- Notify
+        NotifyBackground = { fg = c.fg, bg = c.bg },
+        -- Border
+        NotifyERRORBorder = { fg = util.darken(c.error, 0.3), bg = options.transparent and c.none or c.bg },
+        NotifyWARNBorder = { fg = util.darken(c.warning, 0.3), bg = options.transparent and c.none or c.bg },
+        NotifyINFOBorder = { fg = util.darken(c.info, 0.3), bg = options.transparent and c.none or c.bg },
+        NotifyDEBUGBorder = { fg = util.darken(c.comment, 0.3), bg = options.transparent and c.none or c.bg },
+        NotifyTRACEBorder = { fg = util.darken(c.purple, 0.3), bg = options.transparent and c.none or c.bg },
+        -- Icons
+        NotifyERRORIcon = { fg = c.error },
+        NotifyWARNIcon = { fg = c.warning },
+        NotifyINFOIcon = { fg = c.info },
+        NotifyDEBUGIcon = { fg = c.comment },
+        NotifyTRACEIcon = { fg = c.purple },
+        -- Title
+        NotifyERRORTitle = { fg = c.error },
+        NotifyWARNTitle = { fg = c.warning },
+        NotifyINFOTitle = { fg = c.info },
+        NotifyDEBUGTitle = { fg = c.comment },
+        NotifyTRACETitle = { fg = c.purple },
+        -- Body
+        NotifyERRORBody = { link = "Normal" },
+        NotifyWARNBody = { link = "Normal" },
+        NotifyINFOBody = { link = "Normal" },
+        NotifyDEBUGBody = { link = "Normal" },
+        NotifyTRACEBody = { link = "Normal" },
 
         --- NvimTree
         NvimTreeFolderIcon = { fg = c.blue, bg = c.none },
@@ -708,33 +734,6 @@ function M.setup(palette)
         -- NoiceCompletionItemKindEnumMember = { fg = c.green1, bg = c.none },
         -- NoiceCompletionItemKindOperator = { fg = c.green1, bg = c.none },
         -- NoiceCompletionItemKindSnippet = { fg = c.dark5, bg = c.none },
-
-        --- Notify
-        NotifyBackground = { fg = c.fg, bg = c.bg },
-        -- Border
-        NotifyERRORBorder = { fg = util.darken(c.error, 0.3), bg = options.transparent and c.none or c.bg },
-        NotifyWARNBorder = { fg = util.darken(c.warning, 0.3), bg = options.transparent and c.none or c.bg },
-        NotifyINFOBorder = { fg = util.darken(c.info, 0.3), bg = options.transparent and c.none or c.bg },
-        NotifyDEBUGBorder = { fg = util.darken(c.comment, 0.3), bg = options.transparent and c.none or c.bg },
-        NotifyTRACEBorder = { fg = util.darken(c.purple, 0.3), bg = options.transparent and c.none or c.bg },
-        -- Icons
-        NotifyERRORIcon = { fg = c.error },
-        NotifyWARNIcon = { fg = c.warning },
-        NotifyINFOIcon = { fg = c.info },
-        NotifyDEBUGIcon = { fg = c.comment },
-        NotifyTRACEIcon = { fg = c.purple },
-        -- Title
-        NotifyERRORTitle = { fg = c.error },
-        NotifyWARNTitle = { fg = c.warning },
-        NotifyINFOTitle = { fg = c.info },
-        NotifyDEBUGTitle = { fg = c.comment },
-        NotifyTRACETitle = { fg = c.purple },
-        -- Body
-        NotifyERRORBody = { link = "Normal" },
-        NotifyWARNBody = { link = "Normal" },
-        NotifyINFOBody = { link = "Normal" },
-        NotifyDEBUGBody = { link = "Normal" },
-        NotifyTRACEBody = { link = "Normal" },
 
         --- Scrollbar
         -- ScrollbarHandle = { fg = c.none, bg = c.bg_highlight },
