@@ -12,7 +12,7 @@ local defaults = {
     hl_styles = {
         -- Style to be applied to different syntax groups. See `:help nvim_set_hl`
         comments = { italic = true },
-        keywords = { italic = true },
+        keywords = { italic = false },
         functions = {},
         variables = {},
         -- Background styles for sidebars (panels) and floating windows:
