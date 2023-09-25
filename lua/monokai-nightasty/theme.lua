@@ -233,8 +233,9 @@ function M.setup(palette)
 
         --- Functions
         ["@constructor"] = { fg = c.blue, italic = true },
-        ["@parameter"] = { fg = c.orange, italic = true }, -- parameters of a function
+        ["@parameter"] = { fg = c.orange, italic = true }, -- For parameters of a function
         ["@function.builtin"] = { fg = c.green },
+        -- ["@parameter.builtin"] = { fg = util.darken(c.orange, 0.8) }, -- For builtin parameters of a function e.g. "..."
 
         --- Keywords
         ["@keyword"] = { fg = c.magenta, style = options.hl_styles.keywords }, -- For keywords that don't fall in previous categories.
@@ -289,19 +290,24 @@ function M.setup(palette)
         ["@lsp.type.boolean"] = { link = "@boolean" },
         ["@lsp.type.builtinType"] = { link = "@type.builtin" },
         ["@lsp.type.comment"] = { link = "@comment" },
+        ["@lsp.type.decorator"] = { link = "@attribute" },
+        ["@lsp.type.deriveHelper"] = { link = "@attribute" },
         ["@lsp.type.enum"] = { link = "@type" },
         ["@lsp.type.enumMember"] = { link = "@constant" },
         ["@lsp.type.escapeSequence"] = { link = "@string.escape" },
         ["@lsp.type.formatSpecifier"] = { link = "@punctuation.special" },
+        ["@lsp.type.generic"] = { link = "@variable" },
         -- ["@lsp.type.interface"] = { fg = util.lighten(c.blue1, 0.7) },
         ["@lsp.type.keyword"] = { link = "@keyword" },
+        ["@lsp.type.lifetime"] = { link = "@storageclass" },
         ["@lsp.type.namespace"] = { link = "@namespace" },
         ["@lsp.type.number"] = { link = "@number" },
         ["@lsp.type.operator"] = { link = "@operator" },
         ["@lsp.type.parameter"] = { link = "@parameter" },
         ["@lsp.type.property"] = { link = "@property" },
         ["@lsp.type.selfKeyword"] = { link = "@variable.builtin" },
-        ["@lsp.type.string.rust"] = { link = "@string" },
+        ["@lsp.type.selfTypeKeyword"] = { link = "@variable.builtin" },
+        ["@lsp.type.string"] = { link = "@string" },
         ["@lsp.type.typeAlias"] = { link = "@type.definition" },
         ["@lsp.type.unresolvedReference"] = { undercurl = true, sp = c.error },
         ["@lsp.type.variable"] = {}, -- use treesitter styles for regular variables
@@ -310,12 +316,18 @@ function M.setup(palette)
         ["@lsp.typemod.enumMember.defaultLibrary"] = { link = "@constant.builtin" },
         ["@lsp.typemod.function.defaultLibrary"] = { link = "@function.builtin" },
         ["@lsp.typemod.keyword.async"] = { link = "@keyword.coroutine" },
+        ["@lsp.typemod.keyword.injected"] = { link = "@keyword" },
         ["@lsp.typemod.macro.defaultLibrary"] = { link = "@function.builtin" },
         ["@lsp.typemod.method.defaultLibrary"] = { link = "@function.builtin" },
         ["@lsp.typemod.operator.injected"] = { link = "@operator" },
         ["@lsp.typemod.string.injected"] = { link = "@string" },
+        ["@lsp.typemod.struct.defaultLibrary"] = { link = "@type.builtin" },
+        -- ["@lsp.typemod.type.defaultLibrary"] = {  },
+        -- ["@lsp.typemod.typeAlias.defaultLibrary"] = {  },
+        ["@lsp.typemod.variable.callable"] = { link = "@function" },
         ["@lsp.typemod.variable.defaultLibrary"] = { link = "@variable.builtin" },
         ["@lsp.typemod.variable.injected"] = { link = "@variable" },
+        ["@lsp.typemod.variable.static"] = { link = "@constant" },
 
         -- Languages specifics
         ["@function.builtin.bash"] = { fg = c.blue },
