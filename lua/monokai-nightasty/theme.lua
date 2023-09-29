@@ -36,7 +36,7 @@ function M.setup(palette)
         CursorColumn = { bg = c.bg_highlight }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
         CursorIM = { fg = c.bg, bg = c.blue }, -- like Cursor, but used when in IME mode |CursorIM|
         CursorLine = { bg = c.bg_highlight }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
-        CursorLineNR = { fg = c.yellow }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+        CursorLineNr = { fg = c.yellow }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
         DiffAdd = { fg = c.green, bg = c.diff.add }, -- diff mode: Added line |diff.txt|
         DiffChange = { bg = c.diff.change }, -- diff mode: Changed line |diff.txt|
         DiffDelete = { fg = c.magenta, bg = c.diff.delete }, -- diff mode: Deleted line |diff.txt|
@@ -148,7 +148,10 @@ function M.setup(palette)
         -- indent-blankline
         IndentBlanklineChar = { fg = c.fg_gutter, nocombine = true },
         IndentBlanklineSpaceChar = { fg = c.fg_dark, nocombine = true },
-        IndentBlanklineContextChar = { fg = c.purple, nocombine = true },
+        IndentBlanklineContextChar = { fg = c.blue, nocombine = true },
+        IblIndent = { fg = c.fg_gutter, nocombine = true },
+        IblWhitespace = { fg = c.fg_dark, nocombine = true },
+        IblScope = { fg = c.blue, nocombine = true },
 
         -- Diff
         diffAdded = { fg = c.git.add },
