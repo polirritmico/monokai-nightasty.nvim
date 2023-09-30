@@ -376,6 +376,11 @@ function M.setup(palette)
         CmpItemKindValue = { fg = c.orange, bg = c.none },
         CmpItemKindVariable = { fg = c.fg, bg = c.none },
 
+        --- Dirvish
+        DirvishSuffix = { fg = c.grey_medium },
+        DirvishPathTail = { fg = c.blue },
+        DirvishArg = { fg = c.yellow, bg = c.grey_medium },
+
         --- Lazy
         LazyProgressDone = { fg = c.magenta, bold = true },
         LazyProgressTodo = { fg = c.fg_gutter, bold = true },

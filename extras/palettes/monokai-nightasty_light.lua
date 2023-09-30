@@ -25,7 +25,7 @@ local colors = {
     add = "#e5f3d9",
     change = "#d9edff",
     delete = "#ffd9e7",
-    text = "#0087ff"
+    text = "#80c3ff"
   },
   error = "#ff005f",
   fg = "#333333",
@@ -88,7 +88,7 @@ local highlights = {
   ["@keyword"] = {
     fg = "#ff004b",
     style = {
-      italic = true
+      italic = false
     }
   },
   ["@keyword.function"] = {
@@ -107,6 +107,12 @@ local highlights = {
   ["@lsp.type.comment"] = {
     link = "@comment"
   },
+  ["@lsp.type.decorator"] = {
+    link = "@attribute"
+  },
+  ["@lsp.type.deriveHelper"] = {
+    link = "@attribute"
+  },
   ["@lsp.type.enum"] = {
     link = "@type"
   },
@@ -119,8 +125,14 @@ local highlights = {
   ["@lsp.type.formatSpecifier"] = {
     link = "@punctuation.special"
   },
+  ["@lsp.type.generic"] = {
+    link = "@variable"
+  },
   ["@lsp.type.keyword"] = {
     link = "@keyword"
+  },
+  ["@lsp.type.lifetime"] = {
+    link = "@storageclass"
   },
   ["@lsp.type.namespace"] = {
     link = "@namespace"
@@ -140,7 +152,10 @@ local highlights = {
   ["@lsp.type.selfKeyword"] = {
     link = "@variable.builtin"
   },
-  ["@lsp.type.string.rust"] = {
+  ["@lsp.type.selfTypeKeyword"] = {
+    link = "@variable.builtin"
+  },
+  ["@lsp.type.string"] = {
     link = "@string"
   },
   ["@lsp.type.typeAlias"] = {
@@ -166,6 +181,9 @@ local highlights = {
   ["@lsp.typemod.keyword.async"] = {
     link = "@keyword.coroutine"
   },
+  ["@lsp.typemod.keyword.injected"] = {
+    link = "@keyword"
+  },
   ["@lsp.typemod.macro.defaultLibrary"] = {
     link = "@function.builtin"
   },
@@ -178,11 +196,20 @@ local highlights = {
   ["@lsp.typemod.string.injected"] = {
     link = "@string"
   },
+  ["@lsp.typemod.struct.defaultLibrary"] = {
+    link = "@type.builtin"
+  },
+  ["@lsp.typemod.variable.callable"] = {
+    link = "@function"
+  },
   ["@lsp.typemod.variable.defaultLibrary"] = {
     link = "@variable.builtin"
   },
   ["@lsp.typemod.variable.injected"] = {
     link = "@variable"
+  },
+  ["@lsp.typemod.variable.static"] = {
+    link = "@constant"
   },
   ["@namespace"] = {
     link = "Include"
@@ -482,7 +509,7 @@ local highlights = {
   CursorLine = {
     bg = "#ebebeb"
   },
-  CursorLineNR = {
+  CursorLineNr = {
     fg = "#ff8f00"
   },
   Debug = {
@@ -544,19 +571,31 @@ local highlights = {
     fg = "#ff4d00"
   },
   DiffAdd = {
-    bg = "#e5f3d9"
+    bg = "#e5f3d9",
+    fg = "#4fb000"
   },
   DiffChange = {
     bg = "#d9edff"
   },
   DiffDelete = {
-    bg = "#ffd9e7"
+    bg = "#ffd9e7",
+    fg = "#ff004b"
   },
   DiffText = {
-    bg = "#0087ff"
+    bg = "#80c3ff"
   },
   Directory = {
     fg = "#6054d0"
+  },
+  DirvishArg = {
+    bg = "#a5a5a5",
+    fg = "#ff8f00"
+  },
+  DirvishPathTail = {
+    fg = "#00b3e3"
+  },
+  DirvishSuffix = {
+    fg = "#a5a5a5"
   },
   EndOfBuffer = {
     fg = "#bfbfbf"
@@ -594,6 +633,18 @@ local highlights = {
   Hlargs = {
     fg = "#ff8f00"
   },
+  IblIndent = {
+    fg = "#c9c9c9",
+    nocombine = true
+  },
+  IblScope = {
+    fg = "#00b3e3",
+    nocombine = true
+  },
+  IblWhitespace = {
+    fg = "#171717",
+    nocombine = true
+  },
   Identifier = {
     fg = "#333333",
     style = {}
@@ -610,7 +661,7 @@ local highlights = {
     nocombine = true
   },
   IndentBlanklineContextChar = {
-    fg = "#6054d0",
+    fg = "#00b3e3",
     nocombine = true
   },
   IndentBlanklineSpaceChar = {
@@ -623,7 +674,7 @@ local highlights = {
   Keyword = {
     fg = "#ff004b",
     style = {
-      italic = true
+      italic = false
     }
   },
   Label = {
@@ -707,6 +758,75 @@ local highlights = {
   NormalSB = {
     bg = "#dedede",
     fg = "#171717"
+  },
+  NotifyBackground = {
+    bg = "#ffffff",
+    fg = "#333333"
+  },
+  NotifyDEBUGBody = {
+    link = "Normal"
+  },
+  NotifyDEBUGBorder = {
+    bg = "#ffffff",
+    fg = "#d9d9d9"
+  },
+  NotifyDEBUGIcon = {
+    fg = "#7f7f7f"
+  },
+  NotifyDEBUGTitle = {
+    fg = "#7f7f7f"
+  },
+  NotifyERRORBody = {
+    link = "Normal"
+  },
+  NotifyERRORBorder = {
+    bg = "#ffffff",
+    fg = "#ffb3cf"
+  },
+  NotifyERRORIcon = {
+    fg = "#ff005f"
+  },
+  NotifyERRORTitle = {
+    fg = "#ff005f"
+  },
+  NotifyINFOBody = {
+    link = "Normal"
+  },
+  NotifyINFOBorder = {
+    bg = "#ffffff",
+    fg = "#b3dbff"
+  },
+  NotifyINFOIcon = {
+    fg = "#0087ff"
+  },
+  NotifyINFOTitle = {
+    fg = "#0087ff"
+  },
+  NotifyTRACEBody = {
+    link = "Normal"
+  },
+  NotifyTRACEBorder = {
+    bg = "#ffffff",
+    fg = "#cfccf1"
+  },
+  NotifyTRACEIcon = {
+    fg = "#6054d0"
+  },
+  NotifyTRACETitle = {
+    fg = "#6054d0"
+  },
+  NotifyWARNBody = {
+    link = "Normal"
+  },
+  NotifyWARNBorder = {
+    bg = "#ffffff",
+    fg = "#ffcab3"
+  },
+  NotifyWARNIcon = {
+    fg = "#ff4d00"
+  },
+  NotifyWARNTitle = {
+    fg = "#ff4d00"
   },
   NvimTreeFolderIcon = {
     bg = "NONE",
