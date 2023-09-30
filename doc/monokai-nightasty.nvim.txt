@@ -1,4 +1,4 @@
-*monokai-nightasty.nvim.txt* For Neovim >= 0.9.0Last change: 2023 September 11
+*monokai-nightasty.nvim.txt* For Neovim >= 0.9.0Last change: 2023 September 29
 
 ==============================================================================
 Table of Contents                   *monokai-nightasty.nvim-table-of-contents*
@@ -102,8 +102,8 @@ FULL CONFIGURATION EXAMPLE: ~
     vim.opt.background = "dark" -- The theme has `dark` and `light` styles
     
     require("monokai-nightasty").setup({
-        dark_style_background = "transparent", -- default, dark, transparent, color
-        light_style_background = "default", -- default, dark, transparent, color
+        dark_style_background = "transparent", -- default, dark, transparent, #color
+        light_style_background = "default", -- default, dark, transparent, #color
         terminal_colors = true, -- Set the colors used when opening a `:terminal`
         color_headers = true, -- Enable header colors for each header level (h1, h2, etc.)
         hl_styles = {
@@ -118,7 +118,7 @@ FULL CONFIGURATION EXAMPLE: ~
         },
         sidebars = { "qf", "help" }, -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`
     
-        hide_inactive_statusline = false, -- Hide inactive statuslines and replace them with a thin border instead. Should work with the standard StatusLine and LuaLine.
+        hide_inactive_statusline = false, -- Hide inactive statuslines and replace them with a thin border instead. Should work with the standard **StatusLine** and **LuaLine**.
         dim_inactive = false, -- dims inactive windows
         lualine_bold = true, -- Lualine headers will be bold or regular.
         lualine_style = "dark", -- "dark", "light" or "default" (Follows dark/light style)
@@ -128,7 +128,7 @@ FULL CONFIGURATION EXAMPLE: ~
         ---@param colors ColorScheme
         on_colors = function(colors)
             colors.border = colors.grey
-            colors.comment = "2d7e79"
+            colors.comment = "#2d7e79"
         end,
     
         ---@param highlights Highlights
@@ -220,10 +220,10 @@ If the undercurls or colors are not being properly displayed within Tmux
 <https://github.com/tmux/tmux>, add the following to your config file:
 
 >sh
-     Undercurl
-    set -as terminal-features ",xterm-256color:RGB"  or: set -g default-terminal "${TERM}"
-    set -as terminal-overrides ',:Smulx=\E[4::%p1%dm'   undercurl support
-    set -as terminal-overrides ',:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m'   underscore colours - needs tmux-3.0
+    # Undercurl
+    set -as terminal-features ",xterm-256color:RGB" # or: set -g default-terminal "${TERM}"
+    set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm'  # undercurl support
+    set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m'  # underscore colours - needs tmux-3.0
 <
 
 
@@ -260,23 +260,23 @@ DARK STYLE                                 *monokai-nightasty.nvim-dark-style*
 
   Color name    Hex code
   ------------- ----------
-  Yellow        ffff87
-  Purple        af87ff
-  Green Light   a4e400
-  Blue Light    62d8f1
-  Magenta       fc1a70
-  Orange        ff9700
+  Yellow        #ffff87
+  Purple        #af87ff
+  Green Light   #a4e400
+  Blue Light    #62d8f1
+  Magenta       #fc1a70
+  Orange        #ff9700
 
 LIGHT STYLE                               *monokai-nightasty.nvim-light-style*
 
   Color name    Hex code
   ------------- ----------
-  Yellow        ff8f00
-  Purple        6054d0
-  Green Light   4fb000
-  Blue Light    00b3e3
-  Magenta       ff004b
-  Orange        ff4d00
+  Yellow        #ff8f00
+  Purple        #6054d0
+  Green Light   #4fb000
+  Blue Light    #00b3e3
+  Magenta       #ff004b
+  Orange        #ff4d00
 
 ==============================================================================
 9. Contributions                        *monokai-nightasty.nvim-contributions*
