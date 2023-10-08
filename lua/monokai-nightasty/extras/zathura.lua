@@ -7,7 +7,6 @@ function M.generate(colors)
   local zathura = util.template(
     [[
 # Monokai NighTasty color theme for Zathura
-# Swaps Foreground for Background to get a light version if the user prefers
 #
 set notification-error-bg "${red}"
 set notification-error-fg "${fg}"
@@ -27,7 +26,7 @@ set index-active-bg "${terminal_black}"
 set index-active-fg "${fg}"
 set inputbar-bg "${bg}"
 set inputbar-fg "${fg}"
-set statusbar-bg "${bg}"
+set statusbar-bg "${bg_dark}"
 set statusbar-fg "${fg}"
 set highlight-color "${yellow}"
 set highlight-active-color "${green}"
