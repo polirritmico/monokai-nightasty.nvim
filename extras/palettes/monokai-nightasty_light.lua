@@ -225,6 +225,9 @@ local highlights = {
   ["@property"] = {
     fg = "#171717"
   },
+  ["@property.ini"] = {
+    fg = "#ff4d00"
+  },
   ["@punctuation.bracket"] = {
     fg = "#ff004b"
   },
@@ -629,6 +632,32 @@ local highlights = {
   Function = {
     fg = "#4fb000",
     style = {}
+  },
+  GitSignsAdd = {
+    link = "diffAdded"
+  },
+  GitSignsAddInline = {
+    bg = "#4fb000",
+    fg = "#e5f3d9"
+  },
+  GitSignsChange = {
+    link = "diffChanged"
+  },
+  GitSignsChangeInline = {
+    bg = "#0087ff",
+    fg = "#d9edff"
+  },
+  GitSignsCurrentLineBlame = {
+    bg = "#dedede",
+    fg = "#0087ff",
+    italic = true
+  },
+  GitSignsDelete = {
+    link = "diffRemoved"
+  },
+  GitSignsDeleteInline = {
+    bg = "#ff004b",
+    fg = "#ffd9e7"
   },
   Hlargs = {
     fg = "#ff8f00"

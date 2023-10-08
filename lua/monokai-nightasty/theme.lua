@@ -255,6 +255,7 @@ function M.setup(palette)
         ["@attribute.builtin"] = { fg = c.magenta, italic = true }, -- Variable names that are defined by the languages, like `this` or `self`.
         ["@variable"] = { fg = c.fg, style = options.hl_styles.variables }, -- Any variable name that does not have another highlight.
         ["@variable.builtin"] = { fg = c.grey_light, italic = true }, -- Variable names that are defined by the languages, like `this` or `self`.
+        -- ["@namespace.builtin"] = { fg = c.grey_light, italic = true },
 
         ["@tag"] = { fg = c.magenta },
         ["@tag.attribute"] = { fg = c.blue, italic = true },
@@ -337,6 +338,7 @@ function M.setup(palette)
         ["@constructor.lua"] = { fg = c.magenta },
         ["@type.qualifier.c_sharp"] = { fg = c.orange, italic = true },
         dosbatchError = { fg = c.red },
+        ["@property.ini"] = { fg = c.orange },
 
         --- Plugins -----------------------------------------------------------
 
@@ -380,6 +382,36 @@ function M.setup(palette)
         DirvishSuffix = { fg = c.grey_medium },
         DirvishPathTail = { fg = c.blue },
         DirvishArg = { fg = c.yellow, bg = c.grey_medium },
+
+        --- GitSigns :h gitsigns-highlight-groups
+        GitSignsCurrentLineBlame = { fg = c.info, bg = c.bg_popup, italic = true },
+        GitSignsAdd = { link = "diffAdded" },
+        GitSignsChange = { link = "diffChanged" },
+        GitSignsDelete = { link = "diffRemoved" },
+        GitSignsAddInline = { fg = c.diff.add, bg = c.green },
+        GitSignsDeleteInline = { fg = c.diff.delete, bg = c.magenta },
+        GitSignsChangeInline = { fg = c.diff.change, bg = c.blue_alt },
+        -- GitSignsChangedelete = {},
+        -- GitSignsTopdelete = {},
+        -- GitSignsUntracked = { },
+        -- GitSignsAddNr = {},
+        -- GitSignsChangeNr = {},
+        -- GitSignsDeleteNr = {},
+        -- GitSignsChangedeleteNr = {},
+        -- GitSignsTopdeleteNr = {},
+        -- GitSignsUntrackedNr = {},
+        -- GitSignsAddLn = {},
+        -- GitSignsChangeLn = {},
+        -- GitSignsChangedeleteLn = {},
+        -- GitSignsUntrackedLn = {},
+        -- GitSignsAddPreview = {},
+        -- GitSignsDeletePreview = {},
+        -- GitSignsAddLnInline = {},
+        -- GitSignsChangeLnInline = {},
+        -- GitSignsDeleteLnInline = {},
+        -- GitSignsDeleteVirtLn = {},
+        -- GitSignsDeleteVirtLnInLine = {},
+        -- GitSignsVirtLnum = {},
 
         --- Lazy
         LazyProgressDone = { fg = c.magenta, bold = true },
@@ -541,6 +573,9 @@ function M.setup(palette)
         -- DashboardHeader = { fg = c.blue },
         -- DashboardCenter = { fg = c.magenta },
         -- DashboardFooter = { fg = c.yellow, italic = true },
+        -- DashboardKey = {},
+        -- DashboardDesc = {},
+        -- DashboardIcon = {},
 
         --- Fern
         -- FernBranchText = { fg = c.blue },
@@ -558,10 +593,6 @@ function M.setup(palette)
         -- GitGutterChangeLineNr = { fg = c.gitSigns.change },
         -- GitGutterDeleteLineNr = { fg = c.gitSigns.delete },
 
-        --- GitSigns
-        -- GitSignsAdd = { fg = c.gitSigns.add }, -- diff mode: Added line |diff.txt|
-        -- GitSignsChange = { fg = c.gitSigns.change }, -- diff mode: Changed line |diff.txt|
-        -- GitSignsDelete = { fg = c.gitSigns.delete }, -- diff mode: Deleted line |diff.txt|
         --- BufferLine
         -- BufferLineIndicatorSelected = { fg = c.git.change },
 

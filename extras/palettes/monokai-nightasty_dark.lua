@@ -1,10 +1,10 @@
 local colors = {
-  bg = "#2b2b2b",
-  bg_dark = "#1e1e1e",
+  bg = "#1e1e1e",
+  bg_dark = "#121212",
   bg_darker = "#121212",
   bg_float = "#2b2b2b",
-  bg_highlight = "#404040",
-  bg_menusel = "#3a3a3a",
+  bg_highlight = "#343434",
+  bg_menusel = "#383838",
   bg_menuselbar = "#4d4d4d",
   bg_popup = "#444444",
   bg_search = "#ffff87",
@@ -22,10 +22,10 @@ local colors = {
   charcoal_medium = "#2b2b2b",
   comment = "#8a8a8a",
   diff = {
-    add = "#3d4725",
-    change = "#25394b",
-    delete = "#4b2533",
-    text = "#165995"
+    add = "#323c1a",
+    change = "#1a2e40",
+    delete = "#401a28",
+    text = "#0f538f"
   },
   error = "#ff005f",
   fg = "#ffffff",
@@ -225,6 +225,9 @@ local highlights = {
   ["@property"] = {
     fg = "#e8e8e8"
   },
+  ["@property.ini"] = {
+    fg = "#ff9700"
+  },
   ["@punctuation.bracket"] = {
     fg = "#fc1a70"
   },
@@ -255,7 +258,7 @@ local highlights = {
   },
   ["@text.danger"] = {
     bg = "#ff005f",
-    fg = "#2b2b2b"
+    fg = "#1e1e1e"
   },
   ["@text.diff.add"] = {
     link = "DiffAdd"
@@ -322,7 +325,7 @@ local highlights = {
   },
   ["@text.warning"] = {
     bg = "#ff9700",
-    fg = "#2b2b2b"
+    fg = "#1e1e1e"
   },
   ["@type"] = {
     fg = "#62d8f1"
@@ -477,7 +480,7 @@ local highlights = {
     fg = "#8a8a8a"
   },
   ColorColumn = {
-    bg = "#2b2b2b"
+    bg = "#1e1e1e"
   },
   Comment = {
     fg = "#8a8a8a",
@@ -497,17 +500,17 @@ local highlights = {
   },
   Cursor = {
     bg = "#62d8f1",
-    fg = "#2b2b2b"
+    fg = "#1e1e1e"
   },
   CursorColumn = {
-    bg = "#404040"
+    bg = "#343434"
   },
   CursorIM = {
     bg = "#62d8f1",
-    fg = "#2b2b2b"
+    fg = "#1e1e1e"
   },
   CursorLine = {
-    bg = "#404040"
+    bg = "#343434"
   },
   CursorLineNr = {
     fg = "#ffff87"
@@ -552,37 +555,37 @@ local highlights = {
     undercurl = true
   },
   DiagnosticVirtualTextError = {
-    bg = "#3c282f",
+    bg = "#301c23",
     fg = "#ff005f"
   },
   DiagnosticVirtualTextHint = {
-    bg = "#323931",
+    bg = "#262d25",
     fg = "#83dc78"
   },
   DiagnosticVirtualTextInfo = {
-    bg = "#28323c",
+    bg = "#1c2630",
     fg = "#0087ff"
   },
   DiagnosticVirtualTextWarn = {
-    bg = "#3c3428",
+    bg = "#30281c",
     fg = "#ff9700"
   },
   DiagnosticWarn = {
     fg = "#ff9700"
   },
   DiffAdd = {
-    bg = "#3d4725",
+    bg = "#323c1a",
     fg = "#a4e400"
   },
   DiffChange = {
-    bg = "#25394b"
+    bg = "#1a2e40"
   },
   DiffDelete = {
-    bg = "#4b2533",
+    bg = "#401a28",
     fg = "#fc1a70"
   },
   DiffText = {
-    bg = "#165995"
+    bg = "#0f538f"
   },
   Directory = {
     fg = "#af87ff"
@@ -619,7 +622,7 @@ local highlights = {
     fg = "#ffffff"
   },
   FoldColumn = {
-    bg = "#2b2b2b",
+    bg = "NONE",
     fg = "#ff9700"
   },
   Folded = {
@@ -629,6 +632,32 @@ local highlights = {
   Function = {
     fg = "#a4e400",
     style = {}
+  },
+  GitSignsAdd = {
+    link = "diffAdded"
+  },
+  GitSignsAddInline = {
+    bg = "#a4e400",
+    fg = "#323c1a"
+  },
+  GitSignsChange = {
+    link = "diffChanged"
+  },
+  GitSignsChangeInline = {
+    bg = "#0087ff",
+    fg = "#1a2e40"
+  },
+  GitSignsCurrentLineBlame = {
+    bg = "#444444",
+    fg = "#0087ff",
+    italic = true
+  },
+  GitSignsDelete = {
+    link = "diffRemoved"
+  },
+  GitSignsDeleteInline = {
+    bg = "#fc1a70",
+    fg = "#401a28"
   },
   Hlargs = {
     fg = "#ffff87"
@@ -744,7 +773,7 @@ local highlights = {
     fg = "#444444"
   },
   Normal = {
-    bg = "#2b2b2b",
+    bg = "NONE",
     fg = "#ffffff"
   },
   NormalFloat = {
@@ -752,7 +781,7 @@ local highlights = {
     fg = "#ffffff"
   },
   NormalNC = {
-    bg = "#2b2b2b",
+    bg = "NONE",
     fg = "#ffffff"
   },
   NormalSB = {
@@ -760,15 +789,15 @@ local highlights = {
     fg = "#e8e8e8"
   },
   NotifyBackground = {
-    bg = "#2b2b2b",
+    bg = "#1e1e1e",
     fg = "#ffffff"
   },
   NotifyDEBUGBody = {
     link = "Normal"
   },
   NotifyDEBUGBorder = {
-    bg = "#2b2b2b",
-    fg = "#484848"
+    bg = "NONE",
+    fg = "#3e3e3e"
   },
   NotifyDEBUGIcon = {
     fg = "#8a8a8a"
@@ -780,8 +809,8 @@ local highlights = {
     link = "Normal"
   },
   NotifyERRORBorder = {
-    bg = "#2b2b2b",
-    fg = "#6b1e3b"
+    bg = "NONE",
+    fg = "#621532"
   },
   NotifyERRORIcon = {
     fg = "#ff005f"
@@ -793,8 +822,8 @@ local highlights = {
     link = "Normal"
   },
   NotifyINFOBorder = {
-    bg = "#2b2b2b",
-    fg = "#1e476b"
+    bg = "NONE",
+    fg = "#153e62"
   },
   NotifyINFOIcon = {
     fg = "#0087ff"
@@ -806,8 +835,8 @@ local highlights = {
     link = "Normal"
   },
   NotifyTRACEBorder = {
-    bg = "#2b2b2b",
-    fg = "#53476b"
+    bg = "NONE",
+    fg = "#4a3e62"
   },
   NotifyTRACEIcon = {
     fg = "#af87ff"
@@ -819,8 +848,8 @@ local highlights = {
     link = "Normal"
   },
   NotifyWARNBorder = {
-    bg = "#2b2b2b",
-    fg = "#6b4b1e"
+    bg = "NONE",
+    fg = "#624215"
   },
   NotifyWARNIcon = {
     fg = "#ff9700"
@@ -859,7 +888,7 @@ local highlights = {
     fg = "#e8e8e8"
   },
   NvimTreeOpenedFile = {
-    bg = "#404040"
+    bg = "#343434"
   },
   NvimTreeOpenedFolderName = {
     bold = true,
@@ -891,7 +920,7 @@ local highlights = {
     bg = "#4d4d4d"
   },
   PmenuSel = {
-    bg = "#3a3a3a",
+    bg = "#383838",
     fg = "#fc1a70"
   },
   PmenuThumb = {
@@ -937,7 +966,7 @@ local highlights = {
     fg = "#000001"
   },
   SignColumn = {
-    bg = "#2b2b2b",
+    bg = "NONE",
     fg = "#3e3e3e"
   },
   SignColumnSB = {
@@ -1000,7 +1029,7 @@ local highlights = {
     bg = "#444444"
   },
   TabLineSel = {
-    bg = "#2b2b2b"
+    bg = "#1e1e1e"
   },
   Tag = {
     fg = "#af87ff"
@@ -1026,11 +1055,11 @@ local highlights = {
   },
   TermCursor = {
     bg = "#ffffff",
-    fg = "#2b2b2b"
+    fg = "#1e1e1e"
   },
   TermCursorNC = {
     bg = "#e8e8e8",
-    fg = "#2b2b2b"
+    fg = "#1e1e1e"
   },
   Title = {
     bold = true,
@@ -1068,7 +1097,7 @@ local highlights = {
   TodoBgTODO = {
     bg = "#af87ff",
     bold = true,
-    fg = "#1e1e1e"
+    fg = "#121212"
   },
   TodoBgWARN = {
     bg = "#ff9700",
@@ -1115,7 +1144,7 @@ local highlights = {
     link = "TodoFgWARN"
   },
   TreesitterContext = {
-    bg = "#3a3a3a"
+    bg = "NONE"
   },
   TreesitterContextBottom = {
     sp = "#62d8f1",
@@ -1167,7 +1196,7 @@ local highlights = {
     fg = "#62d8f1"
   },
   debugBreakpoint = {
-    bg = "#273440",
+    bg = "#1b2935",
     fg = "#0087ff"
   },
   debugPC = {
@@ -1248,7 +1277,7 @@ local highlights = {
   },
   lCursor = {
     bg = "#62d8f1",
-    fg = "#2b2b2b"
+    fg = "#1e1e1e"
   },
   qfFileName = {
     fg = "#af87ff"
