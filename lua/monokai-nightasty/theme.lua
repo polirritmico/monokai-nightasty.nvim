@@ -356,6 +356,7 @@ function M.setup(palette)
         -- Right side
         CmpItemKindDefault = { fg = c.fg_dark, bg = c.none },
         CmpItemKindClass = { fg = c.blue, bg = c.none, italic = true },
+        CmpItemKindCodeium = { fg = c.blue_alt, bg = c.none },
         CmpItemKindConstant = { fg = c.purple, bg = c.none },
         CmpItemKindConstructor = { fg = c.blue, bg = c.none, italic = true },
         CmpItemKindCopilot = { fg = c.blue_alt, bg = c.none },
