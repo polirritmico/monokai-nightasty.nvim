@@ -387,6 +387,10 @@ local highlights = {
     fg = "#62d8f1",
     italic = true
   },
+  CmpItemKindCodeium = {
+    bg = "NONE",
+    fg = "#0087ff"
+  },
   CmpItemKindConstant = {
     bg = "NONE",
     fg = "#af87ff"
@@ -514,6 +518,45 @@ local highlights = {
   },
   CursorLineNr = {
     fg = "#ffff87"
+  },
+  DashboardDesc = {
+    fg = "#fc1a70"
+  },
+  DashboardFiles = {
+    fg = "#bcbcbc"
+  },
+  DashboardFooter = {
+    fg = "#8a8a8a",
+    italic = true
+  },
+  DashboardHeader = {
+    fg = "#ff9700"
+  },
+  DashboardIcon = {
+    fg = "#ffffff"
+  },
+  DashboardKey = {
+    fg = "#af87ff"
+  },
+  DashboardMruIcon = {
+    fg = "#ffffff"
+  },
+  DashboardMruTitle = {
+    bold = true,
+    fg = "#fc1a70"
+  },
+  DashboardProjectIcon = {
+    fg = "#62d8f1"
+  },
+  DashboardProjectTitle = {
+    bold = true,
+    fg = "#fc1a70"
+  },
+  DashboardProjectTitleIcon = {
+    fg = "#ffffff"
+  },
+  DashboardShortCut = {
+    fg = "#af87ff"
   },
   Debug = {
     fg = "#ff9700"
