@@ -379,6 +379,24 @@ function M.setup(palette)
         CmpItemKindValue = { fg = c.orange, bg = c.none },
         CmpItemKindVariable = { fg = c.fg, bg = c.none },
 
+        --- Dashboard
+        -- General
+        DashboardHeader = { fg = c.orange },
+        DashboardFooter = { fg = c.comment, italic = true },
+        -- Hyper theme
+        DashboardFiles = { fg = c.grey_light },
+        DashboardMruIcon = { fg = c.fg },
+        DashboardMruTitle = { fg = c.magenta, bold = true },
+        DashboardProjectIcon = { fg = c.blue },
+        DashboardProjectTitle = { fg = c.magenta, bold = true },
+        DashboardProjectTitleIcon = { fg = c.fg },
+        -- DashboardShortCutIcon = { fg = c.purple },
+        DashboardShortCut = { fg = c.purple },
+        -- Doom theme
+        DashboardDesc = { fg = c.magenta },
+        DashboardIcon = { fg = c.fg },
+        DashboardKey = { fg = c.purple },
+
         --- Dirvish
         DirvishSuffix = { fg = c.grey_medium },
         DirvishPathTail = { fg = c.blue },
@@ -568,15 +586,6 @@ function M.setup(palette)
         -- BufferOffset = { bg = c.bg_statusline, fg = c.dark5 },
         -- BufferTabpageFill = { bg = util.darken(c.bg_highlight, 0.8), fg = c.dark5 },
         -- BufferTabpages = { bg = c.bg_statusline, fg = c.none },
-
-        --- Dashboard
-        -- DashboardShortCut = { fg = c.cyan },
-        -- DashboardHeader = { fg = c.blue },
-        -- DashboardCenter = { fg = c.magenta },
-        -- DashboardFooter = { fg = c.yellow, italic = true },
-        -- DashboardKey = {},
-        -- DashboardDesc = {},
-        -- DashboardIcon = {},
 
         --- Fern
         -- FernBranchText = { fg = c.blue },
