@@ -162,6 +162,15 @@ function M.setup(opts)
         text = util.darken(colors.blue_alt, 0.5),
     }
 
+    -- Rainbow colors (for color_headers, rainbow delimiters and other plugins)
+    colors.rainbow = {
+        colors.fg, colors.yellow, colors.orange, colors.red, colors.purple, colors.blue,
+    }
+    colors.rainbow_bg = {}
+    for i = 1, #colors.rainbow do
+        colors.rainbow_bg[i] = util.darken(colors.rainbow[i], 0.07)
+    end
+
     -- Apply user config overrides
     config.options.on_colors(colors)
 

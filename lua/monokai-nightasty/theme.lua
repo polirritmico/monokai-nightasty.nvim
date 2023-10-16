@@ -113,12 +113,6 @@ function M.setup(palette)
         Exception = { fg = c.magenta }, --  try, catch, throw
         Float = { fg = c.purple }, -- a floating point constant: 2.3e10
         Function = { fg = c.green, style = options.hl_styles.functions }, -- function name (also: methods for classes)
-        htmlH1 = options.color_headers and { fg = c.fg , bold = true } or { link = "Title" },
-        htmlH2 = options.color_headers and { fg = c.yellow, bold = true } or { link = "Title" },
-        htmlH3 = options.color_headers and { fg = c.orange, bold = true } or { link = "Title" },
-        htmlH4 = options.color_headers and { fg = c.red, bold = true } or { link = "Title" },
-        htmlH5 = options.color_headers and { fg = c.purple, bold = false } or { link = "Title" },
-        htmlH6 = options.color_headers and { fg = c.blue, bold = false } or { link = "Title" },
         Identifier = { fg = c.fg, style = options.hl_styles.variables }, -- (preferred) any variable name
         -- ("Ignore", below, may be invisible...)
         -- Ignore = { }, -- (preferred) left blank, hidden  |hl-Ignore|
@@ -263,12 +257,7 @@ function M.setup(palette)
         ["@namespace"] = { link = "Include" },
 
         --- Text
-        ["@text.title.1"] = options.color_headers and { fg = c.fg , bold = true } or { link = "Title" },
-        ["@text.title.2"] = options.color_headers and { fg = c.yellow, bold = true } or { link = "Title" },
-        ["@text.title.3"] = options.color_headers and { fg = c.orange, bold = true } or { link = "Title" },
-        ["@text.title.4"] = options.color_headers and { fg = c.red, bold = true } or { link = "Title" },
-        ["@text.title.5"] = options.color_headers and { fg = c.purple, bold = false } or { link = "Title" },
-        ["@text.title.6"] = options.color_headers and { fg = c.blue, bold = false } or { link = "Title" },
+        ["@text.title"] = { link = "Title" },
         ["@text.title.1.marker"] = { link = "@tag" }, -- #, <h1>, <h2>, etc.
         ["@text.title.2.marker"] = { link = "@tag" },
         ["@text.title.3.marker"] = { link = "@tag" },
@@ -822,6 +811,27 @@ function M.setup(palette)
         -- YankyPut = { link = "IncSearch" },
         -- YankyYanked = { link = "IncSearch" },
     }
+
+    -- Rainbow headers
+    if options.color_headers then
+        for i, color in ipairs(c.rainbow) do
+            -- Markdown, html
+            theme.highlights["@text.title." .. i] = { fg = color, bold = true }
+            theme.highlights["htmlH" .. i] = { fg = color, bold = true }
+            -- Headline plugin
+            theme.highlights["Headline" .. i] = { fg = color, bg = c.rainbow_bg[i], bold = true }
+            theme.highlights["@OrgTSHeadlineLevel" .. i] = { bg = c.rainbow_bg[i], bold = true }
+        end
+    else
+        for i = 1, 6 do
+            -- Markdown, html
+            theme.highlights["@text.title." .. i] = { link = "Title" }
+            theme.highlights["htmlH" .. i] = { link = "Title" }
+            -- Headline plugin
+            theme.highlights["@OrgTSHeadlineLevel" .. i] = { bg = c.rainbow_bg[i], bold = true }
+            theme.highlights["Headline" .. i] = { bg = c.bg_popup, bold = true }
+        end
+    end
 
     if not vim.diagnostic then
         local severity_map = {
