@@ -114,8 +114,7 @@ function M.setup(palette)
         Float = { fg = c.purple }, -- a floating point constant: 2.3e10
         Function = { fg = c.green, style = options.hl_styles.functions }, -- function name (also: methods for classes)
         Identifier = { fg = c.fg, style = options.hl_styles.variables }, -- (preferred) any variable name
-        -- ("Ignore", below, may be invisible...)
-        -- Ignore = { }, -- (preferred) left blank, hidden  |hl-Ignore|
+        -- Ignore = { }, -- (preferred) left blank, hidden  |hl-Ignore| ?
         Include = { fg = c.magenta }, -- preprocessor #include
         Keyword = { fg = c.magenta, style = options.hl_styles.keywords }, -- any other keyword
         Label = { fg = c.yellow }, -- case, default, etc.
@@ -138,14 +137,6 @@ function M.setup(palette)
         Typedef = { fg = c.blue }, -- A typedef
         qfFileName = { fg = c.purple },
         qfLineNr = { fg = c.grey },
-
-        -- indent-blankline
-        IndentBlanklineChar = { fg = c.fg_gutter, nocombine = true },
-        IndentBlanklineSpaceChar = { fg = c.fg_dark, nocombine = true },
-        IndentBlanklineContextChar = { fg = c.blue, nocombine = true },
-        IblIndent = { fg = c.fg_gutter, nocombine = true },
-        IblWhitespace = { fg = c.fg_dark, nocombine = true },
-        IblScope = { fg = c.blue, nocombine = true },
 
         -- Diff
         diffAdded = { fg = c.git.add },
@@ -194,11 +185,6 @@ function M.setup(palette)
         -- LspCodeLens = { fg = c.comment },
         -- LspInlayHint = { bg = util.darken(c.blue7, 0.1), fg = c.grey_dark },
         LspInfoBorder = { fg = c.border_highlight, bg = c.bg_float },
-
-        -- ALEErrorSign = { fg = c.error },
-        -- ALEWarningSign = { fg = c.warning },
-
-        -- DapStoppedLine = { bg = util.darken(c.warning, 0.1) }, -- Used for "Warning" diagnostic virtual text
 
         -- checkhealt
         helpCommand = { fg = c.blue, bg = c.bg_float }, -- command name/description
@@ -329,6 +315,12 @@ function M.setup(palette)
         dosbatchError = { fg = c.red },
         ["@property.ini"] = { fg = c.orange },
 
+        -- Others
+        NvimInternalError = { fg = c.fg, bg = "#ff0000" }, -- hard red
+        -- ALEErrorSign = { fg = c.error },
+        -- ALEWarningSign = { fg = c.warning },
+        -- DapStoppedLine = { bg = util.darken(c.warning, 0.1) }, -- Used for "Warning" diagnostic virtual text
+
         --- Plugins -----------------------------------------------------------
 
         --- Cmp
@@ -420,6 +412,21 @@ function M.setup(palette)
         -- GitSignsDeleteVirtLn = {},
         -- GitSignsDeleteVirtLnInLine = {},
         -- GitSignsVirtLnum = {},
+
+        --- headlines.nvim
+        CodeBlock = { bg = c.bg_dark },
+        Headline = { link = "Headline1" },
+        Quote = { fg = c.bg, bg = c.fg_gutter },
+        Dash = { fg = c.orange, bold = true },
+        -- For Headline-i levels check the section after this table.
+
+        --- indent-blankline
+        IndentBlanklineChar = { fg = c.fg_gutter, nocombine = true },
+        IndentBlanklineSpaceChar = { fg = c.fg_dark, nocombine = true },
+        IndentBlanklineContextChar = { fg = c.blue, nocombine = true },
+        IblIndent = { fg = c.fg_gutter, nocombine = true },
+        IblWhitespace = { fg = c.fg_dark, nocombine = true },
+        IblScope = { fg = c.blue, nocombine = true },
 
         --- Lazy
         LazyProgressDone = { fg = c.magenta, bold = true },
