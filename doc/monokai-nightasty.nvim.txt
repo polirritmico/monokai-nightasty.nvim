@@ -1,4 +1,4 @@
-*monokai-nightasty.nvim.txt*   For Neovim >= 0.9  Last change: 2023 October 12
+*monokai-nightasty.nvim.txt*   For Neovim >= 0.9  Last change: 2023 October 16
 
 ==============================================================================
 Table of Contents                   *monokai-nightasty.nvim-table-of-contents*
@@ -35,6 +35,8 @@ vim-monokai-tasty <https://github.com/patstockwell/vim-monokai-tasty>.
     experience.
 - Avoid eye strain by seamlessly toggling between clear and dark styles at
     your fingertips, whether you’re at your station or out in the wild.
+- Support for popular plugins like treesitter, cmp, telescope, gitsigns,
+    lualine, indent-blankline, which-key, notify, noice, todo-comments and more.
 - Highly customizable for your coding needs.
 
 
@@ -175,7 +177,7 @@ highlight groups.
 
 
 
-To get the name of a highlight group or to check the used color here are some
+To get the name of a highlight group or to find the used color, here are some
 alternatives:
 
 1. Use `:Inspect` to get info of the highlight group at the current position.

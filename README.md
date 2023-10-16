@@ -28,6 +28,8 @@ the flavorful
   experience.
 - Avoid eye strain by seamlessly toggling between clear and dark styles at
   your fingertips, whether you're at your station or out in the wild.
+- Support for popular plugins like treesitter, cmp, telescope, gitsigns,
+  lualine, indent-blankline, which-key, notify, noice, todo-comments and more.
 - Highly customizable for your coding needs.
 
 <!-- panvimdoc-ignore-start -->
@@ -173,7 +175,7 @@ How the plugin setup the highlights and colors under the hood:
 5. Finally, `config.on_highlights(highlights, colors)` can be used to override highlight
    groups.
 
-To get the name of a highlight group or to check the used color here are some
+To get the name of a highlight group or to find the used color, here are some
 alternatives:
 
 1. Use `:Inspect` to get info of the highlight group at the current position.
