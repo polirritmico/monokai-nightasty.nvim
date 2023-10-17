@@ -56,6 +56,8 @@ local colors = {
   none = "NONE",
   orange = "#ff4d00",
   purple = "#6054d0",
+  rainbow = { "#333333", "#ff8f00", "#ff4d00", "#ff005f", "#6054d0", "#00b3e3" },
+  rainbow_bg = { "#f1f1f1", "#fff7ed", "#fff3ed", "#ffedf4", "#f4f3fc", "#edfafd" },
   red = "#ff005f",
   terminal_black = "#bfbfbf",
   warning = "#ff4d00",
@@ -65,6 +67,30 @@ local colors = {
 }
 
 local highlights = {
+  ["@OrgTSHeadlineLevel1"] = {
+    bg = "#f1f1f1",
+    bold = true
+  },
+  ["@OrgTSHeadlineLevel2"] = {
+    bg = "#fff7ed",
+    bold = true
+  },
+  ["@OrgTSHeadlineLevel3"] = {
+    bg = "#fff3ed",
+    bold = true
+  },
+  ["@OrgTSHeadlineLevel4"] = {
+    bg = "#ffedf4",
+    bold = true
+  },
+  ["@OrgTSHeadlineLevel5"] = {
+    bg = "#f4f3fc",
+    bold = true
+  },
+  ["@OrgTSHeadlineLevel6"] = {
+    bg = "#edfafd",
+    bold = true
+  },
   ["@attribute.builtin"] = {
     fg = "#ff004b",
     italic = true
@@ -278,6 +304,9 @@ local highlights = {
     fg = "#00b3e3",
     underline = true
   },
+  ["@text.title"] = {
+    link = "Title"
+  },
   ["@text.title.1"] = {
     link = "Title"
   },
@@ -483,6 +512,9 @@ local highlights = {
   CmpItemMenu = {
     fg = "#7f7f7f"
   },
+  CodeBlock = {
+    bg = "#e1e1e1"
+  },
   ColorColumn = {
     bg = "#ffffff"
   },
@@ -518,6 +550,10 @@ local highlights = {
   },
   CursorLineNr = {
     fg = "#ff8f00"
+  },
+  Dash = {
+    bold = true,
+    fg = "#ff4d00"
   },
   DashboardDesc = {
     fg = "#ff004b"
@@ -701,6 +737,33 @@ local highlights = {
   GitSignsDeleteInline = {
     bg = "#ff004b",
     fg = "#ffd9e7"
+  },
+  Headline = {
+    link = "Headline1"
+  },
+  Headline1 = {
+    bg = "#dedede",
+    bold = true
+  },
+  Headline2 = {
+    bg = "#dedede",
+    bold = true
+  },
+  Headline3 = {
+    bg = "#dedede",
+    bold = true
+  },
+  Headline4 = {
+    bg = "#dedede",
+    bold = true
+  },
+  Headline5 = {
+    bg = "#dedede",
+    bold = true
+  },
+  Headline6 = {
+    bg = "#dedede",
+    bold = true
   },
   Hlargs = {
     fg = "#ff8f00"
@@ -900,6 +963,10 @@ local highlights = {
   NotifyWARNTitle = {
     fg = "#ff4d00"
   },
+  NvimInternalError = {
+    bg = "#ff0000",
+    fg = "#333333"
+  },
   NvimTreeFolderIcon = {
     bg = "NONE",
     fg = "#00b3e3"
@@ -978,6 +1045,10 @@ local highlights = {
   },
   Question = {
     fg = "#00b3e3"
+  },
+  Quote = {
+    bg = "#c9c9c9",
+    fg = "#ffffff"
   },
   RainbowDelimiterBlue = {
     fg = "#0087ff"
