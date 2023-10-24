@@ -1,4 +1,4 @@
-*monokai-nightasty.nvim.txt*   For Neovim >= 0.9  Last change: 2023 October 16
+*monokai-nightasty.nvim.txt*   For Neovim >= 0.9  Last change: 2023 October 23
 
 ==============================================================================
 Table of Contents                   *monokai-nightasty.nvim-table-of-contents*
@@ -96,7 +96,7 @@ LUALINE                                       *monokai-nightasty.nvim-lualine*
 ADVANCED CONFIGURATION         *monokai-nightasty.nvim-advanced-configuration*
 
 
-  Set the configuration **BEFORE** calling `colorscheme monokai`.
+  Set the configuration **BEFORE** calling `colorscheme monokai-nightasty`.
 
 FULL CONFIGURATION EXAMPLE: ~
 

@@ -101,7 +101,7 @@ require("lualine").setup({
 
 ### ⚙️ Advanced configuration
 
-> ⚠️ Set the configuration **BEFORE** calling `colorscheme monokai`.
+> ⚠️ Set the configuration **BEFORE** calling `colorscheme monokai-nightasty`.
 
 #### Full configuration example:
 
@@ -181,7 +181,7 @@ alternatives:
 1. Use `:Inspect` to get info of the highlight group at the current position.
 2. Use `:TSHighlightCapturesUnderCursor` from the
    [playground](https://github.com/nvim-treesitter/playground) plugin.
-3. Check the generated palettes in the [extras](###🧩-Extra-Themes).
+3. Check the generated palettes in the [extras](#-extras).
 4. For the theme with the color names instead of the colors code, you could
    check directly the `theme.lua` or `colors.lua` files inside the
    `lua/monokai-nightasty/` directory.
