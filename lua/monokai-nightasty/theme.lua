@@ -68,8 +68,8 @@ function M.setup(palette)
         Question = { fg = c.blue }, -- |hit-enter| prompt and yes/no questions
         -- QuickFixLine = { bg = c.bg_visual, bold = true }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
         Search = { fg = c.fg_search, bg = c.bg_search, bold = true }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
-        SignColumn = { bg = options.transparent and c.none or c.bg, fg = c.fg_gutter }, -- column where |signs| are displayed
-        SignColumnSB = { bg = c.bg_sidebar, fg = c.fg_gutter }, -- column where |signs| are displayed
+        SignColumn = { fg = c.fg_gutter, bg = options.transparent and c.none or c.bg }, -- column where |signs| are displayed
+        SignColumnSB = { fg = c.fg_gutter, bg = c.bg_sidebar }, -- column where |signs| are displayed
         SpecialKey = { fg = c.grey_medium }, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace|
         SpellBad = { sp = c.error, undercurl = true }, -- Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.
         SpellCap = { sp = c.warning, undercurl = true }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
@@ -266,7 +266,7 @@ function M.setup(palette)
         ["@punctuation.bracket.markdown_inline"] = { fg = c.blue },
 
         -- LSP Semantic Token Groups
-        ["@lsp.type.boolean"] = { link = "@boolean" },
+        ["@lsp.type.boolean"] = { link = "Boolean" },
         ["@lsp.type.builtinType"] = { link = "@type.builtin" },
         ["@lsp.type.comment"] = { link = "@comment" },
         ["@lsp.type.decorator"] = { link = "@attribute" },
@@ -323,6 +323,11 @@ function M.setup(palette)
 
         --- Plugins -----------------------------------------------------------
 
+        --- Aerial
+        AerialNormal = { fg = c.fg, bg = c.none },
+        AerialGuide = { fg = c.fg_gutter },
+        AerialLine = { link = "LspInlayHint" },
+
         --- Cmp
         CmpDocumentation = { fg = c.fg, bg = c.bg_float },
         CmpDocumentationBorder = { fg = c.border_highlight, bg = c.bg_float },
@@ -334,31 +339,6 @@ function M.setup(palette)
         CmpItemAbbrDeprecated = { fg = c.fg_gutter, strikethrough = true }, -- Deprecated suggestions
         -- Middle
         CmpItemMenu = { fg = c.comment }, -- The [source of the suggestion, LSP, luasnip...]
-        -- Right side
-        CmpItemKindDefault = { fg = c.fg_dark, bg = c.none },
-        CmpItemKindClass = { fg = c.blue, bg = c.none, italic = true },
-        CmpItemKindCodeium = { fg = c.blue_alt, bg = c.none },
-        CmpItemKindConstant = { fg = c.purple, bg = c.none },
-        CmpItemKindConstructor = { fg = c.blue, bg = c.none, italic = true },
-        CmpItemKindCopilot = { fg = c.blue_alt, bg = c.none },
-        CmpItemKindEnum = { fg = c.blue, bg = c.none },
-        CmpItemKindEnumMember = { fg = c.blue, bg = c.none },
-        CmpItemKindEvent = { fg = c.purple, bg = c.none },
-        CmpItemKindField = { fg = c.fg, bg = c.none },
-        CmpItemKindFunction = { fg = c.green, bg = c.none },
-        CmpItemKindInterface = { fg = c.orange, bg = c.none },
-        CmpItemKindKeyword = { fg = c.magenta, bg = c.none },
-        CmpItemKindMethod = { fg = c.green, bg = c.none },
-        CmpItemKindModule = { fg = c.purple, bg = c.none },
-        CmpItemKindOperator = { fg = c.magenta, bg = c.none },
-        CmpItemKindProperty = { fg = c.fg, bg = c.none },
-        CmpItemKindReference = { fg = c.orange, bg = c.none },
-        CmpItemKindSnippet = { fg = c.blue_alt, bg = c.none },
-        CmpItemKindStruct = { fg = c.blue, bg = c.none },
-        CmpItemKindTypeParameter = { fg = c.orange, bg = c.none },
-        CmpItemKindUnit = { fg = c.orange, bg = c.none },
-        CmpItemKindValue = { fg = c.orange, bg = c.none },
-        CmpItemKindVariable = { fg = c.fg, bg = c.none },
 
         --- Dashboard
         -- General
@@ -431,6 +411,10 @@ function M.setup(palette)
         --- Lazy
         LazyProgressDone = { fg = c.magenta, bold = true },
         LazyProgressTodo = { fg = c.fg_gutter, bold = true },
+
+        --- Navic
+        NavicText = { fg = c.fg, bg = c.none },
+        NavicSeparator = { fg = c.fg, bg = c.none },
 
         --- Notify
         NotifyBackground = { fg = c.fg, bg = c.bg },
@@ -528,6 +512,12 @@ function M.setup(palette)
         WhichKeyFloat = { bg = c.bg_sidebar },
         WhichKeyBorder = { bg = c.bg_sidebar },
         WhichKeyValue = { fg = c.grey_light },
+
+        --- Misc
+        -- For ItemKind plugins
+        KindConceal = { fg = c.blue_alt },
+        KindParameter = { fg = c.orange },
+        KindText = { fg = c.fg },
 
         --- Not Implentend Plugins --------------------------------------------
 
@@ -709,37 +699,6 @@ function M.setup(palette)
         -- MiniTestPass = { fg = c.green, bold = true },
         -- MiniTrailspace = { bg = c.red },
 
-        --- navic
-        -- NavicIconsFile = { fg = c.fg, bg = c.none },
-        -- NavicIconsModule = { fg = c.yellow, bg = c.none },
-        -- NavicIconsNamespace = { fg = c.fg, bg = c.none },
-        -- NavicIconsPackage = { fg = c.fg, bg = c.none },
-        -- NavicIconsClass = { fg = c.orange, bg = c.none },
-        -- NavicIconsMethod = { fg = c.blue, bg = c.none },
-        -- NavicIconsProperty = { fg = c.green1, bg = c.none },
-        -- NavicIconsField = { fg = c.green1, bg = c.none },
-        -- NavicIconsConstructor = { fg = c.orange, bg = c.none },
-        -- NavicIconsEnum = { fg = c.orange, bg = c.none },
-        -- NavicIconsInterface = { fg = c.orange, bg = c.none },
-        -- NavicIconsFunction = { fg = c.blue, bg = c.none },
-        -- NavicIconsVariable = { fg = c.magenta, bg = c.none },
-        -- NavicIconsConstant = { fg = c.magenta, bg = c.none },
-        -- NavicIconsString = { fg = c.green, bg = c.none },
-        -- NavicIconsNumber = { fg = c.orange, bg = c.none },
-        -- NavicIconsBoolean = { fg = c.orange, bg = c.none },
-        -- NavicIconsArray = { fg = c.orange, bg = c.none },
-        -- NavicIconsObject = { fg = c.orange, bg = c.none },
-        -- NavicIconsKey = { fg = c.purple, bg = c.none },
-        -- NavicIconsKeyword = { fg = c.purple, bg = c.none },
-        -- NavicIconsNull = { fg = c.orange, bg = c.none },
-        -- NavicIconsEnumMember = { fg = c.green1, bg = c.none },
-        -- NavicIconsStruct = { fg = c.orange, bg = c.none },
-        -- NavicIconsEvent = { fg = c.orange, bg = c.none },
-        -- NavicIconsOperator = { fg = c.fg, bg = c.none },
-        -- NavicIconsTypeParameter = { fg = c.green1, bg = c.none },
-        -- NavicText = { fg = c.fg, bg = c.none },
-        -- NavicSeparator = { fg = c.fg, bg = c.none },
-
         --- Neogit
         -- NeogitBranch = { fg = c.magenta },
         -- NeogitRemote = { fg = c.purple },
@@ -768,30 +727,6 @@ function M.setup(palette)
         -- NeotestTarget = { fg = c.blue },
         -- --[[ NeotestUnknown = {}, ]]
 
-        --- Noice
-        -- NoiceCompletionItemKindDefault = { fg = c.fg_dark, bg = c.none },
-        -- NoiceCompletionItemKindKeyword = { fg = c.cyan, bg = c.none },
-        -- NoiceCompletionItemKindVariable = { fg = c.magenta, bg = c.none },
-        -- NoiceCompletionItemKindConstant = { fg = c.magenta, bg = c.none },
-        -- NoiceCompletionItemKindReference = { fg = c.magenta, bg = c.none },
-        -- NoiceCompletionItemKindValue = { fg = c.magenta, bg = c.none },
-        -- NoiceCompletionItemKindFunction = { fg = c.blue, bg = c.none },
-        -- NoiceCompletionItemKindMethod = { fg = c.blue, bg = c.none },
-        -- NoiceCompletionItemKindConstructor = { fg = c.blue, bg = c.none },
-        -- NoiceCompletionItemKindClass = { fg = c.orange, bg = c.none },
-        -- NoiceCompletionItemKindInterface = { fg = c.orange, bg = c.none },
-        -- NoiceCompletionItemKindStruct = { fg = c.orange, bg = c.none },
-        -- NoiceCompletionItemKindEvent = { fg = c.orange, bg = c.none },
-        -- NoiceCompletionItemKindEnum = { fg = c.orange, bg = c.none },
-        -- NoiceCompletionItemKindUnit = { fg = c.orange, bg = c.none },
-        -- NoiceCompletionItemKindModule = { fg = c.yellow, bg = c.none },
-        -- NoiceCompletionItemKindProperty = { fg = c.green1, bg = c.none },
-        -- NoiceCompletionItemKindField = { fg = c.green1, bg = c.none },
-        -- NoiceCompletionItemKindTypeParameter = { fg = c.green1, bg = c.none },
-        -- NoiceCompletionItemKindEnumMember = { fg = c.green1, bg = c.none },
-        -- NoiceCompletionItemKindOperator = { fg = c.green1, bg = c.none },
-        -- NoiceCompletionItemKindSnippet = { fg = c.dark5, bg = c.none },
-
         --- Scrollbar
         -- ScrollbarHandle = { fg = c.none, bg = c.bg_highlight },
         -- ScrollbarSearchHandle = { fg = c.orange, bg = c.bg_highlight },
@@ -818,6 +753,61 @@ function M.setup(palette)
         -- YankyPut = { link = "IncSearch" },
         -- YankyYanked = { link = "IncSearch" },
     }
+
+    -- Kind plugins
+    local kinds_links = {
+        Array = "@punctuation.bracket",
+        Boolean = "Boolean",
+        Class = "@type.builtin", -- "StorageClass" "@type",
+        Codeium = "KindConceal",
+        Color = "Special",
+        Constant = "@constant",
+        Constructor = "@constructor",
+        Copilot = "KindConceal",
+        Default = "@property", -- fg = c.fg_dark
+        Enum = "@lsp.type.enum",
+        EnumMember = "Structure", -- "@lsp.type.enumMember",
+        Event = "Special",
+        Field = "@field",
+        File = "Normal",
+        Folder = "Directory",
+        Function = "@function",
+        Interface = "KindParameter",-- "@lsp.type.interface",
+        Key = "@field",
+        Keyword = "@keyword",
+        Method = "@method",
+        Module = "Special", -- "@namespace"
+        Namespace = "KindText",
+        Null = "@constant.builtin",
+        Number = "@number",
+        Object = "@constant",
+        Operator = "@operator",
+        Package = "@namespace",
+        Property = "@property",
+        Reference = "@text.uri", -- "@text.reference",
+        Snippet = "KindConceal", -- Conceal
+        String = "@string",
+        Struct = "Structure", -- "@lsp.type.struct",
+        Text = "@text",
+        TypeParameter = "KindParameter",-- "@lsp.type.typeParameter",
+        Unit = "Structure", --"@lsp.type.struct",
+        Value = "KindParameter", --"@string",
+        Variable = "@variable",
+    }
+    local kind_plugins = {
+        "Aerial%sIcon",
+        "CmpItemKind%s",
+        "NavicIcons%s",
+        "NoiceCompletionItemKind%s",
+    }
+
+    for kind, link in pairs(kinds_links) do
+        local base = "LspKind" .. kind
+        theme.highlights[base] = { link = link }
+        for _, plugin in pairs(kind_plugins) do
+            theme.highlights[plugin:format(kind)] = { link = base }
+        end
+    end
 
     -- Rainbow headers
     if options.color_headers then
