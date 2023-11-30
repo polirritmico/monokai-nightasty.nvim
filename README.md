@@ -18,7 +18,7 @@ the flavorful
 
 <!-- panvimdoc-ignore-start -->
 
-![Monokai-NighTasty](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/be1b74e6-8614-482d-8591-ac8a59793620)
+![Monokai-NighTasty](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/57bcbc64-cc1a-4f8f-8ebe-75f4bcd6c96d)
 
 <!-- panvimdoc-ignore-end -->
 
@@ -38,15 +38,15 @@ the flavorful
 
 ### 🌙 Dark Theme
 
-![Dark Theme](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/763caac7-f18a-428c-b8e7-14eeceed9108)
+![Dark Theme](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/a35c81ba-5e54-4b0f-b048-a70d407c2ba3)
 
 ### 💨 Dark Theme with transparent background:
 
-![Transparent Dark Theme](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/94703fdc-fc82-48a0-9241-c58fca3f0f62)
+![Transparent Dark Theme](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/438a5768-b9bc-47c5-856d-8549981eb6b3)
 
 ### ☀️ Light Theme
 
-![Light Theme](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/f2b3f522-6f27-410a-92d7-f0adf2a65788)
+![Light Theme](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/9af725e4-9251-457b-ac8e-c6fe38d7269d)
 
 ## 📽 Settings in action
 
