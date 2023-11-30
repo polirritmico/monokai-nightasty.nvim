@@ -64,7 +64,7 @@ else
 
     monokai_nightasty.visual = {
         a = { fg = c.white, bg = c.purple },
-        b = { fg = c.fg, bg = c.bg_status_alt },
+        b = { fg = c.purple, bg = c.bg_status_alt },
     }
 
     monokai_nightasty.replace = {
