@@ -15,7 +15,7 @@ local colors = {
   black = "#000001",
   blue = "#62d8f1",
   blue_alt = "#0087ff",
-  border = "#62d8f1",
+  border = "#8a8a8a",
   border_highlight = "#ffffff",
   charcoal = "#262626",
   charcoal_light = "#313131",
@@ -122,7 +122,7 @@ local highlights = {
     italic = true
   },
   ["@lsp.type.boolean"] = {
-    link = "@boolean"
+    link = "Boolean"
   },
   ["@lsp.type.builtinType"] = {
     link = "@type.builtin"
@@ -375,6 +375,127 @@ local highlights = {
     fg = "#bcbcbc",
     italic = true
   },
+  AerialArrayIcon = {
+    link = "LspKindArray"
+  },
+  AerialBooleanIcon = {
+    link = "LspKindBoolean"
+  },
+  AerialClassIcon = {
+    link = "LspKindClass"
+  },
+  AerialCodeiumIcon = {
+    link = "LspKindCodeium"
+  },
+  AerialColorIcon = {
+    link = "LspKindColor"
+  },
+  AerialConstantIcon = {
+    link = "LspKindConstant"
+  },
+  AerialConstructorIcon = {
+    link = "LspKindConstructor"
+  },
+  AerialCopilotIcon = {
+    link = "LspKindCopilot"
+  },
+  AerialDefaultIcon = {
+    link = "LspKindDefault"
+  },
+  AerialEnumIcon = {
+    link = "LspKindEnum"
+  },
+  AerialEnumMemberIcon = {
+    link = "LspKindEnumMember"
+  },
+  AerialEventIcon = {
+    link = "LspKindEvent"
+  },
+  AerialFieldIcon = {
+    link = "LspKindField"
+  },
+  AerialFileIcon = {
+    link = "LspKindFile"
+  },
+  AerialFolderIcon = {
+    link = "LspKindFolder"
+  },
+  AerialFunctionIcon = {
+    link = "LspKindFunction"
+  },
+  AerialGuide = {
+    fg = "#3e3e3e"
+  },
+  AerialInterfaceIcon = {
+    link = "LspKindInterface"
+  },
+  AerialKeyIcon = {
+    link = "LspKindKey"
+  },
+  AerialKeywordIcon = {
+    link = "LspKindKeyword"
+  },
+  AerialLine = {
+    link = "LspInlayHint"
+  },
+  AerialMethodIcon = {
+    link = "LspKindMethod"
+  },
+  AerialModuleIcon = {
+    link = "LspKindModule"
+  },
+  AerialNamespaceIcon = {
+    link = "LspKindNamespace"
+  },
+  AerialNormal = {
+    bg = "NONE",
+    fg = "#ffffff"
+  },
+  AerialNullIcon = {
+    link = "LspKindNull"
+  },
+  AerialNumberIcon = {
+    link = "LspKindNumber"
+  },
+  AerialObjectIcon = {
+    link = "LspKindObject"
+  },
+  AerialOperatorIcon = {
+    link = "LspKindOperator"
+  },
+  AerialPackageIcon = {
+    link = "LspKindPackage"
+  },
+  AerialPropertyIcon = {
+    link = "LspKindProperty"
+  },
+  AerialReferenceIcon = {
+    link = "LspKindReference"
+  },
+  AerialSnippetIcon = {
+    link = "LspKindSnippet"
+  },
+  AerialStringIcon = {
+    link = "LspKindString"
+  },
+  AerialStructIcon = {
+    link = "LspKindStruct"
+  },
+  AerialTextIcon = {
+    link = "LspKindText"
+  },
+  AerialTypeParameterIcon = {
+    link = "LspKindTypeParameter"
+  },
+  AerialUnitIcon = {
+    link = "LspKindUnit"
+  },
+  AerialValueIcon = {
+    link = "LspKindValue"
+  },
+  AerialVariableIcon = {
+    link = "LspKindVariable"
+  },
   Bold = {
     bold = true
   },
@@ -411,103 +532,116 @@ local highlights = {
     bg = "NONE",
     fg = "#fc1a70"
   },
+  CmpItemKindArray = {
+    link = "LspKindArray"
+  },
+  CmpItemKindBoolean = {
+    link = "LspKindBoolean"
+  },
   CmpItemKindClass = {
-    bg = "NONE",
-    fg = "#62d8f1",
-    italic = true
+    link = "LspKindClass"
   },
   CmpItemKindCodeium = {
-    bg = "NONE",
-    fg = "#0087ff"
+    link = "LspKindCodeium"
+  },
+  CmpItemKindColor = {
+    link = "LspKindColor"
   },
   CmpItemKindConstant = {
-    bg = "NONE",
-    fg = "#af87ff"
+    link = "LspKindConstant"
   },
   CmpItemKindConstructor = {
-    bg = "NONE",
-    fg = "#62d8f1",
-    italic = true
+    link = "LspKindConstructor"
   },
   CmpItemKindCopilot = {
-    bg = "NONE",
-    fg = "#0087ff"
+    link = "LspKindCopilot"
   },
   CmpItemKindDefault = {
-    bg = "NONE",
-    fg = "#e8e8e8"
+    link = "LspKindDefault"
   },
   CmpItemKindEnum = {
-    bg = "NONE",
-    fg = "#62d8f1"
+    link = "LspKindEnum"
   },
   CmpItemKindEnumMember = {
-    bg = "NONE",
-    fg = "#62d8f1"
+    link = "LspKindEnumMember"
   },
   CmpItemKindEvent = {
-    bg = "NONE",
-    fg = "#af87ff"
+    link = "LspKindEvent"
   },
   CmpItemKindField = {
-    bg = "NONE",
-    fg = "#ffffff"
+    link = "LspKindField"
+  },
+  CmpItemKindFile = {
+    link = "LspKindFile"
+  },
+  CmpItemKindFolder = {
+    link = "LspKindFolder"
   },
   CmpItemKindFunction = {
-    bg = "NONE",
-    fg = "#a4e400"
+    link = "LspKindFunction"
   },
   CmpItemKindInterface = {
-    bg = "NONE",
-    fg = "#ff9700"
+    link = "LspKindInterface"
+  },
+  CmpItemKindKey = {
+    link = "LspKindKey"
   },
   CmpItemKindKeyword = {
-    bg = "NONE",
-    fg = "#fc1a70"
+    link = "LspKindKeyword"
   },
   CmpItemKindMethod = {
-    bg = "NONE",
-    fg = "#a4e400"
+    link = "LspKindMethod"
   },
   CmpItemKindModule = {
-    bg = "NONE",
-    fg = "#af87ff"
+    link = "LspKindModule"
+  },
+  CmpItemKindNamespace = {
+    link = "LspKindNamespace"
+  },
+  CmpItemKindNull = {
+    link = "LspKindNull"
+  },
+  CmpItemKindNumber = {
+    link = "LspKindNumber"
+  },
+  CmpItemKindObject = {
+    link = "LspKindObject"
   },
   CmpItemKindOperator = {
-    bg = "NONE",
-    fg = "#fc1a70"
+    link = "LspKindOperator"
+  },
+  CmpItemKindPackage = {
+    link = "LspKindPackage"
   },
   CmpItemKindProperty = {
-    bg = "NONE",
-    fg = "#ffffff"
+    link = "LspKindProperty"
   },
   CmpItemKindReference = {
-    bg = "NONE",
-    fg = "#ff9700"
+    link = "LspKindReference"
   },
   CmpItemKindSnippet = {
-    bg = "NONE",
-    fg = "#0087ff"
+    link = "LspKindSnippet"
+  },
+  CmpItemKindString = {
+    link = "LspKindString"
   },
   CmpItemKindStruct = {
-    bg = "NONE",
-    fg = "#62d8f1"
+    link = "LspKindStruct"
+  },
+  CmpItemKindText = {
+    link = "LspKindText"
   },
   CmpItemKindTypeParameter = {
-    bg = "NONE",
-    fg = "#ff9700"
+    link = "LspKindTypeParameter"
   },
   CmpItemKindUnit = {
-    bg = "NONE",
-    fg = "#ff9700"
+    link = "LspKindUnit"
   },
   CmpItemKindValue = {
-    bg = "NONE",
-    fg = "#ff9700"
+    link = "LspKindValue"
   },
   CmpItemKindVariable = {
-    bg = "NONE",
-    fg = "#ffffff"
+    link = "LspKindVariable"
   },
   CmpItemMenu = {
     fg = "#8a8a8a"
@@ -812,6 +946,15 @@ local highlights = {
       italic = false
     }
   },
+  KindConceal = {
+    fg = "#0087ff"
+  },
+  KindParameter = {
+    fg = "#ff9700"
+  },
+  KindText = {
+    fg = "#ffffff"
+  },
   Label = {
     fg = "#ffff87"
   },
@@ -832,6 +975,117 @@ local highlights = {
   LspInfoBorder = {
     bg = "#2b2b2b",
     fg = "#ffffff"
+  },
+  LspKindArray = {
+    link = "@punctuation.bracket"
+  },
+  LspKindBoolean = {
+    link = "Boolean"
+  },
+  LspKindClass = {
+    link = "@type.builtin"
+  },
+  LspKindCodeium = {
+    link = "KindConceal"
+  },
+  LspKindColor = {
+    link = "Special"
+  },
+  LspKindConstant = {
+    link = "@constant"
+  },
+  LspKindConstructor = {
+    link = "@constructor"
+  },
+  LspKindCopilot = {
+    link = "KindConceal"
+  },
+  LspKindDefault = {
+    link = "@property"
+  },
+  LspKindEnum = {
+    link = "@lsp.type.enum"
+  },
+  LspKindEnumMember = {
+    link = "Structure"
+  },
+  LspKindEvent = {
+    link = "Special"
+  },
+  LspKindField = {
+    link = "@field"
+  },
+  LspKindFile = {
+    link = "Normal"
+  },
+  LspKindFolder = {
+    link = "Directory"
+  },
+  LspKindFunction = {
+    link = "@function"
+  },
+  LspKindInterface = {
+    link = "KindParameter"
+  },
+  LspKindKey = {
+    link = "@field"
+  },
+  LspKindKeyword = {
+    link = "@keyword"
+  },
+  LspKindMethod = {
+    link = "@method"
+  },
+  LspKindModule = {
+    link = "Special"
+  },
+  LspKindNamespace = {
+    link = "KindText"
+  },
+  LspKindNull = {
+    link = "@constant.builtin"
+  },
+  LspKindNumber = {
+    link = "@number"
+  },
+  LspKindObject = {
+    link = "@constant"
+  },
+  LspKindOperator = {
+    link = "@operator"
+  },
+  LspKindPackage = {
+    link = "@namespace"
+  },
+  LspKindProperty = {
+    link = "@property"
+  },
+  LspKindReference = {
+    link = "@text.uri"
+  },
+  LspKindSnippet = {
+    link = "KindConceal"
+  },
+  LspKindString = {
+    link = "@string"
+  },
+  LspKindStruct = {
+    link = "Structure"
+  },
+  LspKindText = {
+    link = "@text"
+  },
+  LspKindTypeParameter = {
+    link = "KindParameter"
+  },
+  LspKindUnit = {
+    link = "Structure"
+  },
+  LspKindValue = {
+    link = "KindParameter"
+  },
+  LspKindVariable = {
+    link = "@variable"
   },
   LspReferenceRead = {
     bg = "#3e3e3e"
@@ -861,8 +1115,127 @@ local highlights = {
     fg = "#e8e8e8"
   },
   MsgSeparator = {
-    sp = "#62d8f1",
+    sp = "#8a8a8a",
     underline = true
+  },
+  NavicIconsArray = {
+    link = "LspKindArray"
+  },
+  NavicIconsBoolean = {
+    link = "LspKindBoolean"
+  },
+  NavicIconsClass = {
+    link = "LspKindClass"
+  },
+  NavicIconsCodeium = {
+    link = "LspKindCodeium"
+  },
+  NavicIconsColor = {
+    link = "LspKindColor"
+  },
+  NavicIconsConstant = {
+    link = "LspKindConstant"
+  },
+  NavicIconsConstructor = {
+    link = "LspKindConstructor"
+  },
+  NavicIconsCopilot = {
+    link = "LspKindCopilot"
+  },
+  NavicIconsDefault = {
+    link = "LspKindDefault"
+  },
+  NavicIconsEnum = {
+    link = "LspKindEnum"
+  },
+  NavicIconsEnumMember = {
+    link = "LspKindEnumMember"
+  },
+  NavicIconsEvent = {
+    link = "LspKindEvent"
+  },
+  NavicIconsField = {
+    link = "LspKindField"
+  },
+  NavicIconsFile = {
+    link = "LspKindFile"
+  },
+  NavicIconsFolder = {
+    link = "LspKindFolder"
+  },
+  NavicIconsFunction = {
+    link = "LspKindFunction"
+  },
+  NavicIconsInterface = {
+    link = "LspKindInterface"
+  },
+  NavicIconsKey = {
+    link = "LspKindKey"
+  },
+  NavicIconsKeyword = {
+    link = "LspKindKeyword"
+  },
+  NavicIconsMethod = {
+    link = "LspKindMethod"
+  },
+  NavicIconsModule = {
+    link = "LspKindModule"
+  },
+  NavicIconsNamespace = {
+    link = "LspKindNamespace"
+  },
+  NavicIconsNull = {
+    link = "LspKindNull"
+  },
+  NavicIconsNumber = {
+    link = "LspKindNumber"
+  },
+  NavicIconsObject = {
+    link = "LspKindObject"
+  },
+  NavicIconsOperator = {
+    link = "LspKindOperator"
+  },
+  NavicIconsPackage = {
+    link = "LspKindPackage"
+  },
+  NavicIconsProperty = {
+    link = "LspKindProperty"
+  },
+  NavicIconsReference = {
+    link = "LspKindReference"
+  },
+  NavicIconsSnippet = {
+    link = "LspKindSnippet"
+  },
+  NavicIconsString = {
+    link = "LspKindString"
+  },
+  NavicIconsStruct = {
+    link = "LspKindStruct"
+  },
+  NavicIconsText = {
+    link = "LspKindText"
+  },
+  NavicIconsTypeParameter = {
+    link = "LspKindTypeParameter"
+  },
+  NavicIconsUnit = {
+    link = "LspKindUnit"
+  },
+  NavicIconsValue = {
+    link = "LspKindValue"
+  },
+  NavicIconsVariable = {
+    link = "LspKindVariable"
+  },
+  NavicSeparator = {
+    bg = "NONE",
+    fg = "#ffffff"
+  },
+  NavicText = {
+    bg = "NONE",
+    fg = "#ffffff"
   },
   NeoTreeDimText = {
     fg = "#3e3e3e"
@@ -874,6 +1247,117 @@ local highlights = {
   NeoTreeNormalNC = {
     bg = "#2b2b2b",
     fg = "#e8e8e8"
+  },
+  NoiceCompletionItemKindArray = {
+    link = "LspKindArray"
+  },
+  NoiceCompletionItemKindBoolean = {
+    link = "LspKindBoolean"
+  },
+  NoiceCompletionItemKindClass = {
+    link = "LspKindClass"
+  },
+  NoiceCompletionItemKindCodeium = {
+    link = "LspKindCodeium"
+  },
+  NoiceCompletionItemKindColor = {
+    link = "LspKindColor"
+  },
+  NoiceCompletionItemKindConstant = {
+    link = "LspKindConstant"
+  },
+  NoiceCompletionItemKindConstructor = {
+    link = "LspKindConstructor"
+  },
+  NoiceCompletionItemKindCopilot = {
+    link = "LspKindCopilot"
+  },
+  NoiceCompletionItemKindDefault = {
+    link = "LspKindDefault"
+  },
+  NoiceCompletionItemKindEnum = {
+    link = "LspKindEnum"
+  },
+  NoiceCompletionItemKindEnumMember = {
+    link = "LspKindEnumMember"
+  },
+  NoiceCompletionItemKindEvent = {
+    link = "LspKindEvent"
+  },
+  NoiceCompletionItemKindField = {
+    link = "LspKindField"
+  },
+  NoiceCompletionItemKindFile = {
+    link = "LspKindFile"
+  },
+  NoiceCompletionItemKindFolder = {
+    link = "LspKindFolder"
+  },
+  NoiceCompletionItemKindFunction = {
+    link = "LspKindFunction"
+  },
+  NoiceCompletionItemKindInterface = {
+    link = "LspKindInterface"
+  },
+  NoiceCompletionItemKindKey = {
+    link = "LspKindKey"
+  },
+  NoiceCompletionItemKindKeyword = {
+    link = "LspKindKeyword"
+  },
+  NoiceCompletionItemKindMethod = {
+    link = "LspKindMethod"
+  },
+  NoiceCompletionItemKindModule = {
+    link = "LspKindModule"
+  },
+  NoiceCompletionItemKindNamespace = {
+    link = "LspKindNamespace"
+  },
+  NoiceCompletionItemKindNull = {
+    link = "LspKindNull"
+  },
+  NoiceCompletionItemKindNumber = {
+    link = "LspKindNumber"
+  },
+  NoiceCompletionItemKindObject = {
+    link = "LspKindObject"
+  },
+  NoiceCompletionItemKindOperator = {
+    link = "LspKindOperator"
+  },
+  NoiceCompletionItemKindPackage = {
+    link = "LspKindPackage"
+  },
+  NoiceCompletionItemKindProperty = {
+    link = "LspKindProperty"
+  },
+  NoiceCompletionItemKindReference = {
+    link = "LspKindReference"
+  },
+  NoiceCompletionItemKindSnippet = {
+    link = "LspKindSnippet"
+  },
+  NoiceCompletionItemKindString = {
+    link = "LspKindString"
+  },
+  NoiceCompletionItemKindStruct = {
+    link = "LspKindStruct"
+  },
+  NoiceCompletionItemKindText = {
+    link = "LspKindText"
+  },
+  NoiceCompletionItemKindTypeParameter = {
+    link = "LspKindTypeParameter"
+  },
+  NoiceCompletionItemKindUnit = {
+    link = "LspKindUnit"
+  },
+  NoiceCompletionItemKindValue = {
+    link = "LspKindValue"
+  },
+  NoiceCompletionItemKindVariable = {
+    link = "LspKindVariable"
   },
   NonText = {
     fg = "#444444"
@@ -1261,7 +1745,7 @@ local highlights = {
     bg = "NONE"
   },
   TreesitterContextBottom = {
-    sp = "#62d8f1",
+    sp = "#8a8a8a",
     underline = true
   },
   Type = {},
@@ -1272,7 +1756,7 @@ local highlights = {
     underline = true
   },
   VertSplit = {
-    fg = "#62d8f1"
+    fg = "#8a8a8a"
   },
   Visual = {
     bg = "#444444"
@@ -1307,7 +1791,7 @@ local highlights = {
     fg = "#444444"
   },
   WinSeparator = {
-    fg = "#62d8f1"
+    fg = "#8a8a8a"
   },
   debugBreakpoint = {
     bg = "#1b2935",

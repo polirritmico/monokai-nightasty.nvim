@@ -6,7 +6,7 @@ tm_bg_highlight="#313131"
 tm_green="#a4e400"
 tm_orange="#ff9700"
 tm_black="#000001"
-tm_border="#62d8f1"
+tm_border="#8a8a8a"
 
 set -g mode-style "fg=$tm_green,bg=$tm_bg"
 
