@@ -129,6 +129,7 @@ function M.setup(opts)
     -- Sidebar and Floats
     colors.bg_sidebar = config.options.hl_styles.sidebars == "transparent" and colors.none
         or config.options.hl_styles.sidebars == "dark" and colors.bg_dark
+        or is_light and colors.bg_statusline
         or colors.charcoal_medium
     colors.bg_float = config.options.hl_styles.floats == "transparent" and colors.none
         or config.options.hl_styles.floats == "dark" and colors.bg_dark
