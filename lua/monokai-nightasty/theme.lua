@@ -328,6 +328,9 @@ function M.setup(palette)
         AerialGuide = { fg = c.fg_gutter },
         AerialLine = { link = "LspInlayHint" },
 
+        --- BufferLine
+        BufferLineIndicatorSelected = { fg = c.git.change }, -- current tab indicator
+
         --- Cmp
         CmpDocumentation = { fg = c.fg, bg = c.bg_float },
         CmpDocumentationBorder = { fg = c.border_highlight, bg = c.bg_float },
@@ -589,9 +592,6 @@ function M.setup(palette)
         -- GitGutterChangeLineNr = { fg = c.gitSigns.change },
         -- GitGutterDeleteLineNr = { fg = c.gitSigns.delete },
 
-        --- BufferLine
-        -- BufferLineIndicatorSelected = { fg = c.git.change },
-
         --- Glyph palette
         -- GlyphPalette1 = { fg = c.magenta },
         -- GlyphPalette2 = { fg = c.green },
@@ -714,7 +714,7 @@ function M.setup(palette)
         -- NeotestFailed = { fg = c.red },
         -- NeotestSkipped = { fg = c.blue },
         -- NeotestTest = { fg = c.fg_sidebar },
-        -- NeotestNamespace = { fg = c.green2 },
+        -- NeotestNamespace = { fg = c.green_alt },
         -- NeotestFocused = { fg = c.yellow },
         -- NeotestFile = { fg = c.teal },
         -- NeotestDir = { fg = c.blue },
