@@ -45,7 +45,7 @@ function M.setup(palette)
         EndOfBuffer = { fg = c.grey_darker }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
         ErrorMsg = { fg = c.white, bg = c.red }, -- error messages on the command line
         FloatBorder = { fg = c.border_highlight, bg = c.bg_float },
-        -- FloatTitle = { fg = c.border_highlight, bg = c.bg_float },
+        FloatTitle = { fg = c.border_highlight, bg = c.bg_float },
         Folded = { fg = c.blue, italic = true }, -- line used for closed folds
         FoldColumn = { fg = c.orange, bg = options.transparent and c.none or c.bg_float }, -- used when foldcolumn ~= 0
         IncSearch = { fg = c.black, bg = c.purple }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
