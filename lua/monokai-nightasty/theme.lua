@@ -87,7 +87,7 @@ function M.setup(palette)
         VertSplit = { fg = c.border }, -- the column separating vertically split windows
         Visual = { bg = c.bg_visual }, -- Visual mode selection
         -- VisualNOS = { bg = c.bg_visual }, -- Semi-deprecated
-        WarningMsg = { fg = c.white, bg = c.red }, -- warning messages
+        WarningMsg = { fg = c.warning, }, -- warning messages -- { fg = c.white, bg = c.red },
         Whitespace = { fg = c.grey_darker }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
         -- WildMenu = { bg = c.bg_visual }, -- current match in 'wildmenu' completion?? not working. Check PmenuSel.
         WinSeparator = { fg = c.border }, -- the column separating vertically split windows
