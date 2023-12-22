@@ -40,13 +40,13 @@ the flavorful
 
 ![Dark Theme](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/a35c81ba-5e54-4b0f-b048-a70d407c2ba3)
 
-### 💨 Dark Theme with transparent background:
-
-![Transparent Dark Theme](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/438a5768-b9bc-47c5-856d-8549981eb6b3)
-
 ### ☀️ Light Theme
 
 ![Light Theme](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/9af725e4-9251-457b-ac8e-c6fe38d7269d)
+
+### 💨 Dark Theme with transparent background:
+
+![Transparent Dark Theme](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/438a5768-b9bc-47c5-856d-8549981eb6b3)
 
 ## 📽 Settings in action
 
@@ -129,15 +129,21 @@ require("monokai-nightasty").setup({
         comments = { italic = true },
     },
 
-    --- You can override specific color/highlights. Color values in `extras/palettes`
+    --- You can override specific color/highlights. Theme color values
+    --- in `extras/palettes`. Also could be any hex RGB color you like.
     on_colors = function(colors)
-        colors.border = colors.grey
-        colors.comment = "#2d7e79"
-    end
-    on_highlights = function(highlights, colors)
-        highlights.TelescopeNormal = { fg = colors.magenta, bg = colors.charcoal }
-        highlights.WinSeparator = { fg = colors.grey }
+        -- Color only for light theme
+        local is_light = vim.o.background == "light"
+        colors.comment = is_light and "#2d7e79" or colors.grey
+        -- Color only for dark theme
+        colors.border = not is_light and colors.magenta or colors.border
     end,
+    on_highlights = function(highlights, colors)
+        -- You could also add styles like bold, underline, italic
+        highlights.TelescopeSelection = { fg = colors.magenta, bold = true }
+        highlights.TelescopeBorder = { fg = colors.grey }
+    end,
+
 })
 
 -- Load the theme AFTER the setup
@@ -165,8 +171,7 @@ How the plugin setup the highlights and colors under the hood:
 2. Then, `colors` is extended and adjusted following the configuration settings.
 
 3. After that, `config.on_colors(colors)` is called, overriding any matching
-   color. Currently, any change with `config.on_colors(colors)` affects both
-   light and dark styles.
+   color.
 
 4. The highlight groups are set using the generated `colors`.
 
@@ -183,6 +188,16 @@ alternatives:
 4. For the theme with the color names instead of the colors code, you could
    check directly the `theme.lua` or `colors.lua` files inside the
    `lua/monokai-nightasty/` directory.
+
+You could set colors for `light` or `dark` themes using boolean logic:
+
+```lua
+on_colors = function(colors)
+    local is_light = vim.o.background == "light"
+    colors.comment = is_light and "#2d7e79" or colors.grey
+    colors.border = not is_light and colors.magenta or colors.border
+end,
+```
 
 ---
 
