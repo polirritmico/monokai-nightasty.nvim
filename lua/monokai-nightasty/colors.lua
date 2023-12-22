@@ -140,6 +140,8 @@ function M.setup(opts)
     colors.bg_highlight = is_light and util.lighten(colors.bg, 0.9, colors.fg)
         or util.darken(colors.bg, 0.9, colors.fg) -- (0.97 for #313131)
 
+    colors.bg_columns = config.options.transparent and colors.bg
+        or util.lighten(colors.bg, 0.98, colors.fg)
     colors.bg_visual = colors.grey_darker
     colors.bg_search = colors.yellow
     colors.fg_search = colors.black
