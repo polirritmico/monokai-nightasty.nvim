@@ -20,9 +20,12 @@ function M.load(opts)
     util.load(theme.setup())
 end
 
+---Toggle `vim.o.background` value to `dark` or `light`.
 function MonokaiToggleLight()
     vim.o.background = (vim.o.background == "dark") and "light" or "dark"
 end
+
+M.toggle = MonokaiToggleLight
 
 M.setup = config.setup
 

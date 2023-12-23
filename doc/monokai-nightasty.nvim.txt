@@ -83,6 +83,12 @@ The Dark/light styles could be toggled by calling the provided function:
     :MonokaiToggleLight
 <
 
+In **Lua**
+
+>lua
+    require("monokai-nightasty").toggle()
+<
+
 
 LUALINE                                       *monokai-nightasty.nvim-lualine*
 
