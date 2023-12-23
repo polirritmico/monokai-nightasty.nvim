@@ -80,7 +80,7 @@ No need to use the `setup()` function, just set the `colorscheme`:
 
 ```lua
 vim.opt.background = "dark" -- default to dark or light style
-vim.cmd([[colorscheme monokai-nightasty]])
+vim.cmd.colorscheme("monokai-nightasty")
 ```
 
 #### 💡 Toggle function
@@ -143,11 +143,10 @@ require("monokai-nightasty").setup({
         highlights.TelescopeSelection = { fg = colors.magenta, bold = true }
         highlights.TelescopeBorder = { fg = colors.grey }
     end,
-
 })
 
 -- Load the theme AFTER the setup
-vim.cmd("colorscheme monokai-nightasty")
+vim.cmd.colorscheme("monokai-nightasty")
 
 -- Toggle Dark/Light styles
 vim.keymap.set(
