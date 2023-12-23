@@ -142,9 +142,9 @@ function M.setup(opts)
 
     colors.bg_columns = config.options.transparent and colors.bg
         or util.lighten(colors.bg, 0.98, colors.fg)
-    colors.bg_visual = colors.grey_darker
+    colors.bg_visual = is_light and colors.charcoal or colors.grey_darker
     colors.bg_search = colors.yellow
-    colors.fg_search = colors.black
+    colors.fg_search = is_light and colors.white or colors.black
     colors.fg_sidebar = colors.fg_dark
 
     -- Popups
