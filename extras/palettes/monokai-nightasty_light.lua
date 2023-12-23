@@ -1,5 +1,6 @@
 local colors = {
   bg = "#ffffff",
+  bg_columns = "#fbfbfb",
   bg_dark = "#e1e1e1",
   bg_darker = "#d0d0d0",
   bg_float = "#dedede",
@@ -8,14 +9,14 @@ local colors = {
   bg_menuselbar = "#d5d5d5",
   bg_popup = "#dedede",
   bg_search = "#ff8f00",
-  bg_sidebar = "#dedede",
+  bg_sidebar = "#f1f1f1",
   bg_status_alt = "#e3e3e3",
   bg_statusline = "#f1f1f1",
-  bg_visual = "#bfbfbf",
+  bg_visual = "#e3e3e3",
   black = "#000001",
   blue = "#00b3e3",
   blue_alt = "#0087ff",
-  border = "#7f7f7f",
+  border = "#00b3e3",
   border_highlight = "#333333",
   charcoal = "#e3e3e3",
   charcoal_light = "#d8d8d8",
@@ -32,7 +33,7 @@ local colors = {
   fg_dark = "#171717",
   fg_float = "#333333",
   fg_gutter = "#c9c9c9",
-  fg_search = "#000001",
+  fg_search = "#ffffff",
   fg_sidebar = "#171717",
   fg_statusline = "#171717",
   git = {
@@ -229,6 +230,9 @@ local highlights = {
     link = "@function"
   },
   ["@lsp.typemod.variable.defaultLibrary"] = {
+    link = "@variable.builtin"
+  },
+  ["@lsp.typemod.variable.global.lua"] = {
     link = "@variable.builtin"
   },
   ["@lsp.typemod.variable.injected"] = {
@@ -502,6 +506,9 @@ local highlights = {
   Boolean = {
     fg = "#6054d0"
   },
+  BufferLineIndicatorSelected = {
+    fg = "#ff4d00"
+  },
   Character = {
     fg = "#6054d0"
   },
@@ -650,7 +657,7 @@ local highlights = {
     bg = "#e1e1e1"
   },
   ColorColumn = {
-    bg = "#ffffff"
+    bg = "#fbfbfb"
   },
   Comment = {
     fg = "#7f7f7f",
@@ -834,6 +841,10 @@ local highlights = {
     bg = "#dedede",
     fg = "#333333"
   },
+  FloatTitle = {
+    bg = "#dedede",
+    fg = "#333333"
+  },
   FoldColumn = {
     bg = "#dedede",
     fg = "#ff4d00"
@@ -920,7 +931,8 @@ local highlights = {
   },
   IncSearch = {
     bg = "#6054d0",
-    fg = "#000001"
+    bold = true,
+    fg = "#ffffff"
   },
   Include = {
     fg = "#ff004b"
@@ -1115,7 +1127,7 @@ local highlights = {
     fg = "#171717"
   },
   MsgSeparator = {
-    sp = "#7f7f7f",
+    sp = "#00b3e3",
     underline = true
   },
   NavicIconsArray = {
@@ -1241,11 +1253,11 @@ local highlights = {
     fg = "#c9c9c9"
   },
   NeoTreeNormal = {
-    bg = "#dedede",
+    bg = "#f1f1f1",
     fg = "#171717"
   },
   NeoTreeNormalNC = {
-    bg = "#dedede",
+    bg = "#f1f1f1",
     fg = "#171717"
   },
   NoiceCompletionItemKindArray = {
@@ -1375,7 +1387,7 @@ local highlights = {
     fg = "#333333"
   },
   NormalSB = {
-    bg = "#dedede",
+    bg = "#f1f1f1",
     fg = "#171717"
   },
   NotifyBackground = {
@@ -1474,11 +1486,11 @@ local highlights = {
     fg = "#c9c9c9"
   },
   NvimTreeNormal = {
-    bg = "#dedede",
+    bg = "#f1f1f1",
     fg = "#171717"
   },
   NvimTreeNormalNC = {
-    bg = "#dedede",
+    bg = "#f1f1f1",
     fg = "#171717"
   },
   NvimTreeOpenedFile = {
@@ -1500,8 +1512,8 @@ local highlights = {
     fg = "#00b3e3"
   },
   NvimTreeWinSeparator = {
-    bg = "#dedede",
-    fg = "#dedede"
+    bg = "#f1f1f1",
+    fg = "#f1f1f1"
   },
   Operator = {
     fg = "#ff004b"
@@ -1568,7 +1580,7 @@ local highlights = {
     fg = "#c9c9c9"
   },
   SignColumnSB = {
-    bg = "#dedede",
+    bg = "#f1f1f1",
     fg = "#c9c9c9"
   },
   Special = {
@@ -1650,14 +1662,6 @@ local highlights = {
   TelescopeSelectionCaret = {
     bg = "#f1f1f1",
     fg = "#ff004b"
-  },
-  TermCursor = {
-    bg = "#333333",
-    fg = "#ffffff"
-  },
-  TermCursorNC = {
-    bg = "#171717",
-    fg = "#ffffff"
   },
   Title = {
     bold = true,
@@ -1745,7 +1749,7 @@ local highlights = {
     bg = "#d4d4d4"
   },
   TreesitterContextBottom = {
-    sp = "#7f7f7f",
+    sp = "#00b3e3",
     underline = true
   },
   Type = {},
@@ -1756,26 +1760,25 @@ local highlights = {
     underline = true
   },
   VertSplit = {
-    fg = "#7f7f7f"
+    fg = "#00b3e3"
   },
   Visual = {
-    bg = "#bfbfbf"
+    bg = "#e3e3e3"
   },
   WarningMsg = {
-    bg = "#ff005f",
-    fg = "#ffffff"
+    fg = "#ff4d00"
   },
   WhichKey = {
     fg = "#ff8f00"
   },
   WhichKeyBorder = {
-    bg = "#dedede"
+    bg = "#f1f1f1"
   },
   WhichKeyDesc = {
     fg = "#333333"
   },
   WhichKeyFloat = {
-    bg = "#dedede"
+    bg = "#f1f1f1"
   },
   WhichKeyGroup = {
     fg = "#ff004b"
@@ -1791,14 +1794,14 @@ local highlights = {
     fg = "#bfbfbf"
   },
   WinSeparator = {
-    fg = "#7f7f7f"
+    fg = "#00b3e3"
   },
   debugBreakpoint = {
     bg = "#e6f3ff",
     fg = "#0087ff"
   },
   debugPC = {
-    bg = "#dedede"
+    bg = "#f1f1f1"
   },
   diffAdded = {
     fg = "#4fb000"
