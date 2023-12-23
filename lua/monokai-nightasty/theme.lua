@@ -81,15 +81,13 @@ function M.setup(palette)
         TabLine = { fg = c.fg_statusline, bg = c.bg_statusline, underline = true }, -- tab pages line, not active tab page label
         TabLineFill = { bg = c.grey_darker }, -- tab pages line, where there are no labels
         TabLineSel = { bg = c.bg }, -- tab pages line, active tab page label
-        TermCursor  = { fg = c.bg, bg = c.fg }, -- cursor in a focused terminal
-        TermCursorNC= { fg = c.bg, bg = c.fg_dark }, -- cursor in an unfocused terminal
+        -- TermCursor  = { fg = c.bg, bg = c.fg }, -- cursor in a focused terminal
+        -- TermCursorNC= { fg = c.bg, bg = c.fg_dark }, -- cursor in an unfocused terminal
         Title = { fg = c.fg, bold = true }, -- titles for output from ":set all", ":autocmd" etc.
         VertSplit = { fg = c.border }, -- the column separating vertically split windows
         Visual = { bg = c.bg_visual }, -- Visual mode selection
-        -- VisualNOS = { bg = c.bg_visual }, -- Semi-deprecated
         WarningMsg = { fg = c.warning, }, -- warning messages -- { fg = c.white, bg = c.red },
         Whitespace = { fg = c.grey_darker }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
-        -- WildMenu = { bg = c.bg_visual }, -- current match in 'wildmenu' completion?? not working. Check PmenuSel.
         WinSeparator = { fg = c.border }, -- the column separating vertically split windows
         lCursor = { fg = c.bg, bg = c.blue }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
 
