@@ -418,6 +418,12 @@ function M.setup(palette)
         NavicText = { fg = c.fg, bg = c.none },
         NavicSeparator = { fg = c.fg, bg = c.none },
 
+        --- Noice
+        NoiceLspProgressTitle = { fg = c.orange, italic = true, }, -- Progress operation text
+        NoiceLspProgressSpinner = { fg = c.green }, -- Spinner and ticket
+        NoiceFormatProgressDone = { fg = c.fg, bg = c.orange, bold = true }, -- bg = Bar color, fg = text above
+        NoiceMini = { bg = c.bg_float },
+
         --- Notify
         NotifyBackground = { fg = c.fg, bg = c.bg },
         -- Border
