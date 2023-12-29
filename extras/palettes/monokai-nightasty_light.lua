@@ -3,7 +3,7 @@ local colors = {
   bg_columns = "#fbfbfb",
   bg_dark = "#e1e1e1",
   bg_darker = "#d0d0d0",
-  bg_float = "#dedede",
+  bg_float = "#e3e3e3",
   bg_highlight = "#ebebeb",
   bg_menusel = "#ababab",
   bg_menuselbar = "#d5d5d5",
@@ -513,11 +513,11 @@ local highlights = {
     fg = "#6054d0"
   },
   CmpDocumentation = {
-    bg = "#dedede",
+    bg = "#e3e3e3",
     fg = "#333333"
   },
   CmpDocumentationBorder = {
-    bg = "#dedede",
+    bg = "#e3e3e3",
     fg = "#333333"
   },
   CmpGhostText = {
@@ -838,15 +838,15 @@ local highlights = {
     fg = "#6054d0"
   },
   FloatBorder = {
-    bg = "#dedede",
+    bg = "#e3e3e3",
     fg = "#333333"
   },
   FloatTitle = {
-    bg = "#dedede",
+    bg = "#e3e3e3",
     fg = "#333333"
   },
   FoldColumn = {
-    bg = "#dedede",
+    bg = "#e3e3e3",
     fg = "#ff4d00"
   },
   Folded = {
@@ -985,7 +985,7 @@ local highlights = {
     fg = "#4fb000"
   },
   LspInfoBorder = {
-    bg = "#dedede",
+    bg = "#e3e3e3",
     fg = "#333333"
   },
   LspKindArray = {
@@ -1379,7 +1379,7 @@ local highlights = {
     fg = "#333333"
   },
   NormalFloat = {
-    bg = "#dedede",
+    bg = "#e3e3e3",
     fg = "#333333"
   },
   NormalNC = {
@@ -1645,11 +1645,11 @@ local highlights = {
     fg = "#6054d0"
   },
   TelescopeBorder = {
-    bg = "#dedede",
+    bg = "#e3e3e3",
     fg = "#333333"
   },
   TelescopeNormal = {
-    bg = "#dedede",
+    bg = "#e3e3e3",
     fg = "#4c4c4c"
   },
   TelescopePromptPrefix = {
@@ -1855,7 +1855,7 @@ local highlights = {
     fg = "#ff4d00"
   },
   helpCommand = {
-    bg = "#dedede",
+    bg = "#e3e3e3",
     fg = "#00b3e3"
   },
   htmlH1 = {
