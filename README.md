@@ -111,55 +111,91 @@ require("lualine").setup({
 
 #### Full defaults:
 
-Check the `defaults` table in the [config.lua](lua/monokai-nightasty/config.lua)
-file.
-
-#### Full configuration example:
+Monkai Nightasty comes with these defaults:
 
 ```lua
--- Highlight line at the cursor position
-vim.opt.cursorline = true
-
--- Default to dark theme
-vim.o.background = "dark"  -- dark | light
-
-require("monokai-nightasty").setup({
-    dark_style_background = "transparent", -- default, dark, transparent, #color
+{
+    dark_style_background = "default", -- default, dark, transparent, #color
     light_style_background = "default", -- default, dark, transparent, #color
-    color_headers = true, -- Enable header colors for each header level (h1, h2, etc.)
-    lualine_bold = true,
-    lualine_style = "default", -- "dark", "light" or "default" (Follows dark/light style)
-    -- Style to be applied to different syntax groups. See `:help nvim_set_hl`
+    terminal_colors = true, -- Set the colors used when opening a `:terminal`
+    color_headers = false, -- Enable header colors for each header level (h1, h2, etc.)
     hl_styles = {
-        keywords = { italic = true },
+        -- Style to be applied to different syntax groups. See `:help nvim_set_hl`
         comments = { italic = true },
+        keywords = { italic = false },
+        functions = {},
+        variables = {},
+        -- Background styles for sidebars (panels) and floating windows:
+        floats = "default", -- default, dark, transparent
+        sidebars = "default", -- default, dark, transparent
     },
+    sidebars = { "qf", "help" }, -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`
 
-    --- You can override specific color/highlights. Theme color values
-    --- in `extras/palettes`. Also could be any hex RGB color you like.
-    on_colors = function(colors)
-        -- Color only for light theme
-        local is_light = vim.o.background == "light"
-        colors.comment = is_light and "#2d7e79" or colors.grey
-        -- Color only for dark theme
-        colors.border = not is_light and colors.magenta or colors.border
+    hide_inactive_statusline = false, -- Hide inactive statuslines and replace them with a thin border instead. Should work with the standard **StatusLine** and **LuaLine**.
+    dim_inactive = false, -- dims inactive windows
+    lualine_bold = true, -- Lualine headers will be bold or regular.
+    lualine_style = "default", -- "dark", "light" or "default" (Follows dark/light style)
+
+    --- You can override specific color groups to use other groups or a hex color
+    --- function will be called with a the theme ColorScheme table
+    on_colors = function(colors) end,
+
+    --- You can override specific highlights to use other groups or a hex color
+    --- function will be called with the theme Highlights and ColorScheme tables
+    on_highlights = function(highlights, colors) end,
+}
+```
+
+
+#### Full Configuration example (with Lazy):
+
+```lua
+return {
+    "polirritmico/monokai-nightasty.nvim",
+    lazy = false,
+    priority = 1000,
+    keys = {
+        { "<leader>tt", "<cmd>MonokaiToggleLight<cr>", desc = "Monokai-Nightasty: Toggle dark/light theme." },
+    },
+    opts = {
+        dark_style_background = "transparent", -- default, dark, transparent, #color
+        light_style_background = "default", -- default, dark, transparent, #color
+        color_headers = true, -- Enable header colors for each header level (h1, h2, etc.)
+        lualine_bold = true, -- Lualine a and z sections font width
+        lualine_style = "default", -- "dark", "light" or "default" (Follows dark/light style)
+        -- Style to be applied to different syntax groups. See `:help nvim_set_hl`
+        hl_styles = {
+            keywords = { italic = true },
+            comments = { italic = true },
+        },
+
+        --- You can override specific color/highlights. Theme color values
+        --- in `extras/palettes`. Also could be any hex RGB color you like.
+        on_colors = function(colors)
+            -- Custom color only for light theme
+            local current_is_light = vim.o.background == "light"
+            colors.comment = current_is_light and "#2d7e79" or colors.grey
+            -- Custom color only for dark theme
+            colors.border = not current_is_light and colors.magenta or colors.border
+        end,
+        on_highlights = function(highlights, colors)
+            -- You could add styles like bold, underline, italic
+            highlights.TelescopeSelection = { bold = true }
+            highlights.TelescopeBorder = { fg = colors.grey }
+            highlights["@lsp.type.property.lua"] = { fg = colors.fg }
+        end,
+    },
+    config = function(_, opts)
+        -- Highlight line at the cursor position
+        vim.opt.cursorline = true
+
+        -- Default to dark theme
+        vim.o.background = "dark"  -- dark | light
+
+        require("monokai-nightasty").load(opts)
     end,
-    on_highlights = function(highlights, colors)
-        -- You could also add styles like bold, underline, italic
-        highlights.TelescopeSelection = { fg = colors.magenta, bold = true }
-        highlights.TelescopeBorder = { fg = colors.grey }
-    end,
-})
 
--- Load the theme AFTER the setup
-vim.cmd.colorscheme("monokai-nightasty")
-
--- Toggle Dark/Light styles
-vim.keymap.set(
-    {"n", "v"}, "<leader>tl", "<CMD>MonokaiToggleLight<CR>",
-    {silent = true, desc = "Monokai-NighTasty: Toggle light/dark theme"}
-)
-
+}
 ```
 
 ---
@@ -180,8 +216,8 @@ How the plugin setup the highlights and colors under the hood:
 
 4. The highlight groups are set using the generated `colors`.
 
-5. Finally, `config.on_highlights(highlights, colors)` can be used to override highlight
-   groups.
+5. Finally, `config.on_highlights(highlights, colors)` can be used to override
+   highlight groups.
 
 To get the name of a highlight group or to find the used color, here are some
 alternatives:
