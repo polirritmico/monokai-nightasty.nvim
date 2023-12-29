@@ -106,7 +106,7 @@ ADVANCED CONFIGURATION         *monokai-nightasty.nvim-advanced-configuration*
 
 FULL DEFAULTS: ~
 
-Monkai Nightasty comes with these defaults:
+Monokai Nightasty comes with these defaults:
 
 >lua
     {
@@ -142,7 +142,7 @@ Monkai Nightasty comes with these defaults:
 <
 
 
-FULL CONFIGURATION EXAMPLE (WITH LAZY): ~
+FULL CONFIGURATION EXAMPLE (FOR LAZY): ~
 
 >lua
     return {

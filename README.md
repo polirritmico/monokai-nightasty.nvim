@@ -111,7 +111,7 @@ require("lualine").setup({
 
 #### Full defaults:
 
-Monkai Nightasty comes with these defaults:
+Monokai Nightasty comes with these defaults:
 
 ```lua
 {
@@ -147,7 +147,7 @@ Monkai Nightasty comes with these defaults:
 ```
 
 
-#### Full Configuration example (with Lazy):
+#### Full configuration example (for Lazy):
 
 ```lua
 return {
