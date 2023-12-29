@@ -132,8 +132,9 @@ function M.setup(opts)
         or is_light and colors.bg_statusline
         or colors.charcoal_medium
     colors.bg_float = config.options.hl_styles.floats == "transparent" and colors.none
+        or (config.options.hl_styles.floats == "dark" and is_light) and colors.charcoal_medium
         or config.options.hl_styles.floats == "dark" and colors.bg_dark
-        or colors.charcoal_medium
+        or colors.charcoal
     colors.fg_float = colors.fg
 
     -- Set the background for the current line (current cursor position)
