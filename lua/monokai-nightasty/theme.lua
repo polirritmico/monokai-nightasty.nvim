@@ -55,7 +55,7 @@ function M.setup(palette)
         ModeMsg = { fg = c.fg_dark, bold = true }, -- 'showmode' message (e.g., "-- INSERT -- ")
         MoreMsg = { fg = c.green }, -- |more-prompt|
         MsgArea = { fg = c.fg_dark }, -- Area for messages and cmdline
-        MsgSeparator= { sp = c.border, underline = true }, -- Separator for scrolled messages, `msgsep` flag of 'display'
+        MsgSeparator = { sp = c.border, underline = true }, -- Separator for scrolled messages, `msgsep` flag of 'display'
         NonText = { fg = c.grey_darker }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
         Normal = { fg = c.fg, bg = options.transparent and c.none or c.bg }, -- normal text
         NormalFloat = { fg = c.fg_float, bg = c.bg_float }, -- Normal text in floating windows.
@@ -86,7 +86,7 @@ function M.setup(palette)
         Title = { fg = c.fg, bold = true }, -- titles for output from ":set all", ":autocmd" etc.
         VertSplit = { fg = c.border }, -- the column separating vertically split windows
         Visual = { bg = c.bg_visual }, -- Visual mode selection
-        WarningMsg = { fg = c.warning, }, -- warning messages -- { fg = c.white, bg = c.red },
+        WarningMsg = { fg = c.warning }, -- warning messages { fg = c.white, bg = c.red },
         Whitespace = { fg = c.grey_darker }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
         WinSeparator = { fg = c.border }, -- the column separating vertically split windows
         lCursor = { fg = c.bg, bg = c.blue }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
@@ -419,7 +419,7 @@ function M.setup(palette)
         NavicSeparator = { fg = c.fg, bg = c.none },
 
         --- Noice
-        NoiceLspProgressTitle = { fg = c.orange, italic = true, }, -- Progress operation text
+        NoiceLspProgressTitle = { fg = c.orange, italic = true }, -- Progress operation text
         NoiceLspProgressSpinner = { fg = c.green }, -- Spinner and ticket
         NoiceFormatProgressDone = { fg = c.fg, bg = c.orange, bold = true }, -- bg = Bar color, fg = text above
         NoiceMini = { bg = c.bg_float },
@@ -777,7 +777,7 @@ function M.setup(palette)
         File = "Normal",
         Folder = "Directory",
         Function = "@function",
-        Interface = "KindParameter",-- "@lsp.type.interface",
+        Interface = "KindParameter", -- "@lsp.type.interface",
         Key = "@field",
         Keyword = "@keyword",
         Method = "@method",
@@ -794,7 +794,7 @@ function M.setup(palette)
         String = "@string",
         Struct = "Structure", -- "@lsp.type.struct",
         Text = "@text",
-        TypeParameter = "KindParameter",-- "@lsp.type.typeParameter",
+        TypeParameter = "KindParameter", -- "@lsp.type.typeParameter",
         Unit = "Structure", --"@lsp.type.struct",
         Value = "KindParameter", --"@string",
         Variable = "@variable",
