@@ -470,9 +470,21 @@ function M.setup(palette)
             fg = options.hl_styles.sidebars == "transparent" and c.border or c.bg_sidebar,
             bg = c.bg_sidebar,
         },
+
+        --- Neotree
+        NeoTreeDirectoryIcon = { fg = c.blue },
+        NeoTreeDirectoryName = { fg = c.fg },
+        NeoTreeGitDeleted = { fg = c.git.delete },
+        NeoTreeGitModified = { fg = c.git.change },
+        NeoTreeGitAdded = { fg = c.git.add },
+        NeoTreeIndentMarkder = { fg = c.fg_gutter },
         NeoTreeNormal = { fg = c.fg_sidebar, bg = c.bg_sidebar },
         NeoTreeNormalNC = { fg = c.fg_sidebar, bg = c.bg_sidebar },
+        NeoTreeFileNameOpened = { fg = c.orange },
+        NeoTreeRootName = { fg = c.magenta, italic = true },
         NeoTreeDimText = { fg = c.fg_gutter },
+        NeoTreeWinSeparator = { link = "NvimTreeWinSeparator" },
+
 
         --- Rainbow Delimiters
         RainbowDelimiterRed = { fg = c.magenta },
