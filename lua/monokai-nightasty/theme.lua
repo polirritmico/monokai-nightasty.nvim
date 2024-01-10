@@ -48,7 +48,7 @@ function M.setup(palette)
         FloatTitle = { fg = c.border_highlight, bg = c.bg_float },
         Folded = { fg = c.blue, italic = true }, -- line used for closed folds
         FoldColumn = { fg = c.orange, bg = options.transparent and c.none or c.bg_float }, -- used when foldcolumn ~= 0
-        IncSearch = { fg = c.fg_search, bg = c.purple, bold = true }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+        IncSearch = { fg = c.fg_search, bg = c.purple, bold = true }, -- 'IncSearch' highlighting; also used for the text replaced with ":s///c"
         LineNr = { fg = c.fg_gutter }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
         LineNrBe = { fg = c.green },
         MatchParen = { fg = c.magenta, bold = true, underline = true }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
@@ -417,6 +417,21 @@ function M.setup(palette)
         --- Navic
         NavicText = { fg = c.fg, bg = c.none },
         NavicSeparator = { fg = c.fg, bg = c.none },
+
+        --- Netrw
+        netrwClassify = { fg = c.magenta },
+        netrwCmdNote = { fg = c.fg_dark },
+        netrwDir = { fg = c.yellow },
+        netrwExe = { fg = c.orange },
+        netrwHelpCmd = { fg = c.orange, bold = true },
+        netrwLink = { fg = c.magenta },
+        netrwList = { fg = c.yellow },
+        netrwMarkFile = { fg = c.black, bg = c.orange, bold = true },
+        netrwPlain = { fg = c.fg_dark },
+        netrwQuickHelp = { fg = c.fg_dark , italic = true },
+        netrwSymLink = { fg = c.blue, italic = true },
+        netrwTreeBar = { fg = c.fg_gutter, nocombine = true },
+        netrwVersion = { fg = c.orange, italic = true },
 
         --- Noice
         NoiceLspProgressTitle = { fg = c.orange, italic = true }, -- Progress operation text
