@@ -198,10 +198,57 @@ function M.setup(palette)
         Hlargs = { fg = c.yellow },
 
         --- Treesitter highlights
-        -- As of writing, tree-sitter support is a WIP, group names may change.
+        -- https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights
+        ["@annotation"] = { link = "PreProc" },
+        ["@attribute"] = { link = "PreProc" },
+        ["@boolean"] = { link = "Boolean" },
+        ["@character"] = { link = "Character" },
+        ["@character.special"] = { link = "SpecialChar" },
+        ["@comment"] = { link = "Comment" },
+        ["@conditional"] = { link = "Conditional" },
+        ["@constant"] = { link = "Constant" },
+        ["@constant.builtin"] = { link = "Special" },
+        ["@constant.macro"] = { link = "Define" },
+        ["@debug"] = { link = "Debug" },
+        ["@define"] = { link = "Define" },
+        -- ["@error"] = { link = "" },
+        ["@exception"] = { link = "Exception" },
+        ["@float"] = { link = "Float" },
+        ["@function"] = { link = "Function" },
+        ["@function.call"] = { link = "@function" },
+        ["@function.macro"] = { link = "Macro" },
+        ["@include"] = { link = "Include" },
+        ["@keyword.coroutine"] = { link = "@keyword" },
+        ["@keyword.operator"] = { link = "@operator" },
+        ["@keyword.return"] = { link = "@keyword" },
+        -- ["@label"] = { link = "" },
+        ["@method"] = { link = "Function" },
+        ["@method.call"] = { link = "@method" },
+        ["@none"] = {},
+        ["@number"] = { link = "Number" },
+        -- ["@operator"] = { link = "" },
+        -- ["@parameter.reference"] = { link = "" },
+        -- ["@punctuation.special"] = { link = "" },
+        ["@repeat"] = { link = "Repeat" },
+        ["@storageclass"] = { link = "StorageClass" },
+        ["@string"] = { link = "String" },
+        ["@string.special"] = { link = "SpecialChar" },
+        ["@symbol"] = { link = "Identifier" },
+        ["@text"] = { link = "@none" },
+        ["@text.emphasis"] = { italic = true },
+        ["@text.environment"] = { link = "Macro" },
+        ["@text.environment.name"] = { link = "Type" },
+        ["@text.literal"] = { link = "String" },
+        ["@text.math"] = { link = "Special" },
+        ["@text.note"] = { link = "SpecialComment" },
+        ["@text.strike"] = { strikethrough = true },
+        ["@text.strong"] = { bold = true },
+        ["@text.todo"] = { link = "Todo" },
+        ["@text.underline"] = { underline = true },
+        ["@type.definition"] = { link = "Typedef" },
+        ["@type.qualifier"] = { link = "@keyword" },
 
         --- Misc
-        -- ["@comment.documentation"] = { link = "Comment" },
         ["@preproc"] = { fg = c.grey, italic = true },
 
         --- Punctuation
@@ -235,7 +282,6 @@ function M.setup(palette)
         ["@attribute.builtin"] = { fg = c.magenta, italic = true }, -- Variable names that are defined by the languages, like `this` or `self`.
         ["@variable"] = { fg = c.fg, style = options.hl_styles.variables }, -- Any variable name that does not have another highlight.
         ["@variable.builtin"] = { fg = c.grey_light, italic = true }, -- Variable names that are defined by the languages, like `this` or `self`.
-        -- ["@namespace.builtin"] = { fg = c.grey_light, italic = true },
 
         ["@tag"] = { fg = c.magenta },
         ["@tag.attribute"] = { fg = c.blue, italic = true },
