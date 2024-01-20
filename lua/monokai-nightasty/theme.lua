@@ -204,7 +204,7 @@ function M.setup(palette)
     ["@variable"] = { fg = c.fg, style = options.hl_styles.variables }, -- any variable name that does not have another highlight.
     ["@variable.builtin"] = { fg = c.grey_light, italic = true }, -- built-in variable names (e.g. `this`, `self`)
     ["@variable.parameter"] = { fg = c.orange, italic = true }, -- parameters of a function
-    -- ["@variable.member"] = {}, -- object and struct fields
+    ["@variable.member"] = { fg = c.fg }, -- object and struct fields
 
     ["@constant"] = { link = "Constant" }, -- constant identifiers
     ["@constant.builtin"] = { link = "Special" }, -- built-in constant values
@@ -820,14 +820,14 @@ function M.setup(palette)
     Enum = "@lsp.type.enum",
     EnumMember = "Structure", -- "@lsp.type.enumMember",
     Event = "Special",
-    Field = "@variable.field",
+    Field = "@variable.member",
     File = "Normal",
     Folder = "Directory",
     Function = "@function",
     Interface = "KindParameter", -- "@lsp.type.interface",
-    Key = "@variable.field",
+    Key = "@variable.member",
     Keyword = "@keyword",
-    Method = "@method",
+    Method = "@function.method",
     Module = "Special",
     Namespace = "KindText",
     Null = "@constant.builtin",
@@ -836,14 +836,14 @@ function M.setup(palette)
     Operator = "Operator",
     Package = "@module",
     Property = "@property",
-    Reference = "@markup.link.url",
+    Reference = "@markup.link.url", -- @markup.link
     Snippet = "KindConceal", -- Conceal
     String = "@string",
     Struct = "Structure", -- "@lsp.type.struct",
     Text = "@markup",
-    TypeParameter = "KindParameter", -- "@lsp.type.typeParameter",
-    Unit = "Structure", --"@lsp.type.struct",
-    Value = "KindParameter", --"@string",
+    TypeParameter = "KindParameter",
+    Unit = "Structure",
+    Value = "KindParameter",
     Variable = "@variable",
   }
   local kind_plugins = {
