@@ -57,6 +57,7 @@ https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/51fb86fe-
 ## 📋 Requirements
 
 - [Neovim](https://neovim.io/) >= 0.9.0
+- [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) > 0.9.2
 
 
 ## 📦 Installation
