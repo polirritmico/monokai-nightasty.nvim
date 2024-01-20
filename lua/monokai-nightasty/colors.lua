@@ -156,9 +156,11 @@ function M.setup(opts)
 
     -- For lsp floats messages, git, diffs, etc.
     colors.error = colors.red
-    colors.warning = colors.orange
-    colors.info = colors.blue_alt
     colors.hint = colors.green_alt
+    colors.info = colors.blue_alt
+    colors.note = colors.yellow
+    colors.todo = colors.purple
+    colors.warning = colors.orange
     colors.diff = {
         add = util.darken(colors.green, 0.15),
         delete = util.darken(colors.red, 0.15),

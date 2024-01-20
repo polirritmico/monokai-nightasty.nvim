@@ -198,120 +198,143 @@ function M.setup(palette)
         Hlargs = { fg = c.yellow },
 
         --- Treesitter highlights
-        -- https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights
-        ["@annotation"] = { link = "PreProc" },
-        ["@attribute"] = { link = "PreProc" },
-        ["@boolean"] = { link = "Boolean" },
-        ["@character"] = { link = "Character" },
-        ["@character.special"] = { link = "SpecialChar" },
-        ["@comment"] = { link = "Comment" },
-        ["@conditional"] = { link = "Conditional" },
-        ["@constant"] = { link = "Constant" },
-        ["@constant.builtin"] = { link = "Special" },
-        ["@constant.macro"] = { link = "Define" },
-        ["@debug"] = { link = "Debug" },
-        ["@define"] = { link = "Define" },
-        -- ["@error"] = { link = "" },
-        ["@exception"] = { link = "Exception" },
-        ["@float"] = { link = "Float" },
-        ["@function"] = { link = "Function" },
-        ["@function.call"] = { link = "@function" },
-        ["@function.macro"] = { link = "Macro" },
-        ["@include"] = { link = "Include" },
-        ["@keyword.coroutine"] = { link = "@keyword" },
-        ["@keyword.operator"] = { link = "@operator" },
-        ["@keyword.return"] = { link = "@keyword" },
-        -- ["@label"] = { link = "" },
-        ["@method"] = { link = "Function" },
-        ["@method.call"] = { link = "@method" },
-        ["@none"] = {},
-        ["@number"] = { link = "Number" },
-        -- ["@operator"] = { link = "" },
-        -- ["@parameter.reference"] = { link = "" },
-        -- ["@punctuation.special"] = { link = "" },
-        ["@repeat"] = { link = "Repeat" },
-        ["@storageclass"] = { link = "StorageClass" },
-        ["@string"] = { link = "String" },
-        ["@string.special"] = { link = "SpecialChar" },
-        ["@symbol"] = { link = "Identifier" },
-        ["@text"] = { link = "@none" },
-        ["@text.emphasis"] = { italic = true },
-        ["@text.environment"] = { link = "Macro" },
-        ["@text.environment.name"] = { link = "Type" },
-        ["@text.literal"] = { link = "String" },
-        ["@text.math"] = { link = "Special" },
-        ["@text.note"] = { link = "SpecialComment" },
-        ["@text.strike"] = { strikethrough = true },
-        ["@text.strong"] = { bold = true },
-        ["@text.todo"] = { link = "Todo" },
-        ["@text.underline"] = { underline = true },
-        ["@type.definition"] = { link = "Typedef" },
-        ["@type.qualifier"] = { link = "@keyword" },
+        -- from https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights
 
-        --- Misc
-        ["@preproc"] = { fg = c.grey, italic = true },
+        -- Identifiers
+        ["@variable"] = { fg = c.fg, style = options.hl_styles.variables }, -- any variable name that does not have another highlight.
+        ["@variable.builtin"] = { fg = c.grey_light, italic = true }, -- built-in variable names (e.g. `this`, `self`)
+        ["@variable.parameter"] = { fg = c.orange, italic = true }, -- parameters of a function
+        -- ["@variable.member"] = {}, -- object and struct fields
 
-        --- Punctuation
-        ["@punctuation.delimiter"] = { fg = c.grey }, -- For delimiters ie: `.`
-        ["@punctuation.bracket"] = { fg = c.magenta }, -- For brackets and parens.
-        -- ["@punctuation.special"] = { fg = c.blue }, -- For special punctutation that does not fall in the catagories before.
+        ["@constant"] = { link = "Constant" }, -- constant identifiers
+        ["@constant.builtin"] = { link = "Special" }, -- built-in constant values
+        ["@constant.macro"] = { link = "Define" }, -- constants defined by the preprocessor
 
-        --- Literals
-        ["@string.documentation"] = { link = "Comment" },
-        ["@string.regex"] = { fg = c.orange }, -- For regexes. Perl/test.pl
-        ["@string.escape"] = { fg = c.purple }, -- For escape characters within a string.
+        ["@module"] = { link = "Include" }, -- modules or namespaces
+        -- ["@module.builtin"] = {}, -- built-in modules or namespaces
+        -- ["@label"] = {}, -- GOTO and other labels (e.g. `label:` in C), including heredoc labels
 
-        --- Functions
-        ["@constructor"] = { fg = c.blue, italic = true },
-        ["@parameter"] = { fg = c.orange, italic = true }, -- For parameters of a function
-        ["@function.builtin"] = { fg = c.green },
-        -- ["@parameter.builtin"] = { fg = util.darken(c.orange, 0.8) }, -- For builtin parameters of a function e.g. "..."
+        -- Literals
+        ["@string"] = { link = "String" }, -- string literals
+        ["@string.documentation"] = {}, -- string documenting code (e.g. Python docstrings)
+        ["@string.regexp"] = { fg = c.orange }, -- regular expressions
+        ["@string.escape"] = { fg = c.purple }, -- escape sequences
+        -- ["@string.special"] = {}, -- other special strings (e.g. dates)
+        -- ["@string.special.symbol"] = {}, -- symbols or atoms
+        -- ["@string.special.url"] = {}, -- URIs (e.g. hyperlinks)
+        -- ["@string.special.path"] = {}, -- filenames
 
-        --- Keywords
-        ["@keyword"] = { fg = c.magenta, style = options.hl_styles.keywords }, -- For keywords that don't fall in previous categories.
-        ["@keyword.function"] = { fg = c.blue, italic = true },
-        -- ["@label"] = { fg = c.blue }, -- For labels: `label:` in C and `:label:` in Lua.
+        ["@character"] = { link = "Character" }, -- character literals
+        ["@character.special"] = { link = "SpecialChar" }, -- special characters (e.g. wildcards)
 
-        --- Types
-        ["@type"] = { fg = c.blue },
-        ["@field"] = { fg = c.fg },
-        ["@type.builtin"] = { fg = c.blue, italic = true },
-        ["@property"] = { fg = c.fg_dark },
+        ["@boolean"] = { link = "Boolean" }, -- boolean literals
+        ["@number"] = { link = "Number" }, -- numeric literals
+        ["@number.float"] = { link = "Float" }, -- floating-point number literals
 
-        --- Identifiers
+        -- Types
+        ["@type"] = { fg = c.blue }, -- type or class definitions and annotations
+        ["@type.builtin"] = { fg = c.blue, italic = true }, -- built-in types
+        ["@type.definition"] = { link = "Typedef" }, -- identifiers in type definitions (e.g. `typedef <type> <identifier>` in C)
+        ["@type.qualifier"] = { link = "@keyword" }, -- type qualifiers (e.g. `const`)
+
+        ["@attribute"] = { link = "PreProc" }, -- attribute annotations (e.g. Python decorators)
         ["@attribute.builtin"] = { fg = c.magenta, italic = true }, -- Variable names that are defined by the languages, like `this` or `self`.
-        ["@variable"] = { fg = c.fg, style = options.hl_styles.variables }, -- Any variable name that does not have another highlight.
-        ["@variable.builtin"] = { fg = c.grey_light, italic = true }, -- Variable names that are defined by the languages, like `this` or `self`.
+        ["@property"] = { fg = c.fg_dark }, -- the key in key/value pairs
 
-        ["@tag"] = { fg = c.magenta },
-        ["@tag.attribute"] = { fg = c.blue, italic = true },
-        ["@tag.delimiter"] = { fg = c.grey_light },
-        ["@namespace"] = { link = "Include" },
+        -- Functions
+        ["@function"] = { link = "Function" }, -- function definitions
+        ["@function.builtin"] = { fg = c.green }, -- built-in functions
+        ["@function.call"] = { link = "@function" }, -- function calls
+        ["@function.macro"] = { link = "Macro" }, -- preprocessor macros
 
-        --- Text
-        ["@text.title"] = { link = "Title" },
-        ["@text.title.1.marker"] = { link = "@tag" }, -- #, <h1>, <h2>, etc.
-        ["@text.title.2.marker"] = { link = "@tag" },
-        ["@text.title.3.marker"] = { link = "@tag" },
-        ["@text.title.4.marker"] = { link = "@tag" },
-        ["@text.title.5.marker"] = { link = "@tag" },
-        ["@text.title.6.marker"] = { link = "@tag" },
-        ["@text.quote"] = { fg = c.fg, bg = c.fg_gutter, italic = true },
-        ["@text.reference"] = { fg = c.blue, underline = true }, -- links text -> ![text](url)
-        ["@text.todo.checked"] = { fg = c.magenta }, -- For brackets and parens. [x]
-        ["@text.todo.unchecked"] = { fg = c.magenta }, -- For brackets and parens. [ ]
-        ["@text.uri"] = { fg = c.orange }, -- links url -> ![text](url)
-        ["@text.warning"] = { fg = c.bg, bg = c.warning },
-        ["@text.danger"] = { fg = c.bg, bg = c.error },
-        ["@text.diff.add"] = { link = "DiffAdd" },
-        ["@text.diff.delete"] = { link = "DiffDelete" },
+        ["@function.method"] = { link = "Function" }, -- method definitions
+        ["@function.method.call"] = { link = "@function.method" }, -- method calls
 
-        --- Markdown
-        ["@text.literal.markdown_inline"] = { fg = c.purple },
-        ["@lsp.type.class.markdown"] = { fg = c.yellow },
-        ["@punctuation.bracket.markdown_inline"] = { fg = c.blue },
+        ["@constructor"] = { fg = c.blue, italic = true }, -- constructor calls and definitions
+        ["@operator"] = { link = "Operator" }, -- symbolic operators (e.g. `+` / `*`)
 
-        -- LSP Semantic Token Groups
+        -- Keywords
+        ["@keyword"] = { fg = c.magenta, style = options.hl_styles.keywords }, -- keywords not fitting into specific categories
+        ["@keyword.coroutine"] = { link = "@keyword" }, -- keywords related to coroutines (e.g. `go` in Go, `async/await` in Python)
+        ["@keyword.function"] = { fg = c.blue, italic = true }, -- keywords that define a function (e.g. `func` in Go, `def` in Python)
+        ["@keyword.operator"] = { link = "Operator" }, -- operators that are English words (e.g. `and` / `or`)
+        ["@keyword.import"] = { link = "Include" }, -- keywords for including modules (e.g. `import` / `from` in Python)
+        ["@keyword.storage"] = { link = "StorageClass" }, -- modifiers that affect storage in memory or life-time
+        ["@keyword.repeat"] = { link = "Repeat" }, -- keywords related to loops (e.g. `for` / `while`)
+        ["@keyword.return"] = { link = "@keyword" }, -- keywords like `return` and `yield`
+        ["@keyword.debug"] = { link = "Debug" }, -- keywords related to debugging
+        ["@keyword.exception"] = { link = "Exception" }, -- keywords related to exceptions (e.g. `throw` / `catch`)
+
+        ["@keyword.conditional"] = { link = "Conditional" }, -- keywords related to conditionals (e.g. `if` / `else`)
+        ["@keyword.conditional.ternary"] = { link = "Conditional" }, -- ternary operator (e.g. `?` / `:`)
+
+        ["@keyword.directive"] = { link = "PreProc" }, -- various preprocessor directives & shebangs
+        ["@keyword.directive.define"] = { link = "Define" }, -- preprocessor definition directives
+
+        -- Punctuation
+        ["@punctuation.delimiter"] = { fg = c.grey }, -- delimiters (e.g. `;` / `.` / `,`)
+        ["@punctuation.bracket"] = { fg = c.magenta }, -- brackets (e.g. `()` / `{}` / `[]`)
+        ["@punctuation.special"] = { link = "Delimiter" }, -- special symbols (e.g. `{}` in string interpolation)
+
+        -- Comments
+        ["@comment"] = { link = "Comment" }, -- line and block comments
+        ["@comment.documentation"] = { link = "Comment" }, -- comments documenting code
+
+        ["@comment.error"] = { fg = c.bg, bg = c.error }, -- error-type comments (e.g. `ERROR`, `FIXME`, `DEPRECATED:`)
+        ["@comment.warning"] = { fg = c.bg, bg = c.warning }, -- warning-type comments (e.g. `WARNING:`, `FIX:`, `HACK:`)
+        ["@comment.todo"] = { fg = c.bg, bg = c.todo }, -- todo-type comments (e.g. `TODO:`, `WIP:`, `FIXME:`)
+        ["@comment.note"] = { fg = c.bg, bg = c.note }, -- note-type comments (e.g. `NOTE:`, `INFO:`, `XXX`)
+
+        -- Markup
+        ["@markup"] = { link = "@none" },
+
+        ["@markup.strong"] = { bold = true }, -- bold text
+        ["@markup.italic"] = { italic = true }, -- text with emphasis
+        ["@markup.strikethrough"] = { strikethrough = true }, -- strikethrough text
+        ["@markup.underline"] = { underline = true }, -- underlined text (only for literal underline markup!)
+
+        ["@markup.heading"] = { link = "Title" }, -- headings, titles (including markers)
+        ["@markup.heading.1.marker"] = { link = "@tag" }, -- #, <h1>, <h2>, etc.
+        ["@markup.heading.2.marker"] = { link = "@tag" },
+        ["@markup.heading.3.marker"] = { link = "@tag" },
+        ["@markup.heading.4.marker"] = { link = "@tag" },
+        ["@markup.heading.5.marker"] = { link = "@tag" },
+        ["@markup.heading.6.marker"] = { link = "@tag" },
+
+        ["@markup.quote"] = { fg = c.fg, bg = c.fg_gutter, italic = true }, -- block quotes
+        ["@markup.math"] = { link = "Special" }, -- math environments (e.g. `$ ... $` in LaTeX)
+        ["@markup.environment"] = { link = "Macro" }, -- environments (e.g. in LaTeX)
+        ["@markup.environment.name"] = { link = "Type" },
+
+        ["@markup.link"] = { fg = c.blue }, -- text references, footnotes, citations, etc.
+        ["@markup.link.label"] = { fg = c.blue, underline = true }, -- link, reference descriptions
+        ["@markup.link.label.symbol"] = { link = "Identifier" }, -- Non-url links
+        ["@markup.link.url"] = { fg = c.orange }, -- URL-style links. e.g. ![text](url)
+
+        ["@markup.raw"] = { link = "String" }, -- literal or verbatim text (e.g., inline code)
+        ["@markup.raw.block"] = { fg = c.grey }, -- literal or verbatim text (e.g., inline code)
+
+        ["@markup.list"] = { fg = c.magenta }, -- list markers
+        ["@markup.list.checked"] = { fg = c.magenta }, -- checked todo-style list markers [x]
+        ["@markup.list.unchecked"] = { fg = c.magenta }, -- unchecked todo-style list markers [ ]
+
+        ["@diff.plus"] = { link = "DiffAdd" }, -- added text (for diff files)
+        ["@diff.minus"] = { link = "DiffDelete" }, -- deleted text (for diff files)
+        ["@diff.delta"] = { link = "DiffChange" }, -- changed text (for diff files)
+
+        ["@tag"] = { fg = c.magenta }, -- xml tag names
+        ["@tag.attribute"] = { fg = c.blue, italic = true }, -- xml tag attributes
+        ["@tag.delimiter"] = { fg = c.grey_light }, -- xml tag delimiters
+
+        -- Non-highlighting captures
+        ["@none"] = {}, -- completely disable the highlight
+
+        --- Markdown customs
+        ["@markup.raw.markdown_inline"] = { fg = c.purple }, -- inline commands (e.g. `example`)
+        ["@markup.raw.delimiter.markdown_inline"] = { fg = c.purple }, -- inline backticks -> `
+        ["@lsp.type.class.markdown"] = { fg = c.yellow }, -- Check mark inside checklist ([x])
+
+        --- LSP Semantic Token Groups
         ["@lsp.type.boolean"] = { link = "Boolean" },
         ["@lsp.type.builtinType"] = { link = "@type.builtin" },
         ["@lsp.type.comment"] = { link = "@comment" },
@@ -320,15 +343,15 @@ function M.setup(palette)
         ["@lsp.type.enum"] = { link = "@type" },
         ["@lsp.type.enumMember"] = { link = "@constant" },
         ["@lsp.type.escapeSequence"] = { link = "@string.escape" },
-        ["@lsp.type.formatSpecifier"] = { link = "@punctuation.special" },
+        ["@lsp.type.formatSpecifier"] = { link = "@markup.list" },
         ["@lsp.type.generic"] = { link = "@variable" },
         -- ["@lsp.type.interface"] = { fg = util.lighten(c.blue1, 0.7) },
         ["@lsp.type.keyword"] = { link = "@keyword" },
         ["@lsp.type.lifetime"] = { link = "@storageclass" },
-        ["@lsp.type.namespace"] = { link = "@namespace" },
+        ["@lsp.type.namespace"] = { link = "@module" },
         ["@lsp.type.number"] = { link = "@number" },
-        ["@lsp.type.operator"] = { link = "@operator" },
-        ["@lsp.type.parameter"] = { link = "@parameter" },
+        ["@lsp.type.operator"] = { link = "Operator" },
+        ["@lsp.type.parameter"] = { link = "@variable.parameter" },
         ["@lsp.type.property"] = { link = "@property" },
         ["@lsp.type.selfKeyword"] = { link = "@variable.builtin" },
         ["@lsp.type.selfTypeKeyword"] = { link = "@variable.builtin" },
@@ -344,11 +367,11 @@ function M.setup(palette)
         ["@lsp.typemod.keyword.injected"] = { link = "@keyword" },
         ["@lsp.typemod.macro.defaultLibrary"] = { link = "@function.builtin" },
         ["@lsp.typemod.method.defaultLibrary"] = { link = "@function.builtin" },
-        ["@lsp.typemod.operator.injected"] = { link = "@operator" },
+        ["@lsp.typemod.operator.injected"] = { link = "Operator" },
         ["@lsp.typemod.string.injected"] = { link = "@string" },
         ["@lsp.typemod.struct.defaultLibrary"] = { link = "@type.builtin" },
-        -- ["@lsp.typemod.type.defaultLibrary"] = {  },
-        -- ["@lsp.typemod.typeAlias.defaultLibrary"] = {  },
+        -- ["@lsp.typemod.type.defaultLibrary"] = {},
+        -- ["@lsp.typemod.typeAlias.defaultLibrary"] = {},
         ["@lsp.typemod.variable.callable"] = { link = "@function" },
         ["@lsp.typemod.variable.defaultLibrary"] = { link = "@variable.builtin" },
         ["@lsp.typemod.variable.injected"] = { link = "@variable" },
@@ -568,17 +591,17 @@ function M.setup(palette)
         --- Todo Comments
         TodoBgFIX = { fg = c.white, bg = c.magenta, bold = true },
         TodoBgHACK = { fg = c.black, bg = c.orange, bold = true },
-        TodoBgNOTE = { fg = c.black, bg = c.yellow, bold = true },
+        TodoBgNOTE = { fg = c.black, bg = c.note, bold = true },
         TodoBgPERF = { fg = c.black, bg = c.blue, bold = true },
         TodoBgTEST = { fg = c.black, bg = c.green, bold = true },
-        TodoBgTODO = { fg = c.bg_dark, bg = c.purple, bold = true },
+        TodoBgTODO = { fg = c.bg_dark, bg = c.todo, bold = true },
         TodoBgWARN = { fg = c.black, bg = c.orange, bold = true },
         TodoFgFIX = { fg = c.magenta },
         TodoFgHACK = { fg = c.orange },
-        TodoFgNOTE = { fg = c.yellow },
+        TodoFgNOTE = { fg = c.note },
         TodoFgPERF = { fg = c.blue },
         TodoFgTEST = { fg = c.green },
-        TodoFgTODO = { fg = c.purple },
+        TodoFgTODO = { fg = c.todo },
         TodoFgWARN = { fg = c.orange },
         TodoSignHACK = { link = "TodoFgHACK" },
         TodoSignNOTE = { link = "TodoFgNOTE" },
@@ -848,27 +871,27 @@ function M.setup(palette)
         Enum = "@lsp.type.enum",
         EnumMember = "Structure", -- "@lsp.type.enumMember",
         Event = "Special",
-        Field = "@field",
+        Field = "@variable.field",
         File = "Normal",
         Folder = "Directory",
         Function = "@function",
         Interface = "KindParameter", -- "@lsp.type.interface",
-        Key = "@field",
+        Key = "@variable.field",
         Keyword = "@keyword",
         Method = "@method",
-        Module = "Special", -- "@namespace"
+        Module = "Special",
         Namespace = "KindText",
         Null = "@constant.builtin",
         Number = "@number",
         Object = "@constant",
-        Operator = "@operator",
-        Package = "@namespace",
+        Operator = "Operator",
+        Package = "@module",
         Property = "@property",
-        Reference = "@text.uri", -- "@text.reference",
+        Reference = "@markup.link.url",
         Snippet = "KindConceal", -- Conceal
         String = "@string",
         Struct = "Structure", -- "@lsp.type.struct",
-        Text = "@text",
+        Text = "@markup",
         TypeParameter = "KindParameter", -- "@lsp.type.typeParameter",
         Unit = "Structure", --"@lsp.type.struct",
         Value = "KindParameter", --"@string",
@@ -893,7 +916,7 @@ function M.setup(palette)
     if options.color_headers then
         for i, color in ipairs(c.rainbow) do
             -- Markdown, html
-            theme.highlights["@text.title." .. i] = { fg = color, bold = true }
+            theme.highlights["@markup.heading." .. i] = { fg = color, bold = true }
             theme.highlights["htmlH" .. i] = { fg = color, bold = true }
             -- Headline plugin
             theme.highlights["Headline" .. i] = { fg = color, bg = c.rainbow_bg[i], bold = true }
@@ -902,7 +925,7 @@ function M.setup(palette)
     else
         for i = 1, 6 do
             -- Markdown, html
-            theme.highlights["@text.title." .. i] = { link = "Title" }
+            theme.highlights["@markup.heading." .. i] = { link = "Title" }
             theme.highlights["htmlH" .. i] = { link = "Title" }
             -- Headline plugin
             theme.highlights["@OrgTSHeadlineLevel" .. i] = { bg = c.rainbow_bg[i], bold = true }
