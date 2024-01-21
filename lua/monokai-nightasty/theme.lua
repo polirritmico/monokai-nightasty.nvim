@@ -280,10 +280,10 @@ function M.setup(palette)
     ["@comment"] = { link = "Comment" }, -- line and block comments
     ["@comment.documentation"] = { link = "Comment" }, -- comments documenting code
 
-    ["@comment.error"] = { fg = c.bg, bg = c.error }, -- error-type comments (e.g. `ERROR`, `FIXME`, `DEPRECATED:`)
-    ["@comment.warning"] = { fg = c.bg, bg = c.warning }, -- warning-type comments (e.g. `WARNING:`, `FIX:`, `HACK:`)
-    ["@comment.todo"] = { fg = c.bg, bg = c.todo }, -- todo-type comments (e.g. `TODO:`, `WIP:`, `FIXME:`)
-    ["@comment.note"] = { fg = c.bg, bg = c.note }, -- note-type comments (e.g. `NOTE:`, `INFO:`, `XXX`)
+    -- ["@comment.error"] = { fg = c.bg, bg = c.error }, -- error-type comments (e.g. `ERROR`, `FIXME`, `DEPRECATED:`)
+    -- ["@comment.warning"] = { fg = c.bg, bg = c.warning }, -- warning-type comments (e.g. `WARNING:`, `FIX:`, `HACK:`)
+    -- ["@comment.todo"] = { fg = c.black, bg = c.todo, nocombine = true }, -- todo-type comments (e.g. `TODO:`, `WIP:`, `FIXME:`)
+    -- ["@comment.note"] = { fg = c.bg, bg = c.note, nocombine = true }, -- note-type comments (e.g. `NOTE:`, `INFO:`, `XXX`)
 
     -- Markup
     ["@markup"] = { link = "@none" },
