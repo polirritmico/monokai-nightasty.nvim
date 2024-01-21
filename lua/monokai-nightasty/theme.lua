@@ -268,7 +268,7 @@ function M.setup(palette)
     ["@keyword.conditional"] = { link = "Conditional" }, -- keywords related to conditionals (e.g. `if` / `else`)
     ["@keyword.conditional.ternary"] = { link = "Conditional" }, -- ternary operator (e.g. `?` / `:`)
 
-    ["@keyword.directive"] = { link = "PreProc" }, -- various preprocessor directives & shebangs
+    ["@keyword.directive"] = { fg = util.darken(c.comment, 0.73), nocombine = true }, -- various preprocessor directives & shebangs
     ["@keyword.directive.define"] = { link = "Define" }, -- preprocessor definition directives
 
     -- Punctuation
