@@ -135,7 +135,7 @@ function M.setup(opts)
   colors.fg_float = colors.fg
 
   -- Set the background for the current line (current cursor position)
-  colors.bg_highlight = is_light and util.lighten(colors.bg, 0.9, colors.fg) or util.darken(colors.bg, 0.9, colors.fg) -- (0.97 for #313131)
+  colors.bg_highlight = util.darken(colors.bg, 0.9, colors.fg) -- (0.97 for #313131)
 
   colors.bg_columns = config.options.transparent and colors.bg or util.lighten(colors.bg, 0.98, colors.fg)
   colors.bg_visual = is_light and colors.charcoal or colors.grey_darker
@@ -146,7 +146,7 @@ function M.setup(opts)
   -- Popups
   colors.bg_popup = is_light and colors.charcoal_medium or colors.grey_darker
   colors.bg_menuselbar = util.lighten(colors.bg_popup, 0.95)
-  colors.bg_menusel = is_light and util.lighten(colors.fg_gutter, 0.8) or util.darken(colors.fg_gutter, 0.8)
+  colors.bg_menusel = util.darken(colors.fg_gutter, 0.8)
 
   -- For lsp floats messages, git, diffs, etc.
   colors.error = colors.red
