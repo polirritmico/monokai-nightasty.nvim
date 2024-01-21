@@ -5,7 +5,7 @@ local colors = {
   bg_darker = "#d0d0d0",
   bg_float = "#e3e3e3",
   bg_highlight = "#ebebeb",
-  bg_menusel = "#ababab",
+  bg_menusel = "#d4d4d4",
   bg_menuselbar = "#d5d5d5",
   bg_popup = "#dedede",
   bg_search = "#ff8f00",
@@ -55,12 +55,14 @@ local colors = {
   info = "#0087ff",
   magenta = "#ff004b",
   none = "NONE",
+  note = "#ff8f00",
   orange = "#ff4d00",
   purple = "#6054d0",
   rainbow = { "#333333", "#ff8f00", "#ff4d00", "#ff005f", "#6054d0", "#00b3e3" },
   rainbow_bg = { "#f1f1f1", "#fff7ed", "#fff3ed", "#ffedf4", "#f4f3fc", "#edfafd" },
   red = "#ff005f",
   terminal_black = "#bfbfbf",
+  todo = "#6054d0",
   warning = "#ff4d00",
   white = "#ffffff",
   yellow = "#ff8f00",
@@ -92,9 +94,36 @@ local highlights = {
     bg = "#edfafd",
     bold = true
   },
+  ["@attribute"] = {
+    link = "PreProc"
+  },
   ["@attribute.builtin"] = {
     fg = "#ff004b",
     italic = true
+  },
+  ["@boolean"] = {
+    link = "Boolean"
+  },
+  ["@character"] = {
+    link = "Character"
+  },
+  ["@character.special"] = {
+    link = "SpecialChar"
+  },
+  ["@comment"] = {
+    link = "Comment"
+  },
+  ["@comment.documentation"] = {
+    link = "Comment"
+  },
+  ["@constant"] = {
+    link = "Constant"
+  },
+  ["@constant.builtin"] = {
+    link = "Special"
+  },
+  ["@constant.macro"] = {
+    link = "Define"
   },
   ["@constructor"] = {
     fg = "#00b3e3",
@@ -103,8 +132,17 @@ local highlights = {
   ["@constructor.lua"] = {
     fg = "#ff004b"
   },
-  ["@field"] = {
-    fg = "#333333"
+  ["@diff.delta"] = {
+    link = "DiffChange"
+  },
+  ["@diff.minus"] = {
+    link = "DiffDelete"
+  },
+  ["@diff.plus"] = {
+    link = "DiffAdd"
+  },
+  ["@function"] = {
+    link = "Function"
   },
   ["@function.builtin"] = {
     fg = "#4fb000"
@@ -112,15 +150,64 @@ local highlights = {
   ["@function.builtin.bash"] = {
     fg = "#00b3e3"
   },
+  ["@function.call"] = {
+    link = "@function"
+  },
+  ["@function.macro"] = {
+    link = "Macro"
+  },
+  ["@function.method"] = {
+    link = "Function"
+  },
+  ["@function.method.call"] = {
+    link = "@function.method"
+  },
   ["@keyword"] = {
     fg = "#ff004b",
     style = {
       italic = false
     }
   },
+  ["@keyword.conditional"] = {
+    link = "Conditional"
+  },
+  ["@keyword.conditional.ternary"] = {
+    link = "Conditional"
+  },
+  ["@keyword.coroutine"] = {
+    link = "@keyword"
+  },
+  ["@keyword.debug"] = {
+    link = "Debug"
+  },
+  ["@keyword.directive"] = {
+    fg = "#a2a2a2",
+    nocombine = true
+  },
+  ["@keyword.directive.define"] = {
+    link = "Define"
+  },
+  ["@keyword.exception"] = {
+    link = "Exception"
+  },
   ["@keyword.function"] = {
     fg = "#00b3e3",
     italic = true
+  },
+  ["@keyword.import"] = {
+    link = "Include"
+  },
+  ["@keyword.operator"] = {
+    link = "Operator"
+  },
+  ["@keyword.repeat"] = {
+    link = "Repeat"
+  },
+  ["@keyword.return"] = {
+    link = "@keyword"
+  },
+  ["@keyword.storage"] = {
+    link = "StorageClass"
   },
   ["@lsp.type.boolean"] = {
     link = "Boolean"
@@ -150,7 +237,7 @@ local highlights = {
     link = "@string.escape"
   },
   ["@lsp.type.formatSpecifier"] = {
-    link = "@punctuation.special"
+    link = "@markup.list"
   },
   ["@lsp.type.generic"] = {
     link = "@variable"
@@ -162,16 +249,16 @@ local highlights = {
     link = "@storageclass"
   },
   ["@lsp.type.namespace"] = {
-    link = "@namespace"
+    link = "@module"
   },
   ["@lsp.type.number"] = {
     link = "@number"
   },
   ["@lsp.type.operator"] = {
-    link = "@operator"
+    link = "Operator"
   },
   ["@lsp.type.parameter"] = {
-    link = "@parameter"
+    link = "@variable.parameter"
   },
   ["@lsp.type.property"] = {
     link = "@property"
@@ -218,7 +305,7 @@ local highlights = {
     link = "@function.builtin"
   },
   ["@lsp.typemod.operator.injected"] = {
-    link = "@operator"
+    link = "Operator"
   },
   ["@lsp.typemod.string.injected"] = {
     link = "@string"
@@ -241,16 +328,120 @@ local highlights = {
   ["@lsp.typemod.variable.static"] = {
     link = "@constant"
   },
-  ["@namespace"] = {
+  ["@markup"] = {
+    link = "@none"
+  },
+  ["@markup.environment"] = {
+    link = "Macro"
+  },
+  ["@markup.environment.name"] = {
+    link = "Type"
+  },
+  ["@markup.heading"] = {
+    link = "Title"
+  },
+  ["@markup.heading.1"] = {
+    link = "Title"
+  },
+  ["@markup.heading.1.marker"] = {
+    link = "@tag"
+  },
+  ["@markup.heading.2"] = {
+    link = "Title"
+  },
+  ["@markup.heading.2.marker"] = {
+    link = "@tag"
+  },
+  ["@markup.heading.3"] = {
+    link = "Title"
+  },
+  ["@markup.heading.3.marker"] = {
+    link = "@tag"
+  },
+  ["@markup.heading.4"] = {
+    link = "Title"
+  },
+  ["@markup.heading.4.marker"] = {
+    link = "@tag"
+  },
+  ["@markup.heading.5"] = {
+    link = "Title"
+  },
+  ["@markup.heading.5.marker"] = {
+    link = "@tag"
+  },
+  ["@markup.heading.6"] = {
+    link = "Title"
+  },
+  ["@markup.heading.6.marker"] = {
+    link = "@tag"
+  },
+  ["@markup.italic"] = {
+    italic = true
+  },
+  ["@markup.link"] = {
+    fg = "#00b3e3"
+  },
+  ["@markup.link.label"] = {
+    fg = "#00b3e3",
+    underline = true
+  },
+  ["@markup.link.label.symbol"] = {
+    link = "Identifier"
+  },
+  ["@markup.link.url"] = {
+    fg = "#ff4d00"
+  },
+  ["@markup.list"] = {
+    fg = "#ff004b"
+  },
+  ["@markup.list.checked"] = {
+    fg = "#ff004b"
+  },
+  ["@markup.list.unchecked"] = {
+    fg = "#ff004b"
+  },
+  ["@markup.math"] = {
+    link = "Special"
+  },
+  ["@markup.quote"] = {
+    bg = "#c9c9c9",
+    fg = "#333333",
+    italic = true
+  },
+  ["@markup.raw"] = {
+    link = "String"
+  },
+  ["@markup.raw.block"] = {
+    fg = "#7f7f7f"
+  },
+  ["@markup.raw.delimiter.markdown_inline"] = {
+    fg = "#6054d0"
+  },
+  ["@markup.raw.markdown_inline"] = {
+    fg = "#6054d0"
+  },
+  ["@markup.strikethrough"] = {
+    strikethrough = true
+  },
+  ["@markup.strong"] = {
+    bold = true
+  },
+  ["@markup.underline"] = {
+    underline = true
+  },
+  ["@module"] = {
     link = "Include"
   },
-  ["@parameter"] = {
-    fg = "#ff4d00",
-    italic = true
+  ["@none"] = {},
+  ["@number"] = {
+    link = "Number"
   },
-  ["@preproc"] = {
-    fg = "#7f7f7f",
-    italic = true
+  ["@number.float"] = {
+    link = "Float"
+  },
+  ["@operator"] = {
+    link = "Operator"
   },
   ["@property"] = {
     fg = "#171717"
@@ -261,19 +452,20 @@ local highlights = {
   ["@punctuation.bracket"] = {
     fg = "#ff004b"
   },
-  ["@punctuation.bracket.markdown_inline"] = {
-    fg = "#00b3e3"
-  },
   ["@punctuation.delimiter"] = {
     fg = "#7f7f7f"
   },
-  ["@string.documentation"] = {
-    link = "Comment"
+  ["@punctuation.special"] = {
+    link = "Delimiter"
   },
+  ["@string"] = {
+    link = "String"
+  },
+  ["@string.documentation"] = {},
   ["@string.escape"] = {
     fg = "#6054d0"
   },
-  ["@string.regex"] = {
+  ["@string.regexp"] = {
     fg = "#ff4d00"
   },
   ["@tag"] = {
@@ -286,86 +478,18 @@ local highlights = {
   ["@tag.delimiter"] = {
     fg = "#4c4c4c"
   },
-  ["@text.danger"] = {
-    bg = "#ff005f",
-    fg = "#ffffff"
-  },
-  ["@text.diff.add"] = {
-    link = "DiffAdd"
-  },
-  ["@text.diff.delete"] = {
-    link = "DiffDelete"
-  },
-  ["@text.literal.markdown_inline"] = {
-    fg = "#6054d0"
-  },
-  ["@text.quote"] = {
-    bg = "#c9c9c9",
-    fg = "#333333",
-    italic = true
-  },
-  ["@text.reference"] = {
-    fg = "#00b3e3",
-    underline = true
-  },
-  ["@text.title"] = {
-    link = "Title"
-  },
-  ["@text.title.1"] = {
-    link = "Title"
-  },
-  ["@text.title.1.marker"] = {
-    link = "@tag"
-  },
-  ["@text.title.2"] = {
-    link = "Title"
-  },
-  ["@text.title.2.marker"] = {
-    link = "@tag"
-  },
-  ["@text.title.3"] = {
-    link = "Title"
-  },
-  ["@text.title.3.marker"] = {
-    link = "@tag"
-  },
-  ["@text.title.4"] = {
-    link = "Title"
-  },
-  ["@text.title.4.marker"] = {
-    link = "@tag"
-  },
-  ["@text.title.5"] = {
-    link = "Title"
-  },
-  ["@text.title.5.marker"] = {
-    link = "@tag"
-  },
-  ["@text.title.6"] = {
-    link = "Title"
-  },
-  ["@text.title.6.marker"] = {
-    link = "@tag"
-  },
-  ["@text.todo.checked"] = {
-    fg = "#ff004b"
-  },
-  ["@text.todo.unchecked"] = {
-    fg = "#ff004b"
-  },
-  ["@text.uri"] = {
-    fg = "#ff4d00"
-  },
-  ["@text.warning"] = {
-    bg = "#ff4d00",
-    fg = "#ffffff"
-  },
   ["@type"] = {
     fg = "#00b3e3"
   },
   ["@type.builtin"] = {
     fg = "#00b3e3",
     italic = true
+  },
+  ["@type.definition"] = {
+    link = "Typedef"
+  },
+  ["@type.qualifier"] = {
+    link = "@keyword"
   },
   ["@type.qualifier.c_sharp"] = {
     fg = "#ff4d00",
@@ -377,6 +501,13 @@ local highlights = {
   },
   ["@variable.builtin"] = {
     fg = "#4c4c4c",
+    italic = true
+  },
+  ["@variable.member"] = {
+    fg = "#333333"
+  },
+  ["@variable.parameter"] = {
+    fg = "#ff4d00",
     italic = true
   },
   AerialArrayIcon = {
@@ -1025,7 +1156,7 @@ local highlights = {
     link = "Special"
   },
   LspKindField = {
-    link = "@field"
+    link = "@variable.member"
   },
   LspKindFile = {
     link = "Normal"
@@ -1040,13 +1171,13 @@ local highlights = {
     link = "KindParameter"
   },
   LspKindKey = {
-    link = "@field"
+    link = "@variable.member"
   },
   LspKindKeyword = {
     link = "@keyword"
   },
   LspKindMethod = {
-    link = "@method"
+    link = "@function.method"
   },
   LspKindModule = {
     link = "Special"
@@ -1064,16 +1195,16 @@ local highlights = {
     link = "@constant"
   },
   LspKindOperator = {
-    link = "@operator"
+    link = "Operator"
   },
   LspKindPackage = {
-    link = "@namespace"
+    link = "@module"
   },
   LspKindProperty = {
     link = "@property"
   },
   LspKindReference = {
-    link = "@text.uri"
+    link = "@markup.link.url"
   },
   LspKindSnippet = {
     link = "KindConceal"
@@ -1085,7 +1216,7 @@ local highlights = {
     link = "Structure"
   },
   LspKindText = {
-    link = "@text"
+    link = "@markup"
   },
   LspKindTypeParameter = {
     link = "KindParameter"
@@ -1252,6 +1383,27 @@ local highlights = {
   NeoTreeDimText = {
     fg = "#c9c9c9"
   },
+  NeoTreeDirectoryIcon = {
+    fg = "#00b3e3"
+  },
+  NeoTreeDirectoryName = {
+    fg = "#333333"
+  },
+  NeoTreeFileNameOpened = {
+    fg = "#ff4d00"
+  },
+  NeoTreeGitAdded = {
+    fg = "#4fb000"
+  },
+  NeoTreeGitDeleted = {
+    fg = "#ff004b"
+  },
+  NeoTreeGitModified = {
+    fg = "#ff4d00"
+  },
+  NeoTreeIndentMarkder = {
+    fg = "#c9c9c9"
+  },
   NeoTreeNormal = {
     bg = "#f1f1f1",
     fg = "#171717"
@@ -1259,6 +1411,13 @@ local highlights = {
   NeoTreeNormalNC = {
     bg = "#f1f1f1",
     fg = "#171717"
+  },
+  NeoTreeRootName = {
+    fg = "#ff004b",
+    italic = true
+  },
+  NeoTreeWinSeparator = {
+    link = "NvimTreeWinSeparator"
   },
   NoiceCompletionItemKindArray = {
     link = "LspKindArray"
@@ -1370,6 +1529,21 @@ local highlights = {
   },
   NoiceCompletionItemKindVariable = {
     link = "LspKindVariable"
+  },
+  NoiceFormatProgressDone = {
+    bg = "#ff4d00",
+    bold = true,
+    fg = "#333333"
+  },
+  NoiceLspProgressSpinner = {
+    fg = "#4fb000"
+  },
+  NoiceLspProgressTitle = {
+    fg = "#ff4d00",
+    italic = true
+  },
+  NoiceMini = {
+    bg = "#e3e3e3"
   },
   NonText = {
     fg = "#bfbfbf"
@@ -1526,7 +1700,7 @@ local highlights = {
     bg = "#d5d5d5"
   },
   PmenuSel = {
-    bg = "#ababab",
+    bg = "#d4d4d4",
     fg = "#ff004b"
   },
   PmenuThumb = {
@@ -1793,6 +1967,12 @@ local highlights = {
   Whitespace = {
     fg = "#bfbfbf"
   },
+  WinBar = {
+    link = "StatusLine"
+  },
+  WinBarNC = {
+    link = "StatusLineNC"
+  },
   WinSeparator = {
     fg = "#00b3e3"
   },
@@ -1879,6 +2059,52 @@ local highlights = {
   lCursor = {
     bg = "#00b3e3",
     fg = "#ffffff"
+  },
+  netrwClassify = {
+    fg = "#ff004b"
+  },
+  netrwCmdNote = {
+    fg = "#171717"
+  },
+  netrwDir = {
+    fg = "#ff8f00"
+  },
+  netrwExe = {
+    fg = "#ff4d00"
+  },
+  netrwHelpCmd = {
+    bold = true,
+    fg = "#ff4d00"
+  },
+  netrwLink = {
+    fg = "#ff004b"
+  },
+  netrwList = {
+    fg = "#ff8f00"
+  },
+  netrwMarkFile = {
+    bg = "#ff4d00",
+    bold = true,
+    fg = "#000001"
+  },
+  netrwPlain = {
+    fg = "#171717"
+  },
+  netrwQuickHelp = {
+    fg = "#171717",
+    italic = true
+  },
+  netrwSymLink = {
+    fg = "#00b3e3",
+    italic = true
+  },
+  netrwTreeBar = {
+    fg = "#c9c9c9",
+    nocombine = true
+  },
+  netrwVersion = {
+    fg = "#ff4d00",
+    italic = true
   },
   qfFileName = {
     fg = "#6054d0"
