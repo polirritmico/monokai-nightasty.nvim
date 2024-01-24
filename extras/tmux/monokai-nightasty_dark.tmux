@@ -1,4 +1,7 @@
-# Monokai NighTasty colors for Tmux
+## name: Monokai NighTasty Dark
+## license: MIT
+## author: Eduardo Bray
+## upstream: https://github.com/polirritmico/monokai-nightasty.nvim/raw/main/extras/tmux/monokai-nightasty_dark.tmux
 
 tm_bg="#444444"
 tm_fg="#bcbcbc"

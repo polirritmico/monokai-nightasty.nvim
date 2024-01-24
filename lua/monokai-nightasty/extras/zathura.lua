@@ -6,8 +6,11 @@ local M = {}
 function M.generate(colors)
   local zathura = util.template(
     [[
-# Monokai NighTasty color theme for Zathura
-#
+## name: ${_style_name}
+## license: MIT
+## author: Eduardo Bray
+## upstream: ${_upstream_url}
+
 set notification-error-bg "${red}"
 set notification-error-fg "${fg}"
 set notification-warning-bg "${yellow}"

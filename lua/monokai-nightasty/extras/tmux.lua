@@ -6,7 +6,10 @@ local M = {}
 function M.generate(colors)
   local tmux = util.template(
     [[
-# Monokai NighTasty colors for Tmux
+## name: ${_style_name}
+## license: MIT
+## author: Eduardo Bray
+## upstream: ${_upstream_url}
 
 tm_bg="${grey_darker}"
 tm_fg="${grey_light}"

@@ -1,5 +1,8 @@
-# Monokai NighTasty color theme for Zathura
-#
+## name: Monokai NighTasty Dark
+## license: MIT
+## author: Eduardo Bray
+## upstream: https://github.com/polirritmico/monokai-nightasty.nvim/raw/main/extras/zathura/monokai-nightasty_dark.zathurarc
+
 set notification-error-bg "#ff005f"
 set notification-error-fg "#ffffff"
 set notification-warning-bg "#ffff87"
