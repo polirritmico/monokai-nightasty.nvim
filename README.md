@@ -138,7 +138,7 @@ Monokai Nightasty comes with these defaults:
     lualine_style = "default", -- "dark", "light" or "default" (Follows dark/light style)
 
     --- You can override specific color groups to use other groups or a hex color
-    --- function will be called with a the theme ColorScheme table
+    --- function will be called with the theme ColorScheme table
     on_colors = function(colors) end,
 
     --- You can override specific highlights to use other groups or a hex color

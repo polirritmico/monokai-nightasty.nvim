@@ -1,4 +1,4 @@
-*monokai-nightasty.nvim.txt*   For Neovim >= 0.9  Last change: 2024 January 23
+*monokai-nightasty.nvim.txt*   For Neovim >= 0.9  Last change: 2024 January 24
 
 ==============================================================================
 Table of Contents                   *monokai-nightasty.nvim-table-of-contents*
@@ -133,7 +133,7 @@ Monokai Nightasty comes with these defaults:
         lualine_style = "default", -- "dark", "light" or "default" (Follows dark/light style)
     
         --- You can override specific color groups to use other groups or a hex color
-        --- function will be called with a the theme ColorScheme table
+        --- function will be called with the theme ColorScheme table
         on_colors = function(colors) end,
     
         --- You can override specific highlights to use other groups or a hex color
@@ -250,8 +250,8 @@ Currently this extra files are generated:
 
 - Monokai Nightasty Palettes <https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/extras/palettes> (palettes <extras/palettes>)
 - Kitty <https://sw.kovidgoyal.net/kitty/> (kitty <extras/kitty>)
-- Zathura <https://pwmt.org/projects/zathura/> (zathura <extras/zathura>)
 - Tmux <https://github.com/tmux/tmux/wiki> (tmux <extras/tmux>)
+- Zathura <https://pwmt.org/projects/zathura/> (zathura <extras/zathura>)
 
 The Monokai Nightasty Palette is a file with the used `colors` and
 `highlights`.
