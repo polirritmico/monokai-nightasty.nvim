@@ -1,0 +1,50 @@
+# vim:ft=kitty
+
+## name: Monokai NighTasty Dark
+## license: MIT
+## author: Eduardo Bray
+## upstream: https://github.com/polirritmico/monokai-nightasty.nvim/raw/main/extras/extras/kitty/monokai-nightasty_dark.kitty
+
+
+background #1e1e1e
+foreground #e8e8e8
+selection_background #ff9700
+selection_foreground #000001
+url_color #83dc78
+cursor #ffffff
+cursor_text_color #1e1e1e
+
+# Tabs
+active_tab_background #a4e400
+active_tab_foreground #121212
+inactive_tab_background #444444
+inactive_tab_foreground #e8e8e8
+tab_bar_background #313131
+
+# Windows
+active_border_color #62d8f1
+inactive_border_color #343434
+
+# normal
+color0 #000001
+color1 #fc1a70
+color2 #a4e400
+color3 #ffff87
+color4 #0087ff
+color5 #ff005f
+color6 #62d8f1
+color7 #e8e8e8
+
+# bright
+color8 #444444
+color9 #ff005f
+color10 #a4e400
+color11 #ffff87
+color12 #0087ff
+color13 #fc1a70
+color14 #62d8f1
+color15 #ffffff
+
+# extended colors
+color16 #ff9700
+color17 #ff005f

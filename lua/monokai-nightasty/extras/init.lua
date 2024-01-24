@@ -4,10 +4,11 @@ local M = {}
 --- @type table<string, {ext:string, label:string, both_styles:boolean, url:string}>
 -- stylua: ignore
 M.extras = {
-    tmux = {ext = "tmux", label = "Tmux", both_styles = false, url = "https://github.com/tmux/tmux/wiki"},
-    palettes = {ext = "lua", label = "Monokai Nightasty Palettes", both_styles = true, url = "https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/extras/palettes"},
-    -- xresources = {ext = "Xresources", url = "https://wiki.archlinux.org/title/X_resources", label = "Xresources"},
-    zathura = {ext = "zathurarc", label = "Zathura", both_styles = false, url = "https://pwmt.org/projects/zathura/"},
+    kitty = { ext = "kitty", label = "Kitty", both_styles = true, url = "https://sw.kovidgoyal.net/kitty/" },
+    palettes = { ext = "lua", label = "Monokai Nightasty Palettes", both_styles = true, url = "https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/extras/palettes" },
+    -- xresources = { ext = "Xresources", url = "https://wiki.archlinux.org/title/X_resources", label = "Xresources" },
+    tmux = { ext = "tmux", label = "Tmux", both_styles = false, url = "https://github.com/tmux/tmux/wiki" },
+    zathura = { ext = "zathurarc", label = "Zathura", both_styles = false, url = "https://pwmt.org/projects/zathura/" },
 }
 
 local function write(str, fileName)

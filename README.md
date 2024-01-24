@@ -248,6 +248,7 @@ end,
 Currently this extra files are generated:
 
 <!-- extras:start -->
+- [Kitty](https://sw.kovidgoyal.net/kitty/) ([kitty](extras/kitty))
 - [Monokai Nightasty Palettes](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/extras/palettes) ([palettes](extras/palettes))
 - [Tmux](https://github.com/tmux/tmux/wiki) ([tmux](extras/tmux))
 - [Zathura](https://pwmt.org/projects/zathura/) ([zathura](extras/zathura))
