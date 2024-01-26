@@ -193,8 +193,6 @@ function M.setup(palette)
     healthWarning = { fg = c.warning },
 
     -- TreeSitter
-    TreesitterContext = { bg = options.transparent and c.none or util.darken(c.fg_gutter, 0.8) },
-    TreesitterContextBottom = { sp = c.border, underline = true },
     Hlargs = { fg = c.yellow },
 
     --- Treesitter highlights
@@ -608,6 +606,12 @@ function M.setup(palette)
     TodoSignTEST = { link = "TodoFgTEST" },
     TodoSignTODO = { link = "TodoFgTODO" },
     TodoSignWARN = { link = "TodoFgWARN" },
+
+    --- TreeSitter Context
+    TreesitterContext = { bg = c.bg_sidebar },
+    TreesitterContextBottom = { sp = c.border, underline = true },
+    TreesitterContextLineNumber = { fg = c.grey_medium, bg = c.bg_sidebar },
+    TreesitterContextLineNumberBottom = { fg = c.yellow, sp = c.border, underline = true },
 
     --- WhichKey
     WhichKey = { fg = c.yellow },
