@@ -482,6 +482,9 @@ function M.setup(palette)
     --- Lazy
     LazyProgressDone = { fg = c.magenta, bold = true },
     LazyProgressTodo = { fg = c.fg_gutter, bold = true },
+    LazyReasonSource = { fg = c.yellow },
+    LazyReasonEvent = { fg = c.orange },
+    LazyReasonCmd = { fg = c.blue },
 
     --- Navic
     NavicText = { fg = c.fg, bg = c.none },
