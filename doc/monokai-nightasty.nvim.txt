@@ -314,25 +314,25 @@ Some color utility functions are available for your use:
 
 DARK STYLE                                 *monokai-nightasty.nvim-dark-style*
 
-  Color name    Hex code
-  ------------- ----------
-  Yellow        #ffff87
-  Purple        #af87ff
-  Green Light   #a4e400
-  Blue Light    #62d8f1
-  Magenta       #fc1a70
-  Orange        #ff9700
+  Color name   Hex code
+  ------------ ----------
+  Yellow       #ffff87
+  Purple       #af87ff
+  Green        #a4e400
+  Blue         #62d8f1
+  Magenta      #fc1a70
+  Orange       #ff9700
 
 LIGHT STYLE                               *monokai-nightasty.nvim-light-style*
 
-  Color name    Hex code
-  ------------- ----------
-  Yellow        #ff8f00
-  Purple        #6054d0
-  Green Light   #4fb000
-  Blue Light    #00b3e3
-  Magenta       #ff004b
-  Orange        #ff4d00
+  Color name   Hex code
+  ------------ ----------
+  Yellow       #ff8f00
+  Purple       #6054d0
+  Green        #4fb000
+  Blue         #00b3e3
+  Magenta      #ff004b
+  Orange       #ff4d00
 
 ==============================================================================
 9. Contributions                        *monokai-nightasty.nvim-contributions*

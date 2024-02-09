@@ -309,27 +309,27 @@ some_plugin_config.another = util.darken(colors.bg, 0.3)
 
 <!-- panvimdoc-ignore-start -->
 
-| Color name  | Hex code  | Render                                                        |
-|-------------|-----------|---------------------------------------------------------------|
-| Yellow      | `#ffff87` | ![#ffff87](https://place-hold.it/100x40/ffff87/111111?text=+) |
-| Purple      | `#af87ff` | ![#af87ff](https://place-hold.it/100x40/af87ff/000000?text=+) |
-| Green Light | `#a4e400` | ![#a4e400](https://place-hold.it/100x40/a4e400/000000?text=+) |
-| Blue Light  | `#62d8f1` | ![#62d8f1](https://place-hold.it/100x40/62d8f1/000000?text=+) |
-| Magenta     | `#fc1a70` | ![#fc1a70](https://place-hold.it/100x40/fc1a70/000000?text=+) |
-| Orange      | `#ff9700` | ![#ff9700](https://place-hold.it/100x40/ff9700/000000?text=+) |
+| Color name | Hex code  | Render                                                        |
+|------------|-----------|---------------------------------------------------------------|
+| Yellow     | `#ffff87` | ![#ffff87](https://place-hold.it/100x40/ffff87/111111?text=+) |
+| Purple     | `#af87ff` | ![#af87ff](https://place-hold.it/100x40/af87ff/000000?text=+) |
+| Green      | `#a4e400` | ![#a4e400](https://place-hold.it/100x40/a4e400/000000?text=+) |
+| Blue       | `#62d8f1` | ![#62d8f1](https://place-hold.it/100x40/62d8f1/000000?text=+) |
+| Magenta    | `#fc1a70` | ![#fc1a70](https://place-hold.it/100x40/fc1a70/000000?text=+) |
+| Orange     | `#ff9700` | ![#ff9700](https://place-hold.it/100x40/ff9700/000000?text=+) |
 
 <!-- panvimdoc-ignore-end -->
 
 <!-- panvimdoc-include-comment
 
-| Color name  | Hex code  |
-|-------------|-----------|
-| Yellow      | `#ffff87` |
-| Purple      | `#af87ff` |
-| Green Light | `#a4e400` |
-| Blue Light  | `#62d8f1` |
-| Magenta     | `#fc1a70` |
-| Orange      | `#ff9700` |
+| Color name | Hex code  |
+|------------|-----------|
+| Yellow     | `#ffff87` |
+| Purple     | `#af87ff` |
+| Green      | `#a4e400` |
+| Blue       | `#62d8f1` |
+| Magenta    | `#fc1a70` |
+| Orange     | `#ff9700` |
 
 -->
 
@@ -337,27 +337,27 @@ some_plugin_config.another = util.darken(colors.bg, 0.3)
 
 <!-- panvimdoc-ignore-start -->
 
-| Color name  | Hex code  | Render                                                        |
-|-------------|-----------|---------------------------------------------------------------|
-| Yellow      | `#ff8f00` | ![#ff8f00](https://place-hold.it/100x40/ff8f00/000000?text=+) |
-| Purple      | `#6054d0` | ![#6054d0](https://place-hold.it/100x40/6054d0/000000?text=+) |
-| Green Light | `#4fb000` | ![#4fb000](https://place-hold.it/100x40/4fb000/000000?text=+) |
-| Blue Light  | `#00b3e3` | ![#00b3e3](https://place-hold.it/100x40/00b3e3/000000?text=+) |
-| Magenta     | `#ff004b` | ![#ff004b](https://place-hold.it/100x40/ff004b/000000?text=+) |
-| Orange      | `#ff4d00` | ![#ff4d00](https://place-hold.it/100x40/ff4d00/000000?text=+) |
+| Color name | Hex code  | Render                                                        |
+|------------|-----------|---------------------------------------------------------------|
+| Yellow     | `#ff8f00` | ![#ff8f00](https://place-hold.it/100x40/ff8f00/000000?text=+) |
+| Purple     | `#6054d0` | ![#6054d0](https://place-hold.it/100x40/6054d0/000000?text=+) |
+| Green      | `#4fb000` | ![#4fb000](https://place-hold.it/100x40/4fb000/000000?text=+) |
+| Blue       | `#00b3e3` | ![#00b3e3](https://place-hold.it/100x40/00b3e3/000000?text=+) |
+| Magenta    | `#ff004b` | ![#ff004b](https://place-hold.it/100x40/ff004b/000000?text=+) |
+| Orange     | `#ff4d00` | ![#ff4d00](https://place-hold.it/100x40/ff4d00/000000?text=+) |
 
 <!-- panvimdoc-ignore-end -->
 
 <!-- panvimdoc-include-comment
 
-| Color name  | Hex code  |
-|-------------|-----------|
-| Yellow      | `#ff8f00` |
-| Purple      | `#6054d0` |
-| Green Light | `#4fb000` |
-| Blue Light  | `#00b3e3` |
-| Magenta     | `#ff004b` |
-| Orange      | `#ff4d00` |
+| Color name | Hex code  |
+|------------|-----------|
+| Yellow     | `#ff8f00` |
+| Purple     | `#6054d0` |
+| Green      | `#4fb000` |
+| Blue       | `#00b3e3` |
+| Magenta    | `#ff004b` |
+| Orange     | `#ff4d00` |
 
 -->
 
