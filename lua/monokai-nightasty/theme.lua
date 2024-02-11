@@ -573,7 +573,7 @@ function M.setup(palette)
     NeoTreeWinSeparator = { link = "NvimTreeWinSeparator" },
 
     --- Mini
-    MiniIndentscopeSymbol = { fg = util.darken(c.orange, 0.8), nocombine = true },
+    MiniIndentscopeSymbol = { fg = util.darken(c.orange, 0.6), nocombine = true },
 
     --- Rainbow Delimiters
     RainbowDelimiterRed = { fg = c.magenta },
