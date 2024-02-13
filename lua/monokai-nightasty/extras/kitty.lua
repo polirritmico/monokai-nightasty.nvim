@@ -19,7 +19,7 @@ foreground ${grey_light}
 selection_background ${orange}
 selection_foreground ${black}
 url_color ${green_alt}
-cursor ${fg}
+cursor none
 cursor_text_color ${bg}
 
 # Tabs
