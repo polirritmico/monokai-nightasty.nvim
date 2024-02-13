@@ -15,7 +15,7 @@ function M.generate(colors)
 
 
 background ${bg}
-foreground ${fg_dark}
+foreground ${grey_light}
 selection_background ${orange}
 selection_foreground ${black}
 url_color ${green_alt}
