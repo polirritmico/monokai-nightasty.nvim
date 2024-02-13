@@ -992,15 +992,15 @@ local highlights = {
     link = "diffAdded"
   },
   GitSignsAddInline = {
-    bg = "#4fb000",
-    fg = "#e5f3d9"
+    sp = "#4fb000",
+    undercurl = true
   },
   GitSignsChange = {
     link = "diffChanged"
   },
   GitSignsChangeInline = {
-    bg = "#0087ff",
-    fg = "#d9edff"
+    sp = "#0087ff",
+    undercurl = true
   },
   GitSignsCurrentLineBlame = {
     bg = "#dedede",
@@ -1108,6 +1108,15 @@ local highlights = {
   LazyProgressTodo = {
     bold = true,
     fg = "#c9c9c9"
+  },
+  LazyReasonCmd = {
+    fg = "#00b3e3"
+  },
+  LazyReasonEvent = {
+    fg = "#ff4d00"
+  },
+  LazyReasonSource = {
+    fg = "#ff8f00"
   },
   LineNr = {
     fg = "#c9c9c9"
@@ -1246,6 +1255,10 @@ local highlights = {
     bold = true,
     fg = "#ff004b",
     underline = true
+  },
+  MiniIndentscopeSymbol = {
+    fg = "#ff9466",
+    nocombine = true
   },
   ModeMsg = {
     bold = true,
@@ -1920,9 +1933,18 @@ local highlights = {
     link = "TodoFgWARN"
   },
   TreesitterContext = {
-    bg = "#d4d4d4"
+    bg = "#f1f1f1"
   },
   TreesitterContextBottom = {
+    sp = "#00b3e3",
+    underline = true
+  },
+  TreesitterContextLineNumber = {
+    bg = "#f1f1f1",
+    fg = "#a5a5a5"
+  },
+  TreesitterContextLineNumberBottom = {
+    fg = "#ff8f00",
     sp = "#00b3e3",
     underline = true
   },
