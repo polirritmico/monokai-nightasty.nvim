@@ -3,7 +3,7 @@ local M = {}
 ---@class Config
 ---@field on_colors fun(colors: ColorScheme)
 ---@field on_highlights fun(highlights: Highlights, colors: ColorScheme)
----@field transparent boolean|nil
+---@field transparent boolean?
 local defaults = {
   dark_style_background = "default", -- default, dark, transparent, #color
   light_style_background = "default", -- default, dark, transparent, #color
@@ -42,12 +42,12 @@ local defaults = {
 ---@diagnostic disable-next-line: missing-fields
 M.options = {}
 
----@param options Config|nil
+---@param options Config?
 function M.setup(options)
   M.options = vim.tbl_deep_extend("force", {}, defaults, options or {})
 end
 
----@param options Config|nil
+---@param options Config?
 function M.extend(options)
   M.options = vim.tbl_deep_extend("force", {}, M.options or defaults, options or {})
 end

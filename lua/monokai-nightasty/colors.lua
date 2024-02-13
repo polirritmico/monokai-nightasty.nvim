@@ -51,6 +51,7 @@ M.default = {
   },
 }
 
+---@type Palette
 M.light_palette = {
   -- Base colors               -- Dark color
   blue = "#00b3e3", -- #62d8f1
