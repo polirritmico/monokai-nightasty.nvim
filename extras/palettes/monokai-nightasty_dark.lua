@@ -1839,6 +1839,9 @@ local highlights = {
     bg = "#262626",
     fg = "#bcbcbc"
   },
+  TelescopePreviewLine = {
+    bg = "#444444"
+  },
   TelescopePromptPrefix = {
     fg = "#0087ff"
   },
