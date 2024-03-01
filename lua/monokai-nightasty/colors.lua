@@ -153,7 +153,7 @@ function M.setup(opts)
   colors.error = colors.red
   colors.hint = colors.green_alt
   colors.info = colors.blue_alt
-  colors.note = colors.yellow
+  colors.note = util.blend(colors.orange, colors.yellow, 0.6)
   colors.todo = colors.purple
   colors.warning = colors.orange
   colors.diff = {
