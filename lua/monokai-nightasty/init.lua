@@ -11,6 +11,9 @@ function M.load(opts)
   -- Set MonokaiToggleLight
   if not M.loaded then
     vim.cmd("command! MonokaiToggleLight lua MonokaiToggleLight()")
+    if opts and opts.markdown_header_marks == true then
+      require("monokai-nightasty.extras.ts_markdown").set_headers_marks()
+    end
     M.loaded = true
   end
 
