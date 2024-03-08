@@ -25,7 +25,6 @@ local defaults = {
   dim_inactive = false, -- dims inactive windows
   lualine_bold = true, -- Lualine headers will be bold or regular.
   lualine_style = "default", -- "dark", "light" or "default" (Follows dark/light style)
-  markdown_header_marks = false, -- Add headers marks highlights (the `#` character) to Treesitter highlight query
 
   --- You can override specific color groups to use other groups or a hex color
   --- function will be called with a ColorScheme table
@@ -41,16 +40,11 @@ local defaults = {
 
 ---@type Config
 ---@diagnostic disable-next-line: missing-fields
-M.options = M.options or {}
+M.options = {}
 
 ---@param options Config?
 function M.setup(options)
   M.options = vim.tbl_deep_extend("force", {}, defaults, options or {})
-  -- HACK: Add back the removed Treesitter header markers. Use this workaround
-  -- until they add something similar (if so)
-  if M.options.markdown_header_marks == true then
-    require("monokai-nightasty.extras.ts_markdown").set_headers_marks()
-  end
 end
 
 ---@param options Config?
