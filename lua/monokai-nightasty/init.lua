@@ -11,6 +11,12 @@ function M.load(opts)
   -- Set MonokaiToggleLight
   if not M.loaded then
     vim.cmd("command! MonokaiToggleLight lua MonokaiToggleLight()")
+
+    -- HACK: Add back the removed Treesitter header markers. Use this workaround
+    -- until they add something similar (if so)
+    if opts and opts.markdown_header_marks == true then
+      require("monokai-nightasty.extras.ts_markdown").set_headers_marks()
+    end
     M.loaded = true
   end
 

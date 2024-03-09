@@ -136,6 +136,7 @@ Monokai Nightasty comes with these defaults:
     dim_inactive = false, -- dims inactive windows
     lualine_bold = true, -- Lualine headers will be bold or regular.
     lualine_style = "default", -- "dark", "light" or "default" (Follows dark/light style)
+    markdown_header_marks = false, -- Add headers marks highlights (the `#` character) to Treesitter highlight query
 
     --- You can override specific color groups to use other groups or a hex color
     --- function will be called with the theme ColorScheme table
@@ -258,6 +259,15 @@ To use the generated config files with the corresponding external tool, check
 the `extras` folder, copy, link or reference the file in each setting. Refer to
 the respective program documentation.
 
+### Markdown files
+
+Nvim Tressiter no longer provide highlight captures for the headers `#` marks.
+This plugin will provide them for as long as they work, or until nvim-treesitter
+provides any way to highlight them.
+
+To enable this feature, set the `markdown_header_marks` option to `true`
+(defaults to `false`).
+
 ### Tmux
 
 Just source the theme file:
@@ -366,4 +376,4 @@ some_plugin_config.another = util.darken(colors.bg, 0.3)
 This plugin is made mainly for my personal use, but suggestions, issues, or pull
 requests are very welcome.
 
-Enjoy
+**Enjoy**

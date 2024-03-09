@@ -25,6 +25,7 @@ local defaults = {
   dim_inactive = false, -- dims inactive windows
   lualine_bold = true, -- Lualine headers will be bold or regular.
   lualine_style = "default", -- "dark", "light" or "default" (Follows dark/light style)
+  markdown_header_marks = false, -- Add headers marks highlights (the `#` character) to Treesitter highlight query
 
   --- You can override specific color groups to use other groups or a hex color
   --- function will be called with a ColorScheme table
@@ -40,7 +41,7 @@ local defaults = {
 
 ---@type Config
 ---@diagnostic disable-next-line: missing-fields
-M.options = {}
+M.options = M.options or {}
 
 ---@param options Config?
 function M.setup(options)
