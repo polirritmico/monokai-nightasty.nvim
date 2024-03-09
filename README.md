@@ -268,6 +268,14 @@ provides any way to highlight them.
 To enable this feature, set the `markdown_header_marks` option to `true`
 (defaults to `false`).
 
+<!-- panvimdoc-ignore-start -->
+
+| Disabled | Enabled |
+|----------|---------|
+| ![Disabled TS custom query](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/f60e3df9-c276-4c38-be69-d7f48095fe75) | ![Enabled TS custom query](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/898a4b42-828b-4dae-b82c-e90206910ccc) |
+
+<!-- panvimdoc-ignore-end -->
+
 ### Tmux
 
 Just source the theme file:
