@@ -35,7 +35,7 @@ M.default = {
   fg_gutter = "#3e3e3e",
   terminal_black = "#444444",
   comment = "#8a8a8a",
-  fg_dark = "#e8e8e8",
+  fg_dark = "#e6e6e6",
   fg = "#ffffff",
 
   -- Extra colors
@@ -74,7 +74,7 @@ M.light_palette = {
   charcoal = "#e3e3e3", -- #262626
 
   -- Functionals
-  fg_dark = "#171717", -- #e8e8e8
+  fg_dark = "#0e0e0e", -- #e6e6e6;
   fg = "#333333", -- #ffffff
   comment = "#7f7f7f", -- #8a8a8a
   terminal_black = "#bfbfbf", -- #444444

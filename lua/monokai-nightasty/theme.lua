@@ -377,11 +377,12 @@ function M.setup(palette)
 
     -- Languages specifics
     ["@function.builtin.bash"] = { fg = c.blue },
-    ["@constructor.lua"] = { fg = c.magenta },
-    ["@lsp.typemod.variable.global.lua"] = { link = "@variable.builtin" },
     ["@type.qualifier.c_sharp"] = { fg = c.orange, italic = true },
     dosbatchError = { fg = c.red },
     ["@property.ini"] = { fg = c.orange },
+    ["@constructor.lua"] = { fg = c.magenta },
+    ["@lsp.typemod.variable.global.lua"] = { link = "@variable.builtin" },
+    -- ["@lsp.type.namespace.python"] = { link = "@variable" },
 
     -- Others
     NvimInternalError = { fg = c.fg, bg = "#ff0000" }, -- hard red

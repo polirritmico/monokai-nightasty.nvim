@@ -30,12 +30,12 @@ local colors = {
   },
   error = "#ff005f",
   fg = "#333333",
-  fg_dark = "#171717",
+  fg_dark = "#0e0e0e",
   fg_float = "#333333",
   fg_gutter = "#c9c9c9",
   fg_search = "#ffffff",
-  fg_sidebar = "#171717",
-  fg_statusline = "#171717",
+  fg_sidebar = "#0e0e0e",
+  fg_statusline = "#0e0e0e",
   git = {
     add = "#4fb000",
     change = "#ff4d00",
@@ -55,7 +55,7 @@ local colors = {
   info = "#0087ff",
   magenta = "#ff004b",
   none = "NONE",
-  note = "#ff8f00",
+  note = "#ff6700",
   orange = "#ff4d00",
   purple = "#6054d0",
   rainbow = { "#333333", "#ff8f00", "#ff4d00", "#ff005f", "#6054d0", "#00b3e3" },
@@ -444,7 +444,7 @@ local highlights = {
     link = "Operator"
   },
   ["@property"] = {
-    fg = "#171717"
+    fg = "#0e0e0e"
   },
   ["@property.ini"] = {
     fg = "#ff4d00"
@@ -1053,7 +1053,7 @@ local highlights = {
     nocombine = true
   },
   IblWhitespace = {
-    fg = "#171717",
+    fg = "#0e0e0e",
     nocombine = true
   },
   Identifier = {
@@ -1077,7 +1077,7 @@ local highlights = {
     nocombine = true
   },
   IndentBlanklineSpaceChar = {
-    fg = "#171717",
+    fg = "#0e0e0e",
     nocombine = true
   },
   Italic = {
@@ -1262,13 +1262,13 @@ local highlights = {
   },
   ModeMsg = {
     bold = true,
-    fg = "#171717"
+    fg = "#0e0e0e"
   },
   MoreMsg = {
     fg = "#4fb000"
   },
   MsgArea = {
-    fg = "#171717"
+    fg = "#0e0e0e"
   },
   MsgSeparator = {
     sp = "#00b3e3",
@@ -1419,11 +1419,11 @@ local highlights = {
   },
   NeoTreeNormal = {
     bg = "#f1f1f1",
-    fg = "#171717"
+    fg = "#0e0e0e"
   },
   NeoTreeNormalNC = {
     bg = "#f1f1f1",
-    fg = "#171717"
+    fg = "#0e0e0e"
   },
   NeoTreeRootName = {
     fg = "#ff004b",
@@ -1575,7 +1575,7 @@ local highlights = {
   },
   NormalSB = {
     bg = "#f1f1f1",
-    fg = "#171717"
+    fg = "#0e0e0e"
   },
   NotifyBackground = {
     bg = "#ffffff",
@@ -1667,18 +1667,18 @@ local highlights = {
     fg = "#4fb000"
   },
   NvimTreeImageFile = {
-    fg = "#171717"
+    fg = "#0e0e0e"
   },
   NvimTreeIndentMarker = {
     fg = "#c9c9c9"
   },
   NvimTreeNormal = {
     bg = "#f1f1f1",
-    fg = "#171717"
+    fg = "#0e0e0e"
   },
   NvimTreeNormalNC = {
     bg = "#f1f1f1",
-    fg = "#171717"
+    fg = "#0e0e0e"
   },
   NvimTreeOpenedFile = {
     bg = "#ebebeb"
@@ -1797,7 +1797,7 @@ local highlights = {
   },
   StatusLine = {
     bg = "#f1f1f1",
-    fg = "#171717"
+    fg = "#0e0e0e"
   },
   StatusLineNC = {
     bg = "#f1f1f1",
@@ -1819,7 +1819,7 @@ local highlights = {
   },
   TabLine = {
     bg = "#f1f1f1",
-    fg = "#171717",
+    fg = "#0e0e0e",
     underline = true
   },
   TabLineFill = {
@@ -1872,7 +1872,7 @@ local highlights = {
     fg = "#000001"
   },
   TodoBgNOTE = {
-    bg = "#ff8f00",
+    bg = "#ff6700",
     bold = true,
     fg = "#000001"
   },
@@ -1903,7 +1903,7 @@ local highlights = {
     fg = "#ff4d00"
   },
   TodoFgNOTE = {
-    fg = "#ff8f00"
+    fg = "#ff6700"
   },
   TodoFgPERF = {
     fg = "#00b3e3"
@@ -2089,7 +2089,7 @@ local highlights = {
     fg = "#ff004b"
   },
   netrwCmdNote = {
-    fg = "#171717"
+    fg = "#0e0e0e"
   },
   netrwDir = {
     fg = "#ff8f00"
@@ -2113,10 +2113,10 @@ local highlights = {
     fg = "#000001"
   },
   netrwPlain = {
-    fg = "#171717"
+    fg = "#0e0e0e"
   },
   netrwQuickHelp = {
-    fg = "#171717",
+    fg = "#0e0e0e",
     italic = true
   },
   netrwSymLink = {
