@@ -901,8 +901,8 @@ local highlights = {
     undercurl = true
   },
   DiagnosticUnnecessary = {
-    fg = "#bcbcbc",
     italic = true,
+    sp = "#bcbcbc",
     undercurl = true
   },
   DiagnosticVirtualTextError = {

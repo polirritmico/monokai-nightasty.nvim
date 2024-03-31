@@ -165,11 +165,12 @@ function M.setup(palette)
     LspReferenceRead = { bg = c.fg_gutter }, -- used for highlighting "read" references
     LspReferenceWrite = { bg = c.fg_gutter }, -- used for highlighting "write" references
 
-    DiagnosticError = { fg = c.error }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-    DiagnosticWarn = { fg = c.warning }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-    DiagnosticInfo = { fg = c.info }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-    DiagnosticHint = { fg = c.hint }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
-    DiagnosticUnnecessary = { fg = c.grey_light, italic = true, undercurl = true }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+    -- Used as the base highlight group. Other Diagnostic highlights link to this by default
+    DiagnosticError = { fg = c.error },
+    DiagnosticWarn = { fg = c.warning },
+    DiagnosticInfo = { fg = c.info },
+    DiagnosticHint = { fg = c.hint },
+    DiagnosticUnnecessary = { italic = true, undercurl = true, sp = c.grey_light }, -- e.g. unused variables
 
     DiagnosticVirtualTextError = { fg = c.error, bg = util.darken(c.error, 0.08) }, -- Used for "Error" diagnostic virtual text
     DiagnosticVirtualTextWarn = { fg = c.warning, bg = util.darken(c.warning, 0.08) }, -- Used for "Warning" diagnostic virtual text
