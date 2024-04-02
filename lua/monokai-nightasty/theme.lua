@@ -482,11 +482,13 @@ function M.setup(palette)
     IblScope = { fg = c.blue, nocombine = true },
 
     --- Lazy
+    LazyCommitScope = { fg = c.orange, italic = true }, -- Git commit message. Scope string inside ()
+    LazyCommitType = { fg = c.magenta, bold = true }, -- Git commit message type. Like fix, feat, refactor, etc.
     LazyProgressDone = { fg = c.magenta, bold = true },
     LazyProgressTodo = { fg = c.fg_gutter, bold = true },
-    LazyReasonSource = { fg = c.yellow },
-    LazyReasonEvent = { fg = c.orange },
     LazyReasonCmd = { fg = c.blue },
+    LazyReasonEvent = { fg = c.orange },
+    LazyReasonSource = { fg = c.yellow },
 
     --- Navic
     NavicText = { fg = c.fg, bg = c.none },
