@@ -404,7 +404,7 @@ function M.setup(palette)
     --- Cmp
     CmpDocumentation = { fg = c.fg, bg = c.bg_float },
     CmpDocumentationBorder = { fg = c.border_highlight, bg = c.bg_float },
-    CmpGhostText = { fg = c.terminal_black }, -- Experimental. hl must be defined by the user
+    CmpGhostText = { fg = c.grey_medium, italic = true }, -- Experimental. hl must be defined by the user
     -- Left side
     CmpItemAbbr = { fg = c.fg, bg = c.none }, -- The suggestions
     CmpItemAbbrMatch = { fg = c.magenta, bg = c.none }, -- The current matches with the suggestions
