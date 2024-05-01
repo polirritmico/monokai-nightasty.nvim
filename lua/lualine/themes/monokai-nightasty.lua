@@ -9,7 +9,7 @@ if dark_style then
   local c = require("monokai-nightasty.colors").setup({ force_style = "dark" })
 
   monokai_nightasty.normal = {
-    a = { fg = c.black, bg = c.green },
+    a = { fg = c.lualine.normal_fg, bg = c.lualine.normal_bg },
     b = { fg = c.green, bg = c.bg_status_alt },
     c = { fg = c.fg_statusline, bg = c.bg_statusline },
   }
@@ -48,7 +48,7 @@ else
   local c = require("monokai-nightasty.colors").setup({ force_style = "light" })
 
   monokai_nightasty.normal = {
-    a = { fg = c.white, bg = c.green },
+    a = { fg = c.lualine.normal_fg, bg = c.lualine.normal_bg },
     b = { fg = c.fg_sidebar, bg = c.bg_status_alt },
     c = { fg = c.fg_statusline, bg = c.bg_statusline },
   }

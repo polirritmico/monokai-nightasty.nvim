@@ -53,6 +53,10 @@ local colors = {
   grey_medium = "#a5a5a5",
   hint = "#4fb000",
   info = "#0087ff",
+  lualine = {
+    normal_bg = "#4fb000",
+    normal_fg = "#ffffff"
+  },
   magenta = "#ff004b",
   none = "NONE",
   note = "#ff6700",
@@ -652,7 +656,8 @@ local highlights = {
     fg = "#333333"
   },
   CmpGhostText = {
-    fg = "#bfbfbf"
+    fg = "#a5a5a5",
+    italic = true
   },
   CmpItemAbbr = {
     bg = "NONE",
@@ -1100,6 +1105,14 @@ local highlights = {
   },
   Label = {
     fg = "#ff8f00"
+  },
+  LazyCommitScope = {
+    fg = "#ff4d00",
+    italic = true
+  },
+  LazyCommitType = {
+    bold = true,
+    fg = "#ff004b"
   },
   LazyProgressDone = {
     bold = true,

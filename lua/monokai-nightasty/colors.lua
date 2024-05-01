@@ -163,6 +163,12 @@ function M.setup(opts)
     text = util.darken(colors.blue_alt, 0.5),
   }
 
+  -- Lualine
+  colors.lualine = {
+    normal_bg = colors.green,
+    normal_fg = is_light and colors.white or colors.black,
+  }
+
   -- Rainbow colors (for color_headers, rainbow delimiters and other plugins)
   colors.rainbow = {
     colors.fg,

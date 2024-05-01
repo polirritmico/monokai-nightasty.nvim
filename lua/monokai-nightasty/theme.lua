@@ -193,11 +193,8 @@ function M.setup(palette)
     healthSuccess = { fg = c.green_alt },
     healthWarning = { fg = c.warning },
 
-    -- TreeSitter
-    Hlargs = { fg = c.yellow },
-
-    --- Treesitter highlights
-    -- from https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights
+    --- TreeSitter
+    -- highlights from https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights
 
     -- Identifiers
     ["@variable"] = { fg = c.fg, style = options.hl_styles.variables }, -- any variable name that does not have another highlight.
@@ -386,6 +383,7 @@ function M.setup(palette)
     -- ["@lsp.type.namespace.python"] = { link = "@variable" },
 
     -- Others
+    Hlargs = { fg = c.yellow }, -- Treesitter
     NvimInternalError = { fg = c.fg, bg = "#ff0000" }, -- hard red
     -- ALEErrorSign = { fg = c.error },
     -- ALEWarningSign = { fg = c.warning },
@@ -822,6 +820,12 @@ function M.setup(palette)
   }
 
   -- Kind plugins
+  local kind_plugins = {
+    "Aerial%sIcon",
+    "CmpItemKind%s",
+    "NavicIcons%s",
+    "NoiceCompletionItemKind%s",
+  }
   local kinds_links = {
     Array = "@punctuation.bracket",
     Boolean = "Boolean",
@@ -860,12 +864,6 @@ function M.setup(palette)
     Unit = "Structure",
     Value = "KindParameter",
     Variable = "@variable",
-  }
-  local kind_plugins = {
-    "Aerial%sIcon",
-    "CmpItemKind%s",
-    "NavicIcons%s",
-    "NoiceCompletionItemKind%s",
   }
 
   for kind, link in pairs(kinds_links) do
