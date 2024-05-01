@@ -26,8 +26,8 @@ the flavorful
 
 - Infused with the Monokai palette for a vibrant, distraction-free coding
   experience.
-- Avoid eye strain by seamlessly toggling between clear and dark styles at
-  your fingertips, whether you're at your station or out in the wild.
+- Avoid eye strain by seamlessly toggling between clear and dark styles at your
+  fingertips, whether you're at your station or out in the wild.
 - Support for popular plugins like treesitter, cmp, telescope, gitsigns,
   lualine, indent-blankline, which-key, notify, noice, todo-comments and more.
 - Highly customizable for your coding needs.
@@ -58,7 +58,6 @@ https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/51fb86fe-
 
 - [Neovim](https://neovim.io/) >= 0.9.0
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) > 0.9.2
-
 
 ## 📦 Installation
 
@@ -148,7 +147,6 @@ Monokai Nightasty comes with these defaults:
 }
 ```
 
-
 #### Full configuration example (for Lazy):
 
 ```lua
@@ -179,6 +177,8 @@ return {
             colors.comment = current_is_light and "#2d7e79" or colors.grey
             -- Custom color only for dark theme
             colors.border = not current_is_light and colors.magenta or colors.border
+            -- Custom lualine normal color
+            colors.lualine.normal_bg = current_is_light and "#7ebd00" or colors.green
         end,
         on_highlights = function(highlights, colors)
             -- You could add styles like bold, underline, italic
@@ -270,8 +270,8 @@ To enable this feature, set the `markdown_header_marks` option to `true`
 
 <!-- panvimdoc-ignore-start -->
 
-| Disabled | Enabled |
-|----------|---------|
+| Disabled                                                                                                                                 | Enabled                                                                                                                                 |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | ![Disabled TS custom query](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/f60e3df9-c276-4c38-be69-d7f48095fe75) | ![Enabled TS custom query](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/898a4b42-828b-4dae-b82c-e90206910ccc) |
 
 <!-- panvimdoc-ignore-end -->
@@ -320,7 +320,6 @@ some_plugin_config.example = util.lighten(colors.bg, 0.5)
 some_plugin_config.another = util.darken(colors.bg, 0.3)
 ```
 
-
 ## 🎨 Color Palettes
 
 ### 🌃 Dark Style
@@ -328,7 +327,7 @@ some_plugin_config.another = util.darken(colors.bg, 0.3)
 <!-- panvimdoc-ignore-start -->
 
 | Color name | Hex code  | Render                                                        |
-|------------|-----------|---------------------------------------------------------------|
+| ---------- | --------- | ------------------------------------------------------------- |
 | Yellow     | `#ffff87` | ![#ffff87](https://place-hold.it/100x40/ffff87/111111?text=+) |
 | Purple     | `#af87ff` | ![#af87ff](https://place-hold.it/100x40/af87ff/000000?text=+) |
 | Green      | `#a4e400` | ![#a4e400](https://place-hold.it/100x40/a4e400/000000?text=+) |
@@ -356,7 +355,7 @@ some_plugin_config.another = util.darken(colors.bg, 0.3)
 <!-- panvimdoc-ignore-start -->
 
 | Color name | Hex code  | Render                                                        |
-|------------|-----------|---------------------------------------------------------------|
+| ---------- | --------- | ------------------------------------------------------------- |
 | Yellow     | `#ff8f00` | ![#ff8f00](https://place-hold.it/100x40/ff8f00/000000?text=+) |
 | Purple     | `#6054d0` | ![#6054d0](https://place-hold.it/100x40/6054d0/000000?text=+) |
 | Green      | `#4fb000` | ![#4fb000](https://place-hold.it/100x40/4fb000/000000?text=+) |

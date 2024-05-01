@@ -1,4 +1,4 @@
-*monokai-nightasty.nvim.txt*    For Neovim >= 0.9   Last change: 2024 April 01
+*monokai-nightasty.nvim.txt*     For Neovim >= 0.9    Last change: 2024 May 01
 
 ==============================================================================
 Table of Contents                   *monokai-nightasty.nvim-table-of-contents*
@@ -34,8 +34,8 @@ vim-monokai-tasty <https://github.com/patstockwell/vim-monokai-tasty>.
 
 - Infused with the Monokai palette for a vibrant, distraction-free coding
     experience.
-- Avoid eye strain by seamlessly toggling between clear and dark styles at
-    your fingertips, whether you’re at your station or out in the wild.
+- Avoid eye strain by seamlessly toggling between clear and dark styles at your
+    fingertips, whether you’re at your station or out in the wild.
 - Support for popular plugins like treesitter, cmp, telescope, gitsigns,
     lualine, indent-blankline, which-key, notify, noice, todo-comments and more.
 - Highly customizable for your coding needs.
@@ -175,6 +175,8 @@ FULL CONFIGURATION EXAMPLE (FOR LAZY): ~
                 colors.comment = current_is_light and "#2d7e79" or colors.grey
                 -- Custom color only for dark theme
                 colors.border = not current_is_light and colors.magenta or colors.border
+                -- Custom lualine normal color
+                colors.lualine.normal_bg = current_is_light and "#7ebd00" or colors.green
             end,
             on_highlights = function(highlights, colors)
                 -- You could add styles like bold, underline, italic
