@@ -471,9 +471,6 @@ function M.setup(palette)
     -- For Headline-i levels check the section after this table.
 
     --- indent-blankline
-    IndentBlanklineChar = { fg = c.fg_gutter, nocombine = true },
-    IndentBlanklineSpaceChar = { fg = c.fg_dark, nocombine = true },
-    IndentBlanklineContextChar = { fg = c.blue, nocombine = true },
     IblIndent = { fg = c.fg_gutter, nocombine = true },
     IblWhitespace = { fg = c.fg_dark, nocombine = true },
     IblScope = { fg = c.blue, nocombine = true },
