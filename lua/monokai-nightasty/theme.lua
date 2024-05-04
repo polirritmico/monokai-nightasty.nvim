@@ -59,7 +59,7 @@ function M.setup(palette)
     NonText = { fg = c.grey_darker }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
     Normal = { fg = c.fg, bg = options.transparent and c.none or c.bg }, -- normal text
     NormalFloat = { fg = c.fg_float, bg = c.bg_float }, -- Normal text in floating windows.
-    NormalNC = { fg = c.fg, bg = options.transparent and c.none or options.dim_inactive and c.bg_dark or c.bg }, -- normal text in non-current windows
+    NormalNC = { fg = c.fg, bg = options.transparent and c.none or options.dim_inactive and c.bg_dark or c.bg }, -- normal text in NC (non-current windows)
     NormalSB = { fg = c.fg_sidebar, bg = c.bg_sidebar }, -- normal text in sidebar
     Pmenu = { fg = c.fg, bg = c.bg_popup }, -- Popup/wildMenu: normal item.
     PmenuSbar = { bg = c.bg_menuselbar }, -- bg = c.grey -- Popup/WildMenu: scrollbar.
@@ -311,8 +311,8 @@ function M.setup(palette)
     ["@markup.raw.block"] = { fg = c.grey }, -- literal or verbatim text (e.g., inline code)
 
     ["@markup.list"] = { fg = c.magenta }, -- list markers
-    ["@markup.list.checked"] = { fg = c.magenta }, -- checked todo-style list markers [x]
-    ["@markup.list.unchecked"] = { fg = c.magenta }, -- unchecked todo-style list markers [ ]
+    ["@markup.list.checked"] = { link = "@markup.list" }, -- checked todo-style list markers [x]
+    ["@markup.list.unchecked"] = { link = "@markup.list" }, -- unchecked todo-style list markers [ ]
 
     ["@diff.plus"] = { link = "DiffAdd" }, -- added text (for diff files)
     ["@diff.minus"] = { link = "DiffDelete" }, -- deleted text (for diff files)
@@ -387,7 +387,6 @@ function M.setup(palette)
     NvimInternalError = { fg = c.fg, bg = "#ff0000" }, -- hard red
     -- ALEErrorSign = { fg = c.error },
     -- ALEWarningSign = { fg = c.warning },
-    -- DapStoppedLine = { bg = util.darken(c.warning, 0.1) }, -- Used for "Warning" diagnostic virtual text
 
     --- Plugins ----------------------------------------------------------------
 
@@ -415,19 +414,19 @@ function M.setup(palette)
     -- General
     DashboardHeader = { fg = c.orange },
     DashboardFooter = { fg = c.comment, italic = true },
-    -- Hyper theme
-    DashboardFiles = { fg = c.grey_light },
-    DashboardMruIcon = { fg = c.fg },
-    DashboardMruTitle = { fg = c.magenta, bold = true },
-    DashboardProjectIcon = { fg = c.blue },
-    DashboardProjectTitle = { fg = c.magenta, bold = true },
-    DashboardProjectTitleIcon = { fg = c.fg },
-    -- DashboardShortCutIcon = { fg = c.purple },
-    DashboardShortCut = { fg = c.purple },
     -- Doom theme
     DashboardDesc = { fg = c.magenta },
     DashboardIcon = { fg = c.fg },
     DashboardKey = { fg = c.purple },
+    -- Hyper theme
+    DashboardFiles = { fg = c.grey_light },
+    DashboardMruIcon = { link = "DashboardIcon" },
+    DashboardMruTitle = { fg = c.magenta, bold = true },
+    DashboardProjectIcon = { fg = c.blue },
+    DashboardProjectTitle = { link = "DashboardIcon" },
+    DashboardProjectTitleIcon = { link = "DashboardIcon" },
+    -- DashboardShortCutIcon = { fg = c.purple },
+    DashboardShortCut = { link = "DashboardKey" },
 
     --- Dirvish
     DirvishSuffix = { fg = c.grey_medium },
@@ -482,7 +481,7 @@ function M.setup(palette)
     --- Lazy
     LazyCommitScope = { fg = c.orange, italic = true }, -- Git commit message. Scope string inside ()
     LazyCommitType = { fg = c.magenta, bold = true }, -- Git commit message type. Like fix, feat, refactor, etc.
-    LazyProgressDone = { fg = c.magenta, bold = true },
+    LazyProgressDone = { link = "LazyCommitType" },
     LazyProgressTodo = { fg = c.fg_gutter, bold = true },
     LazyReasonCmd = { fg = c.blue },
     LazyReasonEvent = { fg = c.orange },
@@ -498,10 +497,10 @@ function M.setup(palette)
     netrwDir = { fg = c.yellow },
     netrwExe = { fg = c.orange },
     netrwHelpCmd = { fg = c.orange, bold = true },
-    netrwLink = { fg = c.magenta },
-    netrwList = { fg = c.yellow },
+    netrwLink = { link = "netrwClassify" },
+    netrwList = { link = "netrwDir" },
     netrwMarkFile = { fg = c.black, bg = c.orange, bold = true },
-    netrwPlain = { fg = c.fg_dark },
+    netrwPlain = { link = "netrwCmdNote" },
     netrwQuickHelp = { fg = c.fg_dark, italic = true },
     netrwSymLink = { fg = c.blue, italic = true },
     netrwTreeBar = { fg = c.fg_gutter, nocombine = true },
@@ -528,11 +527,12 @@ function M.setup(palette)
     NotifyDEBUGIcon = { fg = c.comment },
     NotifyTRACEIcon = { fg = c.purple },
     -- Title
-    NotifyERRORTitle = { fg = c.error },
-    NotifyWARNTitle = { fg = c.warning },
-    NotifyINFOTitle = { fg = c.info },
-    NotifyDEBUGTitle = { fg = c.comment },
-    NotifyTRACETitle = { fg = c.purple },
+    NotifyERRORTitle = { link = "NotifyERRORIcon" },
+    NotifyWARNTitle = { link = "NotifyWARNIcon" },
+    NotifyINFOTitle = { link = "NotifyINFOIcon" },
+    NotifyDEBUGTitle = { link = "NotifyDEBUGIcon" },
+    NotifyTRACETitle = { link = "NotifyTRACEIcon" },
+
     -- Body
     NotifyERRORBody = { link = "Normal" },
     NotifyWARNBody = { link = "Normal" },
@@ -549,7 +549,7 @@ function M.setup(palette)
     NvimTreeImageFile = { fg = c.fg_sidebar },
     NvimTreeIndentMarker = { fg = c.fg_gutter },
     NvimTreeNormal = { fg = c.fg_sidebar, bg = c.bg_sidebar },
-    NvimTreeNormalNC = { fg = c.fg_sidebar, bg = c.bg_sidebar },
+    NvimTreeNormalNC = { link = "NvimTreeNormal" },
     NvimTreeOpenedFile = { bg = c.bg_highlight },
     NvimTreeOpenedFolderName = { fg = c.fg, bold = true },
     NvimTreeRootFolder = { fg = c.magenta, italic = true },
@@ -568,7 +568,7 @@ function M.setup(palette)
     NeoTreeGitAdded = { fg = c.git.add },
     NeoTreeIndentMarkder = { fg = c.fg_gutter },
     NeoTreeNormal = { fg = c.fg_sidebar, bg = c.bg_sidebar },
-    NeoTreeNormalNC = { fg = c.fg_sidebar, bg = c.bg_sidebar },
+    NeoTreeNormalNC = { link = "NeoTreeNormal" },
     NeoTreeFileNameOpened = { fg = c.orange },
     NeoTreeRootName = { fg = c.magenta, italic = true },
     NeoTreeDimText = { fg = c.fg_gutter },
@@ -628,7 +628,7 @@ function M.setup(palette)
     WhichKeySeparator = { fg = c.grey_light, italic = false },
     WhichKeyDesc = { fg = c.fg },
     WhichKeyFloat = { bg = c.bg_sidebar },
-    WhichKeyBorder = { bg = c.bg_sidebar },
+    WhichKeyBorder = { link = "WhichKeyFloat" },
     WhichKeyValue = { fg = c.grey_light },
 
     --- Misc
