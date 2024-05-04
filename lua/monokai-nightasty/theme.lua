@@ -410,6 +410,53 @@ function M.setup(palette)
     -- Middle
     CmpItemMenu = { fg = c.comment }, -- The [source of the suggestion, LSP, luasnip...]
 
+    --- Dap UI
+    -- Action buttons
+    DapUIPlayPause = { fg = c.green, bg = c.bg_statusline },
+    DapUIPlayPauseNC = { link = "DapUIPlayPause" },
+    DapUIRestart = { link = "DapUIPlayPause" },
+    DapUIStepBack = { fg = c.blue, bg = c.bg_statusline },
+    DapUIStepBackNC = { link = "DapUIStepBack" },
+    DapUIStepInto = { link = "DapUIStepBack" },
+    DapUIStepIntoNC = { link = "DapUIStepBack" },
+    DapUIStepOut = { link = "DapUIStepBack" },
+    DapUIStepOutNC = { link = "DapUIStepBack" },
+    DapUIStepOver = { link = "DapUIStepBack" },
+    DapUIStepOverNC = { link = "DapUIStepBack" },
+    DapUIStop = { fg = c.red, bg = c.bg_statusline },
+    DapUIStopNC = { link = "DapUIStop" },
+    DapUIUnavailable = { fg = c.grey, bg = c.bg_statusline }, -- Disabled buttons like stop when no debugging
+    DapUIUnavailableNC = { link = "DapUIUnavailable" },
+
+    -- Windows elements
+    DapUINormal = { link = "Normal" },
+    DapUIBreakpointsCurrentLine = { fg = c.green, bold = true },
+    DapUIBreakpointsDisabledLine = { fg = c.comment },
+    DapUIBreakpointsInfo = { fg = c.green },
+    DapUIBreakpointsPath = { fg = c.blue },
+    DapUIDecoration = { fg = c.magenta },
+    DapUIFloatBorder = { link = "DapUIBreakpointsPath" },
+    DapUILineNumber = { fg = c.yellow },
+    DapUIModifiedValue = { fg = c.blue, bold = true },
+    DapUIScope = { link = "DapUIBreakpointsPath" },
+    DapUISource = { fg = c.orange },
+    DapUIStoppedThread = { link = "DapUIBreakpointsPath" },
+    DapUIThread = { link = "DapUIBreakpointsInfo" },
+    DapUIType = { fg = c.purple },
+    DapUIValue = { fg = c.grey_light, bg = c.none },
+    DapUIVariable = { fg = c.fg, bg = c.none },
+    DapUIWatchesEmpty = { link = "DapUIDecoration" },
+    DapUIWatchesError = { link = "DapUIDecoration" },
+    DapUIWatchesValue = { link = "DapUIThread" },
+    -- DapStoppedLine = {},
+    -- DapUIBreakpointsLine = {},
+    -- DapUIBreakpointsLine = { link = "DapUILineNumber" },
+    -- DapUICurrentFrameName = { "DapUIBreakpointsCurrentLine" },
+    -- DapUIEndofBuffer = { "EndofBuffer" },
+    -- DapUIFloatNormal = { link "NormalFloat" },
+    -- DapUIFrameName = { link = "Normal" },
+    -- DapUIWinSelect = { fg = c.blue, bold = true },
+
     --- Dashboard
     -- General
     DashboardHeader = { fg = c.orange },
