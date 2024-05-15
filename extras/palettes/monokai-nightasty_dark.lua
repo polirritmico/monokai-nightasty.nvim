@@ -400,10 +400,10 @@ local highlights = {
     fg = "#fc1a70"
   },
   ["@markup.list.checked"] = {
-    fg = "#fc1a70"
+    link = "@markup.list"
   },
   ["@markup.list.unchecked"] = {
-    fg = "#fc1a70"
+    link = "@markup.list"
   },
   ["@markup.math"] = {
     link = "Special"
@@ -828,6 +828,116 @@ local highlights = {
   CursorLineNr = {
     fg = "#ffff87"
   },
+  DapUIBreakpointsCurrentLine = {
+    bold = true,
+    fg = "#a4e400"
+  },
+  DapUIBreakpointsDisabledLine = {
+    fg = "#8a8a8a"
+  },
+  DapUIBreakpointsInfo = {
+    fg = "#a4e400"
+  },
+  DapUIBreakpointsPath = {
+    fg = "#62d8f1"
+  },
+  DapUIDecoration = {
+    fg = "#fc1a70"
+  },
+  DapUIFloatBorder = {
+    link = "DapUIBreakpointsPath"
+  },
+  DapUILineNumber = {
+    fg = "#ffff87"
+  },
+  DapUIModifiedValue = {
+    bold = true,
+    fg = "#62d8f1"
+  },
+  DapUINormal = {
+    link = "Normal"
+  },
+  DapUIPlayPause = {
+    bg = "#444444",
+    fg = "#a4e400"
+  },
+  DapUIPlayPauseNC = {
+    link = "DapUIPlayPause"
+  },
+  DapUIRestart = {
+    link = "DapUIPlayPause"
+  },
+  DapUIScope = {
+    link = "DapUIBreakpointsPath"
+  },
+  DapUISource = {
+    fg = "#ff9700"
+  },
+  DapUIStepBack = {
+    bg = "#444444",
+    fg = "#62d8f1"
+  },
+  DapUIStepBackNC = {
+    link = "DapUIStepBack"
+  },
+  DapUIStepInto = {
+    link = "DapUIStepBack"
+  },
+  DapUIStepIntoNC = {
+    link = "DapUIStepBack"
+  },
+  DapUIStepOut = {
+    link = "DapUIStepBack"
+  },
+  DapUIStepOutNC = {
+    link = "DapUIStepBack"
+  },
+  DapUIStepOver = {
+    link = "DapUIStepBack"
+  },
+  DapUIStepOverNC = {
+    link = "DapUIStepBack"
+  },
+  DapUIStop = {
+    bg = "#444444",
+    fg = "#ff005f"
+  },
+  DapUIStopNC = {
+    link = "DapUIStop"
+  },
+  DapUIStoppedThread = {
+    link = "DapUIBreakpointsPath"
+  },
+  DapUIThread = {
+    link = "DapUIBreakpointsInfo"
+  },
+  DapUIType = {
+    fg = "#af87ff"
+  },
+  DapUIUnavailable = {
+    bg = "#444444",
+    fg = "#8a8a8a"
+  },
+  DapUIUnavailableNC = {
+    link = "DapUIUnavailable"
+  },
+  DapUIValue = {
+    bg = "NONE",
+    fg = "#bcbcbc"
+  },
+  DapUIVariable = {
+    bg = "NONE",
+    fg = "#ffffff"
+  },
+  DapUIWatchesEmpty = {
+    link = "DapUIDecoration"
+  },
+  DapUIWatchesError = {
+    link = "DapUIDecoration"
+  },
+  DapUIWatchesValue = {
+    link = "DapUIThread"
+  },
   Dash = {
     bold = true,
     fg = "#ff9700"
@@ -852,7 +962,7 @@ local highlights = {
     fg = "#af87ff"
   },
   DashboardMruIcon = {
-    fg = "#ffffff"
+    link = "DashboardIcon"
   },
   DashboardMruTitle = {
     bold = true,
@@ -862,14 +972,13 @@ local highlights = {
     fg = "#62d8f1"
   },
   DashboardProjectTitle = {
-    bold = true,
-    fg = "#fc1a70"
+    link = "DashboardIcon"
   },
   DashboardProjectTitleIcon = {
-    fg = "#ffffff"
+    link = "DashboardIcon"
   },
   DashboardShortCut = {
-    fg = "#af87ff"
+    link = "DashboardKey"
   },
   Debug = {
     fg = "#ff9700"
@@ -1073,18 +1182,6 @@ local highlights = {
   Include = {
     fg = "#fc1a70"
   },
-  IndentBlanklineChar = {
-    fg = "#3e3e3e",
-    nocombine = true
-  },
-  IndentBlanklineContextChar = {
-    fg = "#62d8f1",
-    nocombine = true
-  },
-  IndentBlanklineSpaceChar = {
-    fg = "#e6e6e6",
-    nocombine = true
-  },
   Italic = {
     italic = true
   },
@@ -1115,8 +1212,7 @@ local highlights = {
     fg = "#fc1a70"
   },
   LazyProgressDone = {
-    bold = true,
-    fg = "#fc1a70"
+    link = "LazyCommitType"
   },
   LazyProgressTodo = {
     bold = true,
@@ -1435,8 +1531,7 @@ local highlights = {
     fg = "#e6e6e6"
   },
   NeoTreeNormalNC = {
-    bg = "#262626",
-    fg = "#e6e6e6"
+    link = "NeoTreeNormal"
   },
   NeoTreeRootName = {
     fg = "#fc1a70",
@@ -1605,7 +1700,7 @@ local highlights = {
     fg = "#8a8a8a"
   },
   NotifyDEBUGTitle = {
-    fg = "#8a8a8a"
+    link = "NotifyDEBUGIcon"
   },
   NotifyERRORBody = {
     link = "Normal"
@@ -1618,7 +1713,7 @@ local highlights = {
     fg = "#ff005f"
   },
   NotifyERRORTitle = {
-    fg = "#ff005f"
+    link = "NotifyERRORIcon"
   },
   NotifyINFOBody = {
     link = "Normal"
@@ -1631,7 +1726,7 @@ local highlights = {
     fg = "#0087ff"
   },
   NotifyINFOTitle = {
-    fg = "#0087ff"
+    link = "NotifyINFOIcon"
   },
   NotifyTRACEBody = {
     link = "Normal"
@@ -1644,7 +1739,7 @@ local highlights = {
     fg = "#af87ff"
   },
   NotifyTRACETitle = {
-    fg = "#af87ff"
+    link = "NotifyTRACEIcon"
   },
   NotifyWARNBody = {
     link = "Normal"
@@ -1657,7 +1752,7 @@ local highlights = {
     fg = "#ff9700"
   },
   NotifyWARNTitle = {
-    fg = "#ff9700"
+    link = "NotifyWARNIcon"
   },
   NvimInternalError = {
     bg = "#ff0000",
@@ -1690,8 +1785,7 @@ local highlights = {
     fg = "#e6e6e6"
   },
   NvimTreeNormalNC = {
-    bg = "#262626",
-    fg = "#e6e6e6"
+    link = "NvimTreeNormal"
   },
   NvimTreeOpenedFile = {
     bg = "#404040"
@@ -1984,7 +2078,7 @@ local highlights = {
     fg = "#ffff87"
   },
   WhichKeyBorder = {
-    bg = "#262626"
+    link = "WhichKeyFloat"
   },
   WhichKeyDesc = {
     fg = "#ffffff"
@@ -2115,10 +2209,10 @@ local highlights = {
     fg = "#ff9700"
   },
   netrwLink = {
-    fg = "#fc1a70"
+    link = "netrwClassify"
   },
   netrwList = {
-    fg = "#ffff87"
+    link = "netrwDir"
   },
   netrwMarkFile = {
     bg = "#ff9700",
@@ -2126,7 +2220,7 @@ local highlights = {
     fg = "#000001"
   },
   netrwPlain = {
-    fg = "#e6e6e6"
+    link = "netrwCmdNote"
   },
   netrwQuickHelp = {
     fg = "#e6e6e6",

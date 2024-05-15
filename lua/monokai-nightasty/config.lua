@@ -6,6 +6,7 @@ local M = {}
 ---@field on_colors fun(colors: ColorScheme)
 ---@field on_highlights fun(highlights: Highlights, colors: ColorScheme)
 ---@field terminal_colors? boolean|table|fun(colors: ColorScheme):table
+---@field transparent boolean?
 local defaults = {
   dark_style_background = "default", -- default, dark, transparent, #color
   light_style_background = "default", -- default, dark, transparent, #color

@@ -2,7 +2,7 @@ local util = require("monokai-nightasty.util")
 local colors = require("monokai-nightasty.colors")
 
 local M = {}
---
+
 ---@class Highlight
 ---@field fg string|nil
 ---@field bg string|nil
