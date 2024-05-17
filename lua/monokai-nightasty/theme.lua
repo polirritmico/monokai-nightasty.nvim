@@ -49,7 +49,7 @@ function M.setup(palette)
     Folded = { fg = c.blue, italic = true }, -- line used for closed folds
     FoldColumn = { fg = c.orange, bg = options.transparent and c.none or c.bg_float }, -- used when foldcolumn ~= 0
     IncSearch = { fg = c.fg_search, bg = c.purple, bold = true }, -- 'IncSearch' highlighting; also used for the text replaced with ":s///c"
-    LineNr = { fg = c.fg_gutter }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+    LineNr = { fg = c.grey_dark }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     LineNrBe = { fg = c.green },
     MatchParen = { fg = c.magenta, bold = true, underline = true }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     ModeMsg = { fg = c.fg_dark, bold = true }, -- 'showmode' message (e.g., "-- INSERT -- ")
