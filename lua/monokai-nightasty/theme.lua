@@ -149,12 +149,6 @@ function M.setup(palette)
     diffIndexLine = { fg = c.purple },
     diffSubname = { fg = c.yellow },
 
-    -- git?
-    gitcommitHeader = { fg = c.blue },
-    gitcommitSelectedFile = { fg = c.yellow },
-    gitcommitSummary = { fg = c.fg },
-    gitcommitOverflow = { fg = c.magenta },
-
     debugPC = { bg = c.bg_sidebar }, -- used for highlighting the current line in terminal-debug
     debugBreakpoint = { bg = util.darken(c.info, 0.1), fg = c.info }, -- used for breakpoint colors in terminal-debug
 
@@ -192,6 +186,13 @@ function M.setup(palette)
     healthError = { fg = c.error },
     healthSuccess = { fg = c.green_alt },
     healthWarning = { fg = c.warning },
+
+    -- gitcommit
+    gitcommitHeader = { fg = c.blue },
+    gitcommitSelectedFile = { fg = c.yellow },
+    gitcommitSummary = { fg = c.fg },
+    gitcommitOverflow = { fg = c.magenta },
+    ["@comment.warning.gitcommit"] = { link = "DiagnosticUnnecessary" },
 
     --- TreeSitter
     -- highlights from https://github.com/nvim-treesitter/nvim-treesitter/blob/master/CONTRIBUTING.md#highlights

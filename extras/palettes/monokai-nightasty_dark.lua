@@ -120,6 +120,9 @@ local highlights = {
   ["@comment.documentation"] = {
     link = "Comment"
   },
+  ["@comment.warning.gitcommit"] = {
+    link = "DiagnosticUnnecessary"
+  },
   ["@constant"] = {
     link = "Constant"
   },
@@ -1228,7 +1231,7 @@ local highlights = {
     fg = "#ffff87"
   },
   LineNr = {
-    fg = "#3e3e3e"
+    fg = "#4b4b4b"
   },
   LineNrBe = {
     fg = "#a4e400"
