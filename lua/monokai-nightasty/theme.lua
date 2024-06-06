@@ -46,7 +46,7 @@ function M.setup(palette)
     ErrorMsg = { fg = c.white, bg = c.red }, -- error messages on the command line
     FloatBorder = { fg = c.border_highlight, bg = c.bg_float },
     FloatTitle = { fg = c.border_highlight, bg = c.bg_float },
-    Folded = { fg = c.blue, italic = true }, -- line used for closed folds
+    Folded = { fg = c.blue, bg = c.bg_float, italic = true }, -- line used for closed folds
     FoldColumn = { fg = c.orange, bg = options.transparent and c.none or c.bg_float }, -- used when foldcolumn ~= 0
     IncSearch = { fg = c.fg_search, bg = c.purple, bold = true }, -- 'IncSearch' highlighting; also used for the text replaced with ":s///c"
     LineNr = { fg = c.grey_dark }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
