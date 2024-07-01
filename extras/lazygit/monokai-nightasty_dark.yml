@@ -1,0 +1,30 @@
+gui:
+  nerdFontsVersion: "3"
+
+  # Config relating to colors and styles.
+  # See https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#color-attributes
+  theme:
+    activeBorderColor:
+      - "#62d8f1"
+      - "bold"
+    inactiveBorderColor:
+      - "#8a8a8a"
+    searchingActiveBorderColor:
+      - "#62d8f1"
+      - "bold"
+    optionsTextColor:
+      - "#ff9700"
+    selectedLineBgColor:
+      - "#404040"
+    cherryPickedCommitFgColor:
+      - "#62d8f1"
+    cherryPickedCommitBgColor:
+      - "#fc1a70"
+    markedBaseCommitFgColor:
+      - "#62d8f1"
+    markedBaseCommitBgColor:
+      - "#ffff87"
+    unstagedChangesColor:
+      - "${git.changed}"
+    defaultFgColor:
+      - "#ffffff"

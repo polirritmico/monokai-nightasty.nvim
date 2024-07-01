@@ -6,6 +6,7 @@ local M = {}
 M.extras = {
   { name = "palettes", ext = "lua", label = "Monokai Nightasty Palettes", both_styles = true, url = "https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/extras/palettes" },
   { name = "kitty", ext = "conf", label = "Kitty", both_styles = true, url = "https://sw.kovidgoyal.net/kitty/" },
+  { name = "lazygit", ext = "yml", label = "Lazygit", both_styles = false, url = "https://github.com/jesseduffield/lazygit" },
   { name = "tmux", ext = "tmux", label = "Tmux", both_styles = false, url = "https://github.com/tmux/tmux/wiki" },
   { name = "zathura", ext = "zathurarc", label = "Zathura", both_styles = false, url = "https://pwmt.org/projects/zathura/" },
 }

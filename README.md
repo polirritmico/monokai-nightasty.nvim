@@ -261,6 +261,7 @@ Currently this extra files are generated:
 <!-- extras:start -->
 - [Monokai Nightasty Palettes](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/extras/palettes) ([palettes](extras/palettes))
 - [Kitty](https://sw.kovidgoyal.net/kitty/) ([kitty](extras/kitty))
+- [Lazygit](https://github.com/jesseduffield/lazygit) ([lazygit](extras/lazygit))
 - [Tmux](https://github.com/tmux/tmux/wiki) ([tmux](extras/tmux))
 - [Zathura](https://pwmt.org/projects/zathura/) ([zathura](extras/zathura))
 <!-- extras:end -->

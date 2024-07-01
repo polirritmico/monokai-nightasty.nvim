@@ -1098,6 +1098,7 @@ local highlights = {
     fg = "#ff4d00"
   },
   Folded = {
+    bg = "#e3e3e3",
     fg = "#00b3e3",
     italic = true
   },
