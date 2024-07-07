@@ -178,7 +178,7 @@ function M.setup(palette)
 
     -- LspSignatureActiveParameter = { bg = util.darken(c.bg_visual, 0.4), bold = true },
     -- LspCodeLens = { fg = c.comment },
-    -- LspInlayHint = { bg = util.darken(c.blue7, 0.1), fg = c.grey_dark },
+    LspInlayHint = { fg = c.grey, italic = true },
     LspInfoBorder = { fg = c.border_highlight, bg = c.bg_float },
 
     -- checkhealt
