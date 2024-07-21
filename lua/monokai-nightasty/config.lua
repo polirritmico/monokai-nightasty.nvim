@@ -1,16 +1,16 @@
 local M = {}
 
----@class Config
+---@class monokai.Config
 ---@field dark_style_background string default, dark, transparent, #color
 ---@field light_style_background string default, dark, transparent, #color
 ---@field on_colors fun(colors: ColorScheme)
----@field on_highlights fun(highlights: Highlights, colors: ColorScheme)
+---@field on_highlights fun(highlights: monokai.Highlights, colors: ColorScheme)
+---@field hl_styles table Styles to be applied to different syntax groups
 ---@field terminal_colors? boolean|table|fun(colors: ColorScheme):table
----@field transparent boolean?
-local defaults = {
+---@field transparent? boolean
+M.defaults = {
   dark_style_background = "default", -- default, dark, transparent, #color
   light_style_background = "default", -- default, dark, transparent, #color
-  sidebars = { "qf", "help" }, -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`
   hl_styles = {
     -- Style to be applied to different syntax groups. See `:help nvim_set_hl`
     comments = { italic = true },
@@ -21,17 +21,18 @@ local defaults = {
     floats = "default", -- default, dark, transparent
     sidebars = "default", -- default, dark, transparent
   },
-
   color_headers = false, -- Enable header colors for each header level (h1, h2, etc.)
   dim_inactive = false, -- dims inactive windows
-  hide_inactive_statusline = false, -- Hide inactive statuslines and replace them with a thin border instead. Should work with the standard **StatusLine** and **LuaLine**.
   lualine_bold = true, -- Lualine headers will be bold or regular.
   lualine_style = "default", -- "dark", "light" or "default" (default follows dark/light style)
   markdown_header_marks = false, -- Add headers marks highlights (the `#` character) to Treesitter highlight query
+  cache = true, -- When set to true, the theme will be cached for better performance
 
-  -- Set the colors for terminal-mode. Could be a boolean, a table or a function that returns a table.
-  -- Could be `true` to enable defaults, a function like `function(colors) return { Normal = { fg = colors.fg_dark } }`
-  -- or directly a table like `{ Normal = { fg = "#e6e6e6" } }`.
+  -- FIX:
+  -- Set the colors for terminal-mode. Could be a boolean, a table or a function that
+  -- returns a table. Could be `true` to enable defaults, a function like
+  -- `function(colors) return { Normal = { fg = colors.fg_dark } }` or directly a
+  -- table like `{ Normal = { fg = "#e6e6e6" } }`.
   terminal_colors = true,
 
   --- You can override specific color groups to use other groups or a hex color
@@ -41,29 +42,40 @@ local defaults = {
 
   --- You can override specific highlights to use other groups or a hex color
   --- function will be called with the Monokai Highlights and ColorScheme table
-  ---@param highlights Highlights
+  ---@param highlights monokai.Highlights
   ---@param colors ColorScheme
   on_highlights = function(highlights, colors) end,
+
+  auto_plugins = true, -- Use lazy to automatically enable/disable plugins
+
+  ---@type table<string, boolean|{enabled:boolean}>
+  plugins = {
+    all = package.loaded.lazy == nil,
+    auto = true,
+    -- telescope = true,
+    -- telescope = { enabled = true },
+  },
 }
 
----@type Config
----@diagnostic disable-next-line: missing-fields
-M.options = M.options or {}
+---@type monokai.Config
+M.options = nil
 
----@param options Config?
+---@param options monokai.Config?
 function M.setup(options)
-  M.options = vim.tbl_deep_extend("force", {}, defaults, options or {})
+  M.options = vim.tbl_deep_extend("force", {}, M.defaults, options or {})
 end
 
----@param options Config?
-function M.extend(options)
-  M.options = vim.tbl_deep_extend("force", {}, M.options or defaults, options or {})
+---@param opts monokai.Config?
+function M.extend(opts)
+  return opts and vim.tbl_deep_extend("force", {}, M.options, opts) or M.options
 end
 
-function M.is_light()
-  return vim.o.background == "light"
-end
-
-M.setup()
+setmetatable(M, {
+  __index = function(_, k)
+    if k == "options" then
+      return M.defaults
+    end
+  end,
+})
 
 return M

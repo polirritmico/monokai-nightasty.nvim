@@ -1,10 +1,10 @@
-local util = require("monokai-nightasty.util")
+local utils = require("monokai-nightasty.utils")
 
 local M = {}
 
 --- @param colors ColorScheme
 function M.generate(colors)
-  local lazygit = util.template(
+  local lazygit = utils.template(
     [[
 gui:
   nerdFontsVersion: "3"

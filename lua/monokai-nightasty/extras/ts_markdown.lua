@@ -29,7 +29,8 @@ function M.set_headers_marks()
     callback = function(_)
       local ok, md_query = pcall(M.read_markdown_highlights_query)
       if not ok then
-        vim.notify("monokai-nightasty: Can't access treesitter markdown highlights query file.", vim.log.levels.WARN)
+        local msg = "monokai-nightasty: Can't access markdown highlights query file."
+        vim.notify(msg, vim.log.levels.WARN)
         return
       end
       md_query = md_query

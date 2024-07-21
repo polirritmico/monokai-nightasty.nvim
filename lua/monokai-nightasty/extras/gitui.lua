@@ -1,4 +1,4 @@
-local util = require("monokai-nightasty.util")
+local utils = require("monokai-nightasty.utils")
 
 local function hex2rgb(key, value)
   local hex = value:gsub("#", "")
@@ -21,7 +21,7 @@ function M.generate(colors)
     end
   end
 
-  local gitui = util.template(
+  local gitui = utils.template(
     [[
 (
   selected_tab: ${magenta}
