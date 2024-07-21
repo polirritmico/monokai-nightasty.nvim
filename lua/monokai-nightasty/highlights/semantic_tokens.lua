@@ -7,6 +7,7 @@ function M.get(c, _)
   return {
     ["@lsp.type.boolean"] = "Boolean",
     ["@lsp.type.builtinType"] = "@type.builtin",
+    ["@lsp.type.class.markdown"] = { fg = c.yellow }, -- Check mark inside checklist ([x])
     ["@lsp.type.comment"] = "@comment",
     ["@lsp.type.decorator"] = "@attribute", -- test
     ["@lsp.type.deriveHelper"] = "@attribute",
@@ -15,7 +16,7 @@ function M.get(c, _)
     ["@lsp.type.escapeSequence"] = "@string.escape",
     ["@lsp.type.formatSpecifier"] = "@markup.list",
     ["@lsp.type.generic"] = "@variable",
-    -- ["@lsp.type.interface"] = { fg = util.lighten(c.blue1, 0.7) },
+    -- ["@lsp.type.interface"] = { fg = util.lighten(c.blue, 0.7) },
     ["@lsp.type.keyword"] = "@keyword",
     ["@lsp.type.lifetime"] = "@storageclass",
     ["@lsp.type.namespace"] = "@module",
@@ -27,8 +28,7 @@ function M.get(c, _)
     ["@lsp.type.selfTypeKeyword"] = "@variable.builtin",
     ["@lsp.type.string"] = "@string",
     ["@lsp.type.typeAlias"] = "@type.definition",
-    -- FIX:
-    -- ["@lsp.type.unresolvedReference"] = { undercurl = true, sp = c.error },
+    ["@lsp.type.unresolvedReference"] = { undercurl = true, sp = c.error },
     ["@lsp.type.variable"] = {}, -- use treesitter styles for regular variables
     ["@lsp.typemod.class.defaultLibrary"] = "@type.builtin",
     ["@lsp.typemod.enum.defaultLibrary"] = "@type.builtin",
@@ -47,7 +47,6 @@ function M.get(c, _)
     ["@lsp.typemod.variable.defaultLibrary"] = "@variable.builtin",
     ["@lsp.typemod.variable.injected"] = "@variable",
     ["@lsp.typemod.variable.static"] = "@constant",
-    ["@lsp.type.class.markdown"] = { fg = c.yellow }, -- Check mark inside checklist ([x])
   }
 end
 

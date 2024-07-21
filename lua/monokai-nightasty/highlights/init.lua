@@ -68,8 +68,7 @@ function M.setup(colors, opts)
     base = true,
     builtins = true,
     kinds = true,
-    -- FIX:
-    -- semenatic_tokens = true,
+    semantic_tokens = true,
     treesitter = true,
   }
 
