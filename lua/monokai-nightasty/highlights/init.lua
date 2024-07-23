@@ -24,7 +24,7 @@ M.implemented_plugins = {
   -- ["nvim-tree.lua"] = "nvim-tree",
   -- ["nvim-treesitter-context"] = "treesitter-context",
   -- ["rainbow-delimiters.nvim"] = "rainbow",
-  -- ["telescope.nvim"] = "telescope",
+  ["telescope.nvim"] = "telescope",
   -- ["todo-comments.nvim"] = "todo-comments",
   -- ["which-key.nvim"] = "which-key",
 

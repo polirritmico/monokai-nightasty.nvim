@@ -1,0 +1,17 @@
+local M = {}
+
+M.url = "https://github.com/nvim-telescope/telescope.nvim"
+
+---@type monokai.HighlightsFn
+function M.get(c, _)
+  return {
+    TelescopeBorder = { fg = c.border_highlight, bg = c.bg_float },
+    TelescopeNormal = { fg = c.grey_light, bg = c.bg_float },
+    TelescopePreviewLine = { bg = c.bg_statusline },
+    TelescopePromptPrefix = { fg = c.blue_alt },
+    TelescopeSelection = { fg = c.fg, bg = c.bg_statusline },
+    TelescopeSelectionCaret = { fg = c.magenta, bg = c.bg_statusline },
+  }
+end
+
+return M
