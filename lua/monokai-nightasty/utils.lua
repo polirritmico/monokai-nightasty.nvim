@@ -76,10 +76,11 @@ function M.overwrite(file, data)
   fd:close()
 end
 
-function M.mk_parent_dir(path)
+function M.mkdir_parent(path)
   local parent_path = vim.fs.dirname(path)
   if vim.fn.isdirectory(parent_path) == 0 then
-    vim.fn.mkdir(parent_path, "p") -- p: Intermediate dirs are created as necessary
+    -- "p" to create intermediate dirs as necessary
+    vim.fn.mkdir(parent_path, "p")
   end
 end
 
@@ -232,8 +233,9 @@ end
 ---@param filename string
 ---@param data monokai.Cache
 function M.cache.write(filename, data)
-  local file = M.cache.file(filename)
-  pcall(M.write_file, vim.json.encode(data), file)
+  local filepath = M.cache.file(filename)
+  M.mkdir_parent(filepath)
+  pcall(M.write_file, vim.json.encode(data), filepath)
 end
 
 function M.cache.clear()
