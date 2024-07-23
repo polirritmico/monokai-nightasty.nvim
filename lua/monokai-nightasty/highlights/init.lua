@@ -12,6 +12,7 @@ M.implemented_plugins = {
   ["gitsigns.nvim"] = "gitsigns",
   -- ["headlines.nvim"] = "headlines",
   ["indent-blankline.nvim"] = "indent-blankline",
+  ["mini.indentscope"] = "mini_indentscope",
   -- ["justinmk/dirvish.vim"] = "dirvish",
   ["lazy.nvim"] = "lazy",
   -- ["neo-tree.nvim"] = "neo-tree",
