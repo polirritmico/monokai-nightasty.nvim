@@ -7,7 +7,7 @@ local M = {}
 
 M.implemented_plugins = {
   ["aerial.nvim"] = "aerial",
-  -- ["bufferline.nvim"] = "bufferline",
+  ["bufferline.nvim"] = "bufferline",
   ["dashboard-nvim"] = "dashboard",
   ["gitsigns.nvim"] = "gitsigns",
   -- ["headlines.nvim"] = "headlines",
