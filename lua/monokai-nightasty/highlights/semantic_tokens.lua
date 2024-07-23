@@ -47,6 +47,15 @@ function M.get(c, _)
     ["@lsp.typemod.variable.defaultLibrary"] = "@variable.builtin",
     ["@lsp.typemod.variable.injected"] = "@variable",
     ["@lsp.typemod.variable.static"] = "@constant",
+
+    -- Language customization
+    ["@function.builtin.bash"] = { fg = c.blue },
+    ["@type.qualifier.c_sharp"] = { fg = c.orange, italic = true },
+    ["@constructor.lua"] = { fg = c.magenta },
+    ["@lsp.typemod.variable.global.lua"] = "@variable.builtin",
+    -- ["@lsp.type.namespace.python"] = { link = "@variable" },
+    ["dosbatchError"] = { fg = c.red },
+    ["@property.ini"] = { fg = c.orange },
   }
 end
 
