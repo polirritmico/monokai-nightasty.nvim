@@ -4,6 +4,9 @@ local M = {}
 
 ---@param opts monokai.Config?
 function M.load(opts)
+  opts = require("monokai-nightasty.config").extend(opts)
+  opts.style = opts.force_style and opts.force_style or vim.o.background
+
   if not M.loaded then
     vim.api.nvim_create_user_command("MonokaiToggleLight", function()
       require("monokai-nightasty").toggle()
@@ -16,10 +19,6 @@ function M.load(opts)
     M.loaded = true
   end
 
-  -- NOTE: Check if this approach is fine or this should be at the top of the fn
-  opts = require("monokai-nightasty.config").extend(opts)
-
-  -- check and set the background in the load function?
   require("monokai-nightasty.theme").setup(opts)
 end
 

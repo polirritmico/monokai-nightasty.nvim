@@ -8,6 +8,8 @@ local M = {}
 ---@field hl_styles table Styles to be applied to different syntax groups
 ---@field terminal_colors? boolean|table|fun(colors: ColorScheme):table
 ---@field transparent? boolean
+---@field style? string
+---@field force_style? string
 M.defaults = {
   dark_style_background = "default", -- default, dark, transparent, #color
   light_style_background = "default", -- default, dark, transparent, #color

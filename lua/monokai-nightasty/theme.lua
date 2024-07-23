@@ -15,11 +15,14 @@ function M.setup(opts)
   end
 
   vim.o.termguicolors = true
-  -- vim.g.colors_name = "monokai-nightasty-" .. utils.is_light() and "light" or "dark"
-  vim.g.colors_name = "monokai-nightasty"
+  -- TODO: Check where put the is light logic. Maybe in config?
+  vim.g.colors_name = "monokai-nightasty-" .. (utils.is_light() and "light" or "dark")
+  -- vim.g.colors_name = "monokai-nightasty"
 
   for group, hl in pairs(hlgroups) do
-    hl = type(hl) == "string" and { link = hl } or hl
+    if type(hl) == "string" then
+      hl = { link = hl }
+    end
     vim.api.nvim_set_hl(0, group, hl)
   end
 
