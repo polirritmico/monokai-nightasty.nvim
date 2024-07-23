@@ -6,7 +6,7 @@ local M = {}
 function M.setup(opts)
   opts = require("monokai-nightasty.config").extend(opts)
 
-  local is_light = opts["style"] == "light"
+  local is_light = opts.style == "light"
   local bg_cfg = is_light and opts.light_style_background or opts.dark_style_background
   opts.transparent = bg_cfg == "transparent"
 

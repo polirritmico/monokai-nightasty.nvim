@@ -82,6 +82,7 @@ function M.setup(colors, opts)
       end
     end
     -- NOTE: mini-plugins could also be inside mini.nvim
+    -- if package.loaded["mini.nvim"] then end
   end
 
   -- Apply user configuration

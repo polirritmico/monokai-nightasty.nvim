@@ -30,7 +30,6 @@ M.defaults = {
   markdown_header_marks = false, -- Add headers marks highlights (the `#` character) to Treesitter highlight query
   cache = true, -- When set to true, the theme will be cached for better performance
 
-  -- FIX:
   -- Set the colors for terminal-mode. Could be a boolean, a table or a function that
   -- returns a table. Could be `true` to enable defaults, a function like
   -- `function(colors) return { Normal = { fg = colors.fg_dark } }` or directly a
@@ -47,8 +46,6 @@ M.defaults = {
   ---@param highlights monokai.Highlights
   ---@param colors ColorScheme
   on_highlights = function(highlights, colors) end,
-
-  auto_plugins = true, -- Use lazy to automatically enable/disable plugins
 
   ---@type table<string, boolean|{enabled:boolean}>
   plugins = {
