@@ -1,7 +1,6 @@
-local config = require("monokai-nightasty.config")
 local utils = require("monokai-nightasty.utils")
 
-local me = vim.fn.fnamemodify(debug.getinfo(1, "S").source:sub(2), ":h")
+-- local me = vim.fn.fnamemodify(debug.getinfo(1, "S").source:sub(2), ":h")
 
 local M = {}
 
@@ -36,7 +35,6 @@ M.implemented_plugins = {
   -- ["fzf-lua"]                       = "fzf",
   -- ["grug-far.nvim"]                 = "grug-far",
   -- ["hop.nvim"]                      = "hop",
-  -- ["indentmini.nvim"]               = "indentmini",
   -- ["leap.nvim"]                     = "leap",
   -- ["lspsaga.nvim"]                  = "lspsaga",
   -- ["neogit"]                        = "neogit",
@@ -64,7 +62,6 @@ end
 ---@param colors ColorScheme
 ---@param opts monokai.Config
 function M.setup(colors, opts)
-  -- TODO: Default groups, maybe move to config?
   local enabled_hlgroups = {
     base = true,
     builtins = true,

@@ -108,14 +108,11 @@ function M.get(c, opts)
     -- ["@string.special.path"] = {}, -- filenames
     -- ["@module.builtin"] = {}, -- built-in modules or namespaces
     -- ["@label"] = {}, -- GOTO and other labels (e.g. `label:` in C), including heredoc labels
-
-    ["@lsp.type.class.markdown"] = { fg = c.yellow }, -- Check mark inside checklist ([x])
   }
 
   if opts.color_headers then
     for i, color in ipairs(c.rainbow) do
       ret["@markup.heading." .. i] = { fg = color, bold = true }
-      -- ret["@markup.heading." .. i .. ".markdown"] = { fg = color, bold = true }
     end
   else
     for i = 1, 6 do
