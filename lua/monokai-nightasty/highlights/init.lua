@@ -6,7 +6,7 @@ local me = vim.fn.fnamemodify(debug.getinfo(1, "S").source:sub(2), ":h")
 local M = {}
 
 M.implemented_plugins = {
-  -- ["aerial.nvim"] = "aerial",
+  ["aerial.nvim"] = "aerial",
   -- ["bufferline.nvim"] = "bufferline",
   ["dashboard-nvim"] = "dashboard",
   ["gitsigns.nvim"] = "gitsigns",
