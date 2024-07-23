@@ -100,7 +100,7 @@ function M.setup(colors, opts)
   local plugin_names = vim.tbl_keys(enabled_hlgroups)
   table.sort(plugin_names) -- sorting to check the cache
 
-  local theme = opts.style or "dark" -- utils.is_light() and "light" or "dark"
+  local theme = opts.style or "dark"
   local cache = opts.cache and utils.cache.read(theme)
 
   local inputs = {

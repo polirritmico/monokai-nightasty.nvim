@@ -2,17 +2,13 @@ local utils = require("monokai-nightasty.utils")
 
 local M = {}
 
----@param opts monokai.Config?
+---@param opts monokai.Config|table?
 function M.setup(opts)
   opts = require("monokai-nightasty.config").extend(opts)
 
-  -- local is_light = (not opts or not opts.force_style) and utils.is_light()
-  --   or opts and opts.force_style == "light"
   local is_light = opts["style"] == "light"
-
   local bg_cfg = is_light and opts.light_style_background or opts.dark_style_background
-
-  opts.transparent = bg_cfg == "transparent" -- TODO: Why not local?
+  opts.transparent = bg_cfg == "transparent"
 
   ---@type Palette
   local palette = vim.deepcopy(utils.mod("monokai-nightasty.colors." .. opts.style))

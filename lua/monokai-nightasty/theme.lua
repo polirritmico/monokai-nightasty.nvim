@@ -15,9 +15,7 @@ function M.setup(opts)
   end
 
   vim.o.termguicolors = true
-  -- TODO: Check where put the is light logic. Maybe in config?
-  vim.g.colors_name = "monokai-nightasty-" .. (utils.is_light() and "light" or "dark")
-  -- vim.g.colors_name = "monokai-nightasty"
+  vim.g.colors_name = "monokai-nightasty"
 
   for group, hl in pairs(hlgroups) do
     if type(hl) == "string" then
