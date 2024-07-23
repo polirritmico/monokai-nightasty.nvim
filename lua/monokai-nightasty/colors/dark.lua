@@ -1,7 +1,5 @@
----Dark theme
 ---@class Palette
-return {
-  -- Base colors
+local M = {
   blue = "#62d8f1",
   green = "#a4e400",
   magenta = "#fc1a70",
@@ -9,29 +7,28 @@ return {
   purple = "#af87ff",
   yellow = "#ffff87",
 
-  -- Neutrals
-  black = "#000001", -- #000000 could change to transparent
   charcoal = "#262626",
-  charcoal_medium = "#2b2b2b",
   charcoal_light = "#313131",
-  grey_darker_alt = "#3e3e3e",
-  grey_darker = "#444444",
-  grey_dark = "#4b4b4b",
-  grey_medium = "#585858",
+  charcoal_medium = "#2b2b2b",
   grey = "#8a8a8a",
+  grey_dark = "#4b4b4b",
+  grey_darker = "#444444",
+  grey_darker_alt = "#3e3e3e",
   grey_light = "#bcbcbc",
-  grey_lighter = "#e8e8e8",
+  grey_lighter = "#dedede",
+  grey_medium = "#585858",
+
+  black = "#000001",
   white = "#ffffff",
 
-  -- Functionals
-  bg_darker = "#121212",
-  bg_dark = "#1e1e1e",
   bg = "#2b2b2b",
+  bg_dark = "#1e1e1e",
+  bg_darker = "#121212",
+  comment = "#8a8a8a",
+  fg = "#ffffff",
+  fg_dark = "#e6e6e6",
   fg_gutter = "#3e3e3e",
   terminal_black = "#444444",
-  comment = "#8a8a8a",
-  fg_dark = "#e6e6e6",
-  fg = "#ffffff",
 
   -- Extra colors
   blue_alt = "#0087ff",
@@ -45,3 +42,5 @@ return {
     delete = "#fc1a70",
   },
 }
+
+return M
