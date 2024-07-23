@@ -11,10 +11,6 @@ M.bg = "#2b2b2b" -- charcoal_medium
 M.fg = "#ffffff" -- white
 M.brightness = 0.3
 
-function M.is_light()
-  return vim.o.background == "light"
-end
-
 ---@param color string
 local function hex_to_rgb(color)
   color = string.lower(color)
@@ -147,67 +143,6 @@ function M.get_version()
   end
 end
 
---------------
--- Autocmds --
---------------
-
----@param config monokai.Config
----@param colors ColorScheme
-function M.autocmds(config, colors)
-  local group = vim.api.nvim_create_augroup("MonokaiNightasty", { clear = true })
-
-  -- vim.api.nvim_create_autocmd("ColorSchemePre", {
-  --   group = group,
-  --   callback = function()
-  --     vim.api.nvim_del_augroup_by_id(group)
-  --   end,
-  -- })
-
-  -- local function set_whl()
-  --   local win = vim.api.nvim_get_current_win()
-  --   local whl = vim.split(vim.wo[win].winhighlight, ",")
-  --   vim.list_extend(whl, { "Normal:NormalSB", "SignColumn:SignColumnSB" })
-  --   whl = vim.tbl_filter(function(hl)
-  --     return hl ~= ""
-  --   end, whl)
-  --   vim.opt_local.winhighlight = table.concat(whl, ",")
-  -- end
-  --
-  -- vim.api.nvim_create_autocmd("FileType", {
-  --   group = group,
-  --   pattern = table.concat(config.sidebars, ","),
-  --   callback = set_whl,
-  -- })
-  --
-  -- if vim.tbl_contains(config.sidebars, "terminal") then
-  --   vim.api.nvim_create_autocmd("TermOpen", {
-  --     group = group,
-  --     callback = set_whl,
-  --   })
-  -- end
-
-  if config.terminal_colors then
-    local opt_type = type(config.terminal_colors)
-    local term_hl = opt_type == "table" and config.terminal_colors
-      or opt_type == "function" and config.terminal_colors(colors)
-      or {}
-
-    ---@cast term_hl table
-    if next(term_hl) ~= nil then
-      vim.api.nvim_create_autocmd("TermOpen", {
-        group = group,
-        callback = function()
-          for name, hl in pairs(term_hl) do
-            local new_hl = "MonokaiNightastyTerminal" .. name
-            vim.api.nvim_set_hl(0, new_hl, hl)
-            vim.cmd.setlocal(string.format("winhighlight=%s:%s", name, new_hl))
-          end
-        end,
-      })
-    end
-  end
-end
-
 -----------
 -- Cache --
 -----------
@@ -245,26 +180,3 @@ function M.cache.clear()
 end
 
 return M
-
--- ---@param theme Theme
--- function M.load(theme)
---   -- only needed to clear when not the default colorscheme
---   if vim.g.colors_name then
---     vim.cmd("hi clear")
---   end
---
---   vim.o.termguicolors = true
---   vim.g.colors_name = "monokai-nightasty"
---
---   M.syntax(theme.highlights)
---
---   if theme.config.terminal_colors ~= false then
---     M.terminal(theme.colors)
---   end
---
---   M.autocmds(theme.config, theme.colors)
---
---   vim.defer_fn(function()
---     M.syntax(theme.defer)
---   end, 100)
--- end
