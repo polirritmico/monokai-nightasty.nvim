@@ -101,14 +101,19 @@ function M.setup(colors, opts)
   local plugin_names = vim.tbl_keys(enabled_hlgroups)
   table.sort(plugin_names) -- sorting to check the cache
 
-  local theme = opts.style or "dark"
-  local cache = opts.cache and utils.cache.read(theme)
+  opts.style = opts.style or "dark"
+  local cache = opts.cache and utils.cache.read(opts.style)
 
   local inputs = {
     colors = colors,
     plugin_names = plugin_names,
     version = utils.get_version(),
-    opts = { styles = theme, dim_inactive = opts.dim_inactive },
+    opts = {
+      color_headers = opts.color_headers,
+      dim_inactive = opts.dim_inactive,
+      dark_style_background = opts.dark_style_background,
+      light_style_background = opts.light_style_background,
+    },
   }
 
   local ret = cache and vim.deep_equal(inputs, cache.inputs) and cache.hlgroups or nil
@@ -124,7 +129,7 @@ function M.setup(colors, opts)
     end
     utils.resolve(ret)
     if opts.cache then
-      utils.cache.write(theme, { hlgroups = ret, inputs = inputs })
+      utils.cache.write(opts.style, { hlgroups = ret, inputs = inputs })
     end
   end
 

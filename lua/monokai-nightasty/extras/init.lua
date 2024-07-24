@@ -45,7 +45,7 @@ function M.setup()
     local plugin = require("monokai-nightasty.extras." .. extra.name)
 
     -- Dark Theme
-    local colors = require("monokai-nightasty.colors").setup({ force_style = "dark" })
+    local colors = require("monokai-nightasty.colors").setup({ style = "dark" })
     local filename = "extras/" .. extra.name .. "/monokai-nightasty_dark." .. extra.ext
     colors["_upstream_url"] = "https://github.com/polirritmico/monokai-nightasty.nvim/raw/main/"
       .. filename
@@ -54,7 +54,7 @@ function M.setup()
 
     -- Light Theme
     if extra.both_styles then
-      colors = require("monokai-nightasty.colors").setup({ force_style = "light" })
+      colors = require("monokai-nightasty.colors").setup({ style = "light" })
       filename = "extras/" .. extra.name .. "/monokai-nightasty_light." .. extra.ext
       colors["_upstream_url"] = "https://github.com/polirritmico/monokai-nightasty.nvim/raw/main/"
         .. filename
