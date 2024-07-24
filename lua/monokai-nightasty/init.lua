@@ -5,7 +5,9 @@ local M = {}
 ---@param opts? monokai.Config
 function M.load(opts)
   opts = require("monokai-nightasty.config").extend(opts)
-  opts.style = opts.style and opts.style or vim.o.background
+
+  -- Set to nil at the end to restore toggle capability
+  opts.style = not M.loaded and opts.style or vim.o.background
 
   if not M.loaded then
     vim.api.nvim_create_user_command("MonokaiToggleLight", function()

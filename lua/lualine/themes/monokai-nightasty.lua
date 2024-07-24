@@ -2,8 +2,9 @@ local M = {}
 
 function M.get()
   local opts = require("monokai-nightasty.config").options
-  local dark_style = opts.lualine_style and opts.lualine_style == "dark"
-    or vim.o.background == "dark"
+  local dark_style = opts.lualine_style == "dark"
+    or opts.lualine_style ~= "light" and vim.o.background == "dark"
+    or false
 
   local monokai_nightasty = {}
 

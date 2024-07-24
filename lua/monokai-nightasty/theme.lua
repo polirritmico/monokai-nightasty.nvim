@@ -3,6 +3,7 @@ local M = {}
 ---@param opts? monokai.Config
 function M.setup(opts)
   opts = require("monokai-nightasty.config").extend(opts)
+  opts.transparent = opts[opts.style .. "_style_background"] == "transparent"
 
   local colors = require("monokai-nightasty.colors").setup(opts)
   local hlgroups = require("monokai-nightasty.highlights").setup(colors, opts)

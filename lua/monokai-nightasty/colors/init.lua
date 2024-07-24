@@ -8,7 +8,6 @@ function M.setup(opts)
 
   local is_light = opts.style == "light"
   local bg_cfg = is_light and opts.light_style_background or opts.dark_style_background
-  opts.transparent = bg_cfg == "transparent"
 
   ---@class ColorScheme: Palette
   local colors = vim.deepcopy(utils.mod("monokai-nightasty.colors." .. opts.style))
