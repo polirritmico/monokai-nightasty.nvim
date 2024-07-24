@@ -2,7 +2,7 @@ local config = require("monokai-nightasty.config")
 
 local M = {}
 
----@param opts monokai.Config?
+---@param opts? monokai.Config
 function M.load(opts)
   opts = require("monokai-nightasty.config").extend(opts)
   opts.style = opts.style and opts.style or vim.o.background
