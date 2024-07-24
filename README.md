@@ -76,7 +76,8 @@ Install with your package manager.
 
 #### Basic usage
 
-No need to use the `setup()` function, just set the `colorscheme`:
+To use with the defaults options, no need to use the `setup()` function, just
+set the `colorscheme`:
 
 ```lua
 vim.opt.background = "dark" -- default to dark or light style
@@ -113,11 +114,17 @@ require("lualine").setup({
 
 Monokai Nightasty comes with these defaults:
 
-```lua
-{
+````lua
+---@class monokai.Config
+---@field dark_style_background string default, dark, transparent, #color
+---@field light_style_background string default, dark, transparent, #color
+---@field on_colors fun(colors: ColorScheme)
+---@field on_highlights fun(highlights: monokai.Highlights, colors: ColorScheme)
+---@field hl_styles table Styles to be applied to different syntax groups
+---@field terminal_colors boolean|table|fun(colors: ColorScheme):table
+M.defaults = {
   dark_style_background = "default", -- default, dark, transparent, #color
   light_style_background = "default", -- default, dark, transparent, #color
-  sidebars = { "qf", "help" }, -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`
   hl_styles = {
     -- Style to be applied to different syntax groups. See `:help nvim_set_hl`
     comments = { italic = true },
@@ -131,14 +138,17 @@ Monokai Nightasty comes with these defaults:
 
   color_headers = false, -- Enable header colors for each header level (h1, h2, etc.)
   dim_inactive = false, -- dims inactive windows
-  hide_inactive_statusline = false, -- Hide inactive statuslines and replace them with a thin border instead. Should work with the standard **StatusLine** and **LuaLine**.
   lualine_bold = true, -- Lualine headers will be bold or regular.
   lualine_style = "default", -- "dark", "light" or "default" (default follows dark/light style)
   markdown_header_marks = false, -- Add headers marks highlights (the `#` character) to Treesitter highlight query
 
-  -- Set the colors for terminal-mode. Could be a boolean, a table or a function that returns a table.
-  -- Could be `true` to enable defaults, a function like `function(colors) return { Normal = { fg = colors.fg_dark } }`
-  -- or directly a table like `{ Normal = { fg = "#e6e6e6" } }`.
+  -- Set the colors for terminal-mode (default `true`). Set to `false` to disable it.
+  -- Pass a table with `terminal_color_x` values: `{ terminal_color_8 = "#e6e6e6" }`.
+  -- Also accepts a function:
+  -- ```lua
+  -- function(colors) return { fg = colors.fg_dark, terminal_color_4 = "#ff00ff" } end
+  -- ```
+  -- > Use the `fg` key to apply colors to the normal text (`:h terminal-config`).
   terminal_colors = true,
 
   --- You can override specific color groups to use other groups or a hex color
@@ -148,12 +158,28 @@ Monokai Nightasty comes with these defaults:
 
   --- You can override specific highlights to use other groups or a hex color
   --- function will be called with the Monokai Highlights and ColorScheme table
-  ---@param highlights Highlights
+  ---@param highlights monokai.Highlights
   ---@param colors ColorScheme
   on_highlights = function(highlights, colors) end,
+
+  -- When `true` the theme will be cached for better performance.
+  cache = true,
+
+  --- Automatically enable highlights for supported plugins in the lazy.nvim config.
+  auto_enable_plugins_highlights = true,
+
+  --- List of manually enabled/disabled plugins.
+  --- Check the supported plugins here:
+  ---   https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights
+  ---@type table<string, boolean|{enabled:boolean}>
+  plugins = {
+    -- By default if lazy.nvim is not loaded enable all the plugins
+    all = package.loaded.lazy == nil,
+    -- telescope = true,
+  },
 }
 
-```
+````
 
 #### Full configuration example (for Lazy):
 
@@ -179,7 +205,7 @@ return {
 
     -- This also could be a table like this: `terminal_colors = { Normal = { fg = "#e6e6e6" } }`
     terminal_colors = function(colors)
-      return { Normal = { fg = colors.fg_dark } }
+      return { fg = colors.fg_dark }
     end
 
     --- You can override specific color/highlights. Theme color values
@@ -207,7 +233,8 @@ return {
     -- Default to dark theme
     vim.o.background = "dark"  -- dark | light
 
-    require("monokai-nightasty").load(opts)
+    require("monokai-nightasty").setup(opts)
+    require("monokai-nightasty").load()
   end,
 }
 ```
@@ -259,9 +286,12 @@ end,
 Currently this extra files are generated:
 
 <!-- extras:start -->
-- [Monokai Nightasty Palettes](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/extras/palettes) ([palettes](extras/palettes))
+
+- [Monokai Nightasty Palettes](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/extras/palettes)
+  ([palettes](extras/palettes))
 - [Kitty](https://sw.kovidgoyal.net/kitty/) ([kitty](extras/kitty))
-- [Lazygit](https://github.com/jesseduffield/lazygit) ([lazygit](extras/lazygit))
+- [Lazygit](https://github.com/jesseduffield/lazygit)
+  ([lazygit](extras/lazygit))
 - [Tmux](https://github.com/tmux/tmux/wiki) ([tmux](extras/tmux))
 - [Zathura](https://pwmt.org/projects/zathura/) ([zathura](extras/zathura))
 <!-- extras:end -->
@@ -314,12 +344,13 @@ set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{25
 You could import the color palette to use with other plugins:
 
 ```lua
-local colors = require("monokai-nightasty.colors").setup()
+local colors, opts = require("monokai-nightasty.colors").setup()
 
 some_plugin_config.title = colors.blue_light
 example_plugin_config = {
   foo = colors.bg_dark,
   bar = colors.blue_light,
+  buz = opts.transparent and colors.none or colors.bg
 }
 ```
 
@@ -327,10 +358,10 @@ Some color utility functions are available for your use:
 
 ```lua
 local colors = require("monokai-nightasty.colors").setup()
-local util = require("monokai-nightasty.util")
+local utils = require("monokai-nightasty.utils")
 
-some_plugin_config.example = util.lighten(colors.bg, 0.5)
-some_plugin_config.another = util.darken(colors.bg, 0.3)
+some_plugin_config.example = utils.lighten(colors.bg, 0.5)
+some_plugin_config.another = utils.darken(colors.bg, 0.3)
 ```
 
 ## 🎨 Color Palettes
