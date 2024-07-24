@@ -67,8 +67,8 @@ function M.get(c, opts)
     Visual = { bg = c.bg_visual }, -- Visual mode selection
     WarningMsg = { fg = c.warning }, -- warning messages { fg = c.white, bg = c.red },
     Whitespace = { fg = c.grey_darker }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
-    WinBar = { link = "StatusLine" }, -- window bar
-    WinBarNC = { link = "StatusLineNC" }, -- window bar in inactive windows
+    WinBar = "StatusLine", -- window bar
+    WinBarNC = "StatusLineNC", -- window bar in inactive windows
     WinSeparator = { fg = c.border }, -- the column separating vertically split windows
     lCursor = { fg = c.bg, bg = c.blue }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
 

@@ -12,7 +12,7 @@ function M.load(opts)
       require("monokai-nightasty").toggle()
     end, { desc = "Monokai: Toggle light/dark theme" })
 
-    if opts and opts.markdown_header_marks == true then
+    if opts.markdown_header_marks then
       require("monokai-nightasty.extras.ts_markdown").set_headers_marks()
     end
 

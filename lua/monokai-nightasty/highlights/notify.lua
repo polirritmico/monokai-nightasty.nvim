@@ -25,18 +25,18 @@ function M.get(c, opts)
     NotifyTRACEIcon = { fg = c.purple },
 
     -- Title
-    NotifyERRORTitle = { link = "NotifyERRORIcon" },
-    NotifyWARNTitle = { link = "NotifyWARNIcon" },
-    NotifyINFOTitle = { link = "NotifyINFOIcon" },
-    NotifyDEBUGTitle = { link = "NotifyDEBUGIcon" },
-    NotifyTRACETitle = { link = "NotifyTRACEIcon" },
+    NotifyERRORTitle = "NotifyERRORIcon",
+    NotifyWARNTitle = "NotifyWARNIcon",
+    NotifyINFOTitle = "NotifyINFOIcon",
+    NotifyDEBUGTitle = "NotifyDEBUGIcon",
+    NotifyTRACETitle = "NotifyTRACEIcon",
 
     -- Body
-    NotifyERRORBody = { link = "Normal" },
-    NotifyWARNBody = { link = "Normal" },
-    NotifyINFOBody = { link = "Normal" },
-    NotifyDEBUGBody = { link = "Normal" },
-    NotifyTRACEBody = { link = "Normal" },
+    NotifyERRORBody = "Normal",
+    NotifyWARNBody = "Normal",
+    NotifyINFOBody = "Normal",
+    NotifyDEBUGBody = "Normal",
+    NotifyTRACEBody = "Normal",
   }
 end
 

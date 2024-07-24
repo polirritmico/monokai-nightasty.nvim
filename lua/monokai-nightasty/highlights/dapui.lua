@@ -3,7 +3,7 @@ local M = {}
 M.url = "https://github.com/rcarriga/nvim-dap-ui"
 
 ---@type monokai.HighlightsFn
-function M.get(c, _)
+function M.get(c)
   return {
     -- Action buttons
     DapUIPlayPause = { fg = c.green, bg = c.bg_statusline },

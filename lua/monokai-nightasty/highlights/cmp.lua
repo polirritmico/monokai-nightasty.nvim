@@ -3,7 +3,7 @@ local M = {}
 M.url = "https://github.com/hrsh7th/nvim-cmp"
 
 ---@type monokai.HighlightsFn
-function M.get(c, _)
+function M.get(c)
   local ret = {
     CmpDocumentation = { fg = c.fg, bg = c.bg_float },
     CmpDocumentationBorder = { fg = c.border_highlight, bg = c.bg_float },

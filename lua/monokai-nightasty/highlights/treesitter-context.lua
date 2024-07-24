@@ -3,7 +3,7 @@ local M = {}
 M.url = "https://github.com/nvim-treesitter/nvim-treesitter-context"
 
 ---@type monokai.HighlightsFn
-function M.get(c, _)
+function M.get(c)
   return {
     TreesitterContext = { bg = c.bg_sidebar },
     TreesitterContextBottom = { sp = c.border, underline = true },

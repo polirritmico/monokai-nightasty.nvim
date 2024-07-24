@@ -118,7 +118,7 @@ function M.mod(modname)
 end
 
 ---@param hlgroup monokai.Highlights
----@return table<string, vim.api.keyset.highlight>
+---@return table<string, monokai.Highlight|string>
 function M.resolve(hlgroup)
   for _, hl in pairs(hlgroup) do
     if type(hl.style) == "table" then

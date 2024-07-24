@@ -3,7 +3,7 @@ local M = {}
 M.url = "https://github.com/nvimdev/dashboard-nvim"
 
 ---@type monokai.HighlightsFn
-function M.get(c, _)
+function M.get(c)
   return {
     -- General
     DashboardHeader = { fg = c.orange },
@@ -14,13 +14,13 @@ function M.get(c, _)
     DashboardKey = { fg = c.purple },
     -- Hyper theme
     DashboardFiles = { fg = c.grey_light },
-    DashboardMruIcon = { link = "DashboardIcon" },
+    DashboardMruIcon = "DashboardIcon",
     DashboardMruTitle = { fg = c.magenta, bold = true },
     DashboardProjectIcon = { fg = c.blue },
-    DashboardProjectTitle = { link = "DashboardIcon" },
-    DashboardProjectTitleIcon = { link = "DashboardIcon" },
+    DashboardProjectTitle = "DashboardIcon",
+    DashboardProjectTitleIcon = "DashboardIcon",
     -- DashboardShortCutIcon = { fg = c.purple },
-    DashboardShortCut = { link = "DashboardKey" },
+    DashboardShortCut = "DashboardKey",
   }
 end
 

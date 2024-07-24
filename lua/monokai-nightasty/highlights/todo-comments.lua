@@ -3,7 +3,7 @@ local M = {}
 M.url = "https://github.com/folke/todo-comments.nvim"
 
 ---@type monokai.HighlightsFn
-function M.get(c, _)
+function M.get(c)
   return {
     TodoBgFIX = { fg = c.white, bg = c.magenta, bold = true },
     TodoBgHACK = { fg = c.black, bg = c.orange, bold = true },

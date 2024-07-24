@@ -2,7 +2,7 @@ local utils = require("monokai-nightasty.utils")
 local M = {}
 
 ---@type monokai.HighlightsFn
-function M.get(c, _)
+function M.get(c)
   return {
     -- checkhealt
     helpCommand = { fg = c.blue, bg = c.bg_float }, -- command name/description
@@ -33,10 +33,10 @@ function M.get(c, _)
     netrwDir = { fg = c.yellow },
     netrwExe = { fg = c.orange },
     netrwHelpCmd = { fg = c.orange, bold = true },
-    netrwLink = { link = "netrwClassify" },
-    netrwList = { link = "netrwDir" },
+    netrwLink = "netrwClassify",
+    netrwList = "netrwDir",
     netrwMarkFile = { fg = c.black, bg = c.orange, bold = true },
-    netrwPlain = { link = "netrwCmdNote" },
+    netrwPlain = "netrwCmdNote",
     netrwQuickHelp = { fg = c.fg_dark, italic = true },
     netrwSymLink = { fg = c.blue, italic = true },
     netrwTreeBar = { fg = c.fg_gutter, nocombine = true },

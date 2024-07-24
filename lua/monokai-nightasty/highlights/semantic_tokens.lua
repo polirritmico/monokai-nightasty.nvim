@@ -3,7 +3,7 @@ local M = {}
 M.url = "https://github.com/"
 
 ---@type monokai.HighlightsFn
-function M.get(c, _)
+function M.get(c)
   return {
     ["@lsp.type.boolean"] = "Boolean",
     ["@lsp.type.builtinType"] = "@type.builtin",
@@ -53,7 +53,7 @@ function M.get(c, _)
     ["@type.qualifier.c_sharp"] = { fg = c.orange, italic = true },
     ["@constructor.lua"] = { fg = c.magenta },
     ["@lsp.typemod.variable.global.lua"] = "@variable.builtin",
-    -- ["@lsp.type.namespace.python"] = { link = "@variable" },
+    -- ["@lsp.type.namespace.python"] = "@variable",
     ["dosbatchError"] = { fg = c.red },
     ["@property.ini"] = { fg = c.orange },
   }
