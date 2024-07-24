@@ -59,7 +59,7 @@ M.defaults = {
   --- List of manually enabled/disabled plugins.
   --- Check the supported plugins here:
   ---   https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights
-  ---@type table<string, boolean|{enabled:boolean}>
+  ---@type table<string, boolean>
   plugins = {
     -- By default if lazy.nvim is not loaded enable all the plugins
     all = package.loaded.lazy == nil,

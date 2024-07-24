@@ -86,15 +86,11 @@ function M.setup(colors, opts)
   end
 
   -- Apply user configuration
-  -- TODO: REFACTOR
-  for plugin, hlgroup in pairs(M.implemented_plugins) do
-    local use = opts.plugins[hlgroup]
-    use = use == nil and opts.plugins[plugin] or use
-    if use ~= nil then
-      if type(use) == "table" then
-        use = use.enabled
-      end
-      enabled_hlgroups[hlgroup] = use or nil
+  for plugin_name, hlgroup_mod in pairs(M.implemented_plugins) do
+    if opts.plugins[plugin_name] ~= nil then
+      enabled_hlgroups[hlgroup_mod] = opts.plugins[plugin_name] or nil
+    elseif opts.plugins[hlgroup_mod] ~= nil then
+      enabled_hlgroups[hlgroup_mod] = opts.plugins[hlgroup_mod] or nil
     end
   end
 
