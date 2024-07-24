@@ -6,10 +6,9 @@ local M = {}
 ---@field on_colors fun(colors: ColorScheme)
 ---@field on_highlights fun(highlights: monokai.Highlights, colors: ColorScheme)
 ---@field hl_styles table Styles to be applied to different syntax groups
----@field terminal_colors? boolean|table|fun(colors: ColorScheme):table
+---@field terminal_colors boolean|table|fun(colors: ColorScheme):table
 ---@field transparent? boolean
 ---@field style? string
----@field force_style? string
 M.defaults = {
   dark_style_background = "default", -- default, dark, transparent, #color
   light_style_background = "default", -- default, dark, transparent, #color
@@ -30,10 +29,13 @@ M.defaults = {
   markdown_header_marks = false, -- Add headers marks highlights (the `#` character) to Treesitter highlight query
   cache = true, -- When set to true, the theme will be cached for better performance
 
-  -- Set the colors for terminal-mode. Could be a boolean, a table or a function that
-  -- returns a table. Could be `true` to enable defaults, a function like
-  -- `function(colors) return { Normal = { fg = colors.fg_dark } }` or directly a
-  -- table like `{ Normal = { fg = "#e6e6e6" } }`.
+  -- Set the colors for terminal-mode (default `true`). Set to `false` to disable it.
+  -- Pass a table with `terminal_color_x` values: `{ terminal_color_8 = "#e6e6e6" }`.
+  -- Also accepts a function:
+  -- ```lua
+  -- function(colors) return { fg = colors.fg_dark, terminal_color_4 = "#ff00ff" } end
+  -- ```
+  -- > Use the `fg` key to apply colors to the normal text (`:h terminal-config`).
   terminal_colors = true,
 
   --- You can override specific color groups to use other groups or a hex color

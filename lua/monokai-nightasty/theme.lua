@@ -1,5 +1,3 @@
-local utils = require("monokai-nightasty.utils")
-
 local M = {}
 
 ---@param opts? monokai.Config
@@ -25,14 +23,14 @@ function M.setup(opts)
   end
 
   if opts.terminal_colors ~= false then
-    M.terminal(colors, opts)
+    M.terminal(colors, opts.terminal_colors)
   end
 
   return colors, hlgroups, opts
 end
 
 ---@param colors ColorScheme
----@param opts monokai.Config
+---@param opts boolean|table|fun(colors:ColorScheme):table
 function M.terminal(colors, opts)
   -- dark
   vim.g.terminal_color_0 = colors.black
@@ -57,25 +55,28 @@ function M.terminal(colors, opts)
   vim.g.terminal_color_13 = colors.magenta
   vim.g.terminal_color_14 = colors.blue_alt
 
-  -- Set autocmd
-  local group = vim.api.nvim_create_augroup("MonokaiNightasty", { clear = true })
-  local opt_type = type(opts.terminal_colors)
-  local term_hl = opt_type == "table" and opts.terminal_colors
-    or opt_type == "function" and opts.terminal_colors(colors)
-    or {}
-
-  ---@cast term_hl table
-  if next(term_hl) ~= nil then
-    vim.api.nvim_create_autocmd("TermOpen", {
-      group = group,
-      callback = function()
-        for name, hl in pairs(term_hl) do
-          local new_hl = "MonokaiNightastyTerminal" .. name
-          vim.api.nvim_set_hl(0, new_hl, hl)
-          vim.cmd.setlocal(string.format("winhighlight=%s:%s", name, new_hl))
-        end
-      end,
-    })
+  -- User custom colors:
+  local opts_type = type(opts)
+  if opts_type == "boolean" then
+    return
+  end
+  local custom = opts_type == "function" and opts(colors) or opts --[[@as table]]
+  for k, color in pairs(custom) do
+    if k ~= "fg" then
+      vim.g[k] = color
+    else
+      -- HACK: terminal fg color is handled by "Normal" highlight.
+      -- Check https://github.com/neovim/neovim/issues/26857
+      local new_hl = "MonokaiNightastyTermNormal"
+      vim.api.nvim_set_hl(0, new_hl, { fg = color })
+      local group = vim.api.nvim_create_augroup("MonokaiNightasty", { clear = true })
+      vim.api.nvim_create_autocmd("TermOpen", {
+        group = group,
+        callback = function()
+          vim.cmd.setlocal(string.format("winhighlight=%s:%s", "Normal", new_hl))
+        end,
+      })
+    end
   end
 end
 
