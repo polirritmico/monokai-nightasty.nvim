@@ -25,7 +25,7 @@ M.implemented_plugins = {
   -- ["rainbow-delimiters.nvim"] = "rainbow",
   ["telescope.nvim"] = "telescope",
   ["todo-comments.nvim"] = "todo-comments",
-  -- ["which-key.nvim"] = "which-key",
+  ["which-key.nvim"] = "which-key",
 
   -- Not implemented
   -- ["ale"]                           = "ale",
