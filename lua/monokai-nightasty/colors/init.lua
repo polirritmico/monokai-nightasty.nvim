@@ -10,21 +10,13 @@ function M.setup(opts)
   local bg_cfg = is_light and opts.light_style_background or opts.dark_style_background
   opts.transparent = bg_cfg == "transparent"
 
-  ---@type Palette
-  local palette = vim.deepcopy(utils.mod("monokai-nightasty.colors." .. opts.style))
-  if type(palette) == "function" then
-    palette = palette(opts) --[[@as Palette]]
-  end
-
   ---@class ColorScheme: Palette
-  local colors = palette
+  local colors = vim.deepcopy(utils.mod("monokai-nightasty.colors." .. opts.style))
 
   utils.bg = colors.bg
   utils.fg = colors.bg
 
   colors.none = "NONE"
-
-  colors.diff = {}
 
   colors.bg = (bg_cfg == "dark" or bg_cfg == "transparent") and colors.bg_dark
     or string.sub(bg_cfg, 1, 1) == "#" and bg_cfg
@@ -105,10 +97,7 @@ function M.setup(opts)
   end
 
   -- Apply user config overrides
-  local ok = pcall(opts.on_colors, colors)
-  if not ok then
-    vim.notify("Wrong setting in on_colors function. Check config", vim.log.levels.ERROR)
-  end
+  opts.on_colors(colors)
 
   return colors, opts
 end
