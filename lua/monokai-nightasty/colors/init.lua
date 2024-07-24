@@ -2,7 +2,7 @@ local utils = require("monokai-nightasty.utils")
 
 local M = {}
 
----@param opts monokai.Config|table?
+---@param opts? monokai.Config|{style:string}
 function M.setup(opts)
   opts = require("monokai-nightasty.config").extend(opts)
 

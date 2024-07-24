@@ -7,8 +7,9 @@ local M = {}
 ---@field on_highlights fun(highlights: monokai.Highlights, colors: ColorScheme)
 ---@field hl_styles table Styles to be applied to different syntax groups
 ---@field terminal_colors boolean|table|fun(colors: ColorScheme):table
----@field transparent? boolean
----@field style? string
+---@field cache boolean Enables/Disable the cache
+---@field transparent? boolean Used by highlights to set transparent bg
+---@field style? string Set the dark/light theme at startup
 M.defaults = {
   dark_style_background = "default", -- default, dark, transparent, #color
   light_style_background = "default", -- default, dark, transparent, #color
@@ -22,12 +23,12 @@ M.defaults = {
     floats = "default", -- default, dark, transparent
     sidebars = "default", -- default, dark, transparent
   },
+
   color_headers = false, -- Enable header colors for each header level (h1, h2, etc.)
   dim_inactive = false, -- dims inactive windows
-  lualine_bold = true, -- Lualine headers will be bold or regular.
+  lualine_bold = true, -- Lualine headers will be bold or regular
   lualine_style = "default", -- "dark", "light" or "default" (default follows dark/light style)
   markdown_header_marks = false, -- Add headers marks highlights (the `#` character) to Treesitter highlight query
-  cache = true, -- When set to true, the theme will be cached for better performance
 
   -- Set the colors for terminal-mode (default `true`). Set to `false` to disable it.
   -- Pass a table with `terminal_color_x` values: `{ terminal_color_8 = "#e6e6e6" }`.
@@ -39,22 +40,30 @@ M.defaults = {
   terminal_colors = true,
 
   --- You can override specific color groups to use other groups or a hex color
-  --- function will be called with the Monokai ColorScheme table
+  --- function will be called with the Monokai ColorScheme table.
   ---@param colors ColorScheme
   on_colors = function(colors) end,
 
   --- You can override specific highlights to use other groups or a hex color
-  --- function will be called with the Monokai Highlights and ColorScheme table
+  --- function will be called with the Monokai Highlights and ColorScheme table.
   ---@param highlights monokai.Highlights
   ---@param colors ColorScheme
   on_highlights = function(highlights, colors) end,
 
+  -- When `true` the theme will be cached for better performance.
+  cache = true,
+
+  --- Automatically enable highlights for supported plugins in the lazy.nvim config.
+  auto_enable_plugins_highlights = true,
+
+  --- List of manually enabled/disabled plugins.
+  --- Check the supported plugins here:
+  ---   https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights
   ---@type table<string, boolean|{enabled:boolean}>
   plugins = {
+    -- By default if lazy.nvim is not loaded enable all the plugins
     all = package.loaded.lazy == nil,
-    auto = true,
     -- telescope = true,
-    -- telescope = { enabled = true },
   },
 }
 

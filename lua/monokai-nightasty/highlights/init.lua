@@ -74,7 +74,7 @@ function M.setup(colors, opts)
     for _, hlgroup in pairs(M.implemented_plugins) do
       enabled_hlgroups[hlgroup] = true
     end
-  elseif opts.plugins.auto and package.loaded.lazy then
+  elseif opts.auto_enable_plugins_highlights and package.loaded.lazy then
     local lazy_plugins = require("lazy.core.config").plugins
     for plugin, hlgroup in pairs(M.implemented_plugins) do
       if lazy_plugins[plugin] then
