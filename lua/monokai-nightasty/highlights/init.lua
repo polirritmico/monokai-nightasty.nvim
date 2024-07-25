@@ -71,39 +71,40 @@ function M.setup(colors, opts)
     treesitter = true,
   }
 
+  -- Add plugins to the enabled_hlgroups and apply user configs
   if opts.plugins.all then
-    for _, hlgroup in pairs(M.implemented_plugins) do
-      enabled_hlgroups[hlgroup] = true
+    for plugin_name, plugin_mod in pairs(M.implemented_plugins) do
+      enabled_hlgroups[plugin_mod] = opts.plugins[plugin_name] ~= false or nil
     end
-  elseif opts.auto_enable_plugins_highlights and package.loaded.lazy then
+  elseif opts.auto_enable_plugins and package.loaded.lazy then
     local lazy_plugins = require("lazy.core.config").plugins
-    for plugin, hlgroup in pairs(M.implemented_plugins) do
-      if lazy_plugins[plugin] then
-        enabled_hlgroups[hlgroup] = true
+    for plugin_name, plugin_mod in pairs(M.implemented_plugins) do
+      if lazy_plugins[plugin_name] then
+        enabled_hlgroups[plugin_mod] = opts.plugins[plugin_name] ~= false or nil
       end
     end
-    -- NOTE: mini-plugins could also be inside mini.nvim
-    -- if package.loaded["mini.nvim"] then end
-  end
-
-  -- Apply user configuration
-  for plugin_name, hlgroup_mod in pairs(M.implemented_plugins) do
-    if opts.plugins[plugin_name] ~= nil then
-      enabled_hlgroups[hlgroup_mod] = opts.plugins[plugin_name] or nil
-    elseif opts.plugins[hlgroup_mod] ~= nil then
-      enabled_hlgroups[hlgroup_mod] = opts.plugins[hlgroup_mod] or nil
+    -- NOTE: if mini.nvim then enable all mini modules
+    if opts.plugins["mini.nvim"] ~= false and lazy_plugins["mini.nvim"] then
+      for _, plugin_mod in pairs(M.implemented_plugins) do
+        if plugin_mod:find("^mini_") then
+          enabled_hlgroups[plugin_mod] = true
+        end
+      end
+    end
+  else
+    for plugin_name, enabled in pairs(opts.plugins) do
+      if plugin_name ~= "all" then
+        enabled_hlgroups[plugin_name] = enabled or nil
+      end
     end
   end
 
-  local plugin_names = vim.tbl_keys(enabled_hlgroups)
-  table.sort(plugin_names) -- sorting to check the cache
-
-  opts.style = opts.style or "dark"
+  local style_modules = vim.tbl_keys(enabled_hlgroups)
+  table.sort(style_modules)
   local cache = opts.cache and utils.cache.read(opts.style)
-
   local inputs = {
     colors = colors,
-    plugin_names = plugin_names,
+    style_modules = style_modules,
     version = utils.get_version(),
     opts = {
       color_headers = opts.color_headers,
