@@ -16,11 +16,12 @@ function M.setup(opts)
   vim.o.termguicolors = true
   vim.g.colors_name = "monokai-nightasty"
 
-  for group, hl in pairs(hlgroups) do
+  for group, hl in pairs(hlgroups) do -- apply the highlights
     if type(hl) == "string" then
-      hl = { link = hl }
+      vim.api.nvim_set_hl(0, group, { link = hl })
+    else
+      vim.api.nvim_set_hl(0, group, hl)
     end
-    vim.api.nvim_set_hl(0, group, hl)
   end
 
   if opts.terminal_colors ~= false then

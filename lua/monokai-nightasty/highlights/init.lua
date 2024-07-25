@@ -63,6 +63,24 @@ end
 ---@param colors ColorScheme
 ---@param opts monokai.Config
 function M.setup(colors, opts)
+  local cache, inputs
+  if opts.cache then
+    cache = utils.cache.read(opts.style)
+    if not M.version then
+      M.version = utils.get_version()
+    end
+    inputs = {
+      colors = colors,
+      version = M.version,
+      opts = {
+        color_headers = opts.color_headers,
+        dim_inactive = opts.dim_inactive,
+        dark_style_background = opts.dark_style_background,
+        light_style_background = opts.light_style_background,
+      },
+    }
+  end
+
   local enabled_hlgroups = {
     base = true,
     builtins = true,
@@ -99,22 +117,14 @@ function M.setup(colors, opts)
     end
   end
 
-  local style_modules = vim.tbl_keys(enabled_hlgroups)
-  table.sort(style_modules)
-  local cache = opts.cache and utils.cache.read(opts.style)
-  local inputs = {
-    colors = colors,
-    style_modules = style_modules,
-    version = utils.get_version(),
-    opts = {
-      color_headers = opts.color_headers,
-      dim_inactive = opts.dim_inactive,
-      dark_style_background = opts.dark_style_background,
-      light_style_background = opts.light_style_background,
-    },
-  }
+  local ret
+  if opts.cache then
+    local style_modules = vim.tbl_keys(enabled_hlgroups)
+    table.sort(style_modules)
+    inputs.style_modules = style_modules
 
-  local ret = cache and vim.deep_equal(inputs, cache.inputs) and cache.hlgroups or nil
+    ret = cache and vim.deep_equal(inputs, cache.inputs) and cache.hlgroups or nil
+  end
 
   if not ret then
     ret = {}
@@ -122,10 +132,9 @@ function M.setup(colors, opts)
     for group_name in pairs(enabled_hlgroups) do
       local highlights = M.get(group_name, colors, opts)
       for hl_name, hl_settings in pairs(highlights) do
-        ret[hl_name] = hl_settings
+        ret[hl_name] = utils.resolve_style_settings(hl_settings)
       end
     end
-    utils.resolve(ret)
     if opts.cache then
       utils.cache.write(opts.style, { hlgroups = ret, inputs = inputs })
     end

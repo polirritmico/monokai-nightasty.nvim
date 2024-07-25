@@ -117,18 +117,17 @@ function M.mod(modname)
   return module
 end
 
----@param hlgroup monokai.Highlights
----@return table<string, monokai.Highlight|string>
-function M.resolve(hlgroup)
-  for _, hl in pairs(hlgroup) do
-    if type(hl.style) == "table" then
-      for k, v in pairs(hl.style) do
-        hl[k] = v
-      end
-      hl.style = nil
+---@param hl monokai.Highlights|string
+---@return monokai.Highlight|string
+function M.resolve_style_settings(hl)
+  if type(hl.style) == "table" then
+    -- stylua: ignore
+    for k, v in pairs(hl.style --[[@as table]]) do
+      hl[k] = v
     end
+    hl.style = nil
   end
-  return hlgroup
+  return hl
 end
 
 ---Get the commit hash from the repository.
