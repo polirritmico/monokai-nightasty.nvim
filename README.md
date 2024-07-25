@@ -166,16 +166,18 @@ M.defaults = {
   cache = true,
 
   --- Automatically enable highlights for supported plugins in the lazy.nvim config.
-  auto_enable_plugins_highlights = true,
+  auto_enable_plugins = true,
 
   --- List of manually enabled/disabled plugins.
   --- Check the supported plugins here:
   ---   https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights
-  ---@type table<string, boolean|{enabled:boolean}>
+  ---@type table<string, boolean>
   plugins = {
-    -- By default if lazy.nvim is not loaded enable all the plugins
+    -- `all` enable or disable all plugins. By default if lazy.nvim is not loaded enable all the plugins
     all = package.loaded.lazy == nil,
-    -- telescope = true,
+
+    -- Use the ["<repository name>"]:
+    -- ["telescope.nvim"] = true,
   },
 }
 

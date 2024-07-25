@@ -8,13 +8,14 @@ local M = {}
 ---@field hl_styles table Styles to be applied to different syntax groups
 ---@field terminal_colors boolean|table|fun(colors: ColorScheme):table
 ---@field cache boolean Enables/Disable the cache
+---@field auto_enable_plugins boolean Automatically enable supported plugins through lazy.nvim
 ---@field transparent? boolean Used by highlights to set transparent bg
 ---@field style? string Set the dark/light theme at startup
 M.defaults = {
   dark_style_background = "default", -- default, dark, transparent, #color
   light_style_background = "default", -- default, dark, transparent, #color
   hl_styles = {
-    -- Style to be applied to different syntax groups. See `:help nvim_set_hl`
+    -- Style to be applied to syntax groups: (See `:help nvim_set_hl`)
     comments = { italic = true },
     keywords = { italic = false },
     functions = {},
@@ -54,16 +55,18 @@ M.defaults = {
   cache = true,
 
   --- Automatically enable highlights for supported plugins in the lazy.nvim config.
-  auto_enable_plugins_highlights = true,
+  auto_enable_plugins = true,
 
   --- List of manually enabled/disabled plugins.
   --- Check the supported plugins here:
   ---   https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights
   ---@type table<string, boolean>
   plugins = {
-    -- By default if lazy.nvim is not loaded enable all the plugins
+    -- Use the ["<repository name>"]. For example:
+    -- ["telescope.nvim"] = true,
+
+    -- `all`: enable or disable all plugins. By default if lazy.nvim is not loaded enable all the plugins
     all = package.loaded.lazy == nil,
-    -- telescope = true,
   },
 }
 

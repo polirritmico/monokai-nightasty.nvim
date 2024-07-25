@@ -18,9 +18,9 @@ M.set_headers_marks_was_executed = false
 function M.set_headers_marks()
   if M.set_headers_marks_was_executed then
     return
-  else
-    M.set_headers_marks_was_executed = true
   end
+  M.set_headers_marks_was_executed = true
+
   vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
     pattern = { "*.md", "*.markdown" },
     group = vim.api.nvim_create_augroup("MonokaiNightastyTSfix", {}),
