@@ -12,9 +12,6 @@ function M.setup(opts)
   ---@class ColorScheme: Palette
   local colors = vim.deepcopy(utils.mod("monokai-nightasty.colors." .. opts.style))
 
-  utils.bg = colors.bg
-  utils.fg = colors.bg
-
   colors.none = "NONE"
 
   colors.bg = (bg_cfg == "dark" or bg_cfg == "transparent") and colors.bg_dark

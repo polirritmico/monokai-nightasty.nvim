@@ -9,7 +9,7 @@ function M.load(opts)
     monokai_config.setup(opts)
   end
 
-  opts = monokai_config.extend(opts)
+  opts = require("monokai-nightasty.config").extend(opts)
   opts.style = not M.loaded and opts.style or vim.o.background
 
   if not M.loaded then

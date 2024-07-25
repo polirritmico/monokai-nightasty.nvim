@@ -5,17 +5,23 @@ local M = {}
 ---@field light_style_background string default, dark, transparent, #color
 ---@field on_colors fun(colors: ColorScheme)
 ---@field on_highlights fun(highlights: monokai.Highlights, colors: ColorScheme)
----@field hl_styles table Styles to be applied to different syntax groups
+---@field hl_styles table Styles to be applied to selected syntax groups
+---@field color_headers boolean Enable header colors for each header level (h1, h2, etc.)
+---@field dim_inactive boolean dims inactive windows
+---@field lualine_bold boolean Lualine headers will be bold or regular
+---@field lualine_style string Possible values: "dark", "light" or "default" (default follows dark/light style)
+---@field markdown_header_marks boolean Add headers marks highlights (the `#` character) to Treesitter highlight query
 ---@field terminal_colors boolean|table|fun(colors: ColorScheme):table
----@field cache boolean Enables/Disable the cache
 ---@field auto_enable_plugins boolean Automatically enable supported plugins through lazy.nvim
+---@field plugins table<string, boolean> List of manually enabled/disabled plugins.
+---@field cache boolean Enables/Disable the cache
 ---@field transparent? boolean Used by highlights to set transparent bg
 ---@field style? string Set the dark/light theme at startup
 M.defaults = {
   dark_style_background = "default", -- default, dark, transparent, #color
   light_style_background = "default", -- default, dark, transparent, #color
   hl_styles = {
-    -- Style to be applied to syntax groups: (See `:help nvim_set_hl`)
+    -- Style to be applied to selected syntax groups: (See `:help nvim_set_hl` for supported keys)
     comments = { italic = true },
     keywords = { italic = false },
     functions = {},
