@@ -4,9 +4,12 @@ local M = {}
 
 ---@param opts? monokai.Config
 function M.load(opts)
-  opts = require("monokai-nightasty.config").extend(opts)
+  local monokai_config = require("monokai-nightasty.config")
+  if not M.loaded and monokai_config.defaults == monokai_config.options and opts then
+    monokai_config.setup(opts)
+  end
 
-  -- Set to nil at the end to restore toggle capability
+  opts = monokai_config.extend(opts)
   opts.style = not M.loaded and opts.style or vim.o.background
 
   if not M.loaded then
