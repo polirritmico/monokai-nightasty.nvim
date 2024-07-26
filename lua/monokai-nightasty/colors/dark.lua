@@ -33,7 +33,7 @@ local M = {
   -- Extra colors
   blue_alt = "#0087ff",
   green_alt = "#83dc78",
-  green_unchanged = "#a4e400",
+  green_light = "#a4e400",
   red = "#ff005f",
   yellow_alt = "#f6f557",
   git = {

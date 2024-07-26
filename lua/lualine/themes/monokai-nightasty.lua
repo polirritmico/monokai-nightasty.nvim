@@ -57,7 +57,7 @@ function M.get()
     }
 
     monokai_nightasty.command = {
-      a = { fg = c.green_unchanged, bg = c.black },
+      a = { fg = c.lualine.command_fg, bg = c.black },
       b = { fg = c.fg_sidebar, bg = c.bg_status_alt },
     }
 
@@ -72,7 +72,7 @@ function M.get()
     }
 
     monokai_nightasty.terminal = {
-      a = { fg = c.green_unchanged, bg = c.black },
+      a = { fg = c.lualine.command_fg, bg = c.black },
       b = { fg = c.fg_sidebar, bg = c.bg_status_alt },
     }
 
