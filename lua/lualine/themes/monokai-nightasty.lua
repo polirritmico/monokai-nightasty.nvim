@@ -1,16 +1,13 @@
 local M = {}
 
 function M.get()
-  local opts = require("monokai-nightasty.config").options
-  local dark_style = opts.lualine_style == "dark"
-    or opts.lualine_style ~= "light" and vim.o.background == "dark"
-    or false
+  local opts = require("monokai-nightasty.config").extend()
+  opts.style = opts.lualine_style == "default" and vim.o.background or opts.lualine_style
+  local c = require("monokai-nightasty.colors").setup(opts)
 
   local monokai_nightasty = {}
 
-  if dark_style then
-    local c = require("monokai-nightasty.colors").setup({ style = "dark" })
-
+  if opts.style == "dark" then
     monokai_nightasty.normal = {
       a = { fg = c.lualine.normal_fg, bg = c.lualine.normal_bg },
       b = { fg = c.green, bg = c.bg_status_alt },
@@ -48,8 +45,6 @@ function M.get()
       c = { fg = c.grey, bg = c.bg_dark },
     }
   else
-    local c = require("monokai-nightasty.colors").setup({ style = "light" })
-
     monokai_nightasty.normal = {
       a = { fg = c.lualine.normal_fg, bg = c.lualine.normal_bg },
       b = { fg = c.fg_sidebar, bg = c.bg_status_alt },

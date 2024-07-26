@@ -4,12 +4,11 @@ local M = {}
 
 ---@param opts? monokai.Config
 function M.load(opts)
-  local monokai_config = require("monokai-nightasty.config")
-  if not M.loaded and monokai_config.defaults == monokai_config.options and opts then
-    monokai_config.setup(opts)
+  if not M.loaded and config.defaults == config.options and opts then
+    config.setup(opts)
   end
 
-  opts = require("monokai-nightasty.config").extend(opts)
+  opts = config.extend(opts)
   opts.style = not M.loaded and opts.style or vim.o.background
 
   if not M.loaded then
