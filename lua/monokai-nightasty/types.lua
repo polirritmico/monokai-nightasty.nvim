@@ -6,5 +6,6 @@
 ---@alias monokai.HighlightsFn fun(colors.Colorscheme, opts:monokai.Config):monokai.Highlights
 
 ---@class monokai.Cache
+---@field colors ColorScheme
 ---@field hlgroups monokai.Highlights
 ---@field inputs table

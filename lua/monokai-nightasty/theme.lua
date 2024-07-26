@@ -1,11 +1,33 @@
+local utils = require("monokai-nightasty.utils")
+local highlights = require("monokai-nightasty.highlights")
+
 local M = {}
 
 ---@param opts monokai.Config
 function M.setup(opts)
   opts.transparent = opts[opts.style .. "_style_background"] == "transparent"
 
-  local colors = require("monokai-nightasty.colors").setup(opts)
-  local hlgroups = require("monokai-nightasty.highlights").setup(colors, opts)
+  local colors, hlgroups
+
+  if opts.cache then
+    highlights.generate_enabled_hlgroups(opts)
+    local current_inputs = highlights.generate_inputs(opts)
+    local cache = utils.cache.read(opts.style)
+
+    if cache and vim.deep_equal(cache.inputs, current_inputs) then
+      colors = cache.colors
+      hlgroups = cache.hlgroups
+
+      -- Apply non-cached styles customizations
+      opts.on_colors(colors)
+      opts.on_highlights(hlgroups, colors)
+    end
+  end
+
+  if not hlgroups then
+    colors = require("monokai-nightasty.colors").setup(opts)
+    hlgroups = require("monokai-nightasty.highlights").setup(colors, opts)
+  end
 
   -- Clear highlights only when switching the theme or toggling dark/light mode
   if vim.g.colors_name then

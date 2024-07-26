@@ -106,6 +106,12 @@ function M.get(hlgroup, colors, opts)
   return module.get(colors, opts)
 end
 
+function M.generate_style_modules()
+  local style_modules = vim.tbl_keys(M.enabled_hlgroups)
+  table.sort(style_modules)
+  return style_modules
+end
+
 ---@param opts monokai.Config
 ---@return table
 function M.generate_inputs(opts)
@@ -128,7 +134,9 @@ function M.generate_inputs(opts)
       on_colors = string.dump(opts.on_colors),
       plugins = opts.plugins,
     },
+    style_modules = M.generate_style_modules(),
   }
+
   return M.inputs
 end
 
@@ -138,29 +146,18 @@ function M.setup(colors, opts)
   local enabled_hlgroups = M.generate_enabled_hlgroups(opts)
   local inputs = M.generate_inputs(opts)
 
-  local ret
-  if opts.cache then
-    local cache = utils.cache.read(opts.style)
+  -- Build full highlights
+  local ret = {}
 
-    local style_modules = vim.tbl_keys(enabled_hlgroups)
-    table.sort(style_modules)
-    inputs.style_modules = style_modules
-
-    ret = cache and vim.deep_equal(inputs, cache.inputs) and cache.hlgroups or nil
+  for group_name in pairs(enabled_hlgroups) do
+    local highlights = M.get(group_name, colors, opts)
+    for hl_name, hl_settings in pairs(highlights) do
+      ret[hl_name] = utils.resolve_style_settings(hl_settings)
+    end
   end
 
-  if not ret then
-    ret = {}
-    -- Build full highlights
-    for group_name in pairs(enabled_hlgroups) do
-      local highlights = M.get(group_name, colors, opts)
-      for hl_name, hl_settings in pairs(highlights) do
-        ret[hl_name] = utils.resolve_style_settings(hl_settings)
-      end
-    end
-    if opts.cache then
-      utils.cache.write(opts.style, { hlgroups = ret, inputs = inputs })
-    end
+  if opts.cache then
+    utils.cache.write(opts.style, { colors = colors, hlgroups = ret, inputs = inputs })
   end
 
   -- Apply user configs

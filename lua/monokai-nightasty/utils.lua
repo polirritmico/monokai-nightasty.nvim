@@ -158,7 +158,14 @@ function M.cache.file(filename)
   return base_path .. filename .. ".json"
 end
 
+function M.cache.clear()
+  for _, theme in ipairs({ "dark", "light" }) do
+    (vim.uv or vim.loop).fs_unlink(M.cache.file(theme))
+  end
+end
+
 ---@param filename string
+---@return monokai.Cache?
 function M.cache.read(filename)
   ---@type boolean, monokai.Cache
   local ok, ret = pcall(function()
@@ -175,12 +182,6 @@ function M.cache.write(filename, data)
   local filepath = M.cache.file(filename)
   M.mkdir_parent(filepath)
   pcall(M.write_file, vim.json.encode(data), filepath)
-end
-
-function M.cache.clear()
-  for _, theme in ipairs({ "dark", "light" }) do
-    (vim.uv or vim.loop).fs_unlink(M.cache.file(theme))
-  end
 end
 
 return M
