@@ -66,17 +66,32 @@ function M.setup(colors, opts)
   local cache, inputs
   if opts.cache then
     cache = utils.cache.read(opts.style)
+
     if not M.version then
       M.version = utils.get_version()
     end
+
+    local term_colors = opts.terminal_colors
+    if type(term_colors) == "function" then
+      ---@diagnostic disable: cast-local-type
+      term_colors = string.dump(term_colors)
+    end
+
     inputs = {
-      colors = colors,
       version = M.version,
       opts = {
+        auto_enable_plugins = opts.auto_enable_plugins,
         color_headers = opts.color_headers,
-        dim_inactive = opts.dim_inactive,
         dark_style_background = opts.dark_style_background,
+        dim_inactive = opts.dim_inactive,
+        hl_styles = opts.hl_styles,
         light_style_background = opts.light_style_background,
+        lualine_bold = opts.lualine_bold,
+        lualine_style = opts.lualine_style,
+        markdown_header_marks = opts.markdown_header_marks,
+        on_colors = string.dump(opts.on_colors),
+        plugins = opts.plugins,
+        terminal_colors = term_colors,
       },
     }
   end
