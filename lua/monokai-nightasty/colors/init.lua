@@ -2,15 +2,13 @@ local utils = require("monokai-nightasty.utils")
 
 local M = {}
 
----@param opts? monokai.Config|{style:string}
+---@param opts monokai.Config|{style:string}
 function M.setup(opts)
-  opts = require("monokai-nightasty.config").extend(opts)
-
   local is_light = opts.style == "light"
   local bg_cfg = is_light and opts.light_style_background or opts.dark_style_background
 
   ---@class ColorScheme: Palette
-  local colors = vim.deepcopy(utils.mod("monokai-nightasty.colors." .. opts.style))
+  local colors = utils.mod("monokai-nightasty.colors." .. opts.style)
 
   colors.none = "NONE"
 

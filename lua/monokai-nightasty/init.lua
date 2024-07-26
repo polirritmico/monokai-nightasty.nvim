@@ -12,9 +12,11 @@ function M.load(opts)
   opts.style = not M.loaded and opts.style or vim.o.background
 
   if not M.loaded then
-    vim.api.nvim_create_user_command("MonokaiToggleLight", function()
-      require("monokai-nightasty").toggle()
-    end, { desc = "Monokai: Toggle light/dark theme" })
+    vim.api.nvim_create_user_command(
+      "MonokaiToggleLight",
+      M.toggle,
+      { desc = "Monokai: Toggle light/dark theme" }
+    )
 
     if opts.markdown_header_marks then
       require("monokai-nightasty.extras.ts_markdown").set_headers_marks()

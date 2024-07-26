@@ -1,8 +1,7 @@
 local M = {}
 
----@param opts? monokai.Config
+---@param opts monokai.Config
 function M.setup(opts)
-  opts = require("monokai-nightasty.config").extend(opts)
   opts.transparent = opts[opts.style .. "_style_background"] == "transparent"
 
   local colors = require("monokai-nightasty.colors").setup(opts)
