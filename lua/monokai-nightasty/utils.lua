@@ -89,10 +89,12 @@ function M.write_file(data, filename, verbose)
   file:close()
 end
 
-function M.read_file(file)
-  local fd = assert(io.open(file, "r"))
+---@param filepath string
+---@param instruction? string Defaults to `*a`
+function M.read_file(filepath, instruction)
+  local fd = assert(io.open(filepath, "r"))
   ---@type string
-  local data = fd:read("*a")
+  local data = fd:read(instruction or "*a")
   fd:close()
   return data
 end
@@ -133,9 +135,12 @@ end
 ---Get the commit hash from the repository.
 function M.get_version()
   local repo = vim.fn.fnamemodify(debug.getinfo(1, "S").source:sub(2), ":h:h:h") .. "/.git/"
-  local head_content = M.read_file(repo .. "HEAD"):match("ref: (.*)\n")
+  local head_content = M.read_file(repo .. "HEAD", "*l")
+
   if head_content:match("/") then
-    local commit = M.read_file(repo .. head_content):match("(%w+)")
+    -- Follow the reference to get the commit hash
+    local ref_file = head_content:match("ref: (.+)")
+    local commit = M.read_file(repo .. ref_file, "*l")
     return commit:sub(1, 8)
   else
     return head_content:sub(1, 8)
