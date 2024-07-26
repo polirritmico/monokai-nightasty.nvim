@@ -1,4 +1,5 @@
 local M = {
+  autocmds = false,
   module = "monokai-nightasty",
   module_escaped = "monokai%-nightasty",
   colorscheme = "monokai-nightasty",
@@ -13,48 +14,55 @@ local M = {
   cache = {}, ---@type table<string, boolean>
 }
 
-function M.reset()
-  require("monokai-nightasty.utils").cache.clear()
-  local colors = require("monokai-nightasty.colors").setup()
-  M.globals.colors = colors
-  M.globals.c = colors
-end
+function M.set_autocmds()
+  local function reset()
+    require("monokai-nightasty.utils").cache.clear()
+    local colors = require("monokai-nightasty.colors").setup()
+    M.globals.colors = colors
+    M.globals.c = colors
+  end
 
-local function reload()
-  for k in pairs(package.loaded) do
-    if k:find("^" .. M.module_escaped) then
-      package.loaded[k] = nil
+  local function reload()
+    for k in pairs(package.loaded) do
+      if k:find("^" .. M.module_escaped) then
+        package.loaded[k] = nil
+      end
+    end
+    M.cache = {}
+    require(M.module).setup(M.opts) -- Setup
+    reset()
+    local colorscheme = vim.g.colors_name or M.colorscheme
+    colorscheme = colorscheme:find(M.colorscheme) and colorscheme or M.colorscheme
+    vim.cmd.colorscheme(colorscheme)
+    local mini_hipatterns = require("mini.hipatterns")
+    for _, buf in ipairs(require("mini.hipatterns").get_enabled_buffers()) do
+      mini_hipatterns.update(buf)
     end
   end
-  M.cache = {}
-  require(M.module).setup(M.opts) -- Setup
-  M.reset()
-  local colorscheme = vim.g.colors_name or M.colorscheme
-  colorscheme = colorscheme:find(M.colorscheme) and colorscheme or M.colorscheme
-  vim.cmd.colorscheme(colorscheme)
-  local mini_hipatterns = require("mini.hipatterns")
-  for _, buf in ipairs(require("mini.hipatterns").get_enabled_buffers()) do
-    mini_hipatterns.update(buf)
-  end
-end
-reload = vim.schedule_wrap(reload)
 
-local augroup = vim.api.nvim_create_augroup("monokai_dev", { clear = true })
-vim.api.nvim_create_autocmd("User", {
-  pattern = "VeryLazy",
-  group = augroup,
-  callback = reload,
-})
-vim.api.nvim_create_autocmd("BufWritePost", {
-  group = augroup,
-  pattern = "*/lua/" .. M.module_escaped .. "/**.lua",
-  callback = reload,
-})
+  M.reload = vim.schedule_wrap(reload)
+
+  local augroup = vim.api.nvim_create_augroup("monokai_dev", { clear = true })
+  vim.api.nvim_create_autocmd("User", {
+    pattern = "VeryLazy",
+    group = augroup,
+    callback = M.reload,
+  })
+  vim.api.nvim_create_autocmd("BufWritePost", {
+    group = augroup,
+    pattern = "*/lua/" .. M.module_escaped .. "/**.lua",
+    callback = M.reload,
+  })
+end
 
 ---@param name string
 ---@param buf number
 function M.hl_group(name, buf)
   return vim.api.nvim_buf_get_name(buf):find("kinds") and "LspKind" .. name or name
+end
+
+if M.autocmds then
+  M.set_autocmds()
 end
 
 return {
@@ -84,7 +92,8 @@ return {
                   hl.fg = hl.fg
                     or vim.api.nvim_get_hl(0, { name = "Normal", link = false }).fg
                   M.cache[group] = true
-                  vim.api.nvim_set_hl(0, group .. "Dev", hl)
+                  -- stylua: ignore
+                  vim.api.nvim_set_hl(0, group .. "Dev", hl --[[@as vim.api.keyset.highlight]])
                 end
               end
               return M.cache[group] and group .. "Dev" or nil
