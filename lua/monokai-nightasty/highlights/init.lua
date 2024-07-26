@@ -52,20 +52,22 @@ M.implemented_plugins = {
   -- ["yanky.nvim"]                    = "yanky"
 }
 
-M.enabled_hlgroups = {
-  base = true,
-  builtins = true,
-  kinds = true,
-  semantic_tokens = true,
-  treesitter = true,
-}
-
 ---Generate the highlight groups list from the implemented_plugins and the user
 ---configuration options.
 ---@param opts monokai.Config
 ---@return table<string, boolean>
 function M.generate_enabled_hlgroups(opts)
-  local enabled_hlgroups = M.enabled_hlgroups
+  if M.enabled_hlgroups then
+    return M.enabled_hlgroups
+  end
+
+  local enabled_hlgroups = {
+    base = true,
+    builtins = true,
+    kinds = true,
+    semantic_tokens = true,
+    treesitter = true,
+  }
 
   -- Add plugins to the enabled_hlgroups and apply user configs
   if opts.plugins.all then
@@ -95,6 +97,7 @@ function M.generate_enabled_hlgroups(opts)
     end
   end
 
+  M.enabled_hlgroups = enabled_hlgroups
   return enabled_hlgroups
 end
 
@@ -148,11 +151,11 @@ function M.setup(colors, opts)
 
   -- Build full highlights
   local ret = {}
-
+  local resolve_style_settings = utils.resolve_style_settings
   for group_name in pairs(enabled_hlgroups) do
     local highlights = M.get(group_name, colors, opts)
     for hl_name, hl_settings in pairs(highlights) do
-      ret[hl_name] = utils.resolve_style_settings(hl_settings)
+      ret[hl_name] = resolve_style_settings(hl_settings)
     end
   end
 
