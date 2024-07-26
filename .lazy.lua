@@ -1,5 +1,5 @@
 local M = {
-  autocmds = false,
+  autocmds = true,
   module = "monokai-nightasty",
   module_escaped = "monokai%-nightasty",
   colorscheme = "monokai-nightasty",
@@ -17,7 +17,8 @@ local M = {
 function M.set_autocmds()
   local function reset()
     require("monokai-nightasty.utils").cache.clear()
-    local colors = require("monokai-nightasty.colors").setup()
+    local opts = require("monokai-nightasty.config").extend()
+    local colors = require("monokai-nightasty.colors").setup(opts)
     M.globals.colors = colors
     M.globals.c = colors
   end
