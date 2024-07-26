@@ -52,57 +52,20 @@ M.implemented_plugins = {
   -- ["yanky.nvim"]                    = "yanky"
 }
 
----@param colors ColorScheme
+M.enabled_hlgroups = {
+  base = true,
+  builtins = true,
+  kinds = true,
+  semantic_tokens = true,
+  treesitter = true,
+}
+
+---Generate the highlight groups list from the implemented_plugins and the user
+---configuration options.
 ---@param opts monokai.Config
-function M.get(hlgroup, colors, opts)
-  ---@type {get: monokai.HighlightsFn, url: string}
-  local module = utils.mod("monokai-nightasty.highlights." .. hlgroup)
-  return module.get(colors, opts)
-end
-
----@param colors ColorScheme
----@param opts monokai.Config
-function M.setup(colors, opts)
-  local cache, inputs
-  if opts.cache then
-    cache = utils.cache.read(opts.style)
-
-    if not M.version then
-      M.version = utils.get_version()
-    end
-
-    local term_colors = opts.terminal_colors
-    if type(term_colors) == "function" then
-      ---@diagnostic disable: cast-local-type
-      term_colors = string.dump(term_colors)
-    end
-
-    inputs = {
-      version = M.version,
-      opts = {
-        auto_enable_plugins = opts.auto_enable_plugins,
-        color_headers = opts.color_headers,
-        dark_style_background = opts.dark_style_background,
-        dim_inactive = opts.dim_inactive,
-        hl_styles = opts.hl_styles,
-        light_style_background = opts.light_style_background,
-        lualine_bold = opts.lualine_bold,
-        lualine_style = opts.lualine_style,
-        markdown_header_marks = opts.markdown_header_marks,
-        on_colors = string.dump(opts.on_colors),
-        plugins = opts.plugins,
-        terminal_colors = term_colors,
-      },
-    }
-  end
-
-  local enabled_hlgroups = {
-    base = true,
-    builtins = true,
-    kinds = true,
-    semantic_tokens = true,
-    treesitter = true,
-  }
+---@return table<string, boolean>
+function M.generate_enabled_hlgroups(opts)
+  local enabled_hlgroups = M.enabled_hlgroups
 
   -- Add plugins to the enabled_hlgroups and apply user configs
   if opts.plugins.all then
@@ -132,8 +95,53 @@ function M.setup(colors, opts)
     end
   end
 
+  return enabled_hlgroups
+end
+
+---@param colors ColorScheme
+---@param opts monokai.Config
+function M.get(hlgroup, colors, opts)
+  ---@type {get: monokai.HighlightsFn, url: string}
+  local module = utils.mod("monokai-nightasty.highlights." .. hlgroup)
+  return module.get(colors, opts)
+end
+
+---@param opts monokai.Config
+---@return table
+function M.generate_inputs(opts)
+  if not M.version then
+    M.version = utils.get_version()
+  end
+
+  M.inputs = {
+    version = M.version,
+    opts = {
+      auto_enable_plugins = opts.auto_enable_plugins,
+      color_headers = opts.color_headers,
+      dark_style_background = opts.dark_style_background,
+      dim_inactive = opts.dim_inactive,
+      hl_styles = opts.hl_styles,
+      light_style_background = opts.light_style_background,
+      lualine_bold = opts.lualine_bold,
+      lualine_style = opts.lualine_style,
+      markdown_header_marks = opts.markdown_header_marks,
+      on_colors = string.dump(opts.on_colors),
+      plugins = opts.plugins,
+    },
+  }
+  return M.inputs
+end
+
+---@param colors ColorScheme
+---@param opts monokai.Config
+function M.setup(colors, opts)
+  local enabled_hlgroups = M.generate_enabled_hlgroups(opts)
+  local inputs = M.generate_inputs(opts)
+
   local ret
   if opts.cache then
+    local cache = utils.cache.read(opts.style)
+
     local style_modules = vim.tbl_keys(enabled_hlgroups)
     table.sort(style_modules)
     inputs.style_modules = style_modules
