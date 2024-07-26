@@ -7,7 +7,7 @@ function M.setup(opts)
   local colors = require("monokai-nightasty.colors").setup(opts)
   local hlgroups = require("monokai-nightasty.highlights").setup(colors, opts)
 
-  -- if not the default colorscheme clear it
+  -- Clear highlights only when switching the theme or toggling dark/light mode
   if vim.g.colors_name then
     vim.cmd("hi clear")
   end
@@ -15,7 +15,8 @@ function M.setup(opts)
   vim.o.termguicolors = true
   vim.g.colors_name = "monokai-nightasty"
 
-  for group, hl in pairs(hlgroups) do -- apply the highlights
+  -- Apply the highlights
+  for group, hl in pairs(hlgroups) do
     if type(hl) == "string" then
       vim.api.nvim_set_hl(0, group, { link = hl })
     else
