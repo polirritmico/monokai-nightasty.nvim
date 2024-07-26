@@ -1,5 +1,6 @@
 local M = {
   module = "monokai-nightasty",
+  module_escaped = "monokai%-nightasty",
   colorscheme = "monokai-nightasty",
   opts = {
     style = vim.o.background,
@@ -21,7 +22,7 @@ end
 
 local function reload()
   for k in pairs(package.loaded) do
-    if k:find("^" .. M.module) then
+    if k:find("^" .. M.module_escaped) then
       package.loaded[k] = nil
     end
   end
@@ -46,7 +47,7 @@ vim.api.nvim_create_autocmd("User", {
 })
 vim.api.nvim_create_autocmd("BufWritePost", {
   group = augroup,
-  pattern = "*/lua/" .. M.module .. "/**.lua",
+  pattern = "*/lua/" .. M.module_escaped .. "/**.lua",
   callback = reload,
 })
 
@@ -69,7 +70,7 @@ return {
 
         hl_group = {
           pattern = function(buf)
-            return vim.api.nvim_buf_get_name(buf):find("lua/" .. M.module)
+            return vim.api.nvim_buf_get_name(buf):find("lua/" .. M.module_escaped)
               and '^%s*%[?"?()[%w%.@]+()"?%]?%s*='
           end,
           group = function(buf, match)
