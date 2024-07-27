@@ -76,21 +76,34 @@ Install with your package manager.
 
 #### Basic usage
 
-To use with the defaults options, no need to use the `setup()` function, just
-set the `colorscheme`:
+In **Lua** _(faster)_:
 
 ```lua
 vim.opt.background = "dark" -- default to dark or light style
-vim.cmd.colorscheme("monokai-nightasty")
+
+local opts = {...} -- options should be setted through a setup call:
+require("monokai-nightasty").setup(opts) -- ...and then load the theme:
+require("monokai-nightasty").load()
+
+-- As an alternative, pass the options directly into load and it will run setup
+-- the first time it is executed:
+require("monokai-nightasty").load(opts)
 ```
+
+or
+
+```vim
+:set background=dark
+:colorscheme monokai-nightasty
+```
+
+If using the defaults settings, no need to call the `setup` function.
+
+---
 
 #### 💡 Toggle function
 
-The Dark/light styles could be toggled by calling the provided function:
-
-```vim
-:MonokaiToggleLight
-```
+The plugin provides a toggle function to change the dark/light styles:
 
 In **Lua**:
 
@@ -98,35 +111,53 @@ In **Lua**:
 require("monokai-nightasty").toggle()
 ```
 
-### Lualine
+or
 
-```lua
-require("lualine").setup({
-  options = { theme = "monokai-nightasty" },
-})
+```vim
+:MonokaiToggleLight
 ```
 
-### ⚙️ Advanced configuration
+### ⚙️ Configuration details
 
 > ⚠️ Set the configuration **BEFORE** calling `colorscheme monokai-nightasty`.
+
+#### Spec:
+
+<!-- panvimdoc-ignore-start -->
+<details>
+<summary> Click the see the configuration spec </summary>
+<!-- panvimdoc-ignore-end -->
+
+```lua
+---@class monokai.Config
+---@field dark_style_background string default, dark, transparent, #color
+---@field light_style_background string default, dark, transparent, #color
+---@field on_colors fun(colors: ColorScheme)
+---@field on_highlights fun(highlights: monokai.Highlights, colors: ColorScheme)
+---@field hl_styles table Styles to be applied to selected syntax groups
+---@field color_headers boolean Enable header colors for each header level (h1, h2, etc.)
+---@field dim_inactive boolean dims inactive windows
+---@field lualine_bold boolean Lualine headers will be bold or regular
+---@field lualine_style string Possible values: "dark", "light" or "default" (default follows dark/light style)
+---@field markdown_header_marks boolean Add headers marks highlights (the `#` character) to Treesitter highlight query
+---@field terminal_colors boolean|table|fun(colors: ColorScheme):table
+---@field auto_enable_plugins boolean Automatically enable supported plugins through lazy.nvim
+---@field plugins table<string, boolean> List of manually enabled/disabled plugins.
+---@field cache boolean Enables/Disable the cache
+```
+
+</details>
 
 #### Full defaults:
 
 Monokai Nightasty comes with these defaults:
 
 ````lua
----@class monokai.Config
----@field dark_style_background string default, dark, transparent, #color
----@field light_style_background string default, dark, transparent, #color
----@field on_colors fun(colors: ColorScheme)
----@field on_highlights fun(highlights: monokai.Highlights, colors: ColorScheme)
----@field hl_styles table Styles to be applied to different syntax groups
----@field terminal_colors boolean|table|fun(colors: ColorScheme):table
 M.defaults = {
   dark_style_background = "default", -- default, dark, transparent, #color
   light_style_background = "default", -- default, dark, transparent, #color
   hl_styles = {
-    -- Style to be applied to different syntax groups. See `:help nvim_set_hl`
+    -- Style to be applied to selected syntax groups: (See `:help nvim_set_hl` for supported keys)
     comments = { italic = true },
     keywords = { italic = false },
     functions = {},
@@ -138,26 +169,26 @@ M.defaults = {
 
   color_headers = false, -- Enable header colors for each header level (h1, h2, etc.)
   dim_inactive = false, -- dims inactive windows
-  lualine_bold = true, -- Lualine headers will be bold or regular.
+  lualine_bold = true, -- Lualine headers will be bold or regular
   lualine_style = "default", -- "dark", "light" or "default" (default follows dark/light style)
   markdown_header_marks = false, -- Add headers marks highlights (the `#` character) to Treesitter highlight query
 
-  -- Set the colors for terminal-mode (default `true`). Set to `false` to disable it.
+  -- Set the colors for terminal-mode (`:h terminal-config`). `false` to disable it.
   -- Pass a table with `terminal_color_x` values: `{ terminal_color_8 = "#e6e6e6" }`.
   -- Also accepts a function:
   -- ```lua
   -- function(colors) return { fg = colors.fg_dark, terminal_color_4 = "#ff00ff" } end
   -- ```
-  -- > Use the `fg` key to apply colors to the normal text (`:h terminal-config`).
+  -- > Use the `fg` key to apply colors to the normal text.
   terminal_colors = true,
 
   --- You can override specific color groups to use other groups or a hex color
-  --- function will be called with the Monokai ColorScheme table
+  --- function will be called with the Monokai ColorScheme table.
   ---@param colors ColorScheme
   on_colors = function(colors) end,
 
   --- You can override specific highlights to use other groups or a hex color
-  --- function will be called with the Monokai Highlights and ColorScheme table
+  --- function will be called with the Monokai Highlights and ColorScheme table.
   ---@param highlights monokai.Highlights
   ---@param colors ColorScheme
   on_highlights = function(highlights, colors) end,
@@ -173,17 +204,57 @@ M.defaults = {
   ---   https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights
   ---@type table<string, boolean>
   plugins = {
-    -- `all` enable or disable all plugins. By default if lazy.nvim is not loaded enable all the plugins
-    all = package.loaded.lazy == nil,
-
-    -- Use the ["<repository name>"]:
+    -- Use the ["<repository name>"]. For example:
     -- ["telescope.nvim"] = true,
+
+    -- `all`: enable or disable all plugins. By default if lazy.nvim is not loaded enable all the plugins
+    all = package.loaded.lazy == nil,
   },
 }
-
 ````
 
-#### Full configuration example (for Lazy):
+##### Configuration example (for lazy.nvim):
+
+<details>
+<summary> Click to see the example </summary>
+
+```lua
+{
+  "polirritmico/monokai-nightasty.nvim",
+  lazy = false,
+  priority = 1000,
+  keys = {
+    { "<leader>tt", "<Cmd>MonokaiToggleLight<CR>", desc = "Monokai-Nightasty: Toggle dark/light theme." },
+  },
+  opts = {
+    dark_style_background = "default",
+    light_style_background = "default",
+    markdown_header_marks = true,
+    -- hl_styles = { comments = { italic = false } },
+    terminal_colors = function(colors) return { fg = colors.fg_dark } end,
+  },
+  config = function(_, opts)
+    vim.opt.cursorline = true -- Highlight line at the cursor position
+    vim.o.background = "dark" -- Default to dark theme
+
+    -- Open new Nvim instance with light theme when the sun hit the screen
+    local date_output = vim.api.nvim_exec2("!date +'\\%H\\%M'", { output = true })
+    local system_time = tonumber(string.match(date_output["output"], "%d%d%d%d"))
+    if system_time >= 1345 and system_time < 1630 then
+      vim.o.background = "light"
+    end
+
+    require("monokai-nightasty").load(opts)
+  end,
+}
+```
+
+</details>
+
+##### Full configuration example:
+
+<details>
+<summary> Click to see the example </summary>
 
 ```lua
 return {
@@ -199,6 +270,7 @@ return {
     color_headers = true, -- Enable header colors for each header level (h1, h2, etc.)
     lualine_bold = true, -- Lualine a and z sections font width
     lualine_style = "default", -- "dark", "light" or "default" (Follows dark/light style)
+    markdown_header_marks = true, -- Add headers marks highlights (the `#` character) to Treesitter highlight query
     -- Style to be applied to different syntax groups. See `:help nvim_set_hl`
     hl_styles = {
       keywords = { italic = true },
@@ -216,8 +288,10 @@ return {
       -- Custom color only for light theme
       local current_is_light = vim.o.background == "light"
       colors.comment = current_is_light and "#2d7e79" or colors.grey
+
       -- Custom color only for dark theme
       colors.border = not current_is_light and colors.magenta or colors.border
+
       -- Custom lualine normal color
       colors.lualine.normal_bg = current_is_light and "#7ebd00" or colors.green
     end,
@@ -235,11 +309,80 @@ return {
     -- Default to dark theme
     vim.o.background = "dark"  -- dark | light
 
-    require("monokai-nightasty").setup(opts)
-    require("monokai-nightasty").load()
+    require("monokai-nightasty").load(opts)
   end,
 }
 ```
+
+</details>
+
+---
+
+### 🍚 Customization: Change a color/style:
+
+There are two main options: change the color definition or the specific
+highlight.
+
+#### Change a color definition:
+
+Simple use the `on_colors` option:
+
+```lua
+opts = {
+  on_colors = function(colors)
+    colors.charcoal_medium = "#455455"
+  end
+}
+```
+
+This would be applied before the highlights generation.
+
+#### Change specific highlight:
+
+Simple use the `on_highlights` option:
+
+```lua
+opts = {
+  on_highlights(hl, c)
+    hl["Folded"] = { fg = c.orange, bg = c.bg_float, italic = false },
+    hl["LineNr"] = { fg = c.grey },
+  end,
+}
+```
+
+> To get the highlight name, move the cursor over it and run `:Inspect`.
+
+#### Customization for the `light` or the `dark` themes:
+
+<!-- panvimdoc-ignore-start -->
+<details>
+<summary> Set colors for each theme using boolean logic: </summary>
+<!-- panvimdoc-ignore-end -->
+
+```lua
+{
+  on_colors = function(colors)
+    local is_light = vim.o.background == "light"
+    colors.comment = is_light and "#2d7e79" or colors.grey
+    colors.border = not is_light and colors.magenta or colors.border
+
+    if is_light then
+      colors.orange = "#f59263",
+    end
+  end,
+
+  on_highlights = function(highlights, colors)
+    local is_light = vim.o.background == "light"
+
+    highlights["@variable.member.lua"] = {
+      fg = is_light and colors.magenta or colors.grey,
+      underline = is_light,
+    },
+  end,
+}
+```
+
+</details>
 
 ---
 
@@ -247,39 +390,27 @@ return {
 
 How the plugin setup the highlights and colors under the hood:
 
-1. `colors` are loaded from the base palette. The colors of the **light style**
-   are set in `colors.light_palette`. If `vim.o.background == "light"` is
-   detected, then the `default` palette is overridden with the light palette
-   values.
+1. `colors` are loaded from the base palette based on the current
+   `vim.o.background` value ("`dark`"/"`light`").
 
 2. Then, `colors` is extended and adjusted following the configuration settings.
 
-3. After that, `config.on_colors(colors)` is called, overriding any matching
+3. After that, `opts.on_colors(colors)` is called, overriding any matching
    color.
 
 4. The highlight groups are set using the generated `colors`.
 
-5. Finally, `config.on_highlights(highlights, colors)` can be used to override
-   highlight groups.
+5. `opts.on_highlights(highlights, colors)` can be used to override highlight
+   groups.
+
+6. If `opts.cache` is `true` the resulting highlights are cached.
 
 To get the name of a highlight group or to find the used color, here are some
 alternatives:
 
 1. Use `:Inspect` to get info of the highlight group at the current position.
 2. Check the generated palettes in the [extras](#-extras).
-3. For the theme with the color names instead of the colors code, you could
-   check directly the `theme.lua` or `colors.lua` files inside the
-   `lua/monokai-nightasty/` directory.
-
-You could set colors for `light` or `dark` themes using boolean logic:
-
-```lua
-on_colors = function(colors)
-  local is_light = vim.o.background == "light"
-  colors.comment = is_light and "#2d7e79" or colors.grey
-  colors.border = not is_light and colors.magenta or colors.border
-end,
-```
+3. For plugins specifics check each module in the `highlights` directory.
 
 ---
 
@@ -323,6 +454,11 @@ To enable this feature, set the `markdown_header_marks` option to `true`
 
 ### Tmux
 
+<!-- panvimdoc-ignore-start -->
+<details>
+<summary> Config details </summary>
+<!-- panvimdoc-ignore-end -->
+
 Just source the theme file:
 
 ```bash
@@ -341,17 +477,20 @@ set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm'  # undercurl support
 set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m'  # underscore colours - needs tmux-3.0
 ```
 
+</details>
+
 ### 🚀 Using with other plugins
 
 You could import the color palette to use with other plugins:
 
 ```lua
-local colors, opts = require("monokai-nightasty.colors").setup()
+local opts = require("monokai-nightasty.config").extend()
+local colors = require("monokai-nightasty.colors").setup(opts)
 
-some_plugin_config.title = colors.blue_light
+some_plugin_config.title = colors.blue
 example_plugin_config = {
   foo = colors.bg_dark,
-  bar = colors.blue_light,
+  bar = colors.green,
   buz = opts.transparent and colors.none or colors.bg
 }
 ```
@@ -359,7 +498,8 @@ example_plugin_config = {
 Some color utility functions are available for your use:
 
 ```lua
-local colors = require("monokai-nightasty.colors").setup()
+local opts = require("monokai-nightasty.config").extend()
+local colors = require("monokai-nightasty.colors").setup(opts)
 local utils = require("monokai-nightasty.utils")
 
 some_plugin_config.example = utils.lighten(colors.bg, 0.5)

@@ -37,13 +37,13 @@ M.defaults = {
   lualine_style = "default", -- "dark", "light" or "default" (default follows dark/light style)
   markdown_header_marks = false, -- Add headers marks highlights (the `#` character) to Treesitter highlight query
 
-  -- Set the colors for terminal-mode (default `true`). Set to `false` to disable it.
+  -- Set the colors for terminal-mode (`:h terminal-config`). `false` to disable it.
   -- Pass a table with `terminal_color_x` values: `{ terminal_color_8 = "#e6e6e6" }`.
   -- Also accepts a function:
   -- ```lua
   -- function(colors) return { fg = colors.fg_dark, terminal_color_4 = "#ff00ff" } end
   -- ```
-  -- > Use the `fg` key to apply colors to the normal text (`:h terminal-config`).
+  -- > Use the `fg` key to apply colors to the normal text.
   terminal_colors = true,
 
   --- You can override specific color groups to use other groups or a hex color
