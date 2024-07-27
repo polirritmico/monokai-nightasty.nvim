@@ -18,8 +18,7 @@ function M.setup(opts)
       colors = cache.colors
       hlgroups = cache.hlgroups
 
-      -- Apply non-cached styles customizations
-      opts.on_colors(colors)
+      -- Apply non-cached styles customizations (colors are already applied)
       opts.on_highlights(hlgroups, colors)
     end
   end
