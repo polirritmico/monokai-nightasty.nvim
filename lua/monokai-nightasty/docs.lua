@@ -30,18 +30,22 @@ end
 
 ---Take the implemented plugins from highlights/init.lua and generate a markdown
 ---list with the plugin name (with a link to the plugin repository) and the
----plugin module name (with a link to the module code in github)
+---plugin module name (with a link to the module code in github).
 ---@return string[]
 function M.generate_implemented_plugins()
   local highlights = require("monokai-nightasty.highlights")
   local implemented_plugins = highlights.implemented_plugins
-  table.sort(implemented_plugins)
+  local sorted_plugins_list = vim.tbl_keys(implemented_plugins)
+  table.sort(sorted_plugins_list)
 
   local plugins_table = { "| Plugin | Highlights Module |", "|--|--|" }
-  for plugin, module in pairs(implemented_plugins) do
+  for _, plugin in pairs(sorted_plugins_list) do
+    local module = implemented_plugins[plugin]
+
     local repo_url = M.highlight_mod_url(module)
     local mod_url = M.base_url .. "highlights/" .. module
     local row = fmt("| [%s](%s) | [%s](%s.lua) |", plugin, repo_url, module, mod_url)
+
     plugins_table[#plugins_table + 1] = row
   end
   plugins_table[#plugins_table + 1] = ""
@@ -49,6 +53,8 @@ function M.generate_implemented_plugins()
   return plugins_table
 end
 
+---Format the README markdown file through Prettier formater.
+---_Uses `mason-registry` to get the binary path._
 function M.readme_external_format()
   local fname = "prettier"
   local ok, mason = pcall(require, "mason-registry")
