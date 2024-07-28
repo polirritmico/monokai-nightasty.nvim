@@ -92,13 +92,13 @@ function M.generate_extra_files()
   local palettes = M.default_colors()
 
   local base_dir = vim.fn.fnamemodify(utils.me, ":h") .. "/extras/"
-  local base_url = "https://github.com/polirritmico/monokai-nightasty.nvim/raw/main/"
+  local base_url = "https://github.com/polirritmico/monokai-nightasty.nvim/raw/main/extras/"
 
   ---@param info Extra
   ---@param style string
   local function generate_extra_file(info, style)
     local colors = palettes[style]
-    local filename = "extras/" .. info.name .. "/monokai-nightasty_" .. style .. info.ext
+    local filename = info.name .. "/monokai-nightasty_" .. style .. info.ext
     local target_dir = base_dir .. filename
     local extra_mod = utils.mod("monokai-nightasty.extras." .. info.name)
     colors["_upstream_url"] = base_url .. filename
@@ -121,6 +121,7 @@ end
 function M.setup()
   M.fill_extras_in_readme()
   M.generate_extra_files()
+  docs.readme_external_format()
   vim.notify("Done", vim.log.levels.INFO)
 end
 
