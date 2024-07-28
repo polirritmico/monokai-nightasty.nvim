@@ -52,12 +52,11 @@ end
 
 ---Replace all `${color}` marks with the theme colors values (`<hex-color>`)
 ---@param str string original file string
----@param table table key value pairs to replace in the string
-function M.template(str, table)
-  -- TODO: REFACTOR
+---@param tbl table key value pairs to replace in the string
+function M.template(str, tbl)
   return (
     str:gsub("($%b{})", function(w)
-      return vim.tbl_get(table, unpack(vim.split(w:sub(3, -2), ".", { plain = true }))) or w
+      return vim.tbl_get(tbl, unpack(vim.split(w:sub(3, -2), ".", { plain = true }))) or w
     end)
   )
 end

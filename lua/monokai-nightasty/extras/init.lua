@@ -4,36 +4,42 @@ local fmt = string.format
 
 local M = {}
 
+---@alias Extra {name:string, ext:string, label:string, both_styles:boolean, url:string}
+
 ---Table of plugin extensions metadata
----@class monokai.Extra
----@type table<string, {ext:string, label:string, both_styles:boolean, url:string}>
+---@type Extra[]
 M.extras = {
-  palettes = {
-    ext = "lua",
+  {
+    name = "palettes",
+    ext = ".lua",
     label = "Monokai Nightasty Palettes",
     both_styles = true,
     url = "https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/extras/palettes",
   },
-  kitty = {
-    ext = "conf",
+  {
+    name = "kitty",
+    ext = ".conf",
     label = "Kitty",
     both_styles = true,
     url = "https://sw.kovidgoyal.net/kitty/",
   },
-  lazygit = {
-    ext = "yml",
+  {
+    name = "lazygit",
+    ext = ".yml",
     label = "Lazygit",
     both_styles = false,
     url = "https://github.com/jesseduffield/lazygit",
   },
-  tmux = {
-    ext = "tmux",
+  {
+    name = "tmux",
+    ext = ".tmux",
     label = "Tmux",
     both_styles = false,
     url = "https://github.com/tmux/tmux/wiki",
   },
-  zathura = {
-    ext = "zathurarc",
+  {
+    name = "zathura",
+    ext = ".zathurarc",
     label = "Zathura",
     both_styles = false,
     url = "https://pwmt.org/projects/zathura/",
@@ -44,8 +50,9 @@ function M.fill_extras_in_readme()
   local pattern = "(<%!%-%- extras:start %-%->).*(<%!%-%- extras:end %-%->)"
   local extras_list = {}
 
-  for name, v in ipairs(M.extras) do
-    local line = fmt("- [%s](%s) ([%s](extras/%s))", v.label, v.url, name, name)
+  for _, info in ipairs(M.extras) do
+    local line =
+      fmt("- [%s](%s) ([%s](extras/%s))", info.label, info.url, info.name, info.name)
     extras_list[#extras_list + 1] = line
   end
   extras_list[#extras_list + 1] = ""
@@ -84,30 +91,27 @@ end
 function M.generate_extra_files()
   local palettes = M.default_colors()
 
-  local base_dir = vim.fn.fnamemodify(utils.me, ":h") .. "/extras"
-  local base_url = "https://github.com/polirritmico/monokai-nightasty.nvim/raw/main/extras/"
+  local base_dir = vim.fn.fnamemodify(utils.me, ":h") .. "/extras/"
+  local base_url = "https://github.com/polirritmico/monokai-nightasty.nvim/raw/main/"
 
-  ---@param name string
-  ---@param info {ext:string, label:string, both_styles:boolean, url:string}
+  ---@param info Extra
   ---@param style string
-  local function generate_extra_file(name, info, style)
+  local function generate_extra_file(info, style)
     local colors = palettes[style]
-    local extra_mod = utils.mod("monokai-nightasty.extras." .. name)
-    local target_dir = fmt("%s/%s/monokai-nightasty_%s.%s", base_dir, name, style, info.ext)
-
-    colors["_upstream_url"] = base_url .. name
+    local filename = "extras/" .. info.name .. "/monokai-nightasty_" .. style .. info.ext
+    local target_dir = base_dir .. filename
+    local extra_mod = utils.mod("monokai-nightasty.extras." .. info.name)
+    colors["_upstream_url"] = base_url .. filename
     colors["_style_name"] = "Monokai NighTasty " .. style:gsub("^%l", string.upper)
 
+    utils.mkdir_parent(target_dir)
     utils.write_file(extra_mod.generate(colors), target_dir)
-
-    colors["_upstream_url"] = nil
-    colors["_style_name"] = nil
   end
 
-  for filename, info in pairs(M.extras) do
-    generate_extra_file(filename, info, "dark")
+  for _, info in ipairs(M.extras) do
+    generate_extra_file(info, "dark")
     if info.both_styles then
-      generate_extra_file(filename, info, "light")
+      generate_extra_file(info, "light")
     end
   end
 end
