@@ -1,6 +1,6 @@
 local M = {}
 
-local me = vim.fn.fnamemodify(debug.getinfo(1, "S").source:sub(2), ":h:h")
+M.me = vim.fn.fnamemodify(debug.getinfo(1, "S").source:sub(2), ":h:h")
 
 ------------
 -- Colors --
@@ -50,10 +50,10 @@ function M.lighten(hex, amount, fg)
   return M.blend(hex, fg or M.fg, amount)
 end
 
----Replace all `${color}` marks with the theme colors values (`#ffffff`)
+---Replace all `${color}` marks with the theme colors values (`<hex-color>`)
 ---@param str string original file string
 ---@param table table key value pairs to replace in the string
-function M.interpolate_colors(str, table)
+function M.template(str, table)
   -- TODO: REFACTOR
   return (
     str:gsub("($%b{})", function(w)
@@ -80,6 +80,9 @@ function M.mkdir_parent(path)
   end
 end
 
+---@param data string
+---@param filename string
+---@param verbose? boolean
 function M.write_file(data, filename, verbose)
   if verbose then
     print("[write] " .. filename)
@@ -113,7 +116,7 @@ function M.mod(modname)
   end
 
   -- local path = string.format("%s/%s.lua", me, modname:gsub("%.", "/"))
-  local path = me .. "/" .. modname:gsub("%.", "/") .. ".lua"
+  local path = M.me .. "/" .. modname:gsub("%.", "/") .. ".lua"
   local module = loadfile(path)()
   package.loaded[modname] = module
   return module
