@@ -1,4 +1,4 @@
 Session.vim
 .Session.vim
-references/*
-/tests/
+misc/*
+tests/
