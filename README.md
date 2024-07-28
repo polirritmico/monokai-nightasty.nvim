@@ -489,7 +489,50 @@ set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{25
 
 <!-- plugins:start -->
 
-Dummy
+- [todo-comments.nvim](https://github.com/folke/todo-comments.nvim):
+  [todo-comments](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/todo-comments.lua)
+- [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim):
+  [telescope](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/telescope.lua)
+- [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context):
+  [treesitter-context](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/treesitter-context.lua)
+- [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua):
+  [nvim-tree](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/nvim-tree.lua)
+- [nvim-notify](https://github.com/rcarriga/nvim-notify):
+  [notify](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/notify.lua)
+- [nvim-navic](https://github.com/SmiteshP/nvim-navic):
+  [navic](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/navic.lua)
+- [noice.nvim](https://github.com/folke/noice.nvim):
+  [noice](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/noice.lua)
+- [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim):
+  [neo-tree](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/neo-tree.lua)
+- [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim):
+  [indent-blankline](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/indent-blankline.lua)
+- [justinmk/dirvish.vim](https://github.com/justinmk/vim-dirvish):
+  [dirvish](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/dirvish.lua)
+- [mini.indentscope](https://github.com/echasnovski/mini.indentscope):
+  [mini_indentscope](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/mini_indentscope.lua)
+- [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim):
+  [gitsigns](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/gitsigns.lua)
+- [dashboard-nvim](https://github.com/nvimdev/dashboard-nvim):
+  [dashboard](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/dashboard.lua)
+- [headlines.nvim](https://github.com/lukas-reineke/headlines.nvim):
+  [headlines](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/headlines.lua)
+- [bufferline.nvim](https://github.com/akinsho/bufferline.nvim):
+  [bufferline](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/bufferline.lua)
+- [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui):
+  [dapui](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/dapui.lua)
+- [aerial.nvim](https://github.com/stevearc/aerial.nvim):
+  [aerial](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/aerial.lua)
+- [nvim-cmp](https://github.com/hrsh7th/nvim-cmp):
+  [cmp](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/cmp.lua)
+- [rainbow-delimiters.nvim](https://github.com/HiPhish/rainbow-delimiters.nvim):
+  [rainbow](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/rainbow.lua)
+- [which-key.nvim](https://github.com/folke/which-key.nvim):
+  [which-key](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/which-key.lua)
+- [mini.hipatterns](https://github.com/echasnovski/mini.hipatterns):
+  [mini_hipatterns](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/mini_hipatterns.lua)
+- [lazy.nvim](https://github.com/folke/lazy.nvim):
+  [lazy](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/lazy.lua)
 
 <!-- plugins:end -->
 
