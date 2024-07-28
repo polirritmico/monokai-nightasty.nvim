@@ -18,7 +18,7 @@ the flavorful
 
 <!-- panvimdoc-ignore-start -->
 
-![Monokai-NighTasty](https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/57bcbc64-cc1a-4f8f-8ebe-75f4bcd6c96d)
+![Monokai-NighTasty](https://github.com/user-attachments/assets/92d3927d-6c37-4ece-b357-f2dfad76d900)
 
 <!-- panvimdoc-ignore-end -->
 
