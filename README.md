@@ -427,6 +427,7 @@ Currently this extra files are generated:
   ([lazygit](extras/lazygit))
 - [Tmux](https://github.com/tmux/tmux/wiki) ([tmux](extras/tmux))
 - [Zathura](https://pwmt.org/projects/zathura/) ([zathura](extras/zathura))
+
 <!-- extras:end -->
 
 The Monokai Nightasty Palette is a file with the used `colors` and `highlights`.
@@ -479,7 +480,22 @@ set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{25
 
 </details>
 
-### 🚀 Using with other plugins
+## 🚀 Supported plugins
+
+<!-- panvimdoc-ignore-start -->
+<details>
+<summary> Click to see the supported plugins list </summary>
+<!-- panvimdoc-ignore-end -->
+
+<!-- plugins:start -->
+
+Dummy
+
+<!-- plugins:end -->
+
+</details>
+
+### Using with other plugins
 
 You could import the color palette to use with other plugins:
 
