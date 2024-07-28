@@ -32,9 +32,46 @@ the flavorful
   lualine, indent-blankline, which-key, notify, noice, todo-comments and more.
 - Highly customizable for your coding needs.
 
+<details>
+<summary>🚀 Supported plugins</summary>
+
+<!-- plugins:start -->
+
+| Plugin                                                                                | Highlights Module                                                                                                                              |
+| ------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| [aerial.nvim](https://github.com/stevearc/aerial.nvim)                                | [aerial](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/aerial.lua)                         |
+| [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)                         | [bufferline](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/bufferline.lua)                 |
+| [dashboard-nvim](https://github.com/nvimdev/dashboard-nvim)                           | [dashboard](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/dashboard.lua)                   |
+| [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)                           | [gitsigns](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/gitsigns.lua)                     |
+| [headlines.nvim](https://github.com/lukas-reineke/headlines.nvim)                     | [headlines](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/headlines.lua)                   |
+| [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)       | [indent-blankline](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/indent-blankline.lua)     |
+| [justinmk/dirvish.vim](https://github.com/justinmk/vim-dirvish)                       | [dirvish](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/dirvish.lua)                       |
+| [lazy.nvim](https://github.com/folke/lazy.nvim)                                       | [lazy](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/lazy.lua)                             |
+| [mini.hipatterns](https://github.com/echasnovski/mini.hipatterns)                     | [mini_hipatterns](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/mini_hipatterns.lua)       |
+| [mini.indentscope](https://github.com/echasnovski/mini.indentscope)                   | [mini_indentscope](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/mini_indentscope.lua)     |
+| [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim)                       | [neo-tree](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/neo-tree.lua)                     |
+| [noice.nvim](https://github.com/folke/noice.nvim)                                     | [noice](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/noice.lua)                           |
+| [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)                                       | [cmp](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/cmp.lua)                               |
+| [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)                                | [dapui](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/dapui.lua)                           |
+| [nvim-navic](https://github.com/SmiteshP/nvim-navic)                                  | [navic](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/navic.lua)                           |
+| [nvim-notify](https://github.com/rcarriga/nvim-notify)                                | [notify](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/notify.lua)                         |
+| [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)                           | [nvim-tree](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/nvim-tree.lua)                   |
+| [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context) | [treesitter-context](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/treesitter-context.lua) |
+| [rainbow-delimiters.nvim](https://github.com/HiPhish/rainbow-delimiters.nvim)         | [rainbow](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/rainbow.lua)                       |
+| [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)                    | [telescope](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/telescope.lua)                   |
+| [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)                     | [todo-comments](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/todo-comments.lua)           |
+| [which-key.nvim](https://github.com/folke/which-key.nvim)                             | [which-key](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/which-key.lua)                   |
+
+<!-- plugins:end -->
+
+</details>
+
 <!-- panvimdoc-ignore-start -->
 
 ## 📷 Screenshots
+
+<details>
+<summary> Click to expand </summary>
 
 ### 🌙 Dark Theme
 
@@ -51,6 +88,8 @@ the flavorful
 ## 📽 Settings in action
 
 https://github.com/polirritmico/monokai-nightasty.nvim/assets/24460484/51fb86fe-8ff8-4f90-b7fe-fbe69184a637
+
+</details>
 
 <!-- panvimdoc-ignore-end -->
 
@@ -76,8 +115,6 @@ Install with your package manager.
 
 #### Basic usage
 
-In **Lua** _(faster)_:
-
 ```lua
 vim.opt.background = "dark" -- default to dark or light style
 
@@ -90,14 +127,15 @@ require("monokai-nightasty").load()
 require("monokai-nightasty").load(opts)
 ```
 
-or
-
 ```vim
 :set background=dark
 :colorscheme monokai-nightasty
 ```
 
-If using the defaults settings, no need to call the `setup` function.
+<!-- prettier-ignore-start -->
+> [!TIP]
+> 📌 **TLDR:** Check the [Configuration examples](#-configuration-examples).
+<!-- prettier-ignore-end -->
 
 ---
 
@@ -105,13 +143,9 @@ If using the defaults settings, no need to call the `setup` function.
 
 The plugin provides a toggle function to change the dark/light styles:
 
-In **Lua**:
-
 ```lua
 require("monokai-nightasty").toggle()
 ```
-
-or
 
 ```vim
 :MonokaiToggleLight
@@ -119,13 +153,13 @@ or
 
 ### ⚙️ Configuration details
 
-> ⚠️ Set the configuration **BEFORE** calling `colorscheme monokai-nightasty`.
+> ⚠️ Set the configuration **BEFORE** loading the theme
 
 #### Spec:
 
 <!-- panvimdoc-ignore-start -->
 <details>
-<summary> Click the see the configuration spec </summary>
+<summary> Click to see the configuration spec </summary>
 <!-- panvimdoc-ignore-end -->
 
 ```lua
@@ -147,6 +181,8 @@ or
 ```
 
 </details>
+
+---
 
 #### Full defaults:
 
@@ -213,10 +249,14 @@ M.defaults = {
 }
 ````
 
-##### Configuration example (for lazy.nvim):
+### 📐 Configuration examples
 
+#### Base configuration with a bit of customization:
+
+<!-- panvimdoc-ignore-start -->
 <details>
 <summary> Click to see the example </summary>
+<!-- panvimdoc-ignore-end -->
 
 ```lua
 {
@@ -237,7 +277,7 @@ M.defaults = {
     vim.opt.cursorline = true -- Highlight line at the cursor position
     vim.o.background = "dark" -- Default to dark theme
 
-    -- Open new Nvim instance with light theme when the sun hit the screen
+    -- Open new Nvim instances with the light theme when the sun hits the screen
     local date_output = vim.api.nvim_exec2("!date +'\\%H\\%M'", { output = true })
     local system_time = tonumber(string.match(date_output["output"], "%d%d%d%d"))
     if system_time >= 1345 and system_time < 1630 then
@@ -251,10 +291,12 @@ M.defaults = {
 
 </details>
 
-##### Full configuration example:
+#### Full configuration:
 
+<!-- panvimdoc-ignore-start -->
 <details>
 <summary> Click to see the example </summary>
+<!-- panvimdoc-ignore-end -->
 
 ```lua
 return {
@@ -280,7 +322,7 @@ return {
     -- This also could be a table like this: `terminal_colors = { Normal = { fg = "#e6e6e6" } }`
     terminal_colors = function(colors)
       return { fg = colors.fg_dark }
-    end
+    end,
 
     --- You can override specific color/highlights. Theme color values
     --- in `extras/palettes`. Also could be any hex RGB color you like.
@@ -295,6 +337,7 @@ return {
       -- Custom lualine normal color
       colors.lualine.normal_bg = current_is_light and "#7ebd00" or colors.green
     end,
+
     on_highlights = function(highlights, colors)
       -- You could add styles like bold, underline, italic
       highlights.TelescopeSelection = { bold = true }
@@ -337,7 +380,7 @@ opts = {
 
 This would be applied before the highlights generation.
 
-#### Change specific highlight:
+#### Change a specific highlight:
 
 Simple use the `on_highlights` option:
 
@@ -352,7 +395,7 @@ opts = {
 
 > To get the highlight name, move the cursor over it and run `:Inspect`.
 
-#### Customization for the `light` or the `dark` themes:
+#### Independent light/dark theme customization:
 
 <!-- panvimdoc-ignore-start -->
 <details>
@@ -403,14 +446,15 @@ How the plugin setup the highlights and colors under the hood:
 5. `opts.on_highlights(highlights, colors)` can be used to override highlight
    groups.
 
-6. If `opts.cache` is `true` the resulting highlights are cached.
+If `opts.cache` is `true` and the current configuration has no changes, jump
+straight to step 5 to apply the `on_highlights` function.
 
-To get the name of a highlight group or to find the used color, here are some
-alternatives:
-
-1. Use `:Inspect` to get info of the highlight group at the current position.
-2. Check the generated palettes in the [extras](#-extras).
-3. For plugins specifics check each module in the `highlights` directory.
+> To get the name of a highlight group or to find the used color, here are some
+> alternatives:
+>
+> 1. Use `:Inspect` to get info of the highlight group at the current position.
+> 2. Check the generated palettes in the [extras](#-extras).
+> 3. For plugins specifics check each module in the `highlights` directory.
 
 ---
 
@@ -480,65 +524,7 @@ set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{25
 
 </details>
 
-## 🚀 Supported plugins
-
-<!-- panvimdoc-ignore-start -->
-<details>
-<summary> Click to see the supported plugins list </summary>
-<!-- panvimdoc-ignore-end -->
-
-<!-- plugins:start -->
-
-- [todo-comments.nvim](https://github.com/folke/todo-comments.nvim):
-  [todo-comments](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/todo-comments.lua)
-- [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim):
-  [telescope](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/telescope.lua)
-- [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context):
-  [treesitter-context](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/treesitter-context.lua)
-- [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua):
-  [nvim-tree](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/nvim-tree.lua)
-- [nvim-notify](https://github.com/rcarriga/nvim-notify):
-  [notify](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/notify.lua)
-- [nvim-navic](https://github.com/SmiteshP/nvim-navic):
-  [navic](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/navic.lua)
-- [noice.nvim](https://github.com/folke/noice.nvim):
-  [noice](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/noice.lua)
-- [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim):
-  [neo-tree](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/neo-tree.lua)
-- [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim):
-  [indent-blankline](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/indent-blankline.lua)
-- [justinmk/dirvish.vim](https://github.com/justinmk/vim-dirvish):
-  [dirvish](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/dirvish.lua)
-- [mini.indentscope](https://github.com/echasnovski/mini.indentscope):
-  [mini_indentscope](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/mini_indentscope.lua)
-- [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim):
-  [gitsigns](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/gitsigns.lua)
-- [dashboard-nvim](https://github.com/nvimdev/dashboard-nvim):
-  [dashboard](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/dashboard.lua)
-- [headlines.nvim](https://github.com/lukas-reineke/headlines.nvim):
-  [headlines](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/headlines.lua)
-- [bufferline.nvim](https://github.com/akinsho/bufferline.nvim):
-  [bufferline](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/bufferline.lua)
-- [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui):
-  [dapui](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/dapui.lua)
-- [aerial.nvim](https://github.com/stevearc/aerial.nvim):
-  [aerial](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/aerial.lua)
-- [nvim-cmp](https://github.com/hrsh7th/nvim-cmp):
-  [cmp](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/cmp.lua)
-- [rainbow-delimiters.nvim](https://github.com/HiPhish/rainbow-delimiters.nvim):
-  [rainbow](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/rainbow.lua)
-- [which-key.nvim](https://github.com/folke/which-key.nvim):
-  [which-key](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/which-key.lua)
-- [mini.hipatterns](https://github.com/echasnovski/mini.hipatterns):
-  [mini_hipatterns](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/mini_hipatterns.lua)
-- [lazy.nvim](https://github.com/folke/lazy.nvim):
-  [lazy](https://github.com/polirritmico/monokai-nightasty.nvim/blob/main/lua/monokai-nightasty/highlights/lazy.lua)
-
-<!-- plugins:end -->
-
-</details>
-
-### Using with other plugins
+## 🔌 Using with other plugins
 
 You could import the color palette to use with other plugins:
 
@@ -554,7 +540,7 @@ example_plugin_config = {
 }
 ```
 
-Some color utility functions are available for your use:
+Some color utility functions are available for use:
 
 ```lua
 local opts = require("monokai-nightasty.config").extend()
