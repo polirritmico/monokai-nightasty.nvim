@@ -1,4 +1,5 @@
 local utils = require("monokai-nightasty.utils")
+local docs = require("monokai-nightasty.docs")
 
 local M = {}
 
@@ -14,12 +15,9 @@ M.extras = {
 }
 
 function M.fill_extras_in_readme()
-  print("[write] README.md")
-  local file = vim.fn.fnamemodify(debug.getinfo(1, "S").source:sub(2), ":p:h:h:h:h")
-    .. "/README.md"
   local pattern = "(<%!%-%- extras:start %-%->).*(<%!%-%- extras:end %-%->)"
-  local readme = M.read_file(file)
-  local lines = {}
+  local content = {}
+
   for _, info in ipairs(M.extras) do
     local item_line = string.format(
       "- [%s](%s) ([%s](extras/%s))",
@@ -28,18 +26,14 @@ function M.fill_extras_in_readme()
       info.name,
       info.name
     )
-    table.insert(lines, item_line)
+    content[#content + 1] = item_line
   end
-  readme = readme:gsub(pattern, "%1\n" .. table.concat(lines, "\n") .. "\n%2")
+  content[#content + 1] = "\n"
 
-  utils.overwrite(file, readme)
+  docs.fill_readme_content(pattern, content, "Update extras")
 end
 
---- Run this function through require("monokai-nightasty.extras").setup() to
---- generate the files into 'extras/...' (at pwd)
-function M.setup()
-  M.fill_extras_in_readme()
-
+function M.generate_extra_files()
   for _, extra in ipairs(M.extras) do
     package.loaded["monokai-nightasty.extras." .. extra.name] = nil
     local plugin = require("monokai-nightasty.extras." .. extra.name)
@@ -62,6 +56,13 @@ function M.setup()
       utils.write_file(plugin.generate(colors), filename, true)
     end
   end
+end
+
+--- Run this function through require("monokai-nightasty.extras").setup() to
+--- generate the files into './extras/...'
+function M.setup()
+  M.fill_extras_in_readme()
+  M.generate_extra_files()
 end
 
 return M

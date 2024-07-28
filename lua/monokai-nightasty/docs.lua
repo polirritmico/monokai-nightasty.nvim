@@ -9,10 +9,10 @@ local M = {
 
 ---@param pattern string Section pattern of the README to replace
 ---@param content string[] list of strings to concatenate into the readme file
----@param verbose? boolean
-function M.fill_readme_content(pattern, content, verbose)
+---@param msg? string Optional string to output command
+function M.fill_readme_content(pattern, content, msg)
   -- stylua: ignore
-  if verbose then print("[write] README.md") end
+  if msg then print("[write README.md]: " .. msg) end
 
   local readme = utils.read_file(M.readme_file)
   readme = readme:gsub(pattern, "%1\n" .. table.concat(content, "\n") .. "\n%2")
@@ -74,13 +74,19 @@ function M.readme_external_format()
   }
 
   vim.system(format_command):wait()
-  vim.notify("README.md format done", vim.log.levels.INFO)
+  vim.notify("[format README.md]: Done", vim.log.levels.INFO)
+end
+
+function M.update_extras()
+  local extras = require("monokai-nightasty.extras")
+  extras.fill_extras_in_readme()
 end
 
 function M.update_readme()
   local pattern = "(<%!%-%- plugins:start %-%->).*(<%!%-%- plugins:end %-%->)"
   local content = M.generate_implemented_plugins()
-  M.fill_readme_content(pattern, content)
+  M.fill_readme_content(pattern, content, "Update implemented plugins")
+  M.update_extras()
   M.readme_external_format()
 end
 
