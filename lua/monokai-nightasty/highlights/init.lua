@@ -133,7 +133,6 @@ function M.generate_inputs(opts)
       light_style_background = opts.light_style_background,
       lualine_bold = opts.lualine_bold,
       lualine_style = opts.lualine_style,
-      markdown_header_marks = opts.markdown_header_marks,
       on_colors = string.dump(opts.on_colors),
       plugins = opts.plugins,
     },
