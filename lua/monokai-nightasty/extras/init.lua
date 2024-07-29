@@ -1,13 +1,9 @@
 local utils = require("monokai-nightasty.utils")
-local docs = require("monokai-nightasty.docs")
-local fmt = string.format
 
 local M = {}
 
----@alias Extra {name:string, ext:string, label:string, both_styles:boolean, url:string}
-
 ---Table of plugin extensions metadata
----@type Extra[]
+---@type monokai.ExtraInfo[]
 M.extras = {
   {
     name = "palettes",
@@ -46,20 +42,8 @@ M.extras = {
   },
 }
 
-function M.fill_extras_in_readme()
-  local pattern = "(<%!%-%- extras:start %-%->).*(<%!%-%- extras:end %-%->)"
-  local extras_list = {}
-
-  for _, info in ipairs(M.extras) do
-    local line =
-      fmt("- [%s](%s) ([%s](extras/%s))", info.label, info.url, info.name, info.name)
-    extras_list[#extras_list + 1] = line
-  end
-  extras_list[#extras_list + 1] = ""
-
-  docs.fill_readme_content(pattern, extras_list, "Update extras")
-end
-
+---Reset to get a clean state of the colors
+---@return monokai.Config
 function M.reset_monokai_nightasty()
   for pkg in pairs(package.loaded) do
     if pkg:find("^monokai%-nightasty") then
@@ -75,6 +59,7 @@ function M.reset_monokai_nightasty()
   return require("monokai-nightasty.config").extend()
 end
 
+---Get the dark and light default palettes
 ---@return {dark:ColorScheme, light:ColorScheme}
 function M.default_colors()
   local defaults = M.reset_monokai_nightasty()
@@ -88,13 +73,14 @@ function M.default_colors()
   return { dark = colors_dark, light = colors_light }
 end
 
-function M.generate_extra_files()
+---@param silent? boolean
+function M.generate_extra_files(silent)
   local palettes = M.default_colors()
 
   local base_dir = vim.fn.fnamemodify(utils.me, ":h") .. "/extras/"
   local base_url = "https://github.com/polirritmico/monokai-nightasty.nvim/raw/main/extras/"
 
-  ---@param info Extra
+  ---@param info monokai.ExtraInfo
   ---@param style string
   local function generate_extra_file(info, style)
     local colors = palettes[style]
@@ -113,16 +99,19 @@ function M.generate_extra_files()
     if info.both_styles then
       generate_extra_file(info, "light")
     end
+
+    if silent ~= false then
+      print("[extras]: Generated file for " .. info.name)
+    end
+  end
+
+  if silent ~= false then
+    print("[extras]: Done")
   end
 end
 
 --- Run this function through require("monokai-nightasty.extras").setup() to
---- generate the files into './extras/...'
-function M.setup()
-  M.fill_extras_in_readme()
-  M.generate_extra_files()
-  docs.readme_external_format()
-  vim.notify("Done", vim.log.levels.INFO)
-end
+--- generate the files into 'extras/...'
+M.setup = M.generate_extra_files
 
 return M

@@ -9,3 +9,10 @@
 ---@field colors ColorScheme
 ---@field hlgroups monokai.Highlights
 ---@field inputs table
+
+---@class monokai.ExtraInfo
+---@field name string
+---@field ext string
+---@field label string
+---@field both_styles boolean
+---@field url string

@@ -116,7 +116,7 @@ function M.mod(modname)
 
   -- local path = string.format("%s/%s.lua", me, modname:gsub("%.", "/"))
   local path = M.me .. "/" .. modname:gsub("%.", "/") .. ".lua"
-  local module = loadfile(path)()
+  local module = assert(loadfile(path), "can't loadfile: " .. path)()
   package.loaded[modname] = module
   return module
 end
