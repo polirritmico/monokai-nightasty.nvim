@@ -35,9 +35,11 @@ function M.set_autocmds()
     local colorscheme = vim.g.colors_name or M.colorscheme
     colorscheme = colorscheme:find(M.colorscheme) and colorscheme or M.colorscheme
     vim.cmd.colorscheme(colorscheme)
-    local mini_hipatterns = require("mini.hipatterns")
-    for _, buf in ipairs(require("mini.hipatterns").get_enabled_buffers()) do
-      mini_hipatterns.update(buf)
+    if package.loaded["MiniHipatterns"] then
+      local mini_hipatterns = require("mini.hipatterns")
+      for _, buf in ipairs(require("mini.hipatterns").get_enabled_buffers()) do
+        mini_hipatterns.update(buf)
+      end
     end
   end
 
