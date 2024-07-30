@@ -162,6 +162,8 @@ require("monokai-nightasty").toggle()
 <summary> Click to see the configuration spec </summary>
 <!-- panvimdoc-ignore-end -->
 
+<!-- config-spec:start -->
+
 ```lua
 ---@class monokai.Config
 ---@field dark_style_background string default, dark, transparent, #color
@@ -180,6 +182,8 @@ require("monokai-nightasty").toggle()
 ---@field cache boolean Enables/Disable the cache
 ```
 
+<!-- config-spec:end -->
+
 </details>
 
 ---
@@ -187,6 +191,8 @@ require("monokai-nightasty").toggle()
 #### Full defaults:
 
 Monokai Nightasty comes with these defaults:
+
+<!-- defaults:start -->
 
 ````lua
 M.defaults = {
@@ -248,6 +254,8 @@ M.defaults = {
   },
 }
 ````
+
+<!-- defaults:end -->
 
 ### 📐 Configuration examples
 

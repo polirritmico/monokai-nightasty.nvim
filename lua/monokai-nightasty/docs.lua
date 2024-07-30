@@ -15,6 +15,22 @@ function M.highlight_mod_url(mod_plugin)
   return module and module.url or ""
 end
 
+function M.generate_cfg_spec_block()
+  local cfg_path = vim.fn.fnamemodify(utils.me, ":p:h") .. "/monokai-nightasty/config.lua"
+  local cfg_code = utils.read_file(cfg_path)
+  local spec_block = cfg_code:match("\n(---@class monokai%.Config.-)\nM.defaults = {\n")
+  -- Don't document the last two fields of the spec (internal usage)
+  spec_block = spec_block:gsub("(.-)\n[^\n]*\n[^\n]*$", "%1")
+  return "```lua\n" .. spec_block .. "\n```"
+end
+
+function M.generate_defaults_block()
+  local cfg_path = vim.fn.fnamemodify(utils.me, ":p:h") .. "/monokai-nightasty/config.lua"
+  local cfg_code = utils.read_file(cfg_path)
+  local default_block = cfg_code:match("\n(M.defaults = {.-\n}\n)")
+  return "````lua\n" .. default_block .. "````"
+end
+
 ---Take the implemented plugins from highlights/init.lua and generate a markdown
 ---list with the plugin name and the plugin module name with links.
 ---@return string[]
@@ -88,7 +104,7 @@ function M.readme_external_format()
   vim.notify("[format README.md]: Done", vim.log.levels.INFO)
 end
 
----@param sections table<{ tag: string, content: string[] }>
+---@param sections table<{ tag: string, content: string[]|string }>
 ---@param verbose? boolean
 function M.update_readme_content(sections, verbose)
   local readme = utils.read_file(M.readme_file)
@@ -99,7 +115,11 @@ function M.update_readme_content(sections, verbose)
       .. ":start %-%->).*(<%!%-%- "
       .. section.tag
       .. ":end %-%->)"
-    readme = readme:gsub(pattern, "%1\n" .. table.concat(section.text, "\n") .. "\n%2")
+    if type(section.text) == "string" then
+      readme = readme:gsub(pattern, "%1\n" .. section.text .. "\n%2")
+    else
+      readme = readme:gsub(pattern, "%1\n" .. table.concat(section.text, "\n") .. "\n%2")
+    end
 
     if verbose then
       print("[write README.md]: Updated " .. section.tag .. " section")
@@ -107,14 +127,13 @@ function M.update_readme_content(sections, verbose)
   end
 
   utils.overwrite(M.readme_file, readme)
-  if verbose then
-    print("[write README.md]: Done")
-  end
 end
 
 function M.update_readme()
   local content = {
     { tag = "plugins", text = M.generate_implemented_plugins() },
+    { tag = "config%-spec", text = M.generate_cfg_spec_block() },
+    { tag = "defaults", text = M.generate_defaults_block() },
     { tag = "extras", text = M.generate_extras_list() },
   }
 
