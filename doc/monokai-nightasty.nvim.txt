@@ -1,4 +1,4 @@
-*monokai-nightasty.nvim.txt*    For Neovim >= 0.9    Last change: 2024 July 29
+*monokai-nightasty.nvim.txt*   For Neovim >= 0.9   Last change: 2024 August 07
 
 ==============================================================================
 Table of Contents                   *monokai-nightasty.nvim-table-of-contents*
@@ -83,6 +83,8 @@ Supported plugins ~
   nvim-treesitter-context    treesitter-context
 
   rainbow-delimiters.nvim    rainbow
+
+  render-markdown.nvim       render-markdown
 
   telescope.nvim             telescope
 

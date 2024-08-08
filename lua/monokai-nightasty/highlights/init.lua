@@ -1,7 +1,5 @@
 local utils = require("monokai-nightasty.utils")
 
--- local me = vim.fn.fnamemodify(debug.getinfo(1, "S").source:sub(2), ":h")
-
 local M = {}
 
 M.implemented_plugins = {
@@ -11,10 +9,10 @@ M.implemented_plugins = {
   ["gitsigns.nvim"] = "gitsigns",
   ["headlines.nvim"] = "headlines",
   ["indent-blankline.nvim"] = "indent-blankline",
-  ["mini.indentscope"] = "mini_indentscope",
-  ["mini.hipatterns"] = "mini_hipatterns",
   ["justinmk/dirvish.vim"] = "dirvish",
   ["lazy.nvim"] = "lazy",
+  ["mini.hipatterns"] = "mini_hipatterns",
+  ["mini.indentscope"] = "mini_indentscope",
   ["neo-tree.nvim"] = "neo-tree",
   ["noice.nvim"] = "noice",
   ["nvim-cmp"] = "cmp",
@@ -24,6 +22,7 @@ M.implemented_plugins = {
   ["nvim-tree.lua"] = "nvim-tree",
   ["nvim-treesitter-context"] = "treesitter-context",
   ["rainbow-delimiters.nvim"] = "rainbow",
+  ["render-markdown.nvim"] = "render-markdown",
   ["telescope.nvim"] = "telescope",
   ["todo-comments.nvim"] = "todo-comments",
   ["which-key.nvim"] = "which-key",
