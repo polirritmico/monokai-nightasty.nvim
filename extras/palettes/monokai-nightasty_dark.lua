@@ -1108,6 +1108,75 @@ local highlights = {
   RainbowDelimiterYellow = {
     fg = "#ffff87"
   },
+  RenderMarkdownBullet = "@tag",
+  RenderMarkdownChecked = {
+    fg = "#a4e400"
+  },
+  RenderMarkdownCode = {
+    bg = "#262626"
+  },
+  RenderMarkdownCodeInline = "@markup.raw.markdown_inline",
+  RenderMarkdownDash = "@tag",
+  RenderMarkdownH1 = {
+    bold = true,
+    fg = "#ffffff"
+  },
+  RenderMarkdownH1Bg = {
+    bg = "#ffffff",
+    fg = "#ffffff"
+  },
+  RenderMarkdownH2 = {
+    bold = true,
+    fg = "#ffff87"
+  },
+  RenderMarkdownH2Bg = {
+    bg = "#fffff3",
+    fg = "#ffff87"
+  },
+  RenderMarkdownH3 = {
+    bold = true,
+    fg = "#ff9700"
+  },
+  RenderMarkdownH3Bg = {
+    bg = "#fff5e6",
+    fg = "#ff9700"
+  },
+  RenderMarkdownH4 = {
+    bold = true,
+    fg = "#ff005f"
+  },
+  RenderMarkdownH4Bg = {
+    bg = "#ffe6ef",
+    fg = "#ff005f"
+  },
+  RenderMarkdownH5 = {
+    bold = true,
+    fg = "#af87ff"
+  },
+  RenderMarkdownH5Bg = {
+    bg = "#f7f3ff",
+    fg = "#af87ff"
+  },
+  RenderMarkdownH6 = {
+    bold = true,
+    fg = "#62d8f1"
+  },
+  RenderMarkdownH6Bg = {
+    bg = "#effbfe",
+    fg = "#62d8f1"
+  },
+  RenderMarkdownLink = {
+    fg = "#4f96a5"
+  },
+  RenderMarkdownQuote = {
+    bg = "NONE",
+    fg = "#ff9700"
+  },
+  RenderMarkdownTableHead = "@tag",
+  RenderMarkdownTableRow = "@tag",
+  RenderMarkdownUnchecked = {
+    fg = "#0087ff"
+  },
   Repeat = {
     fg = "#fc1a70"
   },
