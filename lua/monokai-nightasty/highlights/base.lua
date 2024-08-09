@@ -1,4 +1,4 @@
-local utils = require("monokai-nightasty.utils")
+local dark = require("monokai-nightasty.utils").darken
 
 local M = {}
 
@@ -124,27 +124,27 @@ function M.get(c, opts)
     DiagnosticWarn = { fg = c.warning },
     DiagnosticUnnecessary = { italic = true, undercurl = true, sp = c.grey_light }, -- e.g. unused variables
 
-    DiagnosticVirtualTextError = { fg = c.error, bg = utils.darken(c.error, 0.08) }, -- Used for "Error" diagnostic virtual text
-    DiagnosticVirtualTextHint = { fg = c.hint, bg = utils.darken(c.hint, 0.08) }, -- Used for "Hint" diagnostic virtual text
-    DiagnosticVirtualTextInfo = { fg = c.info, bg = utils.darken(c.info, 0.08) }, -- Used for "Information" diagnostic virtual text
-    DiagnosticVirtualTextWarn = { fg = c.warning, bg = utils.darken(c.warning, 0.08) }, -- Used for "Warning" diagnostic virtual text
+    DiagnosticVirtualTextError = { fg = c.error, bg = dark(c.error, 0.08) }, -- Used for "Error" diagnostic virtual text
+    DiagnosticVirtualTextHint = { fg = c.hint, bg = dark(c.hint, 0.08) }, -- Used for "Hint" diagnostic virtual text
+    DiagnosticVirtualTextInfo = { fg = c.info, bg = dark(c.info, 0.08) }, -- Used for "Information" diagnostic virtual text
+    DiagnosticVirtualTextWarn = { fg = c.warning, bg = dark(c.warning, 0.08) }, -- Used for "Warning" diagnostic virtual text
 
     DiagnosticUnderlineError = { undercurl = true, sp = c.error }, -- Used to underline "Error" diagnostics
     DiagnosticUnderlineHint = { undercurl = true, sp = c.hint }, -- Used to underline "Hint" diagnostics
     DiagnosticUnderlineInfo = { undercurl = true, sp = c.info }, -- Used to underline "Information" diagnostics
     DiagnosticUnderlineWarn = { undercurl = true, sp = c.warning }, -- Used to underline "Warning" diagnostics
 
-    -- These groups are for the native LSP client. Some other LSP clients may
-    -- use these groups, or use their own.
+    -- Native LSP client
 
+    LspCodeLens = { fg = dark(c.purple, 0.75), bg = dark(c.purple, 0.05), italic = true },
+    LspCodeLensSeparator = { fg = c.purple, bg = dark(c.purple, 0.05), italic = true },
     LspInfoBorder = { fg = c.border_highlight, bg = c.bg_float },
     LspInlayHint = { fg = c.grey, italic = true },
-    LspReferenceRead = { bg = c.fg_gutter }, -- used for highlighting "read" references
-    LspReferenceText = { bg = c.fg_gutter }, -- used for highlighting "text" references
-    LspReferenceWrite = { bg = c.fg_gutter }, -- used for highlighting "write" references
-
-    -- LspCodeLens = { fg = c.comment },
-    -- LspSignatureActiveParameter = { bg = util.darken(c.bg_visual, 0.4), bold = true },
+    LspReferenceRead = "LspReferenceText",
+    LspReferenceText = { bg = c.fg_gutter },
+    LspReferenceWrite = "LspReferenceText",
+    LspSignatureActiveParameter = { bg = c.bg_visual, bold = true },
+    -- SnippetTabstop = "Visual",
   }
 end
 
