@@ -4,6 +4,7 @@ local M = {}
 
 M.implemented_plugins = {
   ["aerial.nvim"] = "aerial",
+  ["ale"] = "ale",
   ["bufferline.nvim"] = "bufferline",
   ["dashboard-nvim"] = "dashboard",
   ["gitsigns.nvim"] = "gitsigns",
@@ -28,7 +29,6 @@ M.implemented_plugins = {
   ["which-key.nvim"] = "which-key",
 
   -- Not implemented
-  -- ["ale"]                           = "ale",
   -- ["alpha-nvim"]                    = "alpha",
   -- ["barbar.nvim"]                   = "barbar",
   -- ["flash.nvim"]                    = "flash",
