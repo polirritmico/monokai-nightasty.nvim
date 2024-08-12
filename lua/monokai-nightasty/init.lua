@@ -2,7 +2,7 @@ local config = require("monokai-nightasty.config")
 
 local M = {}
 
----@param opts? monokai.Config
+---@param opts? monokai.Config|monokai.UserConfig
 function M.load(opts)
   if not M.loaded and config.defaults == config.options and opts then
     config.setup(opts)

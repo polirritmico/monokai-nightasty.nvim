@@ -79,13 +79,14 @@ M.defaults = {
 ---@type monokai.Config
 M.options = nil
 
----@param options? monokai.Config
+---@param options? monokai.Config|monokai.UserConfig
 function M.setup(options)
   M.options = vim.tbl_deep_extend("force", {}, M.defaults, options or {})
 end
 
----@param opts? monokai.Config
+---@param opts? monokai.Config|monokai.UserConfig
 function M.extend(opts)
+  ---@cast opts monokai.Config
   return opts and vim.tbl_deep_extend("force", {}, M.options, opts) or M.options
 end
 
