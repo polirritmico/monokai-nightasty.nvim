@@ -27,6 +27,7 @@ M.implemented_plugins = {
   ["render-markdown.nvim"] = "render-markdown",
   ["telescope.nvim"] = "telescope",
   ["todo-comments.nvim"] = "todo-comments",
+  ["trouble.nvim"] = "trouble",
   ["which-key.nvim"] = "which-key",
 
   -- Not implemented
@@ -42,7 +43,6 @@ M.implemented_plugins = {
   -- ["nvim-scrollbar"]                = "scrollbar",
   -- ["nvim-tree.lua"]                 = "nvim-tree",
   -- ["octo.nvim"]                     = "octo",
-  -- ["trouble.nvim"]                  = "trouble",
   -- ["vim-gitgutter"]                 = "gitgutter",
   -- ["vim-glyph-palette"]             = "glyph-palette",
   -- ["vim-illuminate"]                = "illuminate",
