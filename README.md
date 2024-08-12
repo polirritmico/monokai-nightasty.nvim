@@ -40,6 +40,8 @@ the flavorful
 | Plugin                                                                                | Highlights Module                                                                                                                              |
 | ------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | [aerial.nvim](https://github.com/stevearc/aerial.nvim)                                | [aerial](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights/aerial.lua)                         |
+| [ale](https://github.com/dense-analysis/ale)                                          | [ale](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights/ale.lua)                               |
+| [alpha-nvim](https://github.com/goolord/alpha-nvim)                                   | [alpha](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights/alpha.lua)                           |
 | [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)                         | [bufferline](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights/bufferline.lua)                 |
 | [dashboard-nvim](https://github.com/nvimdev/dashboard-nvim)                           | [dashboard](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights/dashboard.lua)                   |
 | [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)                           | [gitsigns](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights/gitsigns.lua)                     |
@@ -61,6 +63,7 @@ the flavorful
 | [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim)  | [render-markdown](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights/render-markdown.lua)       |
 | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)                    | [telescope](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights/telescope.lua)                   |
 | [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)                     | [todo-comments](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights/todo-comments.lua)           |
+| [trouble.nvim](https://github.com/folke/trouble.nvim)                                 | [trouble](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights/trouble.lua)                       |
 | [which-key.nvim](https://github.com/folke/which-key.nvim)                             | [which-key](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights/which-key.lua)                   |
 
 <!-- plugins:end -->

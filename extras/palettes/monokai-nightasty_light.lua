@@ -326,6 +326,21 @@ local highlights = {
     fg = "#ff4d00",
     italic = true
   },
+  ALEError = "SpellBad",
+  ALEErrorSign = "DiagnosticError",
+  ALEInfo = "SpellLocal",
+  ALEInfoSign = "DiagnosticInfo",
+  ALEStyleError = "ALEError",
+  ALEStyleErrorSign = "ALEErrorSign",
+  ALEStyleWarning = "ALEWarning",
+  ALEStyleWarningSign = "ALEWarningSign",
+  ALEVirtualTextError = "DiagnosticVirtualTextError",
+  ALEVirtualTextInfo = "DiagnosticVirtualTextInfo",
+  ALEVirtualTextStyleError = "ALEVirtualTextError",
+  ALEVirtualTextStyleWarning = "ALEVirtualTextWarning",
+  ALEVirtualTextWarning = "DiagnosticVirtualTextWarn",
+  ALEWarning = "SpellCap",
+  ALEWarningSign = "DiagnosticWarn",
   AerialGuide = {
     fg = "#c9c9c9"
   },
@@ -333,6 +348,22 @@ local highlights = {
   AerialNormal = {
     bg = "NONE",
     fg = "#333333"
+  },
+  AlphaButtons = {
+    fg = "#ff004b"
+  },
+  AlphaFooter = {
+    fg = "#7f7f7f",
+    italic = true
+  },
+  AlphaHeader = {
+    fg = "#ff4d00"
+  },
+  AlphaHeaderLabel = {
+    fg = "#ff004b"
+  },
+  AlphaShortcut = {
+    fg = "#6054d0"
   },
   Bold = {
     bold = true
@@ -782,6 +813,16 @@ local highlights = {
   LineNrBe = {
     fg = "#4fb000"
   },
+  LspCodeLens = {
+    bg = "#f7f6fd",
+    fg = "#887fdc",
+    italic = true
+  },
+  LspCodeLensSeparator = {
+    bg = "#f7f6fd",
+    fg = "#6054d0",
+    italic = true
+  },
   LspInfoBorder = {
     bg = "#e3e3e3",
     fg = "#333333"
@@ -824,14 +865,14 @@ local highlights = {
   LspKindUnit = "Structure",
   LspKindValue = "KindParameter",
   LspKindVariable = "@variable",
-  LspReferenceRead = {
-    bg = "#c9c9c9"
-  },
+  LspReferenceRead = "LspReferenceText",
   LspReferenceText = {
     bg = "#c9c9c9"
   },
-  LspReferenceWrite = {
-    bg = "#c9c9c9"
+  LspReferenceWrite = "LspReferenceText",
+  LspSignatureActiveParameter = {
+    bg = "#e3e3e3",
+    bold = true
   },
   Macro = {
     fg = "#ff004b"
@@ -1361,6 +1402,35 @@ local highlights = {
     fg = "#ff8f00",
     sp = "#00b3e3",
     underline = true
+  },
+  TroubleCode = {
+    fg = "#ff005f"
+  },
+  TroubleCount = {
+    bg = "#ffffff",
+    bold = true,
+    fg = "#333333"
+  },
+  TroubleDiagnosticsBasename = "TroubleLspFilename",
+  TroubleDirectory = {
+    fg = "#333333"
+  },
+  TroubleIconDirectory = "TroubleLspFilename",
+  TroubleIndentFoldClosed = {
+    fg = "#333333"
+  },
+  TroubleLspCount = "TroubleCount",
+  TroubleLspFilename = {
+    fg = "#00b3e3"
+  },
+  TroubleLspSymbolName = {
+    fg = "#ff6826"
+  },
+  TroublePos = {
+    fg = "#7f7f7f"
+  },
+  TroubleText = {
+    fg = "#0e0e0e"
   },
   Type = {},
   Typedef = {

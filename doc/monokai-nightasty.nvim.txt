@@ -1,4 +1,4 @@
-*monokai-nightasty.nvim.txt*   For Neovim >= 0.9   Last change: 2024 August 07
+*monokai-nightasty.nvim.txt*   For Neovim >= 0.9   Last change: 2024 August 11
 
 ==============================================================================
 Table of Contents                   *monokai-nightasty.nvim-table-of-contents*
@@ -48,6 +48,10 @@ Supported plugins ~
   -------------------------- --------------------------------------------
   aerial.nvim                aerial
 
+  ale                        ale
+
+  alpha-nvim                 alpha
+
   bufferline.nvim            bufferline
 
   dashboard-nvim             dashboard
@@ -89,6 +93,8 @@ Supported plugins ~
   telescope.nvim             telescope
 
   todo-comments.nvim         todo-comments
+
+  trouble.nvim               trouble
 
   which-key.nvim             which-key
   -----------------------------------------------------------------------
