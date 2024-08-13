@@ -104,7 +104,9 @@ function M.readme_external_format()
   vim.notify("[format README.md]: Done", vim.log.levels.INFO)
 end
 
----@param sections table<{ tag: string, content: string[]|string }>
+---@alias ReadmeSection { tag: string, text: string|string[]  }
+
+---@param sections ReadmeSection[]
 ---@param verbose? boolean
 function M.update_readme_content(sections, verbose)
   local readme = utils.read_file(M.readme_file)
@@ -117,19 +119,35 @@ function M.update_readme_content(sections, verbose)
       .. ":end %-%->)"
     if type(section.text) == "string" then
       readme = readme:gsub(pattern, "%1\n" .. section.text .. "\n%2")
-    else
+    else ---@diagnostic disable: param-type-mismatch
       readme = readme:gsub(pattern, "%1\n" .. table.concat(section.text, "\n") .. "\n%2")
     end
 
     if verbose then
-      print("[write README.md]: Updated " .. section.tag .. " section")
+      print("[write README.md]: Updated " .. section.tag:gsub("%%", "") .. " section")
     end
   end
 
   utils.overwrite(M.readme_file, readme)
 end
 
+---@return boolean
+function M.running_from_dev()
+  local lazy_root_path = require("lazy.core.config").options.root
+  local monokai_path = require("monokai-nightasty.utils").me
+
+  return monokai_path:match(lazy_root_path) == nil
+end
+
 function M.update_readme()
+  if not M.running_from_dev() then
+    local msg = "Docs generation shouldn't be executed from the lazy.nvim data path."
+      .. "\nAborting..."
+    vim.notify(msg, vim.log.levels.WARN)
+    return
+  end
+
+  ---@type ReadmeSection[]
   local content = {
     { tag = "plugins", text = M.generate_implemented_plugins() },
     { tag = "config%-spec", text = M.generate_cfg_spec_block() },
