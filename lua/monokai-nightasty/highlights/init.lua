@@ -29,6 +29,7 @@ M.implemented_plugins = {
   ["todo-comments.nvim"] = "todo-comments",
   ["trouble.nvim"] = "trouble",
   ["which-key.nvim"] = "which-key",
+  ["yanky.nvim"] = "yanky",
 
   -- Not implemented
   -- ["barbar.nvim"]                   = "barbar",
@@ -48,7 +49,6 @@ M.implemented_plugins = {
   -- ["vim-illuminate"]                = "illuminate",
   -- ["vim-sneak"]                     = "sneak",
   -- ["vimwiki"]                       = "vimwiki",
-  -- ["yanky.nvim"]                    = "yanky"
 }
 
 ---Generate the highlight groups list from the implemented_plugins and the user

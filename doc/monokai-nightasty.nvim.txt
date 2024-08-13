@@ -1,4 +1,4 @@
-*monokai-nightasty.nvim.txt*   For Neovim >= 0.9   Last change: 2024 August 11
+*monokai-nightasty.nvim.txt*   For Neovim >= 0.9   Last change: 2024 August 12
 
 ==============================================================================
 Table of Contents                   *monokai-nightasty.nvim-table-of-contents*
@@ -97,6 +97,8 @@ Supported plugins ~
   trouble.nvim               trouble
 
   which-key.nvim             which-key
+
+  yanky.nvim                 yanky
   -----------------------------------------------------------------------
 
 ==============================================================================
