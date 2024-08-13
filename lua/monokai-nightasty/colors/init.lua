@@ -74,7 +74,7 @@ function M.setup(opts)
   colors.lualine = {
     normal_bg = is_light and colors.green_light or colors.green,
     normal_fg = is_light and colors.white or colors.black,
-    command_fg = is_light and colors.blue or colors.green,
+    command_fg = is_light and utils.import_color("dark", "green") or colors.green,
   }
 
   -- Rainbow colors (for color_headers, rainbow delimiters and other plugins)

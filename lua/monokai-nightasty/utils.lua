@@ -50,6 +50,19 @@ function M.lighten(hex, amount, fg)
   return M.blend(hex, fg or M.fg, amount)
 end
 
+---Get the hex color value from the given palette
+---@param palette string
+---@param color string
+---@return string?
+function M.import_color(palette, color)
+  local colors = M.mod("monokai-nightasty.colors." .. palette)
+  if colors and colors[color] then
+    return colors[color]
+  end
+  local msg = "Error: Color '%s' not found in '%s' palette"
+  vim.notify(string.format(msg, color, palette), vim.log.levels.WARN)
+end
+
 ---Replace all `${color}` marks with the theme colors values (`<hex-color>`)
 ---@param str string original file string
 ---@param tbl table key value pairs to replace in the string
