@@ -53,7 +53,7 @@ function M.set_autocmds()
   })
   vim.api.nvim_create_autocmd("BufWritePost", {
     group = augroup,
-    pattern = "*/lua/" .. M.module_escaped .. "/**.lua",
+    pattern = "*" .. M.module .. "/**.lua",
     callback = M.reload,
   })
 end
