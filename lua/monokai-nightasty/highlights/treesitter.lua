@@ -69,7 +69,7 @@ function M.get(c, opts)
     ["@markup.list.checked"] = "@markup.list", -- checked todo-style list markers [x]
     ["@markup.list.unchecked"] = "@markup.list", -- unchecked todo-style list markers [ ]
     ["@markup.math"] = "Special", -- math environments (e.g. `$ ... $` in LaTeX)
-    ["@markup.quote"] = { fg = c.fg, bg = c.fg_gutter, italic = true }, -- block quotes
+    ["@markup.quote"] = { fg = c.fg, bg = c.bg_float, italic = true }, -- block quotes
     ["@markup.raw"] = "String", -- literal or verbatim text (e.g., inline code)
     ["@markup.raw.block"] = { fg = c.grey }, -- literal or verbatim text (e.g., inline code)
     ["@markup.raw.delimiter.markdown_inline"] = { fg = c.purple }, -- inline backticks -> `
