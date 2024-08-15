@@ -8,6 +8,7 @@ M.implemented_plugins = {
   ["alpha-nvim"] = "alpha",
   ["bufferline.nvim"] = "bufferline",
   ["dashboard-nvim"] = "dashboard",
+  ["flash.nvim"] = "flash",
   ["gitsigns.nvim"] = "gitsigns",
   ["headlines.nvim"] = "headlines",
   ["indent-blankline.nvim"] = "indent-blankline",
@@ -33,7 +34,6 @@ M.implemented_plugins = {
 
   -- Not implemented
   -- ["barbar.nvim"]                   = "barbar",
-  -- ["flash.nvim"]                    = "flash",
   -- ["fzf-lua"]                       = "fzf",
   -- ["grug-far.nvim"]                 = "grug-far",
   -- ["hop.nvim"]                      = "hop",
@@ -42,11 +42,9 @@ M.implemented_plugins = {
   -- ["neogit"]                        = "neogit",
   -- ["neotest"]                       = "neotest",
   -- ["nvim-scrollbar"]                = "scrollbar",
-  -- ["nvim-tree.lua"]                 = "nvim-tree",
   -- ["octo.nvim"]                     = "octo",
   -- ["vim-gitgutter"]                 = "gitgutter",
   -- ["vim-glyph-palette"]             = "glyph-palette",
-  -- ["vim-illuminate"]                = "illuminate",
   -- ["vim-sneak"]                     = "sneak",
   -- ["vimwiki"]                       = "vimwiki",
 }
