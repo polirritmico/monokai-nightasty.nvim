@@ -77,7 +77,7 @@ function M.get(c, opts)
     ["@markup.strikethrough"] = { strikethrough = true }, -- strikethrough text
     ["@markup.strong"] = { bold = true }, -- bold text
     ["@markup.underline"] = { underline = true }, -- underlined text (only for literal underline markup!)
-    ["@module"] = "Include", -- modules or namespaces
+    ["@module"] = { fg = c.blue }, -- modules or namespaces
     ["@none"] = {}, -- completely disable the highlight
     ["@number"] = "Number", -- numeric literals
     ["@number.float"] = "Float", -- floating-point number literals
