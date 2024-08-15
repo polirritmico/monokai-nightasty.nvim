@@ -29,7 +29,7 @@ M.implemented_plugins = {
   ["telescope.nvim"] = "telescope",
   ["todo-comments.nvim"] = "todo-comments",
   ["trouble.nvim"] = "trouble",
-  ["undotree.vim"] = "undotree",
+  ["undotree"] = "undotree",
   ["which-key.nvim"] = "which-key",
   ["yanky.nvim"] = "yanky",
 
