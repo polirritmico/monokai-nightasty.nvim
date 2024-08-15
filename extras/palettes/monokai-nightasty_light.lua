@@ -56,7 +56,7 @@ local colors = {
   hint = "#4fb000",
   info = "#0087ff",
   lualine = {
-    command_fg = "#00b3e3",
+    command_fg = "#a4e400",
     normal_bg = "#7ebd00",
     normal_fg = "#ffffff"
   },
@@ -240,7 +240,7 @@ local highlights = {
   ["@markup.list.unchecked"] = "@markup.list",
   ["@markup.math"] = "Special",
   ["@markup.quote"] = {
-    bg = "#c9c9c9",
+    bg = "#e3e3e3",
     fg = "#333333",
     italic = true
   },
@@ -263,7 +263,9 @@ local highlights = {
   ["@markup.underline"] = {
     underline = true
   },
-  ["@module"] = "Include",
+  ["@module"] = {
+    fg = "#00b3e3"
+  },
   ["@none"] = {},
   ["@number"] = "Number",
   ["@number.float"] = "Float",
@@ -684,6 +686,25 @@ local highlights = {
   },
   Exception = {
     fg = "#ff004b"
+  },
+  FlashBackdrop = {
+    fg = "#a5a5a5"
+  },
+  FlashCurrent = {
+    bg = "#000001",
+    bold = true,
+    fg = "#ff8f00"
+  },
+  FlashLabel = {
+    bg = "#ff004b",
+    fg = "#000001"
+  },
+  FlashMatch = {
+    bg = "#ff004b",
+    fg = "#333333"
+  },
+  FlashPromptIcon = {
+    fg = "#ff4d00"
   },
   Float = {
     fg = "#6054d0"
@@ -1439,6 +1460,39 @@ local highlights = {
   Underlined = {
     underline = true
   },
+  UndoTreeBranch = {
+    fg = "#ff4d00"
+  },
+  UndoTreeCurrent = {
+    bg = "#b2b2b2",
+    fg = "#ff004b"
+  },
+  UndoTreeHead = {
+    bold = true,
+    fg = "#00b3e3"
+  },
+  UndoTreeHelp = "Normal",
+  UndoTreeHelpKey = {
+    fg = "#6054d0"
+  },
+  UndoTreeHelpTitle = {
+    fg = "#ff004b"
+  },
+  UndoTreeNext = {
+    fg = "#4c4c4c"
+  },
+  UndoTreeNode = {
+    fg = "#4fb000"
+  },
+  UndoTreeSavedBig = {
+    bold = true,
+    fg = "#ff004b"
+  },
+  UndoTreeSavedSmall = {
+    fg = "#333333"
+  },
+  UndoTreeSeq = "Comment",
+  UndoTreeTimeStamp = "UndoTreeBranch",
   VertSplit = {
     fg = "#00b3e3"
   },
@@ -1476,6 +1530,8 @@ local highlights = {
   WinSeparator = {
     fg = "#00b3e3"
   },
+  YankyPut = "Search",
+  YankyYanked = "IncSearch",
   debugBreakpoint = {
     bg = "#e6f3ff",
     fg = "#0087ff"

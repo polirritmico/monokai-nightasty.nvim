@@ -44,6 +44,7 @@ the flavorful
 | [alpha-nvim](https://github.com/goolord/alpha-nvim)                                   | [alpha](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights/alpha.lua)                           |
 | [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)                         | [bufferline](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights/bufferline.lua)                 |
 | [dashboard-nvim](https://github.com/nvimdev/dashboard-nvim)                           | [dashboard](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights/dashboard.lua)                   |
+| [flash.nvim](https://github.com/folke/flash.nvim)                                     | [flash](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights/flash.lua)                           |
 | [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)                           | [gitsigns](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights/gitsigns.lua)                     |
 | [headlines.nvim](https://github.com/lukas-reineke/headlines.nvim)                     | [headlines](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights/headlines.lua)                   |
 | [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)       | [indent-blankline](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights/indent-blankline.lua)     |
@@ -64,6 +65,7 @@ the flavorful
 | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)                    | [telescope](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights/telescope.lua)                   |
 | [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)                     | [todo-comments](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights/todo-comments.lua)           |
 | [trouble.nvim](https://github.com/folke/trouble.nvim)                                 | [trouble](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights/trouble.lua)                       |
+| [undotree.vim](https://github.com/mbbill/undotree)                                    | [undotree](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights/undotree.lua)                     |
 | [which-key.nvim](https://github.com/folke/which-key.nvim)                             | [which-key](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights/which-key.lua)                   |
 | [yanky.nvim](https://github.com/gbprod/yanky.nvim)                                    | [yanky](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights/yanky.lua)                           |
 
@@ -279,6 +281,7 @@ M.defaults = {
   keys = {
     { "<leader>tt", "<Cmd>MonokaiToggleLight<CR>", desc = "Monokai-Nightasty: Toggle dark/light theme." },
   },
+  ---@type monokai.UserConfig
   opts = {
     dark_style_background = "default",
     light_style_background = "default",
@@ -319,6 +322,7 @@ return {
   keys = {
     { "<leader>tt", "<Cmd>MonokaiToggleLight<CR>", desc = "Monokai-Nightasty: Toggle dark/light theme." },
   },
+  ---@type monokai.UserConfig
   opts = {
     dark_style_background = "transparent", -- default, dark, transparent, #color
     light_style_background = "default", -- default, dark, transparent, #color

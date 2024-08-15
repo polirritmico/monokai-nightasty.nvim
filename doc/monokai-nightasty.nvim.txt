@@ -1,4 +1,4 @@
-*monokai-nightasty.nvim.txt*   For Neovim >= 0.9   Last change: 2024 August 12
+*monokai-nightasty.nvim.txt*   For Neovim >= 0.9   Last change: 2024 August 15
 
 ==============================================================================
 Table of Contents                   *monokai-nightasty.nvim-table-of-contents*
@@ -56,6 +56,8 @@ Supported plugins ~
 
   dashboard-nvim             dashboard
 
+  flash.nvim                 flash
+
   gitsigns.nvim              gitsigns
 
   headlines.nvim             headlines
@@ -95,6 +97,8 @@ Supported plugins ~
   todo-comments.nvim         todo-comments
 
   trouble.nvim               trouble
+
+  undotree.vim               undotree
 
   which-key.nvim             which-key
 
@@ -269,6 +273,7 @@ BASE CONFIGURATION WITH A BIT OF CUSTOMIZATION: ~
       keys = {
         { "<leader>tt", "<Cmd>MonokaiToggleLight<CR>", desc = "Monokai-Nightasty: Toggle dark/light theme." },
       },
+      ---@type monokai.UserConfig
       opts = {
         dark_style_background = "default",
         light_style_background = "default",
@@ -303,6 +308,7 @@ FULL CONFIGURATION: ~
       keys = {
         { "<leader>tt", "<Cmd>MonokaiToggleLight<CR>", desc = "Monokai-Nightasty: Toggle dark/light theme." },
       },
+      ---@type monokai.UserConfig
       opts = {
         dark_style_background = "transparent", -- default, dark, transparent, #color
         light_style_background = "default", -- default, dark, transparent, #color

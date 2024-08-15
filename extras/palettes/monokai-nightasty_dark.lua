@@ -240,7 +240,7 @@ local highlights = {
   ["@markup.list.unchecked"] = "@markup.list",
   ["@markup.math"] = "Special",
   ["@markup.quote"] = {
-    bg = "#3e3e3e",
+    bg = "#262626",
     fg = "#ffffff",
     italic = true
   },
@@ -263,7 +263,9 @@ local highlights = {
   ["@markup.underline"] = {
     underline = true
   },
-  ["@module"] = "Include",
+  ["@module"] = {
+    fg = "#62d8f1"
+  },
   ["@none"] = {},
   ["@number"] = "Number",
   ["@number.float"] = "Float",
@@ -684,6 +686,25 @@ local highlights = {
   },
   Exception = {
     fg = "#fc1a70"
+  },
+  FlashBackdrop = {
+    fg = "#585858"
+  },
+  FlashCurrent = {
+    bg = "#000001",
+    bold = true,
+    fg = "#ffff87"
+  },
+  FlashLabel = {
+    bg = "#fc1a70",
+    fg = "#000001"
+  },
+  FlashMatch = {
+    bg = "#fc1a70",
+    fg = "#ffffff"
+  },
+  FlashPromptIcon = {
+    fg = "#ff9700"
   },
   Float = {
     fg = "#af87ff"
@@ -1439,6 +1460,39 @@ local highlights = {
   Underlined = {
     underline = true
   },
+  UndoTreeBranch = {
+    fg = "#ff9700"
+  },
+  UndoTreeCurrent = {
+    bg = "#4b4b4b",
+    fg = "#fc1a70"
+  },
+  UndoTreeHead = {
+    bold = true,
+    fg = "#62d8f1"
+  },
+  UndoTreeHelp = "Normal",
+  UndoTreeHelpKey = {
+    fg = "#af87ff"
+  },
+  UndoTreeHelpTitle = {
+    fg = "#fc1a70"
+  },
+  UndoTreeNext = {
+    fg = "#bcbcbc"
+  },
+  UndoTreeNode = {
+    fg = "#a4e400"
+  },
+  UndoTreeSavedBig = {
+    bold = true,
+    fg = "#fc1a70"
+  },
+  UndoTreeSavedSmall = {
+    fg = "#ffffff"
+  },
+  UndoTreeSeq = "Comment",
+  UndoTreeTimeStamp = "UndoTreeBranch",
   VertSplit = {
     fg = "#62d8f1"
   },
@@ -1476,6 +1530,8 @@ local highlights = {
   WinSeparator = {
     fg = "#62d8f1"
   },
+  YankyPut = "Search",
+  YankyYanked = "IncSearch",
   debugBreakpoint = {
     bg = "#e6f3ff",
     fg = "#0087ff"
