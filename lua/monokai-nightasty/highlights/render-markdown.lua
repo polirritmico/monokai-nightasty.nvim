@@ -9,14 +9,23 @@ function M.get(c)
   local ret = {
     RenderMarkdownBullet = "@tag",
     RenderMarkdownChecked = { fg = c.green },
-    RenderMarkdownCode = { bg = c.bg_float },
-    RenderMarkdownCodeInline = "@markup.raw.markdown_inline",
+    RenderMarkdownCode = { bg = c.bg_float }, -- Code block background
+    RenderMarkdownCodeInline = "@markup.raw.markdown_inline", -- Inline code background
     RenderMarkdownDash = "@tag",
+    RenderMarkdownHint = { fg = c.purple }, -- Hint related quote callouts
+    RenderMarkdownLink = { fg = utils.lighten(c.blue, 0.6) }, -- Image & hyperlink icons
+    RenderMarkdownQuote = { fg = c.orange, bg = c.none },
+    RenderMarkdownSuccess = "RenderMarkdownChecked", -- Success related quote callouts
     RenderMarkdownTableHead = "@tag",
     RenderMarkdownTableRow = "@tag",
     RenderMarkdownUnchecked = { fg = c.blue_alt },
-    RenderMarkdownLink = { fg = utils.lighten(c.blue, 0.6) },
-    RenderMarkdownQuote = { fg = c.orange, bg = c.none },
+
+    -- RenderMarkdownInfo = "DiagnosticInfo", -- Info related quote callouts
+    -- RenderMarkdownWarn = "DiagnosticWarn", -- Warning related quote callouts
+    -- RenderMarkdownError = "DiagnosticError", -- Error related quote callouts
+    -- RenderMarkdownSign = "SignColumn", -- Sign column background
+    -- RenderMarkdownMath = "@markup.math", -- LaTeX lines
+    -- RenderMarkdownTodo = "@markup.raw", -- Todo custom checkbox
   }
 
   -- Rainbow headers
