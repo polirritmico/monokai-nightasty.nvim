@@ -37,6 +37,7 @@ function M.get(c, opts)
     ["@function.method.call"] = "Function", -- method calls
     ["@keyword"] = { fg = c.magenta, style = opts.hl_styles.keywords }, -- keywords not fitting into specific categories
     ["@keyword.conditional"] = "Conditional", -- keywords related to conditionals (e.g. `if` / `else`)
+    ["@keyword.conditional.htmldjango"] = { fg = c.orange },
     ["@keyword.conditional.ternary"] = "Conditional", -- ternary operator (e.g. `?` / `:`)
     ["@keyword.coroutine"] = "@keyword", -- keywords related to coroutines (e.g. `go` in Go, `async/await` in Python)
     ["@keyword.debug"] = "Debug", -- keywords related to debugging
