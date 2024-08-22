@@ -48,6 +48,7 @@ function M.get(c, opts)
     PmenuSel = { fg = c.magenta, bg = c.bg_menusel }, -- Popup/WildMenu: selected item.
     PmenuThumb = { fg = c.grey_dark, bg = c.grey }, -- Popup/WildMenu: Thumb of the scrollbar.
     Question = { fg = c.blue }, -- |hit-enter| prompt and yes/no questions
+    QuickFixLine = { fg = c.blue, bold = true }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
     Search = { fg = c.black, bg = c.bg_search, bold = true }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
     SignColumn = { fg = c.fg_gutter, bg = opts.transparent and c.none or c.bg }, -- column where |signs| are displayed
     SignColumnSB = { fg = c.fg_gutter, bg = c.bg_sidebar }, -- column where |signs| are displayed
@@ -111,7 +112,6 @@ function M.get(c, opts)
     -- Ignore = { }, -- (preferred) left blank, hidden  |hl-Ignore| ?
     -- Number = { }, --   a number constant: 234, 0xff
     -- NvimInternalError = { fg = c.fg, bg = "#ff0000" }, -- hard red
-    -- QuickFixLine = { bg = c.bg_visual, bold = true }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
     -- SpecialChar = { }, --  special character in a constant
     -- SpecialComment = { }, -- special things inside a comment
     -- TermCursor  = { fg = c.bg, bg = c.fg }, -- cursor in a focused terminal
