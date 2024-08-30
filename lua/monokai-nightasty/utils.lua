@@ -12,7 +12,7 @@ M.fg = "#ffffff" -- white
 M.brightness = 0.3
 
 ---@param color string
-local function hex_to_rgb(color)
+function M.hex_to_rgb(color)
   color = string.lower(color)
   return {
     tonumber(color:sub(2, 3), 16),
@@ -26,8 +26,8 @@ end
 ---@param alpha number|string number between 0 and 1. 0 results in bg, 1 results in fg
 function M.blend(foreground, background, alpha)
   alpha = type(alpha) == "string" and (tonumber(alpha, 16) / 0xff) or alpha
-  local bg = hex_to_rgb(background)
-  local fg = hex_to_rgb(foreground)
+  local bg = M.hex_to_rgb(background)
+  local fg = M.hex_to_rgb(foreground)
 
   local blend_channel = function(i)
     local ret = (alpha * fg[i] + ((1 - alpha) * bg[i]))

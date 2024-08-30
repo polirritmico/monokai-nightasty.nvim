@@ -1,10 +1,10 @@
-local util = require("monokai-nightasty.utils")
+local utils = require("monokai-nightasty.utils")
 
 local M = {}
 
 --- @param colors ColorScheme
 function M.generate(colors)
-  local kitty = util.template(
+  local kitty = utils.template(
     [[
 # vim:ft=kitty
 

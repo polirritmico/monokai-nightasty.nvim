@@ -140,6 +140,9 @@ local highlights = {
     italic = false
   },
   ["@keyword.conditional"] = "Conditional",
+  ["@keyword.conditional.htmldjango"] = {
+    fg = "#ff4d00"
+  },
   ["@keyword.conditional.ternary"] = "Conditional",
   ["@keyword.coroutine"] = "@keyword",
   ["@keyword.debug"] = "Debug",
@@ -155,7 +158,9 @@ local highlights = {
   },
   ["@keyword.import"] = "Include",
   ["@keyword.operator"] = "Operator",
+  ["@keyword.operator.htmldjango"] = "@keyword.conditional.htmldjango",
   ["@keyword.repeat"] = "Repeat",
+  ["@keyword.repeat.htmldjango"] = "@keyword.conditional.htmldjango",
   ["@keyword.return"] = "@keyword",
   ["@keyword.storage"] = "StorageClass",
   ["@lsp.type.boolean"] = "Boolean",
@@ -1145,6 +1150,10 @@ local highlights = {
   Question = {
     fg = "#00b3e3"
   },
+  QuickFixLine = {
+    bold = true,
+    fg = "#00b3e3"
+  },
   Quote = {
     bg = "#c9c9c9",
     fg = "#ffffff"
@@ -1227,6 +1236,9 @@ local highlights = {
     bg = "#e6f7fc",
     fg = "#00b3e3"
   },
+  RenderMarkdownHint = {
+    fg = "#6054d0"
+  },
   RenderMarkdownLink = {
     fg = "#14809d"
   },
@@ -1234,6 +1246,7 @@ local highlights = {
     bg = "NONE",
     fg = "#ff4d00"
   },
+  RenderMarkdownSuccess = "RenderMarkdownChecked",
   RenderMarkdownTableHead = "@tag",
   RenderMarkdownTableRow = "@tag",
   RenderMarkdownUnchecked = {

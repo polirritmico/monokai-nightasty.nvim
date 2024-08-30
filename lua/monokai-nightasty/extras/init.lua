@@ -20,6 +20,13 @@ M.extras = {
     url = "https://sw.kovidgoyal.net/kitty/",
   },
   {
+    name = "konsole",
+    ext = ".colorscheme",
+    label = "Konsole",
+    both_styles = true,
+    url = "https://invent.kde.org/utilities/konsole",
+  },
+  {
     name = "lazygit",
     ext = ".yml",
     label = "Lazygit",
