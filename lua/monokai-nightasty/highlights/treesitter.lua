@@ -47,7 +47,9 @@ function M.get(c, opts)
     ["@keyword.function"] = { fg = c.blue, italic = true }, -- keywords that define a function (e.g. `func` in Go, `def` in Python)
     ["@keyword.import"] = "Include", -- keywords for including modules (e.g. `import` / `from` in Python)
     ["@keyword.operator"] = "Operator", -- operators that are English words (e.g. `and` / `or`)
+    ["@keyword.operator.htmldjango"] = "@keyword.conditional.htmldjango",
     ["@keyword.repeat"] = "Repeat", -- keywords related to loops (e.g. `for` / `while`)
+    ["@keyword.repeat.htmldjango"] = "@keyword.conditional.htmldjango",
     ["@keyword.return"] = "@keyword", -- keywords like `return` and `yield`
     ["@keyword.storage"] = "StorageClass", -- modifiers that affect storage in memory or life-time
 
