@@ -1,4 +1,4 @@
-*monokai-nightasty.nvim.txt*   For Neovim >= 0.9   Last change: 2024 August 22
+*monokai-nightasty.nvim.txt*   For Neovim >= 0.9   Last change: 2024 August 30
 
 ==============================================================================
 Table of Contents                   *monokai-nightasty.nvim-table-of-contents*
@@ -98,7 +98,7 @@ Supported plugins ~
 
   trouble.nvim               trouble
 
-  undotree.vim               undotree
+  undotree                   undotree
 
   which-key.nvim             which-key
 
@@ -468,6 +468,8 @@ Currently this extra files are generated:
 - Monokai Nightasty Palettes <https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/extras/palettes>
     (palettes <extras/palettes>)
 - Kitty <https://sw.kovidgoyal.net/kitty/> (kitty <extras/kitty>)
+- Konsole <https://invent.kde.org/utilities/konsole>
+    (konsole <extras/konsole>)
 - Lazygit <https://github.com/jesseduffield/lazygit>
     (lazygit <extras/lazygit>)
 - Tmux <https://github.com/tmux/tmux/wiki> (tmux <extras/tmux>)
