@@ -30,6 +30,7 @@ M.implemented_plugins = {
   ["todo-comments.nvim"] = "todo-comments",
   ["trouble.nvim"] = "trouble",
   ["undotree"] = "undotree",
+  ["vim-gitgutter"] = "gitgutter",
   ["which-key.nvim"] = "which-key",
   ["yanky.nvim"] = "yanky",
 
@@ -41,8 +42,6 @@ M.implemented_plugins = {
   -- ["lspsaga.nvim"]                  = "lspsaga",
   -- ["neogit"]                        = "neogit",
   -- ["neotest"]                       = "neotest",
-  -- ["octo.nvim"]                     = "octo",
-  -- ["vim-gitgutter"]                 = "gitgutter",
   -- ["vim-glyph-palette"]             = "glyph-palette",
   -- ["vim-sneak"]                     = "sneak",
   -- ["vimwiki"]                       = "vimwiki",
