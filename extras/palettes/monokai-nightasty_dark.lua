@@ -452,6 +452,7 @@ local highlights = {
   CmpItemMenu = {
     fg = "#8a8a8a"
   },
+  CodeActionText = "Identifier",
   CodeBlock = {
     bg = "#1e1e1e"
   },
@@ -733,6 +734,24 @@ local highlights = {
   },
   Function = {
     fg = "#a4e400"
+  },
+  GitGutterAdd = {
+    fg = "#a4e400"
+  },
+  GitGutterAddLineNr = {
+    fg = "#a4e400"
+  },
+  GitGutterChange = {
+    fg = "#ff9700"
+  },
+  GitGutterChangeLineNr = {
+    fg = "#ff9700"
+  },
+  GitGutterDelete = {
+    fg = "#fc1a70"
+  },
+  GitGutterDeleteLineNr = {
+    fg = "#fc1a70"
   },
   GitSignsAdd = "diffAdded",
   GitSignsAddInline = {
@@ -1179,6 +1198,10 @@ local highlights = {
   RainbowDelimiterYellow = {
     fg = "#ffff87"
   },
+  RenameNormal = {
+    bg = "#262626",
+    fg = "#ff9700"
+  },
   RenderMarkdownBullet = "@tag",
   RenderMarkdownChecked = {
     fg = "#a4e400"
@@ -1255,6 +1278,39 @@ local highlights = {
   Repeat = {
     fg = "#fc1a70"
   },
+  SagaCount = {
+    bg = "#4b4b4b",
+    fg = "#fc1a70"
+  },
+  SagaFinderFname = {
+    fg = "#ff9700",
+    italic = true
+  },
+  SagaFolder = {
+    fg = "#62d8f1"
+  },
+  SagaInCurrent = {
+    fg = "#ffc166"
+  },
+  SagaLightBulb = "DiagnosticSignHint",
+  SagaNormal = "NormalFloat",
+  SagaSearch = {
+    bg = "#ffff87",
+    bold = true,
+    fg = "#2b2b2b"
+  },
+  SagaSep = {
+    fg = "#fc1a70"
+  },
+  SagaSpinner = {
+    fg = "#a4e400"
+  },
+  SagaSpinnerTitle = {
+    fg = "#ff9700",
+    italic = true
+  },
+  SagaTitle = "Title",
+  SagaToggle = "Delimiter",
   Search = {
     bg = "#ffff87",
     bold = true,
@@ -1329,10 +1385,7 @@ local highlights = {
   Tag = {
     fg = "#af87ff"
   },
-  TelescopeBorder = {
-    bg = "#262626",
-    fg = "#ffffff"
-  },
+  TelescopeBorder = "FloatBorder",
   TelescopeNormal = {
     bg = "#262626",
     fg = "#bcbcbc"

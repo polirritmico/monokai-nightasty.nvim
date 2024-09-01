@@ -14,6 +14,7 @@ M.implemented_plugins = {
   ["indent-blankline.nvim"] = "indent-blankline",
   ["justinmk/dirvish.vim"] = "dirvish",
   ["lazy.nvim"] = "lazy",
+  ["lspsaga.nvim"] = "lspsaga",
   ["mini.hipatterns"] = "mini_hipatterns",
   ["mini.indentscope"] = "mini_indentscope",
   ["neo-tree.nvim"] = "neo-tree",
@@ -37,12 +38,9 @@ M.implemented_plugins = {
   -- Not implemented
   -- ["barbar.nvim"]                   = "barbar",
   -- ["fzf-lua"]                       = "fzf",
-  -- ["grug-far.nvim"]                 = "grug-far",
   -- ["leap.nvim"]                     = "leap",
-  -- ["lspsaga.nvim"]                  = "lspsaga",
   -- ["neogit"]                        = "neogit",
   -- ["neotest"]                       = "neotest",
-  -- ["vim-glyph-palette"]             = "glyph-palette",
   -- ["vim-sneak"]                     = "sneak",
   -- ["vimwiki"]                       = "vimwiki",
 }
