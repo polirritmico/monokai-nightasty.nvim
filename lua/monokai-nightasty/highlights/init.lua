@@ -1,4 +1,5 @@
 local utils = require("monokai-nightasty.utils")
+local config = require("monokai-nightasty.config")
 
 local M = {}
 
@@ -111,12 +112,8 @@ end
 ---@param opts monokai.Config
 ---@return table
 function M.generate_inputs(opts)
-  if not M.version then
-    M.version = utils.get_version()
-  end
-
   M.inputs = {
-    version = M.version,
+    version = config.version,
     opts = {
       auto_enable_plugins = opts.auto_enable_plugins,
       color_headers = opts.color_headers,

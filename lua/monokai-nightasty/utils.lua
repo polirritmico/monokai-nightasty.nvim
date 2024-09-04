@@ -147,21 +147,6 @@ function M.resolve_style_settings(hl)
   return hl
 end
 
----Get the commit hash from the repository.
-function M.get_version()
-  local repo = vim.fn.fnamemodify(debug.getinfo(1, "S").source:sub(2), ":h:h:h") .. "/.git/"
-  local head_content = M.read_file(repo .. "HEAD", "*l")
-
-  if head_content:match("/") then
-    -- Follow the reference to get the commit hash
-    local ref_file = head_content:match("ref: (.+)")
-    local commit = M.read_file(repo .. ref_file, "*l")
-    return commit:sub(1, 8)
-  else
-    return head_content:sub(1, 8)
-  end
-end
-
 -----------
 -- Cache --
 -----------
