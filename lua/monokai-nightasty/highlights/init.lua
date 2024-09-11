@@ -7,6 +7,7 @@ M.implemented_plugins = {
   ["aerial.nvim"] = "aerial",
   ["ale"] = "ale",
   ["alpha-nvim"] = "alpha",
+  ["barbar.nvim"] = "barbar",
   ["bufferline.nvim"] = "bufferline",
   ["dashboard-nvim"] = "dashboard",
   ["flash.nvim"] = "flash",
@@ -37,7 +38,6 @@ M.implemented_plugins = {
   ["yanky.nvim"] = "yanky",
 
   -- Not implemented
-  -- ["barbar.nvim"]                   = "barbar",
   -- ["fzf-lua"]                       = "fzf",
   -- ["leap.nvim"]                     = "leap",
   -- ["neogit"]                        = "neogit",

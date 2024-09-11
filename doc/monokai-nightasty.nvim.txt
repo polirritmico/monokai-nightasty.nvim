@@ -1,4 +1,4 @@
-*monokai-nightasty.nvim.txt*  For Neovim >= 0.9 Last change: 2024 September 04
+*monokai-nightasty.nvim.txt*  For Neovim >= 0.9 Last change: 2024 September 11
 
 ==============================================================================
 Table of Contents                   *monokai-nightasty.nvim-table-of-contents*
@@ -51,6 +51,8 @@ Supported plugins ~
   ale                        ale
 
   alpha-nvim                 alpha
+
+  barbar.nvim                barbar
 
   bufferline.nvim            bufferline
 
