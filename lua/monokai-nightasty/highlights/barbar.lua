@@ -5,9 +5,9 @@ local M = {}
 M.url = "https://github.com/romgrk/barbar.nvim"
 
 ---@type monokai.HighlightsFn
-function M.get(c)
+function M.get(c, opts)
   local bg_current = c.bg_highlight
-  local bg_inactive = c.bg_sidebar
+  local bg_inactive = opts.transparent and c.none or c.bg_sidebar
   local bg_visible = c.bg_status_alt
   local bg_alternate = bg_visible
   local unselected_fg = utils.darken(c.fg, 0.5)
@@ -28,9 +28,9 @@ function M.get(c)
   return {
     --- Misc
     BufferOffset = { fg = c.grey_light, bg = bg_current }, -- header for a sidebar_filetype (e.g. undotree, neo-tree, etc.)
-    BufferTabpages = { fg = c.fg_sidebar, bg = bg_alternate }, -- Tab pages indicator at top right corner (tabs not buffers)
+    BufferTabpages = { fg = c.fg_sidebar, bg = opts.transparent and c.none or bg_alternate }, -- Tab pages indicator at top right corner (tabs not buffers)
     BufferTabpageFill = { bg = bg_inactive }, -- The space between the open buffer list and the tabpage
-    BufferTabpagesSep = { fg = c.magenta, bg = bg_alternate }, -- Tab pages indicator at top right corner (tabs not buffers)
+    BufferTabpagesSep = { fg = c.magenta, bg = opts.transparent and c.none or bg_alternate }, -- Tab pages indicator at top right corner (tabs not buffers)
 
     --- Current selected buffer
     BufferCurrent = { fg = c.fg, bg = bg_current, bold = true, italic = true }, -- current buffer, not modified
