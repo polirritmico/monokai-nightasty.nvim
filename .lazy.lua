@@ -128,4 +128,8 @@ return {
       })
     end,
   },
+  {
+    "nvim-telescope/telescope.nvim",
+    keys = { { "<leader>fc", "<Cmd>Telescope highlights<CR>" } },
+  },
 }
