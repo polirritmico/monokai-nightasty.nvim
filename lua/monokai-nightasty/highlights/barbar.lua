@@ -29,7 +29,7 @@ function M.get(c, opts)
     --- Misc
     BufferOffset = { fg = c.grey_light, bg = bg_current }, -- header for a sidebar_filetype (e.g. undotree, neo-tree, etc.)
     BufferTabpages = { fg = c.fg_sidebar, bg = opts.transparent and c.none or bg_alternate }, -- Tab pages indicator at top right corner (tabs not buffers)
-    BufferTabpageFill = { bg = bg_inactive }, -- The space between the open buffer list and the tabpage
+    BufferTabpageFill = { fg = c.grey, bg = opts.transparent and c.none or bg_inactive }, -- The space between the open buffer list and the tabpage
     BufferTabpagesSep = { fg = c.magenta, bg = opts.transparent and c.none or bg_alternate }, -- Tab pages indicator at top right corner (tabs not buffers)
 
     --- Current selected buffer
