@@ -1,4 +1,4 @@
-*monokai-nightasty.nvim.txt*  For Neovim >= 0.9 Last change: 2024 September 11
+*monokai-nightasty.nvim.txt*  For Neovim >= 0.9 Last change: 2024 September 12
 
 ==============================================================================
 Table of Contents                   *monokai-nightasty.nvim-table-of-contents*
@@ -69,6 +69,8 @@ Supported plugins ~
   justinmk/dirvish.vim       dirvish
 
   lazy.nvim                  lazy
+
+  leap.nvim                  leap
 
   lspsaga.nvim               lspsaga
 
