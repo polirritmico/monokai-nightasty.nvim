@@ -378,8 +378,219 @@ local highlights = {
   Boolean = {
     fg = "#6054d0"
   },
+  BufferAlternate = {
+    bg = "#e3e3e3",
+    fg = "#4c4c4c",
+    italic = true
+  },
+  BufferAlternateADDED = {
+    bg = "#e3e3e3",
+    fg = "#72c033"
+  },
+  BufferAlternateBtn = {
+    bg = "#e3e3e3",
+    fg = "#4c4c4c"
+  },
+  BufferAlternateCHANGED = {
+    bg = "#e3e3e3",
+    fg = "#ff7133"
+  },
+  BufferAlternateDELETED = {
+    bg = "#e3e3e3",
+    fg = "#ff336f"
+  },
+  BufferAlternateERROR = {
+    bg = "#e3e3e3",
+    fg = "#ff337f"
+  },
+  BufferAlternateHINT = {
+    bg = "#e3e3e3",
+    fg = "#72c033"
+  },
+  BufferAlternateINFO = {
+    bg = "#e3e3e3",
+    fg = "#339fff"
+  },
+  BufferAlternateMod = "BufferAlternateBtn",
+  BufferAlternateNumber = "BufferAlternateBtn",
+  BufferAlternateSign = {
+    bg = "#e3e3e3",
+    fg = "#6054d0"
+  },
+  BufferAlternateSignRight = {
+    bg = "#e3e3e3",
+    fg = "#6054d0"
+  },
+  BufferAlternateTarget = "BufferCurrentTarget",
+  BufferAlternateWARN = {
+    bg = "#e3e3e3",
+    fg = "#ff7133"
+  },
+  BufferCurrent = {
+    bg = "#ebebeb",
+    bold = true,
+    fg = "#333333",
+    italic = true
+  },
+  BufferCurrentADDED = {
+    bg = "#ebebeb",
+    fg = "#4fb000"
+  },
+  BufferCurrentBtn = {
+    bg = "#ebebeb",
+    fg = "#ff004b"
+  },
+  BufferCurrentCHANGED = {
+    bg = "#ebebeb",
+    fg = "#ff4d00"
+  },
+  BufferCurrentDELETED = {
+    bg = "#ebebeb",
+    fg = "#ff004b"
+  },
+  BufferCurrentERROR = {
+    bg = "#ebebeb",
+    fg = "#ff005f"
+  },
+  BufferCurrentHINT = {
+    bg = "#ebebeb",
+    fg = "#4fb000"
+  },
+  BufferCurrentINFO = {
+    bg = "#ebebeb",
+    fg = "#0087ff"
+  },
+  BufferCurrentMod = {
+    bg = "#ebebeb",
+    fg = "#ff4d00"
+  },
+  BufferCurrentNumber = {
+    bg = "#ebebeb",
+    fg = "#4c4c4c"
+  },
+  BufferCurrentPin = "BufferCurrentMod",
+  BufferCurrentSign = {
+    bg = "#ebebeb",
+    fg = "#00b3e3"
+  },
+  BufferCurrentSignRight = "BufferCurrentSign",
+  BufferCurrentTarget = {
+    bg = "#ff4d00",
+    bold = true,
+    fg = "#000001"
+  },
+  BufferCurrentWARN = {
+    bg = "#ebebeb",
+    fg = "#ff4d00"
+  },
+  BufferInactive = {
+    bg = "#f1f1f1",
+    fg = "#999999"
+  },
+  BufferInactiveADDED = {
+    bg = "#f1f1f1",
+    fg = "#72c033"
+  },
+  BufferInactiveBtn = "BufferInactive",
+  BufferInactiveCHANGED = {
+    bg = "#f1f1f1",
+    fg = "#ff7133"
+  },
+  BufferInactiveDELETED = {
+    bg = "#f1f1f1",
+    fg = "#ff336f"
+  },
+  BufferInactiveERROR = {
+    bg = "#f1f1f1",
+    fg = "#ff337f"
+  },
+  BufferInactiveHINT = {
+    bg = "#f1f1f1",
+    fg = "#72c033"
+  },
+  BufferInactiveINFO = {
+    bg = "#f1f1f1",
+    fg = "#339fff"
+  },
+  BufferInactiveMod = "BufferInactiveBtn",
+  BufferInactiveNumber = "BufferInactive",
+  BufferInactivePin = {
+    bg = "#f1f1f1",
+    fg = "#ff7133"
+  },
+  BufferInactiveSign = {
+    bg = "#f1f1f1",
+    fg = "#a5a5a5"
+  },
+  BufferInactiveSignRight = "BufferInactiveSign",
+  BufferInactiveTarget = "BufferCurrentTarget",
+  BufferInactiveWARN = {
+    bg = "#f1f1f1",
+    fg = "#ff7133"
+  },
   BufferLineIndicatorSelected = {
     fg = "#ff4d00"
+  },
+  BufferOffset = {
+    bg = "#ebebeb",
+    fg = "#4c4c4c"
+  },
+  BufferTabpageFill = {
+    bg = "#f1f1f1",
+    fg = "#7f7f7f"
+  },
+  BufferTabpages = {
+    bg = "#e3e3e3",
+    fg = "#0e0e0e"
+  },
+  BufferTabpagesSep = {
+    bg = "#e3e3e3",
+    fg = "#ff004b"
+  },
+  BufferVisible = {
+    bg = "#e3e3e3",
+    fg = "#999999",
+    italic = true
+  },
+  BufferVisibleADDED = {
+    bg = "#e3e3e3",
+    fg = "#72c033"
+  },
+  BufferVisibleBtn = {
+    bg = "#e3e3e3",
+    fg = "#999999"
+  },
+  BufferVisibleCHANGED = {
+    bg = "#e3e3e3",
+    fg = "#ff7133"
+  },
+  BufferVisibleDELETED = {
+    bg = "#e3e3e3",
+    fg = "#ff336f"
+  },
+  BufferVisibleERROR = {
+    bg = "#e3e3e3",
+    fg = "#ff337f"
+  },
+  BufferVisibleHINT = {
+    bg = "#e3e3e3",
+    fg = "#72c033"
+  },
+  BufferVisibleINFO = {
+    bg = "#e3e3e3",
+    fg = "#339fff"
+  },
+  BufferVisibleMod = "BufferVisibleBtn",
+  BufferVisibleNumber = "BufferVisibleBtn",
+  BufferVisibleSign = {
+    bg = "#e3e3e3",
+    fg = "#00b3e3"
+  },
+  BufferVisibleSignRight = "BufferVisibleSign",
+  BufferVisibleTarget = "BufferCurrentTarget",
+  BufferVisibleWARN = {
+    bg = "#e3e3e3",
+    fg = "#ff7133"
   },
   Character = {
     fg = "#6054d0"
@@ -851,6 +1062,19 @@ local highlights = {
   },
   LazyReasonSource = {
     fg = "#ff8f00"
+  },
+  LeapBackgrop = {
+    fg = "#a5a5a5"
+  },
+  LeapLabel = {
+    bg = "#ff004b",
+    bold = true,
+    fg = "#000001"
+  },
+  LeapMatch = {
+    bg = "#ff004b",
+    bold = true,
+    fg = "#333333"
   },
   LineNr = {
     fg = "#b2b2b2"
