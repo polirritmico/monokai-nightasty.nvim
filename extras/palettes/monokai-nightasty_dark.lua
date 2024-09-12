@@ -1548,6 +1548,19 @@ local highlights = {
     bg = "#262626",
     fg = "#3e3e3e"
   },
+  Sneak = {
+    bg = "#fc1a70",
+    bold = true,
+    fg = "#ffffff"
+  },
+  SneakLabel = {
+    bg = "#fc1a70",
+    bold = true,
+    fg = "#000001"
+  },
+  SneakScope = {
+    bg = "#444444"
+  },
   Special = {
     fg = "#af87ff"
   },

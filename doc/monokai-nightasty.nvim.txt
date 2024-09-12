@@ -108,6 +108,8 @@ Supported plugins ~
 
   vim-gitgutter              gitgutter
 
+  vim-sneak                  sneak
+
   which-key.nvim             which-key
 
   yanky.nvim                 yanky

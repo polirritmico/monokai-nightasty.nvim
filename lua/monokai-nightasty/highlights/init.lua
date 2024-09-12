@@ -35,6 +35,7 @@ M.implemented_plugins = {
   ["trouble.nvim"] = "trouble",
   ["undotree"] = "undotree",
   ["vim-gitgutter"] = "gitgutter",
+  ["vim-sneak"] = "sneak",
   ["which-key.nvim"] = "which-key",
   ["yanky.nvim"] = "yanky",
 
@@ -42,7 +43,6 @@ M.implemented_plugins = {
   -- ["fzf-lua"]                       = "fzf",
   -- ["neogit"]                        = "neogit",
   -- ["neotest"]                       = "neotest",
-  -- ["vim-sneak"]                     = "sneak",
   -- ["vimwiki"]                       = "vimwiki",
 }
 

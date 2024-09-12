@@ -70,6 +70,7 @@ the flavorful
 | [trouble.nvim](https://github.com/folke/trouble.nvim)                                 | [trouble](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights/trouble.lua)                       |
 | [undotree](https://github.com/mbbill/undotree)                                        | [undotree](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights/undotree.lua)                     |
 | [vim-gitgutter](https://github.com/airblade/vim-gitgutter)                            | [gitgutter](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights/gitgutter.lua)                   |
+| [vim-sneak](https://github.com/justinmk/vim-sneak)                                    | [sneak](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights/sneak.lua)                           |
 | [which-key.nvim](https://github.com/folke/which-key.nvim)                             | [which-key](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights/which-key.lua)                   |
 | [yanky.nvim](https://github.com/gbprod/yanky.nvim)                                    | [yanky](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights/yanky.lua)                           |
 
