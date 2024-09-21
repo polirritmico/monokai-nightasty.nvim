@@ -25,6 +25,9 @@ gui:
     markedBaseCommitBgColor:
       - "#ffff87"
     unstagedChangesColor:
-      - "${git.changed}"
+      - "#25394b"
     defaultFgColor:
       - "#ffffff"
+
+  authorColors:
+    "*": "#fc1a70"
