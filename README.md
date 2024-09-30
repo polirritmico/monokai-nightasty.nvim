@@ -298,13 +298,6 @@ M.defaults = {
     vim.opt.cursorline = true -- Highlight line at the cursor position
     vim.o.background = "dark" -- Default to dark theme
 
-    -- Open new Nvim instances with the light theme when the sun hits the screen
-    local date_output = vim.api.nvim_exec2("!date +'\\%H\\%M'", { output = true })
-    local system_time = tonumber(string.match(date_output["output"], "%d%d%d%d"))
-    if system_time >= 1345 and system_time < 1630 then
-      vim.o.background = "light"
-    end
-
     require("monokai-nightasty").load(opts)
   end,
 }
@@ -373,6 +366,13 @@ return {
 
     -- Default to dark theme
     vim.o.background = "dark"  -- dark | light
+
+    -- Open new Nvim instances with the light theme when the sun hits the screen
+    local date_output = vim.api.nvim_exec2("!date +'\\%H\\%M'", { output = true })
+    local system_time = tonumber(string.match(date_output["output"], "%d%d%d%d"))
+    if system_time >= 1345 and system_time < 1630 then
+      vim.o.background = "light"
+    end
 
     require("monokai-nightasty").load(opts)
   end,
