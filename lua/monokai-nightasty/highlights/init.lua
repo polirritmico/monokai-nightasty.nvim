@@ -18,6 +18,7 @@ M.implemented_plugins = {
   ["lazy.nvim"] = "lazy",
   ["leap.nvim"] = "leap",
   ["lspsaga.nvim"] = "lspsaga",
+  ["mini.diff"] = "mini_diff",
   ["mini.hipatterns"] = "mini_hipatterns",
   ["mini.indentscope"] = "mini_indentscope",
   ["neo-tree.nvim"] = "neo-tree",

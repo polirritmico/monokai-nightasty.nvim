@@ -1,4 +1,4 @@
-*monokai-nightasty.nvim.txt*  For Neovim >= 0.9 Last change: 2024 September 30
+*monokai-nightasty.nvim.txt*   For Neovim >= 0.9  Last change: 2024 October 07
 
 ==============================================================================
 Table of Contents                   *monokai-nightasty.nvim-table-of-contents*
@@ -73,6 +73,8 @@ Supported plugins ~
   leap.nvim                  leap
 
   lspsaga.nvim               lspsaga
+
+  mini.diff                  mini_diff
 
   mini.hipatterns            mini_hipatterns
 

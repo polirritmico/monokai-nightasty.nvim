@@ -1151,6 +1151,19 @@ local highlights = {
     fg = "#ff004b",
     underline = true
   },
+  MiniDiffOverAdd = "DiffAdd",
+  MiniDiffOverChange = "DiffText",
+  MiniDiffOverContext = "DiffChange",
+  MiniDiffOverDelete = "DiffDelete",
+  MiniDiffSignAdd = {
+    fg = "#4fb000"
+  },
+  MiniDiffSignChange = {
+    fg = "#ff4d00"
+  },
+  MiniDiffSignDelete = {
+    fg = "#ff004b"
+  },
   MiniHipatternsFixme = {
     bg = "#ff004b",
     bold = true,
