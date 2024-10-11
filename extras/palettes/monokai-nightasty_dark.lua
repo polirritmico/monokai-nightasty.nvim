@@ -1247,6 +1247,60 @@ local highlights = {
     bg = "#262626",
     fg = "#262626"
   },
+  NeotestAdapterName = {
+    fg = "#a4e400"
+  },
+  NeotestDir = {
+    fg = "#0087ff"
+  },
+  NeotestExpandMarket = {
+    fg = "#8a8a8a"
+  },
+  NeotestFailed = {
+    fg = "#ff005f"
+  },
+  NeotestFile = {
+    fg = "#62d8f1"
+  },
+  NeotestFocused = {
+    fg = "#ff9700"
+  },
+  NeotestIndent = {
+    fg = "#8a8a8a"
+  },
+  NeotestMarked = {
+    bg = "#585858",
+    bold = true,
+    fg = "#ffff87"
+  },
+  NeotestNamespace = {
+    fg = "#fc1a70"
+  },
+  NeotestPassed = {
+    fg = "#a4e400"
+  },
+  NeotestRunning = {
+    fg = "#ffc136"
+  },
+  NeotestSkipped = {
+    fg = "#ffff87"
+  },
+  NeotestTarget = {
+    fg = "#0087ff"
+  },
+  NeotestTest = {
+    fg = "#bcbcbc"
+  },
+  NeotestUnknown = {
+    fg = "#bcbcbc"
+  },
+  NeotestWatching = {
+    fg = "#f6f557"
+  },
+  NeotestWinSelect = {
+    bold = true,
+    fg = "#62d8f1"
+  },
   NoiceFormatProgressDone = {
     bg = "#ff9700",
     bold = true,

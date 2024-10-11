@@ -1,4 +1,4 @@
-*monokai-nightasty.nvim.txt*   For Neovim >= 0.9  Last change: 2024 October 07
+*monokai-nightasty.nvim.txt*   For Neovim >= 0.9  Last change: 2024 October 11
 
 ==============================================================================
 Table of Contents                   *monokai-nightasty.nvim-table-of-contents*
@@ -81,6 +81,8 @@ Supported plugins ~
   mini.indentscope           mini_indentscope
 
   neo-tree.nvim              neo-tree
+
+  neotest                    neotest
 
   noice.nvim                 noice
 
