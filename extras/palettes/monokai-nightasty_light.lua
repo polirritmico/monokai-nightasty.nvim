@@ -1677,8 +1677,7 @@ local highlights = {
   },
   TabLine = {
     bg = "#f1f1f1",
-    fg = "#0e0e0e",
-    underline = true
+    fg = "#4c4c4c"
   },
   TabLineFill = {
     bg = "#bfbfbf"
