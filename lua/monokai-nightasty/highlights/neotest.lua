@@ -7,7 +7,7 @@ function M.get(c)
   return {
     NeotestAdapterName = { fg = c.green }, -- Adapter name and stats at the top
     NeotestDir = { fg = c.blue_alt }, -- Dirs with files with tests
-    NeotestExpandMarket = { fg = c.grey }, --Tree-like lines nodes
+    NeotestExpandMarker = { fg = c.grey }, --Tree-like lines nodes
     NeotestFailed = { fg = c.red }, --  mark on failed tests
     NeotestFile = { fg = c.blue }, -- Files with tests
     NeotestFocused = { fg = c.orange }, -- Current test name
