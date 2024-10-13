@@ -22,6 +22,7 @@ M.implemented_plugins = {
   ["mini.hipatterns"] = "mini_hipatterns",
   ["mini.indentscope"] = "mini_indentscope",
   ["neo-tree.nvim"] = "neo-tree",
+  ["neogit"] = "neogit",
   ["neotest"] = "neotest",
   ["noice.nvim"] = "noice",
   ["nvim-cmp"] = "cmp",
@@ -43,7 +44,6 @@ M.implemented_plugins = {
 
   -- Not implemented
   -- ["fzf-lua"]                       = "fzf",
-  -- ["neogit"]                        = "neogit",
   -- ["vimwiki"]                       = "vimwiki",
 }
 
