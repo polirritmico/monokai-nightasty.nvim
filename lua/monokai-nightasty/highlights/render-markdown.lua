@@ -9,7 +9,7 @@ function M.get(c)
   local ret = {
     RenderMarkdownBullet = "@tag",
     RenderMarkdownChecked = { fg = c.green },
-    RenderMarkdownCode = { bg = c.bg_float }, -- Code block background
+    RenderMarkdownCode = { bg = c.charcoal }, -- Code block background
     RenderMarkdownCodeInline = "@markup.raw.markdown_inline", -- Inline code background
     RenderMarkdownDash = "@tag",
     RenderMarkdownHint = { fg = c.purple }, -- Hint related quote callouts
