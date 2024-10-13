@@ -12,6 +12,7 @@ M.fg = "#ffffff" -- white
 M.brightness = 0.3
 
 ---@param color string
+---@return [integer, integer, integer]
 function M.hex_to_rgb(color)
   color = string.lower(color)
   return {
@@ -24,6 +25,7 @@ end
 ---@param foreground string foreground color
 ---@param background string background color
 ---@param alpha number|string number between 0 and 1. 0 results in bg, 1 results in fg
+---@return string -- Color hex value
 function M.blend(foreground, background, alpha)
   alpha = type(alpha) == "string" and (tonumber(alpha, 16) / 0xff) or alpha
   local bg = M.hex_to_rgb(background)
@@ -42,10 +44,16 @@ function M.blend(foreground, background, alpha)
   )
 end
 
+---@param hex string Color hex value
+---@param amount number From 0 to 1. 1 is the same hex color, 0 the bg.
+---@param bg? string Optional bg. `colors.bg` by default
 function M.darken(hex, amount, bg)
   return M.blend(hex, bg or M.bg, amount)
 end
 
+---@param hex string Color hex value
+---@param amount number From 0 to 1. 1 is the same hex color, 0 the fg.
+---@param fg? string Optional fg. `colors.fg` by default
 function M.lighten(hex, amount, fg)
   return M.blend(hex, fg or M.fg, amount)
 end
