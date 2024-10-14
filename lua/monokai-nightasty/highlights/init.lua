@@ -11,6 +11,7 @@ M.implemented_plugins = {
   ["bufferline.nvim"] = "bufferline",
   ["dashboard-nvim"] = "dashboard",
   ["flash.nvim"] = "flash",
+  ["fzf-lua"] = "fzf",
   ["gitsigns.nvim"] = "gitsigns",
   ["headlines.nvim"] = "headlines",
   ["indent-blankline.nvim"] = "indent-blankline",
@@ -43,7 +44,6 @@ M.implemented_plugins = {
   ["yanky.nvim"] = "yanky",
 
   -- Not implemented
-  -- ["fzf-lua"]                       = "fzf",
   -- ["vimwiki"]                       = "vimwiki",
 }
 

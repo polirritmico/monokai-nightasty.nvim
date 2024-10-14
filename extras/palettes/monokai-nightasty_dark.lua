@@ -946,6 +946,80 @@ local highlights = {
   Function = {
     fg = "#a4e400"
   },
+  FzfLuaBorder = "FloatBorder",
+  FzfLuaBufFlagAlt = {
+    fg = "#62d8f1"
+  },
+  FzfLuaBufFlagCur = {
+    fg = "#fc1a70"
+  },
+  FzfLuaBufName = {
+    fg = "#0087ff"
+  },
+  FzfLuaBufNr = {
+    fg = "#bcbcbc"
+  },
+  FzfLuaCursor = "IncSearch",
+  FzfLuaCursorLine = "CursorLine",
+  FzfLuaDirPart = {
+    fg = "#8a8a8a"
+  },
+  FzfLuaFilePart = "FzfLuaFzfNormal",
+  FzfLuaFzfCursorLine = {
+    bg = "#444444",
+    fg = "#ffffff"
+  },
+  FzfLuaFzfGutter = {
+    bg = "#444444"
+  },
+  FzfLuaFzfInfo = {
+    fg = "#e6e6e6"
+  },
+  FzfLuaFzfNormal = {
+    bg = "#262626",
+    fg = "#bcbcbc"
+  },
+  FzfLuaFzfPointer = {
+    fg = "#fc1a70"
+  },
+  FzfLuaFzfPrompt = {
+    fg = "#0087ff"
+  },
+  FzfLuaFzfQuery = {
+    fg = "#bcbcbc"
+  },
+  FzfLuaFzfScrollbar = "PmenuSbar",
+  FzfLuaFzfSeparator = {
+    fg = "#3e3e3e"
+  },
+  FzfLuaFzfSpinner = {
+    fg = "#a4e400"
+  },
+  FzfLuaHeaderBind = {
+    fg = "#af87ff"
+  },
+  FzfLuaHeaderText = {
+    fg = "#ff9700",
+    italic = true
+  },
+  FzfLuaLiveSym = "Special",
+  FzfLuaNormal = {
+    bg = "#262626",
+    fg = "#e6e6e6"
+  },
+  FzfLuaPathColNr = {
+    fg = "#62d8f1"
+  },
+  FzfLuaPathLineNr = {
+    fg = "#af87ff"
+  },
+  FzfLuaTabMarker = {
+    fg = "#a4e400"
+  },
+  FzfLuaTabTitle = {
+    bold = true,
+    fg = "#ff9700"
+  },
   GitGutterAdd = {
     fg = "#a4e400"
   },
