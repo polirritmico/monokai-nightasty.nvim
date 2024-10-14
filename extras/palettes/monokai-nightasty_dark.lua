@@ -1247,13 +1247,249 @@ local highlights = {
     bg = "#262626",
     fg = "#262626"
   },
+  NeogitBranch = {
+    fg = "#a4e400"
+  },
+  NeogitBranchHead = {
+    fg = "#62d8f1"
+  },
+  NeogitChangeAdded = {
+    fg = "#62d8f1",
+    italic = true
+  },
+  NeogitChangeCopied = {
+    fg = "#af87ff",
+    italic = true
+  },
+  NeogitChangeDeleted = {
+    fg = "#fc1a70",
+    italic = true
+  },
+  NeogitChangeModified = {
+    fg = "#a4e400",
+    italic = true
+  },
+  NeogitChangeNewFile = {
+    fg = "#0087ff",
+    italic = true
+  },
+  NeogitChangeRenamed = {
+    fg = "#ff9700",
+    italic = true
+  },
+  NeogitChangeUpdated = {
+    fg = "#ffff87",
+    italic = true
+  },
+  NeogitCommandCodeNormal = {
+    fg = "#a4e400"
+  },
+  NeogitCommandText = {
+    fg = "#ff9700"
+  },
+  NeogitCommandTime = "NeogitTagDistance",
+  NeogitCommitViewDescription = {
+    fg = "#ff9700"
+  },
+  NeogitCommitViewHeader = {
+    bg = "#313131",
+    fg = "#af87ff"
+  },
+  NeogitDiffAdd = {
+    bg = "#9ea392",
+    fg = "#bfec4d"
+  },
+  NeogitDiffAddCursor = {
+    bg = "#404040"
+  },
+  NeogitDiffAddHighlight = "DiffAdd",
+  NeogitDiffAdditions = {
+    fg = "#a4e400"
+  },
+  NeogitDiffContext = {
+    bg = "#262626",
+    fg = "#bcbcbc"
+  },
+  NeogitDiffContextCursor = "NeogitDiffAddCursor",
+  NeogitDiffContextHighlight = {
+    bg = "#262626",
+    fg = "#ffffff"
+  },
+  NeogitDiffDelete = {
+    bg = "#a59299",
+    fg = "#fd5f9b"
+  },
+  NeogitDiffDeleteCursor = "NeogitDiffAddCursor",
+  NeogitDiffDeleteHighlight = "DiffDelete",
+  NeogitDiffDeletions = {
+    fg = "#fc1a70"
+  },
+  NeogitDiffHeader = "NeogitBranchHead",
+  NeogitDiffHeaderCursor = "NeogitDiffAddCursor",
+  NeogitFilePath = {
+    fg = "#0087ff"
+  },
+  NeogitFloatHeader = {
+    bg = "#262626",
+    bold = true,
+    fg = "#0087ff"
+  },
+  NeogitFloatHeaderHighlight = {
+    bg = "#0087ff",
+    bold = true,
+    fg = "#262626"
+  },
+  NeogitGraphAuthor = {
+    fg = "#fc1a70"
+  },
+  NeogitGraphBlack = {
+    fg = "#000001"
+  },
+  NeogitGraphBlue = {
+    fg = "#0087ff"
+  },
+  NeogitGraphBoldBlack = {
+    bold = true,
+    fg = "#000001"
+  },
+  NeogitGraphBoldBlue = {
+    bold = true,
+    fg = "#0087ff"
+  },
+  NeogitGraphBoldCyan = {
+    bold = true,
+    fg = "#62d8f1"
+  },
+  NeogitGraphBoldGray = {
+    bold = true,
+    fg = "#8a8a8a"
+  },
+  NeogitGraphBoldGreen = {
+    bold = true,
+    fg = "#a4e400"
+  },
+  NeogitGraphBoldOrange = {
+    bold = true,
+    fg = "#ff9700"
+  },
+  NeogitGraphBoldPurple = {
+    bold = true,
+    fg = "#af87ff"
+  },
+  NeogitGraphBoldRed = {
+    bold = true,
+    fg = "#ff005f"
+  },
+  NeogitGraphBoldWhite = {
+    bold = true,
+    fg = "#ffffff"
+  },
+  NeogitGraphBoldYellow = {
+    bold = true,
+    fg = "#ffff87"
+  },
+  NeogitGraphCyan = {
+    fg = "#62d8f1"
+  },
+  NeogitGraphGray = {
+    fg = "#8a8a8a"
+  },
+  NeogitGraphGreen = {
+    fg = "#a4e400"
+  },
+  NeogitGraphOrange = {
+    fg = "#ff9700"
+  },
+  NeogitGraphPurple = {
+    fg = "#af87ff"
+  },
+  NeogitGraphRed = {
+    fg = "#ff005f"
+  },
+  NeogitGraphWhite = {
+    fg = "#ffffff"
+  },
+  NeogitGraphYellow = {
+    fg = "#ffff87"
+  },
+  NeogitHunkHeader = {
+    bold = true,
+    fg = "#91e4f5"
+  },
+  NeogitHunkHeaderCursor = "NeogitDiffAddCursor",
+  NeogitHunkHeaderHighlight = {
+    bg = "#313131",
+    bold = true,
+    fg = "#62d8f1"
+  },
+  NeogitObjectId = {
+    fg = "#bcbcbc",
+    italic = true
+  },
+  NeogitPopupActionDisabled = {
+    fg = "#8a8a8a",
+    italic = true
+  },
+  NeogitPopupActionKey = {
+    fg = "#ffff87"
+  },
+  NeogitPopupBranchName = {
+    fg = "#fc1a70"
+  },
+  NeogitPopupConfigDisabled = "NeogitPopupActionDisabled",
+  NeogitPopupConfigEnabled = {
+    fg = "#ff9700",
+    italic = true
+  },
+  NeogitPopupConfigKey = "NeogitPopupActionKey",
+  NeogitPopupOptionDisabled = "NeogitPopupActionDisabled",
+  NeogitPopupOptionEnabled = "NeogitPopupConfigEnabled",
+  NeogitPopupOptionKey = "NeogitPopupActionKey",
+  NeogitPopupSectionTitle = {
+    fg = "#a4e400"
+  },
+  NeogitPopupSwitchDisabled = "NeogitPopupActionDisabled",
+  NeogitPopupSwitchEnabled = "NeogitPopupConfigEnabled",
+  NeogitPopupSwitchKey = "NeogitPopupActionKey",
+  NeogitRemote = {
+    fg = "#af87ff"
+  },
+  NeogitSectionHeader = {
+    fg = "#fc1a70"
+  },
+  NeogitSectionHeaderCount = {
+    fg = "#bcbcbc"
+  },
+  NeogitSignatureBad = {
+    bg = "#ff005f",
+    fg = "#ffffff"
+  },
+  NeogitSignatureGood = {
+    bg = "#2b2b2b",
+    fg = "#a4e400"
+  },
+  NeogitSignatureMissing = {
+    bg = "#2b2b2b",
+    fg = "#ffffff"
+  },
+  NeogitSignatureNone = "Comment",
+  NeogitStatusHEAD = {
+    fg = "#ff9700"
+  },
+  NeogitSubtleText = "Comment",
+  NeogitTagDistance = "NeogitSectionHeaderCount",
+  NeogitTagName = {
+    bg = "#25394b",
+    fg = "#0087ff"
+  },
+  NeogitWinSeparator = "WinSeparator",
   NeotestAdapterName = {
     fg = "#a4e400"
   },
   NeotestDir = {
     fg = "#0087ff"
   },
-  NeotestExpandMarket = {
+  NeotestExpandMarker = {
     fg = "#8a8a8a"
   },
   NeotestFailed = {
