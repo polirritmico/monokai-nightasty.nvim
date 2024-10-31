@@ -21,6 +21,7 @@ M.implemented_plugins = {
   ["lspsaga.nvim"] = "lspsaga",
   ["mini.diff"] = "mini_diff",
   ["mini.hipatterns"] = "mini_hipatterns",
+  ["mini.icons"] = "mini_icons",
   ["mini.indentscope"] = "mini_indentscope",
   ["neo-tree.nvim"] = "neo-tree",
   ["neogit"] = "neogit",

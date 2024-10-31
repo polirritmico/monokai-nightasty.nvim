@@ -1258,6 +1258,33 @@ local highlights = {
     bold = true,
     fg = "#000001"
   },
+  MiniIconsAzure = {
+    fg = "#0087ff"
+  },
+  MiniIconsBlue = {
+    fg = "#0087ff"
+  },
+  MiniIconsCyan = {
+    fg = "#00b3e3"
+  },
+  MiniIconsGreen = {
+    fg = "#4fb000"
+  },
+  MiniIconsGrey = {
+    fg = "#4c4c4c"
+  },
+  MiniIconsOrange = {
+    fg = "#ff4d00"
+  },
+  MiniIconsPurple = {
+    fg = "#6054d0"
+  },
+  MiniIconsRed = {
+    fg = "#ff004b"
+  },
+  MiniIconsYellow = {
+    fg = "#ff8f00"
+  },
   MiniIndentscopeSymbol = {
     fg = "#ff9466",
     nocombine = true

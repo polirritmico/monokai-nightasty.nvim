@@ -80,6 +80,8 @@ Supported plugins ~
 
   mini.hipatterns            mini_hipatterns
 
+  mini.icons                 mini_icons
+
   mini.indentscope           mini_indentscope
 
   neo-tree.nvim              neo-tree
