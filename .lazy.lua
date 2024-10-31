@@ -8,6 +8,7 @@ local M = {
     auto_enable_plugins = false,
     plugins = { all = true },
     cache = false,
+    color_headers = true,
     -- dark_style_background = "default",
   },
   globals = { vim = vim },
@@ -130,6 +131,9 @@ return {
   },
   {
     "nvim-telescope/telescope.nvim",
-    keys = { { "<leader>fc", "<Cmd>Telescope highlights<CR>" } },
+    keys = {
+      { "<leader>fc", "<Cmd>Telescope highlights<CR>" },
+      { "<leader><leader>", "<Cmd>Inspect<CR>" },
+    },
   },
 }
