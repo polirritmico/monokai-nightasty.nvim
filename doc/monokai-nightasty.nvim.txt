@@ -1,4 +1,4 @@
-*monokai-nightasty.nvim.txt*   For Neovim >= 0.9  Last change: 2024 October 14
+*monokai-nightasty.nvim.txt*   For Neovim >= 0.9  Last change: 2024 October 31
 
 ==============================================================================
 Table of Contents                   *monokai-nightasty.nvim-table-of-contents*
@@ -117,6 +117,8 @@ Supported plugins ~
   vim-gitgutter              gitgutter
 
   vim-sneak                  sneak
+
+  vimwiki                    vimwiki
 
   which-key.nvim             which-key
 

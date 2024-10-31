@@ -2017,6 +2017,9 @@ local highlights = {
     bg = "#444444",
     fg = "#fc1a70"
   },
+  TexSnip = {
+    fg = "#a4e400"
+  },
   Title = {
     bold = true,
     fg = "#ffffff"
@@ -2174,6 +2177,33 @@ local highlights = {
   UndoTreeTimeStamp = "UndoTreeBranch",
   VertSplit = {
     fg = "#62d8f1"
+  },
+  VimwikiCellSeparator = "Keyword",
+  VimwikiCode = {
+    fg = "#af87ff"
+  },
+  VimwikiHR = {
+    fg = "#fc1a70"
+  },
+  VimwikiHeader1 = "Title",
+  VimwikiHeader2 = "Title",
+  VimwikiHeader3 = "Title",
+  VimwikiHeader4 = "Title",
+  VimwikiHeader5 = "Title",
+  VimwikiHeader6 = "Title",
+  VimwikiHeaderChar = {
+    fg = "#fc1a70"
+  },
+  VimwikiLink = {
+    fg = "#62d8f1"
+  },
+  VimwikiLinkChar = "Keyword",
+  VimwikiList = "Keyword",
+  VimwikiPre = {
+    fg = "#8a8a8a"
+  },
+  VimwikiTag = {
+    fg = "#0087ff"
   },
   Visual = {
     bg = "#444444"

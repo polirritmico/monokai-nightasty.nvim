@@ -40,11 +40,9 @@ M.implemented_plugins = {
   ["undotree"] = "undotree",
   ["vim-gitgutter"] = "gitgutter",
   ["vim-sneak"] = "sneak",
+  ["vimwiki"] = "vimwiki",
   ["which-key.nvim"] = "which-key",
   ["yanky.nvim"] = "yanky",
-
-  -- Not implemented
-  -- ["vimwiki"]                       = "vimwiki",
 }
 
 ---Generate the highlight groups list from the implemented_plugins and the user
