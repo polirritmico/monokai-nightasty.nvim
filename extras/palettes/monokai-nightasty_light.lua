@@ -1087,7 +1087,7 @@ local highlights = {
     nocombine = true
   },
   IblScope = {
-    fg = "#00b3e3",
+    fg = "#ff9466",
     nocombine = true
   },
   IblWhitespace = {
