@@ -1638,6 +1638,12 @@ local highlights = {
     bold = true,
     fg = "#00b3e3"
   },
+  NoiceFormatEvent = {
+    fg = "#7f7f7f"
+  },
+  NoiceFormatKind = {
+    fg = "#4c4c4c"
+  },
   NoiceFormatProgressDone = {
     bg = "#ff4d00",
     bold = true,
