@@ -2390,19 +2390,19 @@ local highlights = {
 
 local terminal_colors = {
   ["vim.g.terminal_color_0"] = "#000001",
-  ["vim.g.terminal_color_1"] = "#ff005f",
+  ["vim.g.terminal_color_1"] = "#fc1a70",
   ["vim.g.terminal_color_10"] = "#a4e400",
   ["vim.g.terminal_color_11"] = "#ffff87",
   ["vim.g.terminal_color_12"] = "#62d8f1",
-  ["vim.g.terminal_color_13"] = "#fc1a70",
+  ["vim.g.terminal_color_13"] = "#ff005f",
   ["vim.g.terminal_color_14"] = "#0087ff",
   ["vim.g.terminal_color_15"] = "#ffffff",
   ["vim.g.terminal_color_2"] = "#a4e400",
   ["vim.g.terminal_color_3"] = "#ffff87",
   ["vim.g.terminal_color_4"] = "#62d8f1",
-  ["vim.g.terminal_color_5"] = "#fc1a70",
+  ["vim.g.terminal_color_5"] = "#ff005f",
   ["vim.g.terminal_color_6"] = "#0087ff",
   ["vim.g.terminal_color_7"] = "#e6e6e6",
   ["vim.g.terminal_color_8"] = "#444444",
-  ["vim.g.terminal_color_9"] = "#ff005f"
+  ["vim.g.terminal_color_9"] = "#fc1a70"
 }
