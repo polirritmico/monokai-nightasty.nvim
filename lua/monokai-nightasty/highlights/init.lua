@@ -35,6 +35,7 @@ M.implemented_plugins = {
   ["nvim-treesitter-context"] = "treesitter-context",
   ["rainbow-delimiters.nvim"] = "rainbow",
   ["render-markdown.nvim"] = "render-markdown",
+  ["snacks.nvim"] = "snacks",
   ["telescope.nvim"] = "telescope",
   ["todo-comments.nvim"] = "todo-comments",
   ["trouble.nvim"] = "trouble",

@@ -1958,6 +1958,38 @@ local highlights = {
     bg = "#f1f1f1",
     fg = "#c9c9c9"
   },
+  SnacksDashboardDesc = {
+    fg = "#ff004b"
+  },
+  SnacksDashboardDir = {
+    fg = "#7f7f7f"
+  },
+  SnacksDashboardFile = {
+    fg = "#171717"
+  },
+  SnacksDashboardFooter = {
+    fg = "#7f7f7f",
+    italic = true
+  },
+  SnacksDashboardHeader = {
+    fg = "#ff4d00"
+  },
+  SnacksDashboardIcon = {
+    fg = "#0e0e0e"
+  },
+  SnacksDashboardKey = {
+    fg = "#6054d0"
+  },
+  SnacksDashboardNormal = {
+    fg = "#0e0e0e"
+  },
+  SnacksDashboardSpecial = {
+    fg = "#4c4c4c",
+    italic = true
+  },
+  SnacksDashboardTitle = {
+    fg = "#ff004b"
+  },
   Sneak = {
     bg = "#ff004b",
     bold = true,
