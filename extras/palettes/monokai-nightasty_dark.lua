@@ -1990,6 +1990,19 @@ local highlights = {
   SnacksDashboardTitle = {
     fg = "#fc1a70"
   },
+  SnacksNotifierBorderDebug = "SnacksNotifierTitleDebug",
+  SnacksNotifierBorderTrace = "SnacksNotifierTitleTrace",
+  SnacksNotifierHistoryDateTime = {
+    fg = "#bcbcbc"
+  },
+  SnacksNotifierIconDebug = "SnacksNotifierTitleDebug",
+  SnacksNotifierIconTrace = "SnacksNotifierTitleTrace",
+  SnacksNotifierTitleDebug = {
+    fg = "#ffff87"
+  },
+  SnacksNotifierTitleTrace = {
+    fg = "#e6e6e6"
+  },
   Sneak = {
     bg = "#fc1a70",
     bold = true,
