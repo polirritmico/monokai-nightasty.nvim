@@ -3,13 +3,14 @@ local M = {
   module = "monokai-nightasty",
   module_escaped = "monokai%-nightasty",
   colorscheme = "monokai-nightasty",
+  ---@type monokai.UserConfig
   opts = {
     style = vim.o.background,
     auto_enable_plugins = false,
     plugins = { all = true },
     cache = false,
     color_headers = true,
-    -- dark_style_background = "default",
+    -- dark_style_background = "transparent",
   },
   globals = { vim = vim },
   cache = {}, ---@type table<string, boolean>
