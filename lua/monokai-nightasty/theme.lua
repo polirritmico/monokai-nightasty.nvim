@@ -1,8 +1,6 @@
 local utils = require("monokai-nightasty.utils")
 local highlights = require("monokai-nightasty.highlights")
 
-local nvim_set_hl = vim.api.nvim_set_hl
-
 local M = {}
 
 ---@param opts monokai.Config
@@ -41,9 +39,9 @@ function M.setup(opts)
   -- Apply the highlights
   for group, hl in pairs(hlgroups) do
     if type(hl) == "string" then
-      nvim_set_hl(0, group, { link = hl })
+      vim.api.nvim_set_hl(0, group, { link = hl })
     else
-      nvim_set_hl(0, group, hl)
+      vim.api.nvim_set_hl(0, group, hl)
     end
   end
 
@@ -93,7 +91,7 @@ function M.terminal(colors, opts)
       -- HACK: In a terminal buffer fg color is handled by the "Normal" highlight.
       -- Check https://github.com/neovim/neovim/issues/26857
       local new_hl = "MonokaiNightastyTermNormal"
-      nvim_set_hl(0, new_hl, { fg = color })
+      vim.api.nvim_set_hl(0, new_hl, { fg = color })
       local group = vim.api.nvim_create_augroup("MonokaiNightasty", { clear = true })
       vim.api.nvim_create_autocmd("TermOpen", {
         group = group,
