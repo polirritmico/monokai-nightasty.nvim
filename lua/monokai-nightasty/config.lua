@@ -1,6 +1,6 @@
 local M = {}
 
-M.version = "434f6d39"
+M.version = "5777c460"
 
 ---@class monokai.Config
 ---@field dark_style_background string default, dark, transparent, #color

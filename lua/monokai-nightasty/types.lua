@@ -23,7 +23,7 @@
 ---@field color_headers? boolean Enable header colors for each header level (h1, h2, etc.)
 ---@field dark_style_background? string default, dark, transparent, #color
 ---@field dim_inactive? boolean dims inactive windows
----@field hl_styles? table Styles to be applied to selected syntax groups
+---@field hl_styles? table Styles to be applied to selected syntax groups (comments, keywords, functions, variables, floats and sidebars)
 ---@field light_style_background? string default, dark, transparent, #color
 ---@field lualine_bold? boolean Lualine headers will be bold or regular
 ---@field lualine_style? string Possible values: "dark", "light" or "default" (default follows dark/light style)
