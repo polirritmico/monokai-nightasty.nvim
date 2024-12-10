@@ -32,8 +32,10 @@ the flavorful
   lualine, indent-blankline, which-key, notify, noice, todo-comments and more.
 - Highly customizable for your coding needs.
 
+### 🚀 Supported plugins
+
 <details>
-<summary>🚀 Supported plugins</summary>
+<summary> Click to expand the list </summary>
 
 <!-- plugins:start -->
 
@@ -295,8 +297,8 @@ M.defaults = {
   },
   ---@type monokai.UserConfig
   opts = {
-    dark_style_background = "default",
-    light_style_background = "default",
+    dark_style_background = "default", -- default | dark | transparent | #<hex-color>
+    light_style_background = "default", -- default | dark | transparent | #<hex-color>
     markdown_header_marks = true,
     -- hl_styles = { comments = { italic = false } },
     terminal_colors = function(colors) return { fg = colors.fg_dark } end,
@@ -422,7 +424,8 @@ opts = {
 }
 ```
 
-> To get the highlight name, move the cursor over it and run `:Inspect`.
+> To get the highlight name, move the cursor over it and run `:Inspect` or check
+> the [plugin modules](#-supported-plugins).
 
 #### Independent light/dark theme customization:
 
@@ -483,7 +486,8 @@ straight to step 5 to apply the `on_highlights` function.
 >
 > 1. Use `:Inspect` to get info of the highlight group at the current position.
 > 2. Check the generated palettes in the [extras](#-extras).
-> 3. For plugins specifics check each module in the `highlights` directory.
+> 3. For plugins specifics check each [module](#-supported-plugins) in the
+>    `highlights` directory.
 
 ---
 

@@ -1,10 +1,11 @@
-*monokai-nightasty.nvim.txt*  For Neovim >= 0.9  Last change: 2024 December 04
+*monokai-nightasty.nvim.txt*  For Neovim >= 0.9  Last change: 2024 December 10
 
 ==============================================================================
 Table of Contents                   *monokai-nightasty.nvim-table-of-contents*
 
 1. Description                            |monokai-nightasty.nvim-description|
 2. Features                                  |monokai-nightasty.nvim-features|
+  - Supported plugins               |monokai-nightasty.nvim-supported-plugins|
 3. Requirements                          |monokai-nightasty.nvim-requirements|
 4. Installation                          |monokai-nightasty.nvim-installation|
 5. Usage/Configuration            |monokai-nightasty.nvim-usage/configuration|
@@ -41,7 +42,10 @@ vim-monokai-tasty <https://github.com/patstockwell/vim-monokai-tasty>.
     lualine, indent-blankline, which-key, notify, noice, todo-comments and more.
 - Highly customizable for your coding needs.
 
-Supported plugins ~
+
+SUPPORTED PLUGINS                   *monokai-nightasty.nvim-supported-plugins*
+
+Click to expand the list ~
 
   -----------------------------------------------------------------------
   Plugin                     Highlights Module
@@ -299,8 +303,8 @@ BASE CONFIGURATION WITH A BIT OF CUSTOMIZATION: ~
       },
       ---@type monokai.UserConfig
       opts = {
-        dark_style_background = "default",
-        light_style_background = "default",
+        dark_style_background = "default", -- default | dark | transparent | #<hex-color>
+        light_style_background = "default", -- default | dark | transparent | #<hex-color>
         markdown_header_marks = true,
         -- hl_styles = { comments = { italic = false } },
         terminal_colors = function(colors) return { fg = colors.fg_dark } end,
@@ -421,7 +425,8 @@ Simple use the `on_highlights` option:
 <
 
 
-  To get the highlight name, move the cursor over it and run `:Inspect`.
+  To get the highlight name, move the cursor over it and run `:Inspect` or check
+  the |monokai-nightasty.nvim-plugin-modules|.
 
 INDEPENDENT LIGHT/DARK THEME CUSTOMIZATION: ~
 
@@ -481,7 +486,8 @@ straight to step 5 to apply the `on_highlights` function.
   alternatives:
   1. Use `:Inspect` to get info of the highlight group at the current position.
   2. Check the generated palettes in the |monokai-nightasty.nvim-extras|.
-  3. For plugins specifics check each module in the `highlights` directory.
+  3. For plugins specifics check each |monokai-nightasty.nvim-module| in the
+  `highlights` directory.
 ------------------------------------------------------------------------------
 
 ==============================================================================
