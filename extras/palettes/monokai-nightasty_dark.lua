@@ -718,7 +718,7 @@ local highlights = {
     italic = true
   },
   Conceal = {
-    fg = "#585858"
+    fg = "#bcbcbc"
   },
   Conditional = {
     fg = "#fc1a70"

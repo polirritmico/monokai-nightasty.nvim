@@ -1,6 +1,6 @@
 local M = {}
 
-M.version = "81e40e26"
+M.version = "9739349e"
 
 ---@class monokai.Config
 ---@field dark_style_background string default, dark, transparent, #color
@@ -28,7 +28,7 @@ M.defaults = {
     keywords = { italic = false },
     functions = {},
     variables = {},
-    -- Background styles for sidebars (panels) and floating windows:
+    -- Background styles for floating windows and sidebars (panels):
     floats = "default", -- default, dark, transparent
     sidebars = "default", -- default, dark, transparent
   },
