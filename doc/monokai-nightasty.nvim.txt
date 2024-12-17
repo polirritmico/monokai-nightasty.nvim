@@ -38,14 +38,14 @@ vim-monokai-tasty <https://github.com/patstockwell/vim-monokai-tasty>.
     experience.
 - Avoid eye strain by seamlessly toggling between clear and dark styles at your
     fingertips, whether you’re at your station or out in the wild.
+- Highly customizable for your coding needs.
 - Support for popular plugins like treesitter, cmp, telescope, gitsigns,
     lualine, indent-blankline, which-key, notify, noice, todo-comments and more.
-- Highly customizable for your coding needs.
 
 
 SUPPORTED PLUGINS                   *monokai-nightasty.nvim-supported-plugins*
 
-Click to expand the list ~
+Click to expand ~
 
   -----------------------------------------------------------------------
   Plugin                     Highlights Module
@@ -236,7 +236,7 @@ Monokai Nightasty comes with these defaults:
         keywords = { italic = false },
         functions = {},
         variables = {},
-        -- Background styles for sidebars (panels) and floating windows:
+        -- Background styles for floating windows and sidebars (panels):
         floats = "default", -- default, dark, transparent
         sidebars = "default", -- default, dark, transparent
       },
@@ -303,8 +303,8 @@ BASE CONFIGURATION WITH A BIT OF CUSTOMIZATION: ~
       },
       ---@type monokai.UserConfig
       opts = {
-        dark_style_background = "default", -- default | dark | transparent | #<hex-color>
-        light_style_background = "default", -- default | dark | transparent | #<hex-color>
+        dark_style_background = "default", -- default | dark | transparent | #color
+        light_style_background = "default", -- default | dark | transparent | #color
         markdown_header_marks = true,
         -- hl_styles = { comments = { italic = false } },
         terminal_colors = function(colors) return { fg = colors.fg_dark } end,
@@ -337,10 +337,11 @@ FULL CONFIGURATION: ~
         lualine_bold = true, -- Lualine a and z sections font width
         lualine_style = "default", -- "dark", "light" or "default" (Follows dark/light style)
         markdown_header_marks = true, -- Add headers marks highlights (the `#` character) to Treesitter highlight query
-        -- Style to be applied to different syntax groups. See `:help nvim_set_hl`
+        -- Style to be applied to selected syntax groups. See `:help nvim_set_hl`
         hl_styles = {
           keywords = { italic = true },
           comments = { italic = true },
+          floats = "dark",
         },
     
         -- This also could be a table like this: `terminal_colors = { Normal = { fg = "#e6e6e6" } }`
@@ -351,15 +352,15 @@ FULL CONFIGURATION: ~
         --- You can override specific color/highlights. Theme color values
         --- in `extras/palettes`. Also could be any hex RGB color you like.
         on_colors = function(colors)
-          -- Custom color only for light theme
-          local current_is_light = vim.o.background == "light"
-          colors.comment = current_is_light and "#2d7e79" or colors.grey
-    
-          -- Custom color only for dark theme
-          colors.border = not current_is_light and colors.magenta or colors.border
-    
-          -- Custom lualine normal color
-          colors.lualine.normal_bg = current_is_light and "#7ebd00" or colors.green
+          if vim.o.background == "light" then
+            -- Custom colors for light theme
+            colors.comment = "#2d7e79"
+            colors.lualine.normal_bg = "#7ebd00"
+          else
+            -- Custom colors for dark theme
+            colors.border = colors.magenta
+            colors.lualine.normal_bg = colors.green
+          end
         end,
     
         on_highlights = function(highlights, colors)
