@@ -1,3 +1,4 @@
+local util = require("monokai-nightasty.utils")
 local M = {}
 
 M.url = "https://github.com/"
@@ -16,7 +17,7 @@ function M.get(c)
     ["@lsp.type.escapeSequence"] = "@string.escape",
     ["@lsp.type.formatSpecifier"] = "@markup.list",
     ["@lsp.type.generic"] = "@variable",
-    -- ["@lsp.type.interface"] = { fg = util.lighten(c.blue, 0.7) },
+    ["@lsp.type.interface"] = { fg = util.lighten(c.blue, 0.6) },
     ["@lsp.type.keyword"] = "@keyword",
     ["@lsp.type.lifetime"] = "@storageclass",
     ["@lsp.type.namespace"] = "@module",
@@ -41,8 +42,8 @@ function M.get(c)
     ["@lsp.typemod.operator.injected"] = "Operator",
     ["@lsp.typemod.string.injected"] = "@string",
     ["@lsp.typemod.struct.defaultLibrary"] = "@type.builtin",
-    -- ["@lsp.typemod.type.defaultLibrary"] = {},
-    -- ["@lsp.typemod.typeAlias.defaultLibrary"] = {},
+    ["@lsp.typemod.type.defaultLibrary"] = { fg = c.blue_alt },
+    ["@lsp.typemod.typeAlias.defaultLibrary"] = { fg = c.blue_alt },
     ["@lsp.typemod.variable.callable"] = "@function",
     ["@lsp.typemod.variable.defaultLibrary"] = "@variable.builtin",
     ["@lsp.typemod.variable.injected"] = "@variable",
