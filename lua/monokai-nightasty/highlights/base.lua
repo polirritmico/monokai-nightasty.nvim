@@ -9,7 +9,7 @@ function M.get(c, opts)
   return {
     ColorColumn = { bg = c.bg_columns }, -- used for the columns set with 'colorcolumn'
     Comment = { fg = c.comment, style = opts.hl_styles.comments }, -- any comment
-    Conceal = {}, -- Placeholder characters substituted for concealed text (see 'conceallevel')
+    Conceal = { fg = c.grey_medium }, -- Placeholder characters substituted for concealed text (see 'conceallevel')
     CurSearch = "IncSearch",
     Cursor = { fg = c.bg, bg = c.blue }, -- character under the cursor
     CursorColumn = { bg = c.bg_highlight }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
