@@ -11,6 +11,7 @@ local M = {
     cache = false,
     color_headers = true,
     -- dark_style_background = "transparent",
+    -- hl_styles = {},
   },
   globals = { vim = vim },
   cache = {}, ---@type table<string, boolean>

@@ -1,17 +1,17 @@
 local M = {}
 
-M.version = "e6e6edcc"
+M.version = "507ba2da"
 
 ---@class monokai.Config
----@field dark_style_background string default, dark, transparent, #color
----@field light_style_background string default, dark, transparent, #color
+---@field dark_style_background monokai.BackgroundConfig default, dark, transparent, #color
+---@field light_style_background monokai.BackgroundConfig default, dark, transparent, #color
 ---@field on_colors fun(colors: ColorScheme)
 ---@field on_highlights fun(highlights: monokai.Highlights, colors: ColorScheme)
----@field hl_styles table Styles to be applied to selected syntax groups
+---@field hl_styles monokai.HighlightStylesConfig Styles to be applied to selected syntax groups
 ---@field color_headers boolean Enable header colors for each header level (h1, h2, etc.)
 ---@field dim_inactive boolean dims inactive windows
 ---@field lualine_bold boolean Lualine headers will be bold or regular
----@field lualine_style string Possible values: "dark", "light" or "default" (default follows dark/light style)
+---@field lualine_style monokai.LualineStyleConfig Possible values: "dark", "light" or "default" (default follows dark/light style)
 ---@field markdown_header_marks boolean Add headers marks highlights (the `#` character) to Treesitter highlight query
 ---@field terminal_colors boolean|table|fun(colors: ColorScheme):table
 ---@field auto_enable_plugins boolean Automatically enable supported plugins through lazy.nvim
