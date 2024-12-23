@@ -188,15 +188,15 @@ require("monokai-nightasty").toggle()
 
 ```lua
 ---@class monokai.Config
----@field dark_style_background string default, dark, transparent, #color
----@field light_style_background string default, dark, transparent, #color
+---@field dark_style_background monokai.BackgroundConfig default, dark, transparent, #RRGGBB
+---@field light_style_background monokai.BackgroundConfig default, dark, transparent, #RRGGBB
 ---@field on_colors fun(colors: ColorScheme)
 ---@field on_highlights fun(highlights: monokai.Highlights, colors: ColorScheme)
----@field hl_styles table Styles to be applied to selected syntax groups
+---@field hl_styles monokai.HighlightStylesConfig Styles to be applied to selected syntax groups
 ---@field color_headers boolean Enable header colors for each header level (h1, h2, etc.)
 ---@field dim_inactive boolean dims inactive windows
 ---@field lualine_bold boolean Lualine headers will be bold or regular
----@field lualine_style string Possible values: "dark", "light" or "default" (default follows dark/light style)
+---@field lualine_style monokai.LualineStyleConfig Possible values: "dark", "light" or "default" (default follows dark/light style)
 ---@field markdown_header_marks boolean Add headers marks highlights (the `#` character) to Treesitter highlight query
 ---@field terminal_colors boolean|table|fun(colors: ColorScheme):table
 ---@field auto_enable_plugins boolean Automatically enable supported plugins through lazy.nvim
@@ -218,10 +218,10 @@ Monokai Nightasty comes with these defaults:
 
 ````lua
 M.defaults = {
-  dark_style_background = "default", -- default, dark, transparent, #color
-  light_style_background = "default", -- default, dark, transparent, #color
+  dark_style_background = "default", -- default, dark, transparent, #RRGGBB
+  light_style_background = "default", -- default, dark, transparent, #RRGGBB
   hl_styles = {
-    -- Style to be applied to selected syntax groups: (See `:help nvim_set_hl` for supported keys)
+    -- Custom styles for this groups: (See `:help nvim_set_hl`, Parameters, {val} for supported keys)
     comments = { italic = true },
     keywords = { italic = false },
     functions = {},
@@ -296,10 +296,11 @@ M.defaults = {
   keys = {
     { "<leader>tt", "<Cmd>MonokaiToggleLight<CR>", desc = "Monokai-Nightasty: Toggle dark/light theme." },
   },
+  ---@module "monokai-nightasty"
   ---@type monokai.UserConfig
   opts = {
-    dark_style_background = "default", -- default | dark | transparent | #color
-    light_style_background = "default", -- default | dark | transparent | #color
+    dark_style_background = "default", -- default | dark | transparent | #RRGGBB
+    light_style_background = "default", -- default | dark | transparent | #RRGGBB
     markdown_header_marks = true,
     -- hl_styles = { comments = { italic = false } },
     terminal_colors = function(colors) return { fg = colors.fg_dark } end,
@@ -330,10 +331,11 @@ return {
   keys = {
     { "<leader>tt", "<Cmd>MonokaiToggleLight<CR>", desc = "Monokai-Nightasty: Toggle dark/light theme." },
   },
+  ---@module "monokai-nightasty"
   ---@type monokai.UserConfig
   opts = {
-    dark_style_background = "transparent", -- default, dark, transparent, #color
-    light_style_background = "default", -- default, dark, transparent, #color
+    dark_style_background = "transparent", -- default, dark, transparent, #RRGGBB
+    light_style_background = "default", -- default, dark, transparent, #RRGGBB
     color_headers = true, -- Enable header colors for each header level (h1, h2, etc.)
     lualine_bold = true, -- Lualine a and z sections font width
     lualine_style = "default", -- "dark", "light" or "default" (Follows dark/light style)

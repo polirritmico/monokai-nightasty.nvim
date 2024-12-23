@@ -1,10 +1,10 @@
 local M = {}
 
-M.version = "507ba2da"
+M.version = "772c5134"
 
 ---@class monokai.Config
----@field dark_style_background monokai.BackgroundConfig default, dark, transparent, #color
----@field light_style_background monokai.BackgroundConfig default, dark, transparent, #color
+---@field dark_style_background monokai.BackgroundConfig default, dark, transparent, #RRGGBB
+---@field light_style_background monokai.BackgroundConfig default, dark, transparent, #RRGGBB
 ---@field on_colors fun(colors: ColorScheme)
 ---@field on_highlights fun(highlights: monokai.Highlights, colors: ColorScheme)
 ---@field hl_styles monokai.HighlightStylesConfig Styles to be applied to selected syntax groups
@@ -20,10 +20,10 @@ M.version = "507ba2da"
 ---@field transparent? boolean Used by highlights to set transparent bg
 ---@field style? string Set the dark/light theme at startup
 M.defaults = {
-  dark_style_background = "default", -- default, dark, transparent, #color
-  light_style_background = "default", -- default, dark, transparent, #color
+  dark_style_background = "default", -- default, dark, transparent, #RRGGBB
+  light_style_background = "default", -- default, dark, transparent, #RRGGBB
   hl_styles = {
-    -- Style to be applied to selected syntax groups: (See `:help nvim_set_hl` for supported keys)
+    -- Custom styles for this groups: (See `:help nvim_set_hl`, Parameters, {val} for supported keys)
     comments = { italic = true },
     keywords = { italic = false },
     functions = {},
