@@ -1,3 +1,5 @@
+local utils = require("monokai-nightasty.utils")
+
 local M = {}
 
 M.url = "https://github.com/saghen/blink.cmp"
@@ -18,7 +20,7 @@ function M.get(c)
     BlinkCmpGhostText = { fg = c.grey_medium, bg = c.none }, -- Preview item with ghost text (default: "NonText")
   }
   -- BlinkCmpKind<kind>	Special	Kind icon/text of the completion item
-  require("monokai-nightasty.highlights.kinds").kinds(ret, "BlinkCmpKind%s")
+  utils.generate_kinds(ret, "BlinkCmpKind%s")
   return ret
 end
 

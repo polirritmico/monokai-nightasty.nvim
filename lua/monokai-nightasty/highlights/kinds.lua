@@ -1,6 +1,7 @@
 local M = {}
 
-local kinds_links = {
+---Base groups used to generate kind highlights by other plugins
+M.base_kinds = {
   Array = "@punctuation.bracket",
   Boolean = "Boolean",
   Class = "@type.builtin",
@@ -37,24 +38,13 @@ local kinds_links = {
   Variable = "@variable",
 }
 
----@param hl? monokai.Highlights
----@param pattern? string
-function M.kinds(hl, pattern)
-  hl = hl or {}
-  for kind, link in pairs(kinds_links) do
-    local base = "LspKind" .. kind
-    if pattern then
-      hl[pattern:format(kind)] = base
-    else
-      hl[base] = link
-    end
-  end
-  return hl
-end
-
 ---@type monokai.HighlightsFn
 function M.get()
-  return M.kinds()
+  local hl = {}
+  for kind, link in pairs(M.base_kinds) do
+    hl["LspKind" .. kind] = link
+  end
+  return hl
 end
 
 return M

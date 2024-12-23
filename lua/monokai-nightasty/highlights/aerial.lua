@@ -1,3 +1,5 @@
+local utils = require("monokai-nightasty.utils")
+
 local M = {}
 
 M.url = "https://github.com/stevearc/aerial.nvim"
@@ -9,7 +11,7 @@ function M.get(c)
     AerialGuide = { fg = c.fg_gutter },
     AerialLine = "LspInlayHint",
   }
-  require("monokai-nightasty.highlights.kinds").kinds(ret, "Aerial%sIcon")
+  utils.generate_kinds(ret, "Aerial%sIcon")
   return ret
 end
 

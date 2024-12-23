@@ -58,6 +58,25 @@ function M.lighten(hex, amount, fg)
   return M.blend(hex, fg or M.fg, amount)
 end
 
+---Generate kind highlight groups based on the pattern.
+---For the base link definitions check highlights.kinds
+---@param hl monokai.Highlights plugin highlights to add the kind groups
+---@param pattern string pattern for the highlight group names
+---@return monokai.Highlights -- highlight groups with the expanded kinds
+function M.generate_kinds(hl, pattern)
+  hl = hl or {}
+  local base_kinds = require("monokai-nightasty.highlights.kinds").base_kinds
+  for kind, link in pairs(base_kinds) do
+    local base = "LspKind" .. kind
+    if pattern then
+      hl[pattern:format(kind)] = base
+    else
+      hl[base] = link
+    end
+  end
+  return hl
+end
+
 ---Get the hex color value from the given palette
 ---@param palette string
 ---@param color string

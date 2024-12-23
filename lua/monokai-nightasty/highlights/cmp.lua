@@ -1,3 +1,5 @@
+local utils = require("monokai-nightasty.utils")
+
 local M = {}
 
 M.url = "https://github.com/hrsh7th/nvim-cmp"
@@ -15,7 +17,7 @@ function M.get(c)
     CmpItemAbbrMatchFuzzy = { fg = c.magenta, bg = c.none }, -- Matches ahead current
     CmpItemMenu = { fg = c.comment, bg = c.none }, -- The [source of the suggestion, LSP, luasnip...]
   }
-  require("monokai-nightasty.highlights.kinds").kinds(ret, "CmpItemKind%s")
+  utils.generate_kinds(ret, "CmpItemKind%s")
   return ret
 end
 

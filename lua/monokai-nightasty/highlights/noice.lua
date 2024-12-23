@@ -1,3 +1,5 @@
+local utils = require("monokai-nightasty.utils")
+
 local M = {}
 
 M.url = "https://github.com/folke/noice.nvim"
@@ -12,7 +14,7 @@ function M.get(c)
     NoiceLspProgressTitle = { fg = c.orange, italic = true }, -- Progress operation text
     NoiceMini = { bg = c.bg_float },
   }
-  require("monokai-nightasty.highlights.kinds").kinds(ret, "NoiceCompletionItemKind%s")
+  utils.generate_kinds(ret, "NoiceCompletionItemKind%s")
   return ret
 end
 
