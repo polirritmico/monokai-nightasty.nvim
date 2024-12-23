@@ -415,6 +415,80 @@ local highlights = {
   AlphaShortcut = {
     fg = "#6054d0"
   },
+  BlinkCmpGhostText = {
+    bg = "NONE",
+    fg = "#a5a5a5"
+  },
+  BlinkCmpKind = {
+    bg = "NONE",
+    fg = "#4fb000"
+  },
+  BlinkCmpKindArray = "LspKindArray",
+  BlinkCmpKindBoolean = "LspKindBoolean",
+  BlinkCmpKindClass = "LspKindClass",
+  BlinkCmpKindColor = "LspKindColor",
+  BlinkCmpKindConstant = "LspKindConstant",
+  BlinkCmpKindConstructor = "LspKindConstructor",
+  BlinkCmpKindEnum = "LspKindEnum",
+  BlinkCmpKindEnumMember = "LspKindEnumMember",
+  BlinkCmpKindEvent = "LspKindEvent",
+  BlinkCmpKindField = "LspKindField",
+  BlinkCmpKindFile = "LspKindFile",
+  BlinkCmpKindFolder = "LspKindFolder",
+  BlinkCmpKindFunction = "LspKindFunction",
+  BlinkCmpKindInterface = "LspKindInterface",
+  BlinkCmpKindKey = "LspKindKey",
+  BlinkCmpKindKeyword = "LspKindKeyword",
+  BlinkCmpKindMethod = "LspKindMethod",
+  BlinkCmpKindModule = "LspKindModule",
+  BlinkCmpKindNamespace = "LspKindNamespace",
+  BlinkCmpKindNull = "LspKindNull",
+  BlinkCmpKindNumber = "LspKindNumber",
+  BlinkCmpKindObject = "LspKindObject",
+  BlinkCmpKindOperator = "LspKindOperator",
+  BlinkCmpKindPackage = "LspKindPackage",
+  BlinkCmpKindProperty = "LspKindProperty",
+  BlinkCmpKindReference = "LspKindReference",
+  BlinkCmpKindSnippet = "LspKindSnippet",
+  BlinkCmpKindString = "LspKindString",
+  BlinkCmpKindStruct = "LspKindStruct",
+  BlinkCmpKindText = "LspKindText",
+  BlinkCmpKindTypeParameter = "LspKindTypeParameter",
+  BlinkCmpKindUnit = "LspKindUnit",
+  BlinkCmpKindValue = "LspKindValue",
+  BlinkCmpKindVariable = "LspKindVariable",
+  BlinkCmpLabel = {
+    bg = "NONE",
+    fg = "#4c4c4c"
+  },
+  BlinkCmpLabelDeprecated = {
+    bg = "NONE",
+    fg = "#7f7f7f",
+    strikethrough = true
+  },
+  BlinkCmpLabelDescription = "BlinkCmpLabelDetail",
+  BlinkCmpLabelDetail = {
+    fg = "#7f7f7f",
+    italic = true
+  },
+  BlinkCmpLabelMatch = {
+    fg = "#ff004b"
+  },
+  BlinkCmpMenu = {
+    bg = "#e3e3e3",
+    fg = "#7f7f7f"
+  },
+  BlinkCmpMenuBorder = {
+    bg = "#e3e3e3",
+    fg = "#4c4c4c"
+  },
+  BlinkCmpMenuSelection = {
+    bg = "#f1f1f1"
+  },
+  BlinkCmpSource = {
+    bg = "NONE",
+    fg = "#7f7f7f"
+  },
   Bold = {
     bold = true
   },

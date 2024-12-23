@@ -8,6 +8,7 @@ M.implemented_plugins = {
   ["ale"] = "ale",
   ["alpha-nvim"] = "alpha",
   ["barbar.nvim"] = "barbar",
+  ["blink.cmp"] = "blink",
   ["bufferline.nvim"] = "bufferline",
   ["dashboard-nvim"] = "dashboard",
   ["flash.nvim"] = "flash",
