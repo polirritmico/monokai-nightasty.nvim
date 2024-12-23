@@ -1,4 +1,4 @@
-local util = require("monokai-nightasty.utils")
+local utils = require("monokai-nightasty.utils")
 local M = {}
 
 M.url = "https://github.com/"
@@ -17,7 +17,7 @@ function M.get(c)
     ["@lsp.type.escapeSequence"] = "@string.escape",
     ["@lsp.type.formatSpecifier"] = "@markup.list",
     ["@lsp.type.generic"] = "@variable",
-    ["@lsp.type.interface"] = { fg = util.lighten(c.blue, 0.6) },
+    ["@lsp.type.interface"] = { fg = utils.lighten(c.blue, 0.6) },
     ["@lsp.type.keyword"] = "@keyword",
     ["@lsp.type.lifetime"] = "@storageclass",
     ["@lsp.type.namespace"] = "@module",
