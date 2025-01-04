@@ -28,7 +28,7 @@ local colors = {
     add = "#3d4725",
     change = "#25394b",
     delete = "#4b2533",
-    text = "#165995"
+    text = "#1e476b"
   },
   error = "#ff005f",
   fg = "#ffffff",
@@ -994,7 +994,7 @@ local highlights = {
     fg = "#fc1a70"
   },
   DiffText = {
-    bg = "#165995"
+    bg = "#1e476b"
   },
   Directory = {
     fg = "#af87ff"

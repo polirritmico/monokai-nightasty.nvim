@@ -67,7 +67,7 @@ function M.setup(opts)
     add = utils.darken(colors.green, 0.15),
     delete = utils.darken(colors.red, 0.15),
     change = utils.darken(colors.blue_alt, 0.15),
-    text = utils.darken(colors.blue_alt, 0.5),
+    text = utils.darken(colors.blue_alt, 0.3),
   }
 
   -- Lualine
