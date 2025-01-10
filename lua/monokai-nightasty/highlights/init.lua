@@ -24,6 +24,7 @@ M.implemented_plugins = {
   ["mini.hipatterns"] = "mini_hipatterns",
   ["mini.icons"] = "mini_icons",
   ["mini.indentscope"] = "mini_indentscope",
+  ["mini.statusline"] = "mini_statusline",
   ["neo-tree.nvim"] = "neo-tree",
   ["neogit"] = "neogit",
   ["neotest"] = "neotest",

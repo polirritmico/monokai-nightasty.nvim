@@ -1408,6 +1408,53 @@ local highlights = {
     fg = "#ffc166",
     nocombine = true
   },
+  MiniStatuslineDevinfo = {
+    bg = "#313131",
+    fg = "#a4e400"
+  },
+  MiniStatuslineFileinfo = {
+    bg = "#313131",
+    fg = "#a4e400"
+  },
+  MiniStatuslineFilename = {
+    bg = "#444444",
+    fg = "#e6e6e6"
+  },
+  MiniStatuslineInactive = {
+    bg = "#313131",
+    bold = true,
+    fg = "#3e3e3e"
+  },
+  MiniStatuslineModeCommand = {
+    bg = "#000001",
+    bold = true,
+    fg = "#a4e400"
+  },
+  MiniStatuslineModeInsert = {
+    bg = "#f6f557",
+    bold = true,
+    fg = "#000001"
+  },
+  MiniStatuslineModeNormal = {
+    bg = "#a4e400",
+    bold = true,
+    fg = "#000001"
+  },
+  MiniStatuslineModeOther = {
+    bg = "#000001",
+    bold = true,
+    fg = "#0087ff"
+  },
+  MiniStatuslineModeReplace = {
+    bg = "#ff005f",
+    bold = true,
+    fg = "#000001"
+  },
+  MiniStatuslineModeVisual = {
+    bg = "#af87ff",
+    bold = true,
+    fg = "#000001"
+  },
   ModeMsg = {
     bold = true,
     fg = "#e6e6e6"

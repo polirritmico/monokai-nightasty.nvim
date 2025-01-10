@@ -1,4 +1,4 @@
-*monokai-nightasty.nvim.txt*   For Neovim >= 0.9  Last change: 2025 January 04
+*monokai-nightasty.nvim.txt*   For Neovim >= 0.9  Last change: 2025 January 10
 
 ==============================================================================
 Table of Contents                   *monokai-nightasty.nvim-table-of-contents*
@@ -89,6 +89,8 @@ Click to expand ~
   mini.icons                 mini_icons
 
   mini.indentscope           mini_indentscope
+
+  mini.statusline            mini_statusline
 
   neo-tree.nvim              neo-tree
 
