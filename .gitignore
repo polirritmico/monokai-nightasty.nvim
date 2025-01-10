@@ -2,3 +2,4 @@ Session.vim
 .Session.vim
 misc/*
 tests/
+doc/tags
