@@ -131,16 +131,8 @@ function M.update_readme_content(sections, verbose)
   utils.overwrite(M.readme_file, readme)
 end
 
----@return boolean
-function M.running_from_dev()
-  local lazy_root_path = require("lazy.core.config").options.root
-  local monokai_path = require("monokai-nightasty.utils").me
-
-  return monokai_path:match(lazy_root_path) == nil
-end
-
 function M.update_readme()
-  if not M.running_from_dev() then
+  if not utils.running_from_dev() then
     local msg = "Docs generation shouldn't be executed from the lazy.nvim data path."
       .. "\nAborting..."
     vim.notify(msg, vim.log.levels.WARN)

@@ -174,6 +174,19 @@ function M.resolve_style_settings(hl)
   return hl
 end
 
+---File generation (extras or docs) should be executed from the local
+---development clone of the repository, rather than from the cloned repository
+---of the lazy.nvim plugin installation, as the latter is likely to contain
+---the previous release code and not the actual changes that need to be updated.
+---This function performs that check.
+---@return boolean
+function M.running_from_dev()
+  local lazy_root_path = require("lazy.core.config").options.root
+  local monokai_path = require("monokai-nightasty.utils").me
+
+  return monokai_path:match(lazy_root_path) == nil
+end
+
 -----------
 -- Cache --
 -----------
