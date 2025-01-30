@@ -39,6 +39,7 @@ M.extras = {
     label = "Tmux",
     both_styles = false,
     url = "https://github.com/tmux/tmux/wiki",
+    alt = { "rounded" },
   },
   {
     name = "zathura",

@@ -1,4 +1,4 @@
-*monokai-nightasty.nvim.txt*   For Neovim >= 0.9  Last change: 2025 January 10
+*monokai-nightasty.nvim.txt*   For Neovim >= 0.9  Last change: 2025 January 30
 
 ==============================================================================
 Table of Contents                   *monokai-nightasty.nvim-table-of-contents*
@@ -536,6 +536,8 @@ Just source the theme file:
 
 >bash
     source-file 'path/to/monokai-nightasty_dark.tmux'
+    # or the rounded style:
+    source-file 'path/to/monokai-nightasty_dark-rounded.tmux'
 <
 
 

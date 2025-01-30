@@ -548,6 +548,8 @@ Just source the theme file:
 
 ```bash
 source-file 'path/to/monokai-nightasty_dark.tmux'
+# or the rounded style:
+source-file 'path/to/monokai-nightasty_dark-rounded.tmux'
 ```
 
 #### Fix `undercurls` in [Tmux](https://github.com/tmux/tmux)
