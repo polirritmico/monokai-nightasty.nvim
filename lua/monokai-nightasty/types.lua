@@ -16,6 +16,7 @@
 ---@field label string
 ---@field both_styles boolean
 ---@field url string
+---@field alt? string[]
 
 ---@alias monokai.LualineStyleConfig
 ---| "default" Follows current style colors (dark or light)

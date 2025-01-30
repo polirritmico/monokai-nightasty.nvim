@@ -99,6 +99,21 @@ function M.generate_extra_files(silent)
 
     utils.mkdir_parent(target_dir)
     utils.write_file(extra_mod.generate(colors), target_dir)
+
+    if info.alt then
+      for _, alt in pairs(info.alt) do
+        local alt_target_filepath = string.format(
+          "%s%s/monokai-nightasty_%s-%s%s",
+          base_dir,
+          info.name,
+          style,
+          alt,
+          info.ext
+        )
+        P(alt_target_filepath)
+        utils.write_file(extra_mod[alt](colors), alt_target_filepath)
+      end
+    end
   end
 
   for _, info in ipairs(M.extras) do
@@ -119,6 +134,14 @@ end
 
 --- Run this function through require("monokai-nightasty.extras").setup() to
 --- generate the files into 'extras/...'
-M.setup = M.generate_extra_files
+M.setup = function()
+  if not utils.running_from_dev() then
+    local msg = "Extras generation shouldn't be executed from the lazy.nvim data path."
+      .. "\nAborting..."
+    vim.notify(msg, vim.log.levels.WARN)
+    return
+  end
+  M.generate_extra_files()
+end
 
 return M
