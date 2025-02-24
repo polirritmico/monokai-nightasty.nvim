@@ -2179,6 +2179,90 @@ local highlights = {
   },
   SagaTitle = "Title",
   SagaToggle = "Delimiter",
+  ScrollbarCursor = {
+    bg = "#404040",
+    fg = "#e6e6e6"
+  },
+  ScrollbarCursorHandle = {
+    bg = "#404040",
+    fg = "#dedede"
+  },
+  ScrollbarError = {
+    bg = "NONE",
+    fg = "#ff005f"
+  },
+  ScrollbarErrorHandle = {
+    bg = "#404040",
+    fg = "#ff005f"
+  },
+  ScrollbarGitAdd = {
+    bg = "NONE",
+    fg = "#a4e400"
+  },
+  ScrollbarGitAddHandle = {
+    bg = "#404040",
+    fg = "#a4e400"
+  },
+  ScrollbarGitChange = {
+    bg = "NONE",
+    fg = "#ff9700"
+  },
+  ScrollbarGitChangeHandle = {
+    bg = "#404040",
+    fg = "#ff9700"
+  },
+  ScrollbarGitDelete = {
+    bg = "NONE",
+    fg = "#fc1a70"
+  },
+  ScrollbarGitDeleteHandle = {
+    bg = "#404040",
+    fg = "#fc1a70"
+  },
+  ScrollbarHandle = {
+    bg = "#404040",
+    fg = "NONE"
+  },
+  ScrollbarHint = {
+    bg = "NONE",
+    fg = "#83dc78"
+  },
+  ScrollbarHintHandle = {
+    bg = "#404040",
+    fg = "#83dc78"
+  },
+  ScrollbarInfo = {
+    bg = "NONE",
+    fg = "#0087ff"
+  },
+  ScrollbarInfoHandle = {
+    bg = "#404040",
+    fg = "#0087ff"
+  },
+  ScrollbarMisc = {
+    bg = "NONE",
+    fg = "#ffffff"
+  },
+  ScrollbarMiscHandle = {
+    bg = "#404040",
+    fg = "#ffff87"
+  },
+  ScrollbarSearch = {
+    bg = "NONE",
+    fg = "#af87ff"
+  },
+  ScrollbarSearchHandle = {
+    bg = "#404040",
+    fg = "#af87ff"
+  },
+  ScrollbarWarn = {
+    bg = "NONE",
+    fg = "#ff9700"
+  },
+  ScrollbarWarnHandle = {
+    bg = "#404040",
+    fg = "#ff9700"
+  },
   Search = {
     bg = "#ffff87",
     bold = true,

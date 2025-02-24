@@ -1,6 +1,6 @@
 local M = {}
 
-M.version = "40220b11"
+M.version = "2d15c8a4"
 
 ---@class monokai.Config
 ---@field dark_style_background monokai.BackgroundConfig default, dark, transparent, #RRGGBB
@@ -81,7 +81,7 @@ M.defaults = {
 ---@type monokai.Config
 M.options = nil
 
----@param options? monokai.Config|monokai.UserConfig
+---@param options? monokai.UserConfig|monokai.Config
 function M.setup(options)
   M.options = vim.tbl_deep_extend("force", {}, M.defaults, options or {})
 end

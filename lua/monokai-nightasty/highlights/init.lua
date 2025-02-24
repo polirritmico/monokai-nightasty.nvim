@@ -33,6 +33,7 @@ M.implemented_plugins = {
   ["nvim-dap-ui"] = "dapui",
   ["nvim-navic"] = "navic",
   ["nvim-notify"] = "notify",
+  ["nvim-scrollbar"] = "scrollbar",
   ["nvim-tree.lua"] = "nvim-tree",
   ["nvim-treesitter-context"] = "treesitter-context",
   ["rainbow-delimiters.nvim"] = "rainbow",
