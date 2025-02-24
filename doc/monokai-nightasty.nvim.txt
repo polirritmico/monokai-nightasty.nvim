@@ -1,4 +1,4 @@
-*monokai-nightasty.nvim.txt*   For Neovim >= 0.9  Last change: 2025 January 30
+*monokai-nightasty.nvim.txt*  For Neovim >= 0.9  Last change: 2025 February 24
 
 ==============================================================================
 Table of Contents                   *monokai-nightasty.nvim-table-of-contents*
@@ -107,6 +107,8 @@ Click to expand ~
   nvim-navic                 navic
 
   nvim-notify                notify
+
+  nvim-scrollbar             scrollbar
 
   nvim-tree.lua              nvim-tree
 
@@ -415,7 +417,8 @@ Simple use the `on_colors` option:
     }
 <
 
-This would be applied before the highlights generation.
+This would be applied before the highlights generation, so any highlight group
+that uses the color is going to use the new color.
 
 
 CHANGE A SPECIFIC HIGHLIGHT: ~

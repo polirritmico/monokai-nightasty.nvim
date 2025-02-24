@@ -70,6 +70,7 @@ the flavorful
 | [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)                                | [dapui](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights/dapui.lua)                           |
 | [nvim-navic](https://github.com/SmiteshP/nvim-navic)                                  | [navic](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights/navic.lua)                           |
 | [nvim-notify](https://github.com/rcarriga/nvim-notify)                                | [notify](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights/notify.lua)                         |
+| [nvim-scrollbar](https://github.com/petertriho/nvim-scrollbar)                        | [scrollbar](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights/scrollbar.lua)                   |
 | [nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)                           | [nvim-tree](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights/nvim-tree.lua)                   |
 | [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context) | [treesitter-context](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights/treesitter-context.lua) |
 | [rainbow-delimiters.nvim](https://github.com/HiPhish/rainbow-delimiters.nvim)         | [rainbow](https://github.com/polirritmico/monokai-nightasty.nvim/tree/main/lua/monokai-nightasty/highlights/rainbow.lua)                       |
@@ -414,7 +415,8 @@ opts = {
 }
 ```
 
-This would be applied before the highlights generation.
+This would be applied before the highlights generation, so any highlight group
+that uses the color is going to use the new color.
 
 #### Change a specific highlight:
 
