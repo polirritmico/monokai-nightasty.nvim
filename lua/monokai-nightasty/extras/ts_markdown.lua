@@ -12,6 +12,9 @@ end
 ---@type boolean To avoid that set_headers_marks run multiple times
 M.set_headers_marks_was_executed = false
 
+---@type boolean To avoid applying the query multiple times (one per event)
+M.set_query_was_executed = false
+
 ---Add markdown header marks into Treesitter highlights queries
 -- HACK: Restore markdown header markers:
 -- https://github.com/nvim-treesitter/nvim-treesitter/issues/6260
@@ -26,7 +29,11 @@ function M.set_headers_marks()
     group = vim.api.nvim_create_augroup("MonokaiNightastyTSfix", {}),
     once = true,
     desc = "Enable Treesitter `#` headers marks",
-    callback = function(_)
+    callback = function(ev)
+      if M.set_query_was_executed then
+        return
+      end
+
       local ok, md_query = pcall(M.read_markdown_highlights_query)
       if not ok then
         local msg = "monokai-nightasty: Can't access markdown highlights query file."
@@ -46,6 +53,7 @@ function M.set_headers_marks()
         (setext_heading (setext_h2_underline) @markup.heading.2.marker)
       ]=]
       vim.treesitter.query.set("markdown", "highlights", md_query)
+      vim.treesitter.start(ev.buf)
     end,
   })
 end
