@@ -6,10 +6,10 @@ M.url = "https://github.com/rcarriga/nvim-dap-ui"
 function M.get(c)
   return {
     -- Action buttons
-    DapUIPlayPause = { fg = c.green, bg = c.bg_statusline },
+    DapUIPlayPause = { fg = c.green },
     DapUIPlayPauseNC = "DapUIPlayPause",
     DapUIRestart = "DapUIPlayPause",
-    DapUIStepBack = { fg = c.blue, bg = c.bg_statusline },
+    DapUIStepBack = { fg = c.blue },
     DapUIStepBackNC = "DapUIStepBack",
     DapUIStepInto = "DapUIStepBack",
     DapUIStepIntoNC = "DapUIStepBack",
@@ -17,9 +17,9 @@ function M.get(c)
     DapUIStepOutNC = "DapUIStepBack",
     DapUIStepOver = "DapUIStepBack",
     DapUIStepOverNC = "DapUIStepBack",
-    DapUIStop = { fg = c.red, bg = c.bg_statusline },
+    DapUIStop = { fg = c.red },
     DapUIStopNC = "DapUIStop",
-    DapUIUnavailable = { fg = c.grey, bg = c.bg_statusline }, -- Disabled buttons like stop when no debugging
+    DapUIUnavailable = { fg = c.grey }, -- Disabled buttons like stop when no debugging
     DapUIUnavailableNC = "DapUIUnavailable",
 
     -- Windows elements

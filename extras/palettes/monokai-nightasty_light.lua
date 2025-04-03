@@ -844,7 +844,6 @@ local highlights = {
   },
   DapUINormal = "Normal",
   DapUIPlayPause = {
-    bg = "#f1f1f1",
     fg = "#4fb000"
   },
   DapUIPlayPauseNC = "DapUIPlayPause",
@@ -854,7 +853,6 @@ local highlights = {
     fg = "#ff4d00"
   },
   DapUIStepBack = {
-    bg = "#f1f1f1",
     fg = "#00b3e3"
   },
   DapUIStepBackNC = "DapUIStepBack",
@@ -865,7 +863,6 @@ local highlights = {
   DapUIStepOver = "DapUIStepBack",
   DapUIStepOverNC = "DapUIStepBack",
   DapUIStop = {
-    bg = "#f1f1f1",
     fg = "#ff005f"
   },
   DapUIStopNC = "DapUIStop",
@@ -875,7 +872,6 @@ local highlights = {
     fg = "#6054d0"
   },
   DapUIUnavailable = {
-    bg = "#f1f1f1",
     fg = "#7f7f7f"
   },
   DapUIUnavailableNC = "DapUIUnavailable",
