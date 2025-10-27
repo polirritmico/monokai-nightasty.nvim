@@ -87,11 +87,8 @@ function M.readme_external_format()
     return
   end
 
-  local prettier = mason.get_package(fname):get_install_path()
-    .. "/node_modules/prettier/bin/prettier.cjs"
-
   local format_command = {
-    prettier,
+    vim.fn.exepath("prettier"),
     "--prose-wrap",
     "always",
     "--print-width",
