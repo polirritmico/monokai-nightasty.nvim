@@ -1,6 +1,6 @@
 local M = {}
 
-M.version = "3206b571"
+M.version = "8182c45d"
 
 ---@class monokai.Config
 ---@field dark_style_background monokai.BackgroundConfig default, dark, transparent, #RRGGBB
@@ -13,7 +13,7 @@ M.version = "3206b571"
 ---@field lualine_bold boolean Lualine headers will be bold or regular
 ---@field lualine_style monokai.LualineStyleConfig Possible values: "dark", "light" or "default" (default follows dark/light style)
 ---@field markdown_header_marks boolean Add headers marks highlights (the `#` character) to Treesitter highlight query
----@field terminal_colors boolean|table|fun(colors: ColorScheme):table
+---@field terminal_colors boolean|table|fun(colors: ColorScheme):table Customize nvim terminal colors
 ---@field auto_enable_plugins boolean Automatically enable supported plugins through lazy.nvim
 ---@field plugins table<string, boolean> List of manually enabled/disabled plugins.
 ---@field cache boolean Enables/Disable the cache

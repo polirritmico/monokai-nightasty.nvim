@@ -200,7 +200,7 @@ require("monokai-nightasty").toggle()
 ---@field lualine_bold boolean Lualine headers will be bold or regular
 ---@field lualine_style monokai.LualineStyleConfig Possible values: "dark", "light" or "default" (default follows dark/light style)
 ---@field markdown_header_marks boolean Add headers marks highlights (the `#` character) to Treesitter highlight query
----@field terminal_colors boolean|table|fun(colors: ColorScheme):table
+---@field terminal_colors boolean|table|fun(colors: ColorScheme):table Customize nvim terminal colors
 ---@field auto_enable_plugins boolean Automatically enable supported plugins through lazy.nvim
 ---@field plugins table<string, boolean> List of manually enabled/disabled plugins.
 ---@field cache boolean Enables/Disable the cache
@@ -349,7 +349,7 @@ return {
       floats = "dark",
     },
 
-    -- This also could be a table like this: `terminal_colors = { Normal = { fg = "#e6e6e6" } }`
+    -- Check the Customization/Terminal Colors section for detailed instructions.
     terminal_colors = function(colors)
       return { fg = colors.fg_dark }
     end,
@@ -463,6 +463,50 @@ opts = {
   end,
 }
 ```
+
+</details>
+
+#### Terminal Colors
+
+<!-- panvimdoc-ignore-start -->
+<details>
+<summary> To customize terminal colors, use the `terminal_colors` setting. There
+are three ways to customize it: </summary>
+<!-- panvimdoc-ignore-end -->
+
+1. To use the Neovim's defaults colors, set it to `false`.
+2. Use a table with the keys `terminal_color_x`, where `x` is a number between 0
+   and 15:
+
+```lua
+opts = {
+  terminal_colors = {
+    terminal_color_0 = "#000001",
+    terminal_color_15 = "#ffffff",
+    -- Use the `fg` key to customize the normal text color in the terminal:
+    fg = #e6e6e6,
+  },
+  -- etc.
+},
+```
+
+3. Use a function with the arg `colors` (`ColorScheme`) that returns a table
+   like the one shown above:
+
+```lua
+---@param colors ColorScheme
+terminal_colors = function(colors)
+  return {
+    terminal_color_0 = colors.black, -- or set the color value directly: "#000001"
+    -- etc.
+    terminal_color_15 = colors.white, -- or set the color value directly: "#ffffff"
+    fg = colors.fg_dark,
+  }
+end
+```
+
+> Check `TERMINAL COLORS` in `:h terminal-config` for further details on valid
+> values.
 
 </details>
 
