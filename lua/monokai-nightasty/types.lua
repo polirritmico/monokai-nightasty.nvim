@@ -51,4 +51,4 @@
 ---@field on_colors? fun(colors: ColorScheme)
 ---@field on_highlights? fun(highlights: monokai.Highlights, colors: ColorScheme)
 ---@field plugins? table<string, boolean> List of manually enabled/disabled plugins.
----@field terminal_colors? boolean|table|fun(colors: ColorScheme):table
+---@field terminal_colors? boolean|table|fun(colors: ColorScheme):table Customize nvim terminal colors

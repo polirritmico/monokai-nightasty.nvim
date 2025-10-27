@@ -78,11 +78,12 @@ function M.terminal(colors, opts)
   vim.g.terminal_color_13 = colors.red
   vim.g.terminal_color_14 = colors.blue_alt
 
-  -- User custom colors:
   local opts_type = type(opts)
   if opts_type == "boolean" then
     return
   end
+
+  -- User custom colors:
   local custom = opts_type == "function" and opts(colors) or opts --[[@as table]]
   for k, color in pairs(custom) do
     if k ~= "fg" then
