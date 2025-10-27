@@ -7,7 +7,7 @@ M.url = "https://github.com/MeanderingProgrammer/render-markdown.nvim"
 ---@type monokai.HighlightsFn
 function M.get(c)
   local ret = {
-    RenderMarkdownBullet = "@tag",
+    RenderMarkdownBullet = { fg = c.magenta },
     RenderMarkdownChecked = { fg = c.green },
     RenderMarkdownCode = { bg = c.charcoal }, -- Code block background
     RenderMarkdownCodeInline = "@markup.raw.markdown_inline", -- Inline code background

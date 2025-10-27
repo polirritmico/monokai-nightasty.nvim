@@ -2066,7 +2066,9 @@ local highlights = {
     bg = "#e3e3e3",
     fg = "#ff4d00"
   },
-  RenderMarkdownBullet = "@tag",
+  RenderMarkdownBullet = {
+    fg = "#ff004b"
+  },
   RenderMarkdownChecked = {
     fg = "#4fb000"
   },
