@@ -1,4 +1,4 @@
-*monokai-nightasty.nvim.txt*   For Neovim >= 0.9  Last change: 2025 October 26
+*monokai-nightasty.nvim.txt*  For Neovim >= 0.9  Last change: 2025 December 14
 
 ==============================================================================
 Table of Contents                   *monokai-nightasty.nvim-table-of-contents*

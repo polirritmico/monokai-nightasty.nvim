@@ -2319,6 +2319,22 @@ local highlights = {
   SnacksNotifierTitleTrace = {
     fg = "#e6e6e6"
   },
+  SnacksPickerDir = {
+    fg = "#8a8a8a"
+  },
+  SnacksPickerInputBorder = {
+    bg = "#262626",
+    fg = "#fc1a70"
+  },
+  SnacksPickerListCursorLine = {
+    bg = "#444444"
+  },
+  SnacksPickerPrompt = {
+    fg = "#0087ff"
+  },
+  SnacksPickerSelected = {
+    fg = "#fc1a70"
+  },
   Sneak = {
     bg = "#fc1a70",
     bold = true,

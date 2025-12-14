@@ -26,6 +26,12 @@ function M.get(c, opts)
     SnacksNotifierIconTrace = "SnacksNotifierTitleTrace", -- Icon for Trace notification
     SnacksNotifierBorderTrace = "SnacksNotifierTitleTrace", -- Border for Trace notification
     SnacksNotifierHistoryDateTime = { fg = c.grey_light }, -- Dates in entries
+
+    SnacksPickerDir = { fg = c.grey }, -- Directory section of the entries
+    SnacksPickerInputBorder = { fg = c.magenta, bg = c.bg_float }, -- Separator line below search
+    SnacksPickerListCursorLine = { bg = c.bg_statusline }, -- Current line highlight
+    SnacksPickerPrompt = { fg = c.blue_alt }, -- The search prompt character color
+    SnacksPickerSelected = { fg = c.magenta }, -- Left circle icon color
   }
 
   return ret
