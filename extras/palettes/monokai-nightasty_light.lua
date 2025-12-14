@@ -2420,8 +2420,7 @@ local highlights = {
     fg = "#0087ff"
   },
   TelescopeSelection = {
-    bg = "#f1f1f1",
-    fg = "#333333"
+    bg = "#f1f1f1"
   },
   TelescopeSelectionCaret = {
     bg = "#f1f1f1",
