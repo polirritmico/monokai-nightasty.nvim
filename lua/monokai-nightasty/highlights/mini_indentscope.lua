@@ -2,7 +2,7 @@ local utils = require("monokai-nightasty.utils")
 
 local M = {}
 
-M.url = "https://github.com/echasnovski/mini.indentscope"
+M.url = "https://github.com/nvim-mini/mini.indentscope"
 
 ---@type monokai.HighlightsFn
 function M.get(c)

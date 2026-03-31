@@ -1,6 +1,6 @@
 local M = {}
 
-M.url = "https://github.com/echasnovski/mini.hipatterns"
+M.url = "https://github.com/nvim-mini/mini.hipatterns"
 
 ---@type monokai.HighlightsFn
 function M.get(c)
