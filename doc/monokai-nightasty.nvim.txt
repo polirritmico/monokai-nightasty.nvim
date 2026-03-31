@@ -90,6 +90,8 @@ Click to expand ~
 
   mini.indentscope           mini_indentscope
 
+  mini.notify                mini_notify
+
   mini.statusline            mini_statusline
 
   neo-tree.nvim              neo-tree

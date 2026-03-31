@@ -1404,6 +1404,16 @@ local highlights = {
     fg = "#ff9466",
     nocombine = true
   },
+  MiniNotifyBorder = "FloatBorder",
+  MiniNotifyLspProgress = {
+    fg = "#ff4d00",
+    italic = true
+  },
+  MiniNotifyNormal = "NormalFloat",
+  MiniNotifyTitle = {
+    bg = "#e3e3e3",
+    fg = "#4fb000"
+  },
   MiniStatuslineDevinfo = {
     bg = "#e3e3e3",
     fg = "#4fb000"
