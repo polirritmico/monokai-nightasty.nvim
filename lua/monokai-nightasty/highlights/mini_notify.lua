@@ -6,9 +6,9 @@ M.url = "https://github.com/nvim-mini/mini.notify"
 function M.get(c)
   return {
     MiniNotifyBorder = "FloatBorder",
-    MiniNotifyLspProgress = { fg = c.orange, italic = true },
+    MiniNotifyLspProgress = { fg = c.fg_dark, italic = true },
     MiniNotifyNormal = "NormalFloat",
-    MiniNotifyTitle = { fg = c.green, bg = c.bg_float },
+    MiniNotifyTitle = { fg = c.magenta, bg = c.bg_float },
   }
 end
 
