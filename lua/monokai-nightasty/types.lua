@@ -35,7 +35,7 @@
 ---@field functions? monokai.Highlight
 ---@field variables? monokai.Highlight
 ---@field floats? monokai.BackgroundConfig Used by plugins with float windows
----@field sidebars? monokai.BackgroundConfig USed by plugins with sidebar windows
+---@field sidebars? monokai.BackgroundConfig Used by plugins with sidebar windows
 
 ---@class monokai.UserConfig
 ---@field auto_enable_plugins? boolean Automatically enable supported plugins through lazy.nvim
@@ -43,6 +43,7 @@
 ---@field color_headers? boolean Enable header colors for each header level (h1, h2, etc.)
 ---@field dark_style_background? monokai.BackgroundConfig | string Also supports hex color ("#RRGGBB")
 ---@field dim_inactive? boolean dims inactive windows
+---@field italics? boolean Enable/Disable italics globally
 ---@field hl_styles? monokai.HighlightStylesConfig
 ---@field light_style_background? monokai.BackgroundConfig | string Also supports hex color ("#RRGGBB")
 ---@field lualine_bold? boolean Lualine headers will be bold or regular

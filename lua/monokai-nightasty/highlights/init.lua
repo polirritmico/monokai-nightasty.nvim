@@ -125,6 +125,7 @@ function M.generate_inputs(opts)
       dark_style_background = opts.dark_style_background,
       dim_inactive = opts.dim_inactive,
       hl_styles = opts.hl_styles,
+      italics = opts.italics,
       light_style_background = opts.light_style_background,
       lualine_bold = opts.lualine_bold,
       lualine_style = opts.lualine_style,
