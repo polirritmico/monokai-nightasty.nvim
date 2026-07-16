@@ -198,6 +198,7 @@ require("monokai-nightasty").toggle()
 ---@field hl_styles monokai.HighlightStylesConfig Styles to be applied to selected syntax groups
 ---@field color_headers boolean Enable header colors for each header level (h1, h2, etc.)
 ---@field dim_inactive boolean dims inactive windows
+---@field italics boolean -- Enable/Disable italics globally
 ---@field lualine_bold boolean Lualine headers will be bold or regular
 ---@field lualine_style monokai.LualineStyleConfig Possible values: "dark", "light" or "default" (default follows dark/light style)
 ---@field markdown_header_marks boolean Add headers marks highlights (the `#` character) to Treesitter highlight query
@@ -236,6 +237,7 @@ M.defaults = {
 
   color_headers = false, -- Enable header colors for each header level (h1, h2, etc.)
   dim_inactive = false, -- dims inactive windows
+  italics = true, -- Enable/Disable italics globally
   lualine_bold = true, -- Lualine headers will be bold or regular
   lualine_style = "default", -- "dark", "light" or "default" (default follows dark/light style)
   markdown_header_marks = false, -- Add headers marks highlights (the `#` character) to Treesitter highlight query
