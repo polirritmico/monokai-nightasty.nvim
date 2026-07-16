@@ -16,7 +16,7 @@ function M.get(c, opts)
     NvimTreeNormalNC = "NvimTreeNormal",
     NvimTreeOpenedFile = { bg = c.bg_highlight },
     NvimTreeOpenedFolderName = { fg = c.fg, bold = true },
-    NvimTreeRootFolder = { fg = c.magenta, italic = true },
+    NvimTreeRootFolder = { fg = c.magenta, italic = opts.italics },
     NvimTreeSpecialFile = { fg = c.green, underline = true },
     NvimTreeSymlink = { fg = c.blue },
     NvimTreeWinSeparator = {

@@ -26,7 +26,7 @@ function M.get(c, opts)
     FloatBorder = { fg = c.border_highlight, bg = c.bg_float },
     FloatTitle = { fg = c.border_highlight, bg = c.bg_float },
     FoldColumn = { fg = c.orange, bg = opts.transparent and c.none or c.bg_float }, -- used when foldcolumn ~= 0
-    Folded = { fg = c.blue, bg = c.bg_float, italic = true }, -- line used for closed folds
+    Folded = { fg = c.blue, bg = c.bg_float, italic = opts.italics }, -- line used for closed folds
     IncSearch = { fg = c.fg_search, bg = c.purple, bold = true }, -- 'IncSearch' highlighting; also used for the text replaced with ":s///c"
     LineNr = { fg = c.grey_dark }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     LineNrBe = { fg = c.green },
@@ -74,7 +74,7 @@ function M.get(c, opts)
     lCursor = { fg = c.bg, bg = c.blue }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
 
     Bold = { bold = true },
-    Italic = { italic = true },
+    Italic = { italic = opts.italics },
     Underlined = { underline = true }, -- (preferred) text that stands out, HTML links
 
     Boolean = { fg = c.purple }, -- a boolean constant: TRUE, false
@@ -99,7 +99,7 @@ function M.get(c, opts)
     Repeat = { fg = c.magenta }, -- for, do, while, etc.
     Special = { fg = c.purple }, -- (preferred) any special symbol
     Statement = { fg = c.magenta }, -- (preferred) any statement
-    StorageClass = { fg = c.blue, italic = true }, -- static, register, volatile, etc.
+    StorageClass = { fg = c.blue, italic = opts.italics }, -- static, register, volatile, etc.
     String = { fg = c.yellow }, --   a string constant: "this is a string"
     Structure = { fg = c.blue }, -- struct, union, enum, etc.
     Tag = { fg = c.purple }, -- you can use CTRL-] on this
@@ -122,7 +122,7 @@ function M.get(c, opts)
     DiagnosticHint = { fg = c.hint },
     DiagnosticInfo = { fg = c.info },
     DiagnosticWarn = { fg = c.warning },
-    DiagnosticUnnecessary = { italic = true, undercurl = true, sp = c.grey_light }, -- e.g. unused variables
+    DiagnosticUnnecessary = { italic = opts.italics, undercurl = true, sp = c.grey_light }, -- e.g. unused variables
 
     DiagnosticVirtualTextError = { fg = c.error, bg = dark(c.error, 0.08) }, -- Used for "Error" diagnostic virtual text
     DiagnosticVirtualTextHint = { fg = c.hint, bg = dark(c.hint, 0.08) }, -- Used for "Hint" diagnostic virtual text
@@ -136,10 +136,18 @@ function M.get(c, opts)
 
     -- Native LSP client
 
-    LspCodeLens = { fg = dark(c.purple, 0.75), bg = dark(c.purple, 0.05), italic = true },
-    LspCodeLensSeparator = { fg = c.purple, bg = dark(c.purple, 0.05), italic = true },
+    LspCodeLens = {
+      fg = dark(c.purple, 0.75),
+      bg = dark(c.purple, 0.05),
+      italic = opts.italics,
+    },
+    LspCodeLensSeparator = {
+      fg = c.purple,
+      bg = dark(c.purple, 0.05),
+      italic = opts.italics,
+    },
     LspInfoBorder = { fg = c.border_highlight, bg = c.bg_float },
-    LspInlayHint = { fg = c.grey, italic = true },
+    LspInlayHint = { fg = c.grey, italic = opts.italics },
     LspReferenceRead = "LspReferenceText",
     LspReferenceText = { bg = c.fg_gutter },
     LspReferenceWrite = "LspReferenceText",

@@ -14,7 +14,7 @@ function M.get(c, opts)
     NeoTreeNormal = { fg = c.fg_sidebar, bg = c.bg_sidebar },
     NeoTreeNormalNC = "NeoTreeNormal",
     NeoTreeFileNameOpened = { fg = c.orange },
-    NeoTreeRootName = { fg = c.magenta, italic = true },
+    NeoTreeRootName = { fg = c.magenta, italic = opts.italics },
     NeoTreeDimText = { fg = c.fg_gutter },
     NeoTreeWinSeparator = {
       fg = opts.hl_styles.sidebars == "transparent" and c.border or c.bg_sidebar,

@@ -10,7 +10,7 @@ function M.get(c, opts)
   local ret = {
     ["@annotation"] = "PreProc",
     ["@attribute"] = "PreProc", -- attribute annotations (e.g. Python decorators)
-    ["@attribute.builtin"] = { fg = c.magenta, italic = true }, -- Variable names that are defined by the languages, like `this` or `self`.
+    ["@attribute.builtin"] = { fg = c.magenta, italic = opts.italics }, -- Variable names that are defined by the languages, like `this` or `self`.
     ["@boolean"] = "Boolean", -- boolean literals
     ["@character"] = "Character", -- character literals
     ["@character.special"] = "SpecialChar", -- special characters (e.g. wildcards)
@@ -25,7 +25,7 @@ function M.get(c, opts)
     ["@constant"] = "Constant", -- constant identifiers
     ["@constant.builtin"] = "Special", -- built-in constant values
     ["@constant.macro"] = "Define", -- constants defined by the preprocessor
-    ["@constructor"] = { fg = c.blue, italic = true }, -- constructor calls and definitions
+    ["@constructor"] = { fg = c.blue, italic = opts.italics }, -- constructor calls and definitions
     ["@diff.delta"] = "DiffChange", -- changed text (for diff files)
     ["@diff.minus"] = "DiffDelete", -- deleted text (for diff files)
     ["@diff.plus"] = "DiffAdd", -- added text (for diff files)
@@ -44,7 +44,7 @@ function M.get(c, opts)
     ["@keyword.directive"] = { fg = utils.darken(c.comment, 0.73), nocombine = true }, -- various preprocessor directives & shebangs
     ["@keyword.directive.define"] = "Define", -- preprocessor definition directives
     ["@keyword.exception"] = "Exception", -- keywords related to exceptions (e.g. `throw` / `catch`)
-    ["@keyword.function"] = { fg = c.blue, italic = true }, -- keywords that define a function (e.g. `func` in Go, `def` in Python)
+    ["@keyword.function"] = { fg = c.blue, italic = opts.italics }, -- keywords that define a function (e.g. `func` in Go, `def` in Python)
     ["@keyword.import"] = "Include", -- keywords for including modules (e.g. `import` / `from` in Python)
     ["@keyword.operator"] = "Operator", -- operators that are English words (e.g. `and` / `or`)
     ["@keyword.operator.htmldjango"] = "@keyword.conditional.htmldjango",
@@ -63,7 +63,7 @@ function M.get(c, opts)
     ["@markup.heading.4.marker"] = "@tag",
     ["@markup.heading.5.marker"] = "@tag",
     ["@markup.heading.6.marker"] = "@tag",
-    ["@markup.italic"] = { italic = true }, -- text with emphasis
+    ["@markup.italic"] = { italic = opts.italics }, -- text with emphasis
     ["@markup.link"] = { fg = c.blue }, -- text references, footnotes, citations, etc.
     ["@markup.link.label"] = { fg = c.blue, underline = true }, -- link, reference descriptions
     ["@markup.link.label.symbol"] = "Identifier", -- Non-url links
@@ -72,7 +72,7 @@ function M.get(c, opts)
     ["@markup.list.checked"] = "@markup.list", -- checked todo-style list markers [x]
     ["@markup.list.unchecked"] = "@markup.list", -- unchecked todo-style list markers [ ]
     ["@markup.math"] = "Special", -- math environments (e.g. `$ ... $` in LaTeX)
-    ["@markup.quote"] = { fg = c.fg, bg = c.bg_float, italic = true }, -- block quotes
+    ["@markup.quote"] = { fg = c.fg, bg = c.bg_float, italic = opts.italics }, -- block quotes
     ["@markup.raw"] = "String", -- literal or verbatim text (e.g., inline code)
     ["@markup.raw.block"] = { fg = c.grey }, -- literal or verbatim text (e.g., inline code)
     ["@markup.raw.delimiter.markdown_inline"] = { fg = c.purple }, -- inline backticks -> `
@@ -94,16 +94,16 @@ function M.get(c, opts)
     ["@string.escape"] = { fg = c.purple }, -- escape sequences
     ["@string.regexp"] = { fg = c.orange }, -- regular expressions
     ["@tag"] = { fg = c.magenta }, -- xml tag names
-    ["@tag.attribute"] = { fg = c.blue, italic = true }, -- xml tag attributes
+    ["@tag.attribute"] = { fg = c.blue, italic = opts.italics }, -- xml tag attributes
     ["@tag.delimiter"] = { fg = c.grey_light }, -- xml tag delimiters
     ["@type"] = { fg = c.blue }, -- type or class definitions and annotations
-    ["@type.builtin"] = { fg = c.blue, italic = true }, -- built-in types
+    ["@type.builtin"] = { fg = c.blue, italic = opts.italics }, -- built-in types
     ["@type.definition"] = "Typedef", -- identifiers in type definitions (e.g. `typedef <type> <identifier>` in C)
     ["@type.qualifier"] = "@keyword", -- type qualifiers (e.g. `const`)
     ["@variable"] = { fg = c.fg, style = opts.hl_styles.variables }, -- any variable name that does not have another highlight.
-    ["@variable.builtin"] = { fg = c.grey_light, italic = true }, -- built-in variable names (e.g. `this`, `self`)
+    ["@variable.builtin"] = { fg = c.grey_light, italic = opts.italics }, -- built-in variable names (e.g. `this`, `self`)
     ["@variable.member"] = { fg = c.fg }, -- object and struct fields
-    ["@variable.parameter"] = { fg = c.orange, italic = true }, -- parameters of a function
+    ["@variable.parameter"] = { fg = c.orange, italic = opts.italics }, -- parameters of a function
 
     -- ["@string.special"] = {}, -- other special strings (e.g. dates)
     -- ["@string.special.symbol"] = {}, -- symbols or atoms

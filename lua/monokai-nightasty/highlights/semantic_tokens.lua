@@ -4,7 +4,7 @@ local M = {}
 M.url = "https://github.com/"
 
 ---@type monokai.HighlightsFn
-function M.get(c)
+function M.get(c, opts)
   return {
     ["@lsp.type.boolean"] = "Boolean",
     ["@lsp.type.builtinType"] = "@type.builtin",
@@ -51,7 +51,7 @@ function M.get(c)
 
     -- Language customization
     ["@function.builtin.bash"] = { fg = c.blue },
-    ["@type.qualifier.c_sharp"] = { fg = c.orange, italic = true },
+    ["@type.qualifier.c_sharp"] = { fg = c.orange, italic = opts.italics },
     ["@constructor.lua"] = { fg = c.magenta },
     ["@lsp.typemod.variable.global.lua"] = "@variable.builtin",
     -- ["@lsp.type.namespace.python"] = "@variable",

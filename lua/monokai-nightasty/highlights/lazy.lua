@@ -3,9 +3,9 @@ local M = {}
 M.url = "https://github.com/folke/lazy.nvim"
 
 ---@type monokai.HighlightsFn
-function M.get(c)
+function M.get(c, opts)
   return {
-    LazyCommitScope = { fg = c.orange, italic = true }, -- Git commit message. Scope string inside ()
+    LazyCommitScope = { fg = c.orange, italic = opts.italics }, -- Git commit message. Scope string inside ()
     LazyCommitType = { fg = c.magenta, bold = true }, -- Git commit message type. Like fix, feat, refactor, etc.
     LazyProgressDone = "LazyCommitType",
     LazyProgressTodo = { fg = c.fg_gutter, bold = true },

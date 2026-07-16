@@ -33,7 +33,7 @@ function M.get(c, opts)
     BufferTabpagesSep = { fg = c.magenta, bg = opts.transparent and c.none or bg_alternate }, -- Tab pages indicator at top right corner (tabs not buffers)
 
     --- Current selected buffer
-    BufferCurrent = { fg = c.fg, bg = bg_current, bold = true, italic = true }, -- current buffer, not modified
+    BufferCurrent = { fg = c.fg, bg = bg_current, bold = true, italic = opts.italics }, -- current buffer, not modified
     BufferCurrentBtn = { fg = c.magenta, bg = bg_current }, --  button at the right of the bar
     BufferCurrentMod = { fg = c.orange, bg = bg_current }, -- current buffer, modified
     BufferCurrentNumber = { fg = c.grey_light, bg = bg_current }, -- current bufnr
@@ -53,7 +53,7 @@ function M.get(c, opts)
     BufferInactiveTarget = "BufferCurrentTarget",
 
     --- Non-selected buffers visible on the window
-    BufferVisible = { fg = unselected_fg, bg = bg_visible, italic = true },
+    BufferVisible = { fg = unselected_fg, bg = bg_visible, italic = opts.italics },
     BufferVisibleBtn = { fg = unselected_fg, bg = bg_visible },
     BufferVisibleMod = "BufferVisibleBtn",
     BufferVisibleNumber = "BufferVisibleBtn",
@@ -62,7 +62,7 @@ function M.get(c, opts)
     BufferVisibleTarget = "BufferCurrentTarget",
 
     --- Previous selected buffer
-    BufferAlternate = { fg = c.grey_light, bg = bg_alternate, italic = true },
+    BufferAlternate = { fg = c.grey_light, bg = bg_alternate, italic = opts.italics },
     BufferAlternateBtn = { fg = c.grey_light, bg = bg_alternate },
     BufferAlternateMod = "BufferAlternateBtn",
     BufferAlternateNumber = "BufferAlternateBtn",

@@ -32,7 +32,7 @@ function M.get(c, opts)
 
     -- Fzf terminal hls, colors from `vim.api.nvim_get_color_map()`
     FzfLuaHeaderBind = { fg = c.purple }, -- Header keybind.
-    FzfLuaHeaderText = { fg = c.orange, italic = true }, -- Header text. Brown1
+    FzfLuaHeaderText = { fg = c.orange, italic = opts.italics }, -- Header text. Brown1
     FzfLuaPathColNr = { fg = c.blue }, -- Path col nr (lines,qf,lsp,diag).
     FzfLuaPathLineNr = { fg = c.purple }, -- Path line nr (lines,qf,lsp,diag).
     FzfLuaLiveSym = "Special", -- LSP live symbols query match

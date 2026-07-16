@@ -3,9 +3,9 @@ local M = {}
 M.url = "https://github.com/lewis6991/gitsigns.nvim"
 
 ---@type monokai.HighlightsFn
-function M.get(c)
+function M.get(c, opts)
   return {
-    GitSignsCurrentLineBlame = { fg = c.info, bg = c.bg_popup, italic = true },
+    GitSignsCurrentLineBlame = { fg = c.info, bg = c.bg_popup, italic = opts.italics },
     GitSignsAdd = "diffAdded",
     GitSignsChange = "diffChanged",
     GitSignsDelete = "diffRemoved",

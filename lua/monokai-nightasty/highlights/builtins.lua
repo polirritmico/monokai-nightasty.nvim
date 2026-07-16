@@ -2,7 +2,7 @@ local utils = require("monokai-nightasty.utils")
 local M = {}
 
 ---@type monokai.HighlightsFn
-function M.get(c)
+function M.get(c, opts)
   return {
     -- checkhealt
     helpCommand = { fg = c.blue, bg = c.bg_float }, -- command name/description
@@ -37,10 +37,10 @@ function M.get(c)
     netrwList = "netrwDir",
     netrwMarkFile = { fg = c.black, bg = c.orange, bold = true },
     netrwPlain = "netrwCmdNote",
-    netrwQuickHelp = { fg = c.fg_dark, italic = true },
-    netrwSymLink = { fg = c.blue, italic = true },
+    netrwQuickHelp = { fg = c.fg_dark, italic = opts.italics },
+    netrwSymLink = { fg = c.blue, italic = opts.italics },
     netrwTreeBar = { fg = c.fg_gutter, nocombine = true },
-    netrwVersion = { fg = c.orange, italic = true },
+    netrwVersion = { fg = c.orange, italic = opts.italics },
 
     --- terminal-debug
     debugPC = { bg = c.bg_sidebar }, -- highlighting the current line

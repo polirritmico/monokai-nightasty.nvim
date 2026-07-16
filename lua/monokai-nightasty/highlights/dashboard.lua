@@ -3,11 +3,11 @@ local M = {}
 M.url = "https://github.com/nvimdev/dashboard-nvim"
 
 ---@type monokai.HighlightsFn
-function M.get(c)
+function M.get(c, opts)
   return {
     -- General
     DashboardHeader = { fg = c.orange },
-    DashboardFooter = { fg = c.comment, italic = true },
+    DashboardFooter = { fg = c.comment, italic = opts.italics },
     -- Doom theme
     DashboardDesc = { fg = c.magenta },
     DashboardIcon = { fg = c.fg },

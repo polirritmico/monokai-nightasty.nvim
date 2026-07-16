@@ -15,7 +15,7 @@ function M.get(c, opts)
     NeogitBranch = { fg = c.green }, -- Local branches
     NeogitBranchHead = { fg = c.blue }, -- Accent highlight for current HEAD in LogBuffer
     -- NeogitFold = { bg = diff_bg }, -- Folded regions like unstaged changes
-    NeogitObjectId = { fg = c.grey_light, italic = true }, -- SHA hash
+    NeogitObjectId = { fg = c.grey_light, italic = opts.italics }, -- SHA hash
     NeogitRemote = { fg = c.purple }, -- Remote branches
     NeogitSectionHeader = { fg = c.magenta }, -- status buffer section header
     NeogitSectionHeaderCount = { fg = c.grey_light }, -- The number, for sections with a number.
@@ -50,10 +50,10 @@ function M.get(c, opts)
     NeogitPopupConfigKey = "NeogitPopupActionKey", -- Applied to the key that triggers config
     NeogitPopupOptionKey = "NeogitPopupActionKey", -- Applied to the key that will trigger option
     NeogitPopupSwitchKey = "NeogitPopupActionKey", -- Applied to the key that will toggle switch
-    NeogitPopupConfigEnabled = { fg = c.orange, italic = true }, -- Applied to enabled config value
+    NeogitPopupConfigEnabled = { fg = c.orange, italic = opts.italics }, -- Applied to enabled config value
     NeogitPopupOptionEnabled = "NeogitPopupConfigEnabled", -- Applied if option is set
     NeogitPopupSwitchEnabled = "NeogitPopupConfigEnabled", -- Applied to the flag if enabled
-    NeogitPopupActionDisabled = { fg = c.grey, italic = true }, -- Applied to key when function is unimplemented
+    NeogitPopupActionDisabled = { fg = c.grey, italic = opts.italics }, -- Applied to key when function is unimplemented
     NeogitPopupConfigDisabled = "NeogitPopupActionDisabled", -- Applied to config without value
     NeogitPopupOptionDisabled = "NeogitPopupActionDisabled", -- Applied if option has no value
     NeogitPopupSwitchDisabled = "NeogitPopupActionDisabled", -- Applied to the flag if disabled
@@ -81,13 +81,13 @@ function M.get(c, opts)
     -- STATUS BUFFER FILE
     -- Applied to the label on the left of filenames. These highlight groups are
     -- not used directly, but linked to by other groups:
-    NeogitChangeAdded = { fg = c.blue, italic = true },
-    NeogitChangeDeleted = { fg = c.magenta, italic = true },
-    NeogitChangeRenamed = { fg = c.orange, italic = true },
-    NeogitChangeUpdated = { fg = c.yellow, italic = true },
-    NeogitChangeCopied = { fg = c.purple, italic = true },
-    NeogitChangeNewFile = { fg = c.blue_alt, italic = true },
-    NeogitChangeModified = { fg = c.green, italic = true },
+    NeogitChangeAdded = { fg = c.blue, italic = opts.italics },
+    NeogitChangeDeleted = { fg = c.magenta, italic = opts.italics },
+    NeogitChangeRenamed = { fg = c.orange, italic = opts.italics },
+    NeogitChangeUpdated = { fg = c.yellow, italic = opts.italics },
+    NeogitChangeCopied = { fg = c.purple, italic = opts.italics },
+    NeogitChangeNewFile = { fg = c.blue_alt, italic = opts.italics },
+    NeogitChangeModified = { fg = c.green, italic = opts.italics },
 
     ---------------------------------------------------------------------------
     -- LOG VIEW BUFFER
