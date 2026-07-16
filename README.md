@@ -648,14 +648,14 @@ some_plugin_config.another = utils.darken(colors.bg, 0.3)
 
 <!-- panvimdoc-ignore-start -->
 
-| Color name | Hex code  | Render                                                        |
-| ---------- | --------- | ------------------------------------------------------------- |
-| Yellow     | `#ffff87` | ![#ffff87](https://place-hold.it/100x40/ffff87/111111?text=+) |
-| Purple     | `#af87ff` | ![#af87ff](https://place-hold.it/100x40/af87ff/000000?text=+) |
-| Green      | `#a4e400` | ![#a4e400](https://place-hold.it/100x40/a4e400/000000?text=+) |
-| Blue       | `#62d8f1` | ![#62d8f1](https://place-hold.it/100x40/62d8f1/000000?text=+) |
-| Magenta    | `#fc1a70` | ![#fc1a70](https://place-hold.it/100x40/fc1a70/000000?text=+) |
-| Orange     | `#ff9700` | ![#ff9700](https://place-hold.it/100x40/ff9700/000000?text=+) |
+| Color name | Hex code  |                          Render                          |
+| ---------- | :-------: | :------------------------------------------------------: |
+| Yellow     | `#ffff87` | ![#ffff87](https://placehold.co/25x25/ffff87/ffff87.png) |
+| Purple     | `#af87ff` | ![#af87ff](https://placehold.co/25x25/af87ff/af87ff.png) |
+| Green      | `#a4e400` | ![#a4e400](https://placehold.co/25x25/a4e400/a4e400.png) |
+| Blue       | `#62d8f1` | ![#62d8f1](https://placehold.co/25x25/62d8f1/62d8f1.png) |
+| Magenta    | `#fc1a70` | ![#fc1a70](https://placehold.co/25x25/fc1a70/fc1a70.png) |
+| Orange     | `#ff9700` | ![#ff9700](https://placehold.co/25x25/ff9700/ff9700.png) |
 
 <!-- panvimdoc-ignore-end -->
 
@@ -676,14 +676,14 @@ some_plugin_config.another = utils.darken(colors.bg, 0.3)
 
 <!-- panvimdoc-ignore-start -->
 
-| Color name | Hex code  | Render                                                        |
-| ---------- | --------- | ------------------------------------------------------------- |
-| Yellow     | `#ff8f00` | ![#ff8f00](https://place-hold.it/100x40/ff8f00/000000?text=+) |
-| Purple     | `#6054d0` | ![#6054d0](https://place-hold.it/100x40/6054d0/000000?text=+) |
-| Green      | `#4fb000` | ![#4fb000](https://place-hold.it/100x40/4fb000/000000?text=+) |
-| Blue       | `#00b3e3` | ![#00b3e3](https://place-hold.it/100x40/00b3e3/000000?text=+) |
-| Magenta    | `#ff004b` | ![#ff004b](https://place-hold.it/100x40/ff004b/000000?text=+) |
-| Orange     | `#ff4d00` | ![#ff4d00](https://place-hold.it/100x40/ff4d00/000000?text=+) |
+| Color name | Hex code  |                          Render                          |
+| ---------- | :-------: | :------------------------------------------------------: |
+| Yellow     | `#ff8f00` | ![#ff8f00](https://placehold.co/25x25/ff8f00/ff8f00.png) |
+| Purple     | `#6054d0` | ![#6054d0](https://placehold.co/25x25/6054d0/6054d0.png) |
+| Green      | `#4fb000` | ![#4fb000](https://placehold.co/25x25/4fb000/4fb000.png) |
+| Blue       | `#00b3e3` | ![#00b3e3](https://placehold.co/25x25/00b3e3/00b3e3.png) |
+| Magenta    | `#ff004b` | ![#ff004b](https://placehold.co/25x25/ff004b/ff004b.png) |
+| Orange     | `#ff4d00` | ![#ff4d00](https://placehold.co/25x25/ff4d00/ff4d00.png) |
 
 <!-- panvimdoc-ignore-end -->
 
